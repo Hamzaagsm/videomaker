@@ -276,7 +276,7 @@ let AC=null;function ac(){AC=AC||new (window.AudioContext||window.webkitAudioCon
 function ttsURL(text,lang,provider){
   const q=encodeURIComponent(text);
   if(provider==='youdao')return 'https://dict.youdao.com/dictvoice?audio='+q+'&type=2';
-  const client=provider==='gtx'?'gtx':'tw-ob';
+  const client=provider==='webapp'?'webapp':provider==='gtx'?'gtx':'tw-ob';
   return 'https://translate.google.com/translate_tts?ie=UTF-8&client='+client+'&tl='+lang+'&q='+q+'&textlen='+text.length;
 }
 function effRate(){return (S.vStyle==='male'?0.82:S.vStyle==='female'?1.18:1)*S.vSpeed;}
@@ -296,7 +296,7 @@ async function loadAudio(url,rate){
 async function prepVoice(onp){
   const lang=S.vLang,rate=effRate();
   VSEGS=[];let total=0;S.lineDurs=[];
-  const providers=lang==='en'?['gtx','tw-ob','youdao']:['gtx','tw-ob'];
+  const providers=lang==='en'?['webapp','gtx','tw-ob','youdao']:['webapp','gtx','tw-ob'];
   for(let i=0;i<S.lines.length;i++){
     if(onp)onp(i/S.lines.length*0.95,'🎙️ Line '+(i+1)+'/'+S.lines.length+'...');
     const parts=chunkText(S.lines[i],195),lineStart=total;
@@ -525,6 +525,7 @@ function copyMeta(){
 async function voiceDoctor(){
   const w=$('docOut');w.innerHTML='🔍 Check ho raha...<br>';w.style.display='block';
   const tests=[
+    ['Google WebApp Urdu','https://translate.google.com/translate_tts?ie=UTF-8&client=webapp&tl=ur&q=Salam&textlen=5'],
     ['Google Urdu','https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=ur&q=Salam&textlen=5'],
     ['Google Hindi','https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=hi&q=Namaste&textlen=7'],
     ['Google English','https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=en&q=Hello&textlen=5'],
