@@ -73,7 +73,7 @@ select{width:100%;padding:12px;background:#12121c;border:1px solid #333;border-r
     </div>
     <div class="row">
       <div><div class="lbl">🗣️ Zabaan</div>
-        <select id="hLang"><option value="ur">🇵🇰 Urdu</option><option value="en">🇬🇧 English</option></select></div>
+        <select id="hLang"><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option><option value="en">🇬🇧 English</option></select></div>
       <div><div class="lbl">👤 Awaz</div>
         <select id="hVoice"><option value="normal">😐 Normal</option><option value="male">👨 Male</option><option value="female">👩 Female</option></select></div>
     </div>
@@ -112,7 +112,7 @@ select{width:100%;padding:12px;background:#12121c;border:1px solid #333;border-r
   <div id="et-voice" style="display:none">
     <div class="card">
       <div class="lbl" style="margin-top:0">🗣️ Zabaan</div>
-      <div class="seg" id="vLang"><button data-v="ur" class="on">🇵🇰 Urdu</button><button data-v="en">🇬🇧 English</button></div>
+      <div class="seg" id="vLang"><button data-v="ur" class="on">🇵🇰 Urdu</button><button data-v="hi">🇮🇳 Hindi</button><button data-v="en">🇬🇧 English</button></div>
       <div class="lbl">👤 Awaz</div>
       <div class="seg" id="vGender"><button data-v="normal" class="on">😐 Normal</button><button data-v="male">👨 Male</button><button data-v="female">👩 Female</button></div>
       <div class="lbl">⚡ Speed: <span id="spdV">1.0x</span></div>
@@ -175,7 +175,7 @@ select{width:100%;padding:12px;background:#12121c;border:1px solid #333;border-r
   <textarea id="mStory" placeholder="Har line alag scene banegi..."></textarea>
   <div class="row">
     <div><div class="lbl">📐 Size</div><select id="mAsp"><option value="9:16">📱 9:16</option><option value="16:9">🖥️ 16:9</option><option value="1:1">⬛ 1:1</option></select></div>
-    <div><div class="lbl">🗣️ Voice</div><select id="mVoice"><option value="ur">🇵🇰 Urdu</option><option value="en">🇬🇧 English</option></select></div>
+    <div><div class="lbl">🗣️ Voice</div><select id="mVoice"><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option><option value="en">🇬🇧 English</option></select></div>
   </div>
   <button class="btn" onclick="manualFlow()">Agla Step →</button>
 </div>
@@ -195,7 +195,7 @@ select{width:100%;padding:12px;background:#12121c;border:1px solid #333;border-r
   <div class="card">
     <div class="lbl" style="margin-top:0">Name</div><input type="text" id="cName" placeholder="Misal: Chintu">
     <div class="lbl">Shakal / Kapre (English me likho)</div><input type="text" id="cLook" placeholder="Misal: cute boy with red cap and blue jacket">
-    <div class="lbl">Awaz</div><select id="cVoice"><option value="ur">🇵🇰 Urdu</option><option value="en-male">🇬🇧 English Male</option><option value="en-female">🇬🇧 English Female</option></select>
+    <div class="lbl">Awaz</div><select id="cVoice"><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option><option value="en-male">🇬🇧 English Male</option><option value="en-female">🇬🇧 English Female</option></select>
     <button class="btn" onclick="addChar()">➕ Character Save Karo</button>
   </div>
   <div id="charList"></div>
@@ -271,34 +271,47 @@ function chunkText(t,max){const parts=t.split(/(?<=[.!?؟،])/);const out=[];let
   if(cur.trim())out.push(cur.trim());return out.length?out:[t.slice(0,max)];}
 /* ================= AI: VOICE (direct audio, NO proxy) ================= */
 let AC=null;function ac(){AC=AC||new (window.AudioContext||window.webkitAudioContext)();return AC;}
-function ttsURL(text,lang){
-  return 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl='+lang
-    +'&q='+encodeURIComponent(text)+'&textlen='+text.length;
+function ttsURL(text,lang,provider){
+  const q=encodeURIComponent(text);
+  if(provider==='youdao')return 'https://dict.youdao.com/dictvoice?audio='+q+'&type=2';
+  const client=provider==='gtx'?'gtx':'tw-ob';
+  return 'https://translate.google.com/translate_tts?ie=UTF-8&client='+client+'&tl='+lang+'&q='+q+'&textlen='+text.length;
 }
 function effRate(){return (S.vStyle==='male'?0.82:S.vStyle==='female'?1.18:1)*S.vSpeed;}
 let VSEGS=[]; // {audio,line,start,dur}
 function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+async function loadAudio(url,rate){
+  const au=new Audio();au.preload='auto';au.playbackRate=rate;
+  try{au.preservesPitch=false;}catch(e){}
+  au.src=url;
+  await new Promise((res,rej)=>{
+    const to=setTimeout(()=>rej(new Error('timeout')),20000);
+    au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
+    au.addEventListener('error',()=>{clearTimeout(to);rej(new Error('loadfail'));},{once:true});
+  });
+  return au;
+}
 async function prepVoice(onp){
   const lang=S.vLang,rate=effRate();
   VSEGS=[];let total=0;S.lineDurs=[];
+  const providers=lang==='en'?['gtx','tw-ob','youdao']:['gtx','tw-ob'];
   for(let i=0;i<S.lines.length;i++){
     if(onp)onp(i/S.lines.length*0.95,'🎙️ Line '+(i+1)+'/'+S.lines.length+'...');
-    const parts=chunkText(S.lines[i],170),lineStart=total;
+    const parts=chunkText(S.lines[i],195),lineStart=total;
     for(let c=0;c<parts.length;c++){
-      const au=new Audio();au.preload='auto';au.playbackRate=rate;
-      try{au.preservesPitch=false;}catch(e){}
-      au.src=ttsURL(parts[c],lang);
-      await new Promise((res,rej)=>{
-        const to=setTimeout(()=>rej(new Error('Voice load timeout — net slow? Retry karo')),25000);
-        au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
-        au.addEventListener('error',()=>{clearTimeout(to);rej(new Error('Voice load fail — retry karo'));},{once:true});
-      });
+      let au=null;
+      for(const pv of providers){
+        try{au=await loadAudio(ttsURL(parts[c],lang,pv),rate);break;}
+        catch(e){await sleep(600);}
+      }
+      if(!au)throw new Error('Voice block hai — 10 min ruk kar phir try karo 🙏 (ya WiFi badlo)');
       const d=Math.max(0.6,(au.duration||2)/rate);
       VSEGS.push({audio:au,line:i,start:total,dur:d});
       total+=d+(c<parts.length-1?0.12:0);
     }
     S.lineDurs.push({start:lineStart,dur:total-lineStart});
     total+=0.45;
+    if(i<S.lines.length-1)await sleep(700);
   }
   S.voiceDur=total;
   if(onp)onp(1,'✅ Awaz tayyar');
@@ -362,7 +375,7 @@ async function magicFlow(){
     S.lines=lines;aiLog('✅ '+lines.length+' lines tayyar');
     aiBar(40);
     // 2. voice (fail ho to bhi aage barho — Voice tab se retry)
-    aiLog('🎙️ Awaz ban rahi ('+(S.vLang==='ur'?'Urdu':'English')+')...');
+    aiLog('🎙️ Awaz ban rahi ('+(S.vLang==='ur'?'Urdu':S.vLang==='hi'?'Hindi':'English')+')...');
     try{await prepVoice((p,t)=>aiBar(40+p*25));aiLog('✅ Awaz: '+S.voiceDur.toFixed(1)+'s');}
     catch(e){aiLog('❌ Voice: '+e.message);aiLog('⚠️ Scenes jaari hain — Voice tab se retry kar lena');S.voiceDur=0;S.lineDurs=[];VSEGS=[];}
     aiBar(68);
