@@ -1,0 +1,30 @@
+name: Build Video Maker APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['android/**', '.github/workflows/build-apk.yml']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v3
+      - name: Build debug APK
+        run: |
+          cd android
+          gradle assembleDebug --no-daemon -x lint
+      - name: Rename APK
+        run: |
+          cp android/app/build/outputs/apk/debug/app-debug.apk HamzaVideoMaker-v2.apk
+          ls -la HamzaVideoMaker-v2.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: HamzaVideoMaker-apk
+          path: HamzaVideoMaker-v2.apk
