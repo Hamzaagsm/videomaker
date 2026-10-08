@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Hamza Video Maker 🎬</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI',system-ui,'Noto Nastaliq Urdu',sans-serif;background:#0a0a12;color:#fff;min-height:100vh;overflow-x:hidden}
+.screen{display:none;min-height:100vh;padding:20px 16px 40px;max-width:520px;margin:0 auto;animation:fadeIn .3s}
+.screen.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h1{font-size:28px;text-align:center;margin:18px 0 6px;background:linear-gradient(90deg,#ff4d6d,#ffaa00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{text-align:center;color:#888;font-size:14px;margin-bottom:24px}
+.btn{display:block;width:100%;padding:16px;margin:10px 0;border:none;border-radius:14px;font-size:18px;font-weight:bold;cursor:pointer;color:#fff;background:linear-gradient(135deg,#e94560,#ff6b35);box-shadow:0 4px 20px rgba(233,69,96,.35)}
+.btn:active{transform:scale(.97)}
+.btn2{background:#1a1a2e;border:1px solid #333}
+.btn:disabled{opacity:.4}
+.back{background:none;border:none;color:#888;font-size:15px;margin-bottom:12px;cursor:pointer}
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.theme{border-radius:16px;padding:26px 10px;text-align:center;font-size:16px;font-weight:bold;cursor:pointer;border:2px solid transparent;background:#14141f}
+.theme .em{font-size:42px;display:block;margin-bottom:8px}
+.theme.sel{border-color:#e94560;box-shadow:0 0 18px rgba(233,69,96,.4)}
+textarea{width:100%;min-height:180px;background:#14141f;border:1px solid #333;border-radius:14px;color:#fff;padding:14px;font-size:16px;line-height:1.9;direction:rtl;resize:vertical}
+textarea::placeholder{color:#555}
+.hint{color:#777;font-size:13px;margin:8px 0 4px;line-height:1.6}
+.recwrap{text-align:center;padding:20px 0}
+.recbtn{width:110px;height:110px;border-radius:50%;border:none;font-size:44px;cursor:pointer;background:linear-gradient(135deg,#e94560,#ff2d55);box-shadow:0 0 30px rgba(233,69,96,.5);margin:10px auto;display:block}
+.recbtn.rec{background:#333;animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(233,69,96,.5)}50%{box-shadow:0 0 0 18px rgba(233,69,96,0)}}
+#rectime{font-size:34px;font-weight:bold;margin:8px 0;font-variant-numeric:tabular-nums}
+#wave{width:100%;height:60px;background:#14141f;border-radius:12px;margin:12px 0}
+.photobox{border:2px dashed #444;border-radius:14px;padding:30px;text-align:center;color:#888;cursor:pointer;margin:12px 0}
+.photobox img{max-width:100%;border-radius:10px}
+#preview{width:100%;max-width:300px;border-radius:14px;display:block;margin:14px auto;background:#000}
+.prog{height:10px;background:#1a1a2e;border-radius:6px;overflow:hidden;margin:14px 0}
+.prog>div{height:100%;width:0%;background:linear-gradient(90deg,#e94560,#ffaa00);transition:width .3s}
+.stepbar{display:flex;gap:6px;margin-bottom:18px}
+.stepbar div{flex:1;height:5px;border-radius:3px;background:#222}
+.stepbar div.done{background:#e94560}
+.lbl{font-size:14px;color:#aaa;margin:14px 0 6px}
+select,input[type=text]{width:100%;padding:13px;background:#14141f;border:1px solid #333;border-radius:12px;color:#fff;font-size:16px}
+.row{display:flex;gap:10px}.row>*{flex:1}
+</style>
+</head>
+<body>
+
+<!-- HOME -->
+<div class="screen active" id="s-home">
+  <h1>🎬 HAMZA<br>VIDEO MAKER</h1>
+  <p class="sub">Apni awaz me kahani • TikTok style video<br>100% Free • Koi watermark nahi</p>
+  <button class="btn" onclick="go('s-theme')">➕ Nayi Video Banao</button>
+  <button class="btn btn2" onclick="go('s-how')">❓ Kaise Kaam Karta Hai</button>
+  <p class="hint" style="text-align:center;margin-top:30px">v2.0 • Banaya gaya Hamza ke liye ❤️</p>
+</div>
+
+<!-- HOW -->
+<div class="screen" id="s-how">
+  <button class="back" onclick="go('s-home')">← Wapis</button>
+  <h1 style="font-size:22px">Kaise Use Karein</h1>
+  <p class="hint">1️⃣ <b>Theme</b> chuno (Horror, Kahani...)<br><br>2️⃣ <b>Kahani</b> likho — choti lines me todo, har line ek scene hai<br><br>3️⃣ <b>Awaz record</b> karo — kahani parho, mic me bolo<br><br>4️⃣ <b>Photo</b> lagao (optional)<br><br>5️⃣ <b>Video banao</b> dabao — app khud subtitles + music laga degi!<br><br>📱 Video vertical (TikTok/Reels size) me banegi.</p>
+  <button class="btn" onclick="go('s-theme')">Samajh Gaya, Shuru Karo →</button>
+</div>
+
+<!-- THEME -->
+<div class="screen" id="s-theme">
+  <button class="back" onclick="go('s-home')">← Wapis</button>
+  <div class="stepbar"><div class="done"></div><div></div><div></div><div></div></div>
+  <h1 style="font-size:22px">Theme Chuno 🎨</h1>
+  <div class="themes" id="themeGrid"></div>
+  <button class="btn" id="themeNext" onclick="go('s-story')" disabled>Pehle theme chuno</button>
+</div>
+
+<!-- STORY -->
+<div class="screen" id="s-story">
+  <button class="back" onclick="go('s-theme')">← Wapis</button>
+  <div class="stepbar"><div class="done"></div><div class="done"></div><div></div><div></div></div>
+  <h1 style="font-size:22px">Kahani Likho ✍️</h1>
+  <p class="hint">Har <b>line</b> video me alag subtitle banegi. Choti lines likho!</p>
+  <textarea id="story" placeholder="Yahan kahani likho...&#10;&#10;Misal:&#10;Aik andheri raat thi...&#10; jungle se ajeeb awazein aa rahi thin...&#10;achanak peechay se kisi ne awaz di..."></textarea>
+  <div class="row">
+    <button class="btn btn2" onclick="sampleStory()">✨ Sample Kahani</button>
+    <button class="btn btn2" onclick="clearStory()">🗑 Saaf Karo</button>
+  </div>
+  <button class="btn" onclick="storyNext()">Agla Step →</button>
+</div>
+
+<!-- VOICE -->
+<div class="screen" id="s-voice">
+  <button class="back" onclick="go('s-story')">← Wapis</button>
+  <div class="stepbar"><div class="done"></div><div class="done"></div><div class="done"></div><div></div></div>
+  <h1 style="font-size:22px">Awaz Record Karo 🎤</h1>
+  <p class="hint">Kahani zor se parho. Mukammal honay par Stop dabao.</p>
+  <div class="recwrap">
+    <button class="recbtn" id="recBtn" onclick="toggleRec()">🎤</button>
+    <div id="rectime">0:00</div>
+    <canvas id="wave"></canvas>
+    <audio id="voicePlay" controls style="width:100%;display:none;margin-top:10px"></audio>
+  </div>
+  <div class="row">
+    <button class="btn btn2" id="reRec" onclick="toggleRec()" disabled>🔴 Dobara Record</button>
+    <button class="btn" id="voiceNext" onclick="go('s-photo')" disabled>Agla Step →</button>
+  </div>
+</div>
+
+<!-- PHOTO -->
+<div class="screen" id="s-photo">
+  <button class="back" onclick="go('s-voice')">← Wapis</button>
+  <div class="stepbar"><div class="done"></div><div class="done"></div><div class="done"></div><div class="done"></div></div>
+  <h1 style="font-size:22px">Photo Lagao 🖼️</h1>
+  <p class="hint">Optional — photo video me background me halki hilegi (cinematic effect)</p>
+  <div class="photobox" id="photoBox" onclick="document.getElementById('photoIn').click()">
+    <span id="photoTxt">📷 Photo chuno (ya skip karo)</span>
+  </div>
+  <input type="file" id="photoIn" accept="image/*" style="display:none">
+  <div class="lbl">Background Music</div>
+  <select id="musicSel">
+    <option value="on">🎵 On (theme ke hisab se)</option>
+    <option value="off">🔇 Off (sirf meri awaz)</option>
+  </select>
+  <button class="btn" onclick="go('s-make')" style="margin-top:18px">🎬 VIDEO BANAO →</button>
+</div>
+
+<!-- MAKE -->
+<div class="screen" id="s-make">
+  <h1 style="font-size:22px">Video Ban Rahi Hai... ⏳</h1>
+  <div class="prog"><div id="pbar"></div></div>
+  <p class="hint" id="pstat" style="text-align:center">Tayyari...</p>
+  <video id="preview" controls playsinline style="display:none"></video>
+  <button class="btn" id="dlBtn" style="display:none">⬇️ Video Download Karo</button>
+  <button class="btn btn2" id="againBtn" style="display:none" onclick="location.reload()">🔄 Nayi Video</button>
+</div>
+
+<script>
+"use strict";
+/* ============ STATE ============ */
+const S = {theme:null, lines:[], voiceBlob:null, voiceBuf:null, voiceDur:0, photo:null,
+           rec:null, chunks:[], rect0:0, rectT:null, actx:null, analyser:null};
+
+/* ============ NAV ============ */
+function go(id){
+  document.querySelectorAll('.screen').forEach(e=>e.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+/* ============ THEMES ============ */
+const THEMES=[
+ {id:'horror', em:'👻', name:'Horror', c1:'#0a0014', c2:'#2b0a3d'},
+ {id:'kahani', em:'📖', name:'Kahani', c1:'#0d1b2a', c2:'#1b3a5c'},
+ {id:'funny',  em:'😂', name:'Funny',  c1:'#1a0d00', c2:'#5c3a00'},
+ {id:'romantic',em:'❤️', name:'Romantic',c1:'#1a0010', c2:'#5c0a2e'},
+ {id:'islamic', em:'🕌', name:'Islamic',c1:'#00140d', c2:'#0a3d24'},
+ {id:'cartoon', em:'🎨', name:'Cartoon',c1:'#0d1a2a', c2:'#2a5c8a'},
+];
+const tg=document.getElementById('themeGrid');
+THEMES.forEach(t=>{
+  const d=document.createElement('div'); d.className='theme'; d.dataset.id=t.id;
+  d.innerHTML=`<span class="em">${t.em}</span>${t.name}`;
+  d.onclick=()=>{document.querySelectorAll('.theme').forEach(x=>x.classList.remove('sel'));
+    d.classList.add('sel'); S.theme=t;
+    const n=document.getElementById('themeNext'); n.disabled=false; n.textContent='Agla Step →';};
+  tg.appendChild(d);
+});
+
+/* ============ STORY ============ */
+function sampleStory(){
+  const s={horror:"Aik andheri raat thi...\n jungle se ajeeb awazein aa rahi thin...\nachanak peechay se kisi ne mera naam pukara...\nmein ne mur kar dekha to... koi nahi tha!\nphir wohi awaz... ab bohat qareeb se...\n",
+   kahani:"Aik dafa ka zikr hai...\naik chota bacha jungle me rehta tha...\nwoh roz subah nadi par jata...\naik din usay wahan aik chamakti cheez mili...\n",
+   funny:"Aik din mera dost bazaar gaya...\nus ne dukandaar se poocha: ye kitne ka hai?\ndukandaar bola: sau rupay!\ndost bola: pachaas me de do!\ndukandaar behosh ho gaya! 😂",
+   romantic:"Chandni raat thi...\nhawa me khushbu thi...\nwoh pehli baar us se mila tha...\ndil ki dharakan tez ho gayi...\n",
+   islamic:"Bismillah ir Rahman ir Rahim...\nAik naik shakhs tha...\nwoh roz fajar ki namaz parhta...\nAllah us se bohat khush tha...\n",
+   cartoon:"Aik chota khargosh tha...\nwoh jungle me rehta tha...\nroz naye dost banata...\nsab us se bohat pyar karte thay! 🎨"}[S.theme?S.theme.id:'horror'];
+  document.getElementById('story').value=s;
+}
+function clearStory(){document.getElementById('story').value='';}
+function storyNext(){
+  const t=document.getElementById('story').value.split('\n').map(x=>x.trim()).filter(x=>x.length>1);
+  if(t.length<2){alert('Kam az kam 2 lines likho!');return;}
+  S.lines=t; go('s-voice');
+}
+
+/* ============ VOICE REC ============ */
+const wave=document.getElementById('wave'), wctx=wave.getContext('2d');
+function sizeWave(){wave.width=wave.offsetWidth*2;wave.height=120;}
+sizeWave(); drawIdle();
+function drawIdle(){wctx.fillStyle='#14141f';wctx.fillRect(0,0,wave.width,wave.height);
+  wctx.fillStyle='#333';wctx.font='24px sans-serif';wctx.textAlign='center';
+  wctx.fillText('🎤 dabao aur bolo',wave.width/2,wave.height/2+8);}
+async function toggleRec(){
+  if(S.rec&&S.rec.state==='recording'){stopRec();return;}
+  try{
+    const st=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}});
+    S.actx=S.actx||new (window.AudioContext||window.webkitAudioContext)();
+    const src=S.actx.createMediaStreamSource(st);
+    S.analyser=S.actx.createAnalyser(); S.analyser.fftSize=256; src.connect(S.analyser);
+    S.chunks=[];
+    S.rec=new MediaRecorder(st); S.rec.ondataavailable=e=>{if(e.data.size)S.chunks.push(e.data);};
+    S.rec.onstop=()=>{st.getTracks().forEach(t=>t.stop()); onRecDone();};
+    S.rec.start(250); S.rect0=Date.now();
+    document.getElementById('recBtn').classList.add('rec');
+    document.getElementById('recBtn').textContent='⏹';
+    S.rectT=setInterval(()=>{const s=Math.floor((Date.now()-S.rect0)/1000);
+      document.getElementById('rectime').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');drawWave();},100);
+  }catch(e){alert('Mic nahi mila! Ijazat do. ('+e.message+')');}
+}
+function drawWave(){
+  const a=S.analyser; if(!a)return;
+  const d=new Uint8Array(a.frequencyBinCount); a.getByteFrequencyData(d);
+  wctx.fillStyle='#14141f';wctx.fillRect(0,0,wave.width,wave.height);
+  const n=48,bw=wave.width/n;
+  for(let i=0;i<n;i++){const v=d[Math.floor(i*d.length/n)]/255,h=v*wave.height*.9+4;
+    wctx.fillStyle='#e94560';wctx.fillRect(i*bw+2,(wave.height-h)/2,bw-4,h);}
+}
+function stopRec(){clearInterval(S.rectT);S.rec.stop();
+  document.getElementById('recBtn').classList.remove('rec');
+  document.getElementById('recBtn').textContent='🎤';}
+async function onRecDone(){
+  S.voiceBlob=new Blob(S.chunks,{type:S.rec.mimeType||'audio/webm'});
+  const url=URL.createObjectURL(S.voiceBlob);
+  const ap=document.getElementById('voicePlay'); ap.src=url; ap.style.display='block';
+  const ab=await S.voiceBlob.arrayBuffer();
+  S.actx=S.actx||new (window.AudioContext||window.webkitAudioContext)();
+  S.voiceBuf=await S.actx.decodeAudioData(ab);
+  S.voiceDur=S.voiceBuf.duration;
+  document.getElementById('rectime').textContent='✅ '+S.voiceDur.toFixed(1)+' sec';
+  document.getElementById('reRec').disabled=false;
+  const vn=document.getElementById('voiceNext'); vn.disabled=false;
+  drawIdle();
+}
+
+/* ============ PHOTO ============ */
+document.getElementById('photoIn').onchange=e=>{
+  const f=e.target.files[0]; if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{S.photo=new Image();S.photo.onload=()=>{
+    document.getElementById('photoTxt').innerHTML='';
+    document.getElementById('photoBox').appendChild(S.photo);};S.photo.src=r.result;};
+  r.readAsDataURL(f);
+};
+</script>
+<script>
+"use strict";
+/* ============================================================
+   RENDER ENGINE — canvas scenes + music + subtitles + export
+   ============================================================ */
+const VW=720, VH=1280;
+const cv=document.createElement('canvas'); cv.width=VW; cv.height=VH;
+const cx=cv.getContext('2d');
+
+function R(a,b){return a+Math.random()*(b-a);}
+function grad(c1,c2){const g=cx.createLinearGradient(0,0,0,VH);g.addColorStop(0,c1);g.addColorStop(1,c2);return g;}
+
+/* particles per theme */
+const P=[];
+function initP(n){P.length=0;for(let i=0;i<n;i++)P.push({x:R(0,VW),y:R(0,VH),s:R(1,4),v:R(8,40),o:R(.15,.6),ph:R(0,6.28)});}
+
+function drawBG(t,th){
+  const g=grad(th.c1,th.c2); cx.fillStyle=g; cx.fillRect(0,0,VW,VH);
+  if(th.id==='horror'){
+    // moon
+    cx.save();cx.globalAlpha=.9;
+    const mg=cx.createRadialGradient(VW*.72,220,10,VW*.72,220,150);
+    mg.addColorStop(0,'#ff2222');mg.addColorStop(.35,'#aa1111');mg.addColorStop(1,'rgba(120,0,0,0)');
+    cx.fillStyle=mg;cx.beginPath();cx.arc(VW*.72,220,150,0,7);cx.fill();cx.restore();
+    cx.fillStyle='#d40000';cx.beginPath();cx.arc(VW*.72,220,62,0,7);cx.fill();
+    cx.fillStyle='rgba(60,0,0,.35)';cx.beginPath();cx.arc(VW*.72-18,205,14,0,7);cx.fill();
+    cx.beginPath();cx.arc(VW*.72+20,238,10,0,7);cx.fill();
+    // fog bands
+    for(let i=0;i<4;i++){const y=(t*22+i*330)%(VH+300)-150;
+      const fg=cx.createLinearGradient(0,y,0,y+120);
+      fg.addColorStop(0,'rgba(90,20,60,0)');fg.addColorStop(.5,'rgba(90,20,60,.28)');fg.addColorStop(1,'rgba(90,20,60,0)');
+      cx.fillStyle=fg;cx.fillRect(0,y,VW,120);}
+    // lightning
+    if(Math.random()<.012){cx.fillStyle='rgba(200,180,255,.5)';cx.fillRect(0,0,VW,VH);
+      cx.strokeStyle='#fff';cx.lineWidth=4;cx.beginPath();let lx=R(100,VW-100),ly=0;cx.moveTo(lx,ly);
+      while(ly<VH*.5){lx+=R(-60,60);ly+=R(40,90);cx.lineTo(lx,ly);}cx.stroke();}
+    // floating embers
+    P.forEach(p=>{p.y-=p.v*.016;p.x+=Math.sin(t+p.ph)*.6;if(p.y<-10){p.y=VH+10;p.x=R(0,VW);}
+      cx.globalAlpha=p.o;cx.fillStyle='#ff5a3c';cx.beginPath();cx.arc(p.x,p.y,p.s,0,7);cx.fill();});
+    cx.globalAlpha=1;
+  } else if(th.id==='romantic'){
+    P.forEach(p=>{p.y-=p.v*.016*.5;if(p.y<-20){p.y=VH+20;p.x=R(0,VW);}
+      cx.globalAlpha=p.o;cx.fillStyle='#ff6b9d';cx.font=(p.s*7)+'px serif';
+      cx.fillText('❤',p.x,p.y);});
+    cx.globalAlpha=1;
+    const mg=cx.createRadialGradient(VW/2,VH*.3,10,VW/2,VH*.3,320);
+    mg.addColorStop(0,'rgba(255,120,170,.35)');mg.addColorStop(1,'rgba(255,120,170,0)');
+    cx.fillStyle=mg;cx.fillRect(0,0,VW,VH);
+  } else if(th.id==='islamic'){
+    cx.strokeStyle='rgba(212,175,55,.25)';cx.lineWidth=2;
+    for(let i=0;i<8;i++)for(let j=0;j<14;j++){const x=i*95+((j%2)*47),y=j*95;
+      cx.save();cx.translate(x,y);cx.rotate(Math.PI/4);cx.strokeRect(-22,-22,44,44);cx.restore();}
+    cx.fillStyle='#d4af37';cx.font='bold 130px serif';cx.textAlign='center';
+    cx.fillText('☪',VW/2,300);
+    P.forEach(p=>{p.y-=p.v*.016*.4;if(p.y<-10){p.y=VH+10;p.x=R(0,VW);}
+      cx.globalAlpha=p.o*.7;cx.fillStyle='#d4af37';cx.beginPath();cx.arc(p.x,p.y,p.s*.7,0,7);cx.fill();});
+    cx.globalAlpha=1;
+  } else if(th.id==='cartoon'){
+    cx.fillStyle='rgba(255,255,255,.85)';
+    for(let i=0;i<5;i++){const x=((t*30+i*220)%(VW+300))-150,y=120+i*90;
+      cx.beginPath();cx.arc(x,y,34,0,7);cx.arc(x+34,y-12,26,0,7);cx.arc(x+68,y,30,0,7);cx.fill();}
+    P.forEach(p=>{p.x+=Math.sin(t*2+p.ph)*1.2;p.y+=Math.cos(t*1.5+p.ph)*1.2;
+      cx.globalAlpha=p.o;cx.fillStyle=['#ff5a5a','#5aff8a','#5a8aff','#ffe45a'][i4(p.ph)%4];
+      cx.beginPath();cx.arc(p.x,p.y,p.s*1.6,0,7);cx.fill();});
+    cx.globalAlpha=1;
+    cx.font='70px serif';cx.textAlign='center';
+    cx.fillText('🌈',VW/2,VH-220);
+  } else if(th.id==='funny'){
+    P.forEach(p=>{p.y+=Math.abs(Math.sin(t*3+p.ph))*2-1;if(p.y>VH+10)p.y=-10;
+      cx.globalAlpha=p.o;cx.font=(p.s*9)+'px serif';
+      cx.fillText(['😂','🤣','😜','🎉'][i4(p.ph)%4],p.x,p.y);});
+    cx.globalAlpha=1;
+  } else { // kahani
+    P.forEach(p=>{p.y-=p.v*.016*.35;if(p.y<-10){p.y=VH+10;p.x=R(0,VW);}
+      cx.globalAlpha=p.o*.6;cx.fillStyle='#ffe9a8';cx.beginPath();cx.arc(p.x,p.y,p.s,0,7);cx.fill();});
+    cx.globalAlpha=1;
+    const lg=cx.createRadialGradient(VW/2,VH*.42,20,VW/2,VH*.42,420);
+    lg.addColorStop(0,'rgba(255,220,150,.22)');lg.addColorStop(1,'rgba(255,220,150,0)');
+    cx.fillStyle=lg;cx.fillRect(0,0,VW,VH);
+    cx.font='110px serif';cx.textAlign='center';cx.globalAlpha=.5;cx.fillText('📖',VW/2,330);cx.globalAlpha=1;
+  }
+  // vignette
+  const v=cx.createRadialGradient(VW/2,VH/2,VH*.28,VW/2,VH/2,VH*.75);
+  v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.55)');
+  cx.fillStyle=v;cx.fillRect(0,0,VW,VH);
+}
+function i4(x){return Math.abs(Math.floor(x*7))%100;}
+
+function drawPhoto(t){
+  if(!S.photo||!S.photo.width)return;
+  const iw=S.photo.width,ih=S.photo.height;
+  const z=1.12+0.08*Math.sin(t*.12);           // slow zoom
+  const px=Math.sin(t*.07)*30;                  // slow pan
+  const s=Math.max(VW/iw,VH/ih)*z;
+  const dw=iw*s,dh=ih*s;
+  cx.save();cx.globalAlpha=.85;
+  cx.drawImage(S.photo,(VW-dw)/2+px,(VH-dh)/2,dw,dh);
+  cx.fillStyle='rgba(0,0,0,.35)';cx.fillRect(0,0,VW,VH);
+  cx.restore();
+}
+
+function wrap(txt,maxW){
+  const words=txt.split(' '),lines=[];let cur='';
+  for(const w of words){const t=cur?cur+' '+w:w;
+    if(cx.measureText(t).width>maxW&&cur){lines.push(cur);cur=w;}else cur=t;}
+  if(cur)lines.push(cur);return lines.slice(0,3);
+}
+function drawSub(text){
+  cx.textAlign='center';cx.textBaseline='alphabetic';
+  const fs=text.length>60?44:52;
+  cx.font='bold '+fs+'px "Segoe UI",sans-serif';
+  const lines=wrap(text,VW-90);
+  const y0=VH-300;
+  lines.forEach((ln,i)=>{
+    const y=y0+i*(fs+14);
+    cx.lineWidth=8;cx.strokeStyle='rgba(0,0,0,.9)';cx.strokeText(ln,VW/2,y);
+    cx.fillStyle='#fff';cx.fillText(ln,VW/2,y);
+  });
+  // progress dots
+  cx.fillStyle='rgba(255,255,255,.35)';cx.font='22px sans-serif';
+  cx.fillText('🎬 HAMZA VIDEO MAKER',VW/2,VH-80);
+}
+function drawTitle(th){
+  cx.textAlign='center';cx.fillStyle='rgba(255,255,255,.92)';
+  cx.font='bold 40px "Segoe UI",sans-serif';
+  cx.lineWidth=6;cx.strokeStyle='rgba(0,0,0,.8)';
+  cx.strokeText(th.em+' '+th.name,VW/2,110);cx.fillText(th.em+' '+th.name,VW/2,110);
+}
+
+/* ============ MUSIC (synthesized, no files) ============ */
+function playMusic(actx,dest,dur,theme){
+  const g=actx.createGain();g.gain.value=.16;g.connect(dest);
+  const t0=actx.currentTime+.1;
+  const N=(f,t,d,type,v)=>{const o=actx.createOscillator(),gn=actx.createGain();
+    o.type=type;o.frequency.value=f;gn.gain.setValueAtTime(0,t);
+    gn.gain.linearRampToValueAtTime(v,t+.4);gn.gain.linearRampToValueAtTime(0,t+d);
+    o.connect(gn);gn.connect(g);o.start(t);o.stop(t+d+.1);};
+  const drone=(f,t,d,v)=>{const o=actx.createOscillator(),gn=actx.createGain(),l=actx.createOscillator(),lg=actx.createGain();
+    o.type='sine';o.frequency.value=f;l.frequency.value=.08;lg.gain.value=v*.4;
+    l.connect(lg);lg.connect(gn.gain);gn.gain.value=v;
+    o.connect(gn);gn.connect(g);o.start(t);l.start(t);o.stop(t+d);l.stop(t+d);};
+  const noise=(t,d,v,fc)=>{const b=actx.createBuffer(1,actx.sampleRate*d,actx.sampleRate),
+    ch=b.getChannelData(0);for(let i=0;i<ch.length;i++)ch[i]=Math.random()*2-1;
+    const s=actx.createBufferSource();s.buffer=b;const f=actx.createBiquadFilter();
+    f.type='lowpass';f.frequency.value=fc;const gn=actx.createGain();
+    gn.gain.setValueAtTime(v,t);gn.gain.exponentialRampToValueAtTime(.001,t+d);
+    s.connect(f);f.connect(gn);gn.connect(g);s.start(t);};
+  if(theme==='horror'){
+    drone(55,t0,dur,.5);drone(58.3,t0,dur,.4);drone(110,t0,dur,.18);
+    for(let t=t0;t<t0+dur;t+=R(9,20))noise(t,R(1.5,3),.5,300);       // thunder
+    for(let t=t0+4;t<t0+dur;t+=R(11,23))N(R(600,900),t,2.5,'sine',.06); // eerie
+  }else if(theme==='romantic'){
+    const ch=[[261.6,329.6,392,493.9],[196,246.9,293.7,392],[220,277.2,329.6,440]];
+    let k=0;for(let t=t0;t<t0+dur;t+=8){ch[k%3].forEach(f=>N(f,t,8,'triangle',.12));k++;}
+  }else if(theme==='islamic'){
+    const ch=[[146.8,174.6,220],[130.8,164.8,196]];
+    let k=0;for(let t=t0;t<t0+dur;t+=10){ch[k%2].forEach(f=>N(f,t,10,'sine',.16));k++;}
+    drone(73.4,t0,dur,.25);
+  }else if(theme==='funny'){
+    const mel=[523,587,659,784,659,587,523,440];
+    let k=0;for(let t=t0;t<t0+dur;t+=.55){N(mel[k%8],t,.5,'square',.07);N(mel[k%8]/2,t,.5,'triangle',.1);k++;}
+  }else if(theme==='cartoon'){
+    const mel=[523,659,784,1047,784,659,523,659];
+    let k=0;for(let t=t0;t<t0+dur;t+=.7){N(mel[k%8],t,.65,'triangle',.12);k++;}
+  }else{ // kahani
+    const ch=[[220,277.2,329.6],[196,246.9,293.7],[174.6,220,261.6],[196,246.9,329.6]];
+    let k=0;for(let t=t0;t<t0+dur;t+=9){ch[k%4].forEach(f=>N(f,t,9,'sine',.13));k++;}
+  }
+}
+
+/* ============ BUILD VIDEO ============ */
+async function buildVideo(){
+  go('s-make');
+  const bar=document.getElementById('pbar'),st=document.getElementById('pstat');
+  const setP=(p,txt)=>{bar.style.width=p+'%';st.textContent=txt;};
+  try{
+    setP(5,'Awaz tayyar ho rahi...');
+    S.actx=S.actx||new (window.AudioContext||window.webkitAudioContext)();
+    if(S.actx.state==='suspended')await S.actx.resume();
+    const actx=S.actx,dur=S.voiceDur;
+    const dest=actx.createMediaStreamDestination();
+    const master=actx.createGain();master.gain.value=1;master.connect(dest);
+    // voice
+    const vs=actx.createBufferSource();vs.buffer=S.voiceBuf;
+    const vg=actx.createGain();vg.gain.value=1.15;
+    vs.connect(vg);vg.connect(master);
+    // music
+    if(document.getElementById('musicSel').value==='on')playMusic(actx,master,dur,S.theme.id);
+    // recorder (with mime fallback for older devices)
+    setP(10,'Video record ho rahi...');
+    const vstream=cv.captureStream(30);
+    const tracks=[...vstream.getVideoTracks(),...dest.stream.getAudioTracks()];
+    let mime='video/webm;codecs=vp9,opus';
+    if(!window.MediaRecorder||!MediaRecorder.isTypeSupported(mime))mime='';
+    const rec=new MediaRecorder(new MediaStream(tracks),
+      mime?{mimeType:mime,videoBitsPerSecond:5e6}:undefined);
+    const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+    const done=new Promise(r=>rec.onstop=r);
+    initP(S.theme.id==='horror'?70:45);
+    // subtitle timing: even split
+    const n=S.lines.length,per=dur/n;
+    const t0=actx.currentTime+.15;
+    vs.start(t0);rec.start(200);
+    const startT=performance.now();
+    await new Promise(resolve=>{
+      function frame(){
+        const el=(performance.now()-startT)/1000, t=el;
+        if(el>=dur+.4){resolve();return;}
+        drawBG(t,S.theme);drawPhoto(t);
+        if(t<3.2)drawTitle(S.theme);
+        const li=Math.min(n-1,Math.floor(el/per));
+        if(S.lines[li])drawSub(S.lines[li]);
+        setP(10+Math.min(85,el/dur*85),'Ban rahi hai... '+Math.floor(el)+'/'+Math.floor(dur)+' sec');
+        requestAnimationFrame(frame);
+      }
+      frame();
+    });
+    try{vs.stop();}catch(e){}
+    rec.stop();await done;
+    setP(97,'Tayyar ho gayi! 🎉');
+    const blob=new Blob(chunks,{type:'video/webm'});
+    const url=URL.createObjectURL(blob);
+    const pv=document.getElementById('preview');pv.src=url;pv.style.display='block';
+    const dl=document.getElementById('dlBtn');dl.style.display='block';
+    dl.onclick=()=>{const a=document.createElement('a');a.href=url;
+      a.download='hamza-video-'+Date.now()+'.webm';a.click();};
+    document.getElementById('againBtn').style.display='block';
+    setP(100,'✅ Video tayyar! Neeche dekho aur download karo.');
+  }catch(e){
+    st.textContent='❌ Error: '+e.message;
+    alert('Video banane me masla: '+e.message);
+  }
+}
+// wire photo step button to build
+document.querySelector('#s-photo .btn').setAttribute('onclick','buildVideo()');
+</script>
+</body>
+</html>
+
