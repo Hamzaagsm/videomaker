@@ -293,18 +293,53 @@ async function loadAudio(url,rate){
   });
   return au;
 }
+/* ---- Native Android TTS (APK): 100% offline, no blocking ---- */
+function nativeTTS(){return (typeof window.HamzaTTS!=='undefined')?window.HamzaTTS:null;}
+let nativePending={};
+function onTTSReady(){}
+function onTTSDone(uid,dataUri){const p=nativePending[uid];if(p){delete nativePending[uid];p.res(dataUri);}}
+function onTTSFailed(uid,reason){const p=nativePending[uid];if(p){delete nativePending[uid];p.rej(new Error(reason));}}
+function nativeSpeak(text,lang,pitch,rate){
+  return new Promise((res,rej)=>{
+    const uid='u'+Date.now()+Math.floor(Math.random()*99999);
+    nativePending[uid]={res:res,rej:rej};
+    try{nativeTTS().speakToFile(text,lang,pitch,rate,uid);}
+    catch(e){delete nativePending[uid];rej(e);}
+    setTimeout(()=>{if(nativePending[uid]){delete nativePending[uid];rej(new Error('timeout'));}},30000);
+  });
+}
+async function loadAudioNative(text,lang,rate){
+  const pitch=S.vStyle==='male'?0.75:S.vStyle==='female'?1.35:1.0;
+  const dataUri=await nativeSpeak(text,lang,pitch,rate);
+  const au=new Audio();au.preload='auto';
+  au.src=dataUri;
+  await new Promise((res,rej)=>{
+    const to=setTimeout(()=>rej(new Error('timeout')),15000);
+    au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
+    au.addEventListener('error',()=>{clearTimeout(to);rej(new Error('loadfail'));},{once:true});
+  });
+  return au;
+}
 async function prepVoice(onp){
   const lang=S.vLang,rate=effRate();
   VSEGS=[];let total=0;S.lineDurs=[];
-  const providers=lang==='en'?['webapp','gtx','tw-ob','youdao']:['webapp','gtx','tw-ob'];
   for(let i=0;i<S.lines.length;i++){
     if(onp)onp(i/S.lines.length*0.95,'🎙️ Line '+(i+1)+'/'+S.lines.length+'...');
     const parts=chunkText(S.lines[i],195),lineStart=total;
     for(let c=0;c<parts.length;c++){
       let au=null;
-      for(const pv of providers){
-        try{au=await loadAudio(ttsURL(parts[c],lang,pv),rate);break;}
-        catch(e){await sleep(600);}
+      // 1) Native Android TTS first (APK) — offline, unblockable
+      if(nativeTTS()){
+        try{au=await loadAudioNative(parts[c],lang,rate);}
+        catch(e){au=null;await sleep(400);}
+      }
+      // 2) Network providers
+      if(!au){
+        const providers=lang==='en'?['webapp','gtx','tw-ob','youdao']:['webapp','gtx','tw-ob'];
+        for(const pv of providers){
+          try{au=await loadAudio(ttsURL(parts[c],lang,pv),rate);break;}
+          catch(e){await sleep(600);}
+        }
       }
       if(!au)throw new Error('Voice block hai — 10 min ruk kar phir try karo 🙏 (ya WiFi badlo)');
       const d=Math.max(0.6,(au.duration||2)/rate);
@@ -524,6 +559,11 @@ function copyMeta(){
 /* ============ VOICE DOCTOR: diagnose what works on THIS device ============ */
 async function voiceDoctor(){
   const w=$('docOut');w.innerHTML='🔍 Check ho raha...<br>';w.style.display='block';
+  let out='';
+  // Native APK TTS?
+  const nt=nativeTTS();
+  out+=nt?'✅ Phone Native TTS — MAUJOOD HAI (APK mode)<br>':'ℹ️ Native TTS nahi (website mode)<br>';
+  w.innerHTML=out;
   const tests=[
     ['Google WebApp Urdu','https://translate.google.com/translate_tts?ie=UTF-8&client=webapp&tl=ur&q=Salam&textlen=5'],
     ['Google Urdu','https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=ur&q=Salam&textlen=5'],
@@ -531,7 +571,6 @@ async function voiceDoctor(){
     ['Google English','https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=en&q=Hello&textlen=5'],
     ['Backup English','https://dict.youdao.com/dictvoice?audio=Hello&type=2']
   ];
-  let out='';
   for(const [name,url] of tests){
     try{
       const au=new Audio();au.src=url;
