@@ -92,6 +92,7 @@ select{width:100%;padding:12px;background:#12121c;border:1px solid #333;border-r
 
 <!-- ============ AI WORKING ============ -->
 <div class="screen" id="s-ai">
+  <button class="back" onclick="go('s-home')">← Wapis</button>
   <h1 style="font-size:22px">🤖 AI Kaam Kar Rahi Hai...</h1>
   <div class="prog"><div id="aiBar"></div></div>
   <div class="log" id="aiLog"></div>
@@ -268,44 +269,46 @@ function detectTheme(idea){
 function chunkText(t,max){const parts=t.split(/(?<=[.!?؟،])/);const out=[];let cur='';
   for(const p of parts){if((cur+p).length>max){if(cur)out.push(cur.trim());cur=p;}else cur+=p;}
   if(cur.trim())out.push(cur.trim());return out.length?out:[t.slice(0,max)];}
+/* ================= AI: VOICE (direct audio, NO proxy) ================= */
 let AC=null;function ac(){AC=AC||new (window.AudioContext||window.webkitAudioContext)();return AC;}
-async function ttsFetch(text,lang){
-  const u='https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl='+lang+'&q='+encodeURIComponent(text)+'&textlen='+text.length;
-  const r=await fetch('https://api.allorigins.win/raw?url='+encodeURIComponent(u));
-  if(!r.ok)throw new Error('voice busy');
-  return await ac().decodeAudioData(await r.arrayBuffer());
+function ttsURL(text,lang){
+  return 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl='+lang
+    +'&q='+encodeURIComponent(text)+'&textlen='+text.length;
 }
-function effRate(){return (S.vStyle==='male'?0.88:S.vStyle==='female'?1.14:1)*S.vSpeed;}
-async function buildVoice(onp){
-  const a=ac();if(a.state==='suspended')await a.resume();
-  const lang=S.vLang,rate=effRate(),GAP=0.5,SR=a.sampleRate;
-  const bufs=[],durs=[];let total=0;
+function effRate(){return (S.vStyle==='male'?0.82:S.vStyle==='female'?1.18:1)*S.vSpeed;}
+let VSEGS=[]; // {audio,line,start,dur}
+function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+async function prepVoice(onp){
+  const lang=S.vLang,rate=effRate();
+  VSEGS=[];let total=0;S.lineDurs=[];
   for(let i=0;i<S.lines.length;i++){
-    if(onp)onp(i/S.lines.length,'🎙️ Line '+(i+1)+'/'+S.lines.length+'...');
-    const parts=chunkText(S.lines[i],170),pb=[];
-    for(const p of parts)pb.push(await ttsFetch(p,lang));
-    let len=pb.reduce((x,b)=>x+b.length,0);
-    const lb=a.createBuffer(1,len,SR);let off=0;
-    for(const b of pb){lb.getChannelData(0).set(b.getChannelData(0),off);off+=b.length;}
-    bufs.push(lb);
-    const d=lb.duration/rate; // effective duration at playback rate
-    durs.push({start:total,dur:d});total+=d+GAP;
+    if(onp)onp(i/S.lines.length*0.95,'🎙️ Line '+(i+1)+'/'+S.lines.length+'...');
+    const parts=chunkText(S.lines[i],170),lineStart=total;
+    for(let c=0;c<parts.length;c++){
+      const au=new Audio();au.preload='auto';au.playbackRate=rate;
+      try{au.preservesPitch=false;}catch(e){}
+      au.src=ttsURL(parts[c],lang);
+      await new Promise((res,rej)=>{
+        const to=setTimeout(()=>rej(new Error('Voice load timeout — net slow? Retry karo')),25000);
+        au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
+        au.addEventListener('error',()=>{clearTimeout(to);rej(new Error('Voice load fail — retry karo'));},{once:true});
+      });
+      const d=Math.max(0.6,(au.duration||2)/rate);
+      VSEGS.push({audio:au,line:i,start:total,dur:d});
+      total+=d+(c<parts.length-1?0.12:0);
+    }
+    S.lineDurs.push({start:lineStart,dur:total-lineStart});
+    total+=0.45;
   }
-  if(onp)onp(.92,'Jor raha...');
-  const out=a.createBuffer(1,Math.ceil(total*SR),SR),oc=out.getChannelData(0);
-  // resample each line at rate (simple linear)
-  durs.forEach((ld,i)=>{
-    const src=bufs[i].getChannelData(0),start=Math.floor(ld.start*SR),need=Math.floor(ld.dur*SR);
-    for(let j=0;j<need;j++){const sp=j*rate, i0=Math.floor(sp), fr=sp-i0;
-      oc[start+j]=(src[i0]||0)*(1-fr)+(src[i0+1]||0)*fr;}
-  });
-  S.voiceBuf=out;S.voiceDur=total;S.lineDurs=durs;
+  S.voiceDur=total;
+  if(onp)onp(1,'✅ Awaz tayyar');
 }
 async function regenVoice(){
+  S.vSpeed=+$('vSpeed').value||1;
   $('vProg').style.display='block';
-  try{await buildVoice((p,t)=>{$('vBar').style.width=Math.round(p*100)+'%';$('vStat').textContent=t;});
+  try{await prepVoice((p,t)=>{$('vBar').style.width=Math.round(p*100)+'%';$('vStat').textContent=t;});
     $('vStat').textContent='✅ Awaz tayyar! ('+S.voiceDur.toFixed(1)+'s)';}
-  catch(e){$('vStat').textContent='❌ '+e.message+' — retry karo';}
+  catch(e){$('vStat').textContent='❌ '+e.message;$('vStat').textContent+='';}
   setTimeout(()=>$('vProg').style.display='none',800);
 }
 
@@ -350,14 +353,18 @@ async function magicFlow(){
     // 1. story
     aiBar(15);aiLog('📖 AI kahani likh rahi...');
     const n=Math.max(3,Math.min(12,Math.round(S.dur/10)));
-    let lines=await aiStory(idea,S.theme,S.dur);
+    let lines=null;
+    for(let a=0;a<3&&!lines;a++){
+      if(a>0){aiLog('🔄 AI retry ('+(a+1)+'/3)...');await sleep(2500);}
+      lines=await aiStory(idea,S.theme,S.dur);
+    }
     if(!lines){aiLog('⚠️ AI busy — template kahani use kar raha...');lines=templateStory(S.theme,idea,n);}
     S.lines=lines;aiLog('✅ '+lines.length+' lines tayyar');
     aiBar(40);
-    // 2. voice
+    // 2. voice (fail ho to bhi aage barho — Voice tab se retry)
     aiLog('🎙️ Awaz ban rahi ('+(S.vLang==='ur'?'Urdu':'English')+')...');
-    try{await buildVoice((p,t)=>aiBar(40+p*25));aiLog('✅ Awaz: '+S.voiceDur.toFixed(1)+'s');}
-    catch(e){aiLog('❌ Voice fail: '+e.message);throw new Error('Voice nahi bani — retry karo');}
+    try{await prepVoice((p,t)=>aiBar(40+p*25));aiLog('✅ Awaz: '+S.voiceDur.toFixed(1)+'s');}
+    catch(e){aiLog('❌ Voice: '+e.message);aiLog('⚠️ Scenes jaari hain — Voice tab se retry kar lena');S.voiceDur=0;S.lineDurs=[];VSEGS=[];}
     aiBar(68);
     // 3. scenes
     aiLog('🎥 Scenes ban rahi...');
@@ -369,8 +376,9 @@ async function magicFlow(){
     aiLog('📌 Title/tags...');
     await genMeta();
     aiBar(100);aiLog('🎉 SAB TAYYAR!');
+    if(!VSEGS.length)aiLog('⚠️ Awaz nahi bani — Editor → Voice tab me "Awaz Dobara Banao" dabao');
     $('aiNext').style.display='block';$('aiNext').disabled=false;
-  }catch(e){aiLog('❌ '+e.message);aiBar(100);}
+  }catch(e){aiLog('❌ '+e.message);}
   $('magicBtn').disabled=false;
 }
 async function genMeta(){
@@ -407,7 +415,8 @@ function manualFlow(){
   (async()=>{
     try{
       aiBar(20);aiLog('🎙️ Awaz ban rahi...');
-      await buildVoice(p=>aiBar(20+p*35));aiLog('✅ Awaz: '+S.voiceDur.toFixed(1)+'s');
+      try{await prepVoice(p=>aiBar(20+p*35));aiLog('✅ Awaz: '+S.voiceDur.toFixed(1)+'s');}
+      catch(e){aiLog('❌ Voice: '+e.message+' — Voice tab se retry kar lena');S.voiceDur=0;S.lineDurs=[];VSEGS=[];}
       aiBar(60);aiLog('🎥 Scenes...');
       await genScenes(p=>aiBar(60+p*35));aiBar(100);aiLog('🎉 Tayyar!');
       S.title='🎬 Meri Video';S.desc='';S.tags='#video #pakistan';
@@ -464,7 +473,9 @@ function loadProjects(){
     b.onclick=()=>{S.lines=p.lines;S.theme=p.theme;S.idea=p.idea;setAspect(p.aspect);
       S.mode='story';S.vLang='ur';S.vStyle='normal';S.vSpeed=1;
       go('s-ai');$('aiLog').innerHTML='';$('aiNext').style.display='none';
-      (async()=>{aiBar(20);aiLog('🎙️ Awaz...');await buildVoice(x=>aiBar(20+x*30));
+      (async()=>{aiBar(20);aiLog('🎙️ Awaz...');
+        try{await prepVoice(x=>aiBar(20+x*30));aiLog('✅ Awaz: '+S.voiceDur.toFixed(1)+'s');}
+        catch(e){aiLog('❌ Voice: '+e.message+' — Voice tab se retry kar lena');S.voiceDur=0;S.lineDurs=[];VSEGS=[];}
         aiBar(60);aiLog('🎥 Scenes...');await genScenes(x=>aiBar(60+x*35));aiBar(100);
         $('aiNext').style.display='block';$('aiNext').disabled=false;})();};
     d.appendChild(b);w.appendChild(d);});
@@ -710,6 +721,11 @@ function maybeThumb(el,dur){
 }
 /* ================= BUILD VIDEO ================= */
 async function buildVideo(){
+  if(!VSEGS.length){
+    alert('🎙️ Pehle awaz banao! Editor → Voice tab → "Awaz Dobara Banao"');
+    go('s-editor');etab('voice',document.querySelector('#s-editor .tabs button:nth-child(2)'));
+    return;
+  }
   go('s-make');THUMBS=[];
   const bar=$('pbar'),st=$('pstat');
   const setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
@@ -721,13 +737,20 @@ async function buildVideo(){
     const a=ac();if(a.state==='suspended')await a.resume();
     const dur=S.voiceDur,dest=a.createMediaStreamDestination(),master=a.createGain();
     master.gain.value=1;master.connect(dest);
-    const vs=a.createBufferSource();vs.buffer=S.voiceBuf;
-    const vg=a.createGain();vg.gain.value=1.12;vs.connect(vg);vg.connect(master);
+    // voice: capture audio-element streams (no proxy needed)
+    const voiceTracks=[];
+    for(const s of VSEGS){
+      try{
+        const st=s.audio.captureStream?s.audio.captureStream():s.audio.mozCaptureStream();
+        if(st)st.getAudioTracks().forEach(t=>voiceTracks.push(t));
+      }catch(e){}
+    }
+    if(!voiceTracks.length)throw new Error('Voice capture support nahi — Chrome use karo');
     if(S.music)playMusic(a,master,dur);
     playSFX(a,master,dur);
     setP(9,'Recording...');
     const vstream=cv.captureStream(30);
-    const tracks=[...vstream.getVideoTracks(),...dest.stream.getAudioTracks()];
+    const tracks=[...vstream.getVideoTracks(),...voiceTracks,...dest.stream.getAudioTracks()];
     let mime='video/webm;codecs=vp9,opus';
     if(!window.MediaRecorder||!MediaRecorder.isTypeSupported(mime))mime='';
     const rec=new MediaRecorder(new MediaStream(tracks),
@@ -736,23 +759,38 @@ async function buildVideo(){
     const done=new Promise(r=>rec.onstop=r);
     initP(50);
     const sx=S.OW/S.VW,sy=S.OH/S.VH;
-    vs.start(a.currentTime+.15);rec.start(250);
+    rec.start(250);
     const t0=performance.now();
+    // play voice segments in sequence, track ACTUAL timing for subtitles
+    const playP=(async()=>{
+      const base=t0;
+      for(let k=0;k<VSEGS.length;k++){
+        const s=VSEGS[k],ld=S.lineDurs[s.line];
+        if(k===0||VSEGS[k-1].line!==s.line){
+          if(ld){ld.start=(performance.now()-base)/1000;ld._t0=ld.start;}
+        }
+        try{await s.audio.play();}catch(e){}
+        await new Promise(r=>{s.audio.onended=()=>r();setTimeout(r,Math.max(1200,(s.dur+3)*1000));});
+        const nx=VSEGS[k+1],gap=nx?(nx.line!==s.line?0.45:0.12):0;
+        if(gap>0)await sleep(gap*1000);
+        if(ld)ld.dur=(performance.now()-base)/1000-(ld._t0||ld.start);
+      }
+    })();
     await new Promise(res=>{
       (function frame(){
         const el=(performance.now()-t0)/1000,t=el;
-        if(el>=dur+.5){res();return;}
+        if(el>=dur+1.5){res();return;}
         cx.setTransform(sx,0,0,sy,0,0);
         const li=lineAt(el),img=S.scenes[li];
         if(img)drawScene(img,t,li);else drawBG(t,{id:S.theme});
-        if(t<3)drawCap('✨ '+($('mTitle').textContent||S.title||'HAMZA AI STUDIO'),{start:0,dur:3},t);
+        if(t<3)drawCap('✨ '+(S.title||'HAMZA AI STUDIO'),{start:0,dur:3},t);
         else if(S.lines[li])drawCap(S.lines[li],S.lineDurs[li]||{start:0,dur:1},el);
         maybeThumb(el,dur);
         setP(9+Math.min(86,el/dur*86),'Ban rahi... '+Math.floor(el)+'/'+Math.floor(dur)+'s');
         requestAnimationFrame(frame);
       })();
     });
-    try{vs.stop();}catch(e){}
+    await playP.catch(()=>{});
     rec.stop();await done;setP(96,'Tayyar! 🎉');
     const blob=new Blob(chunks,{type:'video/webm'}),url=URL.createObjectURL(blob);
     const pv=$('preview');pv.src=url;pv.style.display='block';
