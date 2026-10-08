@@ -87,6 +87,8 @@ select{width:100%;padding:12px;background:#12121c;border:1px solid #333;border-r
     <button class="btn btn2" onclick="go('s-chars');loadChars()">👥 Characters</button>
     <button class="btn btn2" onclick="go('s-how')">❓ Help</button>
   </div>
+  <button class="btn btn2" onclick="voiceDoctor()">🩺 Voice Doctor — meri awaz check karo</button>
+  <div class="log" id="docOut" style="display:none"></div>
   <p class="hint" style="text-align:center;margin-top:16px">v3.0 AI Studio • 100% Free • No watermark</p>
 </div>
 
@@ -518,6 +520,31 @@ function loadChars(){
 function copyMeta(){
   const t='📌 '+$('mTitle').textContent+'\n\n'+$('mDesc').textContent+'\n\n'+$('mTags').textContent;
   navigator.clipboard.writeText(t).then(()=>alert('📋 Copy ho gaya!'));
+}
+/* ============ VOICE DOCTOR: diagnose what works on THIS device ============ */
+async function voiceDoctor(){
+  const w=$('docOut');w.innerHTML='🔍 Check ho raha...<br>';w.style.display='block';
+  const tests=[
+    ['Google Urdu','https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=ur&q=Salam&textlen=5'],
+    ['Google Hindi','https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=hi&q=Namaste&textlen=7'],
+    ['Google English','https://translate.google.com/translate_tts?ie=UTF-8&client=gtx&tl=en&q=Hello&textlen=5'],
+    ['Backup English','https://dict.youdao.com/dictvoice?audio=Hello&type=2']
+  ];
+  let out='';
+  for(const [name,url] of tests){
+    try{
+      const au=new Audio();au.src=url;
+      await new Promise((res,rej)=>{
+        const to=setTimeout(()=>rej('timeout'),12000);
+        au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
+        au.addEventListener('error',()=>{clearTimeout(to);rej('blocked');},{once:true});
+      });
+      out+='✅ '+name+' — CHALTA HAI<br>';
+    }catch(e){out+='❌ '+name+' — block hai<br>';}
+    w.innerHTML=out;
+  }
+  out+='<br>'+(('speechSynthesis' in window)?'✅ Phone ki apni awaz maujood hai':'❌ Phone awaz nahi');
+  w.innerHTML=out+'<br><br>📸 Iska screenshot bhejo!';
 }
 </script>
 <script>
