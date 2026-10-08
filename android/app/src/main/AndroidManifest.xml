@@ -6,7 +6,7 @@
     <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34"/>
     <application android:label="Hamza Video Maker"
         android:icon="@mipmap/ic_launcher"
-        android:theme="@android:style/Theme.Material.NoActionBar.Light"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity android:name=".MainActivity" android:exported="true"
             android:configChanges="orientation|screenSize|keyboardHidden">
