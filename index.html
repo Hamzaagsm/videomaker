@@ -85,11 +85,28 @@ select,input[type=text]{width:100%;padding:13px;background:#14141f;border:1px so
   <button class="btn" onclick="storyNext()">Agla Step →</button>
 </div>
 
+<!-- SCENES (realistic theme) -->
+<div class="screen" id="s-scenes">
+  <button class="back" onclick="go('s-story')">← Wapis</button>
+  <div class="stepbar"><div class="done"></div><div class="done"></div><div></div><div></div></div>
+  <h1 style="font-size:22px">🎥 Realistic Scenes</h1>
+  <p class="hint" style="text-align:center">Har line ke liye <b>asli photo jaisi</b> scene ban rahi hai...<br>Thora waqt lagega ⏳ (free AI)</p>
+  <div class="prog"><div id="scBar"></div></div>
+  <p class="hint" id="scStat" style="text-align:center"></p>
+  <div id="scPrev" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px"></div>
+  <button class="btn" id="scNext" onclick="go('s-voice')" disabled style="display:none;margin-top:14px">Agla Step →</button>
+</div>
+
 <!-- VOICE -->
 <div class="screen" id="s-voice">
   <button class="back" onclick="go('s-story')">← Wapis</button>
   <div class="stepbar"><div class="done"></div><div class="done"></div><div class="done"></div><div></div></div>
-  <h1 style="font-size:22px">Awaz Record Karo 🎤</h1>
+  <h1 style="font-size:22px">Awaz 🎤</h1>
+  <div class="row" style="margin-bottom:10px">
+    <button class="btn" id="tabRec" onclick="voiceTab('rec')">🎤 Khud Bolo</button>
+    <button class="btn btn2" id="tabAuto" onclick="voiceTab('auto')">🔊 App Bulwaye</button>
+  </div>
+  <div id="vp-rec">
   <p class="hint">Kahani zor se parho. Mukammal honay par Stop dabao.</p>
   <div class="recwrap">
     <button class="recbtn" id="recBtn" onclick="toggleRec()">🎤</button>
@@ -100,6 +117,20 @@ select,input[type=text]{width:100%;padding:13px;background:#14141f;border:1px so
   <div class="row">
     <button class="btn btn2" id="reRec" onclick="toggleRec()" disabled>🔴 Dobara Record</button>
     <button class="btn" id="voiceNext" onclick="go('s-photo')" disabled>Agla Step →</button>
+  </div>
+  </div><!-- /vp-rec -->
+  <div id="vp-auto" style="display:none">
+    <p class="hint">Kahani likhi hui hai — <b>app khud parh kar sunayegi!</b><br>Neeche zabaan chuno aur "Awaz Banao" dabao.</p>
+    <div class="lbl">Awaz ki zabaan</div>
+    <select id="ttsLang">
+      <option value="ur">🇵🇰 Urdu</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+    <button class="btn" id="genVoiceBtn" onclick="genAutoVoice()">🔊 AWAZ BANAO</button>
+    <div class="prog" id="ttsProg" style="display:none"><div id="ttsBar"></div></div>
+    <p class="hint" id="ttsStat" style="text-align:center"></p>
+    <audio id="autoPlay" controls style="width:100%;display:none;margin-top:10px"></audio>
+    <button class="btn" id="voiceNext2" onclick="go('s-photo')" disabled style="display:none">Agla Step →</button>
   </div>
 </div>
 
@@ -152,6 +183,7 @@ const THEMES=[
  {id:'romantic',em:'❤️', name:'Romantic',c1:'#1a0010', c2:'#5c0a2e'},
  {id:'islamic', em:'🕌', name:'Islamic',c1:'#00140d', c2:'#0a3d24'},
  {id:'cartoon', em:'🎨', name:'Cartoon',c1:'#0d1a2a', c2:'#2a5c8a'},
+ {id:'realistic', em:'🎥', name:'Realistic', c1:'#0a0a12', c2:'#1c1c2e'},
 ];
 const tg=document.getElementById('themeGrid');
 THEMES.forEach(t=>{
@@ -170,14 +202,17 @@ function sampleStory(){
    funny:"Aik din mera dost bazaar gaya...\nus ne dukandaar se poocha: ye kitne ka hai?\ndukandaar bola: sau rupay!\ndost bola: pachaas me de do!\ndukandaar behosh ho gaya! 😂",
    romantic:"Chandni raat thi...\nhawa me khushbu thi...\nwoh pehli baar us se mila tha...\ndil ki dharakan tez ho gayi...\n",
    islamic:"Bismillah ir Rahman ir Rahim...\nAik naik shakhs tha...\nwoh roz fajar ki namaz parhta...\nAllah us se bohat khush tha...\n",
-   cartoon:"Aik chota khargosh tha...\nwoh jungle me rehta tha...\nroz naye dost banata...\nsab us se bohat pyar karte thay! 🎨"}[S.theme?S.theme.id:'horror'];
+   cartoon:"Aik chota khargosh tha...\nwoh jungle me rehta tha...\nroz naye dost banata...\nsab us se bohat pyar karte thay! 🎨",
+   realistic:"Aik andheri raat ko aik admi jungle me chal raha tha...\nachanak us ne dekha aik purani haweli...\nandar se roshni aa rahi thi...\nwoh darwaza khol kar andar dakhil hua...\n"}[S.theme?S.theme.id:'horror'];
   document.getElementById('story').value=s;
 }
 function clearStory(){document.getElementById('story').value='';}
 function storyNext(){
   const t=document.getElementById('story').value.split('\n').map(x=>x.trim()).filter(x=>x.length>1);
   if(t.length<2){alert('Kam az kam 2 lines likho!');return;}
-  S.lines=t; go('s-voice');
+  S.lines=t;
+  if(S.theme&&S.theme.id==='realistic'){go('s-scenes');genScenes();}
+  else go('s-voice');
 }
 
 /* ============ VOICE REC ============ */
@@ -223,13 +258,96 @@ async function onRecDone(){
   S.actx=S.actx||new (window.AudioContext||window.webkitAudioContext)();
   S.voiceBuf=await S.actx.decodeAudioData(ab);
   S.voiceDur=S.voiceBuf.duration;
+  S.voiceMode='rec';S.lineDurs=null;
   document.getElementById('rectime').textContent='✅ '+S.voiceDur.toFixed(1)+' sec';
   document.getElementById('reRec').disabled=false;
-  const vn=document.getElementById('voiceNext'); vn.disabled=false;
+  const vn=document.getElementById('voiceNext'); vn.disabled=false; vn.style.display='block';
+  const n2=document.getElementById('voiceNext2'); if(n2)n2.style.display='none';
   drawIdle();
 }
 
-/* ============ PHOTO ============ */
+/* ============ VOICE TABS ============ */
+function voiceTab(w){
+  const rec=w==='rec';
+  document.getElementById('vp-rec').style.display=rec?'block':'none';
+  document.getElementById('vp-auto').style.display=rec?'none':'block';
+  document.getElementById('tabRec').className='btn'+(rec?'':' btn2');
+  document.getElementById('tabAuto').className='btn'+(rec?' btn2':'');
+  S.voiceMode=w;
+  // show the right "next" button
+  document.getElementById('voiceNext').style.display=rec?'block':'none';
+  const n2=document.getElementById('voiceNext2');
+  if(!rec&&S.voiceBuf&&S.voiceMode==='auto'){n2.style.display='block';}
+  else if(rec){n2.style.display='none';}
+}
+
+/* ============ AUTO VOICE (free TTS, no recording) ============ */
+function chunkText(t,max){
+  const parts=t.split(/(?<=[.!?؟،])/);const out=[];let cur='';
+  for(const p of parts){if((cur+p).length>max){if(cur)out.push(cur.trim());cur=p;}
+    else cur+=p;}
+  if(cur.trim())out.push(cur.trim());
+  return out.length?out:[t.slice(0,max)];
+}
+async function ttsFetch(text,lang){
+  const q=encodeURIComponent(text);
+  const u='https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl='+lang
+    +'&q='+q+'&textlen='+text.length+'&total=1&idx=0';
+  const r=await fetch('https://api.allorigins.win/raw?url='+encodeURIComponent(u));
+  if(!r.ok)throw new Error('voice server busy');
+  const ab=await r.arrayBuffer();
+  S.actx=S.actx||new (window.AudioContext||window.webkitAudioContext)();
+  return await S.actx.decodeAudioData(ab);
+}
+async function genAutoVoice(){
+  const btn=document.getElementById('genVoiceBtn');
+  const bar=document.getElementById('ttsBar'),pg=document.getElementById('ttsProg'),st=document.getElementById('ttsStat');
+  btn.disabled=true;pg.style.display='block';
+  try{
+    S.actx=S.actx||new (window.AudioContext||window.webkitAudioContext)();
+    if(S.actx.state==='suspended')await S.actx.resume();
+    const lang=document.getElementById('ttsLang').value;
+    const GAP=0.45,SR=S.actx.sampleRate;
+    const lineBufs=[],lineDurs=[];
+    let total=0,di=0;
+    for(const line of S.lines){
+      di++;st.textContent='Line '+di+'/'+S.lines.length+'...';
+      bar.style.width=Math.round(di/S.lines.length*70)+'%';
+      const chunks=chunkText(line,170),bufs=[];
+      for(const ch of chunks){bufs.push(await ttsFetch(ch,lang));}
+      // concat chunks of this line
+      let len=bufs.reduce((a,b)=>a+b.length,0);
+      const lb=S.actx.createBuffer(1,len,SR);let off=0;
+      for(const b of bufs){lb.getChannelData(0).set(b.getChannelData(0),off);off+=b.length;}
+      lineBufs.push(lb);const d=lb.duration;lineDurs.push({start:total,dur:d});
+      total+=d+GAP;
+    }
+    st.textContent='Jor raha...';bar.style.width='85%';
+    const out=S.actx.createBuffer(1,Math.ceil(total*SR),SR);
+    const oc=out.getChannelData(0);let pos=0;
+    lineDurs.forEach((ld,i)=>{oc.set(lineBufs[i].getChannelData(0),Math.floor(ld.start*SR));});
+    S.voiceBuf=out;S.voiceDur=total;S.lineDurs=lineDurs;S.voiceMode='auto';
+    // preview: encode quick wav via blob of buffer? just play via buffer source on user tap
+    const ap=document.getElementById('autoPlay');
+    // make playable blob: render through MediaStreamDestination quickly is complex; use offline preview
+    ap.style.display='none';
+    st.innerHTML='✅ Awaz tayyar! ('+total.toFixed(1)+' sec)<br>Video me yehi awaz aayegi.';
+    bar.style.width='100%';
+    // preview button
+    let pv=document.getElementById('ttsPrev');
+    if(!pv){pv=document.createElement('button');pv.id='ttsPrev';pv.className='btn btn2';
+      pv.textContent='▶️ Sun Kar Dekho';pv.onclick=()=>{
+      const s=S.actx.createBufferSource();s.buffer=S.voiceBuf;s.connect(S.actx.destination);s.start();};
+      st.parentNode.insertBefore(pv,st.nextSibling);}
+    pv.style.display='block';
+    const n2=document.getElementById('voiceNext2');n2.style.display='block';n2.disabled=false;
+    // hide rec next to avoid confusion
+    document.getElementById('voiceNext').style.display='none';
+  }catch(e){
+    st.textContent='❌ '+e.message+' — dobara try karo ya "Khud Bolo" use karo.';
+  }
+  btn.disabled=false;
+}
 document.getElementById('photoIn').onchange=e=>{
   const f=e.target.files[0]; if(!f)return;
   const r=new FileReader();
@@ -244,8 +362,9 @@ document.getElementById('photoIn').onchange=e=>{
 /* ============================================================
    RENDER ENGINE — canvas scenes + music + subtitles + export
    ============================================================ */
-const VW=720, VH=1280;
-const cv=document.createElement('canvas'); cv.width=VW; cv.height=VH;
+const VW=720, VH=1280;          // logical coords
+const OUT_W=1080, OUT_H=1920;     // HD output
+const cv=document.createElement('canvas'); cv.width=OUT_W; cv.height=OUT_H;
 const cx=cv.getContext('2d');
 
 function R(a,b){return a+Math.random()*(b-a);}
@@ -326,6 +445,49 @@ function drawBG(t,th){
   cx.fillStyle=v;cx.fillRect(0,0,VW,VH);
 }
 function i4(x){return Math.abs(Math.floor(x*7))%100;}
+
+function drawScene(img,t,li){
+  // photorealistic AI scene with slow cinematic zoom
+  const iw=img.naturalWidth||1080, ih=img.naturalHeight||1920;
+  const z=1.06+0.09*((t%24)/24);
+  const s=Math.max(VW/iw,VH/ih)*z;
+  const dw=iw*s,dh=ih*s,px=Math.sin(t*.1+li*2)*22;
+  cx.drawImage(img,(VW-dw)/2+px,(VH-dh)/2,dw,dh);
+  const v=cx.createRadialGradient(VW/2,VH/2,VH*.3,VW/2,VH/2,VH*.75);
+  v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.5)');
+  cx.fillStyle=v;cx.fillRect(0,0,VW,VH);
+}
+function loadImg(url){return new Promise((res,rej)=>{const im=new Image();
+  im.crossOrigin='anonymous';im.onload=()=>res(im);im.onerror=rej;im.src=url;});}
+
+async function genScenes(){
+  const bar=document.getElementById('scBar'),st=document.getElementById('scStat'),
+        grid=document.getElementById('scPrev');
+  grid.innerHTML='';S.scenes=[];
+  for(let i=0;i<S.lines.length;i++){
+    st.textContent='🎥 Scene '+(i+1)+'/'+S.lines.length+' ban rahi...';
+    const prompt='photorealistic cinematic film still, '+S.lines[i]
+      +', real human characters, dramatic lighting, ultra detailed, vertical';
+    let img=null;
+    for(let a=0;a<3&&!img;a++){
+      try{
+        const u='https://image.pollinations.ai/prompt/'+encodeURIComponent(prompt)
+          +'?width=1080&height=1920&nologo=true&seed='+Math.floor(Math.random()*999999);
+        img=await loadImg(u);
+      }catch(e){await new Promise(r=>setTimeout(r,2500));}
+    }
+    S.scenes.push(img);
+    if(img){const th=document.createElement('img');th.src=img.src;
+      th.style.cssText='width:100%;border-radius:8px;aspect-ratio:9/16;object-fit:cover';
+      grid.appendChild(th);}
+    else{const d=document.createElement('div');
+      d.style.cssText='aspect-ratio:9/16;background:#222;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:28px';
+      d.textContent='🎨';grid.appendChild(d);}
+    bar.style.width=Math.round((i+1)/S.lines.length*100)+'%';
+  }
+  st.textContent='✅ Scenes tayyar! Kuch na bani to animated background aayega.';
+  const nx=document.getElementById('scNext');nx.style.display='block';nx.disabled=false;
+}
 
 function drawPhoto(t){
   if(!S.photo||!S.photo.width)return;
@@ -434,12 +596,20 @@ async function buildVideo(){
     let mime='video/webm;codecs=vp9,opus';
     if(!window.MediaRecorder||!MediaRecorder.isTypeSupported(mime))mime='';
     const rec=new MediaRecorder(new MediaStream(tracks),
-      mime?{mimeType:mime,videoBitsPerSecond:5e6}:undefined);
+      mime?{mimeType:mime,videoBitsPerSecond:8e6}:{videoBitsPerSecond:8e6});
     const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
     const done=new Promise(r=>rec.onstop=r);
     initP(S.theme.id==='horror'?70:45);
-    // subtitle timing: even split
-    const n=S.lines.length,per=dur/n;
+    // subtitle timing: precise per-line durs (auto voice) or even split (recorded)
+    const n=S.lines.length;
+    const lineAt=(el)=>{
+      if(S.lineDurs&&S.lineDurs.length===n){
+        for(let i=0;i<n;i++){const ld=S.lineDurs[i];
+          if(el>=ld.start&&el<ld.start+ld.dur)return i;}
+        return n-1;
+      }
+      return Math.min(n-1,Math.floor(el/(dur/n)));
+    };
     const t0=actx.currentTime+.15;
     vs.start(t0);rec.start(200);
     const startT=performance.now();
@@ -447,9 +617,11 @@ async function buildVideo(){
       function frame(){
         const el=(performance.now()-startT)/1000, t=el;
         if(el>=dur+.4){resolve();return;}
-        drawBG(t,S.theme);drawPhoto(t);
+        cx.setTransform(OUT_W/VW,0,0,OUT_H/VH,0,0); // HD upscale, crisp vectors
+        const li=lineAt(el);
+        if(S.theme.id==='realistic'&&S.scenes&&S.scenes[li]){drawScene(S.scenes[li],t,li);}
+        else{drawBG(t,S.theme);drawPhoto(t);}
         if(t<3.2)drawTitle(S.theme);
-        const li=Math.min(n-1,Math.floor(el/per));
         if(S.lines[li])drawSub(S.lines[li]);
         setP(10+Math.min(85,el/dur*85),'Ban rahi hai... '+Math.floor(el)+'/'+Math.floor(dur)+' sec');
         requestAnimationFrame(frame);
