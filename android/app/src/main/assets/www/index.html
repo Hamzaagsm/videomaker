@@ -942,37 +942,43 @@ function aiLoadImages(){
   for(const k in chs){const im=new Image();im.src=AIIMGDATA[chs[k]];AICHAR[k]=im;}
 }
 /* draw AI character as a clean rounded card (sticker style!) */
+/* v3.19: VIDEO-STYLE full character display — bilkul video jaisa! */
 function drawAIChar(x,y,w,ch,talking,t){
   const im=AICHAR[ch];if(!im||!im.complete||!im.naturalWidth)return;
-  const h=w*0.75; // 4:3-ish card
-  const bounce=talking?Math.abs(Math.sin(t*8))*h*0.03:Math.abs(Math.sin(t*2))*h*0.01;
-  cx.save();cx.translate(x,y-bounce);
-  // shadow
-  cx.fillStyle='rgba(0,0,0,.3)';cx.beginPath();
-  cx.roundRect(-w/2+6,-h/2+10,w,h,24);cx.fill();
-  // white card border
-  cx.fillStyle='#fff';cx.beginPath();
-  cx.roundRect(-w/2,-h/2,w,h,24);cx.fill();
-  // talking glow!
-  if(talking){cx.strokeStyle='#ffd93d';cx.lineWidth=8;cx.beginPath();cx.roundRect(-w/2,-h/2,w,h,24);cx.stroke();}
-  // image clipped to rounded rect
-  cx.beginPath();cx.roundRect(-w/2+8,-h/2+8,w-16,h-16,16);cx.clip();
   const iw=im.naturalWidth,ih=im.naturalHeight;
-  const sc=Math.max((w-16)/iw,(h-16)/ih);
-  const dw=iw*sc,dh=ih*sc;
-  cx.drawImage(im,-dw/2,-dh/2,dw,dh);
+  // FULL image, aspect preserved — video jaisa bara!
+  const h=w*(ih/iw);
+  const bounce=talking?Math.abs(Math.sin(t*8))*h*0.03:Math.abs(Math.sin(t*2))*h*0.01;
+  const zoom=talking?1+Math.sin(t*4)*0.02:1; // halka zoom jab bol raha hai
+  cx.save();cx.translate(x,y-bounce);cx.scale(zoom,zoom);
+  // soft shadow neeche
+  cx.fillStyle='rgba(0,0,0,.35)';
+  cx.beginPath();cx.ellipse(0,h/2-10,w*0.42,h*0.06,0,0,7);cx.fill();
+  // FULL character image — koi card nahi, bilkul video jaisa!
+  cx.drawImage(im,-w/2,-h/2,w,h);
+  // talking = golden glow border!
+  if(talking){
+    cx.strokeStyle='#ffd93d';cx.lineWidth=Math.max(6,w*0.02);
+    cx.strokeRect(-w/2,-h/2,w,h);
+  }
   cx.restore();
-  // name tag
-  cx.save();cx.font='bold '+Math.round(w*0.09)+'px sans-serif';cx.textAlign='center';
-  cx.lineWidth=5;cx.strokeStyle='rgba(0,0,0,.6)';cx.strokeText(ch,x,y+h/2+24);
-  cx.fillStyle='#fff';cx.fillText(ch,x,y+h/2+24);cx.restore();
+  // BARA name label — saaf nazar aaye!
+  const fs=Math.round(w*0.11);
+  cx.save();cx.font='bold '+fs+'px sans-serif';cx.textAlign='center';
+  const ny=y+h/2+fs+8;
+  // pill background
+  const tw=cx.measureText(ch).width;
+  cx.fillStyle=talking?'#ffd93d':'rgba(0,0,0,.55)';
+  cx.beginPath();cx.roundRect(x-tw/2-16,ny-fs-8,tw+32,fs+20,fs/2+10);cx.fill();
+  cx.fillStyle=talking?'#000':'#fff';cx.fillText(ch,x,ny+4);
+  cx.restore();
   // talking sound waves!
   if(talking){
-    cx.save();cx.strokeStyle='rgba(255,217,61,.9)';cx.lineWidth=4;
+    cx.save();cx.strokeStyle='rgba(255,217,61,.95)';cx.lineWidth=5;
     for(let i=0;i<3;i++){
-      const r=w*0.55+i*14+Math.sin(t*10)*6;
-      cx.beginPath();cx.arc(x,y,r, -0.6, 0.6);cx.stroke();
-      cx.beginPath();cx.arc(x,y,r, Math.PI-0.6, Math.PI+0.6);cx.stroke();
+      const r=w*0.55+i*16+Math.sin(t*10)*6;
+      cx.beginPath();cx.arc(x,y,r,-0.6,0.6);cx.stroke();
+      cx.beginPath();cx.arc(x,y,r,Math.PI-0.6,Math.PI+0.6);cx.stroke();
     }
     cx.restore();
   }
@@ -1581,10 +1587,10 @@ function carFrame(lines,lineIdx,t,W,H){
   const pos=[0.22,0.5,0.78];
   chars.forEach((ch,i)=>{
     const active=lines[lineIdx]&&lines[lineIdx].ch===ch;
-    // v3.18: AI character cards — active speaker BIG in center!
-    const w=W*(active?0.62:0.38);
+    // v3.19: VIDEO JAISA! Active speaker FULL BARA — bilkul video ki tarah!
+    const w=W*(active?0.88:0.30);
     const cxp=active?W*0.5:W*pos[i];
-    const cyp=active?H*0.52:H*0.60;
+    const cyp=active?H*0.48:H*0.72;
     const driveX=active?0:Math.sin(t*0.8+i*2)*W*0.02;
     drawAIChar(cxp+driveX,cyp,w,ch,active,t);
   });
@@ -2229,10 +2235,10 @@ function kidFrame(line,lineIdx,t,W,H){
     else li2=li2?li2+' '+w:w;
   }
   if(li2){cx.strokeText(li2,W/2,yl);cx.fillText(li2,W/2,yl);}
-  // v3.18: AI cartoon character cards at bottom!
+  // v3.19: VIDEO JAISI bari gariyan + name!
   const carX=(t*120)%(W+300)-150;
-  drawAIChar(carX,H*0.78,W*0.45,'Rayo',true,t);
-  drawAIChar(W-carX,H*0.78,W*0.38,'Bella',false,t+1);
+  drawAIChar(carX,H*0.72,W*0.62,'Rayo',true,t);
+  drawAIChar(W-carX,H*0.72,W*0.50,'Bella',false,t+1);
 }
 function kidDrawShape(type,x,y,s,c){
   cx.fillStyle=c;cx.strokeStyle='#fff';cx.lineWidth=6;
