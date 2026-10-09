@@ -786,7 +786,12 @@ async function voiceDoctor(){
 "use strict";
 /* ================= RENDER ENGINE ================= */
 const cv=document.createElement('canvas');
-cv.style.cssText='position:fixed;left:-10000px;top:0;width:4px;height:4px;pointer-events:none;';
+function cvHide(){cv.style.cssText='position:fixed;left:-10000px;top:0;width:4px;height:4px;pointer-events:none;z-index:9999;';}
+function cvShowRec(){
+  // visible small preview during recording — fixes WebView captureStream on many phones
+  cv.style.cssText='position:fixed;right:10px;bottom:10px;width:140px;height:248px;z-index:9999;border:2px solid #f43f5e;border-radius:12px;pointer-events:none;box-shadow:0 0 20px rgba(244,63,94,.6);';
+}
+cvHide();
 if(document.body)document.body.appendChild(cv);else document.addEventListener('DOMContentLoaded',()=>document.body.appendChild(cv));
 const cx=cv.getContext('2d');
 /* Robust MediaRecorder mime picker: vp9 -> vp8 -> default */
@@ -1041,6 +1046,7 @@ async function buildVideo(){
     if(S.music)playMusic(a,master,dur);
     playSFX(a,master,dur);
     setP(9,'Recording...');
+    cvShowRec();
     const vstream=cv.captureStream(30);
     const tracks=[...vstream.getVideoTracks(),...voiceTracks,...dest.stream.getAudioTracks()];
     const mime=pickMime();
@@ -1082,7 +1088,7 @@ async function buildVideo(){
       })();
     });
     await playP.catch(()=>{});
-    rec.stop();await done;setP(96,'Tayyar! 🎉');
+    rec.stop();await done;cvHide();setP(96,'Tayyar! 🎉');
     const blob=new Blob(chunks,{type:mime||'video/webm'});
     const url=setVideoPreview($('preview'),blob,mime);
     const dl=$('dlBtn');dl.style.display='block';
@@ -1105,7 +1111,7 @@ async function buildVideo(){
     $('metaCard').style.display='block';
     $('saveBtn').style.display='block';$('againBtn').style.display='block';
     setP(100,'✅ Video tayyar!');
-  }catch(e){st.textContent='❌ '+e.message;}
+  }catch(e){try{cvHide();}catch(_){}st.textContent='❌ '+e.message;}
 }
 /* ================= TALKING CARS STUDIO (v3.7) ================= */
 const CARCHARS={
@@ -1499,56 +1505,77 @@ async function carMakeVideo(silent){
     const W=720,H=1280;cv.width=1080;cv.height=1920;
     const sx=1080/W,sy=1920/H;
     setP(45,'🎬 Recording...');
-    const vstream=cv.captureStream(30);
-    const tracks=[...vstream.getVideoTracks()];
-    for(const s of segs){
-      try{
-        const ast=s.au.captureStream?s.au.captureStream():s.au.mozCaptureStream();
-        if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
-      }catch(e){}
-    }
-    const mime=pickMime();
-    const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
-    const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
-    const doneRec=new Promise(r=>rec.onstop=r);
-    rec.start(250);
-    const t0=performance.now();
-    let li=0;
-    const isBundled=segs.length===1&&segs[0].bundled;
-    const isSilent=segs.length===1&&segs[0].silent;
-    const playP=(async()=>{
-      for(let i=0;i<segs.length;i++){
-        if(segs[i].silent){await sleep(segs[i].dur*1000);continue;}
-        if(!isBundled)li=i;
-        try{await segs[i].au.play();}catch(e){}
-        await new Promise(r=>{segs[i].au.onended=r;setTimeout(r,segs[i].dur*1000+2500);});
-        if(!isBundled)await sleep(350);
-      }
-    })();
-    await new Promise(res=>{
-      (function frame(){
-        const el=(performance.now()-t0)/1000;
-        if(isBundled||isSilent){
-          const ld=segs[0].lineDurs;li=ld.length-1;
-          for(let k=0;k<ld.length;k++){if(el<ld[k].start+ld[k].dur){li=k;break;}}
+    cvShowRec(); // visible canvas = reliable captureStream on WebView
+    // draw one frame BEFORE capture so stream has content
+    cx.setTransform(sx,0,0,sy,0,0);carFrame(lines,0,0,W,H);
+    await sleep(300);
+    async function carRecordOnce(videoOnly){
+      const vstream=cv.captureStream(30);
+      const vts=vstream.getVideoTracks();
+      if(!vts.length)throw new Error('Video track nahi mila (vstream khaali)');
+      if(vts[0].readyState!=='live')throw new Error('Video track dead hai: '+vts[0].readyState);
+      const tracks=[...vts];
+      if(!videoOnly){
+        for(const s of segs){
+          try{
+            if(!s.au)continue;
+            const ast=s.au.captureStream?s.au.captureStream():s.au.mozCaptureStream();
+            if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
+          }catch(e){}
         }
-        cx.setTransform(sx,0,0,sy,0,0);
-        carFrame(lines,li,el,W,H);
-        setP(45+Math.min(50,el/totalDur*50),'Ban rahi... '+Math.floor(el)+'s');
-        if(el>=totalDur+1){res();return;}
-        requestAnimationFrame(frame);
+      }
+      const mime=pickMime();
+      const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
+      const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+      const doneRec=new Promise(r=>rec.onstop=r);
+      rec.start(250);
+      const t0=performance.now();
+      let li=0;
+      const isBundled=segs.length===1&&segs[0].bundled;
+      const isSilent=segs.length===1&&segs[0].silent;
+      const playP=(async()=>{
+        for(let i=0;i<segs.length;i++){
+          if(segs[i].silent){await sleep(segs[i].dur*1000);continue;}
+          if(!isBundled)li=i;
+          try{if(segs[i].au)await segs[i].au.play();}catch(e){}
+          await new Promise(r=>{if(segs[i].au)segs[i].au.onended=r;setTimeout(r,segs[i].dur*1000+2500);});
+          if(!isBundled)await sleep(350);
+        }
       })();
-    });
-    await playP.catch(()=>{});
-    rec.stop();await doneRec;
+      await new Promise(res=>{
+        (function frame(){
+          const el=(performance.now()-t0)/1000;
+          if(isBundled||isSilent){
+            const ld=segs[0].lineDurs;li=ld.length-1;
+            for(let k=0;k<ld.length;k++){if(el<ld[k].start+ld[k].dur){li=k;break;}}
+          }
+          cx.setTransform(sx,0,0,sy,0,0);
+          carFrame(lines,li,el,W,H);
+          setP(45+Math.min(50,el/totalDur*50),'Ban rahi... '+Math.floor(el)+'s');
+          if(el>=totalDur+1){res();return;}
+          requestAnimationFrame(frame);
+        })();
+      });
+      await playP.catch(()=>{});
+      rec.stop();await doneRec;
+      return {chunks,mime};
+    }
+    let {chunks,mime}=await carRecordOnce(false);
+    let blob=new Blob(chunks,{type:mime||'video/webm'});
+    if(blob.size<1000){
+      // retry: video-only (audio capture often breaks WebView recording)
+      setP(50,'🔄 Audio ke baghair try...');
+      ({chunks,mime}=await carRecordOnce(true));
+      blob=new Blob(chunks,{type:mime||'video/webm'});
+    }
+    cvHide();
     setP(100,'✅ Tayyar!');
-    const blob=new Blob(chunks,{type:mime||'video/webm'});
     const url=setVideoPreview($('carPreview'),blob,mime);
     const dl=$('carDl');dl.style.display='block';
     dl.onclick=()=>{const a=document.createElement('a');a.href=url;
       a.download='talking-cars-'+Date.now()+'.'+blobExt(mime);a.click();};
     st.textContent='✅ Video tayyar! Download karo! 🎉';
-  }catch(e){st.textContent='❌ '+e.message;}
+  }catch(e){try{cvHide();}catch(_){}st.textContent='❌ '+e.message;}
 }
 /* Download voice MP3 separately (for CapCut workflow) */
 async function carDownloadVoice(){
