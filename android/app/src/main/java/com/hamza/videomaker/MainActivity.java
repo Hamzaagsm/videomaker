@@ -380,17 +380,27 @@ public class MainActivity extends Activity {
                 "interview-host.mp4",
                 "drama-heroine.mp4"
         };
+        // v3.23: Family Story mode — clips hosted on clips-v3 release
+        private static final String CLIP_BASE_V3 =
+                "https://github.com/Hamzaagsm/videomaker/releases/download/clips-v3/";
+        private static final String[] CLIPS_V3 = {
+                "woman-happy.mp4", "woman-walking.mp4",
+                "man-friendly.mp4", "man-walking.mp4",
+                "baby-cute.mp4", "baby-playing.mp4"
+        };
 
         private String[] clipsForMode(String mode) {
             if ("story".equals(mode)) return new String[]{"story-narrator.mp4", "story-magic.mp4"};
             if ("kids".equals(mode)) return new String[]{"kids-hero.mp4", "kids-play.mp4"};
             if ("interview".equals(mode)) return new String[]{"interview-host.mp4"};
             if ("drama".equals(mode)) return new String[]{"drama-heroine.mp4"};
+            if ("family".equals(mode)) return CLIPS_V3;
             return CLIPS; // default: v1 real cartoon clips
         }
 
         private String clipBaseFor(String name) {
             for (String c : CLIPS_V2) if (c.equals(name)) return CLIP_BASE_V2;
+            for (String c : CLIPS_V3) if (c.equals(name)) return CLIP_BASE_V3;
             return CLIP_BASE;
         }
 
@@ -453,10 +463,11 @@ public class MainActivity extends Activity {
         @JavascriptInterface
         public String getClipPath(String name) {
             try {
-                // only allow known clip names (no path traversal) — v1 + v2
+                // only allow known clip names (no path traversal) — v1 + v2 + v3
                 boolean ok = false;
                 for (String c : CLIPS) if (c.equals(name)) { ok = true; break; }
                 if (!ok) for (String c : CLIPS_V2) if (c.equals(name)) { ok = true; break; }
+                if (!ok) for (String c : CLIPS_V3) if (c.equals(name)) { ok = true; break; }
                 if (!ok) return "";
                 File f = new File(clipDir(), name);
                 if (clipOk(f)) return f.getAbsolutePath();
