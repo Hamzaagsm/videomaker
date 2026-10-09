@@ -84,6 +84,9 @@ select{width:100%;padding:12px;background:#12121c;border:1px solid #333;border-r
     <button class="btn btn2" onclick="go('s-projects');loadProjects()">📁 Mere Projects</button>
   </div>
   <div class="row">
+    <button class="btn" onclick="go('s-cars');carInit()" style="background:linear-gradient(135deg,#ff6b35,#e94560)">🚗 Talking Cars Studio</button>
+  </div>
+  <div class="row">
     <button class="btn btn2" onclick="go('s-chars');loadChars()">👥 Characters</button>
     <button class="btn btn2" onclick="go('s-how')">❓ Help</button>
   </div>
@@ -201,6 +204,36 @@ select{width:100%;padding:12px;background:#12121c;border:1px solid #333;border-r
     <button class="btn" onclick="addChar()">➕ Character Save Karo</button>
   </div>
   <div id="charList"></div>
+</div>
+
+<!-- ============ TALKING CARS STUDIO ============ -->
+<div class="screen" id="s-cars">
+  <button class="back" onclick="go('s-home')">← Home</button>
+  <h1 style="font-size:22px">🚗 Talking Cars Studio</h1>
+  <p class="hint">Gariyan <b>apas me baatein</b> karengi! Script likho ya template chuno 👇</p>
+  <div class="card">
+    <div class="lbl" style="margin-top:0">📖 Story Template</div>
+    <div class="seg" id="carTplSeg">
+      <button data-t="race" class="on" onclick="carTemplate('race',this)">🏁 Race Day</button>
+      <button data-t="lost" onclick="carTemplate('lost',this)">🧸 Lost Teddy</button>
+      <button data-t="rain" onclick="carTemplate('rain',this)">🌧️ Rainy Day</button>
+    </div>
+    <div class="lbl">✍️ Script (format: <b>Naam: baat</b>)</div>
+    <textarea id="carScript" class="big-idea" style="min-height:150px" placeholder="Rayo: Hello Bella!&#10;Bella: Hi Rayo!"></textarea>
+    <div class="row">
+      <div><div class="lbl">🗣️ Zabaan</div>
+        <select id="carLang"><option value="en" selected>🇬🇧 English</option><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option></select></div>
+      <div><div class="lbl">⏱️ Andaza</div><div class="kv" id="carDur" style="padding:10px">~0 sec</div></div>
+    </div>
+    <div class="lbl">🎭 Characters (auto awaz!)</div>
+    <p class="hint">🔴 <b>Rayo</b> (tez awaz) • 🟡 <b>Bella</b> (meethi awaz) • 🔵 <b>Rusty</b> (bhari awaz)</p>
+  </div>
+  <button class="btn btn2" onclick="carPreview()">👀 Preview Dekho</button>
+  <button class="btn btn3" onclick="carMakeVideo()">🎬 VIDEO BANAO →</button>
+  <div class="prog" id="carProg" style="display:none"><div id="carBar"></div></div>
+  <p class="hint" id="carStat" style="text-align:center"></p>
+  <video id="carPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
+  <button class="btn" id="carDl" style="display:none">⬇️ DOWNLOAD KARO</button>
 </div>
 
 <!-- ============ HELP ============ -->
@@ -916,6 +949,276 @@ async function buildVideo(){
     setP(100,'✅ Video tayyar!');
   }catch(e){st.textContent='❌ '+e.message;}
 }
+/* ================= TALKING CARS STUDIO (v3.7) ================= */
+const CARCHARS={
+  Rayo:{color:'#e63946',dark:'#b02331',pitch:1.15,eye:0},
+  Bella:{color:'#ffd23f',dark:'#d9a91f',pitch:1.55,eye:1},
+  Rusty:{color:'#4a90d9',dark:'#2f66a3',pitch:0.7,eye:2}
+};
+const CARTPL={
+race:`Rayo: Vroom vroom! What a perfect day for a race, Bella!
+Bella: It sure is, Rayo! I have been practicing all week!
+Rayo: Practicing? You will need more than practice to beat me!
+Bella: Oh really? Watch and learn, slowpoke! Ready, set, go!
+Rusty: Slow down, young ones! Remember, safety first!
+Rayo: Hey! No fair! Bella started early! Vroom! Here I come!
+Bella: Ha ha! Catch me if you can! I am the queen of speed!
+Rusty: Wonderful! You both are champions in my eyes!
+Rayo: Wow! You are fast, Bella! Okay, you win this time!
+Bella: Good race, Rayo! Friends always win together!`,
+lost:`Rayo: Good morning, Toy Town! What a sunny day!
+Bella: Rayo! Look! A little teddy bear is lost in the park!
+Rayo: Oh no! Poor teddy! We must help him find his home!
+Rusty: A lost toy is a sad toy. Let us search together.
+Bella: I will check the school! You check the ice cream shop, Rayo!
+Rayo: Vroom! I am on it! Nobody is faster than Rayo!
+Rusty: And I will follow these tiny footprints. Teamwork, friends!
+Bella: Look! A little girl is crying near the cottage!
+Rayo: Knock knock! Is this your teddy bear, little girl?
+Bella: She is smiling now! We did it! Hooray!
+Rusty: Helping others is the greatest victory of all!
+Rayo: Friends forever! Bye bye, everyone!`,
+rain:`Bella: Oh no! It is raining! Our picnic is ruined!
+Rayo: Do not worry, Bella! Rain cannot stop our fun!
+Rusty: I know a dry cave near the big hill. Follow me!
+Bella: Wow! This cave is so cozy! Thank you, Rusty!
+Rayo: Let us tell stories while we wait! I will go first!
+Rusty: Long ago, this town was built by brave little cars.
+Bella: Really? Tell us more, Grandpa Rusty!
+Rayo: I love stories! Vroom! My engine is happy!
+Rusty: And that is why we always help each other, rain or shine!
+Bella: The rain stopped! Look! A beautiful rainbow!
+Rayo: Best rainy day ever! Friends make everything fun!`
+};
+function carTemplate(name,btn){
+  document.querySelectorAll('#carTplSeg button').forEach(b=>b.classList.remove('on'));
+  if(btn)btn.classList.add('on');
+  $('carScript').value=CARTPL[name]||'';
+  carEstDur();
+}
+function carInit(){
+  if(!$('carScript').value)carTemplate('race',document.querySelector('#carTplSeg button'));
+  carEstDur();
+}
+function carParse(){
+  const lines=$('carScript').value.split('\n'),out=[];
+  for(const ln of lines){
+    const m=ln.match(/^\s*(Rayo|Bella|Rusty)\s*:\s*(.+)\s*$/i);
+    if(m){
+      const nm=m[1].charAt(0).toUpperCase()+m[1].slice(1).toLowerCase();
+      if(CARCHARS[nm])out.push({ch:nm,text:m[2].trim()});
+    }
+  }
+  return out;
+}
+function carEstDur(){
+  const d=carParse(),words=d.join(' ').split(/\s+/).length;
+  $('carDur').textContent='~'+Math.round(words/2.5)+' sec ('+d.length+' lines)';
+}
+/* draw a cartoon car with animated mouth */
+function drawCar(x,y,s,ch,mouth,t,bounce){
+  const C=CARCHARS[ch];
+  cx.save();cx.translate(x,y+(bounce?-s*0.06*Math.abs(Math.sin(t*6)):0));
+  // shadow
+  cx.fillStyle='rgba(0,0,0,.25)';cx.beginPath();cx.ellipse(0,s*0.42,s*0.85,s*0.14,0,0,7);cx.fill();
+  // body
+  cx.fillStyle=C.color;cx.beginPath();
+  cx.roundRect(-s,s*-0.28,s*2,s*0.62,s*0.28);cx.fill();
+  cx.fillStyle=C.dark;cx.fillRect(-s*0.72,-s*0.28,s*1.44,s*0.1);
+  // cabin
+  cx.fillStyle=C.color;cx.beginPath();
+  cx.roundRect(-s*0.55,-s*0.78,s*1.1,s*0.55,s*0.22);cx.fill();
+  // windshield
+  cx.fillStyle='rgba(200,235,255,.9)';cx.beginPath();
+  cx.roundRect(-s*0.42,-s*0.68,s*0.84,s*0.38,s*0.14);cx.fill();
+  // eyes on windshield
+  const ex=s*0.2;
+  [-ex,ex].forEach(exx=>{
+    cx.fillStyle='#fff';cx.beginPath();cx.arc(exx,-s*0.5,s*0.14,0,7);cx.fill();
+    cx.fillStyle='#222';cx.beginPath();cx.arc(exx,-s*0.48,s*0.07,0,7);cx.fill();
+  });
+  // mouth (animated!)
+  cx.fillStyle='#5c1a1a';
+  const mh=mouth?s*0.16*(0.5+0.5*Math.abs(Math.sin(t*14))):s*0.03;
+  cx.beginPath();cx.ellipse(0,s*0.12,s*0.22,Math.max(s*0.03,mh),0,0,7);cx.fill();
+  // wheels
+  [-s*0.62,s*0.62].forEach(wx=>{
+    cx.fillStyle='#222';cx.beginPath();cx.arc(wx,s*0.34,s*0.24,0,7);cx.fill();
+    cx.fillStyle='#888';cx.beginPath();cx.arc(wx,s*0.34,s*0.1,0,7);cx.fill();
+  });
+  // name
+  cx.fillStyle='#fff';cx.font='bold '+Math.round(s*0.22)+'px sans-serif';
+  cx.textAlign='center';cx.fillText(ch,0,-s*0.95);
+  cx.restore();
+}
+function drawCarBG(t,W,H){
+  const g=cx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0,'#7ec8f7');g.addColorStop(0.55,'#bfe8ff');g.addColorStop(0.56,'#8fd18f');g.addColorStop(1,'#6faf6f');
+  cx.fillStyle=g;cx.fillRect(0,0,W,H);
+  // sun
+  cx.fillStyle='#ffdf3f';cx.beginPath();cx.arc(W*0.85,H*0.12,H*0.07,0,7);cx.fill();
+  // clouds
+  cx.fillStyle='rgba(255,255,255,.9)';
+  for(let i=0;i<3;i++){
+    const clx=((t*20+i*W*0.4)%(W+300))-150;
+    cx.beginPath();cx.ellipse(clx,H*(0.1+i*0.08),70,26,0,0,7);cx.fill();
+  }
+  // road
+  cx.fillStyle='#555';cx.fillRect(0,H*0.72,W,H*0.28);
+  cx.fillStyle='#fff';
+  for(let i=0;i<8;i++){
+    const dx=((t*150+i*W/4)%(W+200))-100;
+    cx.fillRect(dx,H*0.84,W*0.08,10);
+  }
+  // trees
+  for(let i=0;i<5;i++){
+    const tx=(i*W/4.2+100)%W;
+    cx.fillStyle='#5a3a1a';cx.fillRect(tx-8,H*0.6,16,H*0.12);
+    cx.fillStyle='#2f8f2f';cx.beginPath();cx.arc(tx,H*0.55,H*0.05,0,7);cx.fill();
+  }
+}
+/* TTS for one car line */
+async function carSpeak(ch,text,lang){
+  const pitch=CARCHARS[ch].pitch;
+  const nt=nativeTTS();
+  if(nt){
+    try{
+      const uri=await nativeSpeak(text,lang,pitch,1.0);
+      const au=new Audio();au.src=uri;
+      await new Promise((res,rej)=>{
+        const to=setTimeout(()=>rej(0),15000);
+        au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
+        au.addEventListener('error',()=>{clearTimeout(to);rej(0);},{once:true});
+      });
+      return au;
+    }catch(e){}
+  }
+  // web fallback
+  const pv=lang==='en'?'webapp':'webapp';
+  const au=await loadAudio(ttsURL(text,lang,pv),1.0);
+  return au;
+}
+/* render cars frame */
+function carFrame(lines,lineIdx,t,W,H){
+  drawCarBG(t,W,H);
+  const chars=[...new Set(lines.map(l=>l.ch))].slice(0,3);
+  const pos=[0.22,0.5,0.78];
+  chars.forEach((ch,i)=>{
+    const active=lines[lineIdx]&&lines[lineIdx].ch===ch;
+    const s=H*0.11*(active?1.15:1);
+    drawCar(W*pos[i],H*0.62,s,ch,active,t,active);
+  });
+  // subtitle of current line
+  if(lines[lineIdx]){
+    const L=lines[lineIdx];
+    cx.fillStyle='rgba(0,0,0,.55)';
+    const fs=Math.round(H*0.032);
+    cx.font='bold '+fs+'px sans-serif';cx.textAlign='center';
+    const txt=L.ch+': '+L.text;
+    const wdt=Math.min(W*0.92,cx.measureText(txt).width+40);
+    cx.beginPath();cx.roundRect(W/2-wdt/2,H*0.86,wdt,fs*1.7,14);cx.fill();
+    cx.fillStyle='#fff';cx.fillText(txt,W/2,H*0.86+fs*1.18);
+  }
+}
+/* play with audio (preview & record share the timeline; audio driven here) */
+async function carPlayWithAudio(){
+  const lines=carParse();
+  if(!lines.length){alert('Script me "Naam: baat" format me lines likho!');return;}
+  const lang=$('carLang').value;
+  const st=$('carStat');$('carProg').style.display='block';
+  $('carBar').style.width='10%';if(st)st.textContent='🎙️ Awazein...';
+  const segs=[];
+  for(const L of lines){
+    const au=await carSpeak(L.ch,L.text,lang);
+    segs.push({au,L,dur:Math.max(0.8,au.duration||2)});
+  }
+  const W=720,H=1280;cv.width=1080;cv.height=1920;
+  const sx=1080/W,sy=1920/H;
+  $('carBar').style.width='45%';if(st)st.textContent='▶️ Chal rahi...';
+  const t0=performance.now();
+  let li=0;
+  const frame=()=>{
+    const el=(performance.now()-t0)/1000;
+    cx.setTransform(sx,0,0,sy,0,0);
+    carFrame(lines,li,el,W,H);
+    if(li<segs.length-1||el<2)requestAnimationFrame(frame);
+  };
+  frame();
+  for(let i=0;i<segs.length;i++){
+    li=i;
+    try{await segs[i].au.play();}catch(e){}
+    await new Promise(r=>{segs[i].au.onended=r;setTimeout(r,segs[i].dur*1000+2500);});
+    await sleep(350);
+  }
+  $('carBar').style.width='100%';if(st)st.textContent='✅ Khatam!';
+}
+async function carPreview(){await carPlayWithAudio();}
+async function carMakeVideo(){
+  const lines=carParse();
+  if(!lines.length){alert('Script me "Naam: baat" format me lines likho!');return;}
+  const lang=$('carLang').value;
+  const bar=$('carBar'),st=$('carStat');
+  $('carProg').style.display='block';
+  const setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  try{
+    setP(5,'🎙️ Awazein ban rahi...');
+    const segs=[];
+    for(let i=0;i<lines.length;i++){
+      setP(5+i/lines.length*35,'🎙️ Line '+(i+1)+'/'+lines.length);
+      const au=await carSpeak(lines[i].ch,lines[i].text,lang);
+      segs.push({au,dur:Math.max(0.8,(au.duration||2))});
+    }
+    const totalDur=segs.reduce((a,s)=>a+s.dur+0.35,0);
+    const W=720,H=1280;cv.width=1080;cv.height=1920;
+    const sx=1080/W,sy=1920/H;
+    setP(45,'🎬 Recording...');
+    const vstream=cv.captureStream(30);
+    const tracks=[...vstream.getVideoTracks()];
+    for(const s of segs){
+      try{
+        const ast=s.au.captureStream?s.au.captureStream():s.au.mozCaptureStream();
+        if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
+      }catch(e){}
+    }
+    let mime='video/webm;codecs=vp9,opus';
+    if(!window.MediaRecorder||!MediaRecorder.isTypeSupported(mime))mime='';
+    const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
+    const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+    const doneRec=new Promise(r=>rec.onstop=r);
+    rec.start(250);
+    const t0=performance.now();
+    let li=0,lt=0;
+    const playP=(async()=>{
+      for(let i=0;i<segs.length;i++){
+        li=i;
+        try{await segs[i].au.play();}catch(e){}
+        await new Promise(r=>{segs[i].au.onended=r;setTimeout(r,segs[i].dur*1000+2500);});
+        await sleep(350);
+      }
+    })();
+    await new Promise(res=>{
+      (function frame(){
+        const el=(performance.now()-t0)/1000;
+        cx.setTransform(sx,0,0,sy,0,0);
+        carFrame(lines,li,el,W,H);
+        setP(45+Math.min(50,el/totalDur*50),'Ban rahi... '+Math.floor(el)+'s');
+        if(el>=totalDur+1){res();return;}
+        requestAnimationFrame(frame);
+      })();
+    });
+    await playP.catch(()=>{});
+    rec.stop();await doneRec;
+    setP(100,'✅ Tayyar!');
+    const blob=new Blob(chunks,{type:'video/webm'});
+    const url=URL.createObjectURL(blob);
+    const pv=$('carPreview');pv.src=url;pv.style.display='block';
+    const dl=$('carDl');dl.style.display='block';
+    dl.onclick=()=>{const a=document.createElement('a');a.href=url;
+      a.download='talking-cars-'+Date.now()+'.webm';a.click();};
+    st.textContent='✅ Video tayyar! Download karo! 🎉';
+  }catch(e){st.textContent='❌ '+e.message;}
+}
+$('carScript')?.addEventListener('input',carEstDur);
 </script>
 </body>
 </html>
