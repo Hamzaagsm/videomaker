@@ -303,7 +303,7 @@ function nativeSpeak(text,lang,pitch,rate){
   return new Promise((res,rej)=>{
     const uid='u'+Date.now()+Math.floor(Math.random()*99999);
     nativePending[uid]={res:res,rej:rej};
-    try{nativeTTS().speakToFile(text,lang,pitch,rate,uid);}
+    try{nativeTTS().speakToFile(normUrdu(text),lang,pitch,rate,uid);}
     catch(e){delete nativePending[uid];rej(e);}
     setTimeout(()=>{if(nativePending[uid]){delete nativePending[uid];rej(new Error('timeout'));}},30000);
   });
@@ -556,13 +556,33 @@ function copyMeta(){
   const t='📌 '+$('mTitle').textContent+'\n\n'+$('mDesc').textContent+'\n\n'+$('mTags').textContent;
   navigator.clipboard.writeText(t).then(()=>alert('📋 Copy ho gaya!'));
 }
+/* JS-side Urdu normalization (backup for native layer) */
+function normUrdu(t){
+  if(!t)return '';
+  return t.replace(/ك/g,'ک').replace(/ي/g,'ی').replace(/ى/g,'ی').replace(/ه/g,'ھ').replace(/ة/g,'ہ')
+          .replace(/[\s‌‍]+/g,' ').trim();
+}
 /* ============ VOICE DOCTOR: diagnose what works on THIS device ============ */
 async function voiceDoctor(){
   const w=$('docOut');w.innerHTML='🔍 Check ho raha...<br>';w.style.display='block';
   let out='';
-  // Native APK TTS?
+  // Native APK TTS with per-language voice check (v3.6)
   const nt=nativeTTS();
-  out+=nt?'✅ Phone Native TTS — MAUJOOD HAI (APK mode)<br>':'ℹ️ Native TTS nahi (website mode)<br>';
+  if(nt){
+    out+='✅ Phone Native TTS — MAUJOOD HAI (APK mode)<br>';
+    for(const L of [['ur','Urdu'],['hi','Hindi'],['en','English']]){
+      try{
+        const j=JSON.parse(nt.checkVoice(L[0]));
+        if(j.available) out+='✅ '+L[1]+' awaz — INSTALLED'+(j.engineVoice?' ('+j.engineVoice.slice(0,24)+')':'')+'<br>';
+        else if(j.needsInstall) out+='⚠️ '+L[1]+' awaz — <b>INSTALL KARO</b><br>';
+        else out+='❌ '+L[1]+' awaz — nahi mili<br>';
+      }catch(e){out+='❓ '+L[1]+' — check nahi hua<br>';}
+    }
+    out+='<button class="btn btn2" style="margin-top:8px" onclick="nativeTTS().openVoiceInstaller()">📥 Urdu Awaz Install Karo</button><br>';
+    out+='<small style="color:#888">Ya: Settings → Language → Text-to-speech → ⚙️ → Install voice data → <b>Urdu</b></small><br>';
+  }else{
+    out+='ℹ️ Native TTS nahi (website mode)<br>';
+  }
   w.innerHTML=out;
   const tests=[
     ['Google WebApp Urdu','https://translate.google.com/translate_tts?ie=UTF-8&client=webapp&tl=ur&q=Salam&textlen=5'],
