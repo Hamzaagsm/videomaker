@@ -1181,6 +1181,7 @@ function carTemplate(name,btn){
   carEstDur();carAutoLang();
 }
 function carInit(){
+  carLoadImages();
   if(!$('carScript').value)carTemplate('race',document.querySelector('#carTplSeg button'));
   carEstDur();
 }
@@ -1282,15 +1283,88 @@ async function carSpeak(ch,text,lang){
   const au=await loadAudio(ttsURL(text,lang,pv),1.0);
   return au;
 }
-/* render cars frame */
+/* ===== BEAUTIFUL CARTOON SPRITES (v3.9) ===== */
+const CARIMG={},BGIMG={};
+function carLoadImages(){
+  const cars={Rayo:'img/car_rayo.png',Bella:'img/car_bella.png',Rusty:'img/car_rusty.png'};
+  for(const k in cars){
+    const im=new Image();im.src=cars[k];CARIMG[k]=im;
+  }
+  const bgs={day:'img/bg_day.png',race:'img/bg_race.png',park:'img/bg_park.png',town:'img/bg_town.png',night:'img/bg_night.png',beach:'img/bg_beach.png'};
+  for(const k in bgs){
+    const im=new Image();im.src=bgs[k];BGIMG[k]=im;
+  }
+}
+/* scene changes every 3 lines like real videos! */
+const BGORDER=['day','park','town','race','beach','night'];
+function carGetBG(lineIdx){
+  const tpl=carIsTemplate();
+  if(tpl==='race')return BGIMG.race;
+  if(tpl==='rain')return BGIMG.night;
+  // change scene every 3 lines
+  const scene=BGORDER[Math.floor((lineIdx||0)/3)%BGORDER.length];
+  return BGIMG[scene]||BGIMG.day;
+}
+/* draw beautiful sprite car with talking mouth */
+function drawCarSprite(x,y,s,ch,active,t,talking){
+  const im=CARIMG[ch];
+  if(!im||!im.complete||!im.naturalWidth){
+    drawCar(x,y,s,ch,active,t,talking);return; // fallback to canvas
+  }
+  const w=s*2.2,h=s*1.65;
+  const bounce=active?Math.abs(Math.sin(t*8))*s*0.08:Math.abs(Math.sin(t*3))*s*0.02;
+  // lean into motion
+  const tilt=active?0.03:0.01;
+  cx.save();
+  cx.translate(x,y-bounce);
+  cx.rotate(tilt);
+  // shadow
+  cx.fillStyle='rgba(0,0,0,.25)';
+  cx.beginPath();cx.ellipse(0,h*0.42,w*0.42,h*0.1,0,0,7);cx.fill();
+  // car image
+  cx.drawImage(im,-w/2,-h/2,w,h);
+  // talking mouth overlay (animated open/close)
+  if(talking&&active){
+    const mo=Math.abs(Math.sin(t*10));
+    cx.fillStyle='rgba(60,20,20,.9)';
+    cx.beginPath();
+    cx.ellipse(w*0.12,h*0.18,w*0.09,h*(0.04+mo*0.09),0,0,7);
+    cx.fill();
+    // teeth when mouth open
+    if(mo>0.5){
+      cx.fillStyle='#fff';
+      cx.fillRect(w*0.12-w*0.05,h*0.18-h*0.02,w*0.1,h*0.03);
+    }
+  }
+  cx.restore();
+  // name label with glow
+  cx.fillStyle='#fff';cx.font='bold '+Math.round(s*0.28)+'px sans-serif';
+  cx.textAlign='center';
+  cx.strokeStyle='rgba(0,0,0,.7)';cx.lineWidth=4;
+  const ny=y-h/2-bounce-s*0.18;
+  cx.strokeText(ch,x,ny);cx.fillText(ch,x,ny);
+}
 function carFrame(lines,lineIdx,t,W,H){
-  drawCarBG(t,W,H);
+  // scene-changing beautiful background (like real videos!)
+  const bg=carGetBG(lineIdx);
+  if(bg&&bg.complete&&bg.naturalWidth){
+    cx.drawImage(bg,0,0,W,H);
+    // cinematic vignette
+    const vg=cx.createRadialGradient(W/2,H/2,H*0.3,W/2,H/2,H*0.75);
+    vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.35)');
+    cx.fillStyle=vg;cx.fillRect(0,0,W,H);
+  }else{
+    drawCarBG(t,W,H);
+  }
   const chars=[...new Set(lines.map(l=>l.ch))].slice(0,3);
   const pos=[0.22,0.5,0.78];
   chars.forEach((ch,i)=>{
     const active=lines[lineIdx]&&lines[lineIdx].ch===ch;
-    const s=H*0.11*(active?1.15:1);
-    drawCar(W*pos[i],H*0.62,s,ch,active,t,active);
+    const s=H*0.11*(active?1.12:1);
+    // cars drive with engine vibration + slight lane movement
+    const driveX=Math.sin(t*0.8+i*2)*W*0.02;
+    const driveY=Math.abs(Math.sin(t*12+i))*H*0.004; // engine vibration
+    drawCarSprite(W*pos[i]+driveX,H*0.62-driveY,s,ch,active,t,active);
   });
   // subtitle of current line
   if(lines[lineIdx]){
