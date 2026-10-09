@@ -51,7 +51,29 @@ public class MainActivity extends Activity {
         s.setDomStorageEnabled(true);
         s.setMediaPlaybackRequiresUserGesture(false);
         s.setAllowFileAccess(true);
-        web.setWebViewClient(new WebViewClient());
+        web.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, android.webkit.WebResourceRequest request){
+                return handleUrl(request.getUrl().toString());
+            }
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url){
+                return handleUrl(url);
+            }
+            private boolean handleUrl(String url){
+                // let WebView handle web + local files
+                if(url.startsWith("http://")||url.startsWith("https://")||url.startsWith("file://"))return false;
+                // whatsapp://, tel:, mailto: etc -> open in external app
+                try{
+                    Intent i=new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(i);
+                }catch(Exception ignored){
+                    Toast.makeText(MainActivity.this,"App nahi khul saki",Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
         web.setWebChromeClient(new WebChromeClient());
         web.addJavascriptInterface(new TTSBridge(), "HamzaTTS");
         web.addJavascriptInterface(new UpdateBridge(), "HamzaUpdate");
