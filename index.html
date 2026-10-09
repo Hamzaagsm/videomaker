@@ -103,6 +103,9 @@ select{width:100%;padding:12px;background:rgba(20,12,35,.9);border:1px solid rgb
     <button class="btn" onclick="go('s-cars');carInit()" style="background:linear-gradient(135deg,#ff6b35,#e94560)">🚗 Talking Cars Studio</button>
   </div>
   <div class="row">
+    <button class="btn" onclick="go('s-song');songInit()" style="background:linear-gradient(135deg,#b565ff,#ff6b9d)">🎵 Song Maker</button>
+  </div>
+  <div class="row">
     <button class="btn btn2" onclick="go('s-chars');loadChars()">👥 Characters</button>
     <button class="btn btn2" onclick="go('s-how')">❓ Help</button>
   </div>
@@ -265,7 +268,7 @@ setTimeout(applyWaVis,300);
       <button data-t="rain" onclick="carTemplate('rain',this)">🌧️ Rainy Day</button>
     </div>
     <div class="lbl">✍️ Script (format: <b>Naam: baat</b>)</div>
-    <textarea id="carScript" class="big-idea" style="min-height:150px" placeholder="Rayo: Hello Bella!&#10;Bella: Hi Rayo!"></textarea>
+    <textarea id="carScript" class="big-idea" style="min-height:150px" placeholder="Rayo: Hello Bella!&#10;Bella: Hi Rayo!" oninput="carAutoLang()" onpaste="setTimeout(carAutoLang,100)"></textarea>
     <div class="row">
       <div><div class="lbl">🗣️ Zabaan</div>
         <select id="carLang"><option value="en" selected>🇬🇧 English</option><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option></select></div>
@@ -276,6 +279,11 @@ setTimeout(applyWaVis,300);
   </div>
   <button class="btn btn2" onclick="carPreview()">👀 Preview Dekho</button>
   <button class="btn btn3" onclick="carMakeVideo()">🎬 VIDEO BANAO →</button>
+  <div class="row">
+    <button class="btn btn2" onclick="carMakeVideo(true)">🔇 SILENT Video (bina awaz)</button>
+    <button class="btn btn2" onclick="carDownloadVoice()">🎙️ Sirf VOICE Download (MP3)</button>
+  </div>
+  <p class="hint">💡 <b>Workflow:</b> Pehle Silent Video banao → phir Voice download karo → CapCut me jor lo! 🎬</p>
   <div class="prog" id="carProg" style="display:none"><div id="carBar"></div></div>
   <p class="hint" id="carStat" style="text-align:center"></p>
   <video id="carPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
@@ -288,6 +296,26 @@ setTimeout(applyWaVis,300);
   <h1 style="font-size:22px">❓ Help</h1>
   <p class="hint"><b>✨ AI Studio:</b> Sirf idea likho — AI kahani, awaz, scenes, music sab banayegi!<br><br><b>🔥 Viral Short:</b> Hook + tez pacing + CTA ke saath TikTok-ready video.<br><br><b>👥 Characters:</b> Apna character save karo, har episode me wahi rahega.<br><br><b>📁 Projects:</b> Purani videos ki details save rehti hain.<br><br>⚠️ Free AI kabhi busy ho sakta hai — retry karo ya manual likho.</p>
   <button class="btn" onclick="go('s-home')">Samajh Gaya →</button>
+</div>
+
+<!-- ============ SONG MAKER ============ -->
+<div class="screen" id="s-song">
+  <button class="back" onclick="go('s-home')">← Home</button>
+  <h1 style="font-size:22px">🎵 Song Maker</h1>
+  <p class="hint">Lyrics likho — <b>dhun ke sath</b> suno! 🎶</p>
+  <div class="card">
+    <div class="lbl" style="margin-top:0">✍️ Lyrics (har line alag)</div>
+    <textarea id="songLyrics" class="big-idea" style="min-height:130px" placeholder="Chandni raaton me&#10;Teri yaadon me&#10;Khoya rahoon me..."></textarea>
+    <div class="lbl">🎭 Mood</div>
+    <div class="seg" id="songMood"><button data-v="happy" class="on">😊 Happy</button><button data-v="sad">😢 Sad</button><button data-v="energy">⚡ Energetic</button><button data-v="romantic">💖 Romantic</button></div>
+    <div class="lbl">🗣️ Zaban</div>
+    <select id="songLang"><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option><option value="en">🇬🇧 English</option></select>
+  </div>
+  <button class="btn btn3" onclick="songPreview()">▶️ SUNO</button>
+  <button class="btn" onclick="songDownload()">⬇️ SONG DOWNLOAD</button>
+  <div class="prog" id="songProg" style="display:none"><div id="songBar"></div></div>
+  <p class="hint" id="songStat" style="text-align:center"></p>
+  <p class="hint">💡 Awaz phone ki hogi, lekin <b>dhun aur music</b> ke sath — maza ayega! 🎶</p>
 </div>
 
 <script>
@@ -1112,6 +1140,25 @@ function carIsTemplate(){
   for(const k in CARTPL){if(CARTPL[k].trim()===cur)return k;}
   return null;
 }
+/* Auto-detect script language: Urdu / Hindi / English / Roman-Urdu */
+function detectLang(text){
+  if(/[\u0600-\u06FF]/.test(text))return 'ur';  // Urdu script
+  if(/[\u0900-\u097F]/.test(text))return 'hi';  // Devanagari
+  // Roman Urdu check: common Urdu words in Latin script
+  const uw=(text.toLowerCase().match(/\b(hai|hain|tha|thi|the|ka|ki|ko|me|ne|se|par|aur|ye|wo|kya|nahi|raha|rahi|rahe|gaya|gayi|kar|karo|mera|meri|tum|main|hum|bhi|liye|wala|wali|jao|aao|dekho|suno|acha|bohat|zyada|kam)\b/g)||[]).length;
+  const words=text.split(/\s+/).length;
+  if(uw>=2||uw/words>0.08)return 'ur';  // Roman Urdu → Urdu voice
+  return 'en';
+}
+function carAutoLang(){
+  const txt=$('carScript').value;
+  if(txt.trim().length<10)return;
+  const dl=detectLang(txt);
+  $('carLang').value=dl;
+  const names={ur:'🇵🇰 Urdu',hi:'🇮🇳 Hindi',en:'🇬🇧 English'};
+  carHint('🌍 Zaban auto-detect: <b>'+names[dl]+'</b>');
+}
+function carHint(t){let h=$('carLangHint');if(!h){h=document.createElement('p');h.id='carLangHint';h.className='hint';$('carLang').after(h);}h.innerHTML=t;}
 /* estimate per-line durations from word counts (for mouth-sync with bundled audio) */
 function carEstLineDurs(lines,totalDur){
   const words=lines.map(l=>l.text.split(/\s+/).length);
@@ -1126,7 +1173,7 @@ function carTemplate(name,btn){
   document.querySelectorAll('#carTplSeg button').forEach(b=>b.classList.remove('on'));
   if(btn)btn.classList.add('on');
   $('carScript').value=CARTPL[name]||'';
-  carEstDur();
+  carEstDur();carAutoLang();
 }
 function carInit(){
   if(!$('carScript').value)carTemplate('race',document.querySelector('#carTplSeg button'));
@@ -1262,16 +1309,25 @@ async function carPlayWithAudio(){
   const tpl=carIsTemplate();
   const segs=[];
   if(tpl&&CARAUDIO[tpl]){
-    // v3.8: bundled neural voices!
-    if(st)st.textContent='🎙️ Meethi awaz load ho rahi...';
-    const au=new Audio();au.src=CARAUDIO[tpl];
-    await new Promise((res,rej)=>{
-      const to=setTimeout(()=>rej(0),15000);
-      au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
-      au.addEventListener('error',()=>{clearTimeout(to);rej(0);},{once:true});
-    });
-    const durs=carEstLineDurs(lines,au.duration||44);
-    segs.push({au,L:null,dur:au.duration||44,bundled:true,lineDurs:durs});
+    // v3.8: bundled neural voices! (fallback to TTS if missing)
+    try{
+      if(st)st.textContent='🎙️ Meethi awaz load ho rahi...';
+      const au=new Audio();au.src=CARAUDIO[tpl];
+      await new Promise((res,rej)=>{
+        const to=setTimeout(()=>rej(new Error('audio timeout')),15000);
+        au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
+        au.addEventListener('error',()=>{clearTimeout(to);rej(new Error('audio load fail'));},{once:true});
+      });
+      const durs=carEstLineDurs(lines,au.duration||44);
+      segs.push({au,L:null,dur:au.duration||44,bundled:true,lineDurs:durs});
+    }catch(e){
+      // fallback: normal TTS
+      if(st)st.textContent='🎙️ Awazein... (backup)';
+      for(const L of lines){
+        const au=await carSpeak(L.ch,L.text,lang);
+        segs.push({au,L,dur:Math.max(0.8,au.duration||2)});
+      }
+    }
   }else{
     for(const L of lines){
       const au=await carSpeak(L.ch,L.text,lang);
@@ -1306,7 +1362,7 @@ async function carPlayWithAudio(){
   $('carBar').style.width='100%';if(st)st.textContent='✅ Khatam!';
 }
 async function carPreview(){await carPlayWithAudio();}
-async function carMakeVideo(){
+async function carMakeVideo(silent){
   const lines=carParse();
   if(!lines.length){alert('Script me "Naam: baat" format me lines likho!');return;}
   const lang=$('carLang').value;
@@ -1314,20 +1370,34 @@ async function carMakeVideo(){
   $('carProg').style.display='block';
   const setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
   try{
-    setP(5,'🎙️ Awazein ban rahi...');
+    setP(5,silent?'🎬 Silent video...':'🎙️ Awazein ban rahi...');
     const tpl=carIsTemplate();
     const segs=[];
-    if(tpl&&CARAUDIO[tpl]){
-      // v3.8: bundled neural voices!
-      setP(10,'🎙️ Meethi awaz load ho rahi...');
-      const au=new Audio();au.src=CARAUDIO[tpl];
-      await new Promise((res,rej)=>{
-        const to=setTimeout(()=>rej(new Error('audio load fail')),15000);
-        au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
-        au.addEventListener('error',()=>{clearTimeout(to);rej(new Error('audio load fail'));},{once:true});
-      });
-      const durs=carEstLineDurs(lines,au.duration||44);
-      segs.push({au,dur:au.duration||44,bundled:true,lineDurs:durs});
+    if(silent){
+      // silent mode: estimate timing from word counts, no audio
+      const estTotal=lines.reduce((a,l)=>a+Math.max(2,l.text.split(/\s+/).length/2.5),0);
+      const durs=carEstLineDurs(lines,estTotal);
+      segs.push({au:null,dur:estTotal+2,silent:true,lineDurs:durs});
+    }else if(tpl&&CARAUDIO[tpl]){
+      // v3.8: bundled neural voices! (fallback to TTS if missing)
+      try{
+        setP(10,'🎙️ Meethi awaz load ho rahi...');
+        const au=new Audio();au.src=CARAUDIO[tpl];
+        await new Promise((res,rej)=>{
+          const to=setTimeout(()=>rej(new Error('audio timeout')),15000);
+          au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
+          au.addEventListener('error',()=>{clearTimeout(to);rej(new Error('audio load fail'));},{once:true});
+        });
+        const durs=carEstLineDurs(lines,au.duration||44);
+        segs.push({au,dur:au.duration||44,bundled:true,lineDurs:durs});
+      }catch(e){
+        setP(10,'🎙️ Backup awaz...');
+        for(let i=0;i<lines.length;i++){
+          setP(5+i/lines.length*35,'🎙️ Line '+(i+1)+'/'+lines.length);
+          const au=await carSpeak(lines[i].ch,lines[i].text,lang);
+          segs.push({au,dur:Math.max(0.8,(au.duration||2))});
+        }
+      }
     }else{
       for(let i=0;i<lines.length;i++){
         setP(5+i/lines.length*35,'🎙️ Line '+(i+1)+'/'+lines.length);
@@ -1356,8 +1426,10 @@ async function carMakeVideo(){
     const t0=performance.now();
     let li=0;
     const isBundled=segs.length===1&&segs[0].bundled;
+    const isSilent=segs.length===1&&segs[0].silent;
     const playP=(async()=>{
       for(let i=0;i<segs.length;i++){
+        if(segs[i].silent){await sleep(segs[i].dur*1000);continue;}
         if(!isBundled)li=i;
         try{await segs[i].au.play();}catch(e){}
         await new Promise(r=>{segs[i].au.onended=r;setTimeout(r,segs[i].dur*1000+2500);});
@@ -1367,7 +1439,7 @@ async function carMakeVideo(){
     await new Promise(res=>{
       (function frame(){
         const el=(performance.now()-t0)/1000;
-        if(isBundled){
+        if(isBundled||isSilent){
           const ld=segs[0].lineDurs;li=ld.length-1;
           for(let k=0;k<ld.length;k++){if(el<ld[k].start+ld[k].dur){li=k;break;}}
         }
@@ -1390,7 +1462,165 @@ async function carMakeVideo(){
     st.textContent='✅ Video tayyar! Download karo! 🎉';
   }catch(e){st.textContent='❌ '+e.message;}
 }
+/* Download voice MP3 separately (for CapCut workflow) */
+async function carDownloadVoice(){
+  const lines=carParse();
+  if(!lines.length){alert('Pehle script likho!');return;}
+  const st=$('carStat');st.textContent='🎙️ Voice tayyar ho rahi...';
+  const tpl=carIsTemplate();
+  try{
+    if(tpl&&CARAUDIO[tpl]){
+      // beautiful bundled voice!
+      const a=document.createElement('a');
+      a.href=CARAUDIO[tpl];a.download='voice-'+tpl+'.mp3';a.click();
+      st.textContent='✅ Beautiful voice download ho gayi! 🎉';
+    }else{
+      // custom: use phone TTS, record to file via MediaRecorder
+      st.textContent='🎙️ Phone se awaz bana raha... (thoda time lagega)';
+      const lang=$('carLang').value;
+      const au=new Audio();
+      // generate all lines, play sequentially and capture
+      const segs=[];
+      for(const L of lines){
+        const a=await carSpeak(L.ch,L.text,lang);
+        segs.push(a);
+      }
+      // combine via MediaRecorder
+      const tracks=[];
+      for(const a of segs){
+        try{
+          const ast=a.captureStream?a.captureStream():a.mozCaptureStream();
+          if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
+        }catch(e){}
+      }
+      if(!tracks.length)throw new Error('Audio capture nahi hua');
+      const rec=new MediaRecorder(new MediaStream(tracks));
+      const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+      const done=new Promise(r=>rec.onstop=r);
+      rec.start(250);
+      for(const a of segs){
+        try{await a.play();}catch(e){}
+        await new Promise(r=>{a.onended=r;setTimeout(r,(a.duration||2)*1000+1500);});
+      }
+      rec.stop();await done;
+      const blob=new Blob(chunks,{type:'audio/webm'});
+      const url=URL.createObjectURL(blob);
+      const dl=document.createElement('a');dl.href=url;
+      dl.download='voice-'+Date.now()+'.webm';dl.click();
+      st.textContent='✅ Voice download ho gayi! (phone ki awaz)';
+    }
+  }catch(e){st.textContent='❌ '+e.message;}
+}
 $('carScript')?.addEventListener('input',carEstDur);
+
+/* ================= SONG MAKER ================= */
+let songAC=null;
+function songInit(){seg('songMood',()=>{});}
+function songMoodVal(){return segVal('songMood')||'happy';}
+/* chord progressions per mood (frequencies) */
+const MOODS={
+  happy:{bpm:100,chords:[[261.6,329.6,392.0],[293.7,369.9,440.0],[329.6,415.3,493.9],[293.7,369.9,440.0]],bass:[130.8,146.8,164.8,146.8]},
+  sad:{bpm:70,chords:[[220.0,261.6,329.6],[174.6,220.0,261.6],[196.0,246.9,293.7],[220.0,261.6,329.6]],bass:[110.0,87.3,98.0,110.0]},
+  energy:{bpm:128,chords:[[261.6,329.6,392.0],[261.6,329.6,392.0],[293.7,369.9,440.0],[329.6,415.3,493.9]],bass:[130.8,130.8,146.8,164.8]},
+  romantic:{bpm:80,chords:[[246.9,293.7,369.9],[220.0,277.2,329.6],[196.0,246.9,293.7],[246.9,293.7,369.9]],bass:[123.5,110.0,98.0,123.5]}
+};
+function songPlayChord(ac,notes,t,dur,vol){
+  notes.forEach(f=>{
+    const o=ac.createOscillator(),g=ac.createGain();
+    o.type='triangle';o.frequency.value=f;
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+0.1);
+    g.gain.exponentialRampToValueAtTime(0.001,t+dur);
+    o.connect(g);g.connect(ac.destination);
+    o.start(t);o.stop(t+dur+0.1);
+  });
+}
+function songPlayBass(ac,f,t,dur){
+  const o=ac.createOscillator(),g=ac.createGain();
+  o.type='sine';o.frequency.value=f;
+  g.gain.setValueAtTime(0.25,t);g.gain.exponentialRampToValueAtTime(0.001,t+dur);
+  o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+dur+0.1);
+}
+function songPlayBeat(ac,t,mood){
+  // kick
+  const ko=ac.createOscillator(),kg=ac.createGain();
+  ko.type='sine';ko.frequency.setValueAtTime(150,t);ko.frequency.exponentialRampToValueAtTime(40,t+0.12);
+  kg.gain.setValueAtTime(0.5,t);kg.gain.exponentialRampToValueAtTime(0.001,t+0.15);
+  ko.connect(kg);kg.connect(ac.destination);ko.start(t);ko.stop(t+0.2);
+  if(mood==='energy'){
+    // snare on off-beat
+    const no=ac.createOscillator(),ng=ac.createGain();
+    no.type='square';no.frequency.value=180;
+    ng.gain.setValueAtTime(0.15,t+0.25);ng.gain.exponentialRampToValueAtTime(0.001,t+0.35);
+    no.connect(ng);ng.connect(ac.destination);no.start(t+0.25);no.stop(t+0.4);
+  }
+}
+async function songBuildTrack(lines,mood){
+  if(songAC)songAC.close().catch(()=>{});
+  songAC=new (window.AudioContext||window.webkitAudioContext)();
+  const ac=songAC,M=MOODS[mood]||MOODS.happy;
+  const beatDur=60/M.bpm*2; // 2 beats per line
+  const dest=ac.createMediaStreamDestination();
+  // schedule music
+  const t0=ac.currentTime+0.3;
+  const totalDur=lines.length*beatDur+2;
+  for(let i=0;i<lines.length;i++){
+    const t=t0+i*beatDur;
+    const ch=M.chords[i%M.chords.length];
+    songPlayChord(ac,ch,t,beatDur*0.95,0.12);
+    songPlayBass(ac,M.bass[i%M.bass.length],t,beatDur*0.9);
+    songPlayBeat(ac,t,mood);
+  }
+  // outro
+  songPlayChord(ac,M.chords[0],t0+lines.length*beatDur,1.5,0.1);
+  return {ac,dest,beatDur,t0,totalDur};
+}
+async function songPreview(){
+  const txt=$('songLyrics').value.trim();
+  if(txt.length<3){alert('Pehle lyrics likho! ✍️');return;}
+  const lines=txt.split('\n').map(x=>x.trim()).filter(x=>x.length>1);
+  if(!lines.length){alert('Lyrics khali hain!');return;}
+  const mood=songMoodVal(),lang=$('songLang').value;
+  const st=$('songStat');$('songProg').style.display='block';
+  st.textContent='🎵 Dhun ban rahi...';
+  try{
+    const {ac,dest,beatDur,t0}=await songBuildTrack(lines,mood);
+    // connect music to both speakers and recorder
+    // (music already goes to ac.destination via oscillators)
+    st.textContent='🎤 Ga raha... ('+lines.length+' lines)';
+    // sing each line on the beat with melodic pitch
+    const scale=[0,2,4,5,7,9,11,12]; // major scale semitones
+    const basePitch=lang==='en'?1.0:1.0;
+    for(let i=0;i<lines.length;i++){
+      $('songBar').style.width=Math.round(i/lines.length*90)+'%';
+      const semitone=scale[i%scale.length];
+      const pitch=basePitch*Math.pow(2,semitone/12)*0.95;
+      const waitUntil=(t0+i*beatDur-ac.currentTime)*1000;
+      if(waitUntil>0)await sleep(waitUntil);
+      // speak the line with melodic pitch
+      try{
+        if(nativeTTS()){
+          const uri=await nativeSpeak(lines[i],lang,pitch,1.0);
+          const au=new Audio(uri);await au.play();
+          await new Promise(r=>{au.onended=r;setTimeout(r,Math.min(beatDur*1000,8000));});
+        }else{
+          await new Promise(res=>{
+            const u=new SpeechSynthesisUtterance(lines[i]);
+            u.lang=lang==='ur'?'ur-PK':lang==='hi'?'hi-IN':'en-US';
+            u.pitch=pitch;u.rate=0.95;u.onend=res;u.onerror=res;
+            speechSynthesis.speak(u);setTimeout(res,beatDur*1000);
+          });
+        }
+      }catch(e){}
+    }
+    $('songBar').style.width='100%';
+    st.textContent='✅ Song tayyar! 🎉';
+    await sleep(1500);if(songAC)songAC.close().catch(()=>{});
+  }catch(e){st.textContent='❌ '+e.message;}
+  setTimeout(()=>$('songProg').style.display='none',1000);
+}
+async function songDownload(){
+  alert('🎵 Pehle "SUNO" dabao, phir screen record karke song save karo!\n\n(Jald hi direct download ayega!)');
+}
 </script>
 </body>
 </html>
