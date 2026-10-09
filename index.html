@@ -190,7 +190,14 @@ function featSend(){
   cb.scrollTop=cb.scrollHeight;
   inp.value='';
   const msg=encodeURIComponent('💬 MEER App se msg:\n\n'+t);
-  setTimeout(()=>window.open('https://wa.me/923400646576?text='+msg,'_blank'),800);
+  const url='https://wa.me/923400646576?text='+msg;
+  // WebView-safe: use anchor click instead of window.open
+  setTimeout(()=>{
+    const a=document.createElement('a');
+    a.href=url;a.target='_blank';a.rel='noopener';
+    document.body.appendChild(a);a.click();
+    setTimeout(()=>a.remove(),1000);
+  },800);
 }
 </script>
   <button class="btn btn2" onclick="voiceDoctor()">🩺 Voice Doctor — meri awaz check karo</button>
@@ -890,9 +897,11 @@ function cvShowRec(){
   // visible small preview during recording — fixes WebView captureStream on many phones
   cv.style.cssText='position:fixed;right:10px;bottom:10px;width:140px;height:248px;z-index:9999;border:2px solid #f43f5e;border-radius:12px;pointer-events:none;box-shadow:0 0 20px rgba(244,63,94,.6);';
 }
-cvHide();NOIMG=false;
+cvHide();
 if(document.body)document.body.appendChild(cv);else document.addEventListener('DOMContentLoaded',()=>document.body.appendChild(cv));
 const cx=cv.getContext('2d');
+/* when true, skip external PNGs (they taint canvas in WebView -> captureStream fails) */
+let NOIMG=false;
 /* Robust MediaRecorder mime picker: vp9 -> vp8 -> default */
 function pickMime(){
   if(!window.MediaRecorder)return '';
@@ -1410,8 +1419,6 @@ function carLoadImages(){
     const im=new Image();im.src=bgs[k];BGIMG[k]=im;
   }
 }
-/* when true, skip external PNGs (they taint canvas in WebView -> captureStream fails) */
-let NOIMG=false;
 /* scene changes every 3 lines like real videos! */
 const BGORDER=['day','park','town','race','beach','night'];
 function carGetBG(lineIdx){
