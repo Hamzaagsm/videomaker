@@ -283,12 +283,6 @@ setTimeout(applyWaVis,300);
     <button class="btn btn2" onclick="carMakeVideo(true)">🔇 SILENT Video</button>
     <button class="btn btn2" onclick="carDownloadVoice()">🎙️ VOICE Download</button>
   </div>
-  <div class="card">
-    <div class="lbl" style="margin-top:0">🎤 Apni Awaz Record Karo</div>
-    <p class="hint">Har line ko **apni awaz** me bolo! Rayo/Bella/Rusty ki pitch auto lagegi! 🎭</p>
-    <div id="carRecList"></div>
-    <button class="btn btn2" onclick="carShowRec()">🎤 Recording Shuru Karo</button>
-  </div>
   <div class="prog" id="carProg" style="display:none"><div id="carBar"></div></div>
   <p class="hint" id="carStat" style="text-align:center"></p>
   <video id="carPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
@@ -792,7 +786,24 @@ async function voiceDoctor(){
 "use strict";
 /* ================= RENDER ENGINE ================= */
 const cv=document.createElement('canvas');
+cv.style.cssText='position:fixed;left:-10000px;top:0;width:4px;height:4px;pointer-events:none;';
+if(document.body)document.body.appendChild(cv);else document.addEventListener('DOMContentLoaded',()=>document.body.appendChild(cv));
 const cx=cv.getContext('2d');
+/* Robust MediaRecorder mime picker: vp9 -> vp8 -> default */
+function pickMime(){
+  if(!window.MediaRecorder)return '';
+  const cands=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm','video/mp4'];
+  for(const m of cands){try{if(MediaRecorder.isTypeSupported(m))return m;}catch(e){}}
+  return '';
+}
+function blobExt(mime){return mime.includes('mp4')?'mp4':'webm';}
+/* Set video preview safely: validates blob, forces load */
+function setVideoPreview(vidEl,blob,mime){
+  if(!blob||blob.size<1000)throw new Error('Video khaali bani (0 bytes) — dobara try karo');
+  const url=URL.createObjectURL(blob);
+  vidEl.src=url;vidEl.load();vidEl.style.display='block';
+  return url;
+}
 const VW=()=>S.VW, VH=()=>S.VH;
 function R(a,b){return a+Math.random()*(b-a);}
 const P=[];
@@ -1032,8 +1043,7 @@ async function buildVideo(){
     setP(9,'Recording...');
     const vstream=cv.captureStream(30);
     const tracks=[...vstream.getVideoTracks(),...voiceTracks,...dest.stream.getAudioTracks()];
-    let mime='video/webm;codecs=vp9,opus';
-    if(!window.MediaRecorder||!MediaRecorder.isTypeSupported(mime))mime='';
+    const mime=pickMime();
     const rec=new MediaRecorder(new MediaStream(tracks),
       mime?{mimeType:mime,videoBitsPerSecond:8e6}:{videoBitsPerSecond:8e6});
     const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
@@ -1073,11 +1083,11 @@ async function buildVideo(){
     });
     await playP.catch(()=>{});
     rec.stop();await done;setP(96,'Tayyar! 🎉');
-    const blob=new Blob(chunks,{type:'video/webm'}),url=URL.createObjectURL(blob);
-    const pv=$('preview');pv.src=url;pv.style.display='block';
+    const blob=new Blob(chunks,{type:mime||'video/webm'});
+    const url=setVideoPreview($('preview'),blob,mime);
     const dl=$('dlBtn');dl.style.display='block';
     dl.onclick=()=>{const x=document.createElement('a');x.href=url;
-      x.download='hamza-studio-'+Date.now()+'.webm';x.click();};
+      x.download='hamza-studio-'+Date.now()+'.'+blobExt(mime);x.click();};
     // thumbnails
     const tw=$('thumbs');tw.innerHTML='';let selT=null;
     THUMBS.filter(Boolean).forEach((src,k)=>{
@@ -1497,8 +1507,7 @@ async function carMakeVideo(silent){
         if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
       }catch(e){}
     }
-    let mime='video/webm;codecs=vp9,opus';
-    if(!window.MediaRecorder||!MediaRecorder.isTypeSupported(mime))mime='';
+    const mime=pickMime();
     const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
     const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
     const doneRec=new Promise(r=>rec.onstop=r);
@@ -1533,12 +1542,11 @@ async function carMakeVideo(silent){
     await playP.catch(()=>{});
     rec.stop();await doneRec;
     setP(100,'✅ Tayyar!');
-    const blob=new Blob(chunks,{type:'video/webm'});
-    const url=URL.createObjectURL(blob);
-    const pv=$('carPreview');pv.src=url;pv.style.display='block';
+    const blob=new Blob(chunks,{type:mime||'video/webm'});
+    const url=setVideoPreview($('carPreview'),blob,mime);
     const dl=$('carDl');dl.style.display='block';
     dl.onclick=()=>{const a=document.createElement('a');a.href=url;
-      a.download='talking-cars-'+Date.now()+'.webm';a.click();};
+      a.download='talking-cars-'+Date.now()+'.'+blobExt(mime);a.click();};
     st.textContent='✅ Video tayyar! Download karo! 🎉';
   }catch(e){st.textContent='❌ '+e.message;}
 }
@@ -1593,67 +1601,8 @@ async function carDownloadVoice(){
 }
 $('carScript')?.addEventListener('input',carEstDur);
 
-/* ================= VOICE RECORDER ================= */
-let carRecs={},carRecMedia=null,carRecChunks=[];
-function carShowRec(){
-  const lines=carParse();
-  if(!lines.length){alert('Pehle script likho!');return;}
-  const box=$('carRecList');box.innerHTML='';
-  lines.forEach((L,i)=>{
-    const div=document.createElement('div');
-    div.style.cssText='display:flex;align-items:center;gap:8px;margin:6px 0;padding:8px;background:rgba(255,255,255,.04);border-radius:10px';
-    const has=carRecs[i];
-    div.innerHTML='<b style="min-width:50px">'+L.ch+'</b><span style="flex:1;font-size:12px;color:#aaa">'+L.text.substring(0,40)+'...</span>';
-    const btn=document.createElement('button');
-    btn.className='icobtn';btn.textContent=has?'✅':'🎤';
-    btn.onclick=()=>carRecLine(i,btn);
-    const play=document.createElement('button');
-    play.className='icobtn';play.textContent='▶️';play.style.display=has?'':'none';
-    play.onclick=()=>{const a=new Audio(carRecs[i]);a.playbackRate=CARCHARS[L.ch]?CARCHARS[L.ch].pitch:1.0;a.play();};
-    div.appendChild(btn);div.appendChild(play);box.appendChild(div);
-  });
-}
-async function carRecLine(i,btn){
-  const lines=carParse(),L=lines[i];
-  if(carRecMedia){
-    // stop recording
-    carRecMedia.stop();
-    return;
-  }
-  try{
-    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
-    carRecMedia=new MediaRecorder(stream);
-    carRecChunks=[];
-    carRecMedia.ondataavailable=e=>{if(e.data.size)carRecChunks.push(e.data);};
-    carRecMedia.onstop=()=>{
-      const blob=new Blob(carRecChunks,{type:'audio/webm'});
-      carRecs[i]=URL.createObjectURL(blob);
-      stream.getTracks().forEach(t=>t.stop());
-      carRecMedia=null;btn.textContent='✅';
-      carShowRec(); // refresh
-      alert('✅ Line '+(i+1)+' record ho gayi! ('+L.ch+')');
-    };
-    carRecMedia.start();
-    btn.textContent='⏹️ (dabao rokne ke liye)';
-    alert('🎤 Bolo: "'+L.text+'"\n\nRokne ke liye dobara dabao!');
-  }catch(e){alert('❌ Mic nahi mila: '+e.message);}
-}
-/* get audio for a line: recording (with pitch) > bundled > TTS */
+/* get audio for a line: TTS (voice recorder removed per user request) */
 async function carGetLineAudio(L,i,lang){
-  // 1. user recording with character pitch
-  if(carRecs[i]){
-    const au=new Audio(carRecs[i]);
-    const pitch=CARCHARS[L.ch]?CARCHARS[L.ch].pitch:1.0;
-    // pitch via playbackRate (simple character voice effect)
-    au.preservesPitch=false;au.playbackRate=pitch;
-    await new Promise((res,rej)=>{
-      const to=setTimeout(()=>rej(0),10000);
-      au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
-      au.addEventListener('error',()=>{clearTimeout(to);rej(0);},{once:true});
-    });
-    return {au,dur:(au.duration||2)/pitch};
-  }
-  // 2. normal TTS
   const au=await carSpeak(L.ch,L.text,lang);
   return {au,dur:Math.max(0.8,au.duration||2)};
 }
