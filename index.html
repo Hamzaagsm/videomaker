@@ -95,7 +95,8 @@ select{width:100%;padding:12px;background:rgba(20,12,35,.9);border:1px solid rgb
     </div>
     <button class="btn" id="magicBtn" onclick="magicFlow()">✨ VIDEO BANAO — AI sab karegi!</button>
   </div>
-  <div class="row">
+  <!-- Fazool buttons hataye (user ke kaam ke nahi): Manual, Projects, Characters -->
+  <div class="row" style="display:none">
     <button class="btn btn2" onclick="go('s-manual')">🛠️ Manual Mode</button>
     <button class="btn btn2" onclick="go('s-projects');loadProjects()">📁 Mere Projects</button>
   </div>
@@ -103,11 +104,27 @@ select{width:100%;padding:12px;background:rgba(20,12,35,.9);border:1px solid rgb
     <button class="btn" onclick="go('s-cars');carInit()" style="background:linear-gradient(135deg,#ff6b35,#e94560)">🚗 Talking Cars Studio</button>
   </div>
   <div class="row">
+    <button class="btn" onclick="go('s-kids');kidInit()" style="background:linear-gradient(135deg,#ffd93d,#ff8c42)">🧸 Kids Rhymes Studio</button>
+  </div>
+  <div class="row">
     <button class="btn" onclick="go('s-song');songInit()" style="background:linear-gradient(135deg,#b565ff,#ff6b9d)">🎵 Song Maker</button>
   </div>
   <div class="row">
-    <button class="btn btn2" onclick="go('s-chars');loadChars()">👥 Characters</button>
-    <button class="btn btn2" onclick="go('s-how')">❓ Help</button>
+    <button class="btn btn2" onclick="helpTap()">❓ Help</button>
+  </div>
+  <!-- HIDDEN: 💡 Feature Request box (Help par 5 taps se khulta hai) -->
+  <div class="card" id="featCard" style="display:none;text-align:center;margin-top:18px;border:2px dashed #ffd93d">
+    <p style="color:#ffd93d;font-size:16px;font-weight:800;margin-bottom:8px">💬 Muse se Baat Karo!</p>
+    <div id="chatBox" style="text-align:left;max-height:220px;overflow-y:auto;background:rgba(0,0,0,.3);border-radius:12px;padding:12px;margin-bottom:10px">
+      <div style="background:rgba(255,255,255,.08);padding:10px;border-radius:10px;margin-bottom:8px;font-size:14px">
+        <b style="color:#ffd93d">🤖 Muse:</b> Salam Hamza! Kya add karna hai? Yahan likho! 👇
+      </div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <input id="featText" type="text" style="flex:1;border-radius:12px;padding:12px;background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.15);font-size:15px" placeholder="Yahan likho..." onkeypress="if(event.key==='Enter')featSend()">
+      <button onclick="featSend()" style="padding:12px 20px;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:none;border-radius:12px;font-weight:800;font-size:16px">📤</button>
+    </div>
+    <p class="hint" style="margin-top:8px;font-size:12px">Tumhara msg WhatsApp par Muse ko jayega! 💬</p>
   </div>
   <div class="card" id="waCard" style="text-align:center;margin-top:18px">
     <p style="color:#e6d5ff;font-size:14px;margin-bottom:10px">💬 Koi sawal? Developer se rabta karo!</p>
@@ -133,10 +150,57 @@ function applyWaVis(){
   if(c)c.style.display=localStorage.getItem('meer_wa_hidden')==='1'?'none':'block';
 }
 setTimeout(applyWaVis,300);
+/* ===== AUTO UPDATE CHECKER: notifies when new version is available! ===== */
+const APP_VER='3.13';
+async function checkUpdate(){
+  try{
+    const r=await fetch('https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/version.json',{cache:'no-store'});
+    if(!r.ok)return;
+    const j=await r.json();
+    if(j.version&&j.version!==APP_VER){
+      $('updBanner').style.display='block';
+    }
+  }catch(e){}
+}
+setTimeout(checkUpdate,2000);
+/* secret: tap Help 5 times to open hidden Feature Request box */
+let helpTaps=0,helpTapT=0;
+function helpTap(){
+  const now=Date.now();
+  if(now-helpTapT>1500)helpTaps=0;
+  helpTapT=now;helpTaps++;
+  if(helpTaps>=5){
+    helpTaps=0;
+    const fc=$('featCard');
+    const show=fc.style.display==='none';
+    fc.style.display=show?'block':'none';
+    if(show)fc.scrollIntoView({behavior:'smooth'});
+    else go('s-how');
+  }else if(helpTaps===1){
+    setTimeout(()=>{if(helpTaps>0&&helpTaps<5){helpTaps=0;go('s-how');}},1600);
+  }
+}
+function featSend(){
+  const inp=$('featText'),t=inp.value.trim();
+  if(!t)return;
+  // show in chat box
+  const cb=$('chatBox');
+  cb.innerHTML+='<div style="background:rgba(37,211,102,.15);padding:10px;border-radius:10px;margin-bottom:8px;font-size:14px;text-align:right"><b style="color:#25d366">Hamza:</b> '+t.replace(/</g,'&lt;')+'</div>';
+  cb.innerHTML+='<div style="background:rgba(255,255,255,.08);padding:10px;border-radius:10px;margin-bottom:8px;font-size:14px"><b style="color:#ffd93d">🤖 Muse:</b> Mil gaya! WhatsApp khul raha hai, bhejo! Main jald bana dunga! 💪</div>';
+  cb.scrollTop=cb.scrollHeight;
+  inp.value='';
+  const msg=encodeURIComponent('💬 MEER App se msg:\n\n'+t);
+  setTimeout(()=>window.open('https://wa.me/923400646576?text='+msg,'_blank'),800);
+}
 </script>
   <button class="btn btn2" onclick="voiceDoctor()">🩺 Voice Doctor — meri awaz check karo</button>
   <div class="log" id="docOut" style="display:none"></div>
-  <p class="hint" style="text-align:center;margin-top:16px">v3.0 AI Studio • 100% Free • No watermark</p>
+  <!-- Update notification banner -->
+  <div id="updBanner" style="display:none;text-align:center;margin:12px;padding:14px;background:linear-gradient(135deg,#ffd93d,#ff8c42);border-radius:14px;color:#000;font-weight:800">
+    🎉 Naya update available hai!<br>
+    <a href="https://github.com/Hamzaagsm/videomaker/releases/latest/download/MEER.apk" style="display:inline-block;margin-top:8px;padding:10px 24px;background:#000;color:#ffd93d;border-radius:10px;text-decoration:none">⬇️ UPDATE DOWNLOAD KARO</a>
+  </div>
+  <p class="hint" style="text-align:center;margin-top:16px">v3.13 MEER • 100% Free • No watermark</p>
 </div>
 
 <!-- ============ AI WORKING ============ -->
@@ -287,6 +351,41 @@ setTimeout(applyWaVis,300);
   <p class="hint" id="carStat" style="text-align:center"></p>
   <video id="carPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
   <button class="btn" id="carDl" style="display:none">⬇️ DOWNLOAD KARO</button>
+</div>
+
+<!-- ============ KIDS RHYMES STUDIO ============ -->
+<div class="screen" id="s-kids">
+  <button class="back" onclick="go('s-home')">← Home</button>
+  <h1 style="font-size:22px">🧸 Kids Rhymes Studio</h1>
+  <p class="hint">TikTok viral style! 🌈 Gariyan colors & numbers sikhati hain! 🚗🔢</p>
+  <div class="lbl">📚 Topic Chuno</div>
+  <div class="seg" id="kidTopic">
+    <button data-v="colors" class="on">🌈 Colors</button>
+    <button data-v="numbers">🔢 Numbers</button>
+    <button data-v="shapes">⭐ Shapes</button>
+    <button data-v="vehicles">🚗 Vehicles</button>
+  </div>
+  <div class="lbl">🎵 Rhyme Style</div>
+  <div class="seg" id="kidStyle">
+    <button data-v="bus" class="on">🚌 Wheels on Bus</button>
+    <button data-v="count">🔢 Counting Song</button>
+    <button data-v="color">🎨 Color Song</button>
+  </div>
+  <button class="btn" onclick="kidGenScript()" style="background:linear-gradient(135deg,#ffd93d,#ff8c42)">✨ Script Banao</button>
+  <div class="lbl">🌍 Poem Language</div>
+  <div class="seg" id="kidPoemLang">
+    <button data-v="ur" class="on">🇮🇳 Hindi (best voice!)</button>
+    <button data-v="en">🇬🇧 English</button>
+  </div>
+  <button class="btn btn2" onclick="kidLoadDailyPoem();">📅 Aaj ki Poem (Roz Nayi! Auto-load)</button>
+  <div class="lbl">✏️ Script (edit kar sakte ho)</div>
+  <textarea id="kidScript" rows="8" style="width:100%;border-radius:12px;padding:12px;background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.15);font-size:15px" placeholder="Script yahan ayegi..."></textarea>
+  <div style="height:12px"></div>
+  <button class="btn" onclick="kidMakeVideo()" style="background:linear-gradient(135deg,#06d6a0,#118ab2)">🎬 KIDS VIDEO BANAO →</button>
+  <div class="prog" id="kidProg" style="display:none"><div id="kidBar"></div></div>
+  <p class="hint" id="kidStat" style="text-align:center"></p>
+  <video id="kidPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
+  <button class="btn" id="kidDl" style="display:none">⬇️ DOWNLOAD KARO</button>
 </div>
 
 <!-- ============ HELP ============ -->
@@ -1741,6 +1840,390 @@ async function songPreview(){
 }
 async function songDownload(){
   alert('🎵 Pehle "SUNO" dabao, phir screen record karke song save karo!\n\n(Jald hi direct download ayega!)');
+}
+
+/* ================= KIDS RHYMES STUDIO (v3.13) ================= */
+const KIDCOLORS=[
+  {n:'Red',c:'#ff3b30',item:'apple 🍎'},{n:'Blue',c:'#007aff',item:'balloon 🎈'},
+  {n:'Yellow',c:'#ffcc00',item:'banana 🍌'},{n:'Green',c:'#34c759',item:'frog 🐸'},
+  {n:'Orange',c:'#ff9500',item:'orange 🍊'},{n:'Purple',c:'#af52de',item:'grapes 🍇'},
+  {n:'Pink',c:'#ff2d92',item:'flower 🌸'},{n:'Brown',c:'#a2845e',item:'bear 🐻'}
+];
+const KIDNUMS=['One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'];
+const KIDSHAPES=[
+  {n:'Circle',draw:'circle',c:'#ff6b6b'},{n:'Square',draw:'square',c:'#4ecdc4'},
+  {n:'Triangle',draw:'triangle',c:'#ffe66d'},{n:'Star',draw:'star',c:'#a78bfa'},
+  {n:'Heart',draw:'heart',c:'#ff2d92'},{n:'Diamond',draw:'diamond',c:'#60a5fa'}
+];
+const KIDVEHICLES=[
+  {n:'Car',e:'🚗'},{n:'Bus',e:'🚌'},{n:'Truck',e:'🚚'},
+  {n:'Tractor',e:'🚜'},{n:'Ambulance',e:'🚑'},{n:'Fire Truck',e:'🚒'}
+];
+function kidInit(){seg('kidTopic',()=>{});seg('kidStyle',()=>{});}
+function kidTopicVal(){return segVal('kidTopic')||'colors';}
+function kidStyleVal(){return segVal('kidStyle')||'bus';}
+/* ===== POEM OF THE DAY — 30 original kids poems, auto-rotates daily ===== */
+const KIDPOEMS=[
+["Chanda Mama","Chanda mama gol gol, chamakte hain aasman me!|Taare tim tim karte hain, raat ko neend aati hai!|So jao mere pyare bachon, sapno me ud jao!|Chanda mama raksha karte, subah phir muskao!"],
+["Machli Rani","Machli rani pani me, tairti hai lehra ke!|Upar neeche, dayen bayen, khelti hai ithla ke!|Bulbule chhoti chhoti, munh se nikalti hai!|Machli rani sab se pyari, sab ko hasti hai!"],
+["Titli Rani","Titli rani udti hai, rang birange pankh!|Phool phoolo par baithti, peeti hai ras ankh!|Laal, peeli, neeli titli, kitni sundar lagti!|Baghon me mandrati, sab ka mann bhati!"],
+["Hathi Raja","Hathi raja aaye hain, jhoom jhoom ke!|Sond se pani pite hain, nahate hain dhoom se!|Kaan hain sup jaise, pair khambe jaise!|Hathi raja sab se bhari, chalte hain maze se!"],
+["Billu Billi","Billu billi kali kali, doodh piti hai!|Chuha dekha daud padi, pakad ke lati hai!|Meow meow karti hai, pyar jatati hai!|Godi me so jati hai, sapne dikhati hai!"],
+["Gaiya Maiya","Gaiya maiya doodh deti, safed safed!|Chara khati kheton me, maze se pet bhar!|Bachhda uska khelta, uchhal uchhal ke!|Gaiya maiya pyar karti, sab se mil jul ke!"],
+["Tota Maina","Tota maina ped par, karte hain baatein!|Hari mirch khate hain, meethi meethi raatein!|Mithu mithu bolte, sab ko hasate!|Rang birange tote, mann ko bhate!"],
+["Barish Aayi","Rim jhim rim jhim barish aayi, badal garje zor se!|Mendhak bole tar tar, khush hain sab shor se!|Kagaz ki kashti banao, pani me chalao!|Barish me bheeg ke, khushi se nacho gao!"],
+["Suraj Dada","Suraj dada aaye, lal lal!|Roshni failayi, hua ujala!|Chidiya chahchahayi, phool muskuraye!|Naya din aaya, khushiyan laye!"],
+["Rail Gadi","Chhuk chhuk chhuk rail chali, seeti bajati!|Pahar, nadi, kheton se, daudti jati!|Bachche khidki se dekhein, haath hilate!|Rail gadi sab ko, sair karati!"],
+["Aam Ka Ped","Aam ka ped hara bhara, jhoome dali dali!|Kachche aam khatte meethe, pakke ras bhari!|Koyal kookti dal par, meethi awaz!|Garmi me chhanv deta, sab ka hai saath!"],
+["Chidiya Ghar","Chidiya ghar me chidiya, chahchahati!|Dana chugti, pani piti, udti jati!|Ghonsla banati, ande deti!|Bachche nikalte, khushi manati!"],
+["Sher Raja","Sher raja jungle ka, dahadta hai!|Sab janwar darte hain, bhagte hain!|Par dil ka achha hai, raksha karta!|Jungle me shanti, wohi rakhta!"],
+["Khargosh","Chhotu khargosh safed, uchhalta jaye!|Gajar mooli khata, maze udaye!|Lambe lambe kaan, gol gol aankhein!|Dekho kitna pyara, sab ko bhaye!"],
+["Mor Nacha","Mor nacha baghon me, pankh failaye!|Rang birange pankhon se, sab ko rijhaye!|Badal dekh ke khush hua, bola peehoo!|Barish aane wali, khushi se ji bhar!"],
+["Dadi Amma","Dadi amma kahani, sunati pyari!|Pariyon ke desh ki, baatein nyari!|Godi me bithati, loriyan gati!|Dadi ka pyar, sab se pyara!"],
+["School Chalo","Subah hui school chalo, basta uthao!|Naye dost banao, khoob padho!|Teacher padhati pyar se, khel bhi khilati!|School me mazaa aata, sab ko bhati!"],
+["Doctor Aaye","Doctor aaye sui laye, daro mat bachcho!|Dawai kadvi meethi, piyo achcho!|Sehat banegi, taqat ayegi!|Khel kood karoge, khushi manayegi!"],
+["Mela","Mela laga gaon me, bheed hai bhari!|Jhoole jhoolo, mithai khao, khushi hai sari!|Gubbare lo rang birange, khilone lo!|Mela ghumo dosto sang, mauj manao!"],
+["Diwali","Diwali aayi khushiyan layi, diye jalao!|Mithai khao, kapde pehno, khushi manao!|Patakhe chhodo door khade, savdhani se!|Andhera door, ujala charon or se!"],
+["Holi","Holi aayi rang layi, khelo gulal!|Laal, gulaabi, peela, neela, sab kamaal!|Pichkari se rang barse, bheego sath!|Masti me doobe, nacho sari raat!"],
+["Chandni Raat","Chandni raat suhani, taare chamke!|Thandi hawa chale, mann lalke!|Aangan me baitho, kahani suno!|Parion ke sapne, aankhon me buno!"],
+["Baghicha","Baghiche me phool khile, rang birange!|Bhanwre gun gun karte, titli sang!|Mali pani deta, khad dalta!|Phool khilte, khushbu failti!"],
+["Samundar","Samundar ki lehren, aati jati!|Ret par bachche, ghar banate!|Seepiyan chunte, moti pate!|Samundar me nahate, mauj manate!"],
+["Pahad","Unche pahad, barf se dhake!|Jharne behte, kal kal karte!|Ped hare bhare, hawa chale!|Pahadon ki sair, mann ko bhaye!"],
+["Kisaan","Kisaan kheton me, hal chalata!|Beej bota, fasal ugata!|Mehnat karta dhoop me, paseena bahata!|Anaj ugata, sab ko khilata!"],
+["Dakiya","Dakiya aaya chitthi laya, khushi ka paigam!|Door desh se khabar aayi, sab ko salaam!|Cycle par ghanta bajata, gali gali jata!|Sab ke chehre khil jate, woh muskurata!"],
+["Mochi","Mochi baitha sadak kinare, joote silta!|Hathoda, keel, dhaga, khoob chalta!|Joote chamkaye, naye banaye!|Mehnat ki kamai, izzat paye!"],
+["Nai Subah","Nai subah, naya savera, nayi ummeed!|Panchhi gaate, phool khilte, khushi ki lehar!|Aaj ka din banayenge, khoob sundar!|Mehnat karenge, payenge fal!"],
+["Dost","Dost hain sab se pyare, sukh dukh ke sathi!|Khel me, padhai me, har pal sath nibhati!|Ladai jhagda bhool ke, gale lag jao!|Dosti ka bandhan, sada nibhao!"]
+];
+function kidPoemOfDay(){
+  const now=new Date();
+  const dayNum=Math.floor(now.getTime()/86400000);
+  return KIDPOEMS[dayNum%KIDPOEMS.length];
+}
+/* ===== 30 ENGLISH kids poems ===== */
+const KIDPOEMS_EN=[
+["Twinkle Star","Twinkle twinkle little star, how I wonder what you are!|Up above the world so high, like a diamond in the sky!|When the sun is gone to bed, you shine bright above my head!|Twinkle twinkle little star, you're my favorite by far!"],
+["Rainbow Colors","Red and orange, green and blue, shiny yellow, purple too!|Colors of the rainbow bright, what a beautiful sight!|After rain the sun will glow, and a rainbow starts to show!|Count the colors one by one, learning colors is such fun!"],
+["Five Little Ducks","Five little ducks went out to play, over the hills and far away!|Mother duck said quack quack quack, but only four came waddling back!|Four little ducks, three little ducks, two little ducks, one!|Mother duck is happy now, all her babies home!"],
+["Wheels Go Round","The wheels on the bus go round and round, round and round!|All through the town, the horn goes beep beep beep!|The wipers go swish swish swish, the babies go wah wah wah!|Sing along with us now, clap your hands and shout hooray!"],
+["Baa Baa Sheep","Baa baa black sheep have you any wool? Yes sir, yes sir, three bags full!|One for the master, one for the dame, one for the little boy down the lane!|Soft and fluffy, white as snow, watch the little lambkins grow!"],
+["Humpty Dumpty","Humpty Dumpty sat on a wall, Humpty Dumpty had a great fall!|All the king's horses and all the king's men, couldn't put Humpty together again!|But Humpty smiled and said hooray, tomorrow is another day!"],
+["Jack and Jill","Jack and Jill went up the hill, to fetch a pail of water!|Jack fell down and broke his crown, and Jill came tumbling after!|Up they got and home they ran, as fast as they could caper!|To old dame Dob who patched their nob, with vinegar and brown paper!"],
+["Mary's Lamb","Mary had a little lamb, its fleece was white as snow!|Everywhere that Mary went, the lamb was sure to go!|It followed her to school one day, which was against the rule!|It made the children laugh and play, to see a lamb at school!"],
+["Row Your Boat","Row row row your boat, gently down the stream!|Merrily merrily merrily merrily, life is but a dream!|If you see a crocodile, don't forget to scream!|Row row row your boat, gently to the shore!"],
+["Old MacDonald","Old MacDonald had a farm, E-I-E-I-O!|And on that farm he had a cow, E-I-E-I-O!|With a moo moo here and a moo moo there, here a moo there a moo!|Old MacDonald had a farm, E-I-E-I-O!"],
+["Itsy Spider","The itsy bitsy spider went up the water spout!|Down came the rain and washed the spider out!|Out came the sun and dried up all the rain!|And the itsy bitsy spider went up the spout again!"],
+["London Bridge","London Bridge is falling down, falling down, falling down!|London Bridge is falling down, my fair lady!|Build it up with wood and clay, wood and clay, wood and clay!|London Bridge is falling down, my fair lady!"],
+["Hickory Clock","Hickory dickory dock, the mouse ran up the clock!|The clock struck one, the mouse ran down, hickory dickory dock!|The clock struck two, the mouse said boo!|Hickory dickory dock, tick tock tick!"],
+["Little Teapot","I'm a little teapot, short and stout!|Here is my handle, here is my spout!|When I get all steamed up, hear me shout!|Tip me over and pour me out!"],
+["Pat-a-Cake","Pat-a-cake pat-a-cake baker's man, bake me a cake as fast as you can!|Pat it and prick it and mark it with B, put it in the oven for baby and me!|For baby and me, for baby and me, pat-a-cake pat-a-cake baker's man!"],
+["Hey Diddle","Hey diddle diddle, the cat and the fiddle!|The cow jumped over the moon!|The little dog laughed to see such sport!|And the dish ran away with the spoon!"],
+["Little Miss Muffet","Little Miss Muffet sat on a tuffet, eating her curds and whey!|Along came a spider who sat down beside her, and frightened Miss Muffet away!|Don't be scared little Miss, the spider just wants to play!"],
+["Sing a Song","Sing a song of sixpence, a pocket full of rye!|Four and twenty blackbirds baked in a pie!|When the pie was opened the birds began to sing!|Wasn't that a dainty dish to set before the king!"],
+["Three Blind Mice","Three blind mice, three blind mice!|See how they run, see how they run!|They all ran after the farmer's wife, who cut off their tails with a carving knife!|Did you ever see such a sight in your life, as three blind mice!"],
+["Hot Cross Buns","Hot cross buns, hot cross buns!|One a penny, two a penny, hot cross buns!|If you have no daughters, give them to your sons!|One a penny, two a penny, hot cross buns!"],
+["This Little Piggy","This little piggy went to market, this little piggy stayed home!|This little piggy had roast beef, this little piggy had none!|And this little piggy went wee wee wee, all the way home!"],
+["One Two Buckle","One two buckle my shoe, three four knock at the door!|Five six pick up sticks, seven eight lay them straight!|Nine ten a big fat hen, let's count again and again!"],
+["Star Light","Star light star bright, first star I see tonight!|I wish I may, I wish I might, have the wish I wish tonight!|Twinkle twinkle in the sky, winking at me way up high!"],
+["ABC Song","A B C D E F G, H I J K L M N O P!|Q R S, T U V, W X, Y and Z!|Now I know my ABCs, next time won't you sing with me!"],
+["Counting Stars","One little star shining bright, two little stars give light!|Three little stars, four little stars, five little stars twinkle far!|Count them all both near and far, aren't they pretty little stars!"],
+["Sunny Day","Sun is shining in the sky, birds are flying way up high!|Flowers blooming, bees go buzz, what a lovely day it is!|Come outside and play with me, run and jump and climb the tree!"],
+["Baby Shark","Baby shark doo doo doo doo, baby shark!|Mama shark doo doo doo doo, mama shark!|Papa shark doo doo doo doo, papa shark!|Grandma shark doo doo doo doo, let's go hunt!"],
+["If You're Happy","If you're happy and you know it clap your hands!|If you're happy and you know it clap your hands!|If you're happy and you know it and you really want to show it!|If you're happy and you know it stomp your feet!"],
+["Good Morning","Good morning sunshine, good morning birds!|Good morning flowers, good morning world!|Time to wake up, time to play, what a happy lovely day!|Brush your teeth and comb your hair, breakfast time is here!"],
+["Sleepy Moon","Sleepy moon is in the sky, twinkling stars are way up high!|Close your eyes my baby dear, mama's love is always near!|Dream of castles in the air, angels watching everywhere!|Goodnight moon, goodnight stars, sleep tight wherever you are!"]
+];
+function kidPoemOfDayEN(){
+  const now=new Date();
+  const dayNum=Math.floor(now.getTime()/86400000);
+  return KIDPOEMS_EN[dayNum%KIDPOEMS_EN.length];
+}
+function kidLoadDailyPoem(){
+  const lang=kidPoemLangVal();
+  const poem=lang==='en'?kidPoemOfDayEN():kidPoemOfDay();
+  const [title,body]=poem;
+  const lines=body.split('|');
+  const hello=lang==='en'?"Today's poem: ":"Aaj ki poem: ";
+  const bye=lang==='en'?"New poem tomorrow! 🎉":"Kal phir nayi poem ayegi! 🎉";
+  const script=[hello+title+'! 🌟',...lines,bye];
+  $('kidScript').value=script.join('\n');
+  return title;
+}
+function kidPoemLangVal(){return segVal('kidPoemLang')||'ur';}
+/* auto-load today's poem when opening Kids Studio */
+const _kidInitOrig=kidInit;
+kidInit=function(){
+  _kidInitOrig();
+  seg('kidPoemLang',()=>{kidLoadDailyPoem();});
+  // auto-load today's poem immediately!
+  setTimeout(()=>kidLoadDailyPoem(),300);
+};
+function kidGenScript(){
+  const t=kidTopicVal(),s=kidStyleVal(),L=[];
+  if(t==='colors'){
+    L.push('Hello kids! Learn colors with us! 🌈');
+    for(const k of KIDCOLORS){
+      if(s==='bus')L.push(k.n+'! The wheels on the bus go round and round, '+k.n+' '+k.item+' all around!');
+      else if(s==='count')L.push(k.n+'! One '+k.n+' '+k.item+', two '+k.n+' '+k.item+'!');
+      else L.push('This is '+k.n+'! '+k.n+' like a '+k.item+'!');
+    }
+    L.push('Great job! You learned all the colors! 🎉');
+  }else if(t==='numbers'){
+    L.push('Hello kids! Let us count together! 🔢');
+    for(let i=0;i<KIDNUMS.length;i++){
+      const n=KIDNUMS[i];
+      if(s==='bus')L.push(n+'! '+n+' little buses going round the town! Beep beep!');
+      else L.push(n+'! Can you count to '+n+'? '+(i+1)+'!');
+    }
+    L.push('Amazing! You counted to ten! 🎉');
+  }else if(t==='shapes'){
+    L.push('Hello kids! Learn shapes with us! ⭐');
+    for(const k of KIDSHAPES){
+      L.push(k.n+'! Look, a '+k.n+'! Can you find the '+k.n+'?');
+    }
+    L.push('Wonderful! You learned all the shapes! 🎉');
+  }else{
+    L.push('Hello kids! Learn vehicles with us! 🚗');
+    for(const v of KIDVEHICLES){
+      if(s==='bus')L.push(v.n+'! The '+v.n.toLowerCase()+' goes beep beep beep, all through the town!');
+      else L.push('This is a '+v.n+'! '+v.e+' Vroom vroom!');
+    }
+    L.push('Hooray! You learned all the vehicles! 🎉');
+  }
+  $('kidScript').value=L.join('\n');
+}
+/* ===== SEEDED RANDOM: same day = same video, different day = different look (no copyright/repeat issue!) ===== */
+function kidSeed(){
+  const now=new Date();
+  const poem=kidPoemOfDay()[0]+kidPoemLangVal();
+  let h=0;
+  const s=now.toDateString()+poem;
+  for(let i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))>>>0;}
+  return h;
+}
+function kidRand(seed,i){
+  let x=(seed+i*2654435761)>>>0;
+  x^=x<<13;x^=x>>>17;x^=x<<5;
+  return (x>>>0)/4294967295;
+}
+function kidFrame(line,lineIdx,t,W,H){
+  const topic=kidTopicVal();
+  const seed=kidSeed();
+  // 12 background pairs — picked by seed, different each day!
+  const bgs=[['#ff9a9e','#fecfef'],['#a18cd1','#fbc2eb'],['#fad0c4','#ffd1ff'],
+    ['#ffecd2','#fcb69f'],['#a8edea','#fed6e3'],['#d299c2','#fef9d7'],
+    ['#ffcfd2','#fff4e0'],['#c2ffd8','#f4f4f4'],['#c2e9ff','#fff4e0'],
+    ['#ffe0b2','#ffccbc'],['#d1c4e9','#f8bbd0'],['#b2dfdb','#fff9c4']];
+  const bg=bgs[Math.floor(kidRand(seed,1)*bgs.length)];
+  const g=cx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0,bg[0]);g.addColorStop(1,bg[1]);
+  cx.fillStyle=g;cx.fillRect(0,0,W,H);
+  // sun position varies by day + rotating rays
+  const sunX=W*(0.7+kidRand(seed,2)*0.25),sunY=H*(0.08+kidRand(seed,3)*0.08);
+  cx.fillStyle='#fff3b0';
+  cx.beginPath();cx.arc(sunX,sunY,H*0.07,0,7);cx.fill();
+  cx.strokeStyle='rgba(255,243,176,.7)';cx.lineWidth=4;
+  for(let i=0;i<8;i++){
+    const a=t*0.5+i*Math.PI/4;
+    cx.beginPath();
+    cx.moveTo(sunX+Math.cos(a)*H*0.09,sunY+Math.sin(a)*H*0.09);
+    cx.lineTo(sunX+Math.cos(a)*H*0.12,sunY+Math.sin(a)*H*0.12);
+    cx.stroke();
+  }
+  // clouds — count and speed vary by day
+  const nClouds=2+Math.floor(kidRand(seed,4)*3);
+  cx.fillStyle='rgba(255,255,255,.85)';
+  for(let i=0;i<nClouds;i++){
+    const spd=20+kidRand(seed,5+i)*40;
+    const cxx=((t*spd+i*W*0.4)%(W+200))-100;
+    const cy=H*(0.08+i*0.06+kidRand(seed,10+i)*0.05);
+    cx.beginPath();cx.ellipse(cxx,cy,60,28,0,0,7);cx.fill();
+    cx.beginPath();cx.ellipse(cxx+40,cy+8,45,22,0,0,7);cx.fill();
+  }
+  // floating balloons/stars — varies by day!
+  const nDeco=3+Math.floor(kidRand(seed,20)*4);
+  for(let i=0;i<nDeco;i++){
+    const dx=kidRand(seed,21+i)*W;
+    const dy=H*(0.15+kidRand(seed,30+i)*0.5)+Math.sin(t*2+i)*15;
+    const dc=['#ff6b6b','#4ecdc4','#ffe66d','#a78bfa','#ff2d92'][i%5];
+    if(kidRand(seed,40+i)>0.5){
+      cx.fillStyle=dc;cx.beginPath();cx.ellipse(dx,dy,22,28,0,0,7);cx.fill();
+      cx.strokeStyle='rgba(0,0,0,.2)';cx.beginPath();cx.moveTo(dx,dy+28);cx.lineTo(dx,dy+55);cx.stroke();
+    }else{
+      kidDrawShape('star',dx,dy,18,dc);
+    }
+  }
+  // grass color varies + random flowers
+  const grasses=['#7ed957','#66bb6a','#9ccc65','#aed581'];
+  cx.fillStyle=grasses[Math.floor(kidRand(seed,50)*grasses.length)];
+  cx.fillRect(0,H*0.82,W,H*0.18);
+  for(let i=0;i<5;i++){
+    const fx=kidRand(seed,51+i)*W,fy=H*(0.86+kidRand(seed,60+i)*0.08);
+    cx.fillStyle=['#ff2d92','#ffcc00','#fff','#a78bfa'][i%4];
+    for(let p=0;p<5;p++){
+      const pa=p*Math.PI*2/5;
+      cx.beginPath();cx.arc(fx+Math.cos(pa)*8,fy+Math.sin(pa)*8,6,0,7);cx.fill();
+    }
+    cx.fillStyle='#ff9500';cx.beginPath();cx.arc(fx,fy,6,0,7);cx.fill();
+  }
+  // bouncing topic illustration
+  const bounce=Math.abs(Math.sin(t*4))*20;
+  cx.textAlign='center';
+  if(topic==='colors'){
+    const k=KIDCOLORS[lineIdx%KIDCOLORS.length]||KIDCOLORS[0];
+    // big color circle
+    cx.fillStyle=k.c;
+    cx.beginPath();cx.arc(W/2,H*0.38-bounce,H*0.11,0,7);cx.fill();
+    cx.lineWidth=8;cx.strokeStyle='#fff';cx.stroke();
+    cx.fillStyle='#fff';cx.font='bold '+Math.floor(H*0.075)+'px sans-serif';
+    cx.fillText(k.n,W/2,H*0.62);
+    cx.font=Math.floor(H*0.035)+'px sans-serif';cx.fillStyle='#555';
+    cx.fillText(k.item,W/2,H*0.68);
+  }else if(topic==='numbers'){
+    const n=KIDNUMS[lineIdx%KIDNUMS.length]||KIDNUMS[0];
+    cx.fillStyle='#fff';cx.font='bold '+Math.floor(H*0.16)+'px sans-serif';
+    cx.fillText((lineIdx%10)+1,W/2,H*0.42-bounce);
+    cx.fillStyle='#e94560';cx.font='bold '+Math.floor(H*0.06)+'px sans-serif';
+    cx.fillText(n,W/2,H*0.58);
+  }else if(topic==='shapes'){
+    const k=KIDSHAPES[lineIdx%KIDSHAPES.length]||KIDSHAPES[0];
+    kidDrawShape(k.draw,W/2,H*0.36-bounce,H*0.09,k.c);
+    cx.fillStyle='#fff';cx.font='bold '+Math.floor(H*0.06)+'px sans-serif';
+    cx.fillText(k.n,W/2,H*0.58);
+  }else{
+    const v=KIDVEHICLES[lineIdx%KIDVEHICLES.length]||KIDVEHICLES[0];
+    cx.font=Math.floor(H*0.14)+'px sans-serif';
+    cx.fillText(v.e,W/2,H*0.4-bounce);
+    cx.fillStyle='#fff';cx.font='bold '+Math.floor(H*0.06)+'px sans-serif';
+    cx.fillText(v.n,W/2,H*0.58);
+  }
+  // subtitle line at bottom
+  cx.fillStyle='rgba(0,0,0,.55)';
+  const fs=Math.floor(H*0.028);
+  cx.font='bold '+fs+'px sans-serif';
+  const words=line.split(' ');let cl='',yl=H*0.88;
+  cx.fillStyle='#fff';cx.strokeStyle='rgba(0,0,0,.6)';cx.lineWidth=4;
+  // simple wrap
+  let li2='';
+  for(const w of words){
+    if((li2+' '+w).length>32){cx.strokeText(li2,W/2,yl);cx.fillText(li2,W/2,yl);yl+=fs*1.4;li2=w;}
+    else li2=li2?li2+' '+w:w;
+  }
+  if(li2){cx.strokeText(li2,W/2,yl);cx.fillText(li2,W/2,yl);}
+  // driving cars at bottom
+  const carX=(t*120)%(W+300)-150;
+  drawCarSprite(carX,H*0.78,46,'Rayo',true,t,true);
+  drawCarSprite(W-carX,H*0.78,40,'Bella',false,t+1,false);
+}
+function kidDrawShape(type,x,y,s,c){
+  cx.fillStyle=c;cx.strokeStyle='#fff';cx.lineWidth=6;
+  cx.beginPath();
+  if(type==='circle'){cx.arc(x,y,s,0,7);}
+  else if(type==='square'){cx.rect(x-s,y-s,s*2,s*2);}
+  else if(type==='triangle'){cx.moveTo(x,y-s);cx.lineTo(x+s,y+s);cx.lineTo(x-s,y+s);cx.closePath();}
+  else if(type==='diamond'){cx.moveTo(x,y-s);cx.lineTo(x+s,y);cx.lineTo(x,y+s);cx.lineTo(x-s,y);cx.closePath();}
+  else if(type==='star'){
+    for(let i=0;i<10;i++){
+      const r=i%2?s*0.45:s,a=-Math.PI/2+i*Math.PI/5;
+      cx[i?'lineTo':'moveTo'](x+r*Math.cos(a),y+r*Math.sin(a));
+    }
+    cx.closePath();
+  }
+  else if(type==='heart'){
+    cx.moveTo(x,y+s*0.7);
+    cx.bezierCurveTo(x-s*1.2,y-s*0.2,x-s*0.6,y-s*1.1,x,y-s*0.3);
+    cx.bezierCurveTo(x+s*0.6,y-s*1.1,x+s*1.2,y-s*0.2,x,y+s*0.7);
+  }
+  cx.fill();cx.stroke();
+}
+async function kidMakeVideo(){
+  const text=$('kidScript').value.trim();
+  if(!text){alert('Pehle "Script Banao" dabao!');return;}
+  const lines=text.split('\n').filter(l=>l.trim());
+  const bar=$('kidBar'),st=$('kidStat');
+  $('kidProg').style.display='block';
+  const setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  try{
+    setP(5,'🎙️ Cheerful awaz ban rahi...');
+    carLoadImages();
+    const segs=[];
+    for(let i=0;i<lines.length;i++){
+      setP(5+i/lines.length*35,'🎙️ Line '+(i+1)+'/'+lines.length);
+      // cheerful kid voice: high pitch
+      const au=await kidSpeak(lines[i]);
+      segs.push({au,dur:Math.max(1.2,(au.duration||2))});
+    }
+    const totalDur=segs.reduce((a,s)=>a+s.dur+0.4,0);
+    const W=720,H=1280;cv.width=1080;cv.height=1920;
+    const sx=1080/W,sy=1920/H;
+    setP(45,'🎬 Recording...');
+    cvShowRec();
+    cx.setTransform(sx,0,0,sy,0,0);kidFrame(lines[0],0,0,W,H);
+    await sleep(300);
+    const vstream=cv.captureStream(30);
+    const vts=vstream.getVideoTracks();
+    if(!vts.length)throw new Error('Video track nahi mila');
+    const tracks=[...vts];
+    for(const s of segs){
+      try{
+        const ast=s.au.captureStream?s.au.captureStream():s.au.mozCaptureStream();
+        if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
+      }catch(e){}
+    }
+    const mime=pickMime();
+    const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
+    const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+    const doneRec=new Promise(r=>rec.onstop=r);
+    rec.start(250);
+    const t0=performance.now();
+    let li=0;
+    const playP=(async()=>{
+      for(let i=0;i<segs.length;i++){
+        li=i;
+        try{await segs[i].au.play();}catch(e){}
+        await new Promise(r=>{segs[i].au.onended=r;setTimeout(r,segs[i].dur*1000+1500);});
+        await sleep(300);
+      }
+    })();
+    await new Promise(res=>{
+      (function frame(){
+        const el=(performance.now()-t0)/1000;
+        cx.setTransform(sx,0,0,sy,0,0);
+        kidFrame(lines[li]||'',li,el,W,H);
+        setP(45+Math.min(50,el/totalDur*50),'Ban rahi... '+Math.floor(el)+'s');
+        if(el>=totalDur+1){res();return;}
+        requestAnimationFrame(frame);
+      })();
+    });
+    await playP.catch(()=>{});
+    rec.stop();await doneRec;
+    cvHide();
+    setP(100,'✅ Tayyar!');
+    const blob=new Blob(chunks,{type:mime||'video/webm'});
+    const url=setVideoPreview($('kidPreview'),blob,mime);
+    const dl=$('kidDl');dl.style.display='block';
+    dl.onclick=()=>{const a=document.createElement('a');a.href=url;
+      a.download='kids-rhyme-'+Date.now()+'.'+blobExt(mime);a.click();};
+    st.textContent='✅ Kids video tayyar! TikTok par dalo! 🎉';
+  }catch(e){try{cvHide();}catch(_){}st.textContent='❌ '+e.message;}
+}
+/* cheerful kid-song voice via native TTS (high pitch) — Hindi voice best hai! */
+async function kidSpeak(text){
+  const lang=kidPoemLangVal()==='en'?'en':'hi'; // Urdu/Hindi poems ke liye Hindi TTS!
+  const nt=nativeTTS();
+  if(nt){
+    try{
+      const uri=await nativeSpeak(text,lang,1.5,0.95);
+      const au=new Audio();au.src=uri;
+      await new Promise((res,rej)=>{
+        const to=setTimeout(()=>rej(0),15000);
+        au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
+        au.addEventListener('error',()=>{clearTimeout(to);rej(0);},{once:true});
+      });
+      return au;
+    }catch(e){}
+  }
+  return await loadAudio(ttsURL(text,lang,'webapp'),1.0);
 }
 </script>
 </body>
