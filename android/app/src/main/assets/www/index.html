@@ -135,6 +135,10 @@ select{width:100%;padding:12px;background:rgba(20,12,35,.9);border:1px solid rgb
       <button class="btn" onclick="go('s-family');familyInit()">Create</button>
     </div>
   </div>
+  <!-- v3.24: 🤖 AUTO VIDEO STUDIO — topic likho, app khud sab banaye! -->
+  <div class="row">
+    <button class="btn" onclick="go('s-auto');autoInit()" style="background:linear-gradient(135deg,#8e2de2,#4a00e0)">🤖 Auto Video Studio</button>
+  </div>
   <div class="row">
     <button class="btn" onclick="go('s-kids');kidInit()" style="background:linear-gradient(135deg,#ffd93d,#ff8c42)">🧸 Kids Rhymes Studio</button>
   </div>
@@ -566,6 +570,40 @@ function featSend(){
   <p class="hint" id="familyStat" style="text-align:center"></p>
   <video id="familyPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
   <button class="btn" id="familyDl" style="display:none">⬇️ DOWNLOAD KARO</button>
+</div>
+
+<!-- ============ 🤖 AUTO VIDEO STUDIO (v3.24) ============ -->
+<div class="screen" id="s-auto">
+  <button class="back" onclick="go('s-home')">← Home</button>
+  <h1 style="font-size:22px">🤖 Auto Video Studio</h1>
+  <p class="hint">Sirf TOPIC likho — app khud kahani + clips + awaz lagake video banayegi! ✨</p>
+  <div class="card">
+    <div class="lbl">📦 Video Clips (ek dafa download — sab modes ke)</div>
+    <p class="hint" id="autoClipStat">Check ho raha hai...</p>
+    <button class="btn btn2" onclick="autoDownloadClips()">⬇️ Sab Clips Download Karo</button>
+    <div class="prog" id="autoClipProg" style="display:none"><div id="autoClipBar"></div></div>
+  </div>
+  <div class="card">
+    <div class="lbl">💡 Topic likho (misal: dosti, sher, pari, mehnat, bacha...)</div>
+    <input id="autoTopic" type="text" style="width:100%;border-radius:12px;padding:14px;background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.15);font-size:16px" placeholder="Topic likho...">
+    <div class="row" style="margin-top:10px">
+      <div><div class="lbl">🎨 Style</div>
+        <select id="autoStyle"><option value="auto" selected>✨ Auto (topic se)</option><option value="cars">🚗 Cars</option><option value="story">📖 Story</option><option value="kids">🧒 Kids</option><option value="family">👨‍👩‍👶 Family</option><option value="drama">🎭 Drama</option></select></div>
+      <div><div class="lbl">🗣️ Zabaan</div>
+        <select id="autoLang"><option value="en" selected>🇬🇧 English</option><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option></select></div>
+    </div>
+  </div>
+  <button class="btn btn3" onclick="autoMakeStory()">✨ KAHANI BANAO</button>
+  <div class="card" id="autoStoryCard" style="display:none">
+    <div class="lbl">📝 Kahani (edit kar sakte ho!)</div>
+    <div class="hint" id="autoStoryTitle" style="font-weight:800;color:#ffd93d"></div>
+    <textarea id="autoScript" class="big-idea" style="min-height:180px"></textarea>
+  </div>
+  <button class="btn btn3" id="autoVideoBtn" onclick="autoMakeVideo()" style="display:none">🎬 VIDEO BANAO →</button>
+  <div class="prog" id="autoProg" style="display:none"><div id="autoBar"></div></div>
+  <p class="hint" id="autoStat" style="text-align:center"></p>
+  <video id="autoPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
+  <button class="btn" id="autoDl" style="display:none">⬇️ DOWNLOAD KARO</button>
 </div>
 
 <!-- ============ KIDS RHYMES STUDIO ============ -->
@@ -2703,7 +2741,8 @@ const MODE_EL={
   kids:{stat:'kids2ClipStat',prog:'kids2ClipProg',bar:'kids2ClipBar',script:'kids2Script',lang:'kids2Lang',vprog:'kids2Prog',vbar:'kids2Bar',vstat:'kids2Stat',preview:'kids2Preview',dl:'kids2Dl'},
   interview:{stat:'interviewClipStat',prog:'interviewClipProg',bar:'interviewClipBar',script:'interviewScript',lang:'interviewLang',vprog:'interviewProg',vbar:'interviewBar',vstat:'interviewStat',preview:'interviewPreview',dl:'interviewDl'},
   drama:{stat:'dramaClipStat',prog:'dramaClipProg',bar:'dramaClipBar',script:'dramaScript',lang:'dramaLang',vprog:'dramaProg',vbar:'dramaBar',vstat:'dramaStat',preview:'dramaPreview',dl:'dramaDl'},
-  family:{stat:'familyClipStat',prog:'familyClipProg',bar:'familyClipBar',script:'familyScript',lang:'familyLang',vprog:'familyProg',vbar:'familyBar',vstat:'familyStat',preview:'familyPreview',dl:'familyDl'}
+  family:{stat:'familyClipStat',prog:'familyClipProg',bar:'familyClipBar',script:'familyScript',lang:'familyLang',vprog:'familyProg',vbar:'familyBar',vstat:'familyStat',preview:'familyPreview',dl:'familyDl'},
+  auto:{stat:'autoClipStat',prog:'autoClipProg',bar:'autoClipBar',script:'autoScript',lang:'autoLang',vprog:'autoProg',vbar:'autoBar',vstat:'autoStat',preview:'autoPreview',dl:'autoDl'}
 };
 function onModeClipMsg(mode,st,n){
   const E=MODE_EL[mode];if(!E)return;
@@ -2745,6 +2784,236 @@ function kids2Init(){modeClipCheck('kids');}
 function interviewInit(){modeClipCheck('interview');}
 function dramaInit(){modeClipCheck('drama');}
 function familyInit(){modeClipCheck('family');}
+function autoInit(){autoClipCheck();}
+
+/* ===== v3.24: 🤖 AUTO VIDEO STUDIO — blueprint FREE implementation ===== */
+/* 1. Input Analyzer — topic keywords → style */
+const AUTO_KEYWORDS={
+  cars:['dosti','dost','gari','car','race','rayo','bella','rusty','friend'],
+  story:['sher','chuha','pari','kahani','story','sachai','sach','fairy','jungle','lion','magical'],
+  kids:['bacha','bachay','shararat','khushi','kid','baby','play','masti','happy'],
+  family:['madad','help','ghar','family','maa','baap','ami','abu','pyar','love','mohabbat'],
+  drama:['himmat','sapna','dream','courage','drama','jazba','himmat']
+};
+/* 5. Character Agent — fixed cast */
+const AUTO_CAST={
+  Rayo:{clip:'rayo-talking.mp4',pitch:0.85,rate:1.0,label:'🚗 Rayo'},
+  Bella:{clip:'bella-talking.mp4',pitch:1.4,rate:1.0,label:'🚗 Bella'},
+  Rusty:{clip:'rusty-driving.mp4',pitch:0.7,rate:1.0,label:'🚗 Rusty'},
+  Narrator:{clip:'story-narrator.mp4',pitch:1.1,rate:1.0,label:'📖'},
+  Magic:{clip:'story-magic.mp4',pitch:1.1,rate:1.0,label:'✨'},
+  Kid:{clip:'kids-hero.mp4',pitch:1.6,rate:1.0,label:'🧒'},
+  Play:{clip:'kids-play.mp4',pitch:1.6,rate:1.0,label:'🌈'},
+  Woman:{clip:'woman-happy.mp4',pitch:1.2,rate:1.0,label:'👩'},
+  Man:{clip:'man-friendly.mp4',pitch:0.9,rate:1.0,label:'👨'},
+  Baby:{clip:'baby-cute.mp4',pitch:1.8,rate:1.0,label:'👶'},
+  Drama:{clip:'drama-heroine.mp4',pitch:1.25,rate:0.9,label:'🎭'}
+};
+/* 2. Script Agent — 12 pre-written story templates (Roman Urdu) */
+const AUTO_STORIES=[
+{title:'🚗 Dosti',kw:['dosti','dost','friend'],scenes:[
+  ['Narrator','Ek chote se sheher me do garayan rehti thin — Rayo aur Bella. Dono pakke dost thay!'],
+  ['Rayo','Bella! Aaj hum lambi sair par chalenge! Tum tayyar ho?'],
+  ['Bella','Haan Rayo! Tumhare saath har safar mazedar hota hai!'],
+  ['Narrator','Raste me unki gari ka tel khatam ho gaya. Bella pareshan ho gayi.'],
+  ['Rayo','Fikar mat karo Bella! Mere paas extra tel hai. Dost hi dost ke kaam aate hain!'],
+  ['Bella','Shukriya Rayo! Tum sach me sab se achay dost ho!'],
+  ['Narrator','Us din dono ne seekha — sachi dosti har mushkil asaan kar deti hai!']
+]},
+{title:'🦁 Sher aur Chuha',kw:['sher','chuha','lion','jungle'],scenes:[
+  ['Narrator','Ghanay jungle me ek taqatwar sher rehta tha. Sab janwar us se darte thay.'],
+  ['Magic','Ek din sher so raha tha ke ek chota chuha us ke upar se guzar gaya!'],
+  ['Narrator','Sher jaag gaya aur chuhe ko pakar liya. Chuha dar ke kanpne laga.'],
+  ['Kid','Sher bhai! Mujhe chor do! Ek din main tumhare kaam aaunga!'],
+  ['Narrator','Sher hans para — itna chota chuha mere kaam aayega? Phir bhi us ne chuhe ko chor diya.'],
+  ['Magic','Kuch din baad sher shikari ke jaal me phans gaya. Wo zor zor se daharne laga!'],
+  ['Kid','Ruko sher bhai! Main jaal kaat deta hoon! Dekha — chota ho ya bara, har koi kaam aa sakta hai!']
+]},
+{title:'🧚 Pariyon ki Kahani',kw:['pari','fairy','kahani'],scenes:[
+  ['Narrator','Bohat door ek jadui jungle me pariyan rehti thin. Sab se choti pari ka naam Noor tha.'],
+  ['Magic','Noor ke par chamakdar thay, lekin wo ur nahi sakti thi. Wo bohat udas rehti thi.'],
+  ['Kid','Kash main bhi baqi pariyon ki tarah ur sakti!'],
+  ['Narrator','Ek raat Noor ne dekha — ek bacha ped ke neeche ro raha tha. Uska khilona toot gaya tha.'],
+  ['Kid','Ro mat! Dekho, main tumhara khilona theek kar deti hoon!'],
+  ['Magic','Jaise hi Noor ne madad ki, uske paron me roshni bhar gayi — aur wo ur parne lagi!'],
+  ['Narrator','Noor samajh gayi — dusron ki khushi me hi asal jadu hai!']
+]},
+{title:'💪 Mehnat ka Phal',kw:['mehnat','hardwork','phal'],scenes:[
+  ['Narrator','Ek gaon me Ali rehta tha. Wo bohat mehnati tha, lekin gareeb tha.'],
+  ['Man','Main roz subah jaldi uth kar khet me kaam karunga! Ek din zaroor kamyab honga!'],
+  ['Woman','Ali beta, mehnat kabhi zaya nahi hoti. Lage raho!'],
+  ['Narrator','Gaon ke log us ka mazaq urate — itni mehnat ka kya faida?'],
+  ['Man','Log jo bhi kahen, main himmat nahi harunga!'],
+  ['Narrator','Fasal pakne par Ali ki mehnat rang layi — us ka khet sab se hara bhara tha!'],
+  ['Woman','Dekha beta! Mehnat ka phal meetha hota hai!']
+]},
+{title:'👶 Bachay ki Shararat',kw:['bacha','shararat','masti'],scenes:[
+  ['Narrator','Chotu bohat shararti bacha tha. Har waqt koi na koi shararat sochta rehta!'],
+  ['Baby','Hehe! Aaj main billi ke peeche chup kar usay daraunga!'],
+  ['Kid','Chotu! Ye shararat achi nahi! Billi dar jayegi!'],
+  ['Narrator','Chotu ne billi ko daraya — billi dar ke ped par charh gayi aur utar na saki!'],
+  ['Baby','Oh no! Ab kya karun? Billi to phans gayi!'],
+  ['Kid','Dekha? Shararat me bhi sochna chahiye. Chalo mil kar billi ko utarte hain!'],
+  ['Narrator','Us din Chotu ne seekha — masti karo, lekin kisi ko takleef na do!']
+]},
+{title:'🦸 Himmat',kw:['himmat','courage','bahadur'],scenes:[
+  ['Drama','Zindagi me kabhi kabhi andhera chha jata hai. Sab kuch mushkil lagne lagta hai.'],
+  ['Drama','Lekin yaad rakho — andheri raat ke baad hi roshan subah aati hai!'],
+  ['Narrator','Sara ne apni job kho di thi. Wo toot chuki thi. Phir us ne faisla kiya!'],
+  ['Drama','Main haar nahi manungi! Main phir se khari hungi, aur zyada mazboot!'],
+  ['Narrator','Us ne din raat mehnat ki. Har thokar ne usay mazboot banaya.'],
+  ['Drama','Aaj Sara kamyab hai — kyunke us ne himmat nahi hari!'],
+  ['Narrator','Himmat wo roshni hai jo andhere me rasta dikhati hai!']
+]},
+{title:'✨ Sachai',kw:['sachai','sach','truth'],scenes:[
+  ['Narrator','Ek dafa ek larke ne sheeshe ka guldaan tor diya. Wo dar gaya.'],
+  ['Kid','Agar ami ko bataya to dant parregi... chup ho jata hoon!'],
+  ['Narrator','Lekin us ka dil bechain raha. Jhoot bolna asaan tha, sach bolna mushkil.'],
+  ['Kid','Ami... wo guldaan mujh se toot gaya tha. Mujhe maaf kar dein!'],
+  ['Narrator','Ami ne use gale lagaya — beta, ghalti sab se hoti hai, lekin sach bolne wale bahadur hote hain!'],
+  ['Kid','Ab se main hamesha sach bolunga!'],
+  ['Narrator','Sachai ki jeet hamesha hoti hai — der se sahi, lekin hoti zaroor hai!']
+]},
+{title:'🤝 Madad',kw:['madad','help','ghar'],scenes:[
+  ['Narrator','Barish ka mausam tha. Ek burhi aurat bheegti hui ja rahi thi.'],
+  ['Woman','Dekho! Wo amma ji bheeg rahi hain! Humein unki madad karni chahiye!'],
+  ['Man','Tum theek kehti ho! Chalo, unhein ghar tak chor aate hain!'],
+  ['Baby','Main bhi chalunga! Amma ji ko chata doonga!'],
+  ['Narrator','Teenon ne amma ji ko chata di aur unhein ghar tak pohunchaya.'],
+  ['Woman','Amma ji ki dua mili — beta, Allah tumhein khush rakhe!'],
+  ['Narrator','Madad karne se dil ko jo sukoon milta hai, wo kisi daulat me nahi!']
+]},
+{title:'😊 Khushi',kw:['khushi','happy','masti'],scenes:[
+  ['Narrator','Khushi kya hai? Kya ye daulat me hai? Ya dil ke sukoon me?'],
+  ['Kid','Aaj mausam kitna pyara hai! Chalo sab mil kar khelen!'],
+  ['Play','Bache park me khel rahe hain — hans rahe hain, daud rahe hain!'],
+  ['Kid','Dekho! Titli kitni rang birangi hai!'],
+  ['Narrator','Khushi choti choti cheezon me chupi hoti hai — ek muskurahat, ek titli, ek dost!'],
+  ['Play','Suraj doob raha hai, lekin bachon ki hansi ab bhi goonj rahi hai!'],
+  ['Kid','Aaj ka din sab se best tha! Khush raho, khushiyan banto!']
+]},
+{title:'💭 Sapna',kw:['sapna','dream','khwab'],scenes:[
+  ['Drama','Har bara kaam pehle ek sapne se shuru hota hai. Sapne dekho — bare sapne!'],
+  ['Narrator','Ahmed ek chota dukaandar tha, lekin us ka sapna bara tha — apni company banana!'],
+  ['Drama','Log hanste thay — dukaandar aur company? Lekin Ahmed ne sapna dekhna nahi chora!'],
+  ['Magic','Raat ko wo apni diary me likhta — ek din meri company hogi, log mujh par fakhr karenge!'],
+  ['Narrator','Das saal ki mehnat ke baad — Ahmed ki company khul gayi!'],
+  ['Drama','Sapne wo nahi jo neend me aayen — sapne wo hain jo tumhein neend na aane dein!'],
+  ['Narrator','Apne sapnon par yaqeen rakho — wo ek din haqeeqat banenge!']
+]},
+{title:'🏁 Race',kw:['race','gari','car'],scenes:[
+  ['Narrator','Aaj sheher me bari race hai! Teen garayan — Rayo, Bella aur Rusty — tayyar hain!'],
+  ['Rayo','Main sab se tez hoon! Ye race meri hai! Vroom vroom!'],
+  ['Bella','Rayo, ghamand achi cheez nahi! Jeet mehnat se milti hai!'],
+  ['Rusty','Aaram se bachon! Race me tez ke saath hoshiyar bhi hona chahiye!'],
+  ['Narrator','Race shuru! Teenon garayan tez daud rahi hain! Rayo sab se aage!'],
+  ['Rayo','Oh no! Mera tel khatam ho raha hai!'],
+  ['Bella','Rayo! Mera tel le lo! Dosti race se bari hai!'],
+  ['Narrator','Bella ne madad ki aur dono saath finish line par pohunche — jeet dosti ki hui!']
+]},
+{title:'❤️ Pyar',kw:['pyar','love','mohabbat'],scenes:[
+  ['Narrator','Pyar wo jazba hai jo dilon ko jorta hai. Ye kahani hai do dilon ki.'],
+  ['Woman','Zindagi me sab se khubsurat cheez — kisi ka saath!'],
+  ['Man','Haan! Jab do log ek dusre ka sahara bante hain, zindagi jannat ban jati hai!'],
+  ['Narrator','Wo dono har mushkil me saath rahe — khushi me hanse, gham me ek dusre ko sambhala.'],
+  ['Woman','Tumhare saath har din eid jaisa lagta hai!'],
+  ['Man','Aur tumhare saath har raat chandni jaisi!'],
+  ['Narrator','Sacha pyar — izzat, bharosa aur saath ka naam hai!']
+]}
+];
+/* 1. Input Analyzer — topic → best template */
+function autoAnalyzer(topic,styleOverride){
+  const t=(topic||'').toLowerCase();
+  if(styleOverride&&styleOverride!=='auto'){
+    const map={cars:0,story:1,kids:8,family:7,drama:5};
+    if(map[styleOverride]!==undefined)return AUTO_STORIES[map[styleOverride]];
+  }
+  let best=null,bestScore=0;
+  for(const s of AUTO_STORIES){
+    let score=0;
+    for(const k of s.kw){if(t.includes(k))score+=2;}
+    if(score>bestScore){bestScore=score;best=s;}
+  }
+  return best||AUTO_STORIES[0];
+}
+/* auto mode clip status — sab modes ke clips check karo */
+const AUTO_MODES=['real','story','kids','interview','drama','family'];
+function autoClipCheck(){
+  const s=$('autoClipStat');if(!s)return;
+  if(!realHasBridge()){s.textContent='⚠️ Ye feature sirf MEER app me chalega';return;}
+  try{
+    let n=0,total=0;
+    for(const m of AUTO_MODES){
+      n+=RealClipBridge.getModeDownloadedCount(m);
+      total+=RealClipBridge.getModeTotalClips(m);
+    }
+    $('autoClipProg').style.display=n<total?'block':'none';
+    $('autoClipBar').style.width=(n/total*100)+'%';
+    s.textContent=n>=total?('✅ '+total+'/'+total+' clips tayyar!'):('⬇️ '+n+'/'+total+' clips — "Sab Clips Download Karo" dabao');
+  }catch(e){s.textContent='⚠️ Bridge error';}
+}
+function autoDownloadClips(){
+  if(!realHasBridge()){alert('Ye feature MEER app me chalega!');return;}
+  $('autoClipProg').style.display='block';
+  try{for(const m of AUTO_MODES)RealClipBridge.downloadModeClips(m);}catch(e){$('autoClipStat').textContent='❌ '+e.message;return;}
+  const iv=setInterval(()=>{
+    try{
+      let n=0,total=0;
+      for(const m of AUTO_MODES){n+=RealClipBridge.getModeDownloadedCount(m);total+=RealClipBridge.getModeTotalClips(m);}
+      $('autoClipBar').style.width=(n/total*100)+'%';
+      $('autoClipStat').textContent=n>=total?('✅ '+total+'/'+total+' clips tayyar!'):('⬇️ '+n+'/'+total+' download ho rahe...');
+      if(n>=total){clearInterval(iv);autoClipCheck();}
+    }catch(e){clearInterval(iv);}
+  },1500);
+}
+/* 2. Script Agent — topic → story preview (editable) */
+function autoMakeStory(){
+  const topic=$('autoTopic').value.trim();
+  if(!topic){alert('Pehle topic likho!');return;}
+  const style=$('autoStyle').value;
+  const s=autoAnalyzer(topic,style);
+  $('autoStoryTitle').textContent=s.title+' — neeche edit kar sakte ho!';
+  $('autoScript').value=s.scenes.map(sc=>'['+sc[0]+'] '+sc[1]).join('\n\n');
+  $('autoStoryCard').style.display='block';
+  $('autoVideoBtn').style.display='block';
+  $('autoStat').textContent='✅ Kahani tayyar! Edit karo ya seedha VIDEO BANAO dabao!';
+}
+/* 6. Quality Agent — clip/voice validation */
+function autoValidateLine(ch){
+  if(!AUTO_CAST[ch])return 'Unknown character: '+ch;
+  return null;
+}
+/* 7+8. Editor+Export — existing pipeline reuse */
+async function autoMakeVideo(){
+  const E=MODE_EL.auto,mode='auto';
+  const text=$(E.script).value.trim();
+  if(!text){alert('Pehle KAHANI BANAO dabao!');return;}
+  const lang=$(E.lang).value,st=$(E.vstat);
+  $(E.vprog).style.display='block';
+  const bar=$(E.vbar),setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  try{
+    if(!realHasBridge())throw new Error('Ye feature MEER app me chalega!');
+    for(const m of AUTO_MODES){
+      if(RealClipBridge.getModeDownloadedCount(m)<RealClipBridge.getModeTotalClips(m))
+        throw new Error('Pehle sab clips download karo! ⬇️');
+    }
+    const lines=[];
+    const paras=text.split(/\n\s*\n/);
+    for(const p of paras){
+      const m=p.trim().match(/^\[(\w+)\]\s*(.+)$/s);
+      if(!m)continue;
+      const ch=m[1],txt=m[2].replace(/\s+/g,' ').trim();
+      if(!txt)continue;
+      const err=autoValidateLine(ch);
+      if(err)throw new Error('❌ '+err+' (hints: [Rayo] [Bella] [Rusty] [Narrator] [Magic] [Kid] [Play] [Woman] [Man] [Baby] [Drama])');
+      const c=AUTO_CAST[ch];
+      lines.push({text:txt,clip:c.clip,pitch:c.pitch,rate:c.rate,label:c.label});
+    }
+    if(!lines.length)throw new Error('Kahani me [Character] hints nahi mile — KAHANI BANAO dobara dabao');
+    const segs=await buildSegs(lines,lang,E,setP);
+    await clipStudioRecord(segs,{mode});
+  }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
+}
 /* TTS with custom pitch/rate (native first, web fallback) */
 async function speakWith(text,lang,pitch,rate){
   const nt=nativeTTS();
