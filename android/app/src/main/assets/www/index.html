@@ -44,6 +44,11 @@ select{width:100%;padding:12px;background:rgba(20,12,35,.9);border:1px solid rgb
 .stepbar div.done{background:linear-gradient(90deg,#ff6b9d,#b565ff)}
 .prog{height:10px;background:rgba(255,255,255,.08);border-radius:6px;overflow:hidden;margin:12px 0}
 .prog>div{height:100%;width:0%;background:linear-gradient(90deg,#ff6b9d,#ffd166,#5ac8fa);transition:width .3s}
+/* v3.22: 2x2 mode grid (Story/Kids/Interview/Drama) — screenshot style */
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0}
+.mode-card{border-radius:16px;padding:14px;min-height:118px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.mode-card .t{font-size:16px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:10px;text-shadow:0 2px 6px rgba(0,0,0,.5)}
+.mode-card .btn{margin:0;padding:11px;font-size:15px;background:rgba(255,255,255,.22);backdrop-filter:blur(6px)}
 .seg{display:flex;background:rgba(255,255,255,.05);border:1px solid rgba(181,101,255,.25);border-radius:14px;padding:4px;gap:4px;margin:8px 0}
 .seg button{flex:1;padding:10px;border:none;border-radius:10px;background:none;color:#b9a3d9;font-size:14px;font-weight:bold;cursor:pointer}
 .seg button.on{background:linear-gradient(135deg,#ff6b9d,#b565ff);color:#fff;box-shadow:0 3px 12px rgba(181,101,255,.4)}
@@ -105,6 +110,26 @@ select{width:100%;padding:12px;background:rgba(20,12,35,.9);border:1px solid rgb
   </div>
   <div class="row">
     <button class="btn" onclick="go('s-real');realInit()" style="background:linear-gradient(135deg,#00c9ff,#92fe9d);color:#003">🎬 Real Cartoon Studio</button>
+  </div>
+  <!-- v3.22: 4 NEW MODES — 2x2 grid, screenshot style -->
+  <div class="lbl">🎬 AI Video Studio — bilkul real!</div>
+  <div class="mode-grid">
+    <div class="mode-card" style="background:linear-gradient(135deg,#2b1055,#7597de)">
+      <div class="t">📖 Story<br>To Video</div>
+      <button class="btn" onclick="go('s-story');storyInit()">Create</button>
+    </div>
+    <div class="mode-card" style="background:linear-gradient(135deg,#134e5e,#71b280)">
+      <div class="t">🧒 Kids Story<br>Video</div>
+      <button class="btn" onclick="go('s-kids2');kids2Init()">Create</button>
+    </div>
+    <div class="mode-card" style="background:linear-gradient(135deg,#0f2027,#2c5364)">
+      <div class="t">🎤 Interview<br>Video</div>
+      <button class="btn" onclick="go('s-interview');interviewInit()">Create</button>
+    </div>
+    <div class="mode-card" style="background:linear-gradient(135deg,#41295a,#b21f1f)">
+      <div class="t">🎭 Short Drama<br>Video</div>
+      <button class="btn" onclick="go('s-drama');dramaInit()">Create</button>
+    </div>
   </div>
   <div class="row">
     <button class="btn" onclick="go('s-kids');kidInit()" style="background:linear-gradient(135deg,#ffd93d,#ff8c42)">🧸 Kids Rhymes Studio</button>
@@ -407,6 +432,110 @@ function featSend(){
   <p class="hint" id="realStat" style="text-align:center"></p>
   <video id="realPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
   <button class="btn" id="realDl" style="display:none">⬇️ DOWNLOAD KARO</button>
+</div>
+
+<!-- ============ 📖 STORY TO VIDEO (v3.22) ============ -->
+<div class="screen" id="s-story">
+  <button class="back" onclick="go('s-home')">← Home</button>
+  <h1 style="font-size:22px">📖 Story To Video</h1>
+  <p class="hint">Kahani likho — narrator sunayega, magic scenes ayenge! ✨</p>
+  <div class="card">
+    <div class="lbl">📦 Video Clips (ek dafa download)</div>
+    <p class="hint" id="storyClipStat">Check ho raha hai...</p>
+    <button class="btn btn2" onclick="modeDownloadClips('story')">⬇️ Clips Download Karo</button>
+    <div class="prog" id="storyClipProg" style="display:none"><div id="storyClipBar"></div></div>
+  </div>
+  <div class="card">
+    <div class="lbl">✍️ Kahani (paragraphs me likho)</div>
+    <textarea id="storyScript" class="big-idea" style="min-height:150px" placeholder="Ek dafa ka zikr hai, ek chota sa gaon tha...&#10;&#10;Wahan ek bahadur larka rehta tha..."></textarea>
+    <div class="row">
+      <div><div class="lbl">🗣️ Zabaan</div>
+        <select id="storyLang"><option value="en" selected>🇬🇧 English</option><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option></select></div>
+    </div>
+  </div>
+  <button class="btn btn3" onclick="storyMakeVideo()">📖 STORY VIDEO BANAO →</button>
+  <div class="prog" id="storyProg" style="display:none"><div id="storyBar"></div></div>
+  <p class="hint" id="storyStat" style="text-align:center"></p>
+  <video id="storyPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
+  <button class="btn" id="storyDl" style="display:none">⬇️ DOWNLOAD KARO</button>
+</div>
+
+<!-- ============ 🧒 KIDS STORY VIDEO (v3.22) ============ -->
+<div class="screen" id="s-kids2">
+  <button class="back" onclick="go('s-home')">← Home</button>
+  <h1 style="font-size:22px">🧒 Kids Story Video</h1>
+  <p class="hint">Bachon ki kahani — khush awaz + pyare scenes! 🌈</p>
+  <div class="card">
+    <div class="lbl">📦 Video Clips (ek dafa download)</div>
+    <p class="hint" id="kids2ClipStat">Check ho raha hai...</p>
+    <button class="btn btn2" onclick="modeDownloadClips('kids')">⬇️ Clips Download Karo</button>
+    <div class="prog" id="kids2ClipProg" style="display:none"><div id="kids2ClipBar"></div></div>
+  </div>
+  <div class="card">
+    <div class="lbl">✍️ Kahani (paragraphs me likho)</div>
+    <textarea id="kids2Script" class="big-idea" style="min-height:150px" placeholder="Ek pyara sa khargosh tha...&#10;&#10;Wo roz subah khelne jata tha..."></textarea>
+    <div class="row">
+      <div><div class="lbl">🗣️ Zabaan</div>
+        <select id="kids2Lang"><option value="en" selected>🇬🇧 English</option><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option></select></div>
+    </div>
+  </div>
+  <button class="btn btn3" onclick="kids2MakeVideo()">🧒 KIDS VIDEO BANAO →</button>
+  <div class="prog" id="kids2Prog" style="display:none"><div id="kids2Bar"></div></div>
+  <p class="hint" id="kids2Stat" style="text-align:center"></p>
+  <video id="kids2Preview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
+  <button class="btn" id="kids2Dl" style="display:none">⬇️ DOWNLOAD KARO</button>
+</div>
+
+<!-- ============ 🎤 INTERVIEW VIDEO (v3.22) ============ -->
+<div class="screen" id="s-interview">
+  <button class="back" onclick="go('s-home')">← Home</button>
+  <h1 style="font-size:22px">🎤 Interview Video</h1>
+  <p class="hint">Sawal-jawab — host poochega, guest jawab dega! 🎙️</p>
+  <div class="card">
+    <div class="lbl">📦 Video Clips (ek dafa download)</div>
+    <p class="hint" id="interviewClipStat">Check ho raha hai...</p>
+    <button class="btn btn2" onclick="modeDownloadClips('interview')">⬇️ Clips Download Karo</button>
+    <div class="prog" id="interviewClipProg" style="display:none"><div id="interviewClipBar"></div></div>
+  </div>
+  <div class="card">
+    <div class="lbl">✍️ Script (format: <b>Host: sawal</b> / <b>Guest: jawab</b>)</div>
+    <textarea id="interviewScript" class="big-idea" style="min-height:150px" placeholder="Host: Aap ka naam kya hai?&#10;Guest: Mera naam Ahmed hai!&#10;Host: Aap kya karte hain?&#10;Guest: Main teacher hoon!"></textarea>
+    <div class="row">
+      <div><div class="lbl">🗣️ Zabaan</div>
+        <select id="interviewLang"><option value="en" selected>🇬🇧 English</option><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option></select></div>
+    </div>
+  </div>
+  <button class="btn btn3" onclick="interviewMakeVideo()">🎤 INTERVIEW BANAO →</button>
+  <div class="prog" id="interviewProg" style="display:none"><div id="interviewBar"></div></div>
+  <p class="hint" id="interviewStat" style="text-align:center"></p>
+  <video id="interviewPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
+  <button class="btn" id="interviewDl" style="display:none">⬇️ DOWNLOAD KARO</button>
+</div>
+
+<!-- ============ 🎭 SHORT DRAMA VIDEO (v3.22) ============ -->
+<div class="screen" id="s-drama">
+  <button class="back" onclick="go('s-home')">← Home</button>
+  <h1 style="font-size:22px">🎭 Short Drama Video</h1>
+  <p class="hint">Dramatic kahani — jazbaat bhari awaz! 🌙</p>
+  <div class="card">
+    <div class="lbl">📦 Video Clips (ek dafa download)</div>
+    <p class="hint" id="dramaClipStat">Check ho raha hai...</p>
+    <button class="btn btn2" onclick="modeDownloadClips('drama')">⬇️ Clips Download Karo</button>
+    <div class="prog" id="dramaClipProg" style="display:none"><div id="dramaClipBar"></div></div>
+  </div>
+  <div class="card">
+    <div class="lbl">✍️ Kahani (paragraphs me likho)</div>
+    <textarea id="dramaScript" class="big-idea" style="min-height:150px" placeholder="Wo shaam bohat khamosh thi...&#10;&#10;Us ne aasman ki taraf dekha aur socha..."></textarea>
+    <div class="row">
+      <div><div class="lbl">🗣️ Zabaan</div>
+        <select id="dramaLang"><option value="en" selected>🇬🇧 English</option><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option></select></div>
+    </div>
+  </div>
+  <button class="btn btn3" onclick="dramaMakeVideo()">🎭 DRAMA BANAO →</button>
+  <div class="prog" id="dramaProg" style="display:none"><div id="dramaBar"></div></div>
+  <p class="hint" id="dramaStat" style="text-align:center"></p>
+  <video id="dramaPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
+  <button class="btn" id="dramaDl" style="display:none">⬇️ DOWNLOAD KARO</button>
 </div>
 
 <!-- ============ KIDS RHYMES STUDIO ============ -->
@@ -2535,6 +2664,259 @@ async function realMakeVideo(){
     dl.onclick=()=>{const a=document.createElement('a');a.href=url;
       a.download='real-cartoon-'+Date.now()+'.'+blobExt(mime);a.click();};
     st.textContent='✅ Real cartoon tayyar! 🎬🎉';
+  }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
+}
+
+/* ===== v3.22: 4 NEW MODES — shared clip-studio engine ===== */
+const MODE_EL={
+  story:{stat:'storyClipStat',prog:'storyClipProg',bar:'storyClipBar',script:'storyScript',lang:'storyLang',vprog:'storyProg',vbar:'storyBar',vstat:'storyStat',preview:'storyPreview',dl:'storyDl'},
+  kids:{stat:'kids2ClipStat',prog:'kids2ClipProg',bar:'kids2ClipBar',script:'kids2Script',lang:'kids2Lang',vprog:'kids2Prog',vbar:'kids2Bar',vstat:'kids2Stat',preview:'kids2Preview',dl:'kids2Dl'},
+  interview:{stat:'interviewClipStat',prog:'interviewClipProg',bar:'interviewClipBar',script:'interviewScript',lang:'interviewLang',vprog:'interviewProg',vbar:'interviewBar',vstat:'interviewStat',preview:'interviewPreview',dl:'interviewDl'},
+  drama:{stat:'dramaClipStat',prog:'dramaClipProg',bar:'dramaClipBar',script:'dramaScript',lang:'dramaLang',vprog:'dramaProg',vbar:'dramaBar',vstat:'dramaStat',preview:'dramaPreview',dl:'dramaDl'}
+};
+function onModeClipMsg(mode,st,n){
+  const E=MODE_EL[mode];if(!E)return;
+  const s=$(E.stat);if(!s)return;
+  if(st==='started')s.textContent=n>0?('⬇️ '+n+' clips download ho rahi hain...'):'✅ Clips tayyar hain!';
+  else if(st==='ready')s.textContent='✅ Clips tayyar hain!';
+  else if(st==='error')s.textContent='❌ Download me masla — dobara try karo';
+  modeClipCheck(mode);
+}
+function modeClipCheck(mode){
+  const E=MODE_EL[mode];if(!E)return;
+  const s=$(E.stat);if(!s)return;
+  if(!realHasBridge()){s.textContent='⚠️ Ye feature sirf MEER app me chalega';return;}
+  try{
+    const n=RealClipBridge.getModeDownloadedCount(mode);
+    const total=RealClipBridge.getModeTotalClips(mode);
+    $(E.prog).style.display=n<total?'block':'none';
+    $(E.bar).style.width=(n/total*100)+'%';
+    s.textContent=n>=total?('✅ '+total+'/'+total+' clips tayyar!'):('⬇️ '+n+'/'+total+' clips — "Clips Download Karo" dabao');
+  }catch(e){s.textContent='⚠️ Bridge error';}
+}
+function modeDownloadClips(mode){
+  const E=MODE_EL[mode];if(!E)return;
+  if(!realHasBridge()){alert('Ye feature MEER app me chalega!');return;}
+  $(E.prog).style.display='block';
+  try{RealClipBridge.downloadModeClips(mode);}catch(e){$(E.stat).textContent='❌ '+e.message;return;}
+  const iv=setInterval(()=>{
+    try{
+      const n=RealClipBridge.getModeDownloadedCount(mode);
+      const total=RealClipBridge.getModeTotalClips(mode);
+      $(E.bar).style.width=(n/total*100)+'%';
+      $(E.stat).textContent=n>=total?('✅ '+total+'/'+total+' clips tayyar!'):('⬇️ '+n+'/'+total+' clips download ho rahe...');
+      if(n>=total){clearInterval(iv);}
+    }catch(e){clearInterval(iv);}
+  },1500);
+}
+function storyInit(){modeClipCheck('story');}
+function kids2Init(){modeClipCheck('kids');}
+function interviewInit(){modeClipCheck('interview');}
+function dramaInit(){modeClipCheck('drama');}
+/* TTS with custom pitch/rate (native first, web fallback) */
+async function speakWith(text,lang,pitch,rate){
+  const nt=nativeTTS();
+  if(nt){
+    try{
+      const uri=await nativeSpeak(text,lang,pitch,rate);
+      const au=new Audio();au.src=uri;
+      await new Promise((res,rej)=>{
+        const to=setTimeout(()=>rej(0),15000);
+        au.addEventListener('loadedmetadata',()=>{clearTimeout(to);res();},{once:true});
+        au.addEventListener('error',()=>{clearTimeout(to);rej(0);},{once:true});
+      });
+      return au;
+    }catch(e){}
+  }
+  return await loadAudio(ttsURL(text,lang,'webapp'),rate||1.0);
+}
+/* load a local clip file into a looping hidden <video> */
+function loadClipVideo(clipURL){
+  return new Promise((res,rej)=>{
+    const v=document.createElement('video');
+    v.muted=true;v.playsInline=true;v.setAttribute('playsinline','');
+    v.loop=true;v.preload='auto';v.src=clipURL;
+    const to=setTimeout(()=>rej(new Error('Clip load nahi hui')),20000);
+    v.addEventListener('canplay',()=>{clearTimeout(to);res(v);},{once:true});
+    v.addEventListener('error',()=>{clearTimeout(to);rej(new Error('Clip error'));},{once:true});
+    v.load();
+  });
+}
+/* split story text into paragraph segments */
+function splitParagraphs(text){
+  return text.split(/\n\s*\n/).map(p=>p.replace(/\s+/g,' ').trim()).filter(p=>p.length>2);
+}
+function trunc80(t){return t.length>80?t.slice(0,77)+'...':t;}
+/* shared recorder: plays clip segs + TTS, records canvas, shows preview */
+async function clipStudioRecord(segs,cfg){
+  const E=MODE_EL[cfg.mode];
+  const bar=$(E.vbar),st=$(E.vstat);
+  $(E.vprog).style.display='block';
+  const setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  const totalDur=segs.reduce((a,s)=>a+s.dur,0)+1;
+  const W=720,H=1280;cv.width=1080;cv.height=1920;
+  const sx=1080/W,sy=1920/H;
+  setP(40,'🎬 Recording...');
+  cvShowRec();NOIMG=true;
+  cx.setTransform(sx,0,0,sy,0,0);
+  cx.fillStyle='#000';cx.fillRect(0,0,W,H);
+  await sleep(400);
+  const vstream=cv.captureStream(30);
+  const vts=vstream.getVideoTracks();
+  if(!vts.length)throw new Error('Video track nahi mila');
+  const tracks=[...vts];
+  for(const s of segs){
+    try{
+      const ast=s.au.captureStream?s.au.captureStream():s.au.mozCaptureStream();
+      if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
+    }catch(e){}
+  }
+  const mime=pickMime();
+  const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
+  const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+  const doneRec=new Promise(r=>rec.onstop=r);
+  rec.start(250);
+  const t0=performance.now();
+  let li=0;
+  const playP=(async()=>{
+    for(let i=0;i<segs.length;i++){
+      li=i;
+      try{segs[i].v.currentTime=0;await segs[i].v.play();}catch(e){}
+      try{await segs[i].au.play();}catch(e){}
+      await new Promise(r=>{segs[i].au.onended=r;setTimeout(r,segs[i].dur*1000+1200);});
+      try{segs[i].v.pause();}catch(e){}
+      await sleep(250);
+    }
+  })();
+  await new Promise(res=>{
+    (function frame(){
+      const el=(performance.now()-t0)/1000;
+      cx.setTransform(sx,0,0,sy,0,0);
+      const s=segs[li];
+      if(s&&s.v&&s.v.readyState>=2){
+        const vw=s.v.videoWidth,vh=s.v.videoHeight;
+        if(vw&&vh){
+          const sc=Math.max(W/vw,H/vh),dw=vw*sc,dh=vh*sc;
+          try{cx.drawImage(s.v,(W-dw)/2,(H-dh)/2,dw,dh);}catch(e){}
+        }
+      }
+      if(s){
+        const fs=Math.round(H*0.030);
+        cx.font='bold '+fs+'px sans-serif';cx.textAlign='center';
+        const txt=s.label?(s.label+': '+s.short):s.short;
+        const wdt=Math.min(W*0.94,cx.measureText(txt).width+44);
+        cx.fillStyle='rgba(0,0,0,.55)';
+        cx.beginPath();cx.roundRect(W/2-wdt/2,H*0.88,wdt,fs*1.75,14);cx.fill();
+        cx.fillStyle='#fff';cx.fillText(txt,W/2,H*0.88+fs*1.2);
+      }
+      setP(40+Math.min(55,el/totalDur*55),'Ban rahi... '+Math.floor(el)+'s');
+      if(el>=totalDur){res();return;}
+      requestAnimationFrame(frame);
+    })();
+  });
+  await playP.catch(()=>{});
+  rec.stop();await doneRec;
+  cvHide();NOIMG=false;
+  segs.forEach(s=>{try{s.v.pause();s.v.src='';}catch(e){}});
+  setP(100,'✅ Tayyar!');
+  const blob=new Blob(chunks,{type:mime||'video/webm'});
+  const url=setVideoPreview($(E.preview),blob,mime);
+  const dl=$(E.dl);dl.style.display='block';
+  dl.onclick=()=>{const a=document.createElement('a');a.href=url;
+    a.download=cfg.mode+'-'+Date.now()+'.'+blobExt(mime);a.click();};
+  st.textContent='✅ Video tayyar! 🎬🎉';
+}
+/* build TTS+clip segments for a parsed line list */
+async function buildSegs(lines,lang,E,setP){
+  const segs=[];
+  for(let i=0;i<lines.length;i++){
+    setP(5+i/lines.length*30,'🎙️ '+(i+1)+'/'+lines.length);
+    const au=await speakWith(lines[i].text,lang,lines[i].pitch,lines[i].rate);
+    const clipURL=realClipURL(lines[i].clip);
+    if(!clipURL)throw new Error('Clip nahi mili: '+lines[i].clip);
+    const v=await loadClipVideo(clipURL);
+    segs.push({label:lines[i].label||'',short:trunc80(lines[i].text),au,v,
+      dur:Math.max(2.5,(au.duration||2)+0.4)});
+  }
+  return segs;
+}
+/* ---- 📖 STORY TO VIDEO ---- */
+async function storyMakeVideo(){
+  const E=MODE_EL.story,mode='story';
+  const text=$(E.script).value.trim();
+  if(!text){alert('Pehle kahani likho!');return;}
+  const lang=$(E.lang).value,st=$(E.vstat);
+  $(E.vprog).style.display='block';
+  const bar=$(E.vbar),setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  try{
+    if(!realHasBridge())throw new Error('Ye feature MEER app me chalega!');
+    if(!RealClipBridge.areModeClipsReady(mode))throw new Error('Pehle clips download karo! ⬇️');
+    const paras=splitParagraphs(text);
+    if(!paras.length)throw new Error('Kahani likho (paragraphs me)');
+    const lines=paras.map((p,i)=>({text:p,clip:(i%3===2)?'story-magic.mp4':'story-narrator.mp4',pitch:1.3,rate:1.0,label:''}));
+    const segs=await buildSegs(lines,lang,E,setP);
+    await clipStudioRecord(segs,{mode});
+  }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
+}
+/* ---- 🧒 KIDS STORY VIDEO ---- */
+async function kids2MakeVideo(){
+  const E=MODE_EL.kids,mode='kids';
+  const text=$(E.script).value.trim();
+  if(!text){alert('Pehle kahani likho!');return;}
+  const lang=$(E.lang).value,st=$(E.vstat);
+  $(E.vprog).style.display='block';
+  const bar=$(E.vbar),setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  try{
+    if(!realHasBridge())throw new Error('Ye feature MEER app me chalega!');
+    if(!RealClipBridge.areModeClipsReady(mode))throw new Error('Pehle clips download karo! ⬇️');
+    const paras=splitParagraphs(text);
+    if(!paras.length)throw new Error('Kahani likho (paragraphs me)');
+    const lines=paras.map((p,i)=>({text:p,clip:(i%3===2)?'kids-play.mp4':'kids-hero.mp4',pitch:1.55,rate:1.0,label:''}));
+    const segs=await buildSegs(lines,lang,E,setP);
+    await clipStudioRecord(segs,{mode});
+  }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
+}
+/* ---- 🎤 INTERVIEW VIDEO ---- */
+async function interviewMakeVideo(){
+  const E=MODE_EL.interview,mode='interview';
+  const text=$(E.script).value.trim();
+  if(!text){alert('Pehle script likho! (Host: / Guest:)');return;}
+  const lang=$(E.lang).value,st=$(E.vstat);
+  $(E.vprog).style.display='block';
+  const bar=$(E.vbar),setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  try{
+    if(!realHasBridge())throw new Error('Ye feature MEER app me chalega!');
+    if(!RealClipBridge.areModeClipsReady(mode))throw new Error('Pehle clips download karo! ⬇️');
+    const lines=[];
+    for(const ln of text.split('\n')){
+      const m=ln.match(/^\s*(Host|Guest)\s*:\s*(.+)$/i);
+      if(!m)continue;
+      const who=m[1].toLowerCase();
+      lines.push({text:m[2].trim(),clip:'interview-host.mp4',
+        pitch:who==='host'?0.8:1.35,rate:1.0,
+        label:who==='host'?'🎤 Host':'💬 Guest'});
+    }
+    if(!lines.length)throw new Error('Format: Host: sawal / Guest: jawab');
+    const segs=await buildSegs(lines,lang,E,setP);
+    await clipStudioRecord(segs,{mode});
+  }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
+}
+/* ---- 🎭 SHORT DRAMA VIDEO ---- */
+async function dramaMakeVideo(){
+  const E=MODE_EL.drama,mode='drama';
+  const text=$(E.script).value.trim();
+  if(!text){alert('Pehle kahani likho!');return;}
+  const lang=$(E.lang).value,st=$(E.vstat);
+  $(E.vprog).style.display='block';
+  const bar=$(E.vbar),setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  try{
+    if(!realHasBridge())throw new Error('Ye feature MEER app me chalega!');
+    if(!RealClipBridge.areModeClipsReady(mode))throw new Error('Pehle clips download karo! ⬇️');
+    const paras=splitParagraphs(text);
+    if(!paras.length)throw new Error('Kahani likho (paragraphs me)');
+    const lines=paras.map(p=>({text:p,clip:'drama-heroine.mp4',pitch:1.25,rate:0.9,label:''}));
+    const segs=await buildSegs(lines,lang,E,setP);
+    await clipStudioRecord(segs,{mode});
   }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
 }
 </script>
