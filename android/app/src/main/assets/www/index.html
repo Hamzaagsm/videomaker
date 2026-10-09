@@ -890,7 +890,7 @@ function cvShowRec(){
   // visible small preview during recording — fixes WebView captureStream on many phones
   cv.style.cssText='position:fixed;right:10px;bottom:10px;width:140px;height:248px;z-index:9999;border:2px solid #f43f5e;border-radius:12px;pointer-events:none;box-shadow:0 0 20px rgba(244,63,94,.6);';
 }
-cvHide();
+cvHide();NOIMG=false;
 if(document.body)document.body.appendChild(cv);else document.addEventListener('DOMContentLoaded',()=>document.body.appendChild(cv));
 const cx=cv.getContext('2d');
 /* Robust MediaRecorder mime picker: vp9 -> vp8 -> default */
@@ -1145,7 +1145,7 @@ async function buildVideo(){
     if(S.music)playMusic(a,master,dur);
     playSFX(a,master,dur);
     setP(9,'Recording...');
-    cvShowRec();
+    cvShowRec();NOIMG=true; // taint-safe: no external PNGs during recording
     const vstream=cv.captureStream(30);
     const tracks=[...vstream.getVideoTracks(),...voiceTracks,...dest.stream.getAudioTracks()];
     const mime=pickMime();
@@ -1187,7 +1187,7 @@ async function buildVideo(){
       })();
     });
     await playP.catch(()=>{});
-    rec.stop();await done;cvHide();setP(96,'Tayyar! 🎉');
+    rec.stop();await done;cvHide();NOIMG=false;setP(96,'Tayyar! 🎉');
     const blob=new Blob(chunks,{type:mime||'video/webm'});
     const url=setVideoPreview($('preview'),blob,mime);
     const dl=$('dlBtn');dl.style.display='block';
@@ -1210,7 +1210,7 @@ async function buildVideo(){
     $('metaCard').style.display='block';
     $('saveBtn').style.display='block';$('againBtn').style.display='block';
     setP(100,'✅ Video tayyar!');
-  }catch(e){try{cvHide();}catch(_){}st.textContent='❌ '+e.message;}
+  }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
 }
 /* ================= TALKING CARS STUDIO (v3.7) ================= */
 const CARCHARS={
@@ -1410,6 +1410,8 @@ function carLoadImages(){
     const im=new Image();im.src=bgs[k];BGIMG[k]=im;
   }
 }
+/* when true, skip external PNGs (they taint canvas in WebView -> captureStream fails) */
+let NOIMG=false;
 /* scene changes every 3 lines like real videos! */
 const BGORDER=['day','park','town','race','beach','night'];
 function carGetBG(lineIdx){
@@ -1423,8 +1425,8 @@ function carGetBG(lineIdx){
 /* draw beautiful sprite car with talking mouth */
 function drawCarSprite(x,y,s,ch,active,t,talking){
   const im=CARIMG[ch];
-  if(!im||!im.complete||!im.naturalWidth){
-    drawCar(x,y,s,ch,active,t,talking);return; // fallback to canvas
+  if(!im||!im.complete||!im.naturalWidth||NOIMG){
+    drawCar(x,y,s,ch,talking,t,true);return; // fallback to canvas (taint-safe)
   }
   const w=s*2.2,h=s*1.65;
   const bounce=active?Math.abs(Math.sin(t*8))*s*0.08:Math.abs(Math.sin(t*3))*s*0.02;
@@ -1461,8 +1463,9 @@ function drawCarSprite(x,y,s,ch,active,t,talking){
 }
 function carFrame(lines,lineIdx,t,W,H){
   // scene-changing beautiful background (like real videos!)
+  // NOTE: during recording (NOIMG) skip PNGs — they taint canvas in WebView!
   const bg=carGetBG(lineIdx);
-  if(bg&&bg.complete&&bg.naturalWidth){
+  if(bg&&bg.complete&&bg.naturalWidth&&!NOIMG){
     cx.drawImage(bg,0,0,W,H);
     // cinematic vignette
     const vg=cx.createRadialGradient(W/2,H/2,H*0.3,W/2,H/2,H*0.75);
@@ -1604,7 +1607,7 @@ async function carMakeVideo(silent){
     const W=720,H=1280;cv.width=1080;cv.height=1920;
     const sx=1080/W,sy=1920/H;
     setP(45,'🎬 Recording...');
-    cvShowRec(); // visible canvas = reliable captureStream on WebView
+    cvShowRec();NOIMG=true; // taint-safe: no external PNGs during recording // visible canvas = reliable captureStream on WebView
     // draw one frame BEFORE capture so stream has content
     cx.setTransform(sx,0,0,sy,0,0);carFrame(lines,0,0,W,H);
     await sleep(300);
@@ -1667,14 +1670,14 @@ async function carMakeVideo(silent){
       ({chunks,mime}=await carRecordOnce(true));
       blob=new Blob(chunks,{type:mime||'video/webm'});
     }
-    cvHide();
+    cvHide();NOIMG=false;
     setP(100,'✅ Tayyar!');
     const url=setVideoPreview($('carPreview'),blob,mime);
     const dl=$('carDl');dl.style.display='block';
     dl.onclick=()=>{const a=document.createElement('a');a.href=url;
       a.download='talking-cars-'+Date.now()+'.'+blobExt(mime);a.click();};
     st.textContent='✅ Video tayyar! Download karo! 🎉';
-  }catch(e){try{cvHide();}catch(_){}st.textContent='❌ '+e.message;}
+  }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
 }
 /* Download voice MP3 separately (for CapCut workflow) */
 async function carDownloadVoice(){
@@ -2157,7 +2160,7 @@ async function kidMakeVideo(){
     const W=720,H=1280;cv.width=1080;cv.height=1920;
     const sx=1080/W,sy=1920/H;
     setP(45,'🎬 Recording...');
-    cvShowRec();
+    cvShowRec();NOIMG=true; // taint-safe: no external PNGs during recording
     cx.setTransform(sx,0,0,sy,0,0);kidFrame(lines[0],0,0,W,H);
     await sleep(300);
     const vstream=cv.captureStream(30);
@@ -2197,7 +2200,7 @@ async function kidMakeVideo(){
     });
     await playP.catch(()=>{});
     rec.stop();await doneRec;
-    cvHide();
+    cvHide();NOIMG=false;
     setP(100,'✅ Tayyar!');
     const blob=new Blob(chunks,{type:mime||'video/webm'});
     const url=setVideoPreview($('kidPreview'),blob,mime);
@@ -2205,7 +2208,7 @@ async function kidMakeVideo(){
     dl.onclick=()=>{const a=document.createElement('a');a.href=url;
       a.download='kids-rhyme-'+Date.now()+'.'+blobExt(mime);a.click();};
     st.textContent='✅ Kids video tayyar! TikTok par dalo! 🎉';
-  }catch(e){try{cvHide();}catch(_){}st.textContent='❌ '+e.message;}
+  }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
 }
 /* cheerful kid-song voice via native TTS (high pitch) — Hindi voice best hai! */
 async function kidSpeak(text){
