@@ -1,8 +1,16 @@
 package com.hamza.videomaker;
 
 import android.app.Activity;
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.Voice;
@@ -12,6 +20,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
+import androidx.core.content.FileProvider;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.Locale;
@@ -44,6 +54,7 @@ public class MainActivity extends Activity {
         web.setWebViewClient(new WebViewClient());
         web.setWebChromeClient(new WebChromeClient());
         web.addJavascriptInterface(new TTSBridge(), "HamzaTTS");
+        web.addJavascriptInterface(new UpdateBridge(), "HamzaUpdate");
 
         tts = new TextToSpeech(this, status -> {
             if (status == TextToSpeech.SUCCESS) {
@@ -240,6 +251,84 @@ public class MainActivity extends Activity {
             android.os.Bundle params = new android.os.Bundle();
             params.putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, id);
             tts.synthesizeToFile(text, params, new File(path), id);
+        }
+    }
+
+    /**
+     * v3.16: In-app updater — downloads the new APK and opens the installer.
+     * Called from JS: window.HamzaUpdate.downloadAndInstall(url)
+     */
+    class UpdateBridge {
+        private long downloadId = -1;
+        private BroadcastReceiver receiver;
+
+        @JavascriptInterface
+        public void downloadAndInstall(final String url) {
+            runOnUiThread(() -> {
+                try {
+                    // Android 8+: need "install unknown apps" permission; system prompts if missing
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        if (!getPackageManager().canRequestPackageInstalls()) {
+                            Intent perm = new Intent(android.provider.Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
+                                    Uri.parse("package:" + getPackageName()));
+                            perm.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(perm);
+                            Toast.makeText(MainActivity.this,
+                                    "Pehle 'Allow from this source' ON karo, phir dobara Update dabao 🙏",
+                                    Toast.LENGTH_LONG).show();
+                            js("onUpdateMsg('permission')");
+                            return;
+                        }
+                    }
+                    Toast.makeText(MainActivity.this, "⬇️ Update download ho rahi hai...", Toast.LENGTH_SHORT).show();
+                    js("onUpdateMsg('downloading')");
+
+                    DownloadManager dm = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                    DownloadManager.Request req = new DownloadManager.Request(Uri.parse(url));
+                    req.setTitle("MEER Update");
+                    req.setDescription("Nayi version download ho rahi hai...");
+                    req.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                    req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "MEER-update.apk");
+                    req.setMimeType("application/vnd.android.package-archive");
+                    downloadId = dm.enqueue(req);
+
+                    if (receiver != null) {
+                        try { unregisterReceiver(receiver); } catch (Exception ignored) {}
+                    }
+                    receiver = new BroadcastReceiver() {
+                        @Override public void onReceive(Context ctx, Intent intent) {
+                            long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+                            if (id == downloadId) {
+                                try { unregisterReceiver(this); } catch (Exception ignored) {}
+                                installApk();
+                            }
+                        }
+                    };
+                    registerReceiver(receiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+                } catch (Exception e) {
+                    js("onUpdateMsg('error')");
+                }
+            });
+        }
+
+        private void installApk() {
+            try {
+                File apk = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                        "MEER-update.apk");
+                if (!apk.exists()) {
+                    js("onUpdateMsg('error')");
+                    return;
+                }
+                Uri uri = FileProvider.getUriForFile(MainActivity.this,
+                        getPackageName() + ".fileprovider", apk);
+                Intent inst = new Intent(Intent.ACTION_VIEW);
+                inst.setDataAndType(uri, "application/vnd.android.package-archive");
+                inst.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                js("onUpdateMsg('installing')");
+                startActivity(inst);
+            } catch (Exception e) {
+                js("onUpdateMsg('error')");
+            }
         }
     }
 
