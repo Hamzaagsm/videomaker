@@ -151,7 +151,7 @@ function applyWaVis(){
 }
 setTimeout(applyWaVis,300);
 /* ===== AUTO UPDATE CHECKER + ONE-TAP AUTO-INSTALL (v3.16) ===== */
-const APP_VER='3.16';
+const APP_VER='3.17';
 let UPD_URL='';
 function onUpdateMsg(s){
   const b=$('updBanner');if(!b)return;
@@ -1343,40 +1343,61 @@ function carEstDur(){
   const d=carParse(),words=d.join(' ').split(/\s+/).length;
   $('carDur').textContent='~'+Math.round(words/2.5)+' sec ('+d.length+' lines)';
 }
-/* draw a cartoon car with animated mouth */
+/* draw a BIG cute cartoon car with expressive face (v3.17 full-display style!) */
 function drawCar(x,y,s,ch,mouth,t,bounce){
   const C=CARCHARS[ch];
   cx.save();cx.translate(x,y+(bounce?-s*0.06*Math.abs(Math.sin(t*6)):0));
   // shadow
-  cx.fillStyle='rgba(0,0,0,.25)';cx.beginPath();cx.ellipse(0,s*0.42,s*0.85,s*0.14,0,0,7);cx.fill();
-  // body
+  cx.fillStyle='rgba(0,0,0,.25)';cx.beginPath();cx.ellipse(0,s*0.42,s*0.95,s*0.16,0,0,7);cx.fill();
+  // body (rounder, cuter!)
   cx.fillStyle=C.color;cx.beginPath();
-  cx.roundRect(-s,s*-0.28,s*2,s*0.62,s*0.28);cx.fill();
-  cx.fillStyle=C.dark;cx.fillRect(-s*0.72,-s*0.28,s*1.44,s*0.1);
-  // cabin
+  cx.roundRect(-s*1.1,s*-0.30,s*2.2,s*0.68,s*0.34);cx.fill();
+  // body highlight (shiny cartoon look!)
+  cx.fillStyle='rgba(255,255,255,.25)';cx.beginPath();
+  cx.roundRect(-s*0.95,-s*0.22,s*1.9,s*0.18,s*0.09);cx.fill();
+  cx.fillStyle=C.dark;cx.fillRect(-s*0.8,-s*0.30,s*1.6,s*0.1);
+  // cabin (bigger!)
   cx.fillStyle=C.color;cx.beginPath();
-  cx.roundRect(-s*0.55,-s*0.78,s*1.1,s*0.55,s*0.22);cx.fill();
-  // windshield
-  cx.fillStyle='rgba(200,235,255,.9)';cx.beginPath();
-  cx.roundRect(-s*0.42,-s*0.68,s*0.84,s*0.38,s*0.14);cx.fill();
-  // eyes on windshield
-  const ex=s*0.2;
+  cx.roundRect(-s*0.62,-s*0.92,s*1.24,s*0.66,s*0.28);cx.fill();
+  // windshield (bigger, cuter!)
+  cx.fillStyle='rgba(200,235,255,.95)';cx.beginPath();
+  cx.roundRect(-s*0.48,-s*0.80,s*0.96,s*0.46,s*0.18);cx.fill();
+  // BIG cute eyes on windshield!
+  const ex=s*0.24;
   [-ex,ex].forEach(exx=>{
-    cx.fillStyle='#fff';cx.beginPath();cx.arc(exx,-s*0.5,s*0.14,0,7);cx.fill();
-    cx.fillStyle='#222';cx.beginPath();cx.arc(exx,-s*0.48,s*0.07,0,7);cx.fill();
+    // white of eye (bigger!)
+    cx.fillStyle='#fff';cx.beginPath();cx.arc(exx,-s*0.58,s*0.17,0,7);cx.fill();
+    // pupil
+    cx.fillStyle='#222';cx.beginPath();cx.arc(exx,-s*0.56,s*0.085,0,7);cx.fill();
+    // sparkle highlight (cute!)
+    cx.fillStyle='#fff';cx.beginPath();cx.arc(exx+s*0.03,-s*0.60,s*0.03,0,7);cx.fill();
   });
-  // mouth (animated!)
+  // rosy cheeks! (cute cartoon look)
+  cx.fillStyle='rgba(255,150,150,.6)';
+  [-s*0.42,s*0.42].forEach(chx=>{
+    cx.beginPath();cx.arc(chx,-s*0.38,s*0.09,0,7);cx.fill();
+  });
+  // mouth (bigger, more expressive!)
   cx.fillStyle='#5c1a1a';
-  const mh=mouth?s*0.16*(0.5+0.5*Math.abs(Math.sin(t*14))):s*0.03;
-  cx.beginPath();cx.ellipse(0,s*0.12,s*0.22,Math.max(s*0.03,mh),0,0,7);cx.fill();
-  // wheels
-  [-s*0.62,s*0.62].forEach(wx=>{
-    cx.fillStyle='#222';cx.beginPath();cx.arc(wx,s*0.34,s*0.24,0,7);cx.fill();
-    cx.fillStyle='#888';cx.beginPath();cx.arc(wx,s*0.34,s*0.1,0,7);cx.fill();
+  const mh=mouth?s*0.20*(0.5+0.5*Math.abs(Math.sin(t*14))):s*0.04;
+  cx.beginPath();cx.ellipse(0,s*0.10,s*0.26,Math.max(s*0.04,mh),0,0,7);cx.fill();
+  // tongue when talking! (cute!)
+  if(mouth){
+    cx.fillStyle='#ff8080';
+    cx.beginPath();cx.ellipse(0,s*0.10+mh*0.5,s*0.12,mh*0.4,0,0,7);cx.fill();
+  }
+  // wheels (bigger!)
+  [-s*0.68,s*0.68].forEach(wx=>{
+    cx.fillStyle='#222';cx.beginPath();cx.arc(wx,s*0.36,s*0.28,0,7);cx.fill();
+    cx.fillStyle='#888';cx.beginPath();cx.arc(wx,s*0.36,s*0.12,0,7);cx.fill();
+    cx.fillStyle='#ccc';cx.beginPath();cx.arc(wx,s*0.36,s*0.05,0,7);cx.fill();
   });
-  // name
-  cx.fillStyle='#fff';cx.font='bold '+Math.round(s*0.22)+'px sans-serif';
-  cx.textAlign='center';cx.fillText(ch,0,-s*0.95);
+  // name (bigger, with outline!)
+  cx.font='bold '+Math.round(s*0.26)+'px sans-serif';
+  cx.textAlign='center';
+  cx.lineWidth=4;cx.strokeStyle='rgba(0,0,0,.5)';
+  cx.strokeText(ch,0,-s*1.05);
+  cx.fillStyle='#fff';cx.fillText(ch,0,-s*1.05);
   cx.restore();
 }
 function drawCarBG(t,W,H){
@@ -1504,11 +1525,15 @@ function carFrame(lines,lineIdx,t,W,H){
   const pos=[0.22,0.5,0.78];
   chars.forEach((ch,i)=>{
     const active=lines[lineIdx]&&lines[lineIdx].ch===ch;
-    const s=H*0.11*(active?1.12:1);
+    // v3.17: BIG full-display cartoon characters! (was tiny H*0.11)
+    const s=H*(active?0.30:0.20);
     // cars drive with engine vibration + slight lane movement
     const driveX=Math.sin(t*0.8+i*2)*W*0.02;
     const driveY=Math.abs(Math.sin(t*12+i))*H*0.004; // engine vibration
-    drawCarSprite(W*pos[i]+driveX,H*0.62-driveY,s,ch,active,t,active);
+    // active speaker jumps to center-front, others stay back
+    const cxp=active?W*0.5:W*pos[i];
+    const cyp=active?H*0.55:H*0.62;
+    drawCarSprite(cxp+driveX,cyp-driveY,s,ch,active,t,active);
   });
   // subtitle of current line
   if(lines[lineIdx]){
@@ -2139,10 +2164,10 @@ function kidFrame(line,lineIdx,t,W,H){
     else li2=li2?li2+' '+w:w;
   }
   if(li2){cx.strokeText(li2,W/2,yl);cx.fillText(li2,W/2,yl);}
-  // driving cars at bottom
+  // v3.17: BIG cartoon cars at bottom (full-display style!)
   const carX=(t*120)%(W+300)-150;
-  drawCarSprite(carX,H*0.78,46,'Rayo',true,t,true);
-  drawCarSprite(W-carX,H*0.78,40,'Bella',false,t+1,false);
+  drawCarSprite(carX,H*0.72,H*0.22,'Rayo',true,t,true);
+  drawCarSprite(W-carX,H*0.72,H*0.19,'Bella',false,t+1,false);
 }
 function kidDrawShape(type,x,y,s,c){
   cx.fillStyle=c;cx.strokeStyle='#fff';cx.lineWidth=6;
