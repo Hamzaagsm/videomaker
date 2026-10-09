@@ -371,6 +371,28 @@ public class MainActivity extends Activity {
                 "bella-driving.mp4", "bella-talking.mp4",
                 "rusty-driving.mp4"
         };
+        // v3.22: 4 new modes — clips hosted on clips-v2 release
+        private static final String CLIP_BASE_V2 =
+                "https://github.com/Hamzaagsm/videomaker/releases/download/clips-v2/";
+        private static final String[] CLIPS_V2 = {
+                "story-narrator.mp4", "story-magic.mp4",
+                "kids-hero.mp4", "kids-play.mp4",
+                "interview-host.mp4",
+                "drama-heroine.mp4"
+        };
+
+        private String[] clipsForMode(String mode) {
+            if ("story".equals(mode)) return new String[]{"story-narrator.mp4", "story-magic.mp4"};
+            if ("kids".equals(mode)) return new String[]{"kids-hero.mp4", "kids-play.mp4"};
+            if ("interview".equals(mode)) return new String[]{"interview-host.mp4"};
+            if ("drama".equals(mode)) return new String[]{"drama-heroine.mp4"};
+            return CLIPS; // default: v1 real cartoon clips
+        }
+
+        private String clipBaseFor(String name) {
+            for (String c : CLIPS_V2) if (c.equals(name)) return CLIP_BASE_V2;
+            return CLIP_BASE;
+        }
 
         private File clipDir() {
             File d = new File(getExternalFilesDir(null), "clips");
@@ -431,14 +453,67 @@ public class MainActivity extends Activity {
         @JavascriptInterface
         public String getClipPath(String name) {
             try {
-                // only allow known clip names (no path traversal)
+                // only allow known clip names (no path traversal) — v1 + v2
                 boolean ok = false;
                 for (String c : CLIPS) if (c.equals(name)) { ok = true; break; }
+                if (!ok) for (String c : CLIPS_V2) if (c.equals(name)) { ok = true; break; }
                 if (!ok) return "";
                 File f = new File(clipDir(), name);
                 if (clipOk(f)) return f.getAbsolutePath();
             } catch (Exception ignored) {}
             return "";
+        }
+
+        // v3.22: per-mode clip management for Story/Kids/Interview/Drama
+        @JavascriptInterface
+        public void downloadModeClips(String mode) {
+            runOnUiThread(() -> {
+                try {
+                    File dir = clipDir();
+                    DownloadManager dm = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                    int started = 0;
+                    for (String name : clipsForMode(mode)) {
+                        File f = new File(dir, name);
+                        if (clipOk(f)) continue; // already downloaded
+                        DownloadManager.Request req =
+                                new DownloadManager.Request(Uri.parse(clipBaseFor(name) + name));
+                        req.setTitle("MEER clip: " + name);
+                        req.setNotificationVisibility(
+                                DownloadManager.Request.VISIBILITY_VISIBLE);
+                        req.setDestinationUri(Uri.fromFile(f));
+                        dm.enqueue(req);
+                        started++;
+                    }
+                    js("onModeClipMsg('" + mode + "','started'," + started + ")");
+                    if (started == 0) js("onModeClipMsg('" + mode + "','ready',0)");
+                } catch (Exception e) {
+                    js("onModeClipMsg('" + mode + "','error',0)");
+                }
+            });
+        }
+
+        @JavascriptInterface
+        public boolean areModeClipsReady(String mode) {
+            File dir = clipDir();
+            for (String name : clipsForMode(mode)) {
+                if (!clipOk(new File(dir, name))) return false;
+            }
+            return true;
+        }
+
+        @JavascriptInterface
+        public int getModeDownloadedCount(String mode) {
+            File dir = clipDir();
+            int n = 0;
+            for (String name : clipsForMode(mode)) {
+                if (clipOk(new File(dir, name))) n++;
+            }
+            return n;
+        }
+
+        @JavascriptInterface
+        public int getModeTotalClips(String mode) {
+            return clipsForMode(mode).length;
         }
     }
 
