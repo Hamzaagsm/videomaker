@@ -150,15 +150,34 @@ function applyWaVis(){
   if(c)c.style.display=localStorage.getItem('meer_wa_hidden')==='1'?'none':'block';
 }
 setTimeout(applyWaVis,300);
-/* ===== AUTO UPDATE CHECKER: notifies when new version is available! ===== */
-const APP_VER='3.13';
+/* ===== AUTO UPDATE CHECKER + ONE-TAP AUTO-INSTALL (v3.16) ===== */
+const APP_VER='3.16';
+let UPD_URL='';
+function onUpdateMsg(s){
+  const b=$('updBanner');if(!b)return;
+  if(s==='downloading')b.innerHTML='⬇️ <b>Update download ho rahi hai...</b> Thori der ruko!';
+  else if(s==='installing')b.innerHTML='📲 <b>Install khul raha hai...</b> "Install" dabao — purani app khud update ho jayegi, delete karne ki zaroorat nahi!';
+  else if(s==='permission')b.innerHTML='⚠️ <b>Pehle ijazat do:</b> "Allow from this source" ON karo, phir dobara UPDATE dabao!';
+  else if(s==='error')b.innerHTML='❌ <b>Update fail!</b> <button onclick="dlUpdate()" style="background:#fff;color:#333;border:0;border-radius:8px;padding:6px 14px;font-weight:700">Dobara try karo</button>';
+}
+function dlUpdate(){
+  const url=UPD_URL||'https://github.com/Hamzaagsm/videomaker/releases/latest/download/MEER.apk';
+  if(window.HamzaUpdate&&window.HamzaUpdate.downloadAndInstall){
+    window.HamzaUpdate.downloadAndInstall(url); // native: download + auto-install!
+  }else{
+    window.open(url,'_blank'); // fallback
+  }
+}
 async function checkUpdate(){
   try{
     const r=await fetch('https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/version.json',{cache:'no-store'});
     if(!r.ok)return;
     const j=await r.json();
     if(j.version&&j.version!==APP_VER){
-      $('updBanner').style.display='block';
+      UPD_URL=j.apk||'';
+      const b=$('updBanner');
+      b.style.display='block';
+      b.innerHTML='🎉 <b>Nayi version '+j.version+' aa gayi!</b> '+(j.notes||'')+'<br><button onclick="dlUpdate()" style="margin-top:8px;background:#fff;color:#7c3aed;border:0;border-radius:10px;padding:10px 26px;font-weight:800;font-size:15px">⬇️ UPDATE KARO</button>';
     }
   }catch(e){}
 }
