@@ -104,6 +104,9 @@ select{width:100%;padding:12px;background:rgba(20,12,35,.9);border:1px solid rgb
     <button class="btn" onclick="go('s-cars');carInit()" style="background:linear-gradient(135deg,#ff6b35,#e94560)">🚗 Talking Cars Studio</button>
   </div>
   <div class="row">
+    <button class="btn" onclick="go('s-real');realInit()" style="background:linear-gradient(135deg,#00c9ff,#92fe9d);color:#003">🎬 Real Cartoon Studio</button>
+  </div>
+  <div class="row">
     <button class="btn" onclick="go('s-kids');kidInit()" style="background:linear-gradient(135deg,#ffd93d,#ff8c42)">🧸 Kids Rhymes Studio</button>
   </div>
   <div class="row">
@@ -377,6 +380,33 @@ function featSend(){
   <p class="hint" id="carStat" style="text-align:center"></p>
   <video id="carPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
   <button class="btn" id="carDl" style="display:none">⬇️ DOWNLOAD KARO</button>
+</div>
+
+<!-- ============ REAL CARTOON STUDIO (v3.21) ============ -->
+<div class="screen" id="s-real">
+  <button class="back" onclick="go('s-home')">← Home</button>
+  <h1 style="font-size:22px">🎬 Real Cartoon Studio</h1>
+  <p class="hint">Asli AI video clips + awaz — bilkul real cartoon! 👇</p>
+  <div class="card">
+    <div class="lbl">📦 Video Clips (ek dafa download)</div>
+    <p class="hint" id="realClipStat">Check ho raha hai...</p>
+    <button class="btn btn2" onclick="realDownloadClips()">⬇️ Clips Download Karo</button>
+    <div class="prog" id="realClipProg" style="display:none"><div id="realClipBar"></div></div>
+  </div>
+  <div class="card">
+    <div class="lbl">✍️ Script (format: <b>Naam: baat</b>)</div>
+    <textarea id="realScript" class="big-idea" style="min-height:150px" placeholder="Rayo: Chalo race karen!&#10;Bella: Haan, maza aayega!&#10;Rusty: Main bhi aa raha hoon!"></textarea>
+    <div class="row">
+      <div><div class="lbl">🗣️ Zabaan</div>
+        <select id="realLang"><option value="en" selected>🇬🇧 English</option><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option></select></div>
+    </div>
+    <p class="hint">🔴 <b>Rayo</b> • 🟡 <b>Bella</b> • 🟤 <b>Rusty</b> — har ek ki apni awaz!</p>
+  </div>
+  <button class="btn btn3" onclick="realMakeVideo()">🎬 REAL VIDEO BANAO →</button>
+  <div class="prog" id="realProg" style="display:none"><div id="realBar"></div></div>
+  <p class="hint" id="realStat" style="text-align:center"></p>
+  <video id="realPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
+  <button class="btn" id="realDl" style="display:none">⬇️ DOWNLOAD KARO</button>
 </div>
 
 <!-- ============ KIDS RHYMES STUDIO ============ -->
@@ -2353,6 +2383,159 @@ async function kidSpeak(text){
     }catch(e){}
   }
   return await loadAudio(ttsURL(text,lang,'webapp'),1.0);
+}
+
+/* ===== 🎬 REAL CARTOON STUDIO (v3.21) — real AI clips + TTS ===== */
+const REAL_CHAR_CLIP={Rayo:'rayo-talking.mp4',Bella:'bella-talking.mp4',Rusty:'rusty-driving.mp4'};
+function realHasBridge(){return (typeof RealClipBridge!=='undefined')&&RealClipBridge;}
+function onClipMsg(st,n){ /* native downloadClips() callback */
+  const s=$('realClipStat');
+  if(!s)return;
+  if(st==='started')s.textContent=n>0?('⬇️ '+n+' clips download ho rahi hain...'):'✅ Clips tayyar hain!';
+  else if(st==='ready')s.textContent='✅ Clips tayyar hain!';
+  else if(st==='error')s.textContent='❌ Download me masla — dobara try karo';
+  realClipCheck();
+}
+function realInit(){realClipCheck();}
+function realClipCheck(){
+  const s=$('realClipStat');
+  if(!s)return;
+  if(!realHasBridge()){s.textContent='⚠️ Ye feature sirf MEER app me chalega';return;}
+  try{
+    const n=RealClipBridge.getDownloadedCount();
+    $('realClipProg').style.display=n<5?'block':'none';
+    $('realClipBar').style.width=(n/5*100)+'%';
+    s.textContent=n>=5?'✅ 5/5 clips tayyar!':'⬇️ '+n+'/5 clips — "Clips Download Karo" dabao';
+  }catch(e){s.textContent='⚠️ Bridge error';}
+}
+function realDownloadClips(){
+  if(!realHasBridge()){alert('Ye feature MEER app me chalega!');return;}
+  $('realClipProg').style.display='block';
+  try{RealClipBridge.downloadClips();}catch(e){$('realClipStat').textContent='❌ '+e.message;return;}
+  const iv=setInterval(()=>{
+    try{
+      const n=RealClipBridge.getDownloadedCount();
+      $('realClipBar').style.width=(n/5*100)+'%';
+      $('realClipStat').textContent=n>=5?'✅ 5/5 clips tayyar!':'⬇️ '+n+'/5 clips download ho rahe...';
+      if(n>=5){clearInterval(iv);}
+    }catch(e){clearInterval(iv);}
+  },1500);
+}
+function realClipURL(name){
+  if(!realHasBridge())return '';
+  try{const p=RealClipBridge.getClipPath(name);return p?('file://'+p):'';}catch(e){return '';}
+}
+async function realMakeVideo(){
+  const text=$('realScript').value.trim();
+  if(!text){alert('Pehle script likho! (Naam: baat)');return;}
+  const bar=$('realBar'),st=$('realStat');
+  $('realProg').style.display='block';
+  const setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  const lang=$('realLang').value;
+  try{
+    if(!realHasBridge())throw new Error('Ye feature MEER app me chalega!');
+    if(!RealClipBridge.areClipsReady())throw new Error('Pehle clips download karo! ⬇️');
+    const raw=text.split('\n').filter(l=>l.trim());
+    const lines=[];
+    for(const ln of raw){
+      const m=ln.match(/^([A-Za-z]+)\s*:\s*(.+)$/);
+      if(!m)continue;
+      const ch=m[1][0].toUpperCase()+m[1].slice(1).toLowerCase();
+      if(!REAL_CHAR_CLIP[ch])continue;
+      lines.push({ch,text:m[2]});
+    }
+    if(!lines.length)throw new Error('Script format: Naam: baat (Rayo/Bella/Rusty)');
+    setP(5,'🎙️ Awazein ban rahi hain...');
+    const segs=[];
+    for(let i=0;i<lines.length;i++){
+      setP(5+i/lines.length*30,'🎙️ '+(i+1)+'/'+lines.length);
+      const au=await carSpeak(lines[i].ch,lines[i].text,lang);
+      const clipURL=realClipURL(REAL_CHAR_CLIP[lines[i].ch]);
+      if(!clipURL)throw new Error('Clip nahi mili: '+REAL_CHAR_CLIP[lines[i].ch]);
+      const v=document.createElement('video');
+      v.muted=true;v.playsInline=true;v.setAttribute('playsinline','');
+      v.loop=true;v.preload='auto';v.src=clipURL;
+      await new Promise((res,rej)=>{
+        const to=setTimeout(()=>rej(new Error('Clip load nahi hui')),20000);
+        v.addEventListener('canplay',()=>{clearTimeout(to);res();},{once:true});
+        v.addEventListener('error',()=>{clearTimeout(to);rej(new Error('Clip error'));},{once:true});
+        v.load();
+      });
+      segs.push({ch:lines[i].ch,text:lines[i].text,au,v,dur:Math.max(2.5,(au.duration||2)+0.4)});
+    }
+    const totalDur=segs.reduce((a,s)=>a+s.dur,0)+1;
+    const W=720,H=1280;cv.width=1080;cv.height=1920;
+    const sx=1080/W,sy=1920/H;
+    setP(40,'🎬 Recording...');
+    cvShowRec();NOIMG=true;
+    cx.setTransform(sx,0,0,sy,0,0);
+    cx.fillStyle='#000';cx.fillRect(0,0,W,H);
+    await sleep(400);
+    const vstream=cv.captureStream(30);
+    const vts=vstream.getVideoTracks();
+    if(!vts.length)throw new Error('Video track nahi mila');
+    const tracks=[...vts];
+    for(const s of segs){
+      try{
+        const ast=s.au.captureStream?s.au.captureStream():s.au.mozCaptureStream();
+        if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
+      }catch(e){}
+    }
+    const mime=pickMime();
+    const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
+    const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+    const doneRec=new Promise(r=>rec.onstop=r);
+    rec.start(250);
+    const t0=performance.now();
+    let li=0;
+    const playP=(async()=>{
+      for(let i=0;i<segs.length;i++){
+        li=i;
+        try{segs[i].v.currentTime=0;await segs[i].v.play();}catch(e){}
+        try{await segs[i].au.play();}catch(e){}
+        await new Promise(r=>{segs[i].au.onended=r;setTimeout(r,segs[i].dur*1000+1200);});
+        try{segs[i].v.pause();}catch(e){}
+        await sleep(250);
+      }
+    })();
+    await new Promise(res=>{
+      (function frame(){
+        const el=(performance.now()-t0)/1000;
+        cx.setTransform(sx,0,0,sy,0,0);
+        const s=segs[li];
+        if(s&&s.v&&s.v.readyState>=2){
+          const vw=s.v.videoWidth,vh=s.v.videoHeight;
+          if(vw&&vh){
+            const sc=Math.max(W/vw,H/vh),dw=vw*sc,dh=vh*sc;
+            try{cx.drawImage(s.v,(W-dw)/2,(H-dh)/2,dw,dh);}catch(e){}
+          }
+        }
+        if(s){
+          const fs=Math.round(H*0.030);
+          cx.font='bold '+fs+'px sans-serif';cx.textAlign='center';
+          const txt=s.ch+': '+s.text;
+          const wdt=Math.min(W*0.94,cx.measureText(txt).width+44);
+          cx.fillStyle='rgba(0,0,0,.55)';
+          cx.beginPath();cx.roundRect(W/2-wdt/2,H*0.88,wdt,fs*1.75,14);cx.fill();
+          cx.fillStyle='#fff';cx.fillText(txt,W/2,H*0.88+fs*1.2);
+        }
+        setP(40+Math.min(55,el/totalDur*55),'Ban rahi... '+Math.floor(el)+'s');
+        if(el>=totalDur){res();return;}
+        requestAnimationFrame(frame);
+      })();
+    });
+    await playP.catch(()=>{});
+    rec.stop();await doneRec;
+    cvHide();NOIMG=false;
+    segs.forEach(s=>{try{s.v.pause();s.v.src='';}catch(e){}});
+    setP(100,'✅ Tayyar!');
+    const blob=new Blob(chunks,{type:mime||'video/webm'});
+    const url=setVideoPreview($('realPreview'),blob,mime);
+    const dl=$('realDl');dl.style.display='block';
+    dl.onclick=()=>{const a=document.createElement('a');a.href=url;
+      a.download='real-cartoon-'+Date.now()+'.'+blobExt(mime);a.click();};
+    st.textContent='✅ Real cartoon tayyar! 🎬🎉';
+  }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
 }
 </script>
 </body>
