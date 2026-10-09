@@ -130,6 +130,10 @@ select{width:100%;padding:12px;background:rgba(20,12,35,.9);border:1px solid rgb
       <div class="t">🎭 Short Drama<br>Video</div>
       <button class="btn" onclick="go('s-drama');dramaInit()">Create</button>
     </div>
+    <div class="mode-card" style="background:linear-gradient(135deg,#ff9a56,#ff5e8a);grid-column:1/-1">
+      <div class="t">👨‍👩‍👶 Family Story Video</div>
+      <button class="btn" onclick="go('s-family');familyInit()">Create</button>
+    </div>
   </div>
   <div class="row">
     <button class="btn" onclick="go('s-kids');kidInit()" style="background:linear-gradient(135deg,#ffd93d,#ff8c42)">🧸 Kids Rhymes Studio</button>
@@ -179,7 +183,7 @@ function applyWaVis(){
 }
 setTimeout(applyWaVis,300);
 /* ===== AUTO UPDATE CHECKER + ONE-TAP AUTO-INSTALL (v3.16) ===== */
-const APP_VER='3.17';
+const APP_VER='3.23';
 let UPD_URL='';
 function onUpdateMsg(s){
   const b=$('updBanner');if(!b)return;
@@ -536,6 +540,32 @@ function featSend(){
   <p class="hint" id="dramaStat" style="text-align:center"></p>
   <video id="dramaPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
   <button class="btn" id="dramaDl" style="display:none">⬇️ DOWNLOAD KARO</button>
+</div>
+
+<!-- ============ 👨‍👩‍👶 FAMILY STORY VIDEO (v3.23) ============ -->
+<div class="screen" id="s-family">
+  <button class="back" onclick="go('s-home')">← Home</button>
+  <h1 style="font-size:22px">👨‍👩‍👶 Family Story Video</h1>
+  <p class="hint">Woman, Man, Baby — sab real AI clips + real voices! 🏠</p>
+  <div class="card">
+    <div class="lbl">📦 Video Clips (ek dafa download)</div>
+    <p class="hint" id="familyClipStat">Check ho raha hai...</p>
+    <button class="btn btn2" onclick="modeDownloadClips('family')">⬇️ Clips Download Karo</button>
+    <div class="prog" id="familyClipProg" style="display:none"><div id="familyClipBar"></div></div>
+  </div>
+  <div class="card">
+    <div class="lbl">✍️ Script (format: <b>Woman:</b> / <b>Man:</b> / <b>Baby:</b>)</div>
+    <textarea id="familyScript" class="big-idea" style="min-height:150px" placeholder="Woman: Chalo bachon, park chalte hain!&#10;Man: Haan, mausam bohat acha hai!&#10;Baby: Yay! Maza aayega!"></textarea>
+    <div class="row">
+      <div><div class="lbl">🗣️ Zabaan</div>
+        <select id="familyLang"><option value="en" selected>🇬🇧 English</option><option value="ur">🇵🇰 Urdu</option><option value="hi">🇮🇳 Hindi</option></select></div>
+    </div>
+  </div>
+  <button class="btn btn3" onclick="familyMakeVideo()">👨‍👩‍👶 FAMILY VIDEO BANAO →</button>
+  <div class="prog" id="familyProg" style="display:none"><div id="familyBar"></div></div>
+  <p class="hint" id="familyStat" style="text-align:center"></p>
+  <video id="familyPreview" controls playsinline style="display:none;width:100%;border-radius:12px"></video>
+  <button class="btn" id="familyDl" style="display:none">⬇️ DOWNLOAD KARO</button>
 </div>
 
 <!-- ============ KIDS RHYMES STUDIO ============ -->
@@ -2672,7 +2702,8 @@ const MODE_EL={
   story:{stat:'storyClipStat',prog:'storyClipProg',bar:'storyClipBar',script:'storyScript',lang:'storyLang',vprog:'storyProg',vbar:'storyBar',vstat:'storyStat',preview:'storyPreview',dl:'storyDl'},
   kids:{stat:'kids2ClipStat',prog:'kids2ClipProg',bar:'kids2ClipBar',script:'kids2Script',lang:'kids2Lang',vprog:'kids2Prog',vbar:'kids2Bar',vstat:'kids2Stat',preview:'kids2Preview',dl:'kids2Dl'},
   interview:{stat:'interviewClipStat',prog:'interviewClipProg',bar:'interviewClipBar',script:'interviewScript',lang:'interviewLang',vprog:'interviewProg',vbar:'interviewBar',vstat:'interviewStat',preview:'interviewPreview',dl:'interviewDl'},
-  drama:{stat:'dramaClipStat',prog:'dramaClipProg',bar:'dramaClipBar',script:'dramaScript',lang:'dramaLang',vprog:'dramaProg',vbar:'dramaBar',vstat:'dramaStat',preview:'dramaPreview',dl:'dramaDl'}
+  drama:{stat:'dramaClipStat',prog:'dramaClipProg',bar:'dramaClipBar',script:'dramaScript',lang:'dramaLang',vprog:'dramaProg',vbar:'dramaBar',vstat:'dramaStat',preview:'dramaPreview',dl:'dramaDl'},
+  family:{stat:'familyClipStat',prog:'familyClipProg',bar:'familyClipBar',script:'familyScript',lang:'familyLang',vprog:'familyProg',vbar:'familyBar',vstat:'familyStat',preview:'familyPreview',dl:'familyDl'}
 };
 function onModeClipMsg(mode,st,n){
   const E=MODE_EL[mode];if(!E)return;
@@ -2713,6 +2744,7 @@ function storyInit(){modeClipCheck('story');}
 function kids2Init(){modeClipCheck('kids');}
 function interviewInit(){modeClipCheck('interview');}
 function dramaInit(){modeClipCheck('drama');}
+function familyInit(){modeClipCheck('family');}
 /* TTS with custom pitch/rate (native first, web fallback) */
 async function speakWith(text,lang,pitch,rate){
   const nt=nativeTTS();
@@ -2915,6 +2947,36 @@ async function dramaMakeVideo(){
     const paras=splitParagraphs(text);
     if(!paras.length)throw new Error('Kahani likho (paragraphs me)');
     const lines=paras.map(p=>({text:p,clip:'drama-heroine.mp4',pitch:1.25,rate:0.9,label:''}));
+    const segs=await buildSegs(lines,lang,E,setP);
+    await clipStudioRecord(segs,{mode});
+  }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
+}
+/* ---- 👨‍👩‍👶 FAMILY STORY VIDEO ---- */
+async function familyMakeVideo(){
+  const E=MODE_EL.family,mode='family';
+  const text=$(E.script).value.trim();
+  if(!text){alert('Pehle script likho! (Woman: / Man: / Baby:)');return;}
+  const lang=$(E.lang).value,st=$(E.vstat);
+  $(E.vprog).style.display='block';
+  const bar=$(E.vbar),setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  try{
+    if(!realHasBridge())throw new Error('Ye feature MEER app me chalega!');
+    if(!RealClipBridge.areModeClipsReady(mode))throw new Error('Pehle clips download karo! ⬇️');
+    const lines=[];
+    const scene={woman:'woman-walking.mp4',man:'man-walking.mp4',baby:'baby-playing.mp4'};
+    const talk={woman:'woman-happy.mp4',man:'man-friendly.mp4',baby:'baby-cute.mp4'};
+    const voice={woman:{pitch:1.2,rate:1.0,label:'👩 Woman'},man:{pitch:0.9,rate:1.0,label:'👨 Man'},baby:{pitch:1.8,rate:1.0,label:'👶 Baby'}};
+    let idx=0;
+    for(const ln of text.split('\n')){
+      const m=ln.match(/^\s*(Woman|Man|Baby)\s*:\s*(.+)$/i);
+      if(!m)continue;
+      const who=m[1].toLowerCase();
+      const isScene=(idx%3===2);
+      lines.push({text:m[2].trim(),clip:isScene?scene[who]:talk[who],
+        pitch:voice[who].pitch,rate:voice[who].rate,label:voice[who].label});
+      idx++;
+    }
+    if(!lines.length)throw new Error('Format: Woman: baat / Man: baat / Baby: baat');
     const segs=await buildSegs(lines,lang,E,setP);
     await clipStudioRecord(segs,{mode});
   }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
