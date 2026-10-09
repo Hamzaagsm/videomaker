@@ -51,6 +51,8 @@ public class MainActivity extends Activity {
         s.setDomStorageEnabled(true);
         s.setMediaPlaybackRequiresUserGesture(false);
         s.setAllowFileAccess(true);
+        s.setAllowFileAccessFromFileURLs(true); // v3.21: local clip files for <video>
+        s.setAllowUniversalAccessFromFileURLs(true); // v3.21: local clip files
         web.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, android.webkit.WebResourceRequest request){
@@ -77,6 +79,7 @@ public class MainActivity extends Activity {
         web.setWebChromeClient(new WebChromeClient());
         web.addJavascriptInterface(new TTSBridge(), "HamzaTTS");
         web.addJavascriptInterface(new UpdateBridge(), "HamzaUpdate");
+        web.addJavascriptInterface(new RealClipBridge(), "RealClipBridge"); // v3.21: real cartoon clips
 
         tts = new TextToSpeech(this, status -> {
             if (status == TextToSpeech.SUCCESS) {
@@ -351,6 +354,91 @@ public class MainActivity extends Activity {
             } catch (Exception e) {
                 js("onUpdateMsg('error')");
             }
+        }
+    }
+
+    /**
+     * v3.21: Real Cartoon — downloads real AI video clips once into app storage,
+     * JS plays them locally in a hidden <video> and records via canvas.
+     * Called from JS: window.RealClipBridge.downloadClips() / getClipPath(name) /
+     * areClipsReady() / getDownloadedCount()
+     */
+    class RealClipBridge {
+        private static final String CLIP_BASE =
+                "https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/";
+        private static final String[] CLIPS = {
+                "rayo-driving.mp4", "rayo-talking.mp4",
+                "bella-driving.mp4", "bella-talking.mp4",
+                "rusty-driving.mp4"
+        };
+
+        private File clipDir() {
+            File d = new File(getExternalFilesDir(null), "clips");
+            if (!d.exists()) d.mkdirs();
+            return d;
+        }
+
+        private boolean clipOk(File f) {
+            return f.exists() && f.length() > 100000;
+        }
+
+        @JavascriptInterface
+        public void downloadClips() {
+            runOnUiThread(() -> {
+                try {
+                    File dir = clipDir();
+                    DownloadManager dm = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                    int started = 0;
+                    for (String name : CLIPS) {
+                        File f = new File(dir, name);
+                        if (clipOk(f)) continue; // already downloaded
+                        DownloadManager.Request req =
+                                new DownloadManager.Request(Uri.parse(CLIP_BASE + name));
+                        req.setTitle("MEER clip: " + name);
+                        req.setNotificationVisibility(
+                                DownloadManager.Request.VISIBILITY_VISIBLE);
+                        req.setDestinationUri(Uri.fromFile(f));
+                        dm.enqueue(req);
+                        started++;
+                    }
+                    js("onClipMsg('started'," + started + ")");
+                    if (started == 0) js("onClipMsg('ready',0)");
+                } catch (Exception e) {
+                    js("onClipMsg('error',0)");
+                }
+            });
+        }
+
+        @JavascriptInterface
+        public boolean areClipsReady() {
+            File dir = clipDir();
+            for (String name : CLIPS) {
+                if (!clipOk(new File(dir, name))) return false;
+            }
+            return true;
+        }
+
+        @JavascriptInterface
+        public int getDownloadedCount() {
+            File dir = clipDir();
+            int n = 0;
+            for (String name : CLIPS) {
+                if (clipOk(new File(dir, name))) n++;
+            }
+            return n;
+        }
+
+        @JavascriptInterface
+        public String getClipPath(String name) {
+            try {
+                // only allow known clip names (no path traversal)
+                boolean ok = false;
+                for (String c : CLIPS) if (c.equals(name)) { ok = true; break; }
+                if (!ok) return "";
+                File f = new File(clipDir(), name);
+                if (clipOk(f)) return f.getAbsolutePath();
+            } catch (Exception ignored) {}
+            return "";
         }
     }
 
