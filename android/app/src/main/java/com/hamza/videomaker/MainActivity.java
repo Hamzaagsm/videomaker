@@ -77,6 +77,70 @@ public class MainActivity extends Activity {
             }
         });
         web.setWebChromeClient(new WebChromeClient());
+        // v3.61: DownloadListener - blob URL downloads ko natively handle karo! (or treeqa!)
+        web.setDownloadListener(new android.webkit.DownloadListener(){
+            @Override
+            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength){
+                if(url.startsWith("blob:")){
+                    // Blob URL: JS se base64 lekar save karo
+                    web.evaluateJavascript(
+                        "(function(){return new Promise((res)=>{var x=new XMLHttpRequest();x.open('GET','"+url+"',true);x.responseType='blob';x.onload=function(){var r=new FileReader();r.onload=function(){res(r.result);};r.readAsDataURL(x.response);};x.onerror=function(){res('');};x.send();});})().then(r=>r);",
+                        new android.webkit.ValueCallback<String>(){
+                            @Override
+                            public void onReceiveValue(String dataUrl){
+                                try{
+                                    if(dataUrl==null||dataUrl.length()<100){
+                                        android.widget.Toast.makeText(MainActivity.this,"Download fail: khaali data",android.widget.Toast.LENGTH_SHORT).show();
+                                        return;
+                                    }
+                                    // data:video/webm;base64,XXXX -> XXXX
+                                    String b64=dataUrl;
+                                    // ValueCallback wraps in quotes, strip them
+                                    if(b64.startsWith("\""))b64=b64.substring(1);
+                                    if(b64.endsWith("\""))b64=b64.substring(0,b64.length()-1);
+                                    // Unescape
+                                    b64=b64.replace("\\n","").replace("\\/","/");
+                                    if(b64.contains(","))b64=b64.substring(b64.indexOf(",")+1);
+                                    byte[] data=android.util.Base64.decode(b64,android.util.Base64.DEFAULT);
+                                    if(data.length<1000){
+                                        android.widget.Toast.makeText(MainActivity.this,"Download fail: file chhoti hai",android.widget.Toast.LENGTH_SHORT).show();
+                                        return;
+                                    }
+                                    String fileName="MEER-"+System.currentTimeMillis()+".webm";
+                                    // Guess extension from mimetype
+                                    if(mimetype!=null&&mimetype.contains("mp4"))fileName=fileName.replace(".webm",".mp4");
+                                    android.content.ContentValues values=new android.content.ContentValues();
+                                    values.put(android.provider.MediaStore.MediaColumns.DISPLAY_NAME,fileName);
+                                    values.put(android.provider.MediaStore.MediaColumns.MIME_TYPE,mimetype!=null?mimetype:"video/webm");
+                                    values.put(android.provider.MediaStore.MediaColumns.RELATIVE_PATH,android.os.Environment.DIRECTORY_DOWNLOADS+"/MEER");
+                                    android.net.Uri uri=getContentResolver().insert(android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI,values);
+                                    if(uri!=null){
+                                        try(java.io.OutputStream os=getContentResolver().openOutputStream(uri)){
+                                            os.write(data);os.flush();
+                                        }
+                                        android.widget.Toast.makeText(MainActivity.this,"✅ Video save ho gayi! Downloads/MEER",android.widget.Toast.LENGTH_LONG).show();
+                                    }
+                                }catch(Exception e){
+                                    android.widget.Toast.makeText(MainActivity.this,"Download fail: "+e.getMessage(),android.widget.Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                }else{
+                    // Normal URL: DownloadManager
+                    try{
+                        android.app.DownloadManager.Request req=new android.app.DownloadManager.Request(android.net.Uri.parse(url));
+                        req.setMimeType(mimetype);
+                        req.setTitle("MEER Video");
+                        req.setDestinationInExternalPublicDir(android.os.Environment.DIRECTORY_DOWNLOADS,"MEER/MEER-"+System.currentTimeMillis()+".webm");
+                        req.setNotificationVisibility(android.app.DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                        ((android.app.DownloadManager)getSystemService(DOWNLOAD_SERVICE)).enqueue(req);
+                        android.widget.Toast.makeText(MainActivity.this,"⬇️ Download shuru!",android.widget.Toast.LENGTH_SHORT).show();
+                    }catch(Exception e){
+                        android.widget.Toast.makeText(MainActivity.this,"Download fail",android.widget.Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
         web.addJavascriptInterface(new TTSBridge(), "HamzaTTS");
         web.addJavascriptInterface(new UpdateBridge(), "HamzaUpdate");
         web.addJavascriptInterface(new RealClipBridge(), "RealClipBridge"); // v3.21: real cartoon clips
@@ -396,14 +460,6 @@ public class MainActivity extends Activity {
                 "suspense-mystery-door.mp4", "suspense-cars-scared.mp4",
                 "suspense-flashlight.mp4"
         };
-        // v3.45: Background scenic clips — clips hosted on clips-v5 release
-        private static final String CLIP_BASE_V5 =
-                "https://github.com/Hamzaagsm/videomaker/releases/download/clips-v5/";
-        private static final String[] CLIPS_V5 = {
-                "garden-path.mp4", "highway-sunset.mp4",
-                "park-playground.mp4", "forest-road.mp4",
-                "beach-road.mp4"
-        };
 
         private String[] clipsForMode(String mode) {
             if ("story".equals(mode)) return new String[]{"story-narrator.mp4", "story-magic.mp4"};
@@ -475,120 +531,6 @@ public class MainActivity extends Activity {
                 if (clipOk(new File(dir, name))) n++;
             }
             return n;
-        }
-
-        // v3.45: Background clips (clips-v5)
-        @JavascriptInterface
-        public void downloadBgClips() {
-            runOnUiThread(() -> {
-                try {
-                    File dir = clipDir();
-                    DownloadManager dm = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-                    int started = 0;
-                    for (String name : CLIPS_V5) {
-                        File f = new File(dir, name);
-                        if (clipOk(f)) continue;
-                        DownloadManager.Request req =
-                                new DownloadManager.Request(Uri.parse(CLIP_BASE_V5 + name));
-                        req.setTitle("MEER bg: " + name);
-                        req.setNotificationVisibility(
-                                DownloadManager.Request.VISIBILITY_VISIBLE);
-                        req.setDestinationUri(Uri.fromFile(f));
-                        dm.enqueue(req);
-                        started++;
-                    }
-                    js("onBgClipMsg('started'," + started + ")");
-                    if (started == 0) js("onBgClipMsg('ready',0)");
-                } catch (Exception e) {
-                    js("onBgClipMsg('error',0)");
-                }
-            });
-        }
-
-        @JavascriptInterface
-        public boolean areBgClipsReady() {
-            File dir = clipDir();
-            for (String name : CLIPS_V5) {
-                if (!clipOk(new File(dir, name))) return false;
-            }
-            return true;
-        }
-
-        @JavascriptInterface
-        public int getBgDownloadedCount() {
-            File dir = clipDir();
-            int n = 0;
-            for (String name : CLIPS_V5) {
-                if (clipOk(new File(dir, name))) n++;
-            }
-            return n;
-        }
-
-        @JavascriptInterface
-        public String getBgClipPath(String name) {
-            try {
-                boolean ok = false;
-                for (String c : CLIPS_V5) if (c.equals(name)) { ok = true; break; }
-                if (!ok) return "";
-                File f = new File(clipDir(), name);
-                if (clipOk(f)) return f.getAbsolutePath();
-            } catch (Exception e) {}
-            return "";
-        }
-
-        // v3.46: Share video via Android share sheet
-        @JavascriptInterface
-        public synchronized String shareVideoStart(String fileName, int totalChunks) {
-            // Reuse chunked transfer, then share
-            return saveVideoStart(fileName, totalChunks);
-        }
-
-        @JavascriptInterface
-        public synchronized String shareVideoChunk(String base64Chunk) {
-            return saveVideoChunk(base64Chunk);
-        }
-
-        @JavascriptInterface
-        public synchronized String shareVideoFinish() {
-            try {
-                if (chunkBuffer == null) return "error:not_started";
-                byte[] data = chunkBuffer.toByteArray();
-                chunkBuffer = null;
-                if (data.length < 100) return "error:too_small"; // v3.48: lowered from 1000
-
-                String fileName = chunkFileName != null ? chunkFileName : ("meer-" + System.currentTimeMillis() + ".mp4");
-                chunkFileName = null;
-
-                // Save to cache for sharing
-                File cacheDir = new File(getCacheDir(), "shared_videos");
-                if (!cacheDir.exists()) cacheDir.mkdirs();
-                File outFile = new File(cacheDir, fileName);
-                try (java.io.FileOutputStream fos = new java.io.FileOutputStream(outFile)) {
-                    fos.write(data);
-                    fos.flush();
-                }
-
-                // Create share intent
-                android.net.Uri uri = androidx.core.content.FileProvider.getUriForFile(
-                    MainActivity.this,
-                    getPackageName() + ".fileprovider",
-                    outFile);
-
-                android.content.Intent share = new android.content.Intent(android.content.Intent.ACTION_SEND);
-                share.setType("video/*");
-                share.putExtra(android.content.Intent.EXTRA_STREAM, uri);
-                share.addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                share.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK);
-
-                android.content.Intent chooser = android.content.Intent.createChooser(share, "Video Share Karo");
-                chooser.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(chooser);
-
-                return "ok:shared";
-            } catch (Exception e) {
-                chunkBuffer = null;
-                return "error:" + e.getMessage();
-            }
         }
 
         @JavascriptInterface
@@ -668,7 +610,7 @@ public class MainActivity extends Activity {
                     base64Data = base64Data.substring(base64Data.indexOf(",") + 1);
                 }
                 byte[] data = android.util.Base64.decode(base64Data, android.util.Base64.DEFAULT);
-                if (data.length < 100) return "error:too_small"; // v3.48: lowered from 1000
+                if (data.length < 1000) return "error:too_small";
 
                 String mimeType = "video/webm";
                 if (fileName.endsWith(".mp4")) mimeType = "video/mp4";
@@ -736,7 +678,7 @@ public class MainActivity extends Activity {
                 if (chunkBuffer == null) return "error:not_started";
                 byte[] data = chunkBuffer.toByteArray();
                 chunkBuffer = null;
-                if (data.length < 100) return "error:too_small"; // v3.48: lowered from 1000
+                if (data.length < 1000) return "error:too_small";
 
                 String mimeType = "video/webm";
                 if (chunkFileName.endsWith(".mp4")) mimeType = "video/mp4";
