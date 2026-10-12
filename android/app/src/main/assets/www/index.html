@@ -295,7 +295,7 @@ function featSend(){
     🎉 Naya update available hai!<br>
     <a href="https://github.com/Hamzaagsm/videomaker/releases/latest/download/MEER.apk" style="display:inline-block;margin-top:8px;padding:10px 24px;background:#000;color:#ffd93d;border-radius:10px;text-decoration:none">⬇️ UPDATE DOWNLOAD KARO</a>
   </div>
-  <p class="hint" style="text-align:center;margin-top:16px">v3.56 MEER • 100% Free • No watermark</p>
+  <p class="hint" style="text-align:center;margin-top:16px">v3.57 MEER • 100% Free • No watermark</p>
 </div>
 
 <!-- ============ AI WORKING ============ -->
@@ -3219,7 +3219,7 @@ async function realMakeVideo(){
             // Har character ka apna fixed scene style
             const charSceneMap={rayo:0,bella:1,rusty:2,woman:3,man:4,baby:5};
             const chKey=(s.ch||'rayo').toLowerCase();
-            const sceneVar=charSceneMap[chKey]!==undefined?charSceneMap[chKey]:(di%6);
+            const sceneVar=charSceneMap[chKey]!==undefined?charSceneMap[chKey]:0;
             let sceneZoom=1, scenePanX=0, scenePanY=0;
             if(sceneVar===1){sceneZoom=1.15;scenePanX=-0.05;}
             else if(sceneVar===2){sceneZoom=1.15;scenePanX=0.05;}
