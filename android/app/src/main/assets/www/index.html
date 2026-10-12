@@ -295,7 +295,7 @@ function featSend(){
     🎉 Naya update available hai!<br>
     <a href="https://github.com/Hamzaagsm/videomaker/releases/latest/download/MEER.apk" style="display:inline-block;margin-top:8px;padding:10px 24px;background:#000;color:#ffd93d;border-radius:10px;text-decoration:none">⬇️ UPDATE DOWNLOAD KARO</a>
   </div>
-  <p class="hint" style="text-align:center;margin-top:16px">v3.58 MEER • 100% Free • No watermark</p>
+  <p class="hint" style="text-align:center;margin-top:16px">v3.59 MEER • 100% Free • No watermark</p>
 </div>
 
 <!-- ============ AI WORKING ============ -->
@@ -1407,12 +1407,31 @@ function setVideoPreview(vidEl,blob,mime){
   return url;
 }
 /* v3.42: Native video save - best quality, Downloads/MEER folder me! */
+// v3.59: arrayBuffer-based base64 (FileReader WebView me fail hota hai!)
 function blobToBase64(blob){
-  return new Promise((res,rej)=>{
-    const r=new FileReader();
-    r.onload=()=>res(r.result);
-    r.onerror=rej;
-    r.readAsDataURL(blob);
+  return new Promise(async(res,rej)=>{
+    try{
+      // Pehle arrayBuffer try karo (zyada reliable)
+      const buf=await blob.arrayBuffer();
+      const bytes=new Uint8Array(buf);
+      let binary='';
+      const CHUNK=0x8000; // 32KB chunks (stack overflow se bachne ke liye)
+      for(let i=0;i<bytes.length;i+=CHUNK){
+        binary+=String.fromCharCode.apply(null,bytes.subarray(i,i+CHUNK));
+      }
+      const b64=btoa(binary);
+      // data URL format me return karo (purane code se compatible)
+      const mime=blob.type||'video/webm';
+      res('data:'+mime+';base64,'+b64);
+    }catch(e){
+      // Fallback: FileReader
+      try{
+        const r=new FileReader();
+        r.onload=()=>res(r.result);
+        r.onerror=rej;
+        r.readAsDataURL(blob);
+      }catch(e2){rej(e2);}
+    }
   });
 }
 async function nativeDownloadVideo(blob,fileName,btnEl){
@@ -3228,15 +3247,16 @@ async function realMakeVideo(){
             else if(st==='jump'){dy=-Math.abs(Math.sin(el*2))*H*0.08;}
             // v3.54: Jo gari bolegi USI ka scene! (speaker-based, auto-change nahi!)
             // Har character ka apna fixed scene style
+            // v3.59: Zoom kam kiya (user: zooming zyada thi!)
             const charSceneMap={rayo:0,bella:1,rusty:2,woman:3,man:4,baby:5};
             const chKey=(s.ch||'rayo').toLowerCase();
             const sceneVar=charSceneMap[chKey]!==undefined?charSceneMap[chKey]:0;
             let sceneZoom=1, scenePanX=0, scenePanY=0;
-            if(sceneVar===1){sceneZoom=1.15;scenePanX=-0.05;}
-            else if(sceneVar===2){sceneZoom=1.15;scenePanX=0.05;}
-            else if(sceneVar===3){sceneZoom=1.25;scenePanY=-0.08;}
-            else if(sceneVar===4){sceneZoom=1.1;scenePanX=0.08;scenePanY=0.05;}
-            else if(sceneVar===5){sceneZoom=1.2;scenePanX=-0.08;scenePanY=-0.05;}
+            if(sceneVar===1){sceneZoom=1.05;scenePanX=-0.02;}
+            else if(sceneVar===2){sceneZoom=1.05;scenePanX=0.02;}
+            else if(sceneVar===3){sceneZoom=1.08;scenePanY=-0.03;}
+            else if(sceneVar===4){sceneZoom=1.03;scenePanX=0.03;scenePanY=0.02;}
+            else if(sceneVar===5){sceneZoom=1.06;scenePanX=-0.03;scenePanY=-0.02;}
             const sc=Math.max(W/vw,H/vh)*0.95*talkScale*zoom*sceneZoom; // v3.51: 95% + v3.53 variation
             const dw=vw*sc,dh=vh*sc;
             const cxp=W/2+dx, cyp=H/2+dy;
