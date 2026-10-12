@@ -295,7 +295,7 @@ function featSend(){
     🎉 Naya update available hai!<br>
     <a href="https://github.com/Hamzaagsm/videomaker/releases/latest/download/MEER.apk" style="display:inline-block;margin-top:8px;padding:10px 24px;background:#000;color:#ffd93d;border-radius:10px;text-decoration:none">⬇️ UPDATE DOWNLOAD KARO</a>
   </div>
-  <p class="hint" style="text-align:center;margin-top:16px">v3.52 MEER • 100% Free • No watermark</p>
+  <p class="hint" style="text-align:center;margin-top:16px">v3.53 MEER • 100% Free • No watermark</p>
 </div>
 
 <!-- ============ AI WORKING ============ -->
@@ -1312,6 +1312,33 @@ function drawAIChar(x,y,w,ch,talking,t){
 }
 
 /* Robust MediaRecorder mime picker: vp9 -> vp8 -> default */
+// v3.53: White background remover (chroma key)
+const _whiteTmpCanvas=document.createElement('canvas');
+const _whiteTmpCtx=_whiteTmpCanvas.getContext('2d',{willReadFrequently:true});
+function drawWithoutWhite(ctx,vid,dx,dy,dw,dh){
+  try{
+    if(_whiteTmpCanvas.width!==Math.floor(dw)||_whiteTmpCanvas.height!==Math.floor(dh)){
+      _whiteTmpCanvas.width=Math.max(1,Math.floor(dw));
+      _whiteTmpCanvas.height=Math.max(1,Math.floor(dh));
+    }
+    const tctx=_whiteTmpCtx;
+    tctx.clearRect(0,0,_whiteTmpCanvas.width,_whiteTmpCanvas.height);
+    tctx.drawImage(vid,0,0,_whiteTmpCanvas.width,_whiteTmpCanvas.height);
+    const img=tctx.getImageData(0,0,_whiteTmpCanvas.width,_whiteTmpCanvas.height);
+    const d=img.data;
+    // White pixels -> transparent (threshold 240)
+    for(let i=0;i<d.length;i+=4){
+      if(d[i]>240&&d[i+1]>240&&d[i+2]>240){
+        d[i+3]=0;
+      }
+    }
+    tctx.putImageData(img,0,0);
+    ctx.drawImage(_whiteTmpCanvas,dx,dy,dw,dh);
+  }catch(e){
+    // Fallback: normal draw
+    ctx.drawImage(vid,dx,dy,dw,dh);
+  }
+}
 function pickMime(){
   if(!window.MediaRecorder)return '';
   const cands=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm','video/mp4'];
@@ -1341,7 +1368,9 @@ async function nativeDownloadVideo(blob,fileName,btnEl){
   // v3.52: DIRECT <a download> FIRST! (bina bridge ke!)
   try{
     try{
-      if(blob&&blob.size>100){
+      // v3.53: Diagnostic
+      console.log('Download blob size:', blob?blob.size:0);
+      if(blob&&blob.size>1000){
         const url=URL.createObjectURL(blob);
         const a=document.createElement('a');
         a.href=url;a.download=fileName;
@@ -3157,7 +3186,15 @@ async function realMakeVideo(){
             else if(st==='spin'){rot=Math.sin(el*0.6)*0.1;}
             else if(st==='drift'){dx=Math.sin(el*1.2)*W*0.08;rot=Math.sin(el*1.2)*0.08;}
             else if(st==='jump'){dy=-Math.abs(Math.sin(el*2))*H*0.08;}
-            const sc=Math.max(W/vw,H/vh)*0.95*talkScale*zoom; // v3.51: 95% - full screen!
+            // v3.53: Scene har 4 dialogues baad change (slow!)
+            const sceneVar=Math.floor(di/4)%6;
+            let sceneZoom=1, scenePanX=0, scenePanY=0;
+            if(sceneVar===1){sceneZoom=1.15;scenePanX=-0.05;}
+            else if(sceneVar===2){sceneZoom=1.15;scenePanX=0.05;}
+            else if(sceneVar===3){sceneZoom=1.25;scenePanY=-0.08;}
+            else if(sceneVar===4){sceneZoom=1.1;scenePanX=0.08;scenePanY=0.05;}
+            else if(sceneVar===5){sceneZoom=1.2;scenePanX=-0.08;scenePanY=-0.05;}
+            const sc=Math.max(W/vw,H/vh)*0.95*talkScale*zoom*sceneZoom; // v3.51: 95% + v3.53 variation
             const dw=vw*sc,dh=vh*sc;
             const cxp=W/2+dx, cyp=H/2+dy;
             try{
