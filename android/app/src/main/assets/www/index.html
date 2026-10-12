@@ -295,7 +295,7 @@ function featSend(){
     🎉 Naya update available hai!<br>
     <a href="https://github.com/Hamzaagsm/videomaker/releases/latest/download/MEER.apk" style="display:inline-block;margin-top:8px;padding:10px 24px;background:#000;color:#ffd93d;border-radius:10px;text-decoration:none">⬇️ UPDATE DOWNLOAD KARO</a>
   </div>
-  <p class="hint" style="text-align:center;margin-top:16px">v3.59 MEER • 100% Free • No watermark</p>
+  <p class="hint" style="text-align:center;margin-top:16px">v3.60 MEER • 100% Free • No watermark</p>
 </div>
 
 <!-- ============ AI WORKING ============ -->
@@ -1396,15 +1396,28 @@ function pickMime(){
 }
 function blobExt(mime){return mime.includes('mp4')?'mp4':'webm';}
 /* Set video preview safely: validates blob, forces load */
-var _lastVideoBlob=null,_lastVideoMime=null;
+var _lastVideoBlob=null,_lastVideoMime=null,_lastVideoB64=null;
 function setVideoPreview(vidEl,blob,mime){
   // v3.58: Increased minimum to 10KB - a valid video must be at least this big!
   // If smaller, the recording failed and we need to tell user to retry
   if(!blob||blob.size<10240)throw new Error('Video sahi se nahi bani ('+Math.round((blob?blob.size:0)/1024)+'KB) — dobara try karo');
   _lastVideoBlob=blob;_lastVideoMime=mime; // v3.42: download ke liye save
+  _lastVideoB64=null; // v3.60: Reset cached base64, will be generated on demand
   const url=URL.createObjectURL(blob);
   vidEl.src=url;vidEl.load();vidEl.style.display='block';
   return url;
+}
+// v3.60: Get cached base64 or generate it (blob ko foran convert karo!)
+async function getVideoB64(){
+  if(_lastVideoB64)return _lastVideoB64;
+  if(!_lastVideoBlob)throw new Error('Koi video nahi bani!');
+  const b64=await blobToBase64(_lastVideoBlob);
+  const b64data=b64.indexOf(',')>0?b64.split(',')[1]:b64;
+  if(!b64data||b64data.length<13334){
+    throw new Error('Video data corrupt hai ('+Math.round(b64data.length*3/4/1024)+'KB). Dobara video banao!');
+  }
+  _lastVideoB64=b64data; // Cache it!
+  return _lastVideoB64;
 }
 /* v3.42: Native video save - best quality, Downloads/MEER folder me! */
 // v3.59: arrayBuffer-based base64 (FileReader WebView me fail hota hai!)
@@ -1452,14 +1465,8 @@ async function nativeDownloadVideo(blob,fileName,btnEl){
   try{
     if(typeof RealClipBridge!=='undefined'&&RealClipBridge.saveVideoStart){
       if(btnEl){btnEl.textContent='⏳ Save ho rahi hai...';btnEl.disabled=true;}
-      const b64=await blobToBase64(blob);
-      // data:video/webm;base64, prefix hatao
-      const b64data=b64.indexOf(',')>0?b64.split(',')[1]:b64;
-      // v3.58: Validate base64 data - must correspond to at least 10KB!
-      // base64 inflates by 4/3, so 10KB = ~13334 chars
-      if(!b64data||b64data.length<13334){
-        throw new Error('Video data corrupt hai ('+Math.round(b64data.length*3/4/1024)+'KB). Dobara video banao!');
-      }
+      // v3.60: Use cached base64 (blob ko foran convert kiya tha!)
+      const b64data=await getVideoB64();
       const CHUNK=400*1024; // 400KB per chunk (binder limit se kam)
       const totalChunks=Math.ceil(b64data.length/CHUNK);
 
@@ -1515,12 +1522,8 @@ async function nativeShareVideo(blob,fileName,btnEl){
     }
     if(typeof RealClipBridge!=='undefined'&&RealClipBridge.shareVideoStart){
       if(btnEl){btnEl.textContent='⏳ Tayyar ho raha...';btnEl.disabled=true;}
-      const b64=await blobToBase64(blob);
-      const b64data=b64.indexOf(',')>0?b64.split(',')[1]:b64;
-      // v3.58: Validate base64 data!
-      if(!b64data||b64data.length<13334){
-        throw new Error('Video data corrupt hai. Dobara video banao!');
-      }
+      // v3.60: Use cached base64!
+      const b64data=await getVideoB64();
       const CHUNK=400*1024;
       const totalChunks=Math.ceil(b64data.length/CHUNK);
       if(btnEl)btnEl.textContent='⏳ (0/'+totalChunks+')';
@@ -2300,7 +2303,7 @@ async function carMakeVideo(silent){
         }
       }
       const mime=pickMime();
-      const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
+      const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime,videoBitsPerSecond:8e6}:{videoBitsPerSecond:8e6});
       const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
       const doneRec=new Promise(r=>rec.onstop=r);
       rec.start(250);
@@ -2384,7 +2387,7 @@ async function carDownloadVoice(){
         }catch(e){}
       }
       if(!tracks.length)throw new Error('Audio capture nahi hua');
-      const rec=new MediaRecorder(new MediaStream(tracks));
+      const rec=new MediaRecorder(new MediaStream(tracks),{videoBitsPerSecond:8e6});
       const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
       const done=new Promise(r=>rec.onstop=r);
       rec.start(250);
@@ -3169,7 +3172,26 @@ async function realMakeVideo(){
       }catch(e){}
     }
     const mime=pickMime();
-    const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
+    // v3.60: Background PEHLE load karo, phir recording shuru! (white background fix!)
+    let bgV=null, bgInfo=null;
+    try{
+      bgInfo=realPickBackground();
+      if(bgInfo&&bgInfo.url){
+        bgV=document.createElement('video');
+        bgV.src=bgInfo.url; bgV.muted=true; bgV.loop=true; bgV.playsInline=true;
+        bgV.playbackRate=0.7;
+        // Wait for background to load (max 5 sec)
+        await new Promise((res)=>{
+          const to=setTimeout(()=>res(),5000);
+          bgV.addEventListener('canplay',()=>{clearTimeout(to);res();},{once:true});
+          bgV.addEventListener('error',()=>{clearTimeout(to);res();},{once:true});
+          bgV.load();
+        });
+        try{await bgV.play();}catch(e){}
+        setP(38,'🎨 Background: '+bgInfo.label);
+      }
+    }catch(e){console.log('BG load fail:',e);}
+    const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime,videoBitsPerSecond:8e6}:{videoBitsPerSecond:8e6});
     const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
     const doneRec=new Promise(r=>rec.onstop=r);
     rec.start(250);
@@ -3185,18 +3207,6 @@ async function realMakeVideo(){
         await sleep(250); // v3.49: No pause - continuous flow! (user: pause na karo)
       }
     })();
-    // v3.45: Background + multi-car + lipsync + stunts!
-    let bgV=null, bgInfo=null;
-    try{
-      bgInfo=realPickBackground();
-      if(bgInfo&&bgInfo.url){
-        bgV=document.createElement('video');
-        bgV.src=bgInfo.url; bgV.muted=true; bgV.loop=true; bgV.playsInline=true;
-        bgV.playbackRate=0.7; // v3.49: Slow background too!
-        bgV.play().catch(()=>{});
-        setP(38,'🎨 Background: '+bgInfo.label);
-      }
-    }catch(e){console.log('BG load fail:',e);}
     // v3.45: Random stunt for this video
     const stunt=STUNTS[Math.floor(Math.random()*STUNTS.length)];
     setP(39,'🎪 Stunt: '+stunt);
@@ -3257,7 +3267,7 @@ async function realMakeVideo(){
             else if(sceneVar===3){sceneZoom=1.08;scenePanY=-0.03;}
             else if(sceneVar===4){sceneZoom=1.03;scenePanX=0.03;scenePanY=0.02;}
             else if(sceneVar===5){sceneZoom=1.06;scenePanX=-0.03;scenePanY=-0.02;}
-            const sc=Math.max(W/vw,H/vh)*0.95*talkScale*zoom*sceneZoom; // v3.51: 95% + v3.53 variation
+            const sc=Math.max(W/vw,H/vh)*0.70*talkScale*zoom*sceneZoom; // v3.60: 70% - zoom kam! (user feedback)
             const dw=vw*sc,dh=vh*sc;
             const cxp=W/2+dx, cyp=H/2+dy;
             try{
@@ -3639,7 +3649,7 @@ async function realFamMakeVideo(){
       }catch(e){}
     }
     const mime=pickMime();
-    const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
+    const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime,videoBitsPerSecond:8e6}:{videoBitsPerSecond:8e6});
     const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
     const doneRec=new Promise(r=>rec.onstop=r);
     rec.start(250);
@@ -4110,7 +4120,7 @@ async function clipStudioRecord(segs,cfg){
     }catch(e){}
   }
   const mime=pickMime();
-  const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime}:{});
+  const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime,videoBitsPerSecond:8e6}:{videoBitsPerSecond:8e6});
   const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
   const doneRec=new Promise(r=>rec.onstop=r);
   rec.start(250);
