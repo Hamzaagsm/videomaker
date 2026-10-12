@@ -1,3 +1,4 @@
+<!-- MEER v3.62: Native video composition + DownloadListener fix + Kids Rhymes Studio -->
 <!DOCTYPE html>
 <html lang="ur">
 <head>
@@ -723,8 +724,14 @@ function featSend(){
   <button class="btn" onclick="kidGenScript()" style="background:linear-gradient(135deg,#ffd93d,#ff8c42)">✨ Script Banao</button>
   <div class="lbl">🌍 Poem Language</div>
   <div class="seg" id="kidPoemLang">
-    <button data-v="ur" class="on">🇮🇳 Hindi (best voice!)</button>
-    <button data-v="en">🇬🇧 English</button>
+    <button data-v="en" class="on">🇬🇧 English (best!)</button>
+    <button data-v="ur">🇮🇳 Hindi</button>
+  </div>
+  <div class="lbl">🎵 Rhyme Template</div>
+  <div class="seg" id="kidTemplate">
+    <button data-v="finger" class="on">👨‍👩‍👧 Finger Family</button>
+    <button data-v="color">🌈 Color Song</button>
+    <button data-v="stunt">🏎️ Stunt Cars</button>
   </div>
   <button class="btn btn2" onclick="kidLoadDailyPoem();">📅 Aaj ki Poem (Roz Nayi! Auto-load)</button>
   <div class="lbl">✏️ Script (edit kar sakte ho)</div>
@@ -2564,7 +2571,7 @@ const KIDVEHICLES=[
   {n:'Car',e:'🚗'},{n:'Bus',e:'🚌'},{n:'Truck',e:'🚚'},
   {n:'Tractor',e:'🚜'},{n:'Ambulance',e:'🚑'},{n:'Fire Truck',e:'🚒'}
 ];
-function kidInit(){seg('kidTopic',()=>{});seg('kidStyle',()=>{});}
+function kidInit(){seg('kidTopic',()=>{});seg('kidStyle',()=>{});seg('kidTemplate',()=>{});seg('kidPoemLang',()=>{});}
 function kidTopicVal(){return segVal('kidTopic')||'colors';}
 function kidStyleVal(){return segVal('kidStyle')||'bus';}
 /* ===== POEM OF THE DAY — 30 original kids poems, auto-rotates daily ===== */
@@ -2664,8 +2671,30 @@ kidInit=function(){
   setTimeout(()=>kidLoadDailyPoem(),300);
 };
 function kidGenScript(){
-  const t=kidTopicVal(),s=kidStyleVal(),L=[];
-  if(t==='colors'){
+  const t=kidTopicVal(),s=kidStyleVal(),tpl=segVal('kidTemplate')||'finger',L=[];
+  // v3.62: Finger Family style (Lalafun inspired, ORIGINAL!)
+  if(tpl==='finger'){
+    L.push('Hello kids! Let us meet the Car Family! 🚗👨‍👩‍👧');
+    L.push('Daddy Car, Daddy Car, where are you?');
+    L.push('Here I am, here I am, vroom vroom vroom!');
+    L.push('Mommy Car, Mommy Car, where are you?');
+    L.push('Here I am, here I am, beep beep beep!');
+    L.push('Baby Car, Baby Car, where are you?');
+    L.push('Here I am, here I am, toot toot toot!');
+    L.push('Let us drive together, vroom vroom vroom! 🚗💨');
+    L.push('Stay tuned! Next video: The Cars Go Racing! 🏁');
+    L.push('Do not forget to watch! See you soon! 👋');
+  }else if(tpl==='stunt'){
+    // v3.62: Action/Stunt cars!
+    L.push('Hello kids! Watch the amazing stunt cars! 🏎️💨');
+    L.push('Red car goes fast! Vroom vroom! So speedy!');
+    L.push('Blue car jumps high! Wheee! Amazing jump!');
+    L.push('Yellow car spins around! Spin spin spin!');
+    L.push('Wow! What a cool stunt! Clap clap clap! 👏');
+    L.push('The cars are the best stunt drivers!');
+    L.push('Want more stunts? Watch the next video! 🏁');
+    L.push('See you in the next amazing stunt show! 👋');
+  }else if(t==='colors'){
     L.push('Hello kids! Learn colors with us! 🌈');
     for(const k of KIDCOLORS){
       if(s==='bus')L.push(k.n+'! The wheels on the bus go round and round, '+k.n+' '+k.item+' all around!');
@@ -2673,6 +2702,7 @@ function kidGenScript(){
       else L.push('This is '+k.n+'! '+k.n+' like a '+k.item+'!');
     }
     L.push('Great job! You learned all the colors! 🎉');
+    L.push('Watch next: Numbers with Cars! Coming soon! 🔢');
   }else if(t==='numbers'){
     L.push('Hello kids! Let us count together! 🔢');
     for(let i=0;i<KIDNUMS.length;i++){
@@ -2681,12 +2711,14 @@ function kidGenScript(){
       else L.push(n+'! Can you count to '+n+'? '+(i+1)+'!');
     }
     L.push('Amazing! You counted to ten! 🎉');
+    L.push('Next video: Learn Shapes! Do not miss it! ⭐');
   }else if(t==='shapes'){
     L.push('Hello kids! Learn shapes with us! ⭐');
     for(const k of KIDSHAPES){
       L.push(k.n+'! Look, a '+k.n+'! Can you find the '+k.n+'?');
     }
     L.push('Wonderful! You learned all the shapes! 🎉');
+    L.push('Coming next: Vehicle Fun! Stay tuned! 🚗');
   }else{
     L.push('Hello kids! Learn vehicles with us! 🚗');
     for(const v of KIDVEHICLES){
@@ -2694,6 +2726,7 @@ function kidGenScript(){
       else L.push('This is a '+v.n+'! '+v.e+' Vroom vroom!');
     }
     L.push('Hooray! You learned all the vehicles! 🎉');
+    L.push('Next: Stunt Car Show! You will love it! 🏎️');
   }
   $('kidScript').value=L.join('\n');
 }
@@ -2881,12 +2914,15 @@ async function kidMakeVideo(){
     const vts=vstream.getVideoTracks();
     if(!vts.length)throw new Error('Video track nahi mila');
     const tracks=[...vts];
-    for(const s of segs){
+    console.log('[MEER] v3.62: Video-only recording (audio capture skip - WebView bug)');
+    // v3.62: Audio capture SKIP - WebView me captureStream() reliable nahi!
+    // Audio baad me native se add hogi
+    /*for(const s of segs){
       try{
         const ast=s.au.captureStream?s.au.captureStream():s.au.mozCaptureStream();
         if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
       }catch(e){}
-    }
+    }*/
     const mime=pickMime();
     // v3.51: Higher bitrate for better quality!
     const recOpts=mime?{mimeType:mime,videoBitsPerSecond:2500000}: {videoBitsPerSecond:2500000};
@@ -3134,7 +3170,105 @@ function realPickBackground(){
   const url=realBgClipURL(bgs[idx]);
   return {name:bgs[idx],url:url,label:BG_NAMES[idx]};
 }
+// v3.62: NATIVE video composition - canvas recording ki bajaye!
+// Clips + TTS audio ko natively jor kar MP4 banata hai. Zyada reliable!
+async function realMakeVideoNative(){
+  const text=$('realScript').value.trim();
+  if(!text){alert('Pehle script likho! (Naam: baat)');return;}
+  const bar=$('realBar'),st=$('realStat');
+  $('realProg').style.display='block';
+  const setP=(p,t)=>{bar.style.width=p+'%';st.textContent=t;};
+  const lang=$('realLang').value;
+  const nameMap=realGetNameMap();
+  const nameList=Object.keys(nameMap).join('/');
+  try{
+    if(!realHasBridge())throw new Error('Ye feature MEER app me chalega!');
+    if(!RealClipBridge.areClipsReady())throw new Error('Pehle clips download karo! ⬇️');
+    if(typeof RealClipBridge.composeVideo!=='function')
+      throw new Error('App update karo! (composeVideo nahi mila)');
+
+    const raw=text.split('\n').filter(l=>l.trim());
+    const lines=[];
+    for(const ln of raw){
+      const m=ln.match(/^([^:]+):\s*(.+)$/);
+      if(!m)continue;
+      const ch=m[1][0].toUpperCase()+m[1].slice(1).toLowerCase();
+      if(!nameMap[ch])continue;
+      lines.push({ch,text:m[2],clip:nameMap[ch].clip,clip2:nameMap[ch].clip2,voice:nameMap[ch].voice});
+    }
+    if(!lines.length)throw new Error('Script format: Naam: baat ('+nameList+')');
+
+    // Har line ke liye: TTS audio banao + clip path lo
+    const segments=[];
+    for(let i=0;i<lines.length;i++){
+      setP(5+i/lines.length*60,'🎙️ Audio '+(i+1)+'/'+lines.length+': '+lines[i].ch);
+      // TTS audio file ka path lo
+      const audioUri=await nativeSpeak(lines[i].text,lang,lines[i].voice||1.0,1.0);
+      // Clip ka naam (alternate clips)
+      let clipName=lines[i].clip;
+      if(lines[i].clip2 && (i%2===1))clipName=lines[i].clip2;
+      // Duration estimate: audio duration ya text length se
+      const dur=Math.max(3.0,lines[i].text.length*0.15+1.5);
+      segments.push({clip:clipName,audio:audioUri,duration:dur});
+    }
+
+    setP(70,'🎬 Video ban rahi hai (native)...');
+    const fileName='MEER_'+Date.now()+'.mp4';
+    const result=RealClipBridge.composeVideo(JSON.stringify(segments),fileName);
+
+    if(result.startsWith('ok:')){
+      const path=result.substring(3);
+      setP(100,'✅ Video tayyar!');
+      // Preview dikhao
+      const vidEl=$('realPreview');
+      if(vidEl){
+        vidEl.src='file://'+path;
+        vidEl.style.display='block';
+        vidEl.load();
+      }
+      // Download ke liye save
+      _lastVideoPath=path;
+      _lastVideoBlob=null; // Native file hai, blob nahi
+      showBanner('✅ Video ban gayi! Downloads/MEER me hai','ok');
+      // Download button: file pehle se Downloads me hai, bas show karo
+      const dl=$('realDl');
+      if(dl){
+        dl.style.display='block';
+        dl.textContent='✅ DOWNLOADS MEIN HAI (MEER folder)';
+        dl.onclick=()=>{showBanner('📁 Downloads/MEER folder me dekho!','ok');};
+      }
+      // Share button: native share via file path
+      let sh=$('realShare');
+      if(!sh){
+        sh=document.createElement('button');
+        sh.id='realShare';sh.className='btn btn2';
+        sh.textContent='📤 SHARE KARO';
+        sh.style.marginTop='8px';
+        if(dl)dl.parentNode.insertBefore(sh,dl.nextSibling);
+      }
+      sh.style.display='block';
+      sh.onclick=()=>{try{RealClipBridge.shareVideoFile(path);}catch(e){showBanner('❌ Share fail','err');}};
+    }else{
+      throw new Error(result);
+    }
+  }catch(e){
+    setP(0,'❌ '+e.message);
+    showBanner('❌ '+e.message,'err');
+    console.error('[MEER] Native compose fail:',e);
+  }
+}
+
 async function realMakeVideo(){
+  // v3.62: Pehle NATIVE try karo (zyada reliable!), fail ho to purana canvas method
+  if(realHasBridge() && typeof RealClipBridge.composeVideo==='function'){
+    try{
+      await realMakeVideoNative();
+      return;
+    }catch(e){
+      console.log('[MEER] Native fail, canvas fallback:',e);
+      // Fallback to canvas recording below
+    }
+  }
   const text=$('realScript').value.trim();
   if(!text){alert('Pehle script likho! (Naam: baat)');return;}
   const bar=$('realBar'),st=$('realStat');
@@ -3191,12 +3325,8 @@ async function realMakeVideo(){
     const vts=vstream.getVideoTracks();
     if(!vts.length)throw new Error('Video track nahi mila');
     const tracks=[...vts];
-    for(const s of segs){
-      try{
-        const ast=s.au.captureStream?s.au.captureStream():s.au.mozCaptureStream();
-        if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
-      }catch(e){}
-    }
+    console.log('[MEER] v3.62: Video-only recording (audio capture skip)');
+    // v3.62: Audio capture SKIP kiya - WebView me captureStream() reliable nahi!
     const mime=pickMime();
     // v3.60: Background PEHLE load karo, phir recording shuru! (white background fix!)
     let bgV=null, bgInfo=null;
@@ -3668,12 +3798,8 @@ async function realFamMakeVideo(){
     const vts=vstream.getVideoTracks();
     if(!vts.length)throw new Error('Video track nahi mila');
     const tracks=[...vts];
-    for(const s of segs){
-      try{
-        const ast=s.au.captureStream?s.au.captureStream():s.au.mozCaptureStream();
-        if(ast)ast.getAudioTracks().forEach(t=>tracks.push(t));
-      }catch(e){}
-    }
+    console.log('[MEER] v3.62: Video-only recording (audio capture skip)');
+    // v3.62: Audio capture SKIP kiya - WebView me captureStream() reliable nahi!
     const mime=pickMime();
     const rec=new MediaRecorder(new MediaStream(tracks),mime?{mimeType:mime,videoBitsPerSecond:8e6}:{videoBitsPerSecond:8e6});
     const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
