@@ -82,49 +82,27 @@ public class MainActivity extends Activity {
             @Override
             public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength){
                 if(url.startsWith("blob:")){
-                    // Blob URL: JS se base64 lekar save karo
+                    // v3.62 FIX: Promise ka wait nahi hota! Callback method use karo.
+                    // JS blob ko base64 me convert karke onBlobData() call karega
+                    final String safeUrl = url.replace("'", "\\'");
+                    final String safeMime = mimetype != null ? mimetype : "video/webm";
                     web.evaluateJavascript(
-                        "(function(){return new Promise((res)=>{var x=new XMLHttpRequest();x.open('GET','"+url+"',true);x.responseType='blob';x.onload=function(){var r=new FileReader();r.onload=function(){res(r.result);};r.readAsDataURL(x.response);};x.onerror=function(){res('');};x.send();});})().then(r=>r);",
-                        new android.webkit.ValueCallback<String>(){
-                            @Override
-                            public void onReceiveValue(String dataUrl){
-                                try{
-                                    if(dataUrl==null||dataUrl.length()<100){
-                                        android.widget.Toast.makeText(MainActivity.this,"Download fail: khaali data",android.widget.Toast.LENGTH_SHORT).show();
-                                        return;
-                                    }
-                                    // data:video/webm;base64,XXXX -> XXXX
-                                    String b64=dataUrl;
-                                    // ValueCallback wraps in quotes, strip them
-                                    if(b64.startsWith("\""))b64=b64.substring(1);
-                                    if(b64.endsWith("\""))b64=b64.substring(0,b64.length()-1);
-                                    // Unescape
-                                    b64=b64.replace("\\n","").replace("\\/","/");
-                                    if(b64.contains(","))b64=b64.substring(b64.indexOf(",")+1);
-                                    byte[] data=android.util.Base64.decode(b64,android.util.Base64.DEFAULT);
-                                    if(data.length<1000){
-                                        android.widget.Toast.makeText(MainActivity.this,"Download fail: file chhoti hai",android.widget.Toast.LENGTH_SHORT).show();
-                                        return;
-                                    }
-                                    String fileName="MEER-"+System.currentTimeMillis()+".webm";
-                                    // Guess extension from mimetype
-                                    if(mimetype!=null&&mimetype.contains("mp4"))fileName=fileName.replace(".webm",".mp4");
-                                    android.content.ContentValues values=new android.content.ContentValues();
-                                    values.put(android.provider.MediaStore.MediaColumns.DISPLAY_NAME,fileName);
-                                    values.put(android.provider.MediaStore.MediaColumns.MIME_TYPE,mimetype!=null?mimetype:"video/webm");
-                                    values.put(android.provider.MediaStore.MediaColumns.RELATIVE_PATH,android.os.Environment.DIRECTORY_DOWNLOADS+"/MEER");
-                                    android.net.Uri uri=getContentResolver().insert(android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI,values);
-                                    if(uri!=null){
-                                        try(java.io.OutputStream os=getContentResolver().openOutputStream(uri)){
-                                            os.write(data);os.flush();
-                                        }
-                                        android.widget.Toast.makeText(MainActivity.this,"✅ Video save ho gayi! Downloads/MEER",android.widget.Toast.LENGTH_LONG).show();
-                                    }
-                                }catch(Exception e){
-                                    android.widget.Toast.makeText(MainActivity.this,"Download fail: "+e.getMessage(),android.widget.Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+                        "(function(){" +
+                        "var x=new XMLHttpRequest();" +
+                        "x.open('GET','" + safeUrl + "',true);" +
+                        "x.responseType='blob';" +
+                        "x.onload=function(){" +
+                        "  var r=new FileReader();" +
+                        "  r.onload=function(){try{MeerDlBridge.onBlobData(r.result,'" + safeMime + "');}catch(e){}};" +
+                        "  r.onerror=function(){try{MeerDlBridge.onBlobData('', '" + safeMime + "');}catch(e){}};" +
+                        "  r.readAsDataURL(x.response);" +
+                        "};" +
+                        "x.onerror=function(){try{MeerDlBridge.onBlobData('', '" + safeMime + "');}catch(e){}};" +
+                        "x.send();" +
+                        "})();",
+                        null);
+                    Toast.makeText(MainActivity.this,
+                        "⬇️ Download ho rahi hai...", Toast.LENGTH_SHORT).show();
                 }else{
                     // Normal URL: DownloadManager
                     try{
@@ -144,6 +122,7 @@ public class MainActivity extends Activity {
         web.addJavascriptInterface(new TTSBridge(), "HamzaTTS");
         web.addJavascriptInterface(new UpdateBridge(), "HamzaUpdate");
         web.addJavascriptInterface(new RealClipBridge(), "RealClipBridge"); // v3.21: real cartoon clips
+        web.addJavascriptInterface(new DownloadBridge(), "MeerDlBridge"); // v3.62: blob download callback
 
         tts = new TextToSpeech(this, status -> {
             if (status == TextToSpeech.SUCCESS) {
@@ -427,6 +406,61 @@ public class MainActivity extends Activity {
      * Called from JS: window.RealClipBridge.downloadClips() / getClipPath(name) /
      * areClipsReady() / getDownloadedCount()
      */
+    // v3.62: DownloadBridge - blob URL downloads ke liye callback
+    // JS blob ko base64 me convert karke onBlobData() call karta hai
+    class DownloadBridge {
+        @JavascriptInterface
+        public void onBlobData(String dataUrl, String mimeType) {
+            runOnUiThread(() -> {
+                try {
+                    if (dataUrl == null || dataUrl.length() < 100) {
+                        Toast.makeText(MainActivity.this,
+                            "Download fail: khaali data", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    String b64 = dataUrl;
+                    if (b64.contains(",")) {
+                        b64 = b64.substring(b64.indexOf(",") + 1);
+                    }
+                    byte[] data = Base64.decode(b64, Base64.DEFAULT);
+                    if (data.length < 1000) {
+                        Toast.makeText(MainActivity.this,
+                            "Download fail: file chhoti hai", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    String fileName = "MEER-" + System.currentTimeMillis() + ".webm";
+                    if (mimeType != null && mimeType.contains("mp4")) {
+                        fileName = fileName.replace(".webm", ".mp4");
+                    }
+                    android.content.ContentValues values = new android.content.ContentValues();
+                    values.put(android.provider.MediaStore.MediaColumns.DISPLAY_NAME, fileName);
+                    values.put(android.provider.MediaStore.MediaColumns.MIME_TYPE,
+                        mimeType != null ? mimeType : "video/webm");
+                    values.put(android.provider.MediaStore.MediaColumns.RELATIVE_PATH,
+                        Environment.DIRECTORY_DOWNLOADS + "/MEER");
+                    Uri uri = getContentResolver().insert(
+                        android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI, values);
+                    if (uri != null) {
+                        try (java.io.OutputStream os =
+                                getContentResolver().openOutputStream(uri)) {
+                            os.write(data);
+                            os.flush();
+                        }
+                        Toast.makeText(MainActivity.this,
+                            "✅ Video save ho gayi! Downloads/MEER",
+                            Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(MainActivity.this,
+                            "Download fail: save nahi hua", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(MainActivity.this,
+                        "Download fail: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
+
     class RealClipBridge {
         private static final String CLIP_BASE =
                 "https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/";
@@ -706,6 +740,245 @@ public class MainActivity extends Activity {
                 chunkBuffer = null;
                 return "error:" + e.getMessage();
             }
+        }
+
+        // v3.62: NATIVE video composition! Canvas recording ki bajaye clips + audio ko natively joro.
+        // Segments JSON: [{clip:"rayo-driving.mp4", audio:"/path/to/audio.wav", duration:5.2}, ...]
+        // Output: MP4 file in Downloads/MEER
+        @JavascriptInterface
+        public String composeVideo(String segmentsJson, String fileName) {
+            try {
+                org.json.JSONArray segs = new org.json.JSONArray(segmentsJson);
+                if (segs.length() == 0) return "error:no_segments";
+
+                // Output file
+                File outDir = new File(Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_DOWNLOADS), "MEER");
+                if (!outDir.exists()) outDir.mkdirs();
+                File outFile = new File(outDir, fileName);
+                if (!fileName.endsWith(".mp4")) {
+                    outFile = new File(outDir, fileName + ".mp4");
+                }
+
+                android.media.MediaMuxer muxer = new android.media.MediaMuxer(
+                    outFile.getAbsolutePath(),
+                    android.media.MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4);
+
+                int videoTrackIndex = -1;
+                int audioTrackIndex = -1;
+                long videoPtsUs = 0;
+                long audioPtsUs = 0;
+
+                java.nio.ByteBuffer buffer = java.nio.ByteBuffer.allocate(1024 * 1024);
+                android.media.MediaCodec.BufferInfo bufferInfo = new android.media.MediaCodec.BufferInfo();
+
+                for (int s = 0; s < segs.length(); s++) {
+                    org.json.JSONObject seg = segs.getJSONObject(s);
+                    String clipName = seg.optString("clip", "");
+                    String audioPath = seg.optString("audio", "");
+                    double durationSec = seg.optDouble("duration", 3.0);
+
+                    // Get clip file path
+                    String clipPath = getClipPath(clipName);
+                    if (clipPath == null || clipPath.isEmpty()) continue;
+                    // Remove file:// prefix if present
+                    if (clipPath.startsWith("file://")) {
+                        clipPath = clipPath.substring(7);
+                    }
+                    File clipFile = new File(clipPath);
+                    if (!clipFile.exists()) continue;
+
+                    // Extract video from clip
+                    android.media.MediaExtractor videoExtractor = new android.media.MediaExtractor();
+                    try {
+                        videoExtractor.setDataSource(clipFile.getAbsolutePath());
+                        int videoTrack = selectTrack(videoExtractor, "video/");
+                        if (videoTrack < 0) {
+                            videoExtractor.release();
+                            continue;
+                        }
+                        videoExtractor.selectTrack(videoTrack);
+                        android.media.MediaFormat videoFormat = videoExtractor.getTrackFormat(videoTrack);
+
+                        if (videoTrackIndex == -1) {
+                            videoTrackIndex = muxer.addTrack(videoFormat);
+                        }
+
+                        // Extract audio from TTS file (if provided)
+                        android.media.MediaExtractor audioExtractor = null;
+                        int audioTrack = -1;
+                        if (audioPath != null && !audioPath.isEmpty()) {
+                            if (audioPath.startsWith("file://")) {
+                                audioPath = audioPath.substring(7);
+                            }
+                            File audioFile = new File(audioPath);
+                            if (audioFile.exists()) {
+                                audioExtractor = new android.media.MediaExtractor();
+                                try {
+                                    audioExtractor.setDataSource(audioFile.getAbsolutePath());
+                                    audioTrack = selectTrack(audioExtractor, "audio/");
+                                    if (audioTrack >= 0) {
+                                        audioExtractor.selectTrack(audioTrack);
+                                        android.media.MediaFormat audioFormat =
+                                            audioExtractor.getTrackFormat(audioTrack);
+                                        if (audioTrackIndex == -1) {
+                                            audioTrackIndex = muxer.addTrack(audioFormat);
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    if (audioExtractor != null) {
+                                        audioExtractor.release();
+                                        audioExtractor = null;
+                                    }
+                                    audioTrack = -1;
+                                }
+                            }
+                        }
+
+                        // Start muxer on first segment
+                        if (s == 0) {
+                            muxer.start();
+                        }
+
+                        // Copy video samples (loop if needed to match duration)
+                        long segmentDurationUs = (long)(durationSec * 1000000);
+                        long videoStartPts = videoPtsUs;
+                        long clipDurationUs = getTrackDurationUs(videoExtractor, videoTrack);
+
+                        // If clip is shorter than needed, loop it
+                        while (videoPtsUs - videoStartPts < segmentDurationUs) {
+                            videoExtractor.seekTo(0, android.media.MediaExtractor.SEEK_TO_CLOSEST_SYNC);
+                            while (true) {
+                                int sampleSize = videoExtractor.readSampleData(buffer, 0);
+                                if (sampleSize < 0) break;
+
+                                bufferInfo.offset = 0;
+                                bufferInfo.size = sampleSize;
+                                bufferInfo.presentationTimeUs = videoPtsUs +
+                                    videoExtractor.getSampleTime();
+                                bufferInfo.flags = videoExtractor.getSampleFlags();
+
+                                // Check if we've exceeded segment duration
+                                if (videoPtsUs + videoExtractor.getSampleTime() - videoStartPts
+                                        > segmentDurationUs) {
+                                    break;
+                                }
+
+                                muxer.writeSampleData(videoTrackIndex, buffer, bufferInfo);
+                                videoExtractor.advance();
+                            }
+                            if (clipDurationUs <= 0) break; // Avoid infinite loop
+                            videoPtsUs += clipDurationUs;
+                            // Safety: don't loop more than 10 times
+                            if ((videoPtsUs - videoStartPts) / clipDurationUs > 10) break;
+                        }
+                        // Ensure video PTS advances to segment end
+                        videoPtsUs = Math.max(videoPtsUs, videoStartPts + segmentDurationUs);
+
+                        // Copy audio samples
+                        if (audioExtractor != null && audioTrack >= 0 && audioTrackIndex >= 0) {
+                            long audioStartPts = audioPtsUs;
+                            while (true) {
+                                int sampleSize = audioExtractor.readSampleData(buffer, 0);
+                                if (sampleSize < 0) break;
+
+                                bufferInfo.offset = 0;
+                                bufferInfo.size = sampleSize;
+                                bufferInfo.presentationTimeUs = audioPtsUs +
+                                    audioExtractor.getSampleTime();
+                                bufferInfo.flags = audioExtractor.getSampleFlags();
+
+                                muxer.writeSampleData(audioTrackIndex, buffer, bufferInfo);
+                                audioExtractor.advance();
+                            }
+                            // Advance audio PTS by actual audio duration
+                            long audioDur = getTrackDurationUs(audioExtractor, audioTrack);
+                            audioPtsUs = Math.max(audioPtsUs + audioDur,
+                                audioStartPts + segmentDurationUs);
+                            audioExtractor.release();
+                        } else {
+                            // No audio: advance audio PTS to keep sync
+                            audioPtsUs = Math.max(audioPtsUs, videoPtsUs);
+                        }
+
+                        videoExtractor.release();
+
+                    } catch (Exception e) {
+                        try { videoExtractor.release(); } catch (Exception ignored) {}
+                        // Continue with next segment
+                    }
+                }
+
+                try { muxer.stop(); } catch (Exception ignored) {}
+                try { muxer.release(); } catch (Exception ignored) {}
+
+                if (videoTrackIndex == -1) {
+                    return "error:no_video_track";
+                }
+
+                // Notify media scanner
+                try {
+                    android.media.MediaScannerConnection.scanFile(
+                        MainActivity.this,
+                        new String[]{outFile.getAbsolutePath()},
+                        new String[]{"video/mp4"}, null);
+                } catch (Exception ignored) {}
+
+                return "ok:" + outFile.getAbsolutePath();
+
+            } catch (Exception e) {
+                return "error:" + e.getMessage();
+            }
+        }
+
+        private int selectTrack(android.media.MediaExtractor extractor, String mimePrefix) {
+            int numTracks = extractor.getTrackCount();
+            for (int i = 0; i < numTracks; i++) {
+                android.media.MediaFormat format = extractor.getTrackFormat(i);
+                String mime = format.getString(android.media.MediaFormat.KEY_MIME);
+                if (mime != null && mime.startsWith(mimePrefix)) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        private long getTrackDurationUs(android.media.MediaExtractor extractor, int trackIndex) {
+            try {
+                android.media.MediaFormat format = extractor.getTrackFormat(trackIndex);
+                if (format.containsKey(android.media.MediaFormat.KEY_DURATION)) {
+                    return format.getLong(android.media.MediaFormat.KEY_DURATION);
+                }
+            } catch (Exception ignored) {}
+            return 0;
+        }
+
+        // v3.62: Share video file from path (native composition ke liye)
+        @JavascriptInterface
+        public void shareVideoFile(String filePath) {
+            runOnUiThread(() -> {
+                try {
+                    File f = new File(filePath);
+                    if (!f.exists()) {
+                        Toast.makeText(MainActivity.this,
+                            "File nahi mili", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    Uri uri = androidx.core.content.FileProvider.getUriForFile(
+                        MainActivity.this,
+                        getPackageName() + ".fileprovider",
+                        f);
+                    Intent share = new Intent(Intent.ACTION_SEND);
+                    share.setType("video/mp4");
+                    share.putExtra(Intent.EXTRA_STREAM, uri);
+                    share.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    share.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(Intent.createChooser(share, "Video share karo"));
+                } catch (Exception e) {
+                    Toast.makeText(MainActivity.this,
+                        "Share fail: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
