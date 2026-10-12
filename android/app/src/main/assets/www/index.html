@@ -295,7 +295,7 @@ function featSend(){
     🎉 Naya update available hai!<br>
     <a href="https://github.com/Hamzaagsm/videomaker/releases/latest/download/MEER.apk" style="display:inline-block;margin-top:8px;padding:10px 24px;background:#000;color:#ffd93d;border-radius:10px;text-decoration:none">⬇️ UPDATE DOWNLOAD KARO</a>
   </div>
-  <p class="hint" style="text-align:center;margin-top:16px">v3.60 MEER • 100% Free • No watermark</p>
+  <p class="hint" style="text-align:center;margin-top:16px">v3.61 MEER • 100% Free • No watermark</p>
 </div>
 
 <!-- ============ AI WORKING ============ -->
@@ -1376,10 +1376,14 @@ async function carJourneyMode(){
     ];
     const poemIdx=pickUniqueScript('journey',JOURNEY_POEMS.length);
     const lines=JOURNEY_POEMS[poemIdx].split('|');
-    // Build dialogue with single car
+    // Build dialogue with single car - v3.61: HAR line me car ka naam zaroori! (warna skip ho jati hai!)
     const scriptEl=$('realScript');
     if(scriptEl){
-      scriptEl.value=lines.join('\n');
+      scriptEl.value=lines.map(l=>{
+        l=l.trim();
+        // Agar line me pehle se "Name:" hai to rehne do, warna car ka naam lagao
+        return /^[A-Za-z]+\s*:/.test(l)?l:carName+': '+l;
+      }).join('\n');
     }
     showBanner('🚗 Journey ready! Ab "REAL VIDEO BANAO" dabao!','ok');
     // Auto-start video generation
@@ -1420,6 +1424,28 @@ async function getVideoB64(){
   return _lastVideoB64;
 }
 /* v3.42: Native video save - best quality, Downloads/MEER folder me! */
+// v3.61: SIMPLE download via DownloadListener! (or treeqa - zyada reliable!)
+function simpleDownloadVideo(blob,fileName){
+  try{
+    if(!blob||blob.size<10240){
+      showBanner('⚠️ Video sahi se nahi bani ('+Math.round((blob?blob.size:0)/1024)+'KB). Dobara banao!','err');
+      return false;
+    }
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;
+    a.download=fileName;
+    a.style.display='none';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(()=>{try{a.remove();}catch(e){}},2000);
+    // DownloadListener native me handle karega!
+    return true;
+  }catch(e){
+    showBanner('❌ Download fail: '+e.message,'err');
+    return false;
+  }
+}
 // v3.59: arrayBuffer-based base64 (FileReader WebView me fail hota hai!)
 function blobToBase64(blob){
   return new Promise(async(res,rej)=>{
@@ -3317,7 +3343,7 @@ async function realMakeVideo(){
     const blob=new Blob(chunks,{type:mime||'video/webm'});
     const url=setVideoPreview($('realPreview'),blob,mime);
     const dl=$('realDl');dl.style.display='block';
-    dl.onclick=async()=>{await nativeDownloadVideo(_lastVideoBlob,'real-cartoon-'+Date.now()+'.'+blobExt(_lastVideoMime),dl);};
+    dl.onclick=async()=>{const fn='real-cartoon-'+Date.now()+'.'+blobExt(_lastVideoMime);if(!simpleDownloadVideo(_lastVideoBlob,fn))await nativeDownloadVideo(_lastVideoBlob,fn,dl);};
     // v3.46: Share button!
     let sh=$('realShare');
     if(!sh){
@@ -3707,7 +3733,7 @@ async function realFamMakeVideo(){
     const blob=new Blob(chunks,{type:mime||'video/webm'});
     const url=setVideoPreview($('realFamPreview'),blob,mime);
     const dl=$('realFamDl');dl.style.display='block';
-    dl.onclick=async()=>{await nativeDownloadVideo(_lastVideoBlob,'real-family-'+Date.now()+'.'+blobExt(_lastVideoMime),dl);};
+    dl.onclick=async()=>{const fn='real-family-'+Date.now()+'.'+blobExt(_lastVideoMime);if(!simpleDownloadVideo(_lastVideoBlob,fn))await nativeDownloadVideo(_lastVideoBlob,fn,dl);};
     st.textContent='✅ Real family video tayyar! 🎬🎉';
   }catch(e){try{cvHide();NOIMG=false;}catch(_){}st.textContent='❌ '+e.message;}
 }
