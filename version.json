@@ -1,1 +1,5 @@
-{"apk": "https://github.com/Hamzaagsm/videomaker/releases/latest/download/MEER.apk", "notes": "🤖 AUTO VIDEO! Topic likho, app khud kahani + video banaye! 12 stories, sab real clips!", "version": "3.24"}
+{
+  "version": "3.34",
+  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.34-apk/MEER-v334.apk",
+  "notes": "Auto-script duration estimate! Subtitles toggle! Koi time limit nahi!"
+}
