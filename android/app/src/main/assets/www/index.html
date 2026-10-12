@@ -295,7 +295,7 @@ function featSend(){
     🎉 Naya update available hai!<br>
     <a href="https://github.com/Hamzaagsm/videomaker/releases/latest/download/MEER.apk" style="display:inline-block;margin-top:8px;padding:10px 24px;background:#000;color:#ffd93d;border-radius:10px;text-decoration:none">⬇️ UPDATE DOWNLOAD KARO</a>
   </div>
-  <p class="hint" style="text-align:center;margin-top:16px">v3.57 MEER • 100% Free • No watermark</p>
+  <p class="hint" style="text-align:center;margin-top:16px">v3.58 MEER • 100% Free • No watermark</p>
 </div>
 
 <!-- ============ AI WORKING ============ -->
@@ -1398,7 +1398,9 @@ function blobExt(mime){return mime.includes('mp4')?'mp4':'webm';}
 /* Set video preview safely: validates blob, forces load */
 var _lastVideoBlob=null,_lastVideoMime=null;
 function setVideoPreview(vidEl,blob,mime){
-  if(!blob||blob.size<100)throw new Error('Video khaali bani (0 bytes) — dobara try karo'); // v3.48: lowered
+  // v3.58: Increased minimum to 10KB - a valid video must be at least this big!
+  // If smaller, the recording failed and we need to tell user to retry
+  if(!blob||blob.size<10240)throw new Error('Video sahi se nahi bani ('+Math.round((blob?blob.size:0)/1024)+'KB) — dobara try karo');
   _lastVideoBlob=blob;_lastVideoMime=mime; // v3.42: download ke liye save
   const url=URL.createObjectURL(blob);
   vidEl.src=url;vidEl.load();vidEl.style.display='block';
@@ -1417,9 +1419,9 @@ async function nativeDownloadVideo(blob,fileName,btnEl){
   // v3.56: REAL FIX! Native bridge FIRST (WebView me <a download> kaam nahi karta!)
   // Sirf native ke ok: ke baad success dikhao, pehle nahi!
   try{
-    // Pehle blob check karo
-    if(!blob||blob.size<1000){
-      showBanner('⚠️ Video khaali hai ('+(blob?blob.size:0)+' bytes). Dobara video banao!','err');
+    // Pehle blob check karo - v3.58: 10KB minimum (valid video ke liye zaroori!)
+    if(!blob||blob.size<10240){
+      showBanner('⚠️ Video sahi se nahi bani ('+Math.round((blob?blob.size:0)/1024)+'KB). Dobara video banao!','err');
       return false;
     }
     console.log('Download blob size:', blob.size);
@@ -1434,6 +1436,11 @@ async function nativeDownloadVideo(blob,fileName,btnEl){
       const b64=await blobToBase64(blob);
       // data:video/webm;base64, prefix hatao
       const b64data=b64.indexOf(',')>0?b64.split(',')[1]:b64;
+      // v3.58: Validate base64 data - must correspond to at least 10KB!
+      // base64 inflates by 4/3, so 10KB = ~13334 chars
+      if(!b64data||b64data.length<13334){
+        throw new Error('Video data corrupt hai ('+Math.round(b64data.length*3/4/1024)+'KB). Dobara video banao!');
+      }
       const CHUNK=400*1024; // 400KB per chunk (binder limit se kam)
       const totalChunks=Math.ceil(b64data.length/CHUNK);
 
@@ -1482,15 +1489,19 @@ async function nativeDownloadVideo(blob,fileName,btnEl){
 // v3.56: Share video - NATIVE FIRST! (WebView me navigator.share nahi hota!)
 async function nativeShareVideo(blob,fileName,btnEl){
   try{
-    // v3.56: Pehle blob check
-    if(!blob||blob.size<1000){
-      showBanner('⚠️ Video khaali hai, share nahi ho sakta','err');
+    // v3.58: Pehle blob check - 10KB minimum!
+    if(!blob||blob.size<10240){
+      showBanner('⚠️ Video sahi se nahi bani ('+Math.round((blob?blob.size:0)/1024)+'KB), share nahi ho sakta. Dobara banao!','err');
       return false;
     }
     if(typeof RealClipBridge!=='undefined'&&RealClipBridge.shareVideoStart){
       if(btnEl){btnEl.textContent='⏳ Tayyar ho raha...';btnEl.disabled=true;}
       const b64=await blobToBase64(blob);
       const b64data=b64.indexOf(',')>0?b64.split(',')[1]:b64;
+      // v3.58: Validate base64 data!
+      if(!b64data||b64data.length<13334){
+        throw new Error('Video data corrupt hai. Dobara video banao!');
+      }
       const CHUNK=400*1024;
       const totalChunks=Math.ceil(b64data.length/CHUNK);
       if(btnEl)btnEl.textContent='⏳ (0/'+totalChunks+')';
