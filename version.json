@@ -1,5 +1,5 @@
 {
-  "version": "3.47",
-  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.47-apk/MEER-v347.apk",
-  "notes": "CRITICAL FIX! uniqueChars error fixed!"
+  "version": "3.48",
+  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.48-apk/MEER-v348.apk",
+  "notes": "Fix! No thumbnails! too_small fixed!"
 }
