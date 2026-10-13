@@ -1,5 +1,5 @@
 {
-  "version": "3.74",
-  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.74-apk/MEER-v374.apk",
-  "notes": "Script duplicate-name fix! (Rayo: Rayo: -> Rayo:)"
+  "version": "3.75",
+  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.75-apk/MEER-v375.apk",
+  "notes": "MP4 CORRUPTION FIXED! Pre-scan adds video+audio tracks before muxer starts! Output validation!"
 }
