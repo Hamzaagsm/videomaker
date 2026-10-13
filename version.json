@@ -1,5 +1,5 @@
 {
-  "version": "3.66",
-  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.66-apk/MEER-v366.apk",
-  "notes": "Proper fix! showBanner! Audio sync! Share removed!"
+  "version": "3.67",
+  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.67-apk/MEER-v367.apk",
+  "notes": "_lastVideoPath error fixed! Auto clip download!"
 }
