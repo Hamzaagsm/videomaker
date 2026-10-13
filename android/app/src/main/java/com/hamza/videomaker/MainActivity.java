@@ -742,6 +742,34 @@ public class MainActivity extends Activity {
             }
         }
 
+        // v3.63: Base64 audio (TTS data URI) ko temp WAV file me save karo, path return karo
+        // Kyunke nativeSpeak data:audio/wav;base64,... return karta hai, file path nahi!
+        @JavascriptInterface
+        public String saveAudioBase64(String base64Data, String fileName) {
+            try {
+                if (base64Data == null || base64Data.isEmpty()) return "";
+                // data: prefix hatao agar ho
+                if (base64Data.contains(",")) {
+                    base64Data = base64Data.substring(base64Data.indexOf(",") + 1);
+                }
+                byte[] data = android.util.Base64.decode(base64Data, android.util.Base64.DEFAULT);
+                if (data.length < 100) return "";
+                File outDir = new File(getCacheDir(), "compose_audio");
+                if (!outDir.exists()) outDir.mkdirs();
+                // Purani temp files saf karo
+                File[] olds = outDir.listFiles();
+                if (olds != null) for (File o : olds) try { o.delete(); } catch (Exception ignored) {}
+                File out = new File(outDir, fileName);
+                try (java.io.FileOutputStream fos = new java.io.FileOutputStream(out)) {
+                    fos.write(data);
+                    fos.flush();
+                }
+                return out.getAbsolutePath();
+            } catch (Exception e) {
+                return "";
+            }
+        }
+
         // v3.62: NATIVE video composition! Canvas recording ki bajaye clips + audio ko natively joro.
         // Segments JSON: [{clip:"rayo-driving.mp4", audio:"/path/to/audio.wav", duration:5.2}, ...]
         // Output: MP4 file in Downloads/MEER
@@ -840,61 +868,71 @@ public class MainActivity extends Activity {
                             muxer.start();
                         }
 
-                        // Copy video samples (loop if needed to match duration)
+                        // v3.63 FIX: Copy video samples with CONTINUOUS PTS (koi gap nahi!)
+                        // Har frame ko videoPtsUs do, phir actual frame duration se aage barho.
+                        // Is se clip loop ho ya na ho, freeze nahi hoga!
                         long segmentDurationUs = (long)(durationSec * 1000000);
                         long videoStartPts = videoPtsUs;
-                        long clipDurationUs = getTrackDurationUs(videoExtractor, videoTrack);
+                        long frameDurUs = 33333; // default 30fps, clip se update hoga
+                        int loopCount = 0;
 
-                        // If clip is shorter than needed, loop it
-                        while (videoPtsUs - videoStartPts < segmentDurationUs) {
+                        while (videoPtsUs - videoStartPts < segmentDurationUs && loopCount < 20) {
                             videoExtractor.seekTo(0, android.media.MediaExtractor.SEEK_TO_CLOSEST_SYNC);
+                            long prevSampleTime = -1;
+                            boolean wroteInPass = false;
                             while (true) {
                                 int sampleSize = videoExtractor.readSampleData(buffer, 0);
                                 if (sampleSize < 0) break;
-
+                                long st = videoExtractor.getSampleTime();
+                                if (prevSampleTime >= 0 && st > prevSampleTime) {
+                                    frameDurUs = st - prevSampleTime;
+                                    if (frameDurUs <= 0 || frameDurUs > 1000000) frameDurUs = 33333;
+                                }
+                                prevSampleTime = st;
+                                // Segment duration poori ho gayi?
+                                if (videoPtsUs - videoStartPts >= segmentDurationUs) break;
                                 bufferInfo.offset = 0;
                                 bufferInfo.size = sampleSize;
-                                bufferInfo.presentationTimeUs = videoPtsUs +
-                                    videoExtractor.getSampleTime();
+                                bufferInfo.presentationTimeUs = videoPtsUs;
                                 bufferInfo.flags = videoExtractor.getSampleFlags();
-
-                                // Check if we've exceeded segment duration
-                                if (videoPtsUs + videoExtractor.getSampleTime() - videoStartPts
-                                        > segmentDurationUs) {
-                                    break;
-                                }
-
                                 muxer.writeSampleData(videoTrackIndex, buffer, bufferInfo);
+                                wroteInPass = true;
+                                videoPtsUs += frameDurUs;
                                 videoExtractor.advance();
                             }
-                            if (clipDurationUs <= 0) break; // Avoid infinite loop
-                            videoPtsUs += clipDurationUs;
-                            // Safety: don't loop more than 10 times
-                            if ((videoPtsUs - videoStartPts) / clipDurationUs > 10) break;
+                            loopCount++;
+                            if (!wroteInPass) break; // kuch nahi likha -> bahar
                         }
-                        // Ensure video PTS advances to segment end
-                        videoPtsUs = Math.max(videoPtsUs, videoStartPts + segmentDurationUs);
+                        // Segment end tak PTS pohunchao (gap na rahe)
+                        if (videoPtsUs < videoStartPts + segmentDurationUs) {
+                            videoPtsUs = videoStartPts + segmentDurationUs;
+                        }
 
-                        // Copy audio samples
+                        // Copy audio samples (ab audioPath hamesha valid file hai - v3.63)
                         if (audioExtractor != null && audioTrack >= 0 && audioTrackIndex >= 0) {
                             long audioStartPts = audioPtsUs;
+                            long prevAuSt = -1;
+                            long auFrameDur = 20000;
                             while (true) {
                                 int sampleSize = audioExtractor.readSampleData(buffer, 0);
                                 if (sampleSize < 0) break;
-
+                                long st = audioExtractor.getSampleTime();
+                                if (prevAuSt >= 0 && st > prevAuSt) {
+                                    auFrameDur = st - prevAuSt;
+                                    if (auFrameDur <= 0 || auFrameDur > 1000000) auFrameDur = 20000;
+                                }
+                                prevAuSt = st;
                                 bufferInfo.offset = 0;
                                 bufferInfo.size = sampleSize;
-                                bufferInfo.presentationTimeUs = audioPtsUs +
-                                    audioExtractor.getSampleTime();
+                                bufferInfo.presentationTimeUs = audioPtsUs;
                                 bufferInfo.flags = audioExtractor.getSampleFlags();
-
                                 muxer.writeSampleData(audioTrackIndex, buffer, bufferInfo);
+                                audioPtsUs += auFrameDur;
                                 audioExtractor.advance();
                             }
-                            // Advance audio PTS by actual audio duration
-                            long audioDur = getTrackDurationUs(audioExtractor, audioTrack);
-                            audioPtsUs = Math.max(audioPtsUs + audioDur,
-                                audioStartPts + segmentDurationUs);
+                            // Audio khatam ho to bhi segment end tak PTS barhao (sync!)
+                            long audioSegEnd = audioStartPts + segmentDurationUs;
+                            if (audioPtsUs < audioSegEnd) audioPtsUs = audioSegEnd;
                             audioExtractor.release();
                         } else {
                             // No audio: advance audio PTS to keep sync
@@ -953,32 +991,36 @@ public class MainActivity extends Activity {
             return 0;
         }
 
-        // v3.62: Share video file from path (native composition ke liye)
+        // v3.63: Share video file from path (native composition ke liye)
+        // String return karta hai taake JS error dikha sake
         @JavascriptInterface
-        public void shareVideoFile(String filePath) {
-            runOnUiThread(() -> {
-                try {
-                    File f = new File(filePath);
-                    if (!f.exists()) {
-                        Toast.makeText(MainActivity.this,
-                            "File nahi mili", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    Uri uri = androidx.core.content.FileProvider.getUriForFile(
-                        MainActivity.this,
-                        getPackageName() + ".fileprovider",
-                        f);
-                    Intent share = new Intent(Intent.ACTION_SEND);
-                    share.setType("video/mp4");
-                    share.putExtra(Intent.EXTRA_STREAM, uri);
-                    share.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                    share.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(Intent.createChooser(share, "Video share karo"));
-                } catch (Exception e) {
-                    Toast.makeText(MainActivity.this,
-                        "Share fail: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        public String shareVideoFile(String filePath) {
+            try {
+                File f = new File(filePath);
+                if (!f.exists()) {
+                    return "error:file_not_found";
                 }
-            });
+                if (f.length() < 1000) {
+                    return "error:file_too_small";
+                }
+                Uri uri = androidx.core.content.FileProvider.getUriForFile(
+                    MainActivity.this,
+                    getPackageName() + ".fileprovider",
+                    f);
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("video/mp4");
+                share.putExtra(Intent.EXTRA_STREAM, uri);
+                share.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                share.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                // v3.63: ClipData bhi set karo (kuch apps ke liye zaroori)
+                share.setClipData(android.content.ClipData.newRawUri("video", uri));
+                MainActivity.this.startActivity(Intent.createChooser(share, "Video share karo"));
+                return "ok:shared";
+            } catch (IllegalArgumentException e) {
+                return "error:fileprovider:" + e.getMessage();
+            } catch (Exception e) {
+                return "error:" + e.getMessage();
+            }
         }
     }
 
