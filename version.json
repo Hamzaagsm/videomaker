@@ -1,5 +1,5 @@
 {
-  "version": "3.72",
-  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.72-apk/MEER-v372.apk",
-  "notes": "VOICE FIX! TTS validation + 3x retry! (khamosh video nahi banegi!)"
+  "version": "3.73",
+  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.73-apk/MEER-v373.apk",
+  "notes": "Footer version fixed! Audio error (no more silent videos)!"
 }
