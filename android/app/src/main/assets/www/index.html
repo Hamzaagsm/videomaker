@@ -122,7 +122,7 @@ function showBanner(msg,type){
 <div class="screen active" id="s-home">
   <h1 onclick="meerTap()" style="cursor:pointer">✨ MEER ✨</h1>
   <p class="sub">Apni kahani, apni awaz — khubsurat videos banao 🎬</p>
-  <p class="sub" id="verLabel" style="opacity:.6;font-size:12px">v3.68</p>
+  <p class="sub" id="verLabel" style="opacity:.6;font-size:12px">v3.69</p>
   <p class="sub">Idea likho → Poori video tayyar!<br>Kahani • Awaz • Scenes • Music • Subtitles</p>
   <div class="card">
     <div class="lbl" style="margin-top:0">💡 Apna idea likho</div>
@@ -421,7 +421,7 @@ function randomOnlineCar(){
   return null;
 }
 
-const APP_VER='3.68';
+const APP_VER='3.69';
 let UPD_URL='';
 function onUpdateMsg(s){
   const b=$('updBanner');if(!b)return;
@@ -1585,15 +1585,29 @@ async function carJourneyMode(){
     showBanner('🚗 Single Car Journey tayyar ho raha...','ok');
     // v3.68: Single car mode flag — backgrounds use honge!
     window.MEER_SINGLE_BG=true;
-    // v3.68: Backgrounds download karo agar nahi hain!
+    // v3.68: Backgrounds download karo agar nahi hain! (WAIT karo!)
     try{
       if(realHasBridge()&&typeof RealClipBridge.areBackgroundsReady==='function'){
-        if(!RealClipBridge.areBackgroundsReady()&&typeof RealClipBridge.downloadBackgrounds==='function'){
-          showBanner('⬇️ Backgrounds download ho rahe hain...','ok');
-          RealClipBridge.downloadBackgrounds();
+        if(!RealClipBridge.areBackgroundsReady()){
+          if(typeof RealClipBridge.downloadBackgrounds==='function'){
+            showBanner('⬇️ Backgrounds download ho rahe hain...','ok');
+            RealClipBridge.downloadBackgrounds();
+            // v3.69: 60 sec tak WAIT karo! (pehle wait nahi tha - white background isi liye tha!)
+            for(let w=0;w<60;w++){
+              await new Promise(r=>setTimeout(r,1000));
+              try{if(RealClipBridge.areBackgroundsReady())break;}catch(e){}
+            }
+          }
+          // Ab bhi ready nahi to error do (white video nahi banegi!)
+          try{
+            if(!RealClipBridge.areBackgroundsReady()){
+              throw new Error('Backgrounds download nahi hue! Internet check karo.');
+            }
+          }catch(e){ throw e; }
+          showBanner('✅ Backgrounds tayyar!','ok');
         }
       }
-    }catch(e){}
+    }catch(e){ throw e; }
     const carName=($('realName1')?.value||'Rayo').trim()||'Rayo';
     // v3.65: ONLINE journey poems (20+) — kabhi repeat nahi! Offline ho to built-in.
     const JOURNEY_POEMS=[
