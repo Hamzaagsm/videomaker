@@ -1,5 +1,1 @@
-{
-  "version": "3.81",
-  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.81-apk/MEER-v381.apk",
-  "notes": "Canvas video renderer: car drives, wheels rotate, one car+bg, audio in MP4!"
-}
+{"version": "3.82", "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.82-apk/MEER-v382.apk", "notes": "Audio fix: wavToAac robust (FORMAT_CHANGED + lazy track), composeVideo audio validation, no silent fallback on no_audio_track"}
