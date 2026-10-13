@@ -589,11 +589,26 @@ public class MainActivity extends Activity {
 
         // v3.68: ONLINE BACKGROUNDS for single car mode (har gari ka background!)
         // v3.70: CAR OVERLAY wali videos! (gari background me NAZAR ayegi!)
+        // v3.71: 48 BACKGROUNDS! (16 scenes x 3 versions: normal/warm/mirror!)
         private static final String BG_BASE =
                 "https://github.com/Hamzaagsm/videomaker/releases/download/backgrounds-v1/";
         private static final String[] BACKGROUNDS = {
-                "bg-hills-car.mp4", "bg-beach-car.mp4", "bg-mountain-car.mp4",
-                "bg-city-car.mp4", "bg-desert-car.mp4", "bg-forest-car.mp4"
+                "bg-hills-car.mp4", "bg-hills-warm.mp4", "bg-hills-mirror.mp4",
+                "bg-beach-car.mp4", "bg-beach-warm.mp4", "bg-beach-mirror.mp4",
+                "bg-mountain-car.mp4", "bg-mountain-warm.mp4", "bg-mountain-mirror.mp4",
+                "bg-city-car.mp4", "bg-city-warm.mp4", "bg-city-mirror.mp4",
+                "bg-desert-car.mp4", "bg-desert-warm.mp4", "bg-desert-mirror.mp4",
+                "bg-forest-car.mp4", "bg-forest-warm.mp4", "bg-forest-mirror.mp4",
+                "bg-nightcity-car.mp4", "bg-nightcity-warm.mp4", "bg-nightcity-mirror.mp4",
+                "bg-winter-car.mp4", "bg-winter-warm.mp4", "bg-winter-mirror.mp4",
+                "bg-autumn-car.mp4", "bg-autumn-warm.mp4", "bg-autumn-mirror.mp4",
+                "bg-farm-car.mp4", "bg-farm-warm.mp4", "bg-farm-mirror.mp4",
+                "bg-lake-car.mp4", "bg-lake-warm.mp4", "bg-lake-mirror.mp4",
+                "bg-waterfall-car.mp4", "bg-waterfall-warm.mp4", "bg-waterfall-mirror.mp4",
+                "bg-garden-car.mp4", "bg-garden-warm.mp4", "bg-garden-mirror.mp4",
+                "bg-starry-car.mp4", "bg-starry-warm.mp4", "bg-starry-mirror.mp4",
+                "bg-canyon-car.mp4", "bg-canyon-warm.mp4", "bg-canyon-mirror.mp4",
+                "bg-cherry-car.mp4", "bg-cherry-warm.mp4", "bg-cherry-mirror.mp4"
         };
 
         private File bgDir() {
@@ -896,6 +911,7 @@ public class MainActivity extends Activity {
                 int audioTrackIndex = -1;
                 long videoPtsUs = 0;
                 long audioPtsUs = 0;
+                boolean muxerStarted = false; // v3.71: pehle valid segment par start hoga!
 
                 java.nio.ByteBuffer buffer = java.nio.ByteBuffer.allocate(1024 * 1024);
                 android.media.MediaCodec.BufferInfo bufferInfo = new android.media.MediaCodec.BufferInfo();
@@ -994,9 +1010,11 @@ public class MainActivity extends Activity {
                             durationSec = 3.0; // invalid JS duration -> safe default
                         }
 
-                        // Start muxer on first segment
-                        if (s == 0) {
+                        // v3.71 FIX: Muxer tab start karo jab PEHLA VALID segment mile!
+                        // (s==0 wala bug: agar pehla segment skip ho to muxer kabhi start nahi hota tha!)
+                        if (!muxerStarted) {
                             muxer.start();
+                            muxerStarted = true;
                         }
 
                         // v3.63 FIX: Copy video samples with CONTINUOUS PTS (koi gap nahi!)
@@ -1078,7 +1096,10 @@ public class MainActivity extends Activity {
                     }
                 }
 
-                try { muxer.stop(); } catch (Exception ignored) {}
+                // v3.71: Sirf tab stop karo jab start hua ho!
+                if (muxerStarted) {
+                    try { muxer.stop(); } catch (Exception ignored) {}
+                }
                 try { muxer.release(); } catch (Exception ignored) {}
 
                 if (videoTrackIndex == -1) {
