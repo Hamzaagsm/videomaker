@@ -1,5 +1,5 @@
 {
-  "version": "3.80",
-  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.80-apk/MEER-v380.apk",
-  "notes": "AAC in MP4 container (audio fix) + build error fixed"
+  "version": "3.81",
+  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.81-apk/MEER-v381.apk",
+  "notes": "Canvas video renderer: car drives, wheels rotate, one car+bg, audio in MP4!"
 }
