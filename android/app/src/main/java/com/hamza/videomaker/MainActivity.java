@@ -932,7 +932,8 @@ public class MainActivity extends Activity {
                         }
 
                         // v3.66 FIX: PEHLE audio ki ASLI duration napo! (sync ka asal hal!)
-                        // JS ka duration galat ho sakta hai (NaN/0) - is se mute/desync hota tha!
+                        // v3.69 FIX: WAV ko PEHLE AAC me convert karo! (GUARANTEED kaam karega!)
+                        // TTS ka WAV MediaExtractor se nahi parha jata tha - is liye awaz nahi ati thi!
                         android.media.MediaExtractor audioExtractor = null;
                         int audioTrack = -1;
                         long actualAudioDurUs = 0;
@@ -942,9 +943,17 @@ public class MainActivity extends Activity {
                             }
                             File audioFile = new File(audioPath);
                             if (audioFile.exists() && audioFile.length() > 1000) {
+                                // v3.69: WAV -> AAC transcode (agar WAV hai to!)
+                                String aacPath = audioPath;
+                                if (audioPath.toLowerCase().endsWith(".wav")) {
+                                    String transcoded = wavToAac(audioPath);
+                                    if (transcoded != null && !transcoded.isEmpty()) {
+                                        aacPath = transcoded;
+                                    }
+                                }
                                 audioExtractor = new android.media.MediaExtractor();
                                 try {
-                                    audioExtractor.setDataSource(audioFile.getAbsolutePath());
+                                    audioExtractor.setDataSource(aacPath);
                                     audioTrack = selectTrack(audioExtractor, "audio/");
                                     if (audioTrack >= 0) {
                                         audioExtractor.selectTrack(audioTrack);
@@ -1100,6 +1109,121 @@ public class MainActivity extends Activity {
                 }
             }
             return -1;
+        }
+
+        // v3.69: WAV ko AAC me convert karo! (MediaMuxer ke liye GUARANTEED compatible!)
+        // TTS ka WAV kabhi kabhi MediaExtractor se nahi parha jata - is liye manual transcode!
+        private String wavToAac(String wavPath) {
+            File wavFile = new File(wavPath);
+            if (!wavFile.exists() || wavFile.length() < 100) return "";
+            try {
+                // WAV header parho (manual - koi dependency nahi!)
+                java.io.FileInputStream fis = new java.io.FileInputStream(wavFile);
+                byte[] header = new byte[44];
+                if (fis.read(header) != 44) { fis.close(); return ""; }
+                // "RIFF" check
+                if (header[0] != 'R' || header[1] != 'I' || header[2] != 'F' || header[3] != 'F') {
+                    fis.close(); return "";
+                }
+                // Sample rate (bytes 24-27, little endian)
+                int sampleRate = (header[24] & 0xFF) | ((header[25] & 0xFF) << 8) |
+                               ((header[26] & 0xFF) << 16) | ((header[27] & 0xFF) << 24);
+                // Channels (bytes 22-23)
+                int channels = (header[22] & 0xFF) | ((header[23] & 0xFF) << 8);
+                // Bits per sample (bytes 34-35)
+                int bitsPerSample = (header[34] & 0xFF) | ((header[35] & 0xFF) << 8);
+                if (sampleRate <= 0 || sampleRate > 96000) sampleRate = 22050;
+                if (channels <= 0 || channels > 2) channels = 1;
+                if (bitsPerSample != 16) { fis.close(); return ""; } // sirf 16-bit support
+
+                // PCM data parho
+                long dataSize = wavFile.length() - 44;
+                byte[] pcmData = new byte[(int) dataSize];
+                int read = 0;
+                while (read < dataSize) {
+                    int r = fis.read(pcmData, read, (int) (dataSize - read));
+                    if (r < 0) break;
+                    read += r;
+                }
+                fis.close();
+                if (read < 100) return "";
+
+                // AAC encoder setup
+                android.media.MediaFormat format = android.media.MediaFormat.createAudioFormat(
+                    android.media.MediaFormat.MIMETYPE_AUDIO_AAC, sampleRate, channels);
+                format.setInteger(android.media.MediaFormat.KEY_BIT_RATE, 64000);
+                format.setInteger(android.media.MediaFormat.KEY_AAC_PROFILE,
+                    android.media.MediaCodecInfo.CodecProfileLevel.AACObjectLC);
+                format.setInteger(android.media.MediaFormat.KEY_MAX_INPUT_SIZE, 16384);
+
+                android.media.MediaCodec encoder = android.media.MediaCodec.createEncoderByType(
+                    android.media.MediaFormat.MIMETYPE_AUDIO_AAC);
+                encoder.configure(format, null, null, android.media.MediaCodec.CONFIGURE_FLAG_ENCODE);
+                encoder.start();
+
+                File aacFile = new File(getCacheDir(), "aac_" + System.currentTimeMillis() + ".aac");
+                java.io.FileOutputStream fos = new java.io.FileOutputStream(aacFile);
+
+                java.nio.ByteBuffer[] inputBuffers = encoder.getInputBuffers();
+                java.nio.ByteBuffer[] outputBuffers = encoder.getOutputBuffers();
+                android.media.MediaCodec.BufferInfo bufferInfo = new android.media.MediaCodec.BufferInfo();
+
+                int offset = 0;
+                boolean inputDone = false;
+                boolean outputDone = false;
+                long ptsUs = 0;
+                int bytesPerSample = 2; // 16-bit
+                long totalSamples = read / (bytesPerSample * channels);
+
+                while (!outputDone) {
+                    if (!inputDone) {
+                        int inputIdx = encoder.dequeueInputBuffer(10000);
+                        if (inputIdx >= 0) {
+                            java.nio.ByteBuffer inputBuf = inputBuffers[inputIdx];
+                            inputBuf.clear();
+                            int chunkSize = Math.min(inputBuf.remaining(), read - offset);
+                            if (chunkSize > 0) {
+                                inputBuf.put(pcmData, offset, chunkSize);
+                                long samplesInChunk = chunkSize / (bytesPerSample * channels);
+                                encoder.queueInputBuffer(inputIdx, 0, chunkSize, ptsUs, 0);
+                                ptsUs += (samplesInChunk * 1000000L) / sampleRate;
+                                offset += chunkSize;
+                            }
+                            if (offset >= read) {
+                                encoder.queueInputBuffer(inputIdx, 0, 0, ptsUs,
+                                    android.media.MediaCodec.BUFFER_FLAG_END_OF_STREAM);
+                                inputDone = true;
+                            }
+                        }
+                    }
+                    int outputIdx = encoder.dequeueOutputBuffer(bufferInfo, 10000);
+                    if (outputIdx >= 0) {
+                        java.nio.ByteBuffer outputBuf = outputBuffers[outputIdx];
+                        if ((bufferInfo.flags & android.media.MediaCodec.BUFFER_FLAG_CODEC_CONFIG) == 0
+                            && bufferInfo.size > 0) {
+                            byte[] outData = new byte[bufferInfo.size];
+                            outputBuf.get(outData);
+                            fos.write(outData);
+                        }
+                        encoder.releaseOutputBuffer(outputIdx, false);
+                        if ((bufferInfo.flags & android.media.MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0) {
+                            outputDone = true;
+                        }
+                    } else if (outputIdx == android.media.MediaCodec.INFO_OUTPUT_BUFFERS_CHANGED) {
+                        outputBuffers = encoder.getOutputBuffers();
+                    }
+                }
+                fos.close();
+                encoder.stop();
+                encoder.release();
+
+                if (aacFile.exists() && aacFile.length() > 100) {
+                    return aacFile.getAbsolutePath();
+                }
+            } catch (Exception e) {
+                // Transcode fail - empty return
+            }
+            return "";
         }
 
         private long getTrackDurationUs(android.media.MediaExtractor extractor, int trackIndex) {
