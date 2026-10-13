@@ -1,5 +1,5 @@
 {
-  "version": "3.75",
-  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.75-apk/MEER-v375.apk",
-  "notes": "MP4 CORRUPTION FIXED! Pre-scan adds video+audio tracks before muxer starts! Output validation!"
+  "version": "3.77",
+  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.77-apk/MEER-v377.apk",
+  "notes": "Any-name fix + audio fallback (video never stops on audio fail)!"
 }
