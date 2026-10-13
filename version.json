@@ -1,5 +1,5 @@
 {
-  "version": "3.77",
-  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.77-apk/MEER-v377.apk",
-  "notes": "Any-name fix + audio fallback (video never stops on audio fail)!"
+  "version": "3.79",
+  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.79-apk/MEER-v379.apk",
+  "notes": "clipName fix (v3.78 bug) + root index.html synced"
 }
