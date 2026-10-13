@@ -1,5 +1,5 @@
 {
-  "version": "3.79",
-  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.79-apk/MEER-v379.apk",
-  "notes": "clipName fix (v3.78 bug) + root index.html synced"
+  "version": "3.80",
+  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.80-apk/MEER-v380.apk",
+  "notes": "AAC in MP4 container (audio fix) + build error fixed"
 }
