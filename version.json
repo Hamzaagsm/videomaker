@@ -1,5 +1,5 @@
 {
-  "version": "3.73",
-  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.73-apk/MEER-v373.apk",
-  "notes": "Footer version fixed! Audio error (no more silent videos)!"
+  "version": "3.74",
+  "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.74-apk/MEER-v374.apk",
+  "notes": "Script duplicate-name fix! (Rayo: Rayo: -> Rayo:)"
 }
