@@ -16,6 +16,8 @@ jobs:
       - uses: gradle/actions/setup-gradle@v3
       - name: Accept licenses
         run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses > /dev/null || true
+      - name: Sync web assets
+        run: mkdir -p android/app/src/main/assets/www && cp index.html android/app/src/main/assets/www/index.html
       - name: Build debug APK
         run: |
           cd android
@@ -37,7 +39,6 @@ jobs:
           name: MEER (Auto Build)
           body: |
             🤖 Automatic build from latest code.
-
             **Download:** MEER.apk below 👇
           files: MEER.apk
           prerelease: false
