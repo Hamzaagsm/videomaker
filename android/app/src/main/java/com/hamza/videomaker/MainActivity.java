@@ -1247,6 +1247,29 @@ public class MainActivity extends Activity {
             return -1;
         }
 
+        // v3.86: Car image ka solid background (teal) transparent karo - box nahi dikhega!
+        private static android.graphics.Bitmap removeTealBackground(android.graphics.Bitmap src) {
+            int w = src.getWidth(), h = src.getHeight();
+            android.graphics.Bitmap out = src.copy(android.graphics.Bitmap.Config.ARGB_8888, true);
+            int[] px = new int[w * h];
+            out.getPixels(px, 0, w, 0, 0, w, h);
+            int bg = px[5 * w + 5]; // corner se background color
+            int bgr = android.graphics.Color.red(bg);
+            int bgg = android.graphics.Color.green(bg);
+            int bgb = android.graphics.Color.blue(bg);
+            int th = 65;
+            int th2 = th * th;
+            for (int i = 0; i < px.length; i++) {
+                int p = px[i];
+                int dr = android.graphics.Color.red(p) - bgr;
+                int dg = android.graphics.Color.green(p) - bgg;
+                int db = android.graphics.Color.blue(p) - bgb;
+                if (dr * dr + dg * dg + db * db < th2) px[i] = 0; // transparent
+            }
+            out.setPixels(px, 0, w, 0, 0, w, h);
+            return out;
+        }
+
         // v3.81: CANVAS-BASED video renderer! (ChatGPT ke 7-point list ka asal hal!)
         // Car khud drive karegi, wheels ghoomenge, background ek hi rahega, car kabhi nahi badlegi!
         // Segments JSON: [{carImage:"car-red.png", bgImage:"bg-hills.jpg", audio:"/path/audio.wav", duration:3.0}, ...]
@@ -1275,6 +1298,7 @@ public class MainActivity extends Activity {
                 }
                 android.graphics.Bitmap carScaled = null;
                 if (carBmp != null) {
+                    carBmp = removeTealBackground(carBmp); // v3.86: teal background hatao - box nahi dikhega!
                     // Car ~420px wide, aspect ratio maintain
                     int cw = 420;
                     int ch = (int) ((float) carBmp.getHeight() * cw / carBmp.getWidth());
@@ -1391,41 +1415,42 @@ public class MainActivity extends Activity {
                         canvas.drawRect(0, roadTop, W, H, paint);
                         paint.setColor(0xFFFFFFFF); // Road edge line
                         canvas.drawRect(0, roadTop, W, roadTop + 8, paint);
-                        // v3.85: Lane dashes SCROLL karo! (yehi driving ka ehsas dilate hain!)
+                        // v3.86: Dashes STATIC (gari khud chal rahi hai - v3.35 style!)
                         float dashY = roadTop + (H - roadTop) * 0.5f;
                         float dashW = 90, gapW = 70;
-                        float scroll = (frameNum * 14) % (dashW + gapW);
+                        float scroll = 0;
                         paint.setColor(0xFFFFD700); // Yellow center dashes
                         for (float dx = -scroll; dx < W; dx += dashW + gapW) {
                             canvas.drawRect(dx, dashY - 7, dx + dashW, dashY + 7, paint);
                         }
 
-                        // v3.85: Car FIXED X par! (har segment me left se teleport NAHI - poori video me ek jagah!)
+                        // v3.86: Car LEFT se RIGHT drive karegi - v3.35/3.40 style! (har line me safar!)
+                        float progress = (float) f / segFrames;
+                        float carX = -450 + progress * (W + 900);
                         // Slight bounce (realistic!)
                         float bounce = (float) (Math.sin(frameNum * 0.3) * 4);
 
-                        // Car draw karo (EK HI car, EK HI jagah, poori video me!)
+                        // Car draw karo (background transparent - box nahi!)
                         if (carScaled != null) {
-                            float carX = W * 0.5f - carScaled.getWidth() / 2f; // Center!
                             float carY = roadTop - carScaled.getHeight() * 0.82f + bounce; // Road par!
                             canvas.drawBitmap(carScaled, carX, carY, null);
-                            // Wheels: 2 rotating wheels!
-                            float wheelR = 32;
-                            float w1x = carX + carScaled.getWidth() * 0.22f;
-                            float w2x = carX + carScaled.getWidth() * 0.78f;
-                            float wy = carY + carScaled.getHeight() * 0.82f;
+                            // Wheels: 2 rotating wheels (car ke asal wheels par!)
+                            float wheelR = 36;
+                            float w1x = carX + carScaled.getWidth() * 0.30f;
+                            float w2x = carX + carScaled.getWidth() * 0.74f;
+                            float wy = carY + carScaled.getHeight() * 0.83f;
                             float wheelAngle = frameNum * 14; // Road speed se match!
                             drawWheel(canvas, w1x, wy, wheelR, wheelAngle, wheelPaint, spokePaint);
                             drawWheel(canvas, w2x, wy, wheelR, wheelAngle, wheelPaint, spokePaint);
                         } else {
-                            // Fallback: simple car shape draw karo
-                            float carX = W * 0.5f - 200;
+                            // Fallback: simple car shape draw karo (ye bhi drive karegi!)
+                            float carX = -450 + progress * (W + 900);
                             float carY = roadTop - 110 + bounce;
                             paint.setColor(0xFFFF0000);
                             canvas.drawRoundRect(carX, carY, carX + 400, carY + 120, 20, 20, paint);
                             float wheelAngle = frameNum * 14;
-                            drawWheel(canvas, carX + 80, carY + 120, 32, wheelAngle, wheelPaint, spokePaint);
-                            drawWheel(canvas, carX + 320, carY + 120, 32, wheelAngle, wheelPaint, spokePaint);
+                            drawWheel(canvas, carX + 120, carY + 120, 36, wheelAngle, wheelPaint, spokePaint);
+                            drawWheel(canvas, carX + 296, carY + 120, 36, wheelAngle, wheelPaint, spokePaint);
                         }
 
                         // Frame ko encoder surface par draw karo
