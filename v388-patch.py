@@ -1,15 +1,18 @@
-# v3.88 patch: CLEAN single car (purane versions jaisa!)
+# v3.88 patch: Screenshot style! (bari gari samne se, 3D street, no flat road)
 # Works on POST-v386 state (v386 patch already ran)
 def patch_java():
     p = 'android/app/src/main/java/com/hamza/videomaker/MainActivity.java'
     s = open(p).read()
 
-    # 1. BARI gari! 420 -> 600 (purane versions jaisi!)
+    # 1. BARI gari! 420 -> 700 (screenshot jaisi - frame bhar!)
     if 'int cw = 420;' in s:
-        s = s.replace('int cw = 420;', 'int cw = 600; // v3.88: BARI gari!', 1)
-        print('CAR SIZE 600 OK')
+        s = s.replace('int cw = 420;', 'int cw = 700; // v3.88: BARI gari (screenshot style!)', 1)
+        print('CAR SIZE 700 OK')
     elif 'int cw = 600;' in s:
-        print('CAR SIZE ALREADY 600')
+        s = s.replace('int cw = 600;', 'int cw = 700; // v3.88: BARI gari (screenshot style!)', 1)
+        print('CAR SIZE 600->700 OK')
+    elif 'int cw = 700;' in s:
+        print('CAR SIZE ALREADY 700')
 
     # 2. DOOSRI gari HATAO! (single car only!)
     old_car2 = '''                            // v3.86: DOOSRI gari - sath me chalegi!
@@ -31,7 +34,7 @@ def patch_java():
     else:
         print('CAR2 NOT FOUND (maybe already removed)')
 
-    # 3. UGLY drawn wheels HATAO! (main car ke - car image ke apne wheels!)
+    # 3. UGLY drawn wheels HATAO! (main car ke)
     old_wheels = '''                            float wheelR = 36;
                             float w1x = carX + carScaled.getWidth() * 0.30f;
                             float w2x = carX + carScaled.getWidth() * 0.74f;
@@ -45,6 +48,31 @@ def patch_java():
         print('WHEELS REMOVED OK')
     else:
         print('WHEELS NOT FOUND')
+
+    # 4. v3.88: Gari CENTER me! (left-right drive nahi, screenshot style!)
+    # carX ko centered karo
+    if 'float carX = -carW + progress * (W + carW * 2);' in s:
+        s = s.replace('float carX = -carW + progress * (W + carW * 2);',
+                      'float carX = (W - carW) / 2; // v3.88: CENTER! (screenshot style)', 1)
+        print('CARX CENTERED OK')
+    elif 'float carX = -450 + progress * (W + 900);' in s:
+        s = s.replace('float carX = -450 + progress * (W + 900);',
+                      'float carX = (W - carW) / 2; // v3.88: CENTER! (screenshot style)', 1)
+        print('CARX CENTERED OK (alt)')
+
+    # carY ko screenshot style (center, thodi neeche) + halki bob
+    if 'float carY = roadTop - carScaled.getHeight() * 0.82f + bounce;' in s:
+        s = s.replace('float carY = roadTop - carScaled.getHeight() * 0.82f + bounce;',
+                      'float carY = H * 0.30f + (float)(Math.sin(frameNum * 0.08) * 12); // v3.88: Center + halki bob!', 1)
+        print('CARY FIXED OK')
+
+    # 5. v3.88: Flat ROAD mat draw karo! (3D street ka apna road hai!)
+    # Road wale rect ko skip karo
+    old_road = '                        canvas.drawRect(0, roadTop, W, H, paint);'
+    if old_road in s:
+        s = s.replace(old_road,
+                      '                        // v3.88: Flat road nahi! (3D background ka apna road!)', 1)
+        print('FLAT ROAD REMOVED OK')
 
     open(p, 'w').write(s)
     print('JAVA V3.88 PATCHED OK')
