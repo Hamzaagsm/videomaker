@@ -50,15 +50,20 @@ def patch_java():
         print('WHEELS NOT FOUND')
 
     # 4. v3.88: Gari CENTER me! (left-right drive nahi, screenshot style!)
-    # carX ko centered karo
+    # carX ko centered karo (cw variable hai, carW nahi!)
     if 'float carX = -carW + progress * (W + carW * 2);' in s:
         s = s.replace('float carX = -carW + progress * (W + carW * 2);',
-                      'float carX = (W - carW) / 2; // v3.88: CENTER! (screenshot style)', 1)
+                      'float carX = (W - cw) / 2; // v3.88: CENTER! (screenshot style)', 1)
         print('CARX CENTERED OK')
     elif 'float carX = -450 + progress * (W + 900);' in s:
         s = s.replace('float carX = -450 + progress * (W + 900);',
-                      'float carX = (W - carW) / 2; // v3.88: CENTER! (screenshot style)', 1)
+                      'float carX = (W - cw) / 2; // v3.88: CENTER! (screenshot style)', 1)
         print('CARX CENTERED OK (alt)')
+    # Agar pehle se (W - carW) hai to theek karo
+    if 'float carX = (W - carW) / 2;' in s:
+        s = s.replace('float carX = (W - carW) / 2;',
+                      'float carX = (W - cw) / 2; // v3.88: CENTER! (screenshot style)', 1)
+        print('CARX FIXED (carW->cw)')
 
     # carY ko screenshot style (center, thodi neeche) + halki bob
     if 'float carY = roadTop - carScaled.getHeight() * 0.82f + bounce;' in s:
@@ -73,6 +78,24 @@ def patch_java():
         s = s.replace(old_road,
                       '                        // v3.88: Flat road nahi! (3D background ka apna road!)', 1)
         print('FLAT ROAD REMOVED OK')
+
+    # 6. v3.88: wheelAngle ka leftover hatao! (wheels remove ho gaye, lekin reference reh gaya!)
+    # 'float w2a = wheelAngle;' ya similar lines dhoondo aur hatao
+    import re
+    # wheelAngle ke akelay references hatao (jo drawWheel me nahi hain)
+    lines = s.split('\n')
+    new_lines = []
+    for line in lines:
+        # Agar line me wheelAngle hai lekin drawWheel nahi, aur ye definition nahi hai
+        if 'wheelAngle' in line and 'drawWheel' not in line and 'float wheelAngle' not in line:
+            # Comment out karo
+            stripped = line.lstrip()
+            indent = line[:len(line)-len(stripped)]
+            new_lines.append(indent + '// v3.88 removed: ' + stripped)
+            print('WHEELANGLE REF REMOVED: ' + stripped[:60])
+        else:
+            new_lines.append(line)
+    s = '\n'.join(new_lines)
 
     open(p, 'w').write(s)
     print('JAVA V3.88 PATCHED OK')
