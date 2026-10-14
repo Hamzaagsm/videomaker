@@ -22,6 +22,8 @@ jobs:
         run: python3 v386-patch.py
       - name: Apply v3.87 patches
         run: python3 v387-patch.py
+      - name: Apply v3.88 patches
+        run: python3 v388-patch.py
       - name: Build debug APK
         run: |
           cd android
