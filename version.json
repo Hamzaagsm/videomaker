@@ -1,1 +1,0 @@
-{"version": "3.83", "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v3.83-apk/MEER-v383.apk", "notes": "Audio fix: wavToAac input-loop double-queue bug (EOS on last buffer), no_audio_track error now carries wav failure reason"}
