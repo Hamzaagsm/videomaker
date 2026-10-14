@@ -1383,40 +1383,47 @@ public class MainActivity extends Activity {
                         if (bgScaled != null) {
                             canvas.drawBitmap(bgScaled, 0, 0, null);
                         } else {
-                            // Fallback: sky + road draw karo
                             canvas.drawColor(0xFF87CEEB); // Sky blue
-                            paint.setColor(0xFF555555); // Road gray
-                            canvas.drawRect(0, H * 0.62f, W, H, paint);
-                            paint.setColor(0xFFFFFFFF); // Lane markings
-                            for (int lx = 0; lx < W; lx += 120) {
-                                canvas.drawRect(lx, H * 0.80f, lx + 60, H * 0.82f, paint);
-                            }
+                        }
+                        // v3.85: ROAD! (seedhi sarak - gari is par chalegi, "real driving" look!)
+                        float roadTop = H * 0.66f;
+                        paint.setColor(0xFF3A3A3A); // Dark gray road
+                        canvas.drawRect(0, roadTop, W, H, paint);
+                        paint.setColor(0xFFFFFFFF); // Road edge line
+                        canvas.drawRect(0, roadTop, W, roadTop + 8, paint);
+                        // v3.85: Lane dashes SCROLL karo! (yehi driving ka ehsas dilate hain!)
+                        float dashY = roadTop + (H - roadTop) * 0.5f;
+                        float dashW = 90, gapW = 70;
+                        float scroll = (frameNum * 14) % (dashW + gapW);
+                        paint.setColor(0xFFFFD700); // Yellow center dashes
+                        for (float dx = -scroll; dx < W; dx += dashW + gapW) {
+                            canvas.drawRect(dx, dashY - 7, dx + dashW, dashY + 7, paint);
                         }
 
-                        // Car position: left se right drive karo (smooth!)
-                        // Segment ke andar car left->right, agle segment me phir left se
-                        float progress = (float) f / segFrames;
-                        float carX = -450 + progress * (W + 900); // Left se right
+                        // v3.85: Car FIXED X par! (har segment me left se teleport NAHI - poori video me ek jagah!)
                         // Slight bounce (realistic!)
-                        float bounce = (float) (Math.sin(frameNum * 0.3) * 3);
-                        float carY = H * 0.58f + bounce;
+                        float bounce = (float) (Math.sin(frameNum * 0.3) * 4);
 
-                        // Car draw karo (EK HI car poori video me!)
+                        // Car draw karo (EK HI car, EK HI jagah, poori video me!)
                         if (carScaled != null) {
+                            float carX = W * 0.5f - carScaled.getWidth() / 2f; // Center!
+                            float carY = roadTop - carScaled.getHeight() * 0.82f + bounce; // Road par!
                             canvas.drawBitmap(carScaled, carX, carY, null);
                             // Wheels: 2 rotating wheels!
                             float wheelR = 32;
                             float w1x = carX + carScaled.getWidth() * 0.22f;
                             float w2x = carX + carScaled.getWidth() * 0.78f;
                             float wy = carY + carScaled.getHeight() * 0.82f;
-                            float wheelAngle = frameNum * 12; // Har frame 12 degrees
+                            float wheelAngle = frameNum * 14; // Road speed se match!
                             drawWheel(canvas, w1x, wy, wheelR, wheelAngle, wheelPaint, spokePaint);
                             drawWheel(canvas, w2x, wy, wheelR, wheelAngle, wheelPaint, spokePaint);
                         } else {
                             // Fallback: simple car shape draw karo
+                            float carX = W * 0.5f - 200;
+                            float carY = roadTop - 110 + bounce;
                             paint.setColor(0xFFFF0000);
                             canvas.drawRoundRect(carX, carY, carX + 400, carY + 120, 20, 20, paint);
-                            float wheelAngle = frameNum * 12;
+                            float wheelAngle = frameNum * 14;
                             drawWheel(canvas, carX + 80, carY + 120, 32, wheelAngle, wheelPaint, spokePaint);
                             drawWheel(canvas, carX + 320, carY + 120, 32, wheelAngle, wheelPaint, spokePaint);
                         }
