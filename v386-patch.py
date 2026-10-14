@@ -110,6 +110,24 @@ def patch_draw():
     # Frame loop me doosri gari draw karo
     p = 'android/app/src/main/java/com/hamza/videomaker/MainActivity.java'
     s = open(p).read()
+
+    # v3.86 FIX: duplicate carX hatao (pehle se upar declare hai!)
+    old_dup = '                            // Fallback: simple car shape draw karo (ye bhi drive karegi!)\n                            float carX = -450 + progress * (W + 900);'
+    if old_dup in s:
+        s = s.replace(old_dup,
+            '                            // Fallback: simple car shape draw karo (ye bhi drive karegi!)\n                            // (carX upar pehle se set hai!)', 1)
+        print('DUP CARX FIXED')
+    else:
+        # alternative: agar comment alag ho
+        import re
+        s2 = re.sub(r'(\} else \{\s*\n\s*//[^\n]*\n\s*)float carX = -450 \+ progress \* \(W \+ 900\);',
+                    r'\1// (carX upar pehle se set hai!)', s, count=1)
+        if s2 != s:
+            s = s2
+            print('DUP CARX FIXED (regex)')
+        else:
+            print('DUP CARX NOT FOUND - checking...')
+
     old_wheels = '''                            drawWheel(canvas, w1x, wy, wheelR, wheelAngle, wheelPaint, spokePaint);
                             drawWheel(canvas, w2x, wy, wheelR, wheelAngle, wheelPaint, spokePaint);
                         } else {'''
