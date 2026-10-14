@@ -93,12 +93,19 @@ def patch_java():
         print('SIZE 700 OK')
 
     # 5. Car CENTERED (not left-right drive)
-    # Base has: float carX = -450 + progress * (W + 900);
-    # (do jagah hai: main car aur fallback - dono theek karo!)
-    s = s.replace('float carX = -450 + progress * (W + 900);',
-                  'float carX = (W - (carScaled != null ? carScaled.getWidth() : 400)) / 2; // v3.89: CENTER!')
-    if 'v3.89: CENTER!' in s:
-        print('CENTER OK')
+    # Base has TWO: outer (line 1429) aur fallback else-block (line 1447)
+    # Outer ko centered karo, fallback wali DECLARATION hatao (outer wali use hogi!)
+    if 'float carX = -450 + progress * (W + 900);' in s:
+        # Pehle outer wali (pehli occurrence) ko replace karo
+        s = s.replace('float carX = -450 + progress * (W + 900);',
+                      'float carX = (W - 700) / 2; // v3.89: CENTER! (700px car)', 1)
+        print('CENTER OK (outer)')
+        # Ab fallback wali (doosri occurrence) ki declaration hatao - sirf comment
+        # (outer carX hi use hogi, dobara declare nahi kar sakte!)
+        if 'float carX = -450 + progress * (W + 900);' in s:
+            s = s.replace('float carX = -450 + progress * (W + 900);',
+                          '// v3.89: outer carX use hogi (centered!)', 1)
+            print('FALLBACK CARX REMOVED OK')
 
     # 6. Car Y: screenshot style (center + bob), not on road
     # Base has: float carY = roadTop - carScaled.getHeight() * 0.82f + bounce;
