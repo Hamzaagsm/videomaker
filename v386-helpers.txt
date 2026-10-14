@@ -1,0 +1,51 @@
+        // v3.86: Flood-fill background removal (teal/white safe!)
+        private static android.graphics.Bitmap removeCarBackground(android.graphics.Bitmap src) {
+            int w = src.getWidth(), h = src.getHeight();
+            android.graphics.Bitmap out = src.copy(android.graphics.Bitmap.Config.ARGB_8888, true);
+            int[] px = new int[w * h];
+            out.getPixels(px, 0, w, 0, 0, w, h);
+            int bg = px[5 * w + 5];
+            int bgr = android.graphics.Color.red(bg);
+            int bgg = android.graphics.Color.green(bg);
+            int bgb = android.graphics.Color.blue(bg);
+            int th = 55, th2 = th * th;
+            boolean[] vis = new boolean[w * h];
+            int[] q = new int[w * h];
+            int qh = 0, qt = 0;
+            int[] sx = {5, w - 6, 5, w - 6};
+            int[] sy = {5, 5, h - 6, h - 6};
+            for (int k = 0; k < 4; k++) {
+                int id = sy[k] * w + sx[k];
+                if (!vis[id]) { vis[id] = true; q[qt++] = id; }
+            }
+            while (qh < qt) {
+                int id = q[qh++];
+                int pp = px[id];
+                int dr = android.graphics.Color.red(pp) - bgr;
+                int dg = android.graphics.Color.green(pp) - bgg;
+                int db = android.graphics.Color.blue(pp) - bgb;
+                if (dr * dr + dg * dg + db * db < th2) {
+                    px[id] = 0;
+                    int x = id % w, y = id / w;
+                    if (x > 0) { int n = id - 1; if (!vis[n]) { vis[n] = true; q[qt++] = n; } }
+                    if (x < w - 1) { int n = id + 1; if (!vis[n]) { vis[n] = true; q[qt++] = n; } }
+                    if (y > 0) { int n = id - w; if (!vis[n]) { vis[n] = true; q[qt++] = n; } }
+                    if (y < h - 1) { int n = id + w; if (!vis[n]) { vis[n] = true; q[qt++] = n; } }
+                }
+            }
+            out.setPixels(px, 0, w, 0, 0, w, h);
+            return out;
+        }
+        // v3.86: URL se car image download karo!
+        private static android.graphics.Bitmap downloadBitmap(String urlStr) {
+            try {
+                java.net.URL url = new java.net.URL(urlStr);
+                java.net.HttpURLConnection con = (java.net.HttpURLConnection) url.openConnection();
+                con.setConnectTimeout(15000);
+                con.setReadTimeout(15000);
+                java.io.InputStream is = con.getInputStream();
+                android.graphics.Bitmap bmp = android.graphics.BitmapFactory.decodeStream(is);
+                is.close();
+                return bmp;
+            } catch (Exception e) { return null; }
+        }
