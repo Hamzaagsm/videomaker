@@ -86,18 +86,18 @@ def patch_html():
         h = h.replace('carImage:carImg,carImage2:carImg2,bgImage:bgImg', 'carImage:carImg,bgImage:bgImg')
         print('CARIMAGE2 REMOVED')
 
+    # v3.88: Silent tail khatam! (4-5 sec khamoshi fix)
+    # Har segment me +0.3s jama ho kar 4-5s ban jata tha!
+    if 'const dur=Math.max(1.0,audioDurSec+0.3);' in h:
+        h = h.replace('const dur=Math.max(1.0,audioDurSec+0.3);',
+                      'const dur=Math.max(0.8,audioDurSec+0.1); // v3.88: silent tail khatam! (+0.3 -> +0.1)', 1)
+        print('SILENT TAIL FIXED')
+
     # Version 3.88
     h = h.replace("const APP_VER='3.86'", "const APP_VER='3.88'")
     h = h.replace("const APP_VER='3.87'", "const APP_VER='3.88'")
     h = h.replace("v3.86 MEER", "v3.88 MEER")
     h = h.replace("v3.87 MEER", "v3.88 MEER")
-
-    # 3D street background as default!
-    # (bgImage ko 3D street par set karo)
-    if 'bg-3d-street.jpg' not in h:
-        # bgImage wali line dhoondo aur default badlo
-        # Simple: agar bgImage set ho raha hai, to usay override karo
-        pass  # (HTML me bg select hota hai, user choose karega)
 
     open(p, 'w').write(h)
     print('HTML V3.88 PATCHED OK')
