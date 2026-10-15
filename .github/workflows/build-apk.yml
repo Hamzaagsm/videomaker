@@ -30,6 +30,8 @@ jobs:
         run: python3 v394-patch.py
       - name: Apply v3.95 patches
         run: python3 v395-patch.py
+      - name: Apply v3.96 patches
+        run: python3 v396-patch.py
       - name: Build debug APK
         run: |
           cd android
