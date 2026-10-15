@@ -2,14 +2,14 @@
   "cars": [
     {
       "id": "rayo",
-      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-red.png",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/rayo-3d.png",
       "name": "Rayo",
       "pitch": 0.72,
       "voice": "Rayo"
     },
     {
       "id": "bella",
-      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-blue.png",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/bella-3d.png",
       "name": "Bella",
       "pitch": 1.42,
       "voice": "Bella"
@@ -23,49 +23,49 @@
     },
     {
       "id": "sunny",
-      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-yellow-taxi.png",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/sunny-3d.png",
       "name": "Sunny",
       "pitch": 0.9,
       "voice": "Rayo"
     },
     {
       "id": "pinky",
-      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-pink.png",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/pinky-3d.png",
       "name": "Pinky",
       "pitch": 1.6,
       "voice": "Bella"
     },
     {
       "id": "bolt",
-      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-black-race.png",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/bolt-3d.png",
       "name": "Bolt",
       "pitch": 0.65,
       "voice": "Rayo"
     },
     {
       "id": "snowy",
-      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-white.png",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/snowy-3d.png",
       "name": "Snowy",
       "pitch": 1.5,
       "voice": "Bella"
     },
     {
       "id": "rainbow",
-      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-rainbow.png",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/rainbow-3d.png",
       "name": "Rainbow",
       "pitch": 1.7,
       "voice": "Rusty"
     },
     {
       "id": "tangy",
-      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-orange.png",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/tangy-3d.png",
       "name": "Tangy",
       "pitch": 0.8,
       "voice": "Rayo"
     },
     {
       "id": "violet",
-      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-purple.png",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/violet-3d.png",
       "name": "Violet",
       "pitch": 1.35,
       "voice": "Bella"
