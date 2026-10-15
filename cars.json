@@ -1,1 +1,139 @@
-{"cars": [{"id": "rayo", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-red.png", "name": "Rayo", "pitch": 0.72, "voice": "Rayo"}, {"id": "bella", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-blue.png", "name": "Bella", "pitch": 1.42, "voice": "Bella"}, {"id": "rusty", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-green-truck.png", "name": "Rusty", "pitch": 1.85, "voice": "Rusty"}, {"id": "sunny", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-yellow-taxi.png", "name": "Sunny", "pitch": 0.9, "voice": "Rayo"}, {"id": "pinky", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-pink.png", "name": "Pinky", "pitch": 1.6, "voice": "Bella"}, {"id": "bolt", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-black-race.png", "name": "Bolt", "pitch": 0.65, "voice": "Rayo"}, {"id": "snowy", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-white.png", "name": "Snowy", "pitch": 1.5, "voice": "Bella"}, {"id": "rainbow", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-rainbow.png", "name": "Rainbow", "pitch": 1.7, "voice": "Rusty"}, {"id": "tangy", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-orange.png", "name": "Tangy", "pitch": 0.8, "voice": "Rayo"}, {"id": "violet", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-purple.png", "name": "Violet", "pitch": 1.35, "voice": "Bella"}, {"id": "pixar-yellow", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-pixar-yellow.png", "name": "Sunny (Pixar)", "pitch": 0.9, "voice": "Rayo"}, {"id": "pixar-red", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-pixar-red.png", "name": "Rayo (Pixar)", "pitch": 0.72, "voice": "Rayo"}, {"id": "pixar-blue", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-pixar-blue.png", "name": "Bella (Pixar)", "pitch": 1.42, "voice": "Bella"}, {"id": "pixar-pink", "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-pixar-pink.png", "name": "Pinky (Pixar)", "pitch": 1.6, "voice": "Bella"}], "updated": "2026-10-14", "version": "1.0"}
+{
+  "cars": [
+    {
+      "id": "rayo",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-red.png",
+      "name": "Rayo",
+      "pitch": 0.72,
+      "voice": "Rayo"
+    },
+    {
+      "id": "bella",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-blue.png",
+      "name": "Bella",
+      "pitch": 1.42,
+      "voice": "Bella"
+    },
+    {
+      "id": "rusty",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-green-truck.png",
+      "name": "Rusty",
+      "pitch": 1.85,
+      "voice": "Rusty"
+    },
+    {
+      "id": "sunny",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-yellow-taxi.png",
+      "name": "Sunny",
+      "pitch": 0.9,
+      "voice": "Rayo"
+    },
+    {
+      "id": "pinky",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-pink.png",
+      "name": "Pinky",
+      "pitch": 1.6,
+      "voice": "Bella"
+    },
+    {
+      "id": "bolt",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-black-race.png",
+      "name": "Bolt",
+      "pitch": 0.65,
+      "voice": "Rayo"
+    },
+    {
+      "id": "snowy",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-white.png",
+      "name": "Snowy",
+      "pitch": 1.5,
+      "voice": "Bella"
+    },
+    {
+      "id": "rainbow",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-rainbow.png",
+      "name": "Rainbow",
+      "pitch": 1.7,
+      "voice": "Rusty"
+    },
+    {
+      "id": "tangy",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-orange.png",
+      "name": "Tangy",
+      "pitch": 0.8,
+      "voice": "Rayo"
+    },
+    {
+      "id": "violet",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/car-purple.png",
+      "name": "Violet",
+      "pitch": 1.35,
+      "voice": "Bella"
+    },
+    {
+      "id": "motu",
+      "name": "Motu",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/motu-bike.png",
+      "pitch": 0.7,
+      "voice": "Motu"
+    },
+    {
+      "id": "patlu",
+      "name": "Patlu",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/patlu-bike.png",
+      "pitch": 1.4,
+      "voice": "Patlu"
+    },
+    {
+      "id": "don",
+      "name": "Don",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/don-bike.png",
+      "pitch": 0.6,
+      "voice": "Don"
+    },
+    {
+      "id": "goon1",
+      "name": "Goon1",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/don-goon1-bike.png",
+      "pitch": 0.8,
+      "voice": "Goon1"
+    },
+    {
+      "id": "goon2",
+      "name": "Goon2",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/don-goon2-bike.png",
+      "pitch": 1.1,
+      "voice": "Goon2"
+    },
+    {
+      "id": "ghaseeta",
+      "name": "Ghaseeta",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/ghaseeta-bike.png",
+      "pitch": 1.0,
+      "voice": "Ghaseeta"
+    },
+    {
+      "id": "jhatka",
+      "name": "Jhatka",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/jhatka-bike.png",
+      "pitch": 1.3,
+      "voice": "Jhatka"
+    },
+    {
+      "id": "chingam",
+      "name": "Chingam",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/chingam-bike.png",
+      "pitch": 0.9,
+      "voice": "Chingam"
+    },
+    {
+      "id": "samosa",
+      "name": "Samosa",
+      "img": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/samosa-bike.png",
+      "pitch": 1.2,
+      "voice": "Samosa"
+    }
+  ],
+  "updated": "2026-10-13",
+  "version": "1.0"
+}
