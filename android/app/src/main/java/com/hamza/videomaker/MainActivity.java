@@ -474,6 +474,120 @@ public class MainActivity extends Activity {
     }
 
     class RealClipBridge {
+        // v4.06: download-ID tracking — dobara dabane par DUPLICATE enqueue nahi hoga,
+        // aur har file ka live status (fail reason samet) JS ko milega
+        private final java.util.Map<String, Long> dlIds = new java.util.HashMap<>();
+
+        private boolean dlActive(String key, DownloadManager dm) {
+            try {
+                Long id = dlIds.get(key);
+                if (id == null) return false;
+                android.database.Cursor c = dm.query(new DownloadManager.Query().setFilterById(id));
+                try {
+                    if (c != null && c.moveToFirst()) {
+                        int st = c.getInt(c.getColumnIndex(DownloadManager.COLUMN_STATUS));
+                        if (st == DownloadManager.STATUS_PENDING
+                                || st == DownloadManager.STATUS_RUNNING
+                                || st == DownloadManager.STATUS_PAUSED) return true;
+                    }
+                } finally { if (c != null) c.close(); }
+                dlIds.remove(key);
+                return false;
+            } catch (Exception e) { return false; }
+        }
+
+        private void dlRemember(String key, long id) { dlIds.put(key, id); }
+
+        @JavascriptInterface
+        public String getDownloadStatus() {
+            try {
+                DownloadManager dm = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                StringBuilder sb = new StringBuilder("[");
+                boolean first = true;
+                first = appendDlStatus(sb, first, dm, "c:", CLIPS, clipDir());
+                first = appendDlStatus(sb, first, dm, "b:", BACKGROUNDS, bgDir());
+                sb.append("]");
+                return sb.toString();
+            } catch (Exception e) { return "[]"; }
+        }
+
+        private boolean appendDlStatus(StringBuilder sb, boolean first, DownloadManager dm,
+                                       String prefix, String[] names, File dir) {
+            for (String name : names) {
+                File f = new File(dir, name);
+                String state; int pct = -1; String reason = "";
+                if (clipOk(f)) { state = "ok"; }
+                else {
+                    Long id = dlIds.get(prefix + name);
+                    if (id == null) { state = "idle"; }
+                    else {
+                        android.database.Cursor c = null;
+                        try {
+                            c = dm.query(new DownloadManager.Query().setFilterById(id));
+                            if (c != null && c.moveToFirst()) {
+                                int st = c.getInt(c.getColumnIndex(DownloadManager.COLUMN_STATUS));
+                                long done = c.getLong(c.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+                                long total = c.getLong(c.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+                                if (total > 0) pct = (int) (done * 100 / total);
+                                if (st == DownloadManager.STATUS_SUCCESSFUL) state = "ok";
+                                else if (st == DownloadManager.STATUS_FAILED) {
+                                    state = "failed";
+                                    reason = String.valueOf(c.getInt(c.getColumnIndex(DownloadManager.COLUMN_REASON)));
+                                }
+                                else if (st == DownloadManager.STATUS_PAUSED) state = "paused";
+                                else if (st == DownloadManager.STATUS_RUNNING) state = "running";
+                                else state = "pending";
+                            } else { state = "idle"; }
+                        } catch (Exception e) { state = "idle"; }
+                        finally { if (c != null) c.close(); }
+                    }
+                }
+                if (!first) sb.append(",");
+                first = false;
+                sb.append("{\"f\":\"").append(name).append("\",\"s\":\"").append(state)
+                  .append("\",\"p\":").append(pct).append(",\"r\":\"").append(reason).append("\"}");
+            }
+            return first;
+        }
+
+        @JavascriptInterface
+        public void retryFailed() {
+            runOnUiThread(() -> {
+                try {
+                    DownloadManager dm = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                    java.util.List<String> keys = new java.util.ArrayList<>(dlIds.keySet());
+                    for (String key : keys) {
+                        Long id = dlIds.get(key);
+                        if (id == null) continue;
+                        android.database.Cursor c = null;
+                        boolean failed = false;
+                        try {
+                            c = dm.query(new DownloadManager.Query().setFilterById(id));
+                            if (c != null && c.moveToFirst()) {
+                                failed = c.getInt(c.getColumnIndex(DownloadManager.COLUMN_STATUS))
+                                        == DownloadManager.STATUS_FAILED;
+                            } else failed = true;
+                        } catch (Exception e) { failed = true; }
+                        finally { if (c != null) c.close(); }
+                        if (failed) {
+                            try { dm.remove(id); } catch (Exception ignored) {}
+                            dlIds.remove(key);
+                            boolean isBg = key.startsWith("b:");
+                            String name = key.substring(2);
+                            File f = new File(isBg ? bgDir() : clipDir(), name);
+                            if (f.exists()) f.delete();
+                            DownloadManager.Request req = new DownloadManager.Request(
+                                    Uri.parse((isBg ? BG_BASE : CLIP_BASE) + name));
+                            req.setTitle("MEER " + (isBg ? "background" : "clip") + ": " + name);
+                            req.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+                            req.setDestinationUri(Uri.fromFile(f));
+                            dlRemember(key, dm.enqueue(req));
+                        }
+                    }
+                    js("onClipMsg('retry',0)");
+                } catch (Exception e) { js("onClipMsg('error',0)"); }
+            });
+        }
         private static final String CLIP_BASE =
                 "https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/";
         private static final String[] CLIPS = {
@@ -543,13 +657,14 @@ public class MainActivity extends Activity {
                     for (String name : CLIPS) {
                         File f = new File(dir, name);
                         if (clipOk(f)) continue; // already downloaded
+                        if (dlActive("c:" + name, dm)) continue; // v4.06: pehle se download ho rahi hai
                         DownloadManager.Request req =
                                 new DownloadManager.Request(Uri.parse(CLIP_BASE + name));
                         req.setTitle("MEER clip: " + name);
                         req.setNotificationVisibility(
                                 DownloadManager.Request.VISIBILITY_VISIBLE);
                         req.setDestinationUri(Uri.fromFile(f));
-                        dm.enqueue(req);
+                        dlRemember("c:" + name, dm.enqueue(req));
                         started++;
                     }
                     js("onClipMsg('started'," + started + ")");
@@ -639,13 +754,14 @@ public class MainActivity extends Activity {
                     for (String name : BACKGROUNDS) {
                         File f = new File(dir, name);
                         if (clipOk(f)) continue;
+                        if (dlActive("b:" + name, dm)) continue; // v4.06: pehle se download ho rahi hai
                         DownloadManager.Request req =
                                 new DownloadManager.Request(Uri.parse(BG_BASE + name));
                         req.setTitle("MEER background: " + name);
                         req.setNotificationVisibility(
                                 DownloadManager.Request.VISIBILITY_VISIBLE);
                         req.setDestinationUri(Uri.fromFile(f));
-                        dm.enqueue(req);
+                        dlRemember("b:" + name, dm.enqueue(req));
                         started++;
                     }
                     js("onBgMsg('started'," + started + ")");
@@ -1247,8 +1363,8 @@ public class MainActivity extends Activity {
             return -1;
         }
 
-        // v3.86: Car image ka solid background (teal) transparent karo - box nahi dikhega!
-        private static android.graphics.Bitmap removeTealBackground(android.graphics.Bitmap src) {
+        // v3.86: Car image ka background hatao (FLOOD FILL - sirf bahar wala background, car ke andar ke safed hisse mehfooz!)
+        private static android.graphics.Bitmap removeCarBackground(android.graphics.Bitmap src) {
             int w = src.getWidth(), h = src.getHeight();
             android.graphics.Bitmap out = src.copy(android.graphics.Bitmap.Config.ARGB_8888, true);
             int[] px = new int[w * h];
@@ -1257,17 +1373,51 @@ public class MainActivity extends Activity {
             int bgr = android.graphics.Color.red(bg);
             int bgg = android.graphics.Color.green(bg);
             int bgb = android.graphics.Color.blue(bg);
-            int th = 65;
+            int th = 55;
             int th2 = th * th;
-            for (int i = 0; i < px.length; i++) {
-                int p = px[i];
+            // Flood fill: corners se shuru karo, sirf connected background hatao
+            boolean[] vis = new boolean[w * h];
+            int[] q = new int[w * h];
+            int qh = 0, qt = 0;
+            int[] sx = {5, w - 6, 5, w - 6};
+            int[] sy = {5, 5, h - 6, h - 6};
+            for (int k = 0; k < 4; k++) {
+                int id = sy[k] * w + sx[k];
+                if (!vis[id]) { vis[id] = true; q[qt++] = id; }
+            }
+            while (qh < qt) {
+                int id = q[qh++];
+                int p = px[id];
                 int dr = android.graphics.Color.red(p) - bgr;
                 int dg = android.graphics.Color.green(p) - bgg;
                 int db = android.graphics.Color.blue(p) - bgb;
-                if (dr * dr + dg * dg + db * db < th2) px[i] = 0; // transparent
+                if (dr * dr + dg * dg + db * db < th2) {
+                    px[id] = 0; // transparent
+                    int x = id % w, y = id / w;
+                    if (x > 0) { int n = id - 1; if (!vis[n]) { vis[n] = true; q[qt++] = n; } }
+                    if (x < w - 1) { int n = id + 1; if (!vis[n]) { vis[n] = true; q[qt++] = n; } }
+                    if (y > 0) { int n = id - w; if (!vis[n]) { vis[n] = true; q[qt++] = n; } }
+                    if (y < h - 1) { int n = id + w; if (!vis[n]) { vis[n] = true; q[qt++] = n; } }
+                }
             }
             out.setPixels(px, 0, w, 0, 0, w, h);
             return out;
+        }
+
+        // v3.86: URL se car image download karo (online picker wali gariyan!)
+        private static android.graphics.Bitmap downloadBitmap(String urlStr) {
+            try {
+                java.net.URL url = new java.net.URL(urlStr);
+                java.net.HttpURLConnection con = (java.net.HttpURLConnection) url.openConnection();
+                con.setConnectTimeout(15000);
+                con.setReadTimeout(15000);
+                java.io.InputStream is = con.getInputStream();
+                android.graphics.Bitmap bmp = android.graphics.BitmapFactory.decodeStream(is);
+                is.close();
+                return bmp;
+            } catch (Exception e) {
+                return null;
+            }
         }
 
         // v3.81: CANVAS-BASED video renderer! (ChatGPT ke 7-point list ka asal hal!)
@@ -1286,8 +1436,13 @@ public class MainActivity extends Activity {
                 String bgImgName = first.optString("bgImage", "bg-hills.jpg");
 
                 // Car + background bitmaps load karo
-                android.graphics.Bitmap carBmp = loadAssetBitmap("cars/" + carImgName);
-                if (carBmp == null) carBmp = loadAssetBitmap(carImgName);
+                android.graphics.Bitmap carBmp;
+                if (carImgName.startsWith("http")) {
+                    carBmp = downloadBitmap(carImgName); // v3.86: online picker wali gari!
+                } else {
+                    carBmp = loadAssetBitmap("cars/" + carImgName);
+                    if (carBmp == null) carBmp = loadAssetBitmap(carImgName);
+                }
                 android.graphics.Bitmap bgBmp = loadAssetBitmap("backgrounds/" + bgImgName);
                 if (bgBmp == null) bgBmp = loadAssetBitmap(bgImgName);
                 // Fallback: agar images nahi mili to solid color background + simple car shape
@@ -1298,7 +1453,7 @@ public class MainActivity extends Activity {
                 }
                 android.graphics.Bitmap carScaled = null;
                 if (carBmp != null) {
-                    carBmp = removeTealBackground(carBmp); // v3.86: teal background hatao - box nahi dikhega!
+                    carBmp = removeCarBackground(carBmp); // v3.86: background hatao - box nahi dikhega!
                     // Car ~420px wide, aspect ratio maintain
                     int cw = 420;
                     int ch = (int) ((float) carBmp.getHeight() * cw / carBmp.getWidth());
@@ -1444,7 +1599,7 @@ public class MainActivity extends Activity {
                             drawWheel(canvas, w2x, wy, wheelR, wheelAngle, wheelPaint, spokePaint);
                         } else {
                             // Fallback: simple car shape draw karo (ye bhi drive karegi!)
-                            float carX = -450 + progress * (W + 900);
+                            // (carX upar pehle se set hai!)
                             float carY = roadTop - 110 + bounce;
                             paint.setColor(0xFFFF0000);
                             canvas.drawRoundRect(carX, carY, carX + 400, carY + 120, 20, 20, paint);
