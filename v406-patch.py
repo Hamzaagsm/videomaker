@@ -273,6 +273,7 @@ def patch_html():
     print('HTML V4.06 DONE')
 
 
-patch_java()
+patch_java_skipped = True  # Java already committed via e7b16c4
+# patch_java()
 patch_html()
 print('V4.06 ALL DONE')
