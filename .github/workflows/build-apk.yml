@@ -17,7 +17,8 @@ jobs:
       - name: Accept licenses
         run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses > /dev/null || true
       - name: Sync web assets
-        run: mkdir -p android/app/src/main/assets/www && cp index.html android/app/src/main/assets/www/index.html && sed -i "s/const APP_VER='3.84'/const APP_VER='3.86'/g; s/const dur=Math.max(2.5,audioDurSec+0.6);/const dur=Math.max(1.0,audioDurSec+0.3);/g; s/v3.84 MEER/v3.86 MEER/g" android/app/src/main/assets/www/index.html
+        run: mkdir -p android/app/src/main/assets/www && cp index.html android/app/src/main/assets/www/i
+        ndex.html && sed -i "s/const APP_VER='3.84'/const APP_VER='3.86'/g; s/const dur=Math.max(2.5,audioDurSec+0.6);/const dur=Math.max(1.0,audioDurSec+0.3);/g; s/v3.84 MEER/v3.86 MEER/g" android/app/src/main/assets/www/index.html
       - name: Apply v3.89 patches
         run: python3 v389-patch.py
       - name: Apply v3.90 patches
@@ -42,6 +43,8 @@ jobs:
         run: python3 v400-patch.py
       - name: Apply v4.01 patches
         run: python3 v401-patch.py
+      - name: Apply v4.02 patches
+        run: python3 v402-patch.py
       - name: Build debug APK
         run: |
           cd android
