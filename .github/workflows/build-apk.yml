@@ -1,4 +1,6 @@
 name: Build Video Maker APK
+permissions:
+  contents: write
 on:
   workflow_dispatch:
   push:
