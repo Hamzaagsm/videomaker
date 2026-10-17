@@ -150,6 +150,10 @@ jobs:
 
         run: python3 v416-patch.py
 
+      - name: Apply v4.17 patches
+
+        run: python3 v417-patch.py
+
       - name: Build debug APK
 
         run: |
