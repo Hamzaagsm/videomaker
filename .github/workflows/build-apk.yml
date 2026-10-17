@@ -138,6 +138,10 @@ jobs:
 
         run: python3 v413-patch.py
 
+      - name: Apply v4.14 patches
+
+        run: python3 v414-patch.py
+
       - name: Build debug APK
 
         run: |
