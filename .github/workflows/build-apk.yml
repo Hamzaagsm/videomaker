@@ -146,6 +146,10 @@ jobs:
 
         run: python3 v415-patch.py
 
+      - name: Apply v4.16 patches
+
+        run: python3 v416-patch.py
+
       - name: Build debug APK
 
         run: |
@@ -173,23 +177,3 @@ jobs:
           name: HamzaVideoMaker-apk
 
           path: HamzaVideoMaker-v2.apk
-
-      - name: Auto Release
-
-        uses: softprops/action-gh-release@v2
-
-        with:
-
-          tag_name: auto-latest
-
-          name: MEER (Auto Build)
-
-          body: |
-
-            🤖 Automatic build from latest code.
-
-            **Download:** MEER.apk below 👇
-
-          files: MEER.apk
-
-          prerelease: false
