@@ -52,6 +52,8 @@ jobs:
         run: python3 v405-patch.py
       - name: Apply v4.06 patches
         run: python3 v406-patch.py
+      - name: Apply v4.07 patches
+        run: python3 v407-patch.py
       - name: Build debug APK
         run: |
           cd android
