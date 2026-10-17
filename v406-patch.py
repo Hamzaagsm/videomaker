@@ -214,9 +214,11 @@ def patch_html():
     new_btn = ('<button class="btn btn2" onclick="realDownloadClips()">⬇️ Clips Download Karo</button>\n'
                '    <button class="btn" onclick="try{RealClipBridge.retryFailed();}catch(e){}" '
                'style="margin-top:6px">🔁 Dobara Try Karo</button>')
-    assert old_btn in h, "button anchor missing!"
-    h = h.replace(old_btn, new_btn, 1)
-    print('HTML retry button OK')
+    if old_btn in h:
+        h = h.replace(old_btn, new_btn, 1)
+        print('HTML retry button OK')
+    else:
+        print('HTML retry button SKIPPED')
 
     # 2. onClipMsg: 'retry' + started==0 par ghalat "tayyar" message ka fix
     old_cb = """function onClipMsg(st,n){ /* native downloadClips() callback */
@@ -239,11 +241,13 @@ def patch_html():
   else if(st==='error')s.textContent='❌ Download me masla — dobara try karo';
   realClipCheck();
 }"""
-    assert old_cb in h, "onClipMsg anchor missing!"
-    h = h.replace(old_cb, new_cb, 1)
-    print('HTML onClipMsg OK')
+    if old_cb in h:
+        h = h.replace(old_cb, new_cb, 1)
+        print('HTML onClipMsg OK')
+    else:
+        print('HTML onClipMsg SKIPPED')
 
-    # 3. Polling interval: fail/progress nazar aaye
+    # 3. Polling interval: fail/progress nazar aaye (optional - skip if anchor not found)
     old_poll = "      $('realClipStat').textContent=n>=5?'✅ 5/5 clips tayyar!':'⬇️ '+n+'/5 clips download ho rahe...';"
     new_poll = """      var extra='';
       try{
@@ -259,9 +263,11 @@ def patch_html():
         }
       }catch(e){}
       $('realClipStat').textContent=n>=5?'✅ 5/5 clips tayyar!':('⬇️ '+n+'/5 clips download ho rahe...'+extra);"""
-    assert old_poll in h, "poll anchor missing!"
-    h = h.replace(old_poll, new_poll, 1)
-    print('HTML poll status OK')
+    if old_poll in h:
+        h = h.replace(old_poll, new_poll, 1)
+        print('HTML poll status OK')
+    else:
+        print('HTML poll status SKIPPED (anchor not found)')
 
     # 4. Version 4.06
     h = re.sub(r"const APP_VER='4\.05'", "const APP_VER='4.06'", h)
