@@ -8,7 +8,7 @@ def patch_html():
     if 'V427.makeVideo' not in h:
         h = h.replace('</body>', code + '</body>', 1)
         print('V427 COMPLETE OK')
-    h = re.sub(r"const APP_VER\\s*=\\s*['\\"]4\\.\\d+['\\"]", "const APP_VER='4.27'", h)
+    h = h.replace("const APP_VER='4.26'", "const APP_VER='4.27'")
     if h != orig:
         open(p, 'w', encoding='utf-8').write(h)
     print('HTML V4.27 DONE')
