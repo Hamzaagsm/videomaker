@@ -158,6 +158,10 @@ jobs:
 
         run: python3 v418-patch.py
 
+      - name: Apply v4.20 patches
+
+        run: python3 v420-patch.py
+
       - name: Build debug APK
 
         run: |
