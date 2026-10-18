@@ -87,6 +87,8 @@ jobs:
         run: python3 v421-patch.py
       - name: Apply v4.23 patches
         run: python3 v423-patch.py
+      - name: Apply v4.24 patches
+        run: python3 v424-patch.py
       - name: Build debug APK
         run: |
           cd android
