@@ -95,6 +95,8 @@ jobs:
         run: python3 v426-patch.py
       - name: Apply v4.27 patches
         run: python3 v427-patch.py
+      - name: Apply v4.28 patches
+        run: python3 v428-patch.py
       - name: Build debug APK
         run: |
           cd android
