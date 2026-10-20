@@ -114,16 +114,13 @@ jobs:
         run: python3 v435-patch.py
       - name: Apply v4.36 patch
         run: python3 v436-patch.py
+      - name: Apply v4.37 patch
+        run: python3 v437-patch.py
       - name: Bundle clips into APK
         run: |
           mkdir -p android/app/src/main/assets/clips
-          cd android/app/src/main/assets/clips
-          curl -L -o rayo-driving.mp4 https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/rayo-driving.mp4
-          curl -L -o rayo-talking.mp4 https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/rayo-talking.mp4
-          curl -L -o bella-driving.mp4 https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/bella-driving.mp4
-          curl -L -o bella-talking.mp4 https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/bella-talking.mp4
-          curl -L -o rusty-driving.mp4 https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/rusty-driving.mp4
-          ls -la
+          cp clips/*.mp4 android/app/src/main/assets/clips/
+          ls -la android/app/src/main/assets/clips/
       - name: Bundle adventure clips into APK
         run: |
           mkdir -p android/app/src/main/assets/clips
