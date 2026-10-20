@@ -118,6 +118,8 @@ jobs:
         run: python3 v437-patch.py
       - name: Apply v4.38 patch
         run: python3 v438-patch.py
+      - name: Apply v4.39 patch
+        run: python3 v439-patch.py
       - name: Bundle clips into APK
         run: |
           mkdir -p android/app/src/main/assets/clips
@@ -126,7 +128,7 @@ jobs:
       - name: Bundle adventure clips into APK
         run: |
           mkdir -p android/app/src/main/assets/clips
-          cp adv-clips/*.mp4 android/app/src/main/assets/clips/
+          for f in adv-rayo-talk.mp4 adv-bella-talk.mp4 adv-rayo-beach.mp4 adv-bella-town.mp4 adv-rusty-town.mp4 adv-friends.mp4 adv-rayo-snow.mp4 adv-bella-autumn.mp4 adv-friends-race.mp4 adv-rayo-meadow.mp4 adv-bella-beach.mp4 adv-rusty-farm.mp4; do cp adv-clips/$f android/app/src/main/assets/clips/; done
           ls -la android/app/src/main/assets/clips/
       - name: Build debug APK
         run: |
