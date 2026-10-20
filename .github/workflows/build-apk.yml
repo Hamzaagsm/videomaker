@@ -3,6 +3,7 @@ name: Build Video Maker APK
 permissions:
   contents: write
 
+
 on:
   workflow_dispatch:
   push:
@@ -107,6 +108,18 @@ jobs:
         run: python3 v432-patch.py
       - name: Apply v4.33 patch
         run: python3 v433-patch.py
+      - name: Apply v4.34 patch
+        run: python3 v434-patch.py
+      - name: Bundle clips into APK
+        run: |
+          mkdir -p android/app/src/main/assets/clips
+          cd android/app/src/main/assets/clips
+          curl -L -o rayo-driving.mp4 https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/rayo-driving.mp4
+          curl -L -o rayo-talking.mp4 https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/rayo-talking.mp4
+          curl -L -o bella-driving.mp4 https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/bella-driving.mp4
+          curl -L -o bella-talking.mp4 https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/bella-talking.mp4
+          curl -L -o rusty-driving.mp4 https://github.com/Hamzaagsm/videomaker/releases/download/clips-v1/rusty-driving.mp4
+          ls -la
       - name: Build debug APK
         run: |
           cd android
