@@ -124,6 +124,8 @@ jobs:
         run: python3 v440-patch.py
       - name: Apply v4.41 patches
         run: python3 v441-patch.py
+      - name: Apply v4.42 patches
+        run: python3 v442-patch.py
       - name: Bundle clips into APK
         run: |
           mkdir -p android/app/src/main/assets/clips
