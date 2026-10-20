@@ -103,6 +103,8 @@ jobs:
         run: python3 v430-patch.py
       - name: Apply v4.31 patch
         run: python3 v431-patch.py
+      - name: Apply v4.32 patch
+        run: python3 v432-patch.py
       - name: Build debug APK
         run: |
           cd android
