@@ -312,7 +312,46 @@
      "en": "In the morning the lamp was dark again. On the wet sand lay a brass ship's bell — which had not been there in the night."
     }
    ]
+  },
+  {
+   "id": "museum",
+   "hero": "Usman",
+   "pitch": 1.18,
+   "title_hi": "बंद म्यूज़ियम का राज़",
+   "title_en": "The Closed Museum",
+   "beats": [
+    {
+     "clip": "susp-usman-1.mp4",
+     "hi": "उस्मान शाम को पुराने म्यूज़ियम की सीढ़ियों पर खड़ा था। उसका स्कूल बैग अंदर रह गया था, और म्यूज़ियम बंद हो चुका था।",
+     "en": "In the evening, Usman stood on the old museum steps. His school bag was left inside, and the museum had already closed."
+    },
+    {
+     "clip": "susp-usman-2.mp4",
+     "hi": "साइड वाला दरवाज़ा खुला था। अंदर अंधेरे हॉल में डायनासोर का बड़ा ढांचा खड़ा था।",
+     "en": "The side door was open. Inside the dark hall stood the huge skeleton of a dinosaur."
+    },
+    {
+     "clip": "susp-usman-3.mp4",
+     "hi": "उस्मान ने ग़ौर से देखा — डायनासोर की खोपड़ी उसी की तरफ़ मुड़ी थी... हालांकि पहले वह दूसरी तरफ़ थी।",
+     "en": "Usman looked closely — the dinosaur's skull was turned toward him... though before, it had faced the other way."
+    },
+    {
+     "clip": "susp-usman-4.mp4",
+     "hi": "पुराने बादशाह के बुत का हाथ, जो नीचे था, अब उठा हुआ था। उस्मान धीरे-धीरे पीछे हटने लगा।",
+     "en": "The old king statue's hand, which had been down, was now raised. Usman began backing away slowly."
+    },
+    {
+     "clip": "susp-usman-5.mp4",
+     "hi": "उस्मान भागा तो पीछे एक-एक करके सारे शोकेस की बत्तियां टिमटिमाने लगीं — जैसे कोई उसके पीछे-पीछे आ रहा हो!",
+     "en": "As Usman ran, the display case lights behind him began flickering on one by one — as if someone was following him!"
+    },
+    {
+     "clip": "susp-usman-6.mp4",
+     "hi": "सुबह म्यूज़ियम के दरवाज़े पर ज़ंजीर थी। उसका बैग सीढ़ियों पर तरतीब से रखा था — और अंदर एक पुराना सिक्का था, जो शोकेस के शीशे के पीछे होना चाहिए था।",
+     "en": "In the morning, the museum door was chained. His bag sat neatly on the steps — and inside it was an old coin, one that should have been behind the display glass."
+    }
+   ]
   }
  ],
- "version": 8
+ "version": 9
 }
