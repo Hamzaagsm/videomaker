@@ -273,7 +273,46 @@
      "en": "In the morning, the clock was stopped again at eleven fifty-nine, as if nothing had happened. But every clock in the square had moved one hour ahead."
     }
    ]
+  },
+  {
+   "id": "lighthouse",
+   "hero": "Fahad",
+   "pitch": 1.05,
+   "title_hi": "बंद लाइटहाउस का राज़",
+   "title_en": "The Dark Lighthouse",
+   "beats": [
+    {
+     "clip": "susp-fahad-1.mp4",
+     "hi": "फ़हद शाम को पत्थरीले किनारे पर खड़ा पुराने लाइटहाउस को देख रहा था। उसकी बत्ती सालों से बंद थी।",
+     "en": "In the evening, Fahad stood on the rocky shore looking at the old lighthouse. Its lamp had been dark for years."
+    },
+    {
+     "clip": "susp-fahad-2.mp4",
+     "hi": "फ़हद लालटेन लेकर अंदर की ज़ंग लगी सीढ़ियां चढ़ने लगा। चारों तरफ़ सन्नाटा और जाले थे।",
+     "en": "Holding a lantern, Fahad climbed the rusty stairs inside. Silence and cobwebs were everywhere."
+    },
+    {
+     "clip": "susp-fahad-3.mp4",
+     "hi": "ऊपर बत्ती वाले कमरे में एक बड़ा पुराना शीशा धूल से ढका था। फ़हद ने उसे छुआ तो शीशा ठंडा और चिकना था।",
+     "en": "In the lamp room above, a huge old lens was covered in dust. When Fahad touched it, the glass was cold and smooth."
+    },
+    {
+     "clip": "susp-fahad-4.mp4",
+     "hi": "अचानक बत्ती ख़ुद-ब-ख़ुद जल उठी और उसकी रोशनी समुद्र पर घूमने लगी! फ़हद ने आंखों पर हाथ रख लिया।",
+     "en": "Suddenly the lamp lit up by itself and its beam began sweeping over the sea! Fahad shielded his eyes."
+    },
+    {
+     "clip": "susp-fahad-5.mp4",
+     "hi": "रोशनी की पट्टी में दूर समुद्र पर एक पुराने जहाज़ का साया धीरे-धीरे गुज़र रहा था — हालांकि वहां कोई जहाज़ नहीं था।",
+     "en": "In the strip of light, far out at sea, the shadow of an old ship was passing slowly — though there was no ship there at all."
+    },
+    {
+     "clip": "susp-fahad-6.mp4",
+     "hi": "सुबह बत्ती फिर बंद थी। किनारे की गीली रेत पर किसी जहाज़ की पीतल की घंटी पड़ी थी — जो रात वहां नहीं थी।",
+     "en": "In the morning the lamp was dark again. On the wet sand lay a brass ship's bell — which had not been there in the night."
+    }
+   ]
   }
  ],
- "version": 7
+ "version": 8
 }
