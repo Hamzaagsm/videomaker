@@ -234,7 +234,46 @@
      "en": "In the morning, when Sameer came out, the gate was chained and locked, as if it had never opened. Only the old ticket in his pocket was real."
     }
    ]
+  },
+  {
+   "id": "clocktower",
+   "hero": "Bilal",
+   "pitch": 1.1,
+   "title_hi": "बंद घंटाघर का राज़",
+   "title_en": "The Stopped Clock Tower",
+   "beats": [
+    {
+     "clip": "susp-bilal-1.mp4",
+     "hi": "बिलाल शाम को पुराने घंटाघर के सामने खड़ा था। बड़ी घड़ी सालों से ग्यारह बजकर उनसठ मिनट पर रुकी थी।",
+     "en": "In the evening, Bilal stood before the old clock tower. Its big clock had been stopped at eleven fifty-nine for years."
+    },
+    {
+     "clip": "susp-bilal-2.mp4",
+     "hi": "टावर का लकड़ी का दरवाज़ा खुला था। बिलाल अंदर गया — धूल भरी घुमावदार सीढ़ियां ऊपर जा रही थीं।",
+     "en": "The tower's wooden door was open. Bilal went in — dusty spiral stairs climbed upward."
+    },
+    {
+     "clip": "susp-bilal-3.mp4",
+     "hi": "तभी घड़ी के बड़े-बड़े पुर्ज़े ख़ुद-ब-ख़ुद हिलने लगे और लोलक झूलने लगा! बिलाल सीढ़ियों पर जम गया।",
+     "en": "Just then, the clock's huge gears began to move by themselves and the pendulum started swinging! Bilal froze on the stairs."
+    },
+    {
+     "clip": "susp-bilal-4.mp4",
+     "hi": "सुइयां तेज़ी से घूमकर बारह पर आ गईं। बिलाल ने कान बंद कर लिए — ऊपर बड़ा घंटा हिलने लगा था।",
+     "en": "The hands spun fast and landed on twelve. Bilal covered his ears — above him, the giant bell had begun to sway."
+    },
+    {
+     "clip": "susp-bilal-5.mp4",
+     "hi": "घंटा तेरह बार बजा! हर आवाज़ पर टावर की खिड़कियों से परिंदे उड़ते रहे और सारा शहर एक पल को जगमगा उठा।",
+     "en": "The bell struck thirteen times! With every toll, birds burst from the tower windows and the whole town lit up for a moment."
+    },
+    {
+     "clip": "susp-bilal-6.mp4",
+     "hi": "सुबह घड़ी फिर ग्यारह उनसठ पर रुकी थी, जैसे कुछ हुआ ही न हो। लेकिन चौक की हर घड़ी एक घंटा आगे बढ़ चुकी थी।",
+     "en": "In the morning, the clock was stopped again at eleven fifty-nine, as if nothing had happened. But every clock in the square had moved one hour ahead."
+    }
+   ]
   }
  ],
- "version": 6
+ "version": 7
 }
