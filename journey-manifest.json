@@ -1,0 +1,334 @@
+{
+ "stories": [
+  {
+   "car": "Rayo",
+   "id": "rayo-rainbow-valley",
+   "lines": [
+    {
+     "clip": "rayo-talking.mp4",
+     "t": "Hi friends! I am Rayo! Today we are going on a long, happy journey!"
+    },
+    {
+     "clip": "adv-rayo-city2.mp4",
+     "t": "Through the busy city streets I drive! Beep beep, here I come!"
+    },
+    {
+     "clip": "adv-rayo-meadow2.mp4",
+     "t": "Now the green hills! Flowers are dancing in the wind!"
+    },
+    {
+     "clip": "adv-rayo-beach.mp4",
+     "t": "Wow, the ocean road! The waves are singing a song!"
+    },
+    {
+     "clip": "rayo-driving.mp4",
+     "t": "Vroom vroom! My wheels love this road!"
+    },
+    {
+     "clip": "adv-rayo-snow.mp4",
+     "t": "Up the snowy mountain! Everything is white and sparkly!"
+    },
+    {
+     "clip": "adv-rayo-night.mp4",
+     "t": "Night is here and the stars are twinkling! The moon is my lamp!"
+    },
+    {
+     "clip": "adv-friends-picnic.mp4",
+     "t": "Look, a picnic place! Time for a yummy snack break!"
+    },
+    {
+     "clip": "adv-friends-race.mp4",
+     "t": "One last race with my friends! Ready, set, go!"
+    },
+    {
+     "clip": "adv-group-drive.mp4",
+     "t": "What a perfect journey! Friends make every road happy! Bye bye!"
+    }
+   ],
+   "title": "Rayo and the Rainbow Valley"
+  },
+  {
+   "car": "Rayo",
+   "id": "rayo-helps-town",
+   "lines": [
+    {
+     "clip": "adv-rayo-city2.mp4",
+     "t": "Morning in the city! I am Rayo, and today I will help everyone!"
+    },
+    {
+     "clip": "rayo-talking.mp4",
+     "t": "Helping is my favorite job! Let us go!"
+    },
+    {
+     "clip": "adv-rayo-meadow2.mp4",
+     "t": "First, I carry flowers to the garden party!"
+    },
+    {
+     "clip": "adv-rayo-beach.mp4",
+     "t": "Then I bring umbrellas to the sunny beach!"
+    },
+    {
+     "clip": "rayo-driving.mp4",
+     "t": "Fast but careful! Everyone is counting on me!"
+    },
+    {
+     "clip": "adv-rayo-snow.mp4",
+     "t": "Even in the snow, Rayo delivers smiles!"
+    },
+    {
+     "clip": "adv-rayo-night.mp4",
+     "t": "Last stop under the stars! A warm drink for the night guard!"
+    },
+    {
+     "clip": "adv-friends.mp4",
+     "t": "My friends Bella and Rusty helped too!"
+    },
+    {
+     "clip": "adv-group-talk.mp4",
+     "t": "We did it together! Helping makes hearts happy!"
+    },
+    {
+     "clip": "adv-friends-race.mp4",
+     "t": "Tomorrow, another big adventure! Bye bye, friends!"
+    }
+   ],
+   "title": "Rayo Helps the Town"
+  },
+  {
+   "car": "Bella",
+   "id": "bella-flower-parade",
+   "lines": [
+    {
+     "clip": "adv-bella-talk.mp4",
+     "t": "Hello friends! I am Bella! Today is the Flower Parade!"
+    },
+    {
+     "clip": "bella-talking.mp4",
+     "t": "I decorated my roof with roses and tulips!"
+    },
+    {
+     "clip": "adv-bella-town2.mp4",
+     "t": "Through the happy town I roll, flowers everywhere!"
+    },
+    {
+     "clip": "adv-bella-rainbow.mp4",
+     "t": "A rainbow! Red, orange, yellow! My favorite colors!"
+    },
+    {
+     "clip": "adv-bella-beach.mp4",
+     "t": "By the sea, seagulls are singing with me!"
+    },
+    {
+     "clip": "bella-driving.mp4",
+     "t": "Singing and driving, la la la! What a lovely day!"
+    },
+    {
+     "clip": "adv-bella-autumn2.mp4",
+     "t": "Autumn leaves are falling like golden rain!"
+    },
+    {
+     "clip": "adv-bella-snowtalk.mp4",
+     "t": "Even the snow sparkles like little diamonds!"
+    },
+    {
+     "clip": "adv-bella-town2.mp4",
+     "t": "Back in town, everyone is clapping for the parade!"
+    },
+    {
+     "clip": "adv-bella-talk.mp4",
+     "t": "The Flower Parade was magical! Bye bye, friends!"
+    }
+   ],
+   "title": "Bella's Flower Parade"
+  },
+  {
+   "car": "Rusty",
+   "id": "rusty-helping-day",
+   "lines": [
+    {
+     "clip": "adv-rusty-town.mp4",
+     "t": "Howdy! I am Rusty, the friendly tow truck! Today I help the whole town!"
+    },
+    {
+     "clip": "adv-rusty-farm.mp4",
+     "t": "First stop, the farm! Farmer Joe's tractor needs a tow!"
+    },
+    {
+     "clip": "rusty-driving.mp4",
+     "t": "Pulling strong and steady! Rusty never gives up!"
+    },
+    {
+     "clip": "adv-rusty-beach.mp4",
+     "t": "At the beach, a little car is stuck in the sand! I am coming!"
+    },
+    {
+     "clip": "adv-rusty-town.mp4",
+     "t": "Back in town, I fix the street lamp so kids can play!"
+    },
+    {
+     "clip": "adv-rusty-farm.mp4",
+     "t": "The farm again! Time to carry hay for the horses!"
+    },
+    {
+     "clip": "adv-rusty-beach.mp4",
+     "t": "Sunset at the beach! One more car to help!"
+    },
+    {
+     "clip": "rusty-driving.mp4",
+     "t": "Helping all day makes my engine happy!"
+    },
+    {
+     "clip": "adv-rusty-town.mp4",
+     "t": "The town says thank you! Friends are the best treasure!"
+    },
+    {
+     "clip": "adv-rusty-beach.mp4",
+     "t": "What a helping day! Bye bye, see you tomorrow!"
+    }
+   ],
+   "title": "Rusty's Helping Day"
+  },
+  {
+   "id": "rayo-lost-puppy",
+   "car": "Rayo",
+   "title": "Rayo and the Lost Puppy",
+   "lines": [
+    {
+     "t": "Hi friends! A little puppy is lost in the park! Let us find him!",
+     "clip": "rayo-talking.mp4"
+    },
+    {
+     "t": "First, I look in the city streets! Puppy, where are you?",
+     "clip": "adv-rayo-city2.mp4"
+    },
+    {
+     "t": "In the flower meadow, I hear a tiny bark! Over there!",
+     "clip": "adv-rayo-meadow2.mp4"
+    },
+    {
+     "t": "The puppy is chasing butterflies near the beach!",
+     "clip": "adv-rayo-beach.mp4"
+    },
+    {
+     "t": "Careful, little puppy! The road is not a playground!",
+     "clip": "rayo-driving.mp4"
+    },
+    {
+     "t": "It is getting dark! I will light the way with my headlights!",
+     "clip": "adv-rayo-night.mp4"
+    },
+    {
+     "t": "Bella and Rusty are helping me search!",
+     "clip": "adv-friends.mp4"
+    },
+    {
+     "t": "We found him! He was hiding under a picnic bench!",
+     "clip": "adv-group-talk.mp4"
+    },
+    {
+     "t": "Now we race home before dinner! The puppy rides with me!",
+     "clip": "adv-friends-race.mp4"
+    },
+    {
+     "t": "Everyone is safe and happy! Helping feels wonderful! Bye bye!",
+     "clip": "adv-group-drive.mp4"
+    }
+   ]
+  },
+  {
+   "id": "bella-singing-birds",
+   "car": "Bella",
+   "title": "Bella and the Singing Birds",
+   "lines": [
+    {
+     "t": "Hello friends! Today I am taking the singing birds to the music park!",
+     "clip": "adv-bella-talk.mp4"
+    },
+    {
+     "t": "The birds sing even in the snow! La la la!",
+     "clip": "adv-bella-snowtalk.mp4"
+    },
+    {
+     "t": "Under the rainbow, their song sounds like magic!",
+     "clip": "adv-bella-rainbow.mp4"
+    },
+    {
+     "t": "In the town square, everyone stops to listen!",
+     "clip": "adv-bella-town2.mp4"
+    },
+    {
+     "t": "Autumn leaves dance to the birds' sweet song!",
+     "clip": "adv-bella-autumn2.mp4"
+    },
+    {
+     "t": "By the sea, the waves clap for the singers!",
+     "clip": "adv-bella-beach.mp4"
+    },
+    {
+     "t": "Music makes every heart happy!",
+     "clip": "bella-talking.mp4"
+    },
+    {
+     "t": "One more song on the way home! Sing with me!",
+     "clip": "bella-driving.mp4"
+    },
+    {
+     "t": "The whole town is singing now!",
+     "clip": "adv-bella-town2.mp4"
+    },
+    {
+     "t": "What a musical day! Bye bye, friends!",
+     "clip": "adv-bella-talk.mp4"
+    }
+   ]
+  },
+  {
+   "id": "rusty-big-storm",
+   "car": "Rusty",
+   "title": "Rusty and the Big Storm",
+   "lines": [
+    {
+     "t": "Howdy! Big clouds are coming! A storm is on the way!",
+     "clip": "adv-rusty-town.mp4"
+    },
+    {
+     "t": "I help Farmer Joe bring the animals to the barn!",
+     "clip": "adv-rusty-farm.mp4"
+    },
+    {
+     "t": "The wind is strong, but Rusty is stronger!",
+     "clip": "rusty-driving.mp4"
+    },
+    {
+     "t": "At the beach, I pull the boats to safe ground!",
+     "clip": "adv-rusty-beach.mp4"
+    },
+    {
+     "t": "Rain is falling! I check every street in town!",
+     "clip": "adv-rusty-town.mp4"
+    },
+    {
+     "t": "The farm road is muddy! I tow the tractor free!",
+     "clip": "adv-rusty-farm.mp4"
+    },
+    {
+     "t": "Almost done! One more friend to help!",
+     "clip": "rusty-driving.mp4"
+    },
+    {
+     "t": "The storm is over! Look, a rainbow over the sea!",
+     "clip": "adv-rusty-beach.mp4"
+    },
+    {
+     "t": "The town is safe, thanks to teamwork!",
+     "clip": "adv-rusty-town.mp4"
+    },
+    {
+     "t": "Time to rest at the farm! Helping day complete! Bye bye!",
+     "clip": "adv-rusty-farm.mp4"
+    }
+   ]
+  }
+ ],
+ "version": 2
+}
