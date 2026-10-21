@@ -78,7 +78,46 @@
      "en": "At the gate, the sounds stopped... he looked back — someone was standing at the classroom window."
     }
    ]
+  },
+  {
+   "id": "well",
+   "hero": "Zaid",
+   "pitch": 1.05,
+   "title_hi": "पुराने कुएँ की आवाज़",
+   "title_en": "The Voice in the Old Well",
+   "beats": [
+    {
+     "clip": "susp-zaid-1.mp4",
+     "hi": "ज़ैद गाँव के पुराने कुएँ के पास खेल रहा था, जब कुएँ के अंदर से उसका नाम सुनाई दिया।",
+     "en": "Zaid was playing near the village's old well when he heard his name from inside the well."
+    },
+    {
+     "clip": "susp-zaid-2.mp4",
+     "hi": "उसने अंदर झाँका — नीचे सिर्फ़ अँधेरा था... और ठंडी हवा ऊपर आ रही थी।",
+     "en": "He peeked inside — only darkness below... and cold air rising up."
+    },
+    {
+     "clip": "susp-zaid-3.mp4",
+     "hi": "ज़ैद ने एक पत्थर नीचे फेंका... मगर नीचे गिरने की आवाज़ कभी नहीं आई।",
+     "en": "Zaid dropped a stone down the well... but it never made a sound."
+    },
+    {
+     "clip": "susp-zaid-4.mp4",
+     "hi": "अचानक कुएँ के चारों ओर कदमों के निशान बनने लगे — ताज़ा, गीले निशान।",
+     "en": "Suddenly, footprints appeared around the well — fresh, wet footprints."
+    },
+    {
+     "clip": "susp-zaid-5.mp4",
+     "hi": "उसकी लालटेन बुझ गई... और अँधेरे में कोई उसके कान के पास फुसफुसाया।",
+     "en": "His lantern went out... and in the dark, someone whispered right beside his ear."
+    },
+    {
+     "clip": "susp-zaid-6.mp4",
+     "hi": "ज़ैद घर की तरफ़ भागा... दरवाज़े पर रुककर पीछे देखा तो रास्ता बिलकुल सुनसान था — मगर कुएँ की तरफ़ से फिर वही आवाज़ आई।",
+     "en": "Zaid ran home... at his door he looked back — the path was completely empty. But from the well... came the same voice again."
+    }
+   ]
   }
  ],
- "version": 2
+ "version": 3
 }
