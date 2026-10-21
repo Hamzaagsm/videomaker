@@ -390,7 +390,46 @@
      "en": "In the morning, the fort gate was chained. His kite lay neatly folded by the gate — and its torn tail had been stitched."
     }
    ]
+  },
+  {
+   "id": "garden",
+   "hero": "Hira",
+   "pitch": 1.5,
+   "title_hi": "बंद बाग़ का फ़व्वारा",
+   "title_en": "The Garden Fountain",
+   "beats": [
+    {
+     "clip": "susp-hira-1.mp4",
+     "hi": "हिरा शाम को पुराने बंद बाग़ के दरवाज़े पर खड़ी थी। अंदर से पानी की आवाज़ आ रही थी — हालांकि फ़व्वारा सालों से सूखा था।",
+     "en": "In the evening, Hira stood at the old locked garden's gate. She could hear water inside — though the fountain had been dry for years."
+    },
+    {
+     "clip": "susp-hira-2.mp4",
+     "hi": "टूटी हुई साइड वाली खिड़की से हिरा अंदर आ गई। बीच में शेर के मुंह वाला सूखा संगमरमर का फ़व्वारा खड़ा था।",
+     "en": "Through the broken side gate, Hira slipped in. In the middle stood the dry marble fountain with a lion's head."
+    },
+    {
+     "clip": "susp-hira-3.mp4",
+     "hi": "तभी शेर के मुंह से पतली सी पानी की धार बहने लगी! हिरा हैरान होकर फ़व्वारे के पास बैठ गई।",
+     "en": "Just then, a thin stream of water began flowing from the lion's mouth! Amazed, Hira sat down beside the fountain."
+    },
+    {
+     "clip": "susp-hira-4.mp4",
+     "hi": "चांदनी में फ़व्वारे का पानी जगमगाने लगा, और उसकी झलक में बाग़ जवान और फूलों से भरा नज़र आने लगा।",
+     "en": "In the moonlight, the fountain's water began to sparkle, and in its reflection the garden looked young and full of flowers."
+    },
+    {
+     "clip": "susp-hira-5.mp4",
+     "hi": "हिरा ने पानी को छुआ तो फ़व्वारे के आस-पास की कलियां एक-एक करके खिलने लगीं और जुगनू उड़ने लगे।",
+     "en": "When Hira touched the water, the buds around the fountain began opening one by one, and fireflies rose into the air."
+    },
+    {
+     "clip": "susp-hira-6.mp4",
+     "hi": "सुबह बाग़ का दरवाज़ा फिर बंद था और फ़व्वारा सूखा। बस हिरा के हाथ में एक ताज़ा खिला फूल असली था।",
+     "en": "In the morning, the garden gate was shut again and the fountain was dry. Only the one fresh blooming flower in Hira's hand was real."
+    }
+   ]
   }
  ],
- "version": 10
+ "version": 11
 }
