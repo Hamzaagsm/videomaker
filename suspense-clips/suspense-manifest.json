@@ -351,7 +351,46 @@
      "en": "In the morning, the museum door was chained. His bag sat neatly on the steps — and inside it was an old coin, one that should have been behind the display glass."
     }
    ]
+  },
+  {
+   "id": "fort",
+   "hero": "Rayyan",
+   "pitch": 1.28,
+   "title_hi": "पुराने क़िले का राज़",
+   "title_en": "The Old Fort",
+   "beats": [
+    {
+     "clip": "susp-rayyan-1.mp4",
+     "hi": "रय्यान शाम को पहाड़ी पर पतंग उड़ा रहा था। हवा पतंग को पुराने क़िले की तरफ़ ले गई और डोर टूट गई।",
+     "en": "In the evening, Rayyan was flying his kite on the hill. The wind carried the kite toward the old fort, and the string snapped."
+    },
+    {
+     "clip": "susp-rayyan-2.mp4",
+     "hi": "रय्यान क़िले के बड़े दरवाज़े से अंदर आया। आंगन में पुरानी तोपें और ख़ाली महल खड़े थे।",
+     "en": "Rayyan came in through the fort's big gate. In the courtyard stood old cannons and empty halls."
+    },
+    {
+     "clip": "susp-rayyan-3.mp4",
+     "hi": "उसकी पतंग सबसे ऊंची मीनार के झंडे वाले खंभे पर अटकी थी — और पुराना फटा झंडा बिना हवा के लहरा रहा था।",
+     "en": "His kite was stuck on the tallest tower's flagpole — and the old torn flag was waving though there was no wind."
+    },
+    {
+     "clip": "susp-rayyan-4.mp4",
+     "hi": "बड़े हॉल में पुराने ज़िरह-बख़्तर क़तार में खड़े थे। एक ज़िरह का ख़ुद धीरे से रय्यान की तरफ़ मुड़ गया।",
+     "en": "In the great hall, old suits of armor stood in a row. One armor's helmet slowly turned toward Rayyan."
+    },
+    {
+     "clip": "susp-rayyan-5.mp4",
+     "hi": "तभी दीवारों से गहरी नगाड़े जैसी आवाज़ गूंजी और छत के शहतीरों से धूल गिरने लगी। रय्यान आंगन की तरफ़ भागा।",
+     "en": "Just then, a deep drum-like sound echoed from the walls and dust began falling from the ceiling beams. Rayyan ran toward the courtyard."
+    },
+    {
+     "clip": "susp-rayyan-6.mp4",
+     "hi": "सुबह क़िले के दरवाज़े पर ज़ंजीर थी। उसकी पतंग दरवाज़े के पास तरतीब से तह की हुई रखी थी — और उसकी फटी दुम सिली हुई थी।",
+     "en": "In the morning, the fort gate was chained. His kite lay neatly folded by the gate — and its torn tail had been stitched."
+    }
+   ]
   }
  ],
- "version": 9
+ "version": 10
 }
