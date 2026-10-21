@@ -1,1 +1,84 @@
-{"base":"https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/suspense-clips/","stories":[{"beats":[{"clip":"susp-haveli-1.mp4","en":"One rainy night, Ahmed's car suddenly stopped in front of an old, dark mansion.","hi":"बारिश की एक रात, अहमद की गाड़ी एक पुरानी हवेली के सामने अचानक बंद हो गई।"},{"clip":"susp-haveli-2.mp4","en":"He went to the mansion door for help... and the door opened all by itself.","hi":"मदद की तलाश में वह हवेली के दरवाज़े तक गया... और दरवाज़ा खुद-ब-खुद खुल गया।"},{"clip":"susp-haveli-3.mp4","en":"He could hear footsteps inside... but there was nobody in the whole house.","hi":"अंदर कदमों की आवाज़ें आ रही थीं, मगर पूरे घर में कोई नहीं था।"},{"clip":"susp-haveli-4.mp4","en":"One of the portraits on the wall was of the same old man who had been smiling at the door.","hi":"दीवार पर लगी तस्वीरों में से एक तस्वीर... उसी बूढ़े आदमी की थी, जो दरवाज़े पर खड़ा मुस्कुरा रहा था।"},{"clip":"susp-haveli-5.mp4","en":"Suddenly, a baby started crying in the room upstairs... Ahmed slowly climbed the stairs.","hi":"अचानक ऊपर के कमरे से एक बच्चे के रोने की आवाज़ आई... अहमद सीढ़ियाँ चढ़ने लगा।"},{"clip":"susp-haveli-6.mp4","en":"The room was empty... only an old cradle was rocking all by itself. Ahmed ran for his life... and the mansion door slammed shut behind him!","hi":"कमरा खुला तो वहाँ कोई नहीं था... सिर्फ़ एक झूला खुद-ब-खुद हिल रहा था। अहमद डरकर भागा... और हवेली का दरवाज़ा पीछे खुद बंद हो गया!"}],"hero":"Ahmed","id":"haveli","pitch":1.15,"title_en":"The Old Mansion Mystery","title_hi":"पुरानी हवेली का राज़"}],"version":1}
+{
+ "base": "https://raw.githubusercontent.com/Hamzaagsm/videomaker/main/suspense-clips/",
+ "stories": [
+  {
+   "beats": [
+    {
+     "clip": "susp-haveli-1.mp4",
+     "en": "One rainy night, Ahmed's car suddenly stopped in front of an old, dark mansion.",
+     "hi": "बारिश की एक रात, अहमद की गाड़ी एक पुरानी हवेली के सामने अचानक बंद हो गई।"
+    },
+    {
+     "clip": "susp-haveli-2.mp4",
+     "en": "He went to the mansion door for help... and the door opened all by itself.",
+     "hi": "मदद की तलाश में वह हवेली के दरवाज़े तक गया... और दरवाज़ा खुद-ब-खुद खुल गया।"
+    },
+    {
+     "clip": "susp-haveli-3.mp4",
+     "en": "He could hear footsteps inside... but there was nobody in the whole house.",
+     "hi": "अंदर कदमों की आवाज़ें आ रही थीं, मगर पूरे घर में कोई नहीं था।"
+    },
+    {
+     "clip": "susp-haveli-4.mp4",
+     "en": "One of the portraits on the wall was of the same old man who had been smiling at the door.",
+     "hi": "दीवार पर लगी तस्वीरों में से एक तस्वीर... उसी बूढ़े आदमी की थी, जो दरवाज़े पर खड़ा मुस्कुरा रहा था।"
+    },
+    {
+     "clip": "susp-haveli-5.mp4",
+     "en": "Suddenly, a baby started crying in the room upstairs... Ahmed slowly climbed the stairs.",
+     "hi": "अचानक ऊपर के कमरे से एक बच्चे के रोने की आवाज़ आई... अहमद सीढ़ियाँ चढ़ने लगा।"
+    },
+    {
+     "clip": "susp-haveli-6.mp4",
+     "en": "The room was empty... only an old cradle was rocking all by itself. Ahmed ran for his life... and the mansion door slammed shut behind him!",
+     "hi": "कमरा खुला तो वहाँ कोई नहीं था... सिर्फ़ एक झूला खुद-ब-खुद हिल रहा था। अहमद डरकर भागा... और हवेली का दरवाज़ा पीछे खुद बंद हो गया!"
+    }
+   ],
+   "hero": "Ahmed",
+   "id": "haveli",
+   "pitch": 1.15,
+   "title_en": "The Old Mansion Mystery",
+   "title_hi": "पुरानी हवेली का राज़"
+  },
+  {
+   "id": "school",
+   "hero": "Daniyal",
+   "pitch": 1.25,
+   "title_hi": "बंद स्कूल का राज़",
+   "title_en": "The Closed School Mystery",
+   "beats": [
+    {
+     "clip": "susp-daniyal-1.mp4",
+     "hi": "रात को दानियाल अपना भूला हुआ बैग लेने पुराने स्कूल गया... स्कूल की सारी बत्तियाँ बंद थीं।",
+     "en": "At night, Daniyal went back to his old school for his forgotten bag... all the lights were off."
+    },
+    {
+     "clip": "susp-daniyal-2.mp4",
+     "hi": "जैसे ही वह क्लासरूम के पास पहुँचा, अंदर बेंच घिसटने की आवाज़ आई।",
+     "en": "As he reached his classroom, he heard a bench dragging inside."
+    },
+    {
+     "clip": "susp-daniyal-3.mp4",
+     "hi": "दरवाज़ा खोला तो क्लास खाली थी... मगर ब्लैकबोर्ड पर उसका नाम लिखा था!",
+     "en": "The classroom was empty... but his name was written on the blackboard!"
+    },
+    {
+     "clip": "susp-daniyal-4.mp4",
+     "hi": "अचानक पीछे की बेंच पर किसी के बैठने की आवाज़ आई... बेंच खुद हिल रही थी।",
+     "en": "Suddenly, someone sat on the last bench... the bench was moving by itself."
+    },
+    {
+     "clip": "susp-daniyal-5.mp4",
+     "hi": "कॉरिडोर में कदमों की आवाज़ उसके पीछे-पीछे आने लगी... वह भागने लगा।",
+     "en": "Footsteps started following him in the corridor... he began to run."
+    },
+    {
+     "clip": "susp-daniyal-6.mp4",
+     "hi": "गेट तक पहुँचते ही आवाज़ें रुक गईं... मुड़कर देखा तो क्लास की खिड़की में कोई खड़ा था।",
+     "en": "At the gate, the sounds stopped... he looked back — someone was standing at the classroom window."
+    }
+   ]
+  }
+ ],
+ "version": 2
+}
