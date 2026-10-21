@@ -546,7 +546,46 @@
      "en": "In the morning, the station was silent again and the clock was stopped at the same time. Only one old train ticket in Hasan's pocket was real."
     }
    ]
+  },
+  {
+   "id": "zoo",
+   "hero": "Mahnoor",
+   "pitch": 1.48,
+   "title_hi": "बंद चिड़ियाघर का राज़",
+   "title_en": "The Old Zoo",
+   "beats": [
+    {
+     "clip": "susp-mahnoor-1.mp4",
+     "hi": "माहनूर शाम को पुराने बंद चिड़ियाघर के गेट के सामने खड़ी थी। ज़ंजीरों से बंधा गेट हल्के से हिल रहा था — हालांकि हवा बिल्कुल थमी थी।",
+     "en": "In the evening, Mahnoor stood before the old closed zoo gate. The chained gate was swaying slightly — though the air was completely still."
+    },
+    {
+     "clip": "susp-mahnoor-2.mp4",
+     "hi": "अंदर खाली पिंजरों की क़तारें थीं और हर तरफ़ सूखे पत्ते बिखरे थे। माहनूर धीरे-धीरे रास्ते पर आगे बढ़ी।",
+     "en": "Inside were rows of empty cages and dry leaves scattered everywhere. Mahnoor walked slowly along the path."
+    },
+    {
+     "clip": "susp-mahnoor-3.mp4",
+     "hi": "एक खुले पिंजरे के अंदर डाल पर हरा तोता बैठा था — और पिंजरे का दरवाज़ा बिना किसी के छुए झूल रहा था।",
+     "en": "Inside one open cage, a green parrot sat on a branch — and the cage door was swinging without anyone touching it."
+    },
+    {
+     "clip": "susp-mahnoor-4.mp4",
+     "hi": "हाथियों वाले खाली बाड़े की दीवार पर एक बहुत बड़े हाथी का साया गुज़रा — हालांकि बाड़ा बिल्कुल खाली था।",
+     "en": "Across the wall of the empty elephant enclosure passed the shadow of a huge elephant — though the enclosure was completely empty."
+    },
+    {
+     "clip": "susp-mahnoor-5.mp4",
+     "hi": "माहनूर भागी तो सूखे दरख़्तों से सैकड़ों परिंदे एक साथ उड़ खड़े हुए और पत्ते चक्कर खाने लगे।",
+     "en": "As Mahnoor ran, hundreds of birds burst upward from the dry trees all at once, and the leaves began to swirl."
+    },
+    {
+     "clip": "susp-mahnoor-6.mp4",
+     "hi": "सुबह चिड़ियाघर फिर बंद और ख़ामोश था। बस माहनूर के हाथ में एक चमकदार मोर-पंख असली था।",
+     "en": "In the morning, the zoo was shut and silent again. Only one shining peacock feather in Mahnoor's hand was real."
+    }
+   ]
   }
  ],
- "version": 14
+ "version": 15
 }
