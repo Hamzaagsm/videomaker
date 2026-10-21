@@ -468,7 +468,46 @@
      "en": "In the morning, the post office door was chained again. Only the sealed white envelope in Noor's hand was real — the one that was never opened."
     }
    ]
+  },
+  {
+   "id": "bazaar",
+   "hero": "Zara",
+   "pitch": 1.52,
+   "title_hi": "बंद मीना बाज़ार का राज़",
+   "title_en": "The Old Bazaar",
+   "beats": [
+    {
+     "clip": "susp-zara-1.mp4",
+     "hi": "ज़ारा शाम को पुराने बंद मीना बाज़ार की गली के सामने खड़ी थी। ऊपर लगी झंकार हल्के से बजी — हालांकि सारी दुकानें बंद थीं।",
+     "en": "In the evening, Zara stood before the old closed Meena Bazaar lane. The wind chime above tinkled softly — though all the shops were shut."
+    },
+    {
+     "clip": "susp-zara-2.mp4",
+     "hi": "मेहराब के नीचे से ज़ारा गली में आ गई। दोनों तरफ़ कपड़ों से ढकी दुकानें और बुझे हुए लालटेन लटके थे।",
+     "en": "Through the arch, Zara entered the lane. On both sides stood cloth-covered stalls and unlit hanging lanterns."
+    },
+    {
+     "clip": "susp-zara-3.mp4",
+     "hi": "एक खिलौनों वाली दुकान पर कठपुतली लटकी थी — उसकी एक बांह ऊपर उठी थी, हालांकि डोरियां कोई नहीं पकड़े था।",
+     "en": "At one toy stall hung a marionette puppet — one of its arms was raised, though nobody was holding its strings."
+    },
+    {
+     "clip": "susp-zara-4.mp4",
+     "hi": "तभी गली के सारे लालटेन एक-एक करके ख़ुद-ब-ख़ुद जलने लगे — जैसे कोई अदृश्य मेहमान आ गया हो।",
+     "en": "Just then, all the lanterns in the lane began lighting up one by one by themselves — as if an invisible guest had arrived."
+    },
+    {
+     "clip": "susp-zara-5.mp4",
+     "hi": "ज़ारा भागी तो सारी झंकारें और दुकानों की छोटी-छोटी घंटियां एक साथ बज उठीं और कपड़े फड़फड़ाने लगे।",
+     "en": "As Zara ran, all the wind chimes and the stalls' tiny bells rang together, and the cloth covers began to flutter."
+    },
+    {
+     "clip": "susp-zara-6.mp4",
+     "hi": "सुबह बाज़ार की गली फिर बंद और ख़ामोश थी। बस ज़ारा की हथेली में एक छोटी सी पीतल की घंटी असली थी।",
+     "en": "In the morning, the bazaar lane was shut and silent again. Only one small brass bell in Zara's palm was real."
+    }
+   ]
   }
  ],
- "version": 12
+ "version": 13
 }
