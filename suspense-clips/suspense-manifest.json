@@ -195,7 +195,46 @@
      "en": "The last page turned by itself, and on it was written — The story ends... come again tomorrow."
     }
    ]
+  },
+  {
+   "id": "cinema",
+   "hero": "Sameer",
+   "pitch": 1.2,
+   "title_hi": "बंद सिनेमा का राज़",
+   "title_en": "The Closed Cinema",
+   "beats": [
+    {
+     "clip": "susp-sameer-1.mp4",
+     "hi": "समीर शाम को पुराने बंद सिनेमा के सामने रुका। गेट आधा खुला था — हालांकि सिनेमा सालों से बंद था।",
+     "en": "In the evening, Sameer stopped in front of the old closed cinema. Its gate was half open — though the cinema had been shut for years."
+    },
+    {
+     "clip": "susp-sameer-2.mp4",
+     "hi": "अंदर लाल कुर्सियों की क़तारें ख़ाली थीं और परदा अंधेरे में सोया था। समीर दबे पांव अंदर आ गया।",
+     "en": "Inside, rows of red seats stood empty and the screen slept in darkness. Sameer tiptoed in."
+    },
+    {
+     "clip": "susp-sameer-3.mp4",
+     "hi": "तभी ऊपर प्रोजेक्टर वाले कमरे की खिड़की में रोशनी टिमटिमाने लगी — हालांकि वहां कोई नहीं था!",
+     "en": "Just then, the projector room window above began to flicker with light — though no one was up there!"
+    },
+    {
+     "clip": "susp-sameer-4.mp4",
+     "hi": "परदा जगमगा उठा और उसपर पुरानी ब्लैक-एंड-व्हाइट कार्टून चलने लगी — जिसमें एक लड़का सिनेमा में घुस रहा था... बिल्कुल समीर जैसा!",
+     "en": "The screen lit up and an old black-and-white cartoon started — showing a boy entering a cinema... a boy who looked exactly like Sameer!"
+    },
+    {
+     "clip": "susp-sameer-5.mp4",
+     "hi": "समीर कुर्सी के पीछे छुप गया। परदे पर कार्टून वाला लड़का भी ठीक उसी वक़्त कुर्सी के पीछे छुप गया!",
+     "en": "Sameer hid behind a seat. On the screen, the cartoon boy hid behind a seat at the exact same moment!"
+    },
+    {
+     "clip": "susp-sameer-6.mp4",
+     "hi": "सुबह समीर बाहर आया तो गेट पर ताला और ज़ंजीर थी, जैसे कभी खुला ही न हो। बस जेब की पुरानी टिकट असली थी।",
+     "en": "In the morning, when Sameer came out, the gate was chained and locked, as if it had never opened. Only the old ticket in his pocket was real."
+    }
+   ]
   }
  ],
- "version": 5
+ "version": 6
 }
