@@ -328,7 +328,148 @@
      "clip": "adv-rusty-farm.mp4"
     }
    ]
+  },
+  {
+   "id": "bella-moonlight-picnic",
+   "car": "Bella",
+   "title": "Bella and the Moonlight Picnic",
+   "lines": [
+    {
+     "t": "Hello friends! Tonight we are having a moonlight picnic!",
+     "clip": "adv-bella-talk.mp4"
+    },
+    {
+     "t": "I packed sandwiches, juice, and a big strawberry cake!",
+     "clip": "bella-talking.mp4"
+    },
+    {
+     "t": "Through the rainbow town, the lights are twinkling like stars!",
+     "clip": "adv-bella-town2.mp4"
+    },
+    {
+     "t": "By the sea, the moon is painting silver on the waves!",
+     "clip": "adv-bella-beach.mp4"
+    },
+    {
+     "t": "Here is our picnic hill! Soft grass and a sky full of stars!",
+     "clip": "adv-bella-rainbow.mp4"
+    },
+    {
+     "t": "Singing and driving brought us here, la la la!",
+     "clip": "bella-driving.mp4"
+    },
+    {
+     "t": "In the autumn trees, fireflies are dancing with us!",
+     "clip": "adv-bella-autumn2.mp4"
+    },
+    {
+     "t": "Even the snow mountain sparkles in the moonlight!",
+     "clip": "adv-bella-snowtalk.mp4"
+    },
+    {
+     "t": "Time to roll home, sleepy and happy!",
+     "clip": "adv-bella-town2.mp4"
+    },
+    {
+     "t": "The moonlight picnic was a dream! Bye bye, friends!",
+     "clip": "adv-bella-talk.mp4"
+    }
+   ]
+  },
+  {
+   "id": "rusty-runaway-cart",
+   "car": "Rusty",
+   "title": "Rusty and the Runaway Cart",
+   "lines": [
+    {
+     "t": "Howdy! Morning at the farm! The apples are ready to pick!",
+     "clip": "adv-rusty-farm.mp4"
+    },
+    {
+     "t": "Oh no! The apple cart is rolling away down the hill!",
+     "clip": "adv-rusty-town.mp4"
+    },
+    {
+     "t": "Hold on, little cart! Rusty is coming to the rescue!",
+     "clip": "rusty-driving.mp4"
+    },
+    {
+     "t": "Through the town I chase it! Beep beep, clear the way!",
+     "clip": "adv-rusty-town.mp4"
+    },
+    {
+     "t": "Almost got it... the cart is heading for the beach!",
+     "clip": "adv-rusty-beach.mp4"
+    },
+    {
+     "t": "Gotcha! My tow hook caught the cart just in time!",
+     "clip": "rusty-driving.mp4"
+    },
+    {
+     "t": "Not a single apple fell! The farmer will be so happy!",
+     "clip": "adv-rusty-farm.mp4"
+    },
+    {
+     "t": "Back at the beach, the kids cheer for the apple hero!",
+     "clip": "adv-rusty-beach.mp4"
+    },
+    {
+     "t": "Another rescue done! That is what friends are for!",
+     "clip": "adv-rusty-town.mp4"
+    },
+    {
+     "t": "Time for apple pie at the farm! Bye bye, friends!",
+     "clip": "adv-rusty-farm.mp4"
+    }
+   ]
+  },
+  {
+   "id": "bruno-big-trip",
+   "car": "Bruno",
+   "title": "Bruno's Big Trip",
+   "lines": [
+    {
+     "t": "Hello little friends! I am Bruno, the big friendly truck!",
+     "clip": "adv-bruno-stop.mp4"
+    },
+    {
+     "t": "Today I carry toys and books over the green hills!",
+     "clip": "adv-bruno-hills.mp4"
+    },
+    {
+     "t": "The road is long, but my engine is strong and happy!",
+     "clip": "adv-bruno-hills.mp4"
+    },
+    {
+     "t": "At this stop, little cars are waiting to say hello!",
+     "clip": "adv-bruno-stop.mp4"
+    },
+    {
+     "t": "Big or small, we all share the same road!",
+     "clip": "adv-group-drive.mp4"
+    },
+    {
+     "t": "Look, my friends Rayo and Bella are joining the trip!",
+     "clip": "adv-bruno-friends.mp4"
+    },
+    {
+     "t": "Together we climb the last big hill!",
+     "clip": "adv-bruno-hills.mp4"
+    },
+    {
+     "t": "We made it! Toys and books for everyone!",
+     "clip": "adv-group-talk.mp4"
+    },
+    {
+     "t": "Helping makes even a big truck's heart feel light!",
+     "clip": "adv-bruno-friends.mp4"
+    },
+    {
+     "t": "That was a big, happy trip! Bye bye, little friends!",
+     "clip": "adv-bruno-stop.mp4"
+    }
+   ]
   }
  ],
- "version": 2
+ "version": 3
 }
