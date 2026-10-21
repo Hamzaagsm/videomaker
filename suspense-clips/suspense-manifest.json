@@ -4,34 +4,124 @@
   {
    "beats": [
     {
-     "clip": "susp-haveli-1.mp4",
-     "en": "One rainy night, Ahmed's car suddenly stopped in front of an old, dark mansion.",
-     "hi": "बारिश की एक रात, अहमद की गाड़ी एक पुरानी हवेली के सामने अचानक बंद हो गई।"
+     "clip": "susp-ahmed-hd-1.mp4",
+     "hi": "बारिश की एक रात, अहमद की गाड़ी एक पुरानी हवेली के सामने अचानक बंद हो गई।",
+     "en": "One rainy night, Ahmed's car suddenly stopped in front of an old, dark mansion."
     },
     {
-     "clip": "susp-haveli-2.mp4",
-     "en": "He went to the mansion door for help... and the door opened all by itself.",
-     "hi": "मदद की तलाश में वह हवेली के दरवाज़े तक गया... और दरवाज़ा खुद-ब-खुद खुल गया।"
+     "clip": "susp-ahmed-hd-2.mp4",
+     "hi": "मदद की तलाश में वह हवेली के दरवाज़े तक गया... और दरवाज़ा खुद-ब-ख़ुद खुल गया।",
+     "en": "He went to the mansion door for help... and the door opened all by itself."
     },
     {
-     "clip": "susp-haveli-3.mp4",
-     "en": "He could hear footsteps inside... but there was nobody in the whole house.",
-     "hi": "अंदर कदमों की आवाज़ें आ रही थीं, मगर पूरे घर में कोई नहीं था।"
+     "clip": "susp-ahmed-hd-3.mp4",
+     "hi": "अंदर कदमों की आवाज़ें आ रही थीं, मगर पूरे घर में कोई नहीं था।",
+     "en": "He could hear footsteps inside... but there was nobody in the whole house."
     },
     {
-     "clip": "susp-haveli-4.mp4",
-     "en": "One of the portraits on the wall was of the same old man who had been smiling at the door.",
-     "hi": "दीवार पर लगी तस्वीरों में से एक तस्वीर... उसी बूढ़े आदमी की थी, जो दरवाज़े पर खड़ा मुस्कुरा रहा था।"
+     "clip": "susp-ahmed-hd-4.mp4",
+     "hi": "दीवार पर लगी तस्वीरों में से एक तस्वीर... उसी बूढ़े आदमी की थी, जो दरवाज़े पर खड़ा मुस्कुरा रहा था।",
+     "en": "One of the portraits on the wall was of the same old man who had been smiling at the door."
     },
     {
-     "clip": "susp-haveli-5.mp4",
-     "en": "Suddenly, a baby started crying in the room upstairs... Ahmed slowly climbed the stairs.",
-     "hi": "अचानक ऊपर के कमरे से एक बच्चे के रोने की आवाज़ आई... अहमद सीढ़ियाँ चढ़ने लगा।"
+     "clip": "susp-ahmed-hd-5.mp4",
+     "hi": "अचानक ऊपर के कमरे से एक बच्चे के रोने की आवाज़ आई... अहमद सीढ़ियाँ चढ़ने लगा।",
+     "en": "Suddenly, a baby started crying in the room upstairs... Ahmed slowly climbed the stairs."
     },
     {
-     "clip": "susp-haveli-6.mp4",
-     "en": "The room was empty... only an old cradle was rocking all by itself. Ahmed ran for his life... and the mansion door slammed shut behind him!",
-     "hi": "कमरा खुला तो वहाँ कोई नहीं था... सिर्फ़ एक झूला खुद-ब-खुद हिल रहा था। अहमद डरकर भागा... और हवेली का दरवाज़ा पीछे खुद बंद हो गया!"
+     "clip": "susp-ahmed-hd-6.mp4",
+     "hi": "कमरा खुला तो वहाँ कोई नहीं था... सिर्फ़ एक झूला खुद-ब-खुद हिल रहा था। अहमद डरकर भागा... और हवेली का दरवाज़ा पीछे खुद बंद हो गया!",
+     "en": "The room was empty... only an old cradle was rocking all by itself. Ahmed ran for his life... and the mansion door slammed shut behind him!"
+    },
+    {
+     "clip": "susp-ahmed-hd-7.mp4",
+     "hi": "अहमद दौड़कर गाड़ी में बैठा और बार-बार चाबी घुमाई... मगर इंजन बिलकुल ख़ामोश था। और हवेली का बड़ा लोहे का गेट अब एक भारी ज़ंजीर से बंद था।",
+     "en": "Ahmed jumped into his car and turned the key again and again... but the engine stayed silent. And the mansion's big iron gate was now locked with a heavy chain."
+    },
+    {
+     "clip": "susp-ahmed-hd-8.mp4",
+     "hi": "आसमान में बिजली चमकी... और एक पल के लिए अँधेरी हवेली की सारी खिड़कियाँ एक साथ जल उठीं — फिर बुझ गईं।",
+     "en": "Lightning flashed across the sky... and for one moment, every window of the dark mansion lit up together — then went dark again."
+    },
+    {
+     "clip": "susp-ahmed-hd-9.mp4",
+     "hi": "नीचे वाली खिड़की में वही बूढ़ा आदमी खड़ा था, तस्वीर वाला... अब भी मुस्कुराता हुआ। धीरे-धीरे उसने एक हाथ उठाया।",
+     "en": "In the ground-floor window stood the same old man from the portrait... still smiling. Very slowly, he raised one hand."
+    },
+    {
+     "clip": "susp-ahmed-hd-10.mp4",
+     "hi": "अहमद के फ़ोन की टॉर्च झिलमिलाकर बुझ गई। और घर के अंदर कहीं से एक पुराने पियानो की धुन बजने लगी... खुद-ब-ख़ुद।",
+     "en": "Ahmed's phone flashlight flickered and died. And from deep inside the house came the sound of an old piano... playing all by itself."
+    },
+    {
+     "clip": "susp-ahmed-hd-11.mp4",
+     "hi": "तभी बच्चे के रोने की आवाज़ फिर आई — इस बार आँगन की तरफ़ से। गीली ज़मीन पर छोटे-छोटे पैरों के निशान घर से पुराने कुएँ तक जा रहे थे।",
+     "en": "Then the baby's crying began again — this time from the courtyard. On the wet ground, tiny footprints were leading from the house to the old well."
+    },
+    {
+     "clip": "susp-ahmed-hd-12.mp4",
+     "hi": "कुएँ के पास कीचड़ में कुछ चमक रहा था। अहमद ने उठाया — एक पुरानी पीतल की चाबी, जिस पर लकड़ी की छोटी तख़्ती थी: 'ऊपर वाला कमरा'।",
+     "en": "Beside the well, something shone in the mud. Ahmed picked it up — an old brass key, with a small wooden tag: 'the upstairs room'."
+    },
+    {
+     "clip": "susp-ahmed-hd-13.mp4",
+     "hi": "पीछे हवेली का दरवाज़ा धीरे-धीरे चरमराकर फिर खुल गया... खुद-ब-ख़ुद — जैसे घर उसे फिर अंदर बुला रहा हो। चाबी मुट्ठी में कसे, अहमद अंदर चला गया।",
+     "en": "Behind him, the mansion door slowly creaked open again... all by itself — as if the house was inviting him back in. Holding the key tight, Ahmed stepped inside."
+    },
+    {
+     "clip": "susp-ahmed-hd-14.mp4",
+     "hi": "हॉल में अहमद ठिठक गया। बूढ़े आदमी की तस्वीर अब बिलकुल ख़ाली थी — पेंटिंग में सिर्फ़ एक ख़ाली कुर्सी बची थी। और गीले पैरों के निशान तस्वीर से लाइब्रेरी के दरवाज़े तक जा रहे थे।",
+     "en": "In the hall, Ahmed froze. The old man's portrait was now completely empty — only an empty chair was left in the painting. And wet footprints led from the frame to the library door."
+    },
+    {
+     "clip": "susp-ahmed-hd-15.mp4",
+     "hi": "अँधेरी लाइब्रेरी में मेज़ पर एक पुरानी डायरी खुली पड़ी थी। अहमद ने आख़िरी लाइन पढ़ी, ताज़ा गीली स्याही से लिखी हुई: 'आज रात... फिर एक मेहमान आया है।'",
+     "en": "In the dark library, one old diary lay open on the table. Ahmed read the last line, written in fresh, wet ink: 'Tonight... a guest has come again.'"
+    },
+    {
+     "clip": "susp-ahmed-hd-16.mp4",
+     "hi": "ऊँची किताबों की अलमारी के पीछे अहमद को एक तंग, छुपा हुआ दरवाज़ा मिला। काँपते हाथ से उसने पीतल की चाबी घुमाई... और दरवाज़ा लंबी चरमराहट के साथ खुल गया।",
+     "en": "Behind the tall bookshelf, Ahmed found a narrow, hidden door. His hand shook as he turned the brass key... and the door opened with a long, slow creak."
+    },
+    {
+     "clip": "susp-ahmed-hd-17.mp4",
+     "hi": "अंदर एक छोटे बच्चे का कमरा था, जैसे वक़्त वहीं रुक गया हो — पुराने खिलौने, एक छोटा बिस्तर, और वही झूला। दीवार पर लगी हर घड़ी ठीक बारह बजे रुकी थी।",
+     "en": "Inside was a small child's room, frozen in time — old toys, a little bed, and the same cradle. On the wall, every clock had stopped at exactly twelve o'clock."
+    },
+    {
+     "clip": "susp-ahmed-hd-18.mp4",
+     "hi": "मेज़ पर एक परिवार की तस्वीर रखी थी — वही बूढ़ा आदमी, एक औरत और एक छोटा बच्चा, इसी हवेली के सामने खड़े। नीचे एक पुराना अख़बार था: 'पचास साल पहले, एक बारिश की रात यह हवेली जल गई थी... और परिवार कभी नहीं मिला।'",
+     "en": "On the table lay a family photograph — the old man, a lady, and a small child, standing in front of this very mansion. Below it, an old newspaper: 'Fifty years ago, this mansion burned down on a rainy night... and the family was never found.'"
+    },
+    {
+     "clip": "susp-ahmed-hd-19.mp4",
+     "hi": "रोने की आवाज़ धीमी हँसी में बदल गई। अहमद ने तस्वीर आदर से वापस रखी और फुसफुसाया, 'माफ़ कीजिए, मैं आपके घर में आ गया।' अचानक... घर की सारी आवाज़ें थम गईं।",
+     "en": "The crying turned into a soft little laugh. Ahmed gently placed the photograph back and whispered, 'I am sorry I disturbed your home.' Suddenly... every sound in the house stopped."
+    },
+    {
+     "clip": "susp-ahmed-hd-20.mp4",
+     "hi": "छुपा दरवाज़ा खुद खुल गया। नीचे बड़ा दरवाज़ा पूरा खुला था, बारिश थम चुकी थी, और सुबह की हल्की रोशनी हॉल में फैल रही थी।",
+     "en": "The hidden door opened by itself. Downstairs, the main door stood wide open, the rain had stopped, and soft morning light was filling the hall."
+    },
+    {
+     "clip": "susp-ahmed-hd-21.mp4",
+     "hi": "अहमद दौड़कर गाड़ी के पास गया और चाबी घुमाई — इंजन फ़ौरन स्टार्ट हो गया! मगर जाते हुए उसने पीछे मुड़कर देखा... और उसका दिल धक से रह गया।",
+     "en": "Ahmed ran to his car and turned the key — the engine started at once! But as he drove out, he looked back... and his heart stopped."
+    },
+    {
+     "clip": "susp-ahmed-hd-22.mp4",
+     "hi": "वहाँ कोई हवेली थी ही नहीं — सिर्फ़ काले, टूटे हुए खंडहर और गिरी हुई दीवारें थीं, जिन पर बेलें चढ़ी थीं। रात वाली शानदार हवेली वहाँ खड़ी ही नहीं थी।",
+     "en": "There was no mansion at all — only black, broken ruins and fallen walls, covered in vines. The grand house of the night had never been standing there."
+    },
+    {
+     "clip": "susp-ahmed-hd-23.mp4",
+     "hi": "गाँव की चाय की दुकान पर अहमद ने बूढ़े दुकानदार को सारी बात बताई। बूढ़ा ख़ामोशी से सुनता रहा, फिर बोला, 'बेटा, बारिश की रातों में वह घर अब भी अपने मेहमानों का इंतज़ार करता है। तुम पहले हो जो वहाँ से मुस्कुराते हुए लौटे हो।'",
+     "en": "At the village tea stall, Ahmed told the old shopkeeper everything. The old man listened in silence, then said, 'On rainy nights, son, that house still waits for its guests. You are the first to come back smiling.'"
+    },
+    {
+     "clip": "susp-ahmed-hd-24.mp4",
+     "hi": "घर पहुँचकर अहमद ने अपनी घड़ी देखी — वह अब भी बारह बजे रुकी थी, हवेली के वक़्त पर... जबकि घर की घड़ियाँ सुबह दिखा रही थीं। कुछ राज़, वह जान गया था, कभी खोलने के लिए होते ही नहीं।",
+     "en": "At home, Ahmed looked at his watch — it was still stopped at twelve, the mansion's time... while every clock in his house showed morning. Some mysteries, he knew, are never meant to be solved."
     }
    ],
    "hero": "Ahmed",
