@@ -117,7 +117,85 @@
      "en": "Zaid ran home... at his door he looked back — the path was completely empty. But from the well... came the same voice again."
     }
    ]
+  },
+  {
+   "id": "train",
+   "hero": "Arham",
+   "pitch": 1.35,
+   "title_hi": "आख़िरी ट्रेन",
+   "title_en": "The Last Train",
+   "beats": [
+    {
+     "clip": "susp-arham-1.mp4",
+     "hi": "अरहम आधी रात को स्टेशन आया। चारों तरफ़ घना कोहरा था और दूर से ट्रेन की सीटी सुनाई दे रही थी।",
+     "en": "Arham came to the station at midnight. The fog was thick everywhere, and far away a train whistle echoed."
+    },
+    {
+     "clip": "susp-arham-2.mp4",
+     "hi": "कोहरे में से पुरानी ट्रेन धीरे-धीरे आई और रुक गई। लेकिन उसमें कोई सवारी नहीं थी — सारी खिड़कियां ख़ाली थीं!",
+     "en": "Out of the fog, an old train rolled in slowly and stopped. But there was no passenger inside — every window was empty!"
+    },
+    {
+     "clip": "susp-arham-3.mp4",
+     "hi": "बेंच पर एक टिकट पड़ा था। अरहम ने उठाकर देखा — उसपर आज की तारीख़ थी और सीट नंबर 13 लिखा था।",
+     "en": "A ticket lay on the bench. Arham picked it up — it had today's date and seat number 13."
+    },
+    {
+     "clip": "susp-arham-4.mp4",
+     "hi": "अचानक ट्रेन के सारे दरवाज़े अपने आप खुलने लगे — एक, दो, तीन... जैसे कोई बुला रहा हो!",
+     "en": "Suddenly all the train doors began opening by themselves — one, two, three... as if someone was calling him!"
+    },
+    {
+     "clip": "susp-arham-5.mp4",
+     "hi": "अंधेरे डिब्बे के दरवाज़े के पास कंडक्टर की लालटेन हिलती दिखाई दी... लेकिन कंडक्टर कहीं नहीं था।",
+     "en": "Near the dark coach doorway, a conductor's lantern swayed... but there was no conductor anywhere."
+    },
+    {
+     "clip": "susp-arham-6.mp4",
+     "hi": "अरहम भागकर स्टेशन से बाहर आ गया। पीछे मुड़कर देखा — न ट्रेन थी, न कोहरा... बस पटरी पर वही टिकट पड़ा था।",
+     "en": "Arham ran out of the station. When he looked back — no train, no fog... only that same ticket lying on the tracks."
+    }
+   ]
+  },
+  {
+   "id": "library",
+   "hero": "Kabir",
+   "pitch": 0.95,
+   "title_hi": "बंद लाइब्रेरी की किताब",
+   "title_en": "The Book in the Closed Library",
+   "beats": [
+    {
+     "clip": "susp-kabir-1.mp4",
+     "hi": "कबीर शाम को बंद लाइब्रेरी की खिड़की से अंदर झांक रहा था। अंदर अंधेरा था और किताबों की ख़ुशबू आ रही थी।",
+     "en": "In the evening, Kabir peeked through the closed library window. It was dark inside and smelled of old books."
+    },
+    {
+     "clip": "susp-kabir-2.mp4",
+     "hi": "तभी ऊंची शेल्फ़ से एक पुरानी किताब ख़ुद-ब-ख़ुद गिरी और पन्ने फड़फड़ाने लगे!",
+     "en": "Just then, an old book fell from the high shelf by itself, and its pages began to flutter!"
+    },
+    {
+     "clip": "susp-kabir-3.mp4",
+     "hi": "कबीर ने हिम्मत करके किताब खोली। अंदर उसके ही नाम से कहानी लिखी थी — आज की तारीख़ के साथ!",
+     "en": "Kabir bravely opened the book. Inside, a story was written with HIS name — with today's date!"
+    },
+    {
+     "clip": "susp-kabir-4.mp4",
+     "hi": "लाइब्रेरी की सारी बत्तियां टिमटिमाने लगीं और शेल्फ़ों के बीच लंबी परछाइयां बनने लगीं।",
+     "en": "All the library lights started flickering, and long shadows grew between the shelves."
+    },
+    {
+     "clip": "susp-kabir-5.mp4",
+     "hi": "कबीर किताब रखकर भागा — लेकिन अगले मोड़ पर वही किताब शेल्फ़ पर पहले से रखी उसका इंतज़ार कर रही थी!",
+     "en": "Kabir put the book down and ran — but at the next turn, the same book was already waiting for him on the shelf!"
+    },
+    {
+     "clip": "susp-kabir-6.mp4",
+     "hi": "आख़िरी पन्ना अपने आप पलटा, और उसपर लिखा था — 'कहानी ख़त्म... कल फिर आना।'",
+     "en": "The last page turned by itself, and on it was written — The story ends... come again tomorrow."
+    }
+   ]
   }
  ],
- "version": 3
+ "version": 5
 }
