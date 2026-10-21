@@ -507,7 +507,46 @@
      "en": "In the morning, the bazaar lane was shut and silent again. Only one small brass bell in Zara's palm was real."
     }
    ]
+  },
+  {
+   "id": "station",
+   "hero": "Hasan",
+   "pitch": 1.22,
+   "title_hi": "बंद स्टेशन की घड़ी",
+   "title_en": "The Old Station Clock",
+   "beats": [
+    {
+     "clip": "susp-hasan-1.mp4",
+     "hi": "हसन शाम को पुराने बंद रेलवे स्टेशन के सामने खड़ा था। घड़ी की सुइयां बरसों से एक ही वक़्त पर रुकी थीं।",
+     "en": "In the evening, Hasan stood before the old closed railway station. The clock's hands had been stopped at the same time for years."
+    },
+    {
+     "clip": "susp-hasan-2.mp4",
+     "hi": "अंदर इंतज़ार-घर में धूल से भरी बेंचें और एक पुराना बोर्ड था। चारों तरफ़ गहरी ख़ामोशी छाई थी।",
+     "en": "Inside the waiting hall were dust-covered benches and an old board. A deep silence lay everywhere."
+    },
+    {
+     "clip": "susp-hasan-3.mp4",
+     "hi": "तभी स्टेशन की बड़ी घड़ी की सुइयां ख़ुद-ब-ख़ुद चलने लगीं — टिक-टिक की आवाज़ पूरे स्टेशन में गूंज उठी।",
+     "en": "Just then, the hands of the station's big clock began to move by themselves — its tick-tock echoed through the whole station."
+    },
+    {
+     "clip": "susp-hasan-4.mp4",
+     "hi": "दूर पटरी पर एक रौशनी नज़र आई और सीटी की आवाज़ आई — हालांकि ये लाइन बरसों से बंद पड़ी थी।",
+     "en": "Far down the track, a light appeared and a whistle sounded — though this line had been closed for years."
+    },
+    {
+     "clip": "susp-hasan-5.mp4",
+     "hi": "एक चमकती हुई पुरानी भाप-गाड़ी बिना रुके स्टेशन से गुज़र गई — खिड़कियों में गर्म रौशनी थी और चारों तरफ़ भाप फैल गई।",
+     "en": "A glowing old steam train passed through the station without stopping — warm light in its windows and steam spreading everywhere."
+    },
+    {
+     "clip": "susp-hasan-6.mp4",
+     "hi": "सुबह स्टेशन फिर ख़ामोश था और घड़ी फिर उसी वक़्त पर रुकी थी। बस हसन की जेब में एक पुराना ट्रेन-टिकट असली था।",
+     "en": "In the morning, the station was silent again and the clock was stopped at the same time. Only one old train ticket in Hasan's pocket was real."
+    }
+   ]
   }
  ],
- "version": 13
+ "version": 14
 }
