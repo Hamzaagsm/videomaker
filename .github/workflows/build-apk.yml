@@ -144,6 +144,8 @@ jobs:
         run: python3 patch_v450.py
       - name: Apply v4.50 java patch
         run: python3 patch_v450_java.py
+      - name: Apply v4.51 layout patch
+        run: python3 patch_v451.py
       - name: Bundle music into APK
         run: mkdir -p android/app/src/main/assets/music && cp music/*.mp3 android/app/src/main/assets/music/ || true
       - name: Validate built JS (syntax gate)
