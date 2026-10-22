@@ -1,475 +1,132 @@
 {
+ "version": 4,
  "stories": [
   {
+   "id": "rayo-railway-station",
    "car": "Rayo",
-   "id": "rayo-rainbow-valley",
+   "title": "Rayo and the Railway Station",
    "lines": [
     {
-     "clip": "rayo-talking.mp4",
-     "t": "Hi friends! I am Rayo! Today we are going on a long, happy journey!"
+     "clip": "susp-jrn-rayo-railway-station-1.mp4",
+     "t": "Good morning, friends! I am Rayo! Today I visit the big railway station!"
     },
     {
-     "clip": "adv-rayo-city2.mp4",
-     "t": "Through the busy city streets I drive! Beep beep, here I come!"
+     "clip": "susp-jrn-rayo-railway-station-2.mp4",
+     "t": "Look, the ticket window! One little ticket for me, please!"
     },
     {
-     "clip": "adv-rayo-meadow2.mp4",
-     "t": "Now the green hills! Flowers are dancing in the wind!"
+     "clip": "susp-jrn-rayo-railway-station-3.mp4",
+     "t": "The long platform is so busy! I zoom to my spot! Vroom!"
     },
     {
-     "clip": "adv-rayo-beach.mp4",
-     "t": "Wow, the ocean road! The waves are singing a song!"
+     "clip": "susp-jrn-rayo-railway-station-4.mp4",
+     "t": "Here comes the big red steam train! Choo choo!"
     },
     {
-     "clip": "rayo-driving.mp4",
-     "t": "Vroom vroom! My wheels love this road!"
+     "clip": "susp-jrn-rayo-railway-station-5.mp4",
+     "t": "Bye bye, kind conductor! See you at the next station!"
     },
     {
-     "clip": "adv-rayo-snow.mp4",
-     "t": "Up the snowy mountain! Everything is white and sparkly!"
+     "clip": "susp-jrn-rayo-railway-station-6.mp4",
+     "t": "Into the dark tunnel! My headlights shine so bright!"
     },
     {
-     "clip": "adv-rayo-night.mp4",
-     "t": "Night is here and the stars are twinkling! The moon is my lamp!"
+     "clip": "susp-jrn-rayo-railway-station-7.mp4",
+     "t": "The signal light turned green! Go go go!"
     },
     {
-     "clip": "adv-friends-picnic.mp4",
-     "t": "Look, a picnic place! Time for a yummy snack break!"
+     "clip": "susp-jrn-rayo-railway-station-8.mp4",
+     "t": "Over the tall bridge we go, above the blue river!"
     },
     {
-     "clip": "adv-friends-race.mp4",
-     "t": "One last race with my friends! Ready, set, go!"
+     "clip": "susp-jrn-rayo-railway-station-9.mp4",
+     "t": "Wow, the cargo yard! So many colorful boxes!"
     },
     {
-     "clip": "adv-group-drive.mp4",
-     "t": "What a perfect journey! Friends make every road happy! Bye bye!"
-    }
-   ],
-   "title": "Rayo and the Rainbow Valley"
-  },
-  {
-   "car": "Rayo",
-   "id": "rayo-helps-town",
-   "lines": [
-    {
-     "clip": "adv-rayo-city2.mp4",
-     "t": "Morning in the city! I am Rayo, and today I will help everyone!"
-    },
-    {
-     "clip": "rayo-talking.mp4",
-     "t": "Helping is my favorite job! Let us go!"
-    },
-    {
-     "clip": "adv-rayo-meadow2.mp4",
-     "t": "First, I carry flowers to the garden party!"
-    },
-    {
-     "clip": "adv-rayo-beach.mp4",
-     "t": "Then I bring umbrellas to the sunny beach!"
-    },
-    {
-     "clip": "rayo-driving.mp4",
-     "t": "Fast but careful! Everyone is counting on me!"
-    },
-    {
-     "clip": "adv-rayo-snow.mp4",
-     "t": "Even in the snow, Rayo delivers smiles!"
-    },
-    {
-     "clip": "adv-rayo-night.mp4",
-     "t": "Last stop under the stars! A warm drink for the night guard!"
-    },
-    {
-     "clip": "adv-friends.mp4",
-     "t": "My friends Bella and Rusty helped too!"
-    },
-    {
-     "clip": "adv-group-talk.mp4",
-     "t": "We did it together! Helping makes hearts happy!"
-    },
-    {
-     "clip": "adv-friends-race.mp4",
-     "t": "Tomorrow, another big adventure! Bye bye, friends!"
-    }
-   ],
-   "title": "Rayo Helps the Town"
-  },
-  {
-   "car": "Bella",
-   "id": "bella-flower-parade",
-   "lines": [
-    {
-     "clip": "adv-bella-talk.mp4",
-     "t": "Hello friends! I am Bella! Today is the Flower Parade!"
-    },
-    {
-     "clip": "bella-talking.mp4",
-     "t": "I decorated my roof with roses and tulips!"
-    },
-    {
-     "clip": "adv-bella-town2.mp4",
-     "t": "Through the happy town I roll, flowers everywhere!"
-    },
-    {
-     "clip": "adv-bella-rainbow.mp4",
-     "t": "A rainbow! Red, orange, yellow! My favorite colors!"
-    },
-    {
-     "clip": "adv-bella-beach.mp4",
-     "t": "By the sea, seagulls are singing with me!"
-    },
-    {
-     "clip": "bella-driving.mp4",
-     "t": "Singing and driving, la la la! What a lovely day!"
-    },
-    {
-     "clip": "adv-bella-autumn2.mp4",
-     "t": "Autumn leaves are falling like golden rain!"
-    },
-    {
-     "clip": "adv-bella-snowtalk.mp4",
-     "t": "Even the snow sparkles like little diamonds!"
-    },
-    {
-     "clip": "adv-bella-town2.mp4",
-     "t": "Back in town, everyone is clapping for the parade!"
-    },
-    {
-     "clip": "adv-bella-talk.mp4",
-     "t": "The Flower Parade was magical! Bye bye, friends!"
-    }
-   ],
-   "title": "Bella's Flower Parade"
-  },
-  {
-   "car": "Rusty",
-   "id": "rusty-helping-day",
-   "lines": [
-    {
-     "clip": "adv-rusty-town.mp4",
-     "t": "Howdy! I am Rusty, the friendly tow truck! Today I help the whole town!"
-    },
-    {
-     "clip": "adv-rusty-farm.mp4",
-     "t": "First stop, the farm! Farmer Joe's tractor needs a tow!"
-    },
-    {
-     "clip": "rusty-driving.mp4",
-     "t": "Pulling strong and steady! Rusty never gives up!"
-    },
-    {
-     "clip": "adv-rusty-beach.mp4",
-     "t": "At the beach, a little car is stuck in the sand! I am coming!"
-    },
-    {
-     "clip": "adv-rusty-town.mp4",
-     "t": "Back in town, I fix the street lamp so kids can play!"
-    },
-    {
-     "clip": "adv-rusty-farm.mp4",
-     "t": "The farm again! Time to carry hay for the horses!"
-    },
-    {
-     "clip": "adv-rusty-beach.mp4",
-     "t": "Sunset at the beach! One more car to help!"
-    },
-    {
-     "clip": "rusty-driving.mp4",
-     "t": "Helping all day makes my engine happy!"
-    },
-    {
-     "clip": "adv-rusty-town.mp4",
-     "t": "The town says thank you! Friends are the best treasure!"
-    },
-    {
-     "clip": "adv-rusty-beach.mp4",
-     "t": "What a helping day! Bye bye, see you tomorrow!"
-    }
-   ],
-   "title": "Rusty's Helping Day"
-  },
-  {
-   "id": "rayo-lost-puppy",
-   "car": "Rayo",
-   "title": "Rayo and the Lost Puppy",
-   "lines": [
-    {
-     "t": "Hi friends! A little puppy is lost in the park! Let us find him!",
-     "clip": "rayo-talking.mp4"
-    },
-    {
-     "t": "First, I look in the city streets! Puppy, where are you?",
-     "clip": "adv-rayo-city2.mp4"
-    },
-    {
-     "t": "In the flower meadow, I hear a tiny bark! Over there!",
-     "clip": "adv-rayo-meadow2.mp4"
-    },
-    {
-     "t": "The puppy is chasing butterflies near the beach!",
-     "clip": "adv-rayo-beach.mp4"
-    },
-    {
-     "t": "Careful, little puppy! The road is not a playground!",
-     "clip": "rayo-driving.mp4"
-    },
-    {
-     "t": "It is getting dark! I will light the way with my headlights!",
-     "clip": "adv-rayo-night.mp4"
-    },
-    {
-     "t": "Bella and Rusty are helping me search!",
-     "clip": "adv-friends.mp4"
-    },
-    {
-     "t": "We found him! He was hiding under a picnic bench!",
-     "clip": "adv-group-talk.mp4"
-    },
-    {
-     "t": "Now we race home before dinner! The puppy rides with me!",
-     "clip": "adv-friends-race.mp4"
-    },
-    {
-     "t": "Everyone is safe and happy! Helping feels wonderful! Bye bye!",
-     "clip": "adv-group-drive.mp4"
-    }
-   ]
-  },
-  {
-   "id": "bella-singing-birds",
-   "car": "Bella",
-   "title": "Bella and the Singing Birds",
-   "lines": [
-    {
-     "t": "Hello friends! Today I am taking the singing birds to the music park!",
-     "clip": "adv-bella-talk.mp4"
-    },
-    {
-     "t": "The birds sing even in the snow! La la la!",
-     "clip": "adv-bella-snowtalk.mp4"
-    },
-    {
-     "t": "Under the rainbow, their song sounds like magic!",
-     "clip": "adv-bella-rainbow.mp4"
-    },
-    {
-     "t": "In the town square, everyone stops to listen!",
-     "clip": "adv-bella-town2.mp4"
-    },
-    {
-     "t": "Autumn leaves dance to the birds' sweet song!",
-     "clip": "adv-bella-autumn2.mp4"
-    },
-    {
-     "t": "By the sea, the waves clap for the singers!",
-     "clip": "adv-bella-beach.mp4"
-    },
-    {
-     "t": "Music makes every heart happy!",
-     "clip": "bella-talking.mp4"
-    },
-    {
-     "t": "One more song on the way home! Sing with me!",
-     "clip": "bella-driving.mp4"
-    },
-    {
-     "t": "The whole town is singing now!",
-     "clip": "adv-bella-town2.mp4"
-    },
-    {
-     "t": "What a musical day! Bye bye, friends!",
-     "clip": "adv-bella-talk.mp4"
-    }
-   ]
-  },
-  {
-   "id": "rusty-big-storm",
-   "car": "Rusty",
-   "title": "Rusty and the Big Storm",
-   "lines": [
-    {
-     "t": "Howdy! Big clouds are coming! A storm is on the way!",
-     "clip": "adv-rusty-town.mp4"
-    },
-    {
-     "t": "I help Farmer Joe bring the animals to the barn!",
-     "clip": "adv-rusty-farm.mp4"
+     "clip": "susp-jrn-rayo-railway-station-10.mp4",
+     "t": "The little mail car carries letters for everyone!"
     },
     {
-     "t": "The wind is strong, but Rusty is stronger!",
-     "clip": "rusty-driving.mp4"
+     "clip": "susp-jrn-rayo-railway-station-11.mp4",
+     "t": "Snack time! A warm bun from the platform cart!"
     },
     {
-     "t": "At the beach, I pull the boats to safe ground!",
-     "clip": "adv-rusty-beach.mp4"
+     "clip": "susp-jrn-rayo-railway-station-12.mp4",
+     "t": "Two trains wave hello! Toot toot, goodbye!"
     },
     {
-     "t": "Rain is falling! I check every street in town!",
-     "clip": "adv-rusty-town.mp4"
+     "clip": "susp-jrn-rayo-railway-station-13.mp4",
+     "t": "The waiting room is warm and cozy with big chairs!"
     },
     {
-     "t": "The farm road is muddy! I tow the tractor free!",
-     "clip": "adv-rusty-farm.mp4"
+     "clip": "susp-jrn-rayo-railway-station-14.mp4",
+     "t": "From the lookout, what a wonderful view of the trains!"
     },
     {
-     "t": "Almost done! One more friend to help!",
-     "clip": "rusty-driving.mp4"
+     "clip": "susp-jrn-rayo-railway-station-15.mp4",
+     "t": "The sun is setting! Golden light on the shiny tracks!"
     },
     {
-     "t": "The storm is over! Look, a rainbow over the sea!",
-     "clip": "adv-rusty-beach.mp4"
+     "clip": "susp-jrn-rayo-railway-station-16.mp4",
+     "t": "Night is here! The lamps glow like little stars!"
     },
     {
-     "t": "The town is safe, thanks to teamwork!",
-     "clip": "adv-rusty-town.mp4"
+     "clip": "susp-jrn-rayo-railway-station-17.mp4",
+     "t": "Wow, the big engine shed! The sleepy engines rest inside!"
     },
     {
-     "t": "Time to rest at the farm! Helping day complete! Bye bye!",
-     "clip": "adv-rusty-farm.mp4"
-    }
-   ]
-  },
-  {
-   "id": "bella-moonlight-picnic",
-   "car": "Bella",
-   "title": "Bella and the Moonlight Picnic",
-   "lines": [
-    {
-     "t": "Hello friends! Tonight we are having a moonlight picnic!",
-     "clip": "adv-bella-talk.mp4"
-    },
-    {
-     "t": "I packed sandwiches, juice, and a big strawberry cake!",
-     "clip": "bella-talking.mp4"
-    },
-    {
-     "t": "Through the rainbow town, the lights are twinkling like stars!",
-     "clip": "adv-bella-town2.mp4"
-    },
-    {
-     "t": "By the sea, the moon is painting silver on the waves!",
-     "clip": "adv-bella-beach.mp4"
-    },
-    {
-     "t": "Here is our picnic hill! Soft grass and a sky full of stars!",
-     "clip": "adv-bella-rainbow.mp4"
-    },
-    {
-     "t": "Singing and driving brought us here, la la la!",
-     "clip": "bella-driving.mp4"
-    },
-    {
-     "t": "In the autumn trees, fireflies are dancing with us!",
-     "clip": "adv-bella-autumn2.mp4"
-    },
-    {
-     "t": "Even the snow mountain sparkles in the moonlight!",
-     "clip": "adv-bella-snowtalk.mp4"
-    },
-    {
-     "t": "Time to roll home, sleepy and happy!",
-     "clip": "adv-bella-town2.mp4"
-    },
-    {
-     "t": "The moonlight picnic was a dream! Bye bye, friends!",
-     "clip": "adv-bella-talk.mp4"
-    }
-   ]
-  },
-  {
-   "id": "rusty-runaway-cart",
-   "car": "Rusty",
-   "title": "Rusty and the Runaway Cart",
-   "lines": [
-    {
-     "t": "Howdy! Morning at the farm! The apples are ready to pick!",
-     "clip": "adv-rusty-farm.mp4"
-    },
-    {
-     "t": "Oh no! The apple cart is rolling away down the hill!",
-     "clip": "adv-rusty-town.mp4"
-    },
-    {
-     "t": "Hold on, little cart! Rusty is coming to the rescue!",
-     "clip": "rusty-driving.mp4"
+     "clip": "susp-jrn-rayo-railway-station-18.mp4",
+     "t": "Hot, sweet chai from the little stall! Sip sip, so yummy!"
     },
     {
-     "t": "Through the town I chase it! Beep beep, clear the way!",
-     "clip": "adv-rusty-town.mp4"
+     "clip": "susp-jrn-rayo-railway-station-19.mp4",
+     "t": "The fluffy station cat is chasing butterflies! Come back, little friend!"
     },
     {
-     "t": "Almost got it... the cart is heading for the beach!",
-     "clip": "adv-rusty-beach.mp4"
+     "clip": "susp-jrn-rayo-railway-station-20.mp4",
+     "t": "The tall water tower fills the thirsty train! Glug glug glug!"
     },
-    {
-     "t": "Gotcha! My tow hook caught the cart just in time!",
-     "clip": "rusty-driving.mp4"
-    },
-    {
-     "t": "Not a single apple fell! The farmer will be so happy!",
-     "clip": "adv-rusty-farm.mp4"
-    },
-    {
-     "t": "Back at the beach, the kids cheer for the apple hero!",
-     "clip": "adv-rusty-beach.mp4"
-    },
-    {
-     "t": "Another rescue done! That is what friends are for!",
-     "clip": "adv-rusty-town.mp4"
-    },
-    {
-     "t": "Time for apple pie at the farm! Bye bye, friends!",
-     "clip": "adv-rusty-farm.mp4"
-    }
-   ]
-  },
-  {
-   "id": "bruno-big-trip",
-   "car": "Bruno",
-   "title": "Bruno's Big Trip",
-   "lines": [
     {
-     "t": "Hello little friends! I am Bruno, the big friendly truck!",
-     "clip": "adv-bruno-stop.mp4"
+     "clip": "susp-jrn-rayo-railway-station-21.mp4",
+     "t": "Ding ding! The crossing gate comes down! Stop, wait, and smile!"
     },
     {
-     "t": "Today I carry toys and books over the green hills!",
-     "clip": "adv-bruno-hills.mp4"
+     "clip": "susp-jrn-rayo-railway-station-22.mp4",
+     "t": "Up the footbridge I climb! I can see the whole station!"
     },
     {
-     "t": "The road is long, but my engine is strong and happy!",
-     "clip": "adv-bruno-hills.mp4"
+     "clip": "susp-jrn-rayo-railway-station-23.mp4",
+     "t": "Tick tock! The big clock in the clock room tells the time!"
     },
     {
-     "t": "At this stop, little cars are waiting to say hello!",
-     "clip": "adv-bruno-stop.mp4"
+     "clip": "susp-jrn-rayo-railway-station-24.mp4",
+     "t": "The parcel van is full of gifts! Maybe one is for me!"
     },
     {
-     "t": "Big or small, we all share the same road!",
-     "clip": "adv-group-drive.mp4"
+     "clip": "susp-jrn-rayo-railway-station-25.mp4",
+     "t": "Shhh! The sleeper coach has soft, cozy beds!"
     },
     {
-     "t": "Look, my friends Rayo and Bella are joining the trip!",
-     "clip": "adv-bruno-friends.mp4"
+     "clip": "susp-jrn-rayo-railway-station-26.mp4",
+     "t": "In the goods yard, big cranes lift the heavy boxes high!"
     },
     {
-     "t": "Together we climb the last big hill!",
-     "clip": "adv-bruno-hills.mp4"
+     "clip": "susp-jrn-rayo-railway-station-27.mp4",
+     "t": "The ticket hall is bright and happy! Everyone is smiling!"
     },
     {
-     "t": "We made it! Toys and books for everyone!",
-     "clip": "adv-group-talk.mp4"
+     "clip": "susp-jrn-rayo-railway-station-28.mp4",
+     "t": "Here comes the last train of the day! All aboard! Choo choo!"
     },
     {
-     "t": "Helping makes even a big truck's heart feel light!",
-     "clip": "adv-bruno-friends.mp4"
+     "clip": "susp-jrn-rayo-railway-station-29.mp4",
+     "t": "The sleepy train cars yawn, good night!"
     },
     {
-     "t": "That was a big, happy trip! Bye bye, little friends!",
-     "clip": "adv-bruno-stop.mp4"
+     "clip": "susp-jrn-rayo-railway-station-30.mp4",
+     "t": "What a fun day! Bye bye, railway station! Vroom vroom!"
     }
    ]
   }
- ],
- "version": 3
+ ]
 }
