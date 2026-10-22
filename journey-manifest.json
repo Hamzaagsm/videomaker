@@ -1,5 +1,5 @@
 {
- "version": 4,
+ "version": 5,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -125,6 +125,133 @@
     {
      "clip": "susp-jrn-rayo-railway-station-30.mp4",
      "t": "What a fun day! Bye bye, railway station! Vroom vroom!"
+    }
+   ]
+  },
+  {
+   "id": "bella-flower-market",
+   "car": "Bella",
+   "title": "Bella and the Flower Market",
+   "lines": [
+    {
+     "clip": "susp-jrn-bella-flower-market-1.mp4",
+     "t": "Good morning, friends! I am Bella! Today I visit the big flower market!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-2.mp4",
+     "t": "Vroom vroom! Down the petal path I roll, toward the flower fields!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-3.mp4",
+     "t": "Wow, the tall sunflowers are smiling at me! Hello, hello!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-4.mp4",
+     "t": "The tulip rows are red and yellow, just like my paint!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-5.mp4",
+     "t": "The kind gardener fills my baskets with sweet roses!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-6.mp4",
+     "t": "Look! The market gate wears a crown of marigold garlands!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-7.mp4",
+     "t": "Inside, the stalls burst with every color! What a happy place!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-8.mp4",
+     "t": "Sweet jasmine flowers! Oh, how lovely they smell!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-9.mp4",
+     "t": "The tulip lady waves at me! One big basket, please!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-10.mp4",
+     "t": "Daisies, daisies! White like little clouds!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-11.mp4",
+     "t": "I deliver fresh flowers to the bakery auntie! Mmm, warm cake!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-12.mp4",
+     "t": "The fountain square sparkles with pigeons and petals!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-13.mp4",
+     "t": "Up the green hill I climb, past the old windmill!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-14.mp4",
+     "t": "The rainbow bridge sways above the blue river!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-15.mp4",
+     "t": "Flowers for the school kids! Look at those happy smiles!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-16.mp4",
+     "t": "The old clock tower rings! Ding dong, ding dong!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-17.mp4",
+     "t": "I rest under the big mango tree, breathing sweet air!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-18.mp4",
+     "t": "Butterflies dance around my mirrors! Whee, so pretty!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-19.mp4",
+     "t": "The flower parade float is so grand! Follow me, friends!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-20.mp4",
+     "t": "Petals fall like rain! What a lovely flower shower!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-21.mp4",
+     "t": "I carry garlands up the old temple steps!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-22.mp4",
+     "t": "Evening falls, and the lantern lane glows golden!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-23.mp4",
+     "t": "The boatman floats my flowers down the calm canal!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-24.mp4",
+     "t": "Fireflies light my way home! Twinkle, twinkle!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-25.mp4",
+     "t": "One last stop: fresh flowers for my best friend Rayo!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-26.mp4",
+     "t": "The moon rises over the sleepy village! So quiet, so calm!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-27.mp4",
+     "t": "Home at last! My garage smells of sweet flowers!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-28.mp4",
+     "t": "I dream of fields and colors and happy faces!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-29.mp4",
+     "t": "Good night, flowers! Good night, friends!"
+    },
+    {
+     "clip": "susp-jrn-bella-flower-market-30.mp4",
+     "t": "See you at the market tomorrow! Bye bye!"
     }
    ]
   }
