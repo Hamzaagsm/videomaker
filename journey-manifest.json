@@ -1,5 +1,5 @@
 {
- "version": 5,
+ "version": 6,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -252,6 +252,133 @@
     {
      "clip": "susp-jrn-bella-flower-market-30.mp4",
      "t": "See you at the market tomorrow! Bye bye!"
+    }
+   ]
+  },
+  {
+   "id": "rusty-rainy-day-rescue",
+   "car": "Rusty",
+   "title": "Rusty and the Rainy Day Rescue",
+   "lines": [
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-1.mp4",
+     "t": "Oh no! Who is calling for help in the rain? The river is rising — I must go!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-2.mp4",
+     "t": "My name is Rusty, and I am a strong tow truck — rain never stops me!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-3.mp4",
+     "t": "I splash through the big puddles — splish splash, what fun!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-4.mp4",
+     "t": "The wind pushes my hook left and right — hold on, hook!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-5.mp4",
+     "t": "There she is! A little blue car stuck in the deep mud!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-6.mp4",
+     "t": "Do not cry, little one. Rusty is here to save you!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-7.mp4",
+     "t": "I lower my strong hook — click! I catch your bumper gently."
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-8.mp4",
+     "t": "Pull! Pull! Little by little — out of the mud you come!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-9.mp4",
+     "t": "Hooray! You are free! Let us get out of this cold mud."
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-10.mp4",
+     "t": "Your tire is hurt. Climb on my back, little friend."
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-11.mp4",
+     "t": "We drive home together — you are safe now, I promise."
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-12.mp4",
+     "t": "Wait — what is that sound behind the big rock?"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-13.mp4",
+     "t": "Oh wow! A family of little ducks is lost in the flood!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-14.mp4",
+     "t": "Climb on, ducklings! My truck bed is warm and dry."
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-15.mp4",
+     "t": "The little blue car giggles — the ducklings tickle her windows!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-16.mp4",
+     "t": "Quack quack! They are singing a rainy-day song for us!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-17.mp4",
+     "t": "The sun peeks out — look, a rainbow over the hills!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-18.mp4",
+     "t": "Every cloud has a silver lining, my friends."
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-19.mp4",
+     "t": "We drop the ducklings at their pond — home at last, little ones!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-20.mp4",
+     "t": "The blue car's mama is waiting — she hugs her baby tight!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-21.mp4",
+     "t": "Thank you, Rusty! You are the bravest tow truck in the rain!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-22.mp4",
+     "t": "My hook shines, my engine hums — helping friends feels so good!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-23.mp4",
+     "t": "The rain stops at last. The world looks fresh and clean!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-24.mp4",
+     "t": "Birds come out to sing — listen to their happy song!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-25.mp4",
+     "t": "We splash through the last puddles on the way home."
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-26.mp4",
+     "t": "The little blue car waves goodbye — be careful in the rain!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-27.mp4",
+     "t": "Back at my garage, I hang my hook to rest."
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-28.mp4",
+     "t": "What a day! Rain, mud, ducks, and brand-new friends!"
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-29.mp4",
+     "t": "I close my eyes and listen to the rain on the roof."
+    },
+    {
+     "clip": "susp-jrn-rusty-rainy-day-rescue-30.mp4",
+     "t": "Tomorrow I will climb the great mountains — will you come with me?"
     }
    ]
   }
