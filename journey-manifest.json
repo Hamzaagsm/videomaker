@@ -1,5 +1,5 @@
 {
- "version": 6,
+ "version": 7,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -379,6 +379,133 @@
     {
      "clip": "susp-jrn-rusty-rainy-day-rescue-30.mp4",
      "t": "Tomorrow I will climb the great mountains — will you come with me?"
+    }
+   ]
+  },
+  {
+   "id": "bruno-mountain-road",
+   "car": "Bruno",
+   "title": "Bruno and the Mountain Road",
+   "lines": [
+    {
+     "clip": "susp-jrn-bruno-mountain-road-1.mp4",
+     "t": "Oh no! The mountain road is SO steep - can big Bruno really climb it?"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-2.mp4",
+     "t": "Good morning, friends! I am Bruno, the big blue truck - and I never give up!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-3.mp4",
+     "t": "The little village needs these food boxes before sunset - vroom vroom!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-4.mp4",
+     "t": "My trailer is full of colorful boxes - fresh bread, fruits, and more!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-5.mp4",
+     "t": "First stretch: the sunny pine forest road - the tall trees wave at me!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-6.mp4",
+     "t": "Up, up, up! My strong engine climbs the rocky winding pass!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-7.mp4",
+     "t": "Careful now - the narrow cliff edge! Slow and steady wins!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-8.mp4",
+     "t": "Look, a waterfall! The cool mist dances on my windshield!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-9.mp4",
+     "t": "The mountain goats hop on the rocks - hello, funny goats!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-10.mp4",
+     "t": "I cross the old wooden bridge - creak creak, but it holds me strong!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-11.mp4",
+     "t": "The deep green valley opens below - what a big beautiful view!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-12.mp4",
+     "t": "Time for a quick rest - I park beside the wildflower meadow!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-13.mp4",
+     "t": "Wait - what is that tiny sound? Someone is calling for help!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-14.mp4",
+     "t": "Oh! A little lamb is stuck in the thorny bushes - do not cry, little one!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-15.mp4",
+     "t": "I push the branches gently with my strong bumper - you are free!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-16.mp4",
+     "t": "The happy lamb runs to its mama sheep - thank you, Bruno!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-17.mp4",
+     "t": "The kind shepherd waves at me - take these warm blankets to the village!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-18.mp4",
+     "t": "More boxes on my back - the village children will be so happy tonight!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-19.mp4",
+     "t": "Down we go - wheee! The snowy white slope sparkles around me!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-20.mp4",
+     "t": "Careful on the snow! My big tires grip the cold white road."
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-21.mp4",
+     "t": "The frozen lake shines beside me - like a giant silver mirror!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-22.mp4",
+     "t": "Through the dark pine woods I roll - my headlights glow warm and bright!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-23.mp4",
+     "t": "Look! The little stone houses - the village is near!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-24.mp4",
+     "t": "The children run to meet me - welcome home, Bruno!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-25.mp4",
+     "t": "My trailer opens wide - food boxes for every family, one by one!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-26.mp4",
+     "t": "The village auntie gives me hot soup - slurp slurp, so yummy!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-27.mp4",
+     "t": "The shepherd's blankets warm every little house tonight!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-28.mp4",
+     "t": "The stars come out over the quiet mountains - twinkle twinkle!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-29.mp4",
+     "t": "I park under the big oak tree - my cozy bed for tonight!"
+    },
+    {
+     "clip": "susp-jrn-bruno-mountain-road-30.mp4",
+     "t": "Tomorrow I am going to the seaside - will you come with me? Bye bye!"
     }
    ]
   }
