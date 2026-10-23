@@ -1,0 +1,21 @@
+name: Release v4.54 APK
+
+permissions:
+  contents: write
+  actions: read
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Download APK artifact from build run 352
+        run: gh run download 39943677209 --repo ${{ github.repository }} --name HamzaVideoMaker-apk --dir artifact
+      - name: Create v4.54 release with APK asset
+        run: |
+          ls -la artifact
+          gh release create v4.54-apk --repo ${{ github.repository }} --title "MEER v4.54" --notes "v4.54 — journey guard + audio pre-flight: double-tap/overlap rok, har segment ki awaz compose se pehle check (meerAudioOk bridge), audio diagnostics (|adiag=) + segment audio retry — khamosh segment ab khud retry hoga. v4.53 par upgrade." --latest artifact/HamzaVideoMaker-v2.apk
