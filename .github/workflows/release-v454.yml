@@ -14,7 +14,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh run download 39943677209 -n HamzaVideoMaker-apk -D dl
+          gh run download 39943677209 -R Hamzaagsm/videomaker -n HamzaVideoMaker-apk -D dl
           ls -la dl
 
       - name: Prepare APK
@@ -35,4 +35,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create v4.54-apk HamzaVideoMaker-v2.apk --title "v4.54" --notes "MEER v4.54 — journey double-run lock, compose audio pre-check + re-speak, transcode retry, audio diagnostics (adiag)."
+          gh release create v4.54-apk HamzaVideoMaker-v2.apk -R Hamzaagsm/videomaker --title "v4.54" --notes "MEER v4.54 — journey double-run lock, compose audio pre-check + re-speak, transcode retry, audio diagnostics (adiag)."
