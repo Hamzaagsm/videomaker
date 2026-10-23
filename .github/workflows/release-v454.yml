@@ -1,0 +1,38 @@
+name: release-v454
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact from build run 39943677209
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh run download 39943677209 -n HamzaVideoMaker-apk -D dl
+          ls -la dl
+
+      - name: Prepare APK
+        run: |
+          for z in dl/*.zip; do
+            if [ -f "$z" ]; then
+              echo "Unzipping $z"
+              unzip -o "$z" -d dl
+            fi
+          done
+          APK=$(find dl -type f -name "*.apk" | head -n 1)
+          echo "Found APK: $APK"
+          test -n "$APK" || { echo "No APK found"; exit 1; }
+          cp "$APK" HamzaVideoMaker-v2.apk
+          ls -la HamzaVideoMaker-v2.apk
+
+      - name: Create v4.54-apk release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v4.54-apk HamzaVideoMaker-v2.apk --title "v4.54" --notes "MEER v4.54 — journey double-run lock, compose audio pre-check + re-speak, transcode retry, audio diagnostics (adiag)."
