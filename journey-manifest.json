@@ -1,513 +1,640 @@
 {
- "version": 7,
- "stories": [
-  {
-   "id": "rayo-railway-station",
-   "car": "Rayo",
-   "title": "Rayo and the Railway Station",
-   "lines": [
+  "version": 8,
+  "stories": [
     {
-     "clip": "susp-jrn-rayo-railway-station-1.mp4",
-     "t": "Good morning, friends! I am Rayo! Today I visit the big railway station!"
+      "id": "rayo-railway-station",
+      "car": "Rayo",
+      "title": "Rayo and the Railway Station",
+      "lines": [
+        {
+          "clip": "susp-jrn-rayo-railway-station-1.mp4",
+          "t": "Good morning, friends! I am Rayo! Today I visit the big railway station!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-2.mp4",
+          "t": "Look, the ticket window! One little ticket for me, please!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-3.mp4",
+          "t": "The long platform is so busy! I zoom to my spot! Vroom!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-4.mp4",
+          "t": "Here comes the big red steam train! Choo choo!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-5.mp4",
+          "t": "Bye bye, kind conductor! See you at the next station!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-6.mp4",
+          "t": "Into the dark tunnel! My headlights shine so bright!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-7.mp4",
+          "t": "The signal light turned green! Go go go!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-8.mp4",
+          "t": "Over the tall bridge we go, above the blue river!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-9.mp4",
+          "t": "Wow, the cargo yard! So many colorful boxes!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-10.mp4",
+          "t": "The little mail car carries letters for everyone!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-11.mp4",
+          "t": "Snack time! A warm bun from the platform cart!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-12.mp4",
+          "t": "Two trains wave hello! Toot toot, goodbye!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-13.mp4",
+          "t": "The waiting room is warm and cozy with big chairs!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-14.mp4",
+          "t": "From the lookout, what a wonderful view of the trains!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-15.mp4",
+          "t": "The sun is setting! Golden light on the shiny tracks!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-16.mp4",
+          "t": "Night is here! The lamps glow like little stars!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-17.mp4",
+          "t": "Wow, the big engine shed! The sleepy engines rest inside!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-18.mp4",
+          "t": "Hot, sweet chai from the little stall! Sip sip, so yummy!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-19.mp4",
+          "t": "The fluffy station cat is chasing butterflies! Come back, little friend!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-20.mp4",
+          "t": "The tall water tower fills the thirsty train! Glug glug glug!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-21.mp4",
+          "t": "Ding ding! The crossing gate comes down! Stop, wait, and smile!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-22.mp4",
+          "t": "Up the footbridge I climb! I can see the whole station!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-23.mp4",
+          "t": "Tick tock! The big clock in the clock room tells the time!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-24.mp4",
+          "t": "The parcel van is full of gifts! Maybe one is for me!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-25.mp4",
+          "t": "Shhh! The sleeper coach has soft, cozy beds!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-26.mp4",
+          "t": "In the goods yard, big cranes lift the heavy boxes high!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-27.mp4",
+          "t": "The ticket hall is bright and happy! Everyone is smiling!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-28.mp4",
+          "t": "Here comes the last train of the day! All aboard! Choo choo!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-29.mp4",
+          "t": "The sleepy train cars yawn, good night!"
+        },
+        {
+          "clip": "susp-jrn-rayo-railway-station-30.mp4",
+          "t": "What a fun day! Bye bye, railway station! Vroom vroom!"
+        }
+      ]
     },
     {
-     "clip": "susp-jrn-rayo-railway-station-2.mp4",
-     "t": "Look, the ticket window! One little ticket for me, please!"
+      "id": "bella-flower-market",
+      "car": "Bella",
+      "title": "Bella and the Flower Market",
+      "lines": [
+        {
+          "clip": "susp-jrn-bella-flower-market-1.mp4",
+          "t": "Good morning, friends! I am Bella! Today I visit the big flower market!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-2.mp4",
+          "t": "Vroom vroom! Down the petal path I roll, toward the flower fields!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-3.mp4",
+          "t": "Wow, the tall sunflowers are smiling at me! Hello, hello!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-4.mp4",
+          "t": "The tulip rows are red and yellow, just like my paint!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-5.mp4",
+          "t": "The kind gardener fills my baskets with sweet roses!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-6.mp4",
+          "t": "Look! The market gate wears a crown of marigold garlands!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-7.mp4",
+          "t": "Inside, the stalls burst with every color! What a happy place!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-8.mp4",
+          "t": "Sweet jasmine flowers! Oh, how lovely they smell!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-9.mp4",
+          "t": "The tulip lady waves at me! One big basket, please!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-10.mp4",
+          "t": "Daisies, daisies! White like little clouds!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-11.mp4",
+          "t": "I deliver fresh flowers to the bakery auntie! Mmm, warm cake!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-12.mp4",
+          "t": "The fountain square sparkles with pigeons and petals!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-13.mp4",
+          "t": "Up the green hill I climb, past the old windmill!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-14.mp4",
+          "t": "The rainbow bridge sways above the blue river!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-15.mp4",
+          "t": "Flowers for the school kids! Look at those happy smiles!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-16.mp4",
+          "t": "The old clock tower rings! Ding dong, ding dong!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-17.mp4",
+          "t": "I rest under the big mango tree, breathing sweet air!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-18.mp4",
+          "t": "Butterflies dance around my mirrors! Whee, so pretty!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-19.mp4",
+          "t": "The flower parade float is so grand! Follow me, friends!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-20.mp4",
+          "t": "Petals fall like rain! What a lovely flower shower!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-21.mp4",
+          "t": "I carry garlands up the old temple steps!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-22.mp4",
+          "t": "Evening falls, and the lantern lane glows golden!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-23.mp4",
+          "t": "The boatman floats my flowers down the calm canal!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-24.mp4",
+          "t": "Fireflies light my way home! Twinkle, twinkle!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-25.mp4",
+          "t": "One last stop: fresh flowers for my best friend Rayo!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-26.mp4",
+          "t": "The moon rises over the sleepy village! So quiet, so calm!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-27.mp4",
+          "t": "Home at last! My garage smells of sweet flowers!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-28.mp4",
+          "t": "I dream of fields and colors and happy faces!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-29.mp4",
+          "t": "Good night, flowers! Good night, friends!"
+        },
+        {
+          "clip": "susp-jrn-bella-flower-market-30.mp4",
+          "t": "See you at the market tomorrow! Bye bye!"
+        }
+      ]
     },
     {
-     "clip": "susp-jrn-rayo-railway-station-3.mp4",
-     "t": "The long platform is so busy! I zoom to my spot! Vroom!"
+      "id": "rusty-rainy-day-rescue",
+      "car": "Rusty",
+      "title": "Rusty and the Rainy Day Rescue",
+      "lines": [
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-1.mp4",
+          "t": "Oh no! Who is calling for help in the rain? The river is rising — I must go!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-2.mp4",
+          "t": "My name is Rusty, and I am a strong tow truck — rain never stops me!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-3.mp4",
+          "t": "I splash through the big puddles — splish splash, what fun!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-4.mp4",
+          "t": "The wind pushes my hook left and right — hold on, hook!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-5.mp4",
+          "t": "There she is! A little blue car stuck in the deep mud!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-6.mp4",
+          "t": "Do not cry, little one. Rusty is here to save you!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-7.mp4",
+          "t": "I lower my strong hook — click! I catch your bumper gently."
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-8.mp4",
+          "t": "Pull! Pull! Little by little — out of the mud you come!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-9.mp4",
+          "t": "Hooray! You are free! Let us get out of this cold mud."
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-10.mp4",
+          "t": "Your tire is hurt. Climb on my back, little friend."
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-11.mp4",
+          "t": "We drive home together — you are safe now, I promise."
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-12.mp4",
+          "t": "Wait — what is that sound behind the big rock?"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-13.mp4",
+          "t": "Oh wow! A family of little ducks is lost in the flood!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-14.mp4",
+          "t": "Climb on, ducklings! My truck bed is warm and dry."
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-15.mp4",
+          "t": "The little blue car giggles — the ducklings tickle her windows!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-16.mp4",
+          "t": "Quack quack! They are singing a rainy-day song for us!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-17.mp4",
+          "t": "The sun peeks out — look, a rainbow over the hills!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-18.mp4",
+          "t": "Every cloud has a silver lining, my friends."
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-19.mp4",
+          "t": "We drop the ducklings at their pond — home at last, little ones!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-20.mp4",
+          "t": "The blue car's mama is waiting — she hugs her baby tight!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-21.mp4",
+          "t": "Thank you, Rusty! You are the bravest tow truck in the rain!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-22.mp4",
+          "t": "My hook shines, my engine hums — helping friends feels so good!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-23.mp4",
+          "t": "The rain stops at last. The world looks fresh and clean!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-24.mp4",
+          "t": "Birds come out to sing — listen to their happy song!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-25.mp4",
+          "t": "We splash through the last puddles on the way home."
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-26.mp4",
+          "t": "The little blue car waves goodbye — be careful in the rain!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-27.mp4",
+          "t": "Back at my garage, I hang my hook to rest."
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-28.mp4",
+          "t": "What a day! Rain, mud, ducks, and brand-new friends!"
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-29.mp4",
+          "t": "I close my eyes and listen to the rain on the roof."
+        },
+        {
+          "clip": "susp-jrn-rusty-rainy-day-rescue-30.mp4",
+          "t": "Tomorrow I will climb the great mountains — will you come with me?"
+        }
+      ]
     },
     {
-     "clip": "susp-jrn-rayo-railway-station-4.mp4",
-     "t": "Here comes the big red steam train! Choo choo!"
+      "id": "bruno-mountain-road",
+      "car": "Bruno",
+      "title": "Bruno and the Mountain Road",
+      "lines": [
+        {
+          "clip": "susp-jrn-bruno-mountain-road-1.mp4",
+          "t": "Oh no! The mountain road is SO steep - can big Bruno really climb it?"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-2.mp4",
+          "t": "Good morning, friends! I am Bruno, the big blue truck - and I never give up!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-3.mp4",
+          "t": "The little village needs these food boxes before sunset - vroom vroom!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-4.mp4",
+          "t": "My trailer is full of colorful boxes - fresh bread, fruits, and more!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-5.mp4",
+          "t": "First stretch: the sunny pine forest road - the tall trees wave at me!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-6.mp4",
+          "t": "Up, up, up! My strong engine climbs the rocky winding pass!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-7.mp4",
+          "t": "Careful now - the narrow cliff edge! Slow and steady wins!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-8.mp4",
+          "t": "Look, a waterfall! The cool mist dances on my windshield!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-9.mp4",
+          "t": "The mountain goats hop on the rocks - hello, funny goats!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-10.mp4",
+          "t": "I cross the old wooden bridge - creak creak, but it holds me strong!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-11.mp4",
+          "t": "The deep green valley opens below - what a big beautiful view!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-12.mp4",
+          "t": "Time for a quick rest - I park beside the wildflower meadow!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-13.mp4",
+          "t": "Wait - what is that tiny sound? Someone is calling for help!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-14.mp4",
+          "t": "Oh! A little lamb is stuck in the thorny bushes - do not cry, little one!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-15.mp4",
+          "t": "I push the branches gently with my strong bumper - you are free!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-16.mp4",
+          "t": "The happy lamb runs to its mama sheep - thank you, Bruno!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-17.mp4",
+          "t": "The kind shepherd waves at me - take these warm blankets to the village!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-18.mp4",
+          "t": "More boxes on my back - the village children will be so happy tonight!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-19.mp4",
+          "t": "Down we go - wheee! The snowy white slope sparkles around me!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-20.mp4",
+          "t": "Careful on the snow! My big tires grip the cold white road."
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-21.mp4",
+          "t": "The frozen lake shines beside me - like a giant silver mirror!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-22.mp4",
+          "t": "Through the dark pine woods I roll - my headlights glow warm and bright!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-23.mp4",
+          "t": "Look! The little stone houses - the village is near!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-24.mp4",
+          "t": "The children run to meet me - welcome home, Bruno!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-25.mp4",
+          "t": "My trailer opens wide - food boxes for every family, one by one!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-26.mp4",
+          "t": "The village auntie gives me hot soup - slurp slurp, so yummy!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-27.mp4",
+          "t": "The shepherd's blankets warm every little house tonight!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-28.mp4",
+          "t": "The stars come out over the quiet mountains - twinkle twinkle!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-29.mp4",
+          "t": "I park under the big oak tree - my cozy bed for tonight!"
+        },
+        {
+          "clip": "susp-jrn-bruno-mountain-road-30.mp4",
+          "t": "Tomorrow I am going to the seaside - will you come with me? Bye bye!"
+        }
+      ]
     },
     {
-     "clip": "susp-jrn-rayo-railway-station-5.mp4",
-     "t": "Bye bye, kind conductor! See you at the next station!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-6.mp4",
-     "t": "Into the dark tunnel! My headlights shine so bright!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-7.mp4",
-     "t": "The signal light turned green! Go go go!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-8.mp4",
-     "t": "Over the tall bridge we go, above the blue river!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-9.mp4",
-     "t": "Wow, the cargo yard! So many colorful boxes!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-10.mp4",
-     "t": "The little mail car carries letters for everyone!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-11.mp4",
-     "t": "Snack time! A warm bun from the platform cart!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-12.mp4",
-     "t": "Two trains wave hello! Toot toot, goodbye!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-13.mp4",
-     "t": "The waiting room is warm and cozy with big chairs!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-14.mp4",
-     "t": "From the lookout, what a wonderful view of the trains!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-15.mp4",
-     "t": "The sun is setting! Golden light on the shiny tracks!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-16.mp4",
-     "t": "Night is here! The lamps glow like little stars!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-17.mp4",
-     "t": "Wow, the big engine shed! The sleepy engines rest inside!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-18.mp4",
-     "t": "Hot, sweet chai from the little stall! Sip sip, so yummy!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-19.mp4",
-     "t": "The fluffy station cat is chasing butterflies! Come back, little friend!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-20.mp4",
-     "t": "The tall water tower fills the thirsty train! Glug glug glug!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-21.mp4",
-     "t": "Ding ding! The crossing gate comes down! Stop, wait, and smile!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-22.mp4",
-     "t": "Up the footbridge I climb! I can see the whole station!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-23.mp4",
-     "t": "Tick tock! The big clock in the clock room tells the time!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-24.mp4",
-     "t": "The parcel van is full of gifts! Maybe one is for me!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-25.mp4",
-     "t": "Shhh! The sleeper coach has soft, cozy beds!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-26.mp4",
-     "t": "In the goods yard, big cranes lift the heavy boxes high!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-27.mp4",
-     "t": "The ticket hall is bright and happy! Everyone is smiling!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-28.mp4",
-     "t": "Here comes the last train of the day! All aboard! Choo choo!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-29.mp4",
-     "t": "The sleepy train cars yawn, good night!"
-    },
-    {
-     "clip": "susp-jrn-rayo-railway-station-30.mp4",
-     "t": "What a fun day! Bye bye, railway station! Vroom vroom!"
+      "id": "rayo-seaside-trip",
+      "car": "Rayo",
+      "title": "Rayo and the Seaside Trip",
+      "lines": [
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-1.mp4",
+          "t": "Oh no! My red beach ball rolled behind the big rocks - come on, Rayo, let's find it!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-2.mp4",
+          "t": "Good morning, friends! I am Rayo - look at my shiny red paint in the sunshine!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-3.mp4",
+          "t": "My tires love the soft warm sand - vroom vroom on the beach!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-4.mp4",
+          "t": "Look, tall palm trees waving their green leaves - hello, palms!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-5.mp4",
+          "t": "The little crabs run sideways - catch me if you can, crabby friends!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-6.mp4",
+          "t": "Splash splash! My wheels touch the cool blue water - so fun!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-7.mp4",
+          "t": "A colorful sailboat sails far away - bon voyage, little boat!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-8.mp4",
+          "t": "The fishermen pull their big net - wow, so many silver fish!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-9.mp4",
+          "t": "I race the seagulls along the shore - I am faster, wheee!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-10.mp4",
+          "t": "Oh look, pretty seashells in the wet sand - I will collect them!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-11.mp4",
+          "t": "The big rocks make a secret cave - what is hiding inside?"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-12.mp4",
+          "t": "An old ship's wheel washed up on the sand! I wonder which ship lost it..."
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-13.mp4",
+          "t": "Wait - who is splashing out there? A dolphin is jumping!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-14.mp4",
+          "t": "Hello, Splash the dolphin! Can you jump high? Wow, amazing!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-15.mp4",
+          "t": "Splash found my red beach ball! Thank you, my new friend!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-16.mp4",
+          "t": "We play catch together - throw it high, Splash!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-17.mp4",
+          "t": "The old lighthouse shines its bright light - hello, keeper!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-18.mp4",
+          "t": "From the top of the cliff, the whole sea is blue and sparkly!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-19.mp4",
+          "t": "Time for a sandy picnic - yummy sandwiches by the sea!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-20.mp4",
+          "t": "A friendly turtle walks slowly by - take your time, little turtle!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-21.mp4",
+          "t": "The tide pools hide tiny starfish - so orange and pretty!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-22.mp4",
+          "t": "Look, a big ship sails to faraway lands - bye bye, ship!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-23.mp4",
+          "t": "The sky turns orange - the sun is going to sleep soon!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-24.mp4",
+          "t": "Pink and purple clouds - what a beautiful painting in the sky!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-25.mp4",
+          "t": "The surfers ride the big waves - wow, so brave!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-26.mp4",
+          "t": "Splash comes back to say goodnight - sleep tight, my friend!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-27.mp4",
+          "t": "The stars blink over the quiet sea - twinkle twinkle!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-28.mp4",
+          "t": "I park under the big palm tree - my cozy bed for tonight!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-29.mp4",
+          "t": "Goodbye, beach! Today was wonderful - tomorrow is a new adventure!"
+        },
+        {
+          "clip": "susp-jrn-rayo-seaside-trip-30.mp4",
+          "t": "Tomorrow I will race through the desert - will you come with me? Bye bye!"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "id": "bella-flower-market",
-   "car": "Bella",
-   "title": "Bella and the Flower Market",
-   "lines": [
-    {
-     "clip": "susp-jrn-bella-flower-market-1.mp4",
-     "t": "Good morning, friends! I am Bella! Today I visit the big flower market!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-2.mp4",
-     "t": "Vroom vroom! Down the petal path I roll, toward the flower fields!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-3.mp4",
-     "t": "Wow, the tall sunflowers are smiling at me! Hello, hello!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-4.mp4",
-     "t": "The tulip rows are red and yellow, just like my paint!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-5.mp4",
-     "t": "The kind gardener fills my baskets with sweet roses!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-6.mp4",
-     "t": "Look! The market gate wears a crown of marigold garlands!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-7.mp4",
-     "t": "Inside, the stalls burst with every color! What a happy place!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-8.mp4",
-     "t": "Sweet jasmine flowers! Oh, how lovely they smell!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-9.mp4",
-     "t": "The tulip lady waves at me! One big basket, please!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-10.mp4",
-     "t": "Daisies, daisies! White like little clouds!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-11.mp4",
-     "t": "I deliver fresh flowers to the bakery auntie! Mmm, warm cake!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-12.mp4",
-     "t": "The fountain square sparkles with pigeons and petals!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-13.mp4",
-     "t": "Up the green hill I climb, past the old windmill!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-14.mp4",
-     "t": "The rainbow bridge sways above the blue river!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-15.mp4",
-     "t": "Flowers for the school kids! Look at those happy smiles!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-16.mp4",
-     "t": "The old clock tower rings! Ding dong, ding dong!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-17.mp4",
-     "t": "I rest under the big mango tree, breathing sweet air!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-18.mp4",
-     "t": "Butterflies dance around my mirrors! Whee, so pretty!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-19.mp4",
-     "t": "The flower parade float is so grand! Follow me, friends!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-20.mp4",
-     "t": "Petals fall like rain! What a lovely flower shower!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-21.mp4",
-     "t": "I carry garlands up the old temple steps!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-22.mp4",
-     "t": "Evening falls, and the lantern lane glows golden!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-23.mp4",
-     "t": "The boatman floats my flowers down the calm canal!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-24.mp4",
-     "t": "Fireflies light my way home! Twinkle, twinkle!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-25.mp4",
-     "t": "One last stop: fresh flowers for my best friend Rayo!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-26.mp4",
-     "t": "The moon rises over the sleepy village! So quiet, so calm!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-27.mp4",
-     "t": "Home at last! My garage smells of sweet flowers!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-28.mp4",
-     "t": "I dream of fields and colors and happy faces!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-29.mp4",
-     "t": "Good night, flowers! Good night, friends!"
-    },
-    {
-     "clip": "susp-jrn-bella-flower-market-30.mp4",
-     "t": "See you at the market tomorrow! Bye bye!"
-    }
-   ]
-  },
-  {
-   "id": "rusty-rainy-day-rescue",
-   "car": "Rusty",
-   "title": "Rusty and the Rainy Day Rescue",
-   "lines": [
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-1.mp4",
-     "t": "Oh no! Who is calling for help in the rain? The river is rising — I must go!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-2.mp4",
-     "t": "My name is Rusty, and I am a strong tow truck — rain never stops me!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-3.mp4",
-     "t": "I splash through the big puddles — splish splash, what fun!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-4.mp4",
-     "t": "The wind pushes my hook left and right — hold on, hook!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-5.mp4",
-     "t": "There she is! A little blue car stuck in the deep mud!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-6.mp4",
-     "t": "Do not cry, little one. Rusty is here to save you!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-7.mp4",
-     "t": "I lower my strong hook — click! I catch your bumper gently."
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-8.mp4",
-     "t": "Pull! Pull! Little by little — out of the mud you come!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-9.mp4",
-     "t": "Hooray! You are free! Let us get out of this cold mud."
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-10.mp4",
-     "t": "Your tire is hurt. Climb on my back, little friend."
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-11.mp4",
-     "t": "We drive home together — you are safe now, I promise."
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-12.mp4",
-     "t": "Wait — what is that sound behind the big rock?"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-13.mp4",
-     "t": "Oh wow! A family of little ducks is lost in the flood!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-14.mp4",
-     "t": "Climb on, ducklings! My truck bed is warm and dry."
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-15.mp4",
-     "t": "The little blue car giggles — the ducklings tickle her windows!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-16.mp4",
-     "t": "Quack quack! They are singing a rainy-day song for us!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-17.mp4",
-     "t": "The sun peeks out — look, a rainbow over the hills!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-18.mp4",
-     "t": "Every cloud has a silver lining, my friends."
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-19.mp4",
-     "t": "We drop the ducklings at their pond — home at last, little ones!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-20.mp4",
-     "t": "The blue car's mama is waiting — she hugs her baby tight!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-21.mp4",
-     "t": "Thank you, Rusty! You are the bravest tow truck in the rain!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-22.mp4",
-     "t": "My hook shines, my engine hums — helping friends feels so good!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-23.mp4",
-     "t": "The rain stops at last. The world looks fresh and clean!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-24.mp4",
-     "t": "Birds come out to sing — listen to their happy song!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-25.mp4",
-     "t": "We splash through the last puddles on the way home."
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-26.mp4",
-     "t": "The little blue car waves goodbye — be careful in the rain!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-27.mp4",
-     "t": "Back at my garage, I hang my hook to rest."
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-28.mp4",
-     "t": "What a day! Rain, mud, ducks, and brand-new friends!"
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-29.mp4",
-     "t": "I close my eyes and listen to the rain on the roof."
-    },
-    {
-     "clip": "susp-jrn-rusty-rainy-day-rescue-30.mp4",
-     "t": "Tomorrow I will climb the great mountains — will you come with me?"
-    }
-   ]
-  },
-  {
-   "id": "bruno-mountain-road",
-   "car": "Bruno",
-   "title": "Bruno and the Mountain Road",
-   "lines": [
-    {
-     "clip": "susp-jrn-bruno-mountain-road-1.mp4",
-     "t": "Oh no! The mountain road is SO steep - can big Bruno really climb it?"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-2.mp4",
-     "t": "Good morning, friends! I am Bruno, the big blue truck - and I never give up!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-3.mp4",
-     "t": "The little village needs these food boxes before sunset - vroom vroom!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-4.mp4",
-     "t": "My trailer is full of colorful boxes - fresh bread, fruits, and more!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-5.mp4",
-     "t": "First stretch: the sunny pine forest road - the tall trees wave at me!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-6.mp4",
-     "t": "Up, up, up! My strong engine climbs the rocky winding pass!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-7.mp4",
-     "t": "Careful now - the narrow cliff edge! Slow and steady wins!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-8.mp4",
-     "t": "Look, a waterfall! The cool mist dances on my windshield!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-9.mp4",
-     "t": "The mountain goats hop on the rocks - hello, funny goats!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-10.mp4",
-     "t": "I cross the old wooden bridge - creak creak, but it holds me strong!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-11.mp4",
-     "t": "The deep green valley opens below - what a big beautiful view!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-12.mp4",
-     "t": "Time for a quick rest - I park beside the wildflower meadow!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-13.mp4",
-     "t": "Wait - what is that tiny sound? Someone is calling for help!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-14.mp4",
-     "t": "Oh! A little lamb is stuck in the thorny bushes - do not cry, little one!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-15.mp4",
-     "t": "I push the branches gently with my strong bumper - you are free!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-16.mp4",
-     "t": "The happy lamb runs to its mama sheep - thank you, Bruno!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-17.mp4",
-     "t": "The kind shepherd waves at me - take these warm blankets to the village!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-18.mp4",
-     "t": "More boxes on my back - the village children will be so happy tonight!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-19.mp4",
-     "t": "Down we go - wheee! The snowy white slope sparkles around me!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-20.mp4",
-     "t": "Careful on the snow! My big tires grip the cold white road."
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-21.mp4",
-     "t": "The frozen lake shines beside me - like a giant silver mirror!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-22.mp4",
-     "t": "Through the dark pine woods I roll - my headlights glow warm and bright!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-23.mp4",
-     "t": "Look! The little stone houses - the village is near!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-24.mp4",
-     "t": "The children run to meet me - welcome home, Bruno!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-25.mp4",
-     "t": "My trailer opens wide - food boxes for every family, one by one!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-26.mp4",
-     "t": "The village auntie gives me hot soup - slurp slurp, so yummy!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-27.mp4",
-     "t": "The shepherd's blankets warm every little house tonight!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-28.mp4",
-     "t": "The stars come out over the quiet mountains - twinkle twinkle!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-29.mp4",
-     "t": "I park under the big oak tree - my cozy bed for tonight!"
-    },
-    {
-     "clip": "susp-jrn-bruno-mountain-road-30.mp4",
-     "t": "Tomorrow I am going to the seaside - will you come with me? Bye bye!"
-    }
-   ]
-  }
- ]
+  ]
 }
