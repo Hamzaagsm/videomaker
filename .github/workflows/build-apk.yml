@@ -185,9 +185,21 @@ jobs:
           cp android/app/build/outputs/apk/debug/app-debug.apk MEER.apk
           cp android/app/build/outputs/apk/debug/app-debug.apk HamzaVideoMaker-v2.apk
           ls -la MEER.apk
+      - name: Sign APK with permanent MEER key
+        env:
+          MEER_KEYSTORE_B64: ${{ secrets.MEER_KEYSTORE_B64 }}
+          MEER_KEYSTORE_PASS: ${{ secrets.MEER_KEYSTORE_PASS }}
+        run: |
+          echo "$MEER_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/meer.p12"
+          BT=$(ls -d "$ANDROID_HOME"/build-tools/*/ | sort -V | tail -1)
+          echo "build-tools: $BT"
+          for f in HamzaVideoMaker-v2.apk MEER.apk; do
+            "$BT/zipalign" -f -p 4 "$f" "$RUNNER_TEMP/aligned.apk"
+            "$BT/apksigner" sign --ks "$RUNNER_TEMP/meer.p12" --ks-type PKCS12 --ks-pass "pass:$MEER_KEYSTORE_PASS" --key-pass "pass:$MEER_KEYSTORE_PASS" --ks-key-alias meer --out "$f" "$RUNNER_TEMP/aligned.apk"
+          done
+          "$BT/apksigner" verify --print-certs HamzaVideoMaker-v2.apk
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: HamzaVideoMaker-apk
           path: HamzaVideoMaker-v2.apk
-        
