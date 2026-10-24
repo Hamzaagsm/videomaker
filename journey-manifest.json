@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -633,6 +633,133 @@
         {
           "clip": "susp-jrn-rayo-seaside-trip-30.mp4",
           "t": "Tomorrow I will race through the desert - will you come with me? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "bella-school-trip",
+      "car": "Bella",
+      "title": "Bella and the School Trip",
+      "lines": [
+        {
+          "clip": "susp-jrn-bella-school-trip-1.mp4",
+          "t": "Oh no! The school bus has a flat tire - how will the children get to the pond?!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-2.mp4",
+          "t": "Good morning, friends! I am Bella - and I have a big idea!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-3.mp4",
+          "t": "Hop in, little ones! My seats are soft and my engine is ready!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-4.mp4",
+          "t": "Vroom vroom! Off we go, down the flower-lined road!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-5.mp4",
+          "t": "We sing our favorite song - la la la, all the way!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-6.mp4",
+          "t": "Look, the old stone bridge! It crosses the giggling stream!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-7.mp4",
+          "t": "Hello, tall sunflowers! You are taller than me today!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-8.mp4",
+          "t": "We stop at the duck pond - quack quack, the ducks say hello!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-9.mp4",
+          "t": "The children feed the ducks - little beaks go nibble nibble!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-10.mp4",
+          "t": "Splash! A duck shakes water on my shiny yellow paint!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-11.mp4",
+          "t": "The dragonflies zoom past - catch me if you can!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-12.mp4",
+          "t": "Wait - what is that floating in the pond? A tiny paper boat!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-13.mp4",
+          "t": "It carries a little note - 'Help! My kite is stuck!'"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-14.mp4",
+          "t": "We follow the path to the big willow tree - look up!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-15.mp4",
+          "t": "There it is! A rainbow kite tangled in the branches!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-16.mp4",
+          "t": "I park very steady - climb up gently, little ones!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-17.mp4",
+          "t": "Got it! The kite is free - wheee, it flies again!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-18.mp4",
+          "t": "Its owner is a little boy - thank you, new friend!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-19.mp4",
+          "t": "Time for our picnic under the big mango tree!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-20.mp4",
+          "t": "Yummy sandwiches and sweet mangoes - my favorite!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-21.mp4",
+          "t": "A butterfly lands on my mirror - hello, tiny friend!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-22.mp4",
+          "t": "We play hide and seek in the tall grass - I am too big to hide!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-23.mp4",
+          "t": "The sun is getting low - time to pack up, little ones!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-24.mp4",
+          "t": "We wave goodbye to the ducks - see you soon, quackers!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-25.mp4",
+          "t": "Back on the road, the fireflies light our way!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-26.mp4",
+          "t": "The school gate glows warm - we made it back!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-27.mp4",
+          "t": "The children hug me goodbye - best trip ever!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-28.mp4",
+          "t": "I park in my cozy garage - what a happy day!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-29.mp4",
+          "t": "Good night, little stars - today was wonderful!"
+        },
+        {
+          "clip": "susp-jrn-bella-school-trip-30.mp4",
+          "t": "Tomorrow the village fair opens - will you come with me? Bye bye!"
         }
       ]
     }
