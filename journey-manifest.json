@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -760,6 +760,133 @@
         {
           "clip": "susp-jrn-bella-school-trip-30.mp4",
           "t": "Tomorrow the village fair opens - will you come with me? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "rusty-village-fair",
+      "car": "Rusty",
+      "title": "Rusty and the Village Fair",
+      "lines": [
+        {
+          "clip": "susp-jrn-rusty-village-fair-1.mp4",
+          "t": "Oh no! The village fair opens tonight — but all the lamps are dark! Who will light them up?"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-2.mp4",
+          "t": "I am Rusty, the brown tow truck! My hook is strong and my heart is kind!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-3.mp4",
+          "t": "Vroom vroom! Down the dusty village road I go — clouds of golden dust behind me!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-4.mp4",
+          "t": "The mango trees wave at me! Sweet mangoes smell so good!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-5.mp4",
+          "t": "Look, the blue river sparkles beside the road! Little boats float by!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-6.mp4",
+          "t": "Up the small green hill I climb — I can see the whole village below!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-7.mp4",
+          "t": "The old banyan tree is so big! Birds sing in its branches!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-8.mp4",
+          "t": "Children wave from the schoolyard! Hello, little friends!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-9.mp4",
+          "t": "The village gate is painted bright red and gold! Welcome to the fair!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-10.mp4",
+          "t": "Wow! The fair gate is tall and colorful — flags flutter in the wind!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-11.mp4",
+          "t": "The ferris wheel is so big! It touches the pink evening sky!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-12.mp4",
+          "t": "Oh no! The big swing is stuck! The children cannot swing!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-13.mp4",
+          "t": "Do not worry! My strong hook will pull the swing gently!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-14.mp4",
+          "t": "Pull! Pull! Little by little — the swing moves again!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-15.mp4",
+          "t": "Hooray! The children swing high! Whee, whee, so much fun!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-16.mp4",
+          "t": "The sweet stall smells so yummy! Jalebis, laddoos, and warm milk!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-17.mp4",
+          "t": "I carry a big basket of sweets to the old grandmother! She smiles so wide!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-18.mp4",
+          "t": "The toy seller shows me a tiny wooden truck! It looks just like me!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-19.mp4",
+          "t": "The puppet show begins! The little puppets dance and sing!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-20.mp4",
+          "t": "Ding ding! The merry-go-round spins round and round!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-21.mp4",
+          "t": "Now the lamps! My hook lifts the big lanterns high, one by one!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-22.mp4",
+          "t": "Look! The fair glows golden — hundreds of little lamps shine!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-23.mp4",
+          "t": "Fireworks! Boom boom! Colors burst in the night sky!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-24.mp4",
+          "t": "The drum players beat so loud! Everyone dances in a happy circle!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-25.mp4",
+          "t": "I tow the tired little food cart home — it worked so hard today!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-26.mp4",
+          "t": "The moon rises over the quiet village! The fair lights twinkle!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-27.mp4",
+          "t": "Good night, little swings! Good night, sweet stalls!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-28.mp4",
+          "t": "My hook is tired, but my heart is so happy!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-29.mp4",
+          "t": "What a wonderful fair! I will remember this night forever!"
+        },
+        {
+          "clip": "susp-jrn-rusty-village-fair-30.mp4",
+          "t": "Tomorrow I will help Bruno with his big night delivery — will you come with me?"
         }
       ]
     }
