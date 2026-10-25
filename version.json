@@ -1,1 +1,1 @@
-{"version": "4.56", "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v4.56-apk/HamzaVideoMaker-v2.apk", "notes": "v4.56: Meri Script se Library ko Bhejo — kahani Supabase queue me jati hai, Meri Kahaniyan list me status dikhta hai, tayyar hote hi aik tap par video banti hai."}
+{"version": "4.57", "apk": "https://github.com/Hamzaagsm/videomaker/releases/download/v4.57-apk/HamzaVideoMaker-v2.apk", "notes": "v4.57: REAL VIDEO null-crash fix — kamzoor network par cars.json na load ho to bhi video banti hai (built-in car fallback)."}
