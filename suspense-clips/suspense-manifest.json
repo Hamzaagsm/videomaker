@@ -2193,6 +2193,135 @@
      "en": "Even today, whenever trouble comes to the village, the radio plays by itself — and at night, the little radio in Ibrahim's room played softly... his grandfather's lullaby, just for him."
     }
    ]
+  },
+  {
+   "id": "windmill",
+   "hero": "Umar",
+   "pitch": 1.15,
+   "title_hi": "पुरानी हवा-चक्की",
+   "title_en": "The Old Windmill",
+   "beats": [
+    {
+     "clip": "susp-umar-hd-1.mp4",
+     "hi": "आधी रात को बंद पड़ी पुरानी हवा-चक्की के बड़े पंख ख़ुद घूमने लगे — और अंदर से एक आवाज़ आई, उमर का नाम ले कर।",
+     "en": "At midnight the great blades of the closed old windmill began to turn by themselves — and from inside came a voice, calling Umar by name."
+    },
+    {
+     "clip": "susp-umar-hd-2.mp4",
+     "hi": "सुबह उमर चक्की तक गया — दरवाज़ा बंद था, लेकिन ज़मीन पर ताज़े आटे के निशान थे, जैसे कोई अभी अभी अंदर गया हो।",
+     "en": "In the morning Umar went to the mill — the door was shut, but fresh flour footprints lay on the ground, as if someone had just gone inside."
+    },
+    {
+     "clip": "susp-umar-hd-3.mp4",
+     "hi": "दरवाज़े की दरार से अंदर देखा — पुराना बड़ा पत्थर ख़ुद घूम रहा था, और उस पर सुनहरा आटा गिर रहा था।",
+     "en": "Through a crack in the door he looked inside — the old great millstone was turning by itself, and golden flour was falling from it."
+    },
+    {
+     "clip": "susp-umar-hd-4.mp4",
+     "hi": "शाम को पंख फिर घूमे — इस दफ़ा हवा में एक आवाज़ आई: 'उमर... अंदर आओ, डरो मत।'",
+     "en": "In the evening the blades turned again — this time a voice came on the wind: 'Umar... come inside, do not be afraid.'"
+    },
+    {
+     "clip": "susp-umar-hd-5.mp4",
+     "hi": "उमर ने दरवाज़ा खोला — अंदर एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, भूरा कुर्ता, हाथ में लकड़ी की छड़ी, मुस्कुराता हुआ।",
+     "en": "Umar opened the door — inside stood an old man, white beard, brown kurta, a wooden stick in his hand, smiling."
+    },
+    {
+     "clip": "susp-umar-hd-6.mp4",
+     "hi": "बूढ़े ने कहा: 'मैं इस चक्की का रखवाला हूँ — तीस साल से कोई नहीं आया, और आज हवा ने तुम्हें बुलाया है।'",
+     "en": "The old man said: 'I am the keeper of this mill — no one has come for thirty years, and today the wind called you.'"
+    },
+    {
+     "clip": "susp-umar-hd-7.mp4",
+     "hi": "उमर ने पूछा, 'हवा मुझे क्यों बुलाएगी?' — बूढ़ा बोला: 'क्योंकि तुम्हारे दादा भी यहीं आते थे — जब हवा तेज़ होती थी।'",
+     "en": "Umar asked, 'Why would the wind call me?' — the old man said: 'Because your grandfather also came here — whenever the wind grew strong.'"
+    },
+    {
+     "clip": "susp-umar-hd-8.mp4",
+     "hi": "घर जाकर उमर ने अम्मी से पूछा — अम्मी ने कहा, दादा चक्की पर आटा पीसते थे, और कहते थे हवा गाँव की ख़बर लाती है।",
+     "en": "At home Umar asked his mother — she said, his grandfather used to grind flour at the mill, and he said the wind brings the village's news."
+    },
+    {
+     "clip": "susp-umar-hd-9.mp4",
+     "hi": "रात को फिर पंख घूमे — इस दफ़ा आवाज़ आई: 'कल सुबह... तेज़ हवा आएगी... गाँव की फ़सल को ख़तरा है।'",
+     "en": "At night the blades turned again — this time the voice said: 'Tomorrow morning... a strong wind will come... the village crops are in danger.'"
+    },
+    {
+     "clip": "susp-umar-hd-10.mp4",
+     "hi": "उमर ने गाँव वालों को बताया — किसी ने यक़ीन नहीं किया, सब हँसने लगे: 'बच्चा है, हवा से डर गया।'",
+     "en": "Umar told the villagers — nobody believed him, they all laughed: 'He is a child, afraid of the wind.'"
+    },
+    {
+     "clip": "susp-umar-hd-11.mp4",
+     "hi": "सुबह तेज़ हवा सच में आई — गाँव वालों की छतों के पत्ते उड़ गए, सब हैरान उमर की तरफ़ देखने लगे।",
+     "en": "In the morning the strong wind really came — the villagers' roof tiles flew off, and everyone stared at Umar in wonder."
+    },
+    {
+     "clip": "susp-umar-hd-12.mp4",
+     "hi": "चक्की के पंख तेज़ घूमने लगे — बूढ़े रखवाले ने कहा: 'जल्दी करो, उमर — फ़सल बचानी है, पंख रोकने होंगे।'",
+     "en": "The mill's blades spun faster — the old keeper said: 'Hurry, Umar — we must save the crops, the blades must be stopped.'"
+    },
+    {
+     "clip": "susp-umar-hd-13.mp4",
+     "hi": "उमर चक्की की सीढ़ियाँ चढ़ा — ऊपर एक बड़ा पीतल का लीवर था, ज़ंग लगा हुआ, सालों से किसी ने नहीं छुआ।",
+     "en": "Umar climbed the mill's stairs — at the top was a big brass lever, rusted, untouched for years."
+    },
+    {
+     "clip": "susp-umar-hd-14.mp4",
+     "hi": "लीवर खींचना मुश्किल था — उमर ने पूरी ताक़त लगाई, लीवर हिला... और पंख धीमे होने लगे।",
+     "en": "Pulling the lever was hard — Umar pulled with all his strength, the lever moved... and the blades began to slow."
+    },
+    {
+     "clip": "susp-umar-hd-15.mp4",
+     "hi": "नीचे बूढ़ा रखवाला मुस्कुराया — 'तुम्हारे दादा ने भी यही लीवर खींचा था... जब तुम्हारे अब्बू छोटे थे।'",
+     "en": "Below, the old keeper smiled — 'Your grandfather also pulled this very lever... when your father was small.'"
+    },
+    {
+     "clip": "susp-umar-hd-16.mp4",
+     "hi": "बूढ़े ने बताया: 'मैं तुम्हारे दादा का दोस्त हूँ — उन्होंने मुझसे वादा लिया था कि जब हवा फिर तेज़ हो, मैं उनके पोते को बुलाऊँ।'",
+     "en": "The old man told him: 'I am your grandfather's friend — he made me promise that when the wind grows strong again, I would call his grandson.'"
+    },
+    {
+     "clip": "susp-umar-hd-17.mp4",
+     "hi": "उमर ने पूछा, 'दादा कहाँ हैं?' — जवाब आया: 'हवा में — हर उस दाने में जो इस चक्की से आटा बनता है।'",
+     "en": "Umar asked, 'Where is Grandfather?' — the answer came: 'In the wind — in every grain that this mill turns into flour.'"
+    },
+    {
+     "clip": "susp-umar-hd-18.mp4",
+     "hi": "गाँव वालों ने मिल कर चक्की साफ़ की — पंख रंगवाए, दरवाज़ा ठीक किया, पुराना पत्थर चमकाया।",
+     "en": "The villagers gathered and cleaned the mill — painted the blades, fixed the door, polished the old stone."
+    },
+    {
+     "clip": "susp-umar-hd-19.mp4",
+     "hi": "शाम को चक्की फिर चली — सुनहरा आटा गिरने लगा, गाँव वालों ने ख़ुशी से ताली बजाई।",
+     "en": "In the evening the mill ran again — golden flour began to fall, and the villagers clapped with joy."
+    },
+    {
+     "clip": "susp-umar-hd-20.mp4",
+     "hi": "बूढ़े रखवाले ने उमर को पीतल की छोटी चाबी दी — 'अब ये चक्की तुम्हारी है, छोटे रखवाले।'",
+     "en": "The old keeper gave Umar a small brass key — 'Now this mill is yours, little keeper.'"
+    },
+    {
+     "clip": "susp-umar-hd-21.mp4",
+     "hi": "उमर ने चाबी अपने गले में पहनी — और उसी रात पंख हल्के से घूमे, जैसे चक्की ने उसे सलाम किया हो।",
+     "en": "Umar wore the key around his neck — and that very night the blades turned gently, as if the mill had greeted him."
+    },
+    {
+     "clip": "susp-umar-hd-22.mp4",
+     "hi": "सुबह उमर ने चक्की के दरवाज़े पर एक तख़्ती लगाई: गाँव की चक्की — हर सुबह ताज़ा आटा।",
+     "en": "In the morning Umar hung a sign on the mill's door: the village mill — fresh flour every morning."
+    },
+    {
+     "clip": "susp-umar-hd-23.mp4",
+     "hi": "गाँव के बच्चे चक्की देखने आने लगे — उमर उन्हें पंख और बड़ा पत्थर दिखाता, हवा की कहानी सुनाता।",
+     "en": "The village children came to see the mill — Umar showed them the blades and the great stone, and told them the wind's story."
+    },
+    {
+     "clip": "susp-umar-hd-24.mp4",
+     "hi": "आज भी जब गाँव में तेज़ हवा चलती है, पुरानी चक्की ख़ुद घूमती है — और रात को उमर के कमरे की खिड़की से हवा आती है... दादा की हल्की सी हँसी, सिर्फ़ उसके लिए।",
+     "en": "Even today, whenever a strong wind blows through the village, the old mill turns by itself — and at night, the wind comes through Umar's window... his grandfather's soft laughter, just for him."
+    }
+   ]
   }
  ],
  "version": 15
