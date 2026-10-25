@@ -2322,6 +2322,135 @@
      "en": "Even today, whenever a strong wind blows through the village, the old mill turns by itself — and at night, the wind comes through Umar's window... his grandfather's soft laughter, just for him."
     }
    ]
+  },
+  {
+   "id": "boat",
+   "hero": "Ayesha",
+   "pitch": 1.5,
+   "title_hi": "पुरानी कश्ती",
+   "title_en": "The Old Boat",
+   "beats": [
+    {
+     "clip": "susp-ayesha-hd-1.mp4",
+     "hi": "आधी रात को पुरानी कश्ती खुद किनारे से खुल कर दरिया में बहने लगी, और आयशा ने सुना — कोई उसका नाम ले रहा था।",
+     "en": "At midnight the old boat untied itself from the bank and drifted into the river, and Ayesha heard someone calling her name."
+    },
+    {
+     "clip": "susp-ayesha-hd-2.mp4",
+     "hi": "सुबह आयशा दरिया किनारे गई — कश्ती वहीं बंधी थी, मगर उसकी रस्सी गीली थी और उस पर ताज़े पानी के निशान थे।",
+     "en": "In the morning Ayesha went to the riverbank — the boat was tied there still, but its rope was wet and marked with fresh water."
+    },
+    {
+     "clip": "susp-ayesha-hd-3.mp4",
+     "hi": "उसने कश्ती के अंदर झांका — लकड़ी की बेंच पर एक छोटा सा काग़ज़ पड़ा था, बिल्कुल ख़ाली, सिर्फ़ किनारे पर एक नीली लकीर थी।",
+     "en": "She peeked inside the boat — on the wooden bench lay a tiny paper, completely blank, with only one blue line along its edge."
+    },
+    {
+     "clip": "susp-ayesha-hd-4.mp4",
+     "hi": "शाम को कश्ती के पीछे से हल्की रोशनी चमकी — एक पुरानी लालटेन, जो सालों से बुझी थी, खुद जल उठी।",
+     "en": "In the evening a soft light glowed from behind the boat — an old lantern, dark for years, lit itself."
+    },
+    {
+     "clip": "susp-ayesha-hd-5.mp4",
+     "hi": "आयशा ने लालटेन उठाई — उसके अंदर कोई आग नहीं थी, सिर्फ़ चांदनी थी, जो पानी की तरह बहती थी।",
+     "en": "Ayesha lifted the lantern — there was no flame inside, only moonlight, flowing like water."
+    },
+    {
+     "clip": "susp-ayesha-hd-6.mp4",
+     "hi": "रात को उसने कश्ती में बैठ कर काग़ज़ पर अपना नाम लिखा — काग़ज़ हल्का सा हिला, जैसे कोई उसे पढ़ रहा हो।",
+     "en": "At night she sat in the boat and wrote her name on the paper — the paper trembled slightly, as if someone were reading it."
+    },
+    {
+     "clip": "susp-ayesha-hd-7.mp4",
+     "hi": "सुबह काग़ज़ पर उसके नाम के नीचे एक और नाम था — \"अरसलान\" — किसी और के हाथ से लिखा हुआ।",
+     "en": "In the morning, beneath her name on the paper, there was another name — \"Arsalan\" — written in someone else's hand."
+    },
+    {
+     "clip": "susp-ayesha-hd-8.mp4",
+     "hi": "आयशा ने गांव वालों से पूछा — किसी ने अरसलान का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये नाम पचास साल पुराना है।\"",
+     "en": "Ayesha asked the villagers — no one had heard the name Arsalan, but old grandmother said: \"This name is fifty years old.\""
+    },
+    {
+     "clip": "susp-ayesha-hd-9.mp4",
+     "hi": "दादी ने बताया: पचास साल पहले एक लड़का इसी कश्ती का रखवाला था, जो एक रात दरिया में गया और कभी वापस नहीं आया।",
+     "en": "Grandmother told her: fifty years ago a boy was this boat's keeper, who went into the river one night and never came back."
+    },
+    {
+     "clip": "susp-ayesha-hd-10.mp4",
+     "hi": "उस रात कश्ती फिर खुली — और इस दफ़ा आयशा ने देखा: कश्ती पर एक लड़का खड़ा था, उसी की उम्र का, पुराने कपड़ों में, हाथ में लालटेन।",
+     "en": "That night the boat untied again — and this time Ayesha saw: a boy stood on the boat, her own age, in old clothes, holding a lantern."
+    },
+    {
+     "clip": "susp-ayesha-hd-11.mp4",
+     "hi": "लड़के ने कहा: \"मैं अरसलान हूं। ये कश्ती मुझे घर ले जाने के लिए इंतज़ार कर रही है — मगर उसे एक नए रखवाले की ज़रूरत है।\"",
+     "en": "The boy said: \"I am Arsalan. This boat has waited to take me home — but it needs a new keeper first.\""
+    },
+    {
+     "clip": "susp-ayesha-hd-12.mp4",
+     "hi": "आयशा ने पूछा: \"तुम घर क्यों नहीं गए?\" — अरसलान ने दरिया की तरफ़ इशारा किया: \"रस्ता भूल गया था। कश्ती को कोई चाहिए जो उसे रस्ता दिखाए।\"",
+     "en": "Ayesha asked: \"Why didn't you go home?\" — Arsalan pointed at the river: \"I forgot the way. The boat needs someone to show it the way.\""
+    },
+    {
+     "clip": "susp-ayesha-hd-13.mp4",
+     "hi": "आयशा ने कश्ती की पुरानी रस्सी को हाथ लगाया — रस्सी सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।",
+     "en": "Ayesha touched the boat's old rope — the rope glowed golden, as if it recognised her."
+    },
+    {
+     "clip": "susp-ayesha-hd-14.mp4",
+     "hi": "उसने अरसलान को अपनी छोटी सी खिलौना-कश्ती की तस्वीर दिखाई — जो उसने बचपन में बनाई थी, और अब तक संभाल कर रखी थी।",
+     "en": "She showed Arsalan a picture of her little toy boat — one she had made as a child and kept safe ever since."
+    },
+    {
+     "clip": "susp-ayesha-hd-15.mp4",
+     "hi": "अरसलान मुस्कुराया: \"यही रस्ता है। जो अपनी कश्ती से प्यार करता है, वो दरिया का रस्ता कभी नहीं भूलता।\"",
+     "en": "Arsalan smiled: \"This is the way. Whoever loves their boat never forgets the river's road.\""
+    },
+    {
+     "clip": "susp-ayesha-hd-16.mp4",
+     "hi": "दोनों ने मिल कर कश्ती को साफ़ किया — लकड़ी चमकी, लालटेन रोशन हुई, और दरिया का पानी आईने जैसा साफ़ हो गया।",
+     "en": "Together they cleaned the boat — the wood shone, the lantern burned bright, and the river water turned clear as a mirror."
+    },
+    {
+     "clip": "susp-ayesha-hd-17.mp4",
+     "hi": "आयशा ने कश्ती के आगे खड़े होकर कहा: \"मैं रखवाला बनूंगी — तुम घर जाओ, अरसलान।\"",
+     "en": "Ayesha stood before the boat and said: \"I will be the keeper — go home, Arsalan.\""
+    },
+    {
+     "clip": "susp-ayesha-hd-18.mp4",
+     "hi": "अरसलान ने अपनी लालटेन आयशा को दी — लालटेन के अंदर चांदनी सुनहरी हो गई, और कश्ती हल्की सी हिली।",
+     "en": "Arsalan gave her his lantern — the moonlight inside turned golden, and the boat stirred gently."
+    },
+    {
+     "clip": "susp-ayesha-hd-19.mp4",
+     "hi": "कश्ती दरिया में बहने लगी — अरसलान पीछे खड़ा हाथ हिला रहा था, और किनारे पर गांव वाले हैरान खड़े देख रहे थे।",
+     "en": "The boat drifted into the river — Arsalan stood at the back waving, and the villagers stood amazed on the bank."
+    },
+    {
+     "clip": "susp-ayesha-hd-20.mp4",
+     "hi": "कश्ती तारों की तरफ़ मुड़ गई — पानी पर सुनहरी रोशनी की सड़क बन गई, और अरसलान की आवाज़ आई: \"शुक्रिया, आयशा।\"",
+     "en": "The boat turned toward the stars — a golden road of light formed on the water, and Arsalan's voice came: \"Thank you, Ayesha.\""
+    },
+    {
+     "clip": "susp-ayesha-hd-21.mp4",
+     "hi": "सुबह गांव वाले कश्ती किनारे पर बंधी पाई — लालटेन जल रही थी, और बेंच पर एक नया काग़ज़ था।",
+     "en": "In the morning the villagers found the boat tied at the bank — the lantern was burning, and a new paper lay on the bench."
+    },
+    {
+     "clip": "susp-ayesha-hd-22.mp4",
+     "hi": "काग़ज़ पर लिखा था: \"रखवाला मिल गया।\" — आयशा ने काग़ज़ को सीने से लगाया और मुस्कुराई।",
+     "en": "The paper read: \"The keeper is found.\" — Ayesha pressed the paper to her chest and smiled."
+    },
+    {
+     "clip": "susp-ayesha-hd-23.mp4",
+     "hi": "उस दिन से आयशा हर शाम कश्ती के पास बैठती — और जो कुछ खो जाता, वो कश्ती पर मिल जाता।",
+     "en": "From that day Ayesha sat by the boat every evening — and whatever was lost was found upon the boat."
+    },
+    {
+     "clip": "susp-ayesha-hd-24.mp4",
+     "hi": "और आज भी, जब चांदनी रात में कश्ती हल्की सी हिलती है, तो गांव वाले कहते हैं: \"अरसलान घर पहुंच गया — और आयशा अब भी पहरा देती है।\"",
+     "en": "And even today, when the boat stirs gently on a moonlit night, the villagers say: \"Arsalan reached home — and Ayesha still keeps watch.\""
+    }
+   ]
   }
  ],
  "version": 15
