@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -1014,6 +1014,133 @@
         {
           "clip": "susp-jrn-bruno-night-delivery-30.mp4",
           "t": "Tomorrow I will cross the great desert with Rayo — will you come with me? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "rayo-desert-adventure",
+      "car": "Rayo",
+      "title": "Rayo and the Desert Adventure",
+      "lines": [
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-1.mp4",
+          "t": "Oh no! The desert wind blew my map away — how will I find the hidden oasis?"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-2.mp4",
+          "t": "Hello friends! I am Rayo, the fast red race car — today I cross the great desert!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-3.mp4",
+          "t": "My tank is full and my wheels are ready — vroom vroom, into the golden sands!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-4.mp4",
+          "t": "The dunes roll like giant golden waves — wow, so big and so beautiful!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-5.mp4",
+          "t": "Look, a little desert fox runs beside me — hello, speedy friend!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-6.mp4",
+          "t": "The sun is so hot — I need shade, quick!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-7.mp4",
+          "t": "Up, up the rocky canyon road — my wheels grip the stones!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-8.mp4",
+          "t": "A cactus waves at me — hello, prickly friend, do not poke me!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-9.mp4",
+          "t": "The wind sings in the sand — shhh, listen, it sounds like a song!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-10.mp4",
+          "t": "I see a shiny lake — but it is not real! Tricky desert!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-11.mp4",
+          "t": "My wheels sink in the soft sand — push, push, Rayo!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-12.mp4",
+          "t": "Wait — who is that tall friend walking slowly in the heat?"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-13.mp4",
+          "t": "It is Omar the camel! He knows every dune in this desert!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-14.mp4",
+          "t": "Omar says the oasis is behind the big red rock — follow him!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-15.mp4",
+          "t": "We pass a tiny desert village — children wave from the mud houses!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-16.mp4",
+          "t": "Omar shares his cool water — thank you, my tall friend!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-17.mp4",
+          "t": "Look — green palm trees ahead! The oasis is real!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-18.mp4",
+          "t": "Splash! Cool water at last — the oasis is the prettiest place ever!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-19.mp4",
+          "t": "Little desert birds sing for us — tweet tweet, welcome, Rayo!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-20.mp4",
+          "t": "I race around the palm trees — the cool breeze feels so nice!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-21.mp4",
+          "t": "Time to go — Omar waves goodbye with his long neck!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-22.mp4",
+          "t": "The sunset paints the dunes pink and orange — so beautiful!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-23.mp4",
+          "t": "Stars come out one by one — the desert night is so quiet!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-24.mp4",
+          "t": "A little owl hoots from a dry tree — good night, owl!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-25.mp4",
+          "t": "My headlights light the sandy path home — vroom, vroom!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-26.mp4",
+          "t": "I see the town lights far away — almost home, friends!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-27.mp4",
+          "t": "Home at last! My garage is warm and my bed is soft!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-28.mp4",
+          "t": "What an adventure — the desert, the camel, and the cool oasis!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-29.mp4",
+          "t": "Good night, desert stars — thank you for a wonderful day!"
+        },
+        {
+          "clip": "susp-jrn-rayo-desert-adventure-30.mp4",
+          "t": "Tomorrow Bella visits a garden full of butterflies — will you come with us? Bye bye!"
         }
       ]
     }
