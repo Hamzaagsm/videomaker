@@ -2064,6 +2064,135 @@
      "en": "From that night on, every night when the river sings, the villagers say — a little keeper stands on the bridge, holding a brass key."
     }
    ]
+  },
+  {
+   "id": "radio",
+   "hero": "Ibrahim",
+   "pitch": 1.2,
+   "title_hi": "पुराना रेडियो स्टेशन",
+   "title_en": "The Old Radio Station",
+   "beats": [
+    {
+     "clip": "susp-ibrahim-hd-1.mp4",
+     "hi": "आधी रात को बंद पड़े रेडियो स्टेशन की खिड़की से रौशनी निकली — और अंदर से इब्राहीम की अपनी आवाज़ आ रही थी, कल की ख़बर सुना रही थी।",
+     "en": "At midnight, light shone from the window of the closed radio station — and from inside came Ibrahim's own voice, telling tomorrow's news."
+    },
+    {
+     "clip": "susp-ibrahim-hd-2.mp4",
+     "hi": "सुबह इब्राहीम स्टेशन के बंद दरवाज़े तक गया — दरवाज़ा खुला था, अंदर धूल भरी मेज़ें और पुराने माइक्रोफ़ोन पड़े थे।",
+     "en": "In the morning Ibrahim went to the station's closed door — it stood open, with dusty tables and old microphones inside."
+    },
+    {
+     "clip": "susp-ibrahim-hd-3.mp4",
+     "hi": "माइक्रोफ़ोन के सामने एक पुराना रजिस्टर खुला था — उसमें उसके दादा का नाम था, आख़िरी ख़बर की तारीख़: चालीस साल पहले।",
+     "en": "An old register lay open before the microphone — it held his grandfather's name, the date of the last broadcast: forty years ago."
+    },
+    {
+     "clip": "susp-ibrahim-hd-4.mp4",
+     "hi": "शाम को रेडियो खुद बजने लगा — एक पुरानी धुन, फिर एक आवाज़: 'इब्राहीम... माइक्रोफ़ोन के पास आओ।'",
+     "en": "In the evening the radio began to play by itself — an old tune, then a voice: 'Ibrahim... come to the microphone.'"
+    },
+    {
+     "clip": "susp-ibrahim-hd-5.mp4",
+     "hi": "इब्राहीम डरकर पीछे हटा — आवाज़ फिर आई, नरम: 'डरो मत, मैं तुम्हारे दादा का दोस्त हूँ।'",
+     "en": "Ibrahim stepped back in fear — the voice came again, gently: 'Do not be afraid, I am your grandfather's friend.'"
+    },
+    {
+     "clip": "susp-ibrahim-hd-6.mp4",
+     "hi": "रेडियो पर उसके दादा की आवाज़ आई — वही लोरी जो दादा उसे सुनाते थे।",
+     "en": "Then his grandfather's voice came on the radio — the same lullaby his grandfather used to sing to him."
+    },
+    {
+     "clip": "susp-ibrahim-hd-7.mp4",
+     "hi": "इब्राहीम ने माइक्रोफ़ोन उठाया और बोला, 'कौन है?' — रेडियो ख़ामोश हो गया, फिर एक तारीख़ बोली: 'कल... तूफ़ान आएगा।'",
+     "en": "Ibrahim picked up the microphone and said, 'Who is there?' — the radio fell silent, then spoke one word: 'Tomorrow... a storm will come.'"
+    },
+    {
+     "clip": "susp-ibrahim-hd-8.mp4",
+     "hi": "घर जाकर इब्राहीम ने अम्मी से पूछा — अम्मी ने कहा, दादा रेडियो पर ख़बरें सुनाते थे, तूफ़ान की ख़बर सबसे पहले।",
+     "en": "At home Ibrahim asked his mother — she said, his grandfather used to read the news on the radio, the storm news first of all."
+    },
+    {
+     "clip": "susp-ibrahim-hd-9.mp4",
+     "hi": "रात को फिर रेडियो बजा — इस दफ़ा ख़बर थी: 'कल सुबह गाँव की नदी भर जाएगी।'",
+     "en": "At night the radio played again — this time the news was: 'Tomorrow morning the village river will overflow.'"
+    },
+    {
+     "clip": "susp-ibrahim-hd-10.mp4",
+     "hi": "इब्राहीम ने गाँव वालों को बताया — किसी ने यक़ीन नहीं किया, सब हँसने लगे।",
+     "en": "Ibrahim told the villagers — nobody believed him, they all laughed."
+    },
+    {
+     "clip": "susp-ibrahim-hd-11.mp4",
+     "hi": "सुबह नदी सच में भर गई — गाँव वाले हैरान, इब्राहीम की तरफ़ देखने लगे।",
+     "en": "In the morning the river really did overflow — the villagers stared at Ibrahim in wonder."
+    },
+    {
+     "clip": "susp-ibrahim-hd-12.mp4",
+     "hi": "रेडियो पर नई ख़बर आई: 'एक छोटा बच्चा... पुराने पुल के पास... मदद चाहिए।'",
+     "en": "New news came on the radio: 'A small child... near the old bridge... needs help.'"
+    },
+    {
+     "clip": "susp-ibrahim-hd-13.mp4",
+     "hi": "इब्राहीम पुल की तरफ़ दौड़ा — वहाँ कोई बच्चा नहीं था, सिर्फ़ एक छोटी सी कश्ती, पानी में बह रही थी।",
+     "en": "Ibrahim ran to the bridge — no child was there, only a little boat drifting on the water."
+    },
+    {
+     "clip": "susp-ibrahim-hd-14.mp4",
+     "hi": "कश्ती में एक पुराना छोटा रेडियो था — वही धुन बजा रहा था।",
+     "en": "In the boat lay an old little radio — playing the very same tune."
+    },
+    {
+     "clip": "susp-ibrahim-hd-15.mp4",
+     "hi": "छोटे रेडियो से आवाज़ आई — 'मैं वही हूँ... मैं तुम्हारे दादा हूँ, इब्राहीम।'",
+     "en": "A voice came from the little radio — 'It is me... I am your grandfather, Ibrahim.'"
+    },
+    {
+     "clip": "susp-ibrahim-hd-16.mp4",
+     "hi": "दादा की आवाज़ ने बताया: स्टेशन की रौशनी गाँव की हिफ़ाज़त करती थी — जब भी ख़तरा आता, रेडियो खुद बजता।",
+     "en": "His grandfather's voice told him: the station's light protected the village — whenever danger came, the radio played by itself."
+    },
+    {
+     "clip": "susp-ibrahim-hd-17.mp4",
+     "hi": "इब्राहीम ने पूछा, 'आप कहाँ हैं?' — जवाब आया: 'मैं हर उस आवाज़ में हूँ जो किसी की मदद करे।'",
+     "en": "Ibrahim asked, 'Where are you?' — the answer came: 'I am in every voice that helps someone.'"
+    },
+    {
+     "clip": "susp-ibrahim-hd-18.mp4",
+     "hi": "रेडियो पर आख़िरी ख़बर आई: 'आज रात... स्टेशन की बत्ती जलेगी... और गाँव महफ़ूज़ रहेगा।'",
+     "en": "One last piece of news came on the radio: 'Tonight... the station's light will burn... and the village will stay safe.'"
+    },
+    {
+     "clip": "susp-ibrahim-hd-19.mp4",
+     "hi": "गाँव वाले इकट्ठे हुए — सब ने मिल कर स्टेशन साफ़ किया, पुरानी बत्ती ठीक की।",
+     "en": "The villagers gathered — together they cleaned the station and fixed the old light."
+    },
+    {
+     "clip": "susp-ibrahim-hd-20.mp4",
+     "hi": "रात को स्टेशन की बत्ती जली — चालीस सालों में पहली दफ़ा, पूरा गाँव रौशन हो गया।",
+     "en": "At night the station's light burned — for the first time in forty years, the whole village glowed."
+    },
+    {
+     "clip": "susp-ibrahim-hd-21.mp4",
+     "hi": "रेडियो फिर बजा — दादा की आवाज़, गरम: 'शुक्रिया, इब्राहीम... तुमने मेरी आवाज़ वापस ला दी।'",
+     "en": "The radio played again — his grandfather's voice, warm: 'Thank you, Ibrahim... you brought my voice back.'"
+    },
+    {
+     "clip": "susp-ibrahim-hd-22.mp4",
+     "hi": "इब्राहीम ने माइक्रोफ़ोन पर कहा: 'दादा, मैं रोज़ यहाँ आऊँगा... ख़बरें सुनाने।'",
+     "en": "Ibrahim said into the microphone: 'Grandfather, I will come here every day... to tell the news.'"
+    },
+    {
+     "clip": "susp-ibrahim-hd-23.mp4",
+     "hi": "सुबह इब्राहीम ने स्टेशन के दरवाज़े पर एक तख़्ती लगाई: गाँव का रेडियो — हर सुबह ख़बरें।",
+     "en": "In the morning Ibrahim hung a sign on the station's door: the village radio — news every morning."
+    },
+    {
+     "clip": "susp-ibrahim-hd-24.mp4",
+     "hi": "आज भी जब गाँव में कोई मुसीबत आती है, रेडियो खुद बजता है — और रात को इब्राहीम के कमरे में छोटा रेडियो हल्का सा बजा... दादा की लोरी, सिर्फ़ उसके लिए।",
+     "en": "Even today, whenever trouble comes to the village, the radio plays by itself — and at night, the little radio in Ibrahim's room played softly... his grandfather's lullaby, just for him."
+    }
+   ]
   }
  ],
  "version": 15
