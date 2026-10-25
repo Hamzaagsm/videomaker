@@ -1935,6 +1935,135 @@
      "en": "Mahnoor stood at the gate at dusk, brass key in hand, smiling — behind her, the zoo's lights came on one by one, and the green parrot called, \"Welcome home, little keeper.\""
     }
    ]
+  },
+  {
+   "id": "bridge",
+   "hero": "Ayaan",
+   "pitch": 1.15,
+   "title_hi": "पुराना पुल",
+   "title_en": "The Old Bridge",
+   "beats": [
+    {
+     "clip": "susp-ayaan-hd-1.mp4",
+     "hi": "आयान ने आधी रात को पुराने पुल के नीचे से अपना ही नाम सुना।",
+     "en": "At midnight, Ayaan heard his own name whispered from under the old bridge."
+    },
+    {
+     "clip": "susp-ayaan-hd-2.mp4",
+     "hi": "पुल पत्थर का था, सौ साल पुराना, और दरिया उसके नीचे हमेशा गाता रहता था।",
+     "en": "The bridge was stone, a hundred years old, and the river beneath it always sang."
+    },
+    {
+     "clip": "susp-ayaan-hd-3.mp4",
+     "hi": "आयान दरिया किनारे खड़ा होकर बोला, 'कौन है?'",
+     "en": "Standing on the riverbank, Ayaan called out, 'Who is there?'"
+    },
+    {
+     "clip": "susp-ayaan-hd-4.mp4",
+     "hi": "दरिया ने जवाब में एक पुरानी लोरी गाई — वही लोरी जो उसकी दादी गाती थी।",
+     "en": "The river answered with an old lullaby — the same lullaby his grandmother used to sing."
+    },
+    {
+     "clip": "susp-ayaan-hd-5.mp4",
+     "hi": "आयान पुल पर चढ़ गया, और हर सीढ़ी पर एक चमकता हुआ पत्थर जल उठा।",
+     "en": "Ayaan climbed onto the bridge, and with every step a glowing stone lit up."
+    },
+    {
+     "clip": "susp-ayaan-hd-6.mp4",
+     "hi": "पुल के बीच में एक बूढ़ा आदमी खड़ा था, हाथ में एक पुरानी लालटेन।",
+     "en": "In the middle of the bridge stood an old man, holding an old lantern."
+    },
+    {
+     "clip": "susp-ayaan-hd-7.mp4",
+     "hi": "बूढ़ा आदमी मुस्कुराया, 'मैं इस पुल का रखवाला हूँ, और तुम्हारी दादी की लोरी मेरी ही सुनहरी याद है।'",
+     "en": "The old man smiled, 'I am the keeper of this bridge, and your grandmother's lullaby is my golden memory.'"
+    },
+    {
+     "clip": "susp-ayaan-hd-8.mp4",
+     "hi": "आयान ने पूछा, 'मेरी दादी यहाँ आती थी?'",
+     "en": "Ayaan asked, 'Did my grandmother come here?'"
+    },
+    {
+     "clip": "susp-ayaan-hd-9.mp4",
+     "hi": "रखवाले ने लालटेन उठाई, और दरिया के ऊपर सुनहरी रौशनी की एक सड़क बन गई।",
+     "en": "The keeper raised his lantern, and a road of golden light appeared over the river."
+    },
+    {
+     "clip": "susp-ayaan-hd-10.mp4",
+     "hi": "रौशनी की सड़क पर आयान ने एक छोटी लड़की को देखा — उसकी दादी, जब वह छोटी थी।",
+     "en": "On the road of light, Ayaan saw a little girl — his grandmother, when she was small."
+    },
+    {
+     "clip": "susp-ayaan-hd-11.mp4",
+     "hi": "छोटी दादी ने हाथ हिलाया, और पुल के पत्थर एक-एक करके गुनगुनाने लगे।",
+     "en": "Little grandmother waved, and the bridge's stones began to hum, one by one."
+    },
+    {
+     "clip": "susp-ayaan-hd-12.mp4",
+     "hi": "रखवाले ने कहा, 'पुल हर रात एक कहानी माँगता है, वरना दरिया ख़ामोश हो जाता है।'",
+     "en": "The keeper said, 'Every night the bridge asks for a story, or the river falls silent.'"
+    },
+    {
+     "clip": "susp-ayaan-hd-13.mp4",
+     "hi": "आयान ने अपनी सबसे अच्छी कहानी सुनाई — एक छोटे परिंदे की, जो दरिया पार करना चाहता था।",
+     "en": "Ayaan told his best story — of a little bird who wanted to cross the river."
+    },
+    {
+     "clip": "susp-ayaan-hd-14.mp4",
+     "hi": "कहानी सुनते ही दरिया फिर से गाने लगा, और मछलियाँ चमकते हुए पानी में नाचने लगीं।",
+     "en": "As the story ended, the river began to sing again, and the fish danced in the sparkling water."
+    },
+    {
+     "clip": "susp-ayaan-hd-15.mp4",
+     "hi": "तभी रखवाले ने अपनी टोपी उतारी — और आयान ने देखा, वह उसके दादा थे, जो कभी घर नहीं लौटे थे।",
+     "en": "Then the keeper took off his cap — and Ayaan saw it was his grandfather, who had never come home."
+    },
+    {
+     "clip": "susp-ayaan-hd-16.mp4",
+     "hi": "दादा ने कहा, 'मैं इसी पुल पर रहता हूँ, ताकि दरिया कभी ख़ामोश न हो।'",
+     "en": "Grandfather said, 'I live on this bridge, so the river never falls silent.'"
+    },
+    {
+     "clip": "susp-ayaan-hd-17.mp4",
+     "hi": "आयान ने दादा का हाथ पकड़ा, और पुल की रौशनी और तेज़ हो गई।",
+     "en": "Ayaan held his grandfather's hand, and the bridge's light grew brighter."
+    },
+    {
+     "clip": "susp-ayaan-hd-18.mp4",
+     "hi": "दादा ने आयान को एक छोटी पीतल की चाबी दी, 'यह पुल की चाबी है — जब चाहो, दरिया से बात कर सकते हो।'",
+     "en": "Grandfather gave Ayaan a small brass key. 'This is the bridge's key — whenever you wish, you can talk to the river.'"
+    },
+    {
+     "clip": "susp-ayaan-hd-19.mp4",
+     "hi": "आयान ने चाबी उठाई, और पुल के सारे पत्थर एक साथ चमक उठे।",
+     "en": "Ayaan lifted the key, and all the stones of the bridge glowed at once."
+    },
+    {
+     "clip": "susp-ayaan-hd-20.mp4",
+     "hi": "सुबह होने लगी, और छोटी दादी ने हाथ हिला कर अलविदा कहा।",
+     "en": "Morning began to come, and little grandmother waved goodbye."
+    },
+    {
+     "clip": "susp-ayaan-hd-21.mp4",
+     "hi": "दादा ने कहा, 'कल रात फिर आना — दरिया को एक नई कहानी चाहिए होगी।'",
+     "en": "Grandfather said, 'Come again tomorrow night — the river will want a new story.'"
+    },
+    {
+     "clip": "susp-ayaan-hd-22.mp4",
+     "hi": "आयान पुल से उतर कर घर की तरफ़ भागा, चाबी को मज़बूती से पकड़े हुए।",
+     "en": "Ayaan ran home from the bridge, holding the key tightly."
+    },
+    {
+     "clip": "susp-ayaan-hd-23.mp4",
+     "hi": "घर पहुँचे तो उसने देखा — दादी की पुरानी लोरी की किताब खुली हुई थी, और उसके आख़िरी सफ़हे पर उसका अपना नाम लिखा था।",
+     "en": "At home he saw — his grandmother's old lullaby book lay open, and on its last page was his own name."
+    },
+    {
+     "clip": "susp-ayaan-hd-24.mp4",
+     "hi": "उस रात से हर रात, जब दरिया गाता है, गाँव वाले कहते हैं — पुल पर एक छोटा रखवाला खड़ा है, हाथ में पीतल की चाबी लिए।",
+     "en": "From that night on, every night when the river sings, the villagers say — a little keeper stands on the bridge, holding a brass key."
+    }
+   ]
   }
  ],
  "version": 15
