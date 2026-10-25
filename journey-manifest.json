@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -887,6 +887,133 @@
         {
           "clip": "susp-jrn-rusty-village-fair-30.mp4",
           "t": "Tomorrow I will help Bruno with his big night delivery — will you come with me?"
+        }
+      ]
+    },
+    {
+      "id": "bruno-night-delivery",
+      "car": "Bruno",
+      "title": "Bruno and the Night Delivery",
+      "lines": [
+        {
+          "clip": "susp-jrn-bruno-night-delivery-1.mp4",
+          "t": "Oh no! All the city shops are empty — the food boxes must reach them BEFORE sunrise! Can big Bruno make it in time?"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-2.mp4",
+          "t": "Good evening, friends! I am Bruno, the big blue truck — and tonight I work while the city sleeps!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-3.mp4",
+          "t": "My trailer is full of fresh bread, milk, and fruits — vroom vroom, into the night!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-4.mp4",
+          "t": "First stop: the bakery on Flower Street — the baker is waiting at the door!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-5.mp4",
+          "t": "The street lamps glow like warm honey — what a pretty night!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-6.mp4",
+          "t": "Up the quiet hill road I climb — the city lights twinkle below like stars!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-7.mp4",
+          "t": "Look, a little owl hoots from the pine tree — hoo hoo, good night, owl!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-8.mp4",
+          "t": "I cross the old stone bridge — the river sparkles under the moon!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-9.mp4",
+          "t": "The night market square is quiet — the stalls sleep under their striped awnings!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-10.mp4",
+          "t": "Down, down into the sleepy old town — the cobblestone streets whisper!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-11.mp4",
+          "t": "Here is the toy shop! Little teddy bears wait for their boxes — here you go!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-12.mp4",
+          "t": "Wait — what is that tiny sound? A little kitten is crying by the fountain!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-13.mp4",
+          "t": "Oh! The little kitten lost her way home — hop on, little friend, I will help you find it!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-14.mp4",
+          "t": "We roll down the quiet garden lane — her mama might be waiting there!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-15.mp4",
+          "t": "Look, the park! The swings are sleeping under the silver moonlight!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-16.mp4",
+          "t": "We cross the little wooden bridge over the garden stream — almost home, little one!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-17.mp4",
+          "t": "The clock tower rings — ding dong, it is midnight already!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-18.mp4",
+          "t": "Wait — I know that little red house with the blue door! That is YOUR home!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-19.mp4",
+          "t": "Home at last! Her mama cat hugs her tight — thank you, Bruno!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-20.mp4",
+          "t": "Back on the road — the grocery shop needs its milk before dawn!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-21.mp4",
+          "t": "The farm road is quiet — the cows dream in the moonlit meadow!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-22.mp4",
+          "t": "I unload fresh milk at the corner shop — the shopkeeper smiles so wide!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-23.mp4",
+          "t": "The sky turns pink and gold — the sun is waking up!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-24.mp4",
+          "t": "The last stop: the flower shop on the river road — roses for everyone!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-25.mp4",
+          "t": "The river sparkles in the morning light — what a beautiful new day!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-26.mp4",
+          "t": "All the shops are full now — bread, milk, fruits, and flowers!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-27.mp4",
+          "t": "The city wakes up! Children wave at me — good morning, Bruno!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-28.mp4",
+          "t": "My trailer is empty and my heart is full — helping friends feels so good!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-29.mp4",
+          "t": "Time for a little nap — good night, stars, and good morning, sun!"
+        },
+        {
+          "clip": "susp-jrn-bruno-night-delivery-30.mp4",
+          "t": "Tomorrow I will cross the great desert with Rayo — will you come with me? Bye bye!"
         }
       ]
     }
