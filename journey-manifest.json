@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 14,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -1268,6 +1268,133 @@
         {
           "clip": "susp-jrn-bella-butterfly-garden-30.mp4",
           "t": "Tomorrow Rusty will show me a snowy morning — will you come with me? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "rusty-snowy-morning",
+      "car": "Rusty",
+      "title": "Rusty and the Snowy Morning",
+      "lines": [
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-1.mp4",
+          "t": "Oh no! The whole town woke up buried in snow — who will clear the road before morning chai gets cold?"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-2.mp4",
+          "t": "Good morning, friends! I am Rusty, the strong brown tow truck — snow never stops me!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-3.mp4",
+          "t": "Vroom vroom! Down the snowy village road I go — my tires crunch, crunch in the fresh white snow!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-4.mp4",
+          "t": "Look, the pine trees wear white hats — hello, snowy pines!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-5.mp4",
+          "t": "The frozen pond sparkles like a giant silver mirror — careful, do not slip!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-6.mp4",
+          "t": "Up the little snowy hill I climb — I can see the whole white village below!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-7.mp4",
+          "t": "The snowman by the school waves at me — hello, frosty friend!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-8.mp4",
+          "t": "Children throw snowballs — whee! One lands on my roof, plop!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-9.mp4",
+          "t": "I cross the old wooden bridge — the river sleeps under the ice!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-10.mp4",
+          "t": "The red postbox peeks from the snow — letters for everyone!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-11.mp4",
+          "t": "Down into the pine forest I roll — snow falls softly on my hook!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-12.mp4",
+          "t": "Wait — what is that sound? A little voice is calling from the snowdrift!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-13.mp4",
+          "t": "Oh! A little green car is stuck deep in the snow — do not cry, little one!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-14.mp4",
+          "t": "My strong hook pulls gently — pull, pull, out you come!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-15.mp4",
+          "t": "Hooray! You are free! Climb on my back, little friend, you are shivering!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-16.mp4",
+          "t": "We drive to the chai stall — hot chai for my cold little friend!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-17.mp4",
+          "t": "The chaiwala smiles — warm chai for everyone, on the house!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-18.mp4",
+          "t": "Sip sip! The chai warms us up — what a kind friend!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-19.mp4",
+          "t": "The little green car giggles — her wheels are warm again!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-20.mp4",
+          "t": "We build a snowman together — a carrot nose and a smile!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-21.mp4",
+          "t": "The snowman waves goodbye — thank you, Rusty!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-22.mp4",
+          "t": "I tow the chai cart to the town square — everyone needs hot chai today!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-23.mp4",
+          "t": "The town square glows with lanterns — children dance in the snow!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-24.mp4",
+          "t": "Snowflakes fall like soft feathers — what a beautiful white day!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-25.mp4",
+          "t": "The sun peeks out — the snow sparkles like diamonds!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-26.mp4",
+          "t": "I clear the road to the little school — children cheer, hooray!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-27.mp4",
+          "t": "Home at last! My garage is warm and smells of hot chai!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-28.mp4",
+          "t": "What a day — snow, chai, and a brand-new friend!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-29.mp4",
+          "t": "Good night, snowy town — thank you for a wonderful day!"
+        },
+        {
+          "clip": "susp-jrn-rusty-snowy-morning-30.mp4",
+          "t": "Tomorrow Bruno sails to the harbour boats — will you come with me? Bye bye!"
         }
       ]
     }
