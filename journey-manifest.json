@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -1141,6 +1141,133 @@
         {
           "clip": "susp-jrn-rayo-desert-adventure-30.mp4",
           "t": "Tomorrow Bella visits a garden full of butterflies — will you come with us? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "bella-butterfly-garden",
+      "car": "Bella",
+      "title": "Bella and the Butterfly Garden",
+      "lines": [
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-1.mp4",
+          "t": "Oh no! All the butterflies have flown away — where did they go?"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-2.mp4",
+          "t": "I am Bella, and I will follow the last little blue butterfly!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-3.mp4",
+          "t": "The rose arches are so pretty — I drive under them, vroom vroom!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-4.mp4",
+          "t": "Look, the sunflowers are taller than me — hello, sunny friends!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-5.mp4",
+          "t": "I stop by the little pond, and a frog waves from a lily pad."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-6.mp4",
+          "t": "A tiny bridge crosses the sparkling stream — splash, splash!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-7.mp4",
+          "t": "I cross the rainbow bridge, and colors dance on my yellow paint!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-8.mp4",
+          "t": "Wow, a whole cloud of butterflies is dancing in the meadow!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-9.mp4",
+          "t": "We drive past the tulip beds, and the tulips cheer for us."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-10.mp4",
+          "t": "The old willow tree gives us shade, and a ladybug joins our ride."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-11.mp4",
+          "t": "We drive through the orchard, where apples are shining red."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-12.mp4",
+          "t": "Wait — one tiny butterfly is crying. Her wing is hurt!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-13.mp4",
+          "t": "Don't worry, little one, I will take you to the Flower Doctor."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-14.mp4",
+          "t": "The Flower Doctor lives in a cozy cottage made of petals."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-15.mp4",
+          "t": "She puts a magic drop on the tiny wing — it sparkles like a star!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-16.mp4",
+          "t": "The little butterfly flies again! She spins a happy circle in the sky."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-17.mp4",
+          "t": "All the butterflies come back to thank me with a rainbow dance."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-18.mp4",
+          "t": "The butterflies teach me their secret dance — wiggle, spin, flutter!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-19.mp4",
+          "t": "I wiggle and spin with them, and the whole garden laughs."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-20.mp4",
+          "t": "A big orange butterfly lands on my mirror and tells me a secret."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-21.mp4",
+          "t": "The secret is a hidden garden behind the old stone wall!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-22.mp4",
+          "t": "We peek through the wall, and a thousand butterflies live there!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-23.mp4",
+          "t": "I plant a tiny seed there, so more flowers will grow for them."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-24.mp4",
+          "t": "The butterflies sprinkle golden dust on my seed — grow, little seed, grow!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-25.mp4",
+          "t": "The sun is setting, and the garden glows pink and gold."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-26.mp4",
+          "t": "The butterflies wave goodbye, and I wave back with my lights."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-27.mp4",
+          "t": "I drive home slowly, with a butterfly sleeping on my roof."
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-28.mp4",
+          "t": "What a day — butterflies, flowers, and a brand-new friend!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-29.mp4",
+          "t": "Good night, little butterfly — thank you for a wonderful day!"
+        },
+        {
+          "clip": "susp-jrn-bella-butterfly-garden-30.mp4",
+          "t": "Tomorrow Rusty will show me a snowy morning — will you come with me? Bye bye!"
         }
       ]
     }
