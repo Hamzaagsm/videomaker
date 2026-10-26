@@ -178,6 +178,8 @@ jobs:
         run: python3 patch_v462.py
       - name: Apply v4.62 java patch
         run: python3 patch_v462_java.py
+      - name: Apply v4.63 patch
+        run: python3 patch_v463.py
       - name: Bundle music into APK
         run: mkdir -p android/app/src/main/assets/music && cp music/*.mp3 android/app/src/main/assets/music/ || true
       - name: Validate built JS (syntax gate)
