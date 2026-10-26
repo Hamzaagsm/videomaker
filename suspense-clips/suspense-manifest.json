@@ -2451,6 +2451,135 @@
      "en": "And even today, when the boat stirs gently on a moonlit night, the villagers say: \"Arsalan reached home — and Ayesha still keeps watch.\""
     }
    ]
+  },
+  {
+   "id": "bakery",
+   "hero": "Sara",
+   "pitch": 1.5,
+   "title_hi": "पुरानी बेकरी",
+   "title_en": "The Old Bakery",
+   "beats": [
+    {
+     "clip": "susp-sara-hd-1.mp4",
+     "hi": "आधी रात को पुरानी बेकरी की भट्टी ख़ुद जल उठी, और सारा ने सुना — कोई उसका नाम ले रहा था।",
+     "en": "At midnight the old bakery's oven lit itself, and Sara heard someone calling her name."
+    },
+    {
+     "clip": "susp-sara-hd-2.mp4",
+     "hi": "सुबह सारा बेकरी गई — दरवाज़ा बंद था, मगर दरवाज़े के नीचे से ताज़ी रोटी की ख़ुशबू आ रही थी।",
+     "en": "In the morning Sara went to the bakery — the door was shut, but the smell of fresh bread drifted from under it."
+    },
+    {
+     "clip": "susp-sara-hd-3.mp4",
+     "hi": "उसने खिड़की से झांका — भट्टी के पास एक छोटी सी रोटी पड़ी थी, बिल्कुल गोल, उस पर सुनहरी चमक थी।",
+     "en": "She peeked through the window — beside the oven lay a tiny loaf, perfectly round, with a golden glow on it."
+    },
+    {
+     "clip": "susp-sara-hd-4.mp4",
+     "hi": "शाम को बेकरी के पीछे से हल्की रोशनी चमकी — एक पुराना तंदूर, जो सालों से बंद था, ख़ुद गरम हो गया।",
+     "en": "In the evening a soft light glowed from behind the bakery — an old clay oven, shut for years, warmed itself."
+    },
+    {
+     "clip": "susp-sara-hd-5.mp4",
+     "hi": "सारा ने रोटी उठाई — रोटी गरम थी, जैसे अभी-अभी भट्टी से निकली हो।",
+     "en": "Sara picked up the loaf — it was warm, as if it had just come out of the oven."
+    },
+    {
+     "clip": "susp-sara-hd-6.mp4",
+     "hi": "रात को उसने रोटी को अपने हाथ में पकड़ा — रोटी हल्की सी हिली, जैसे कोई उसे बुला रहा हो।",
+     "en": "At night she held the loaf in her hand — it trembled slightly, as if someone were calling her."
+    },
+    {
+     "clip": "susp-sara-hd-7.mp4",
+     "hi": "सुबह रोटी के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी आटे की लकीर थी।",
+     "en": "In the morning beneath the loaf there was a tiny paper — completely blank, with only one golden line of flour along its edge."
+    },
+    {
+     "clip": "susp-sara-hd-8.mp4",
+     "hi": "सारा ने गांव वालों से पूछा — किसी ने बेकरी के मालिक का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये बेकरी चालीस साल पुरानी है।\"",
+     "en": "Sara asked the villagers — no one had heard the bakery owner's name, but old grandmother said: \"This bakery is forty years old.\""
+    },
+    {
+     "clip": "susp-sara-hd-9.mp4",
+     "hi": "दादी ने बताया: चालीस साल पहले एक नान-बाई यहां रोटियां बनाता था, जो एक रात भट्टी के पास गया और कभी वापस नहीं आया।",
+     "en": "Grandmother told her: forty years ago a baker made bread here, who went to the oven one night and never came back."
+    },
+    {
+     "clip": "susp-sara-hd-10.mp4",
+     "hi": "उस रात भट्टी फिर जली — और इस दफ़ा सारा ने देखा: भट्टी के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में लकड़ी का बेलन, और उसकी आंखों में उदासी थी।",
+     "en": "That night the oven lit again — and this time Sara saw: beside the oven stood an old man, white beard, a wooden rolling pin in his hand, and sadness in his eyes."
+    },
+    {
+     "clip": "susp-sara-hd-11.mp4",
+     "hi": "बूढ़े ने कहा: \"मैं रहीम हूं। चालीस साल से मैं अपनी आख़िरी रोटी का ज़ायक़ा भूल गया हूं — कोई बताए तो सही, मेरी रोटी मीठी थी या नहीं?\"",
+     "en": "The old man said: \"I am Rahim. For forty years I have forgotten the taste of my last loaf — will someone tell me, was my bread sweet or not?\""
+    },
+    {
+     "clip": "susp-sara-hd-12.mp4",
+     "hi": "सारा ने पूछा: \"तुम ज़ायक़ा क्यों भूल गए?\" — रहीम ने भट्टी की तरफ़ इशारा किया: \"जिस रात भट्टी बुझी, उसी रात मेरी ज़ुबान भी सो गई। तब से मैं इंतज़ार में हूं।\"",
+     "en": "Sara asked: \"Why did you forget the taste?\" — Rahim pointed at the oven: \"The night the oven went out, my tongue fell asleep too. I have waited ever since.\""
+    },
+    {
+     "clip": "susp-sara-hd-13.mp4",
+     "hi": "सारा ने भट्टी की पुरानी लकड़ी को हाथ लगाया — लकड़ी सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।",
+     "en": "Sara touched the oven's old wood — the wood glowed golden, as if it recognised her."
+    },
+    {
+     "clip": "susp-sara-hd-14.mp4",
+     "hi": "उसने रहीम को अपनी छोटी सी खिलौना-बेकरी की तस्वीर दिखाई — जो उसने बचपन में बनाई थी, और अब तक संभाल कर रखी थी।",
+     "en": "She showed Rahim a picture of her little toy bakery — one she had made as a child and kept safe ever since."
+    },
+    {
+     "clip": "susp-sara-hd-15.mp4",
+     "hi": "रहीम मुस्कुराया: \"यही रस्ता है। जो अपनी रोटी से प्यार करता है, वो उसका ज़ायक़ा कभी नहीं भूलता।\"",
+     "en": "Rahim smiled: \"This is the way. Whoever loves their bread never forgets its taste.\""
+    },
+    {
+     "clip": "susp-sara-hd-16.mp4",
+     "hi": "दोनों ने मिल कर बेकरी को साफ़ किया — भट्टी चमकी, तंदूर रोशन हुआ, और बेकरी में ताज़ी रोटी की ख़ुशबू फैल गई।",
+     "en": "Together they cleaned the bakery — the oven shone, the clay oven glowed, and the smell of fresh bread spread through the bakery."
+    },
+    {
+     "clip": "susp-sara-hd-17.mp4",
+     "hi": "सारा ने भट्टी के आगे खड़े होकर कहा: \"मैं तुम्हारी आख़िरी रोटी चखूंगी — तुम बस देखते रहो, रहीम।\"",
+     "en": "Sara stood before the oven and said: \"I will taste your last loaf — you just watch, Rahim.\""
+    },
+    {
+     "clip": "susp-sara-hd-18.mp4",
+     "hi": "रहीम ने अपना लकड़ी का बेलन सारा को दिया — बेलन सुनहरी चमक उठा, और भट्टी हल्की सी हिली।",
+     "en": "Rahim gave her his wooden rolling pin — the pin glowed golden, and the oven stirred gently."
+    },
+    {
+     "clip": "susp-sara-hd-19.mp4",
+     "hi": "सारा ने गरम रोटी का एक टुकड़ा चखा — उसकी आंखों में आंसू आ गए: \"ये दुनिया की सबसे मीठी रोटी है!\"",
+     "en": "Sara tasted a piece of the warm loaf — tears came to her eyes: \"This is the sweetest bread in the world!\""
+    },
+    {
+     "clip": "susp-sara-hd-20.mp4",
+     "hi": "रहीम की आंखों में रोशनी आ गई — भट्टी की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, सारा। अब मैं घर जा सकता हूं।\"",
+     "en": "Light came into Rahim's eyes — the oven's glow rose toward the stars, and his voice came: \"Thank you, Sara. Now I can go home.\""
+    },
+    {
+     "clip": "susp-sara-hd-21.mp4",
+     "hi": "सुबह गांव वाले बेकरी के दरवाज़े पर खड़े थे — भट्टी जल रही थी, और मेज़ पर एक नई गरम रोटी थी।",
+     "en": "In the morning the villagers stood at the bakery door — the oven was burning, and a fresh warm loaf lay on the table."
+    },
+    {
+     "clip": "susp-sara-hd-22.mp4",
+     "hi": "रोटी के पास एक छोटा सा काग़ज़ था — सारा ने काग़ज़ को सीने से लगाया और मुस्कुराई।",
+     "en": "Beside the loaf there was a tiny paper — Sara pressed the paper to her chest and smiled."
+    },
+    {
+     "clip": "susp-sara-hd-23.mp4",
+     "hi": "उस दिन से सारा हर शाम बेकरी में रोटियां बनाती — और जो भूखा आता, वो बेकरी से गरम रोटी ले कर जाता।",
+     "en": "From that day Sara baked bread in the bakery every evening — and whoever came hungry left with a warm loaf."
+    },
+    {
+     "clip": "susp-sara-hd-24.mp4",
+     "hi": "और आज भी, जब आधी रात में बेकरी की भट्टी हल्की सी जलती है, तो गांव वाले कहते हैं: \"रहीम घर पहुंच गया — और सारा की रोटियां अब भी सबसे मीठी हैं।\"",
+     "en": "And even today, when the bakery's oven glows gently at midnight, the villagers say: \"Rahim reached home — and Sara's bread is still the sweetest.\""
+    }
+   ]
   }
  ],
  "version": 15
