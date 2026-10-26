@@ -2580,6 +2580,135 @@
      "en": "And even today, when the bakery's oven glows gently at midnight, the villagers say: \"Rahim reached home — and Sara's bread is still the sweetest.\""
     }
    ]
+  },
+  {
+   "id": "toyshop",
+   "hero": "Zayan",
+   "pitch": 1.15,
+   "title_hi": "पुरानी खिलौना दुकान",
+   "title_en": "The Old Toy Shop",
+   "beats": [
+    {
+     "clip": "susp-zayan-hd-1.mp4",
+     "hi": "आधी रात को पुरानी खिलौना दुकान की खिड़की ख़ुद खुल गई, और ज़ायान ने सुना — कोई उसका नाम ले रहा था।",
+     "en": "At midnight the old toy shop's window opened itself, and Zayan heard someone calling his name."
+    },
+    {
+     "clip": "susp-zayan-hd-2.mp4",
+     "hi": "सुबह ज़ायान दुकान गया — दरवाज़ा बंद था, मगर खिड़की से एक छोटी सी लकड़ी की कठपुतली उसे देख रही थी।",
+     "en": "In the morning Zayan went to the shop — the door was shut, but through the window a little wooden puppet was watching him."
+    },
+    {
+     "clip": "susp-zayan-hd-3.mp4",
+     "hi": "उसने खिड़की से झांका — कठपुतली की आंखें हल्की सी चमकीं, जैसे उसने उसे पहचान लिया हो।",
+     "en": "He peeked through the window — the puppet's eyes glowed faintly, as if it recognised him."
+    },
+    {
+     "clip": "susp-zayan-hd-4.mp4",
+     "hi": "शाम को दुकान के पीछे से हल्की रोशनी चमकी — एक पुराना खिलौना घोड़ा, जो सालों से खड़ा था, ख़ुद हिल गया।",
+     "en": "In the evening a soft light glowed from behind the shop — an old toy horse, standing for years, moved by itself."
+    },
+    {
+     "clip": "susp-zayan-hd-5.mp4",
+     "hi": "ज़ायान ने कठपुतली को हाथ लगाया — कठपुतली गरम थी, जैसे अभी-अभी किसी ने उसे पकड़ा हो।",
+     "en": "Zayan touched the puppet — it was warm, as if someone had just held it."
+    },
+    {
+     "clip": "susp-zayan-hd-6.mp4",
+     "hi": "रात को उसने कठपुतली को अपने हाथ में पकड़ा — कठपुतली हल्की सी मुस्कुराई, जैसे कोई उसे बुला रहा हो।",
+     "en": "At night he held the puppet in his hand — it smiled faintly, as if someone were calling him."
+    },
+    {
+     "clip": "susp-zayan-hd-7.mp4",
+     "hi": "सुबह कठपुतली के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।",
+     "en": "In the morning beneath the puppet there was a tiny paper — completely blank, with only one golden line along its edge."
+    },
+    {
+     "clip": "susp-zayan-hd-8.mp4",
+     "hi": "ज़ायान ने गांव वालों से पूछा — किसी ने दुकान के मालिक का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये दुकान पचास साल पुरानी है।\"",
+     "en": "Zayan asked the villagers — no one had heard the shop owner's name, but old grandmother said: \"This shop is fifty years old.\""
+    },
+    {
+     "clip": "susp-zayan-hd-9.mp4",
+     "hi": "दादी ने बताया: पचास साल पहले एक खिलौना-साज़ यहां कठपुतलियां बनाता था, जो एक रात दुकान में गया और कभी वापस नहीं आया।",
+     "en": "Grandmother told her: fifty years ago a toy-maker made puppets here, who went into the shop one night and never came back."
+    },
+    {
+     "clip": "susp-zayan-hd-10.mp4",
+     "hi": "उस रात दुकान फिर जगी — और इस दफ़ा ज़ायान ने देखा: खिड़की के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में लकड़ी की कठपुतली, और उसकी आंखों में उदासी थी।",
+     "en": "That night the shop woke again — and this time Zayan saw: beside the window stood an old man, white beard, a wooden puppet in his hand, and sadness in his eyes."
+    },
+    {
+     "clip": "susp-zayan-hd-11.mp4",
+     "hi": "बूढ़े ने कहा: \"मैं करीम हूं। तीस साल से मैं अपनी आख़िरी कठपुतली की मुस्कुराहट भूल गया हूं — कोई बताए तो सही, मेरी कठपुतली हंसती थी या नहीं?\"",
+     "en": "The old man said: \"I am Kareem. For thirty years I have forgotten my last puppet's smile — will someone tell me, did my puppet laugh or not?\""
+    },
+    {
+     "clip": "susp-zayan-hd-12.mp4",
+     "hi": "ज़ायान ने पूछा: \"तुम मुस्कुराहट क्यों भूल गए?\" — करीम ने कठपुतली की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात मेरी हंसी भी सो गई। तब से मैं इंतज़ार में हूं।\"",
+     "en": "Zayan asked: \"Why did you forget the smile?\" — Kareem pointed at the puppet: \"The night the shop's light went out, my laughter fell asleep too. I have waited ever since.\""
+    },
+    {
+     "clip": "susp-zayan-hd-13.mp4",
+     "hi": "ज़ायान ने दुकान की पुरानी लकड़ी की अलमारी को हाथ लगाया — अलमारी सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।",
+     "en": "Zayan touched the shop's old wooden shelf — the shelf glowed golden, as if it recognised him."
+    },
+    {
+     "clip": "susp-zayan-hd-14.mp4",
+     "hi": "उसने करीम को अपनी छोटी सी खिलौना-दुकान की तस्वीर दिखाई — जो उसने बचपन में बनाई थी, और अब तक संभाल कर रखी थी।",
+     "en": "He showed Kareem a picture of his little toy shop — one he had made as a child and kept safe ever since."
+    },
+    {
+     "clip": "susp-zayan-hd-15.mp4",
+     "hi": "करीम मुस्कुराया: \"यही रस्ता है। जो अपने खिलौने से प्यार करता है, वो उसकी मुस्कुराहट कभी नहीं भूलता।\"",
+     "en": "Kareem smiled: \"This is the way. Whoever loves their toy never forgets its smile.\""
+    },
+    {
+     "clip": "susp-zayan-hd-16.mp4",
+     "hi": "दोनों ने मिल कर दुकान को साफ़ किया — खिड़की चमकी, खिलौने रोशन हुए, और दुकान में ताज़ी लकड़ी की ख़ुशबू फैल गई।",
+     "en": "Together they cleaned the shop — the window shone, the toys glowed, and the smell of fresh wood spread through the shop."
+    },
+    {
+     "clip": "susp-zayan-hd-17.mp4",
+     "hi": "ज़ायान ने खिड़की के आगे खड़े होकर कहा: \"मैं तुम्हारी आख़िरी कठपुतली को हंसाऊंगा — तुम बस देखते रहो, करीम।\"",
+     "en": "Zayan stood before the window and said: \"I will make your last puppet laugh — you just watch, Kareem.\""
+    },
+    {
+     "clip": "susp-zayan-hd-18.mp4",
+     "hi": "करीम ने अपनी लकड़ी की कठपुतली ज़ायान को दी — कठपुतली सुनहरी चमक उठी, और दुकान हल्की सी हिली।",
+     "en": "Kareem gave him his wooden puppet — the puppet glowed golden, and the shop stirred gently."
+    },
+    {
+     "clip": "susp-zayan-hd-19.mp4",
+     "hi": "ज़ायान ने कठपुतली को हंसाया — कठपुतली की आंखों में रोशनी आ गई, और करीम की आंखों में आंसू आ गए: \"ये दुनिया की सबसे प्यारी हंसी है!\"",
+     "en": "Zayan made the puppet laugh — light came into the puppet's eyes, and tears came to Kareem's eyes: \"This is the sweetest laugh in the world!\""
+    },
+    {
+     "clip": "susp-zayan-hd-20.mp4",
+     "hi": "करीम की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, ज़ायान। अब मैं घर जा सकता हूं।\"",
+     "en": "Light came into Kareem's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Zayan. Now I can go home.\""
+    },
+    {
+     "clip": "susp-zayan-hd-21.mp4",
+     "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — खिड़की खुली थी, और मेज़ पर एक नई चमकती कठपुतली थी।",
+     "en": "In the morning the villagers stood at the shop door — the window was open, and a fresh glowing puppet lay on the table."
+    },
+    {
+     "clip": "susp-zayan-hd-22.mp4",
+     "hi": "कठपुतली के पास एक छोटा सा काग़ज़ था — ज़ायान ने काग़ज़ को सीने से लगाया और मुस्कुराया।",
+     "en": "Beside the puppet there was a tiny paper — Zayan pressed the paper to his chest and smiled."
+    },
+    {
+     "clip": "susp-zayan-hd-23.mp4",
+     "hi": "उस दिन से ज़ायान हर शाम दुकान में खिलौने बनाता — और जो बच्चा आता, वो दुकान से एक खिलौना ले कर जाता।",
+     "en": "From that day Zayan made toys in the shop every evening — and whichever child came left with a toy."
+    },
+    {
+     "clip": "susp-zayan-hd-24.mp4",
+     "hi": "और आज भी, जब आधी रात में दुकान की खिड़की हल्की सी चमकती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और ज़ायान के खिलौने अब भी सबसे प्यारे हैं।\"",
+     "en": "And even today, when the shop's window glows gently at midnight, the villagers say: \"Kareem reached home — and Zayan's toys are still the sweetest.\""
+    }
+   ]
   }
  ],
  "version": 15
