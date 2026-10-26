@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -1395,6 +1395,133 @@
         {
           "clip": "susp-jrn-rusty-snowy-morning-30.mp4",
           "t": "Tomorrow Bruno sails to the harbour boats — will you come with me? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "bruno-harbour-boats",
+      "car": "Bruno",
+      "title": "Bruno and the Harbour Boats",
+      "lines": [
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-1.mp4",
+          "t": "Oh no! The harbour bell is ringing — a little boat is lost in the fog! Can I help?"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-2.mp4",
+          "t": "I am Bruno, the big blue truck! I carry help to the harbour, vroom vroom!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-3.mp4",
+          "t": "Look at the tall lighthouse! Its big light sweeps over the sea!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-4.mp4",
+          "t": "The wooden pier is busy! Boats bob up and down — hello, hello!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-5.mp4",
+          "t": "The fishermen mend their nets — what strong hands they have!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-6.mp4",
+          "t": "The cranes lift big boxes of fish — up, up, up!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-7.mp4",
+          "t": "The sandy beach is full of shells! I pick a pink one for my friend!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-8.mp4",
+          "t": "Ice, ice! The ice factory keeps the fish fresh and cold!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-9.mp4",
+          "t": "The old boat workshop smells of wood and paint — a new boat is born!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-10.mp4",
+          "t": "The ferry dock is full of happy people going home!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-11.mp4",
+          "t": "The fog is thick on the water — I must watch the road carefully!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-12.mp4",
+          "t": "Wait — what is that small sound in the fog? A little sailboat is calling for help!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-13.mp4",
+          "t": "Its engine is quiet! Do not worry, little boat — Bruno is here!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-14.mp4",
+          "t": "I hook my strong tow rope — click! Hold on tight, little boat!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-15.mp4",
+          "t": "Slowly, slowly — I pull you through the fog to the safe harbour!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-16.mp4",
+          "t": "Look! A baby seagull is lost on the little boat! Tweet tweet!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-17.mp4",
+          "t": "The baby seagull flaps its wings — its mama is calling from the lighthouse!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-18.mp4",
+          "t": "I lift the little boat gently — the baby seagull flies home! Hooray!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-19.mp4",
+          "t": "The fishermen cheer! The harbour is happy again!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-20.mp4",
+          "t": "The fish market square is full of cats — they smell the fresh fish!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-21.mp4",
+          "t": "The rope bridge sways over the blue water — careful, careful!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-22.mp4",
+          "t": "The glass-bottom boat shows me coral and fish below! Wow!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-23.mp4",
+          "t": "The sunset paints the sea orange and pink! So pretty!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-24.mp4",
+          "t": "The seafood lane smells yummy — the auntie gives me a warm bun!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-25.mp4",
+          "t": "The harbour master's tower blinks — all boats are safe tonight!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-26.mp4",
+          "t": "The anchor square has a big sailor statue — I wave hello!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-27.mp4",
+          "t": "The evening pier glows with lamps — the boats sleep softly!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-28.mp4",
+          "t": "The stars come out over the harbour! Twinkle, twinkle!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-29.mp4",
+          "t": "The moon shines on the calm sea — good night, little boats!"
+        },
+        {
+          "clip": "susp-jrn-bruno-harbour-boats-30.mp4",
+          "t": "Tomorrow I will watch the big balloons fly with my friend Rayo — will you come with me?"
         }
       ]
     }
