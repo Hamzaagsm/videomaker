@@ -2838,6 +2838,135 @@
      "en": "And even today, when the shop's oven burns gently at midnight, the villagers say: \"Latif reached home — and Hina's sweets are still the sweetest.\""
     }
    ]
+  },
+  {
+   "id": "clockshop",
+   "hero": "Danish",
+   "pitch": 1.15,
+   "title_hi": "पुरानी घड़ियों की दुकान",
+   "title_en": "The Old Clock Shop",
+   "beats": [
+    {
+     "clip": "susp-danish-hd-1.mp4",
+     "en": "At midnight all the clocks in the old clock shop struck together, and Danish heard someone calling his name.",
+     "hi": "आधी रात को पुरानी घड़ियों की दुकान की सारी घड़ियां एक साथ बज उठीं, और दानिश ने सुना — कोई उसका नाम ले रहा था।"
+    },
+    {
+     "clip": "susp-danish-hd-2.mp4",
+     "en": "In the morning Danish went to the shop — the door was shut, but through the window a little brass clock was glowing.",
+     "hi": "सुबह दानिश दुकान गया — दरवाज़ा बंद था, मगर खिड़की से एक छोटी सी पीतल की घड़ी चमक रही थी।"
+    },
+    {
+     "clip": "susp-danish-hd-3.mp4",
+     "en": "He peeked through the window — inside the clock there was a tiny golden moon, as if someone had just placed it there.",
+     "hi": "उसने खिड़की से झांका — घड़ी के अंदर एक छोटा सा सुनहरा चांद था, जैसे अभी-अभी किसी ने उसे वहां रखा हो।"
+    },
+    {
+     "clip": "susp-danish-hd-4.mp4",
+     "en": "In the evening a soft tick-tock came from behind the shop — the old clocks, shut for years, started moving on their own.",
+     "hi": "शाम को दुकान के पीछे से हल्की टिक-टिक आई — पुरानी घड़ियां, जो सालों से बंद थीं, ख़ुद चलने लगीं।"
+    },
+    {
+     "clip": "susp-danish-hd-5.mp4",
+     "en": "Danish touched the clock — it was warm, as if someone had just held it.",
+     "hi": "दानिश ने घड़ी को हाथ लगाया — घड़ी गरम थी, जैसे अभी-अभी किसी ने उसे छुआ हो।"
+    },
+    {
+     "clip": "susp-danish-hd-6.mp4",
+     "en": "At night he held the clock in his hand — it glowed faintly, as if someone were calling him.",
+     "hi": "रात को उसने घड़ी को अपने हाथ में पकड़ा — घड़ी हल्की सी चमकी, जैसे कोई उसे बुला रहा हो।"
+    },
+    {
+     "clip": "susp-danish-hd-7.mp4",
+     "en": "In the morning beneath the clock there was a tiny paper — completely blank, with only one golden line along its edge.",
+     "hi": "सुबह घड़ी के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
+    },
+    {
+     "clip": "susp-danish-hd-8.mp4",
+     "en": "Danish asked the villagers — no one had heard the shop owner's name, but old grandmother said: \"This shop is seventy years old.\"",
+     "hi": "दानिश ने गांव वालों से पूछा — किसी ने दुकान के मालिक का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये दुकान सत्तर साल पुरानी है।\""
+    },
+    {
+     "clip": "susp-danish-hd-9.mp4",
+     "en": "Grandmother told him: seventy years ago a clock-maker made clocks here, who went into the shop one night and never came back.",
+     "hi": "दादी ने बताया: सत्तर साल पहले एक घड़ी-साज़ यहां घड़ियां बनाता था, जो एक रात दुकान में गया और कभी वापस नहीं आया।"
+    },
+    {
+     "clip": "susp-danish-hd-10.mp4",
+     "en": "That night the shop woke again — and this time Danish saw: beside the big clock stood an old man, white beard, a brass key in his hand, and sadness in his eyes.",
+     "hi": "उस रात दुकान फिर जगी — और इस दफ़ा दानिश ने देखा: बड़ी घड़ी के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में पीतल की चाबी, और उसकी आंखों में उदासी थी।"
+    },
+    {
+     "clip": "susp-danish-hd-11.mp4",
+     "en": "The old man said: \"I am Yousuf. For forty years I have forgotten my last clock's time — will someone tell me, was my clock right or not?\"",
+     "hi": "बूढ़े ने कहा: \"मैं यूसुफ़ हूं। चालीस साल से मैं अपनी आख़िरी घड़ी का वक़्त भूल गया हूं — कोई बताए तो सही, मेरी घड़ी सही थी या नहीं?\""
+    },
+    {
+     "clip": "susp-danish-hd-12.mp4",
+     "en": "Danish asked: \"Why did you forget the time?\" — Yousuf pointed at the big clock: \"The night the shop's light went out, my time stopped too. I have waited ever since.\"",
+     "hi": "दानिश ने पूछा: \"तुम वक़्त क्यों भूल गए?\" — यूसुफ़ ने बड़ी घड़ी की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात मेरा वक़्त भी रुक गया। तब से मैं इंतज़ार में हूं।\""
+    },
+    {
+     "clip": "susp-danish-hd-13.mp4",
+     "en": "Danish touched the shop's old brass clock — the clock glowed golden, as if it recognised him.",
+     "hi": "दानिश ने दुकान की पुरानी पीतल की घड़ी को हाथ लगाया — घड़ी सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।"
+    },
+    {
+     "clip": "susp-danish-hd-14.mp4",
+     "en": "He showed Yousuf a picture of his little clock shop — one he had made as a child and kept safe ever since.",
+     "hi": "उसने यूसुफ़ को अपनी छोटी सी घड़ियों की दुकान की तस्वीर दिखाई — जो उसने बचपन में बनाई थी, और अब तक संभाल कर रखी थी।"
+    },
+    {
+     "clip": "susp-danish-hd-15.mp4",
+     "en": "Yousuf smiled: \"This is the way. Whoever loves their clocks never forgets their time.\"",
+     "hi": "यूसुफ़ मुस्कुराया: \"यही रस्ता है। जो अपनी घड़ियों से प्यार करता है, वो उनका वक़्त कभी नहीं भूलता।\""
+    },
+    {
+     "clip": "susp-danish-hd-16.mp4",
+     "en": "Together they cleaned the shop — the window shone, the clocks glowed, and the smell of fresh oil spread through the shop.",
+     "hi": "दोनों ने मिल कर दुकान को साफ़ किया — खिड़की चमकी, घड़ियां रोशन हुईं, और दुकान में ताज़े तेल की ख़ुशबू फैल गई।"
+    },
+    {
+     "clip": "susp-danish-hd-17.mp4",
+     "en": "Danish stood before the big clock and said: \"I will fix your last clock — you just watch, Yousuf.\"",
+     "hi": "दानिश ने बड़ी घड़ी के सामने खड़े होकर कहा: \"मैं तुम्हारी आख़िरी घड़ी ठीक करूंगा — तुम बस देखते रहो, यूसुफ़।\""
+    },
+    {
+     "clip": "susp-danish-hd-18.mp4",
+     "en": "Yousuf gave him his brass key — the key glowed golden, and the shop stirred gently.",
+     "hi": "यूसुफ़ ने अपनी पीतल की चाबी दानिश को दी — चाबी सुनहरी चमक उठी, और दुकान हल्की सी हिली।"
+    },
+    {
+     "clip": "susp-danish-hd-19.mp4",
+     "en": "Danish fixed the clock — it glowed golden, and tears came to Yousuf's eyes: \"This is the best clock in the world!\"",
+     "hi": "दानिश ने घड़ी ठीक की — घड़ी सुनहरी चमक उठी, और यूसुफ़ की आंखों में आंसू आ गए: \"ये दुनिया की सबसे अच्छी घड़ी है!\""
+    },
+    {
+     "clip": "susp-danish-hd-20.mp4",
+     "en": "Light came into Yousuf's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Danish. Now I can go home.\"",
+     "hi": "यूसुफ़ की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, दानिश। अब मैं घर जा सकता हूं।\""
+    },
+    {
+     "clip": "susp-danish-hd-21.mp4",
+     "en": "In the morning the villagers stood at the shop door — all the clocks were running, and a fresh glowing clock lay on the table.",
+     "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारी घड़ियां चल रही थीं, और मेज़ पर एक नई चमकती घड़ी थी।"
+    },
+    {
+     "clip": "susp-danish-hd-22.mp4",
+     "en": "Beside the clock there was a tiny paper — Danish pressed the paper to his chest and smiled.",
+     "hi": "घड़ी के पास एक छोटा सा काग़ज़ था — दानिश ने काग़ज़ को सीने से लगाया और मुस्कुराया।"
+    },
+    {
+     "clip": "susp-danish-hd-23.mp4",
+     "en": "From that day Danish fixed clocks in the shop every evening — and whichever child came left with a little clock.",
+     "hi": "उस दिन से दानिश हर शाम दुकान में घड़ियां ठीक करता — और जो बच्चा आता, वो दुकान से एक छोटी घड़ी ले कर जाता।"
+    },
+    {
+     "clip": "susp-danish-hd-24.mp4",
+     "en": "And even today, when the shop's clocks chime gently at midnight, the villagers say: \"Yousuf reached home — and Danish's clocks still run the best.\"",
+     "hi": "और आज भी, जब आधी रात में दुकान की घड़ियां हल्की सी बजती हैं, तो गांव वाले कहते हैं: \"यूसुफ़ घर पहुंच गया — और दानिश की घड़ियां अब भी सबसे अच्छी चलती हैं।\""
+    }
+   ]
   }
  ],
  "version": 15
