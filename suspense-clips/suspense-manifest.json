@@ -2967,6 +2967,135 @@
      "hi": "और आज भी, जब आधी रात में दुकान की घड़ियां हल्की सी बजती हैं, तो गांव वाले कहते हैं: \"यूसुफ़ घर पहुंच गया — और दानिश की घड़ियां अब भी सबसे अच्छी चलती हैं।\""
     }
    ]
+  },
+  {
+   "id": "tailor",
+   "hero": "Rehan",
+   "pitch": 1.15,
+   "title_hi": "पुरानी दरज़ी की दुकान",
+   "title_en": "The Old Tailor Shop",
+   "beats": [
+    {
+     "clip": "susp-rehan-hd-1.mp4",
+     "hi": "आधी रात को पुरानी दरज़ी की दुकान की सिलाई मशीन ख़ुद चल पड़ी, और रेहान ने सुना — कोई उसका नाम ले रहा था।",
+     "en": "At midnight the sewing machine in the old tailor's shop started running on its own, and Rehan heard someone calling his name."
+    },
+    {
+     "clip": "susp-rehan-hd-2.mp4",
+     "hi": "सुबह रेहान दुकान गया — दरवाज़ा बंद था, मगर खिड़की से एक छोटा सा सुनहरा कुर्ता चमक रहा था।",
+     "en": "In the morning Rehan went to the shop — the door was shut, but through the window a little golden kurta was glowing."
+    },
+    {
+     "clip": "susp-rehan-hd-3.mp4",
+     "hi": "उसने खिड़की से झांका — कुर्ते पर सुनहरा धागा था, जैसे अभी-अभी किसी ने उसे वहां सिला हो।",
+     "en": "He peeked through the window — on the kurta there was golden thread, as if someone had just sewn it there."
+    },
+    {
+     "clip": "susp-rehan-hd-4.mp4",
+     "hi": "शाम को दुकान के पीछे से हल्की सिलाई की आवाज़ आई — पुरानी मशीन, जो सालों से बंद थी, ख़ुद चलने लगी।",
+     "en": "In the evening a soft sewing sound came from behind the shop — the old machine, shut for years, started running on its own."
+    },
+    {
+     "clip": "susp-rehan-hd-5.mp4",
+     "hi": "रेहान ने कुर्ते को हाथ लगाया — कुर्ता गरम था, जैसे अभी-अभी किसी ने उसे पहना हो।",
+     "en": "Rehan touched the kurta — it was warm, as if someone had just worn it."
+    },
+    {
+     "clip": "susp-rehan-hd-6.mp4",
+     "hi": "रात को उसने कुर्ते को अपने हाथ में पकड़ा — कुर्ता हल्का सा चमका, जैसे कोई उसे बुला रहा हो।",
+     "en": "At night he held the kurta in his hand — it glowed faintly, as if someone were calling him."
+    },
+    {
+     "clip": "susp-rehan-hd-7.mp4",
+     "hi": "सुबह कुर्ते के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।",
+     "en": "In the morning beneath the kurta there was a tiny paper — completely blank, with only one golden line along its edge."
+    },
+    {
+     "clip": "susp-rehan-hd-8.mp4",
+     "hi": "रेहान ने गांव वालों से पूछा — किसी ने दुकान के मालिक का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये दुकान साठ साल पुरानी है।\"",
+     "en": "Rehan asked the villagers — no one had heard the shop owner's name, but old grandmother said: \"This shop is sixty years old.\""
+    },
+    {
+     "clip": "susp-rehan-hd-9.mp4",
+     "hi": "दादी ने बताया: साठ साल पहले एक दरज़ी यहां कपड़े सिलता था, जो एक रात दुकान में गया और कभी वापस नहीं आया।",
+     "en": "Grandmother told him: sixty years ago a tailor sewed clothes here, who went into the shop one night and never came back."
+    },
+    {
+     "clip": "susp-rehan-hd-10.mp4",
+     "hi": "उस रात दुकान फिर जगी — और इस दफ़ा रेहान ने देखा: सिलाई मशीन के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में सुई-धागा, और उसकी आंखों में उदासी थी।",
+     "en": "That night the shop woke again — and this time Rehan saw: beside the sewing machine stood an old man, white beard, a needle and thread in his hand, and sadness in his eyes."
+    },
+    {
+     "clip": "susp-rehan-hd-11.mp4",
+     "hi": "बूढ़े ने कहा: \"मैं बशीर हूं। तीस साल से मैं अपने आख़िरी कुर्ते की सिलाई भूल गया हूं — कोई बताए तो सही, मेरा कुर्ता सही था या नहीं?\"",
+     "en": "The old man said: \"I am Bashir. For thirty years I have forgotten my last kurta's stitching — will someone tell me, was my kurta right or not?\""
+    },
+    {
+     "clip": "susp-rehan-hd-12.mp4",
+     "hi": "रेहान ने पूछा: \"तुम सिलाई क्यों भूल गए?\" — बशीर ने सिलाई मशीन की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात मेरी सिलाई भी रुक गई। तब से मैं इंतज़ार में हूं।\"",
+     "en": "Rehan asked: \"Why did you forget the stitching?\" — Bashir pointed at the sewing machine: \"The night the shop's light went out, my stitching stopped too. I have waited ever since.\""
+    },
+    {
+     "clip": "susp-rehan-hd-13.mp4",
+     "hi": "रेहान ने दुकान की पुरानी सिलाई मशीन को हाथ लगाया — मशीन सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।",
+     "en": "Rehan touched the shop's old sewing machine — the machine glowed golden, as if it recognised him."
+    },
+    {
+     "clip": "susp-rehan-hd-14.mp4",
+     "hi": "उसने बशीर को अपनी छोटी सी दरज़ी की दुकान की तस्वीर दिखाई — जो उसने बचपन में बनाई थी, और अब तक संभाल कर रखी थी।",
+     "en": "He showed Bashir a picture of his little tailor shop — one he had made as a child and kept safe ever since."
+    },
+    {
+     "clip": "susp-rehan-hd-15.mp4",
+     "hi": "बशीर मुस्कुराया: \"यही रस्ता है। जो अपने कपड़ों से प्यार करता है, वो उनकी सिलाई कभी नहीं भूलता।\"",
+     "en": "Bashir smiled: \"This is the way. Whoever loves their clothes never forgets their stitching.\""
+    },
+    {
+     "clip": "susp-rehan-hd-16.mp4",
+     "hi": "दोनों ने मिल कर दुकान को साफ़ किया — खिड़की चमकी, मशीन रोशन हुई, और दुकान में ताज़े कपड़े की ख़ुशबू फैल गई।",
+     "en": "Together they cleaned the shop — the window shone, the machine glowed, and the smell of fresh cloth spread through the shop."
+    },
+    {
+     "clip": "susp-rehan-hd-17.mp4",
+     "hi": "रेहान ने सिलाई मशीन के सामने खड़े होकर कहा: \"मैं तुम्हारी आख़िरी सिलाई ठीक करूंगा — तुम बस देखते रहो, बशीर।\"",
+     "en": "Rehan stood before the sewing machine and said: \"I will fix your last stitching — you just watch, Bashir.\""
+    },
+    {
+     "clip": "susp-rehan-hd-18.mp4",
+     "hi": "बशीर ने अपनी सुई रेहान को दी — सुई सुनहरी चमक उठी, और दुकान हल्की सी हिली।",
+     "en": "Bashir gave him his needle — the needle glowed golden, and the shop stirred gently."
+    },
+    {
+     "clip": "susp-rehan-hd-19.mp4",
+     "hi": "रेहान ने कुर्ता सिला — कुर्ता सुनहरी चमक उठा, और बशीर की आंखों में आंसू आ गए: \"ये दुनिया का सबसे अच्छा कुर्ता है!\"",
+     "en": "Rehan sewed the kurta — it glowed golden, and tears came to Bashir's eyes: \"This is the best kurta in the world!\""
+    },
+    {
+     "clip": "susp-rehan-hd-20.mp4",
+     "hi": "बशीर की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, रेहान। अब मैं घर जा सकता हूं।\"",
+     "en": "Light came into Bashir's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Rehan. Now I can go home.\""
+    },
+    {
+     "clip": "susp-rehan-hd-21.mp4",
+     "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारी मशीनें चल रही थीं, और मेज़ पर एक नया चमकता कुर्ता था।",
+     "en": "In the morning the villagers stood at the shop door — all the machines were running, and a fresh glowing kurta lay on the table."
+    },
+    {
+     "clip": "susp-rehan-hd-22.mp4",
+     "hi": "कुर्ते के पास एक छोटा सा काग़ज़ था — रेहान ने काग़ज़ को सीने से लगाया और मुस्कुराया।",
+     "en": "Beside the kurta there was a tiny paper — Rehan pressed the paper to his chest and smiled."
+    },
+    {
+     "clip": "susp-rehan-hd-23.mp4",
+     "hi": "उस दिन से रेहान हर शाम दुकान में कपड़े सिलता — और जो बच्चा आता, वो दुकान से एक छोटा कुर्ता ले कर जाता।",
+     "en": "From that day Rehan sewed clothes in the shop every evening — and whichever child came left with a little kurta."
+    },
+    {
+     "clip": "susp-rehan-hd-24.mp4",
+     "hi": "और आज भी, जब आधी रात में दुकान की सिलाई मशीन हल्की सी चलती है, तो गांव वाले कहते हैं: \"बशीर घर पहुंच गया — और रेहान के कपड़े अब भी सबसे अच्छे सिलते हैं।\"",
+     "en": "And even today, when the shop's sewing machine hums gently at midnight, the villagers say: \"Bashir reached home — and Rehan's clothes are still sewn the best.\""
+    }
+   ]
   }
  ],
  "version": 15
