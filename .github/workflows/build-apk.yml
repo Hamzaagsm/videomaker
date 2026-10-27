@@ -180,9 +180,9 @@ jobs:
         run: python3 patch_v462_java.py
       - name: Apply v4.63 patch
         run: python3 patch_v463.py
-        - name: Apply v4.64 patch
+    - name: Apply v4.64 patch
         run: python3 patch_v464.py
-        - name: Apply v4.64 java patch
+    - name: Apply v4.64 java patch
         run: python3 patch_v464_java.py
       - name: Bundle music into APK
         run: mkdir -p android/app/src/main/assets/music && cp music/*.mp3 android/app/src/main/assets/music/ || true
