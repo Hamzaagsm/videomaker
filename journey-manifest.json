@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -262,19 +262,19 @@
       "lines": [
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-1.mp4",
-          "t": "Oh no! Who is calling for help in the rain? The river is rising \u2014 I must go!"
+          "t": "Oh no! Who is calling for help in the rain? The river is rising — I must go!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-2.mp4",
-          "t": "My name is Rusty, and I am a strong tow truck \u2014 rain never stops me!"
+          "t": "My name is Rusty, and I am a strong tow truck — rain never stops me!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-3.mp4",
-          "t": "I splash through the big puddles \u2014 splish splash, what fun!"
+          "t": "I splash through the big puddles — splish splash, what fun!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-4.mp4",
-          "t": "The wind pushes my hook left and right \u2014 hold on, hook!"
+          "t": "The wind pushes my hook left and right — hold on, hook!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-5.mp4",
@@ -286,11 +286,11 @@
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-7.mp4",
-          "t": "I lower my strong hook \u2014 click! I catch your bumper gently."
+          "t": "I lower my strong hook — click! I catch your bumper gently."
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-8.mp4",
-          "t": "Pull! Pull! Little by little \u2014 out of the mud you come!"
+          "t": "Pull! Pull! Little by little — out of the mud you come!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-9.mp4",
@@ -302,11 +302,11 @@
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-11.mp4",
-          "t": "We drive home together \u2014 you are safe now, I promise."
+          "t": "We drive home together — you are safe now, I promise."
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-12.mp4",
-          "t": "Wait \u2014 what is that sound behind the big rock?"
+          "t": "Wait — what is that sound behind the big rock?"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-13.mp4",
@@ -318,7 +318,7 @@
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-15.mp4",
-          "t": "The little blue car giggles \u2014 the ducklings tickle her windows!"
+          "t": "The little blue car giggles — the ducklings tickle her windows!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-16.mp4",
@@ -326,7 +326,7 @@
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-17.mp4",
-          "t": "The sun peeks out \u2014 look, a rainbow over the hills!"
+          "t": "The sun peeks out — look, a rainbow over the hills!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-18.mp4",
@@ -334,11 +334,11 @@
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-19.mp4",
-          "t": "We drop the ducklings at their pond \u2014 home at last, little ones!"
+          "t": "We drop the ducklings at their pond — home at last, little ones!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-20.mp4",
-          "t": "The blue car's mama is waiting \u2014 she hugs her baby tight!"
+          "t": "The blue car's mama is waiting — she hugs her baby tight!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-21.mp4",
@@ -346,7 +346,7 @@
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-22.mp4",
-          "t": "My hook shines, my engine hums \u2014 helping friends feels so good!"
+          "t": "My hook shines, my engine hums — helping friends feels so good!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-23.mp4",
@@ -354,7 +354,7 @@
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-24.mp4",
-          "t": "Birds come out to sing \u2014 listen to their happy song!"
+          "t": "Birds come out to sing — listen to their happy song!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-25.mp4",
@@ -362,7 +362,7 @@
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-26.mp4",
-          "t": "The little blue car waves goodbye \u2014 be careful in the rain!"
+          "t": "The little blue car waves goodbye — be careful in the rain!"
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-27.mp4",
@@ -378,7 +378,7 @@
         },
         {
           "clip": "susp-jrn-rusty-rainy-day-rescue-30.mp4",
-          "t": "Tomorrow I will climb the great mountains \u2014 will you come with me?"
+          "t": "Tomorrow I will climb the great mountains — will you come with me?"
         }
       ]
     },
@@ -770,7 +770,7 @@
       "lines": [
         {
           "clip": "susp-jrn-rusty-village-fair-1.mp4",
-          "t": "Oh no! The village fair opens tonight \u2014 but all the lamps are dark! Who will light them up?"
+          "t": "Oh no! The village fair opens tonight — but all the lamps are dark! Who will light them up?"
         },
         {
           "clip": "susp-jrn-rusty-village-fair-2.mp4",
@@ -778,7 +778,7 @@
         },
         {
           "clip": "susp-jrn-rusty-village-fair-3.mp4",
-          "t": "Vroom vroom! Down the dusty village road I go \u2014 clouds of golden dust behind me!"
+          "t": "Vroom vroom! Down the dusty village road I go — clouds of golden dust behind me!"
         },
         {
           "clip": "susp-jrn-rusty-village-fair-4.mp4",
@@ -790,7 +790,7 @@
         },
         {
           "clip": "susp-jrn-rusty-village-fair-6.mp4",
-          "t": "Up the small green hill I climb \u2014 I can see the whole village below!"
+          "t": "Up the small green hill I climb — I can see the whole village below!"
         },
         {
           "clip": "susp-jrn-rusty-village-fair-7.mp4",
@@ -806,7 +806,7 @@
         },
         {
           "clip": "susp-jrn-rusty-village-fair-10.mp4",
-          "t": "Wow! The fair gate is tall and colorful \u2014 flags flutter in the wind!"
+          "t": "Wow! The fair gate is tall and colorful — flags flutter in the wind!"
         },
         {
           "clip": "susp-jrn-rusty-village-fair-11.mp4",
@@ -822,7 +822,7 @@
         },
         {
           "clip": "susp-jrn-rusty-village-fair-14.mp4",
-          "t": "Pull! Pull! Little by little \u2014 the swing moves again!"
+          "t": "Pull! Pull! Little by little — the swing moves again!"
         },
         {
           "clip": "susp-jrn-rusty-village-fair-15.mp4",
@@ -854,7 +854,7 @@
         },
         {
           "clip": "susp-jrn-rusty-village-fair-22.mp4",
-          "t": "Look! The fair glows golden \u2014 hundreds of little lamps shine!"
+          "t": "Look! The fair glows golden — hundreds of little lamps shine!"
         },
         {
           "clip": "susp-jrn-rusty-village-fair-23.mp4",
@@ -866,7 +866,7 @@
         },
         {
           "clip": "susp-jrn-rusty-village-fair-25.mp4",
-          "t": "I tow the tired little food cart home \u2014 it worked so hard today!"
+          "t": "I tow the tired little food cart home — it worked so hard today!"
         },
         {
           "clip": "susp-jrn-rusty-village-fair-26.mp4",
@@ -886,7 +886,7 @@
         },
         {
           "clip": "susp-jrn-rusty-village-fair-30.mp4",
-          "t": "Tomorrow I will help Bruno with his big night delivery \u2014 will you come with me?"
+          "t": "Tomorrow I will help Bruno with his big night delivery — will you come with me?"
         }
       ]
     },
@@ -897,59 +897,59 @@
       "lines": [
         {
           "clip": "susp-jrn-bruno-night-delivery-1.mp4",
-          "t": "Oh no! All the city shops are empty \u2014 the food boxes must reach them BEFORE sunrise! Can big Bruno make it in time?"
+          "t": "Oh no! All the city shops are empty — the food boxes must reach them BEFORE sunrise! Can big Bruno make it in time?"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-2.mp4",
-          "t": "Good evening, friends! I am Bruno, the big blue truck \u2014 and tonight I work while the city sleeps!"
+          "t": "Good evening, friends! I am Bruno, the big blue truck — and tonight I work while the city sleeps!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-3.mp4",
-          "t": "My trailer is full of fresh bread, milk, and fruits \u2014 vroom vroom, into the night!"
+          "t": "My trailer is full of fresh bread, milk, and fruits — vroom vroom, into the night!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-4.mp4",
-          "t": "First stop: the bakery on Flower Street \u2014 the baker is waiting at the door!"
+          "t": "First stop: the bakery on Flower Street — the baker is waiting at the door!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-5.mp4",
-          "t": "The street lamps glow like warm honey \u2014 what a pretty night!"
+          "t": "The street lamps glow like warm honey — what a pretty night!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-6.mp4",
-          "t": "Up the quiet hill road I climb \u2014 the city lights twinkle below like stars!"
+          "t": "Up the quiet hill road I climb — the city lights twinkle below like stars!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-7.mp4",
-          "t": "Look, a little owl hoots from the pine tree \u2014 hoo hoo, good night, owl!"
+          "t": "Look, a little owl hoots from the pine tree — hoo hoo, good night, owl!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-8.mp4",
-          "t": "I cross the old stone bridge \u2014 the river sparkles under the moon!"
+          "t": "I cross the old stone bridge — the river sparkles under the moon!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-9.mp4",
-          "t": "The night market square is quiet \u2014 the stalls sleep under their striped awnings!"
+          "t": "The night market square is quiet — the stalls sleep under their striped awnings!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-10.mp4",
-          "t": "Down, down into the sleepy old town \u2014 the cobblestone streets whisper!"
+          "t": "Down, down into the sleepy old town — the cobblestone streets whisper!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-11.mp4",
-          "t": "Here is the toy shop! Little teddy bears wait for their boxes \u2014 here you go!"
+          "t": "Here is the toy shop! Little teddy bears wait for their boxes — here you go!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-12.mp4",
-          "t": "Wait \u2014 what is that tiny sound? A little kitten is crying by the fountain!"
+          "t": "Wait — what is that tiny sound? A little kitten is crying by the fountain!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-13.mp4",
-          "t": "Oh! The little kitten lost her way home \u2014 hop on, little friend, I will help you find it!"
+          "t": "Oh! The little kitten lost her way home — hop on, little friend, I will help you find it!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-14.mp4",
-          "t": "We roll down the quiet garden lane \u2014 her mama might be waiting there!"
+          "t": "We roll down the quiet garden lane — her mama might be waiting there!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-15.mp4",
@@ -957,63 +957,63 @@
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-16.mp4",
-          "t": "We cross the little wooden bridge over the garden stream \u2014 almost home, little one!"
+          "t": "We cross the little wooden bridge over the garden stream — almost home, little one!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-17.mp4",
-          "t": "The clock tower rings \u2014 ding dong, it is midnight already!"
+          "t": "The clock tower rings — ding dong, it is midnight already!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-18.mp4",
-          "t": "Wait \u2014 I know that little red house with the blue door! That is YOUR home!"
+          "t": "Wait — I know that little red house with the blue door! That is YOUR home!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-19.mp4",
-          "t": "Home at last! Her mama cat hugs her tight \u2014 thank you, Bruno!"
+          "t": "Home at last! Her mama cat hugs her tight — thank you, Bruno!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-20.mp4",
-          "t": "Back on the road \u2014 the grocery shop needs its milk before dawn!"
+          "t": "Back on the road — the grocery shop needs its milk before dawn!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-21.mp4",
-          "t": "The farm road is quiet \u2014 the cows dream in the moonlit meadow!"
+          "t": "The farm road is quiet — the cows dream in the moonlit meadow!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-22.mp4",
-          "t": "I unload fresh milk at the corner shop \u2014 the shopkeeper smiles so wide!"
+          "t": "I unload fresh milk at the corner shop — the shopkeeper smiles so wide!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-23.mp4",
-          "t": "The sky turns pink and gold \u2014 the sun is waking up!"
+          "t": "The sky turns pink and gold — the sun is waking up!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-24.mp4",
-          "t": "The last stop: the flower shop on the river road \u2014 roses for everyone!"
+          "t": "The last stop: the flower shop on the river road — roses for everyone!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-25.mp4",
-          "t": "The river sparkles in the morning light \u2014 what a beautiful new day!"
+          "t": "The river sparkles in the morning light — what a beautiful new day!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-26.mp4",
-          "t": "All the shops are full now \u2014 bread, milk, fruits, and flowers!"
+          "t": "All the shops are full now — bread, milk, fruits, and flowers!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-27.mp4",
-          "t": "The city wakes up! Children wave at me \u2014 good morning, Bruno!"
+          "t": "The city wakes up! Children wave at me — good morning, Bruno!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-28.mp4",
-          "t": "My trailer is empty and my heart is full \u2014 helping friends feels so good!"
+          "t": "My trailer is empty and my heart is full — helping friends feels so good!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-29.mp4",
-          "t": "Time for a little nap \u2014 good night, stars, and good morning, sun!"
+          "t": "Time for a little nap — good night, stars, and good morning, sun!"
         },
         {
           "clip": "susp-jrn-bruno-night-delivery-30.mp4",
-          "t": "Tomorrow I will cross the great desert with Rayo \u2014 will you come with me? Bye bye!"
+          "t": "Tomorrow I will cross the great desert with Rayo — will you come with me? Bye bye!"
         }
       ]
     },
@@ -1024,51 +1024,51 @@
       "lines": [
         {
           "clip": "susp-jrn-rayo-desert-adventure-1.mp4",
-          "t": "Oh no! The desert wind blew my map away \u2014 how will I find the hidden oasis?"
+          "t": "Oh no! The desert wind blew my map away — how will I find the hidden oasis?"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-2.mp4",
-          "t": "Hello friends! I am Rayo, the fast red race car \u2014 today I cross the great desert!"
+          "t": "Hello friends! I am Rayo, the fast red race car — today I cross the great desert!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-3.mp4",
-          "t": "My tank is full and my wheels are ready \u2014 vroom vroom, into the golden sands!"
+          "t": "My tank is full and my wheels are ready — vroom vroom, into the golden sands!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-4.mp4",
-          "t": "The dunes roll like giant golden waves \u2014 wow, so big and so beautiful!"
+          "t": "The dunes roll like giant golden waves — wow, so big and so beautiful!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-5.mp4",
-          "t": "Look, a little desert fox runs beside me \u2014 hello, speedy friend!"
+          "t": "Look, a little desert fox runs beside me — hello, speedy friend!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-6.mp4",
-          "t": "The sun is so hot \u2014 I need shade, quick!"
+          "t": "The sun is so hot — I need shade, quick!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-7.mp4",
-          "t": "Up, up the rocky canyon road \u2014 my wheels grip the stones!"
+          "t": "Up, up the rocky canyon road — my wheels grip the stones!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-8.mp4",
-          "t": "A cactus waves at me \u2014 hello, prickly friend, do not poke me!"
+          "t": "A cactus waves at me — hello, prickly friend, do not poke me!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-9.mp4",
-          "t": "The wind sings in the sand \u2014 shhh, listen, it sounds like a song!"
+          "t": "The wind sings in the sand — shhh, listen, it sounds like a song!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-10.mp4",
-          "t": "I see a shiny lake \u2014 but it is not real! Tricky desert!"
+          "t": "I see a shiny lake — but it is not real! Tricky desert!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-11.mp4",
-          "t": "My wheels sink in the soft sand \u2014 push, push, Rayo!"
+          "t": "My wheels sink in the soft sand — push, push, Rayo!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-12.mp4",
-          "t": "Wait \u2014 who is that tall friend walking slowly in the heat?"
+          "t": "Wait — who is that tall friend walking slowly in the heat?"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-13.mp4",
@@ -1076,55 +1076,55 @@
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-14.mp4",
-          "t": "Omar says the oasis is behind the big red rock \u2014 follow him!"
+          "t": "Omar says the oasis is behind the big red rock — follow him!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-15.mp4",
-          "t": "We pass a tiny desert village \u2014 children wave from the mud houses!"
+          "t": "We pass a tiny desert village — children wave from the mud houses!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-16.mp4",
-          "t": "Omar shares his cool water \u2014 thank you, my tall friend!"
+          "t": "Omar shares his cool water — thank you, my tall friend!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-17.mp4",
-          "t": "Look \u2014 green palm trees ahead! The oasis is real!"
+          "t": "Look — green palm trees ahead! The oasis is real!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-18.mp4",
-          "t": "Splash! Cool water at last \u2014 the oasis is the prettiest place ever!"
+          "t": "Splash! Cool water at last — the oasis is the prettiest place ever!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-19.mp4",
-          "t": "Little desert birds sing for us \u2014 tweet tweet, welcome, Rayo!"
+          "t": "Little desert birds sing for us — tweet tweet, welcome, Rayo!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-20.mp4",
-          "t": "I race around the palm trees \u2014 the cool breeze feels so nice!"
+          "t": "I race around the palm trees — the cool breeze feels so nice!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-21.mp4",
-          "t": "Time to go \u2014 Omar waves goodbye with his long neck!"
+          "t": "Time to go — Omar waves goodbye with his long neck!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-22.mp4",
-          "t": "The sunset paints the dunes pink and orange \u2014 so beautiful!"
+          "t": "The sunset paints the dunes pink and orange — so beautiful!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-23.mp4",
-          "t": "Stars come out one by one \u2014 the desert night is so quiet!"
+          "t": "Stars come out one by one — the desert night is so quiet!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-24.mp4",
-          "t": "A little owl hoots from a dry tree \u2014 good night, owl!"
+          "t": "A little owl hoots from a dry tree — good night, owl!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-25.mp4",
-          "t": "My headlights light the sandy path home \u2014 vroom, vroom!"
+          "t": "My headlights light the sandy path home — vroom, vroom!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-26.mp4",
-          "t": "I see the town lights far away \u2014 almost home, friends!"
+          "t": "I see the town lights far away — almost home, friends!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-27.mp4",
@@ -1132,15 +1132,15 @@
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-28.mp4",
-          "t": "What an adventure \u2014 the desert, the camel, and the cool oasis!"
+          "t": "What an adventure — the desert, the camel, and the cool oasis!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-29.mp4",
-          "t": "Good night, desert stars \u2014 thank you for a wonderful day!"
+          "t": "Good night, desert stars — thank you for a wonderful day!"
         },
         {
           "clip": "susp-jrn-rayo-desert-adventure-30.mp4",
-          "t": "Tomorrow Bella visits a garden full of butterflies \u2014 will you come with us? Bye bye!"
+          "t": "Tomorrow Bella visits a garden full of butterflies — will you come with us? Bye bye!"
         }
       ]
     },
@@ -1151,7 +1151,7 @@
       "lines": [
         {
           "clip": "susp-jrn-bella-butterfly-garden-1.mp4",
-          "t": "Oh no! All the butterflies have flown away \u2014 where did they go?"
+          "t": "Oh no! All the butterflies have flown away — where did they go?"
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-2.mp4",
@@ -1159,11 +1159,11 @@
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-3.mp4",
-          "t": "The rose arches are so pretty \u2014 I drive under them, vroom vroom!"
+          "t": "The rose arches are so pretty — I drive under them, vroom vroom!"
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-4.mp4",
-          "t": "Look, the sunflowers are taller than me \u2014 hello, sunny friends!"
+          "t": "Look, the sunflowers are taller than me — hello, sunny friends!"
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-5.mp4",
@@ -1171,7 +1171,7 @@
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-6.mp4",
-          "t": "A tiny bridge crosses the sparkling stream \u2014 splash, splash!"
+          "t": "A tiny bridge crosses the sparkling stream — splash, splash!"
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-7.mp4",
@@ -1195,7 +1195,7 @@
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-12.mp4",
-          "t": "Wait \u2014 one tiny butterfly is crying. Her wing is hurt!"
+          "t": "Wait — one tiny butterfly is crying. Her wing is hurt!"
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-13.mp4",
@@ -1207,7 +1207,7 @@
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-15.mp4",
-          "t": "She puts a magic drop on the tiny wing \u2014 it sparkles like a star!"
+          "t": "She puts a magic drop on the tiny wing — it sparkles like a star!"
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-16.mp4",
@@ -1219,7 +1219,7 @@
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-18.mp4",
-          "t": "The butterflies teach me their secret dance \u2014 wiggle, spin, flutter!"
+          "t": "The butterflies teach me their secret dance — wiggle, spin, flutter!"
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-19.mp4",
@@ -1243,7 +1243,7 @@
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-24.mp4",
-          "t": "The butterflies sprinkle golden dust on my seed \u2014 grow, little seed, grow!"
+          "t": "The butterflies sprinkle golden dust on my seed — grow, little seed, grow!"
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-25.mp4",
@@ -1259,15 +1259,15 @@
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-28.mp4",
-          "t": "What a day \u2014 butterflies, flowers, and a brand-new friend!"
+          "t": "What a day — butterflies, flowers, and a brand-new friend!"
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-29.mp4",
-          "t": "Good night, little butterfly \u2014 thank you for a wonderful day!"
+          "t": "Good night, little butterfly — thank you for a wonderful day!"
         },
         {
           "clip": "susp-jrn-bella-butterfly-garden-30.mp4",
-          "t": "Tomorrow Rusty will show me a snowy morning \u2014 will you come with me? Bye bye!"
+          "t": "Tomorrow Rusty will show me a snowy morning — will you come with me? Bye bye!"
         }
       ]
     },
@@ -1278,59 +1278,59 @@
       "lines": [
         {
           "clip": "susp-jrn-rusty-snowy-morning-1.mp4",
-          "t": "Oh no! The whole town woke up buried in snow \u2014 who will clear the road before morning chai gets cold?"
+          "t": "Oh no! The whole town woke up buried in snow — who will clear the road before morning chai gets cold?"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-2.mp4",
-          "t": "Good morning, friends! I am Rusty, the strong brown tow truck \u2014 snow never stops me!"
+          "t": "Good morning, friends! I am Rusty, the strong brown tow truck — snow never stops me!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-3.mp4",
-          "t": "Vroom vroom! Down the snowy village road I go \u2014 my tires crunch, crunch in the fresh white snow!"
+          "t": "Vroom vroom! Down the snowy village road I go — my tires crunch, crunch in the fresh white snow!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-4.mp4",
-          "t": "Look, the pine trees wear white hats \u2014 hello, snowy pines!"
+          "t": "Look, the pine trees wear white hats — hello, snowy pines!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-5.mp4",
-          "t": "The frozen pond sparkles like a giant silver mirror \u2014 careful, do not slip!"
+          "t": "The frozen pond sparkles like a giant silver mirror — careful, do not slip!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-6.mp4",
-          "t": "Up the little snowy hill I climb \u2014 I can see the whole white village below!"
+          "t": "Up the little snowy hill I climb — I can see the whole white village below!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-7.mp4",
-          "t": "The snowman by the school waves at me \u2014 hello, frosty friend!"
+          "t": "The snowman by the school waves at me — hello, frosty friend!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-8.mp4",
-          "t": "Children throw snowballs \u2014 whee! One lands on my roof, plop!"
+          "t": "Children throw snowballs — whee! One lands on my roof, plop!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-9.mp4",
-          "t": "I cross the old wooden bridge \u2014 the river sleeps under the ice!"
+          "t": "I cross the old wooden bridge — the river sleeps under the ice!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-10.mp4",
-          "t": "The red postbox peeks from the snow \u2014 letters for everyone!"
+          "t": "The red postbox peeks from the snow — letters for everyone!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-11.mp4",
-          "t": "Down into the pine forest I roll \u2014 snow falls softly on my hook!"
+          "t": "Down into the pine forest I roll — snow falls softly on my hook!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-12.mp4",
-          "t": "Wait \u2014 what is that sound? A little voice is calling from the snowdrift!"
+          "t": "Wait — what is that sound? A little voice is calling from the snowdrift!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-13.mp4",
-          "t": "Oh! A little green car is stuck deep in the snow \u2014 do not cry, little one!"
+          "t": "Oh! A little green car is stuck deep in the snow — do not cry, little one!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-14.mp4",
-          "t": "My strong hook pulls gently \u2014 pull, pull, out you come!"
+          "t": "My strong hook pulls gently — pull, pull, out you come!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-15.mp4",
@@ -1338,47 +1338,47 @@
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-16.mp4",
-          "t": "We drive to the chai stall \u2014 hot chai for my cold little friend!"
+          "t": "We drive to the chai stall — hot chai for my cold little friend!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-17.mp4",
-          "t": "The chaiwala smiles \u2014 warm chai for everyone, on the house!"
+          "t": "The chaiwala smiles — warm chai for everyone, on the house!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-18.mp4",
-          "t": "Sip sip! The chai warms us up \u2014 what a kind friend!"
+          "t": "Sip sip! The chai warms us up — what a kind friend!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-19.mp4",
-          "t": "The little green car giggles \u2014 her wheels are warm again!"
+          "t": "The little green car giggles — her wheels are warm again!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-20.mp4",
-          "t": "We build a snowman together \u2014 a carrot nose and a smile!"
+          "t": "We build a snowman together — a carrot nose and a smile!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-21.mp4",
-          "t": "The snowman waves goodbye \u2014 thank you, Rusty!"
+          "t": "The snowman waves goodbye — thank you, Rusty!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-22.mp4",
-          "t": "I tow the chai cart to the town square \u2014 everyone needs hot chai today!"
+          "t": "I tow the chai cart to the town square — everyone needs hot chai today!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-23.mp4",
-          "t": "The town square glows with lanterns \u2014 children dance in the snow!"
+          "t": "The town square glows with lanterns — children dance in the snow!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-24.mp4",
-          "t": "Snowflakes fall like soft feathers \u2014 what a beautiful white day!"
+          "t": "Snowflakes fall like soft feathers — what a beautiful white day!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-25.mp4",
-          "t": "The sun peeks out \u2014 the snow sparkles like diamonds!"
+          "t": "The sun peeks out — the snow sparkles like diamonds!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-26.mp4",
-          "t": "I clear the road to the little school \u2014 children cheer, hooray!"
+          "t": "I clear the road to the little school — children cheer, hooray!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-27.mp4",
@@ -1386,15 +1386,15 @@
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-28.mp4",
-          "t": "What a day \u2014 snow, chai, and a brand-new friend!"
+          "t": "What a day — snow, chai, and a brand-new friend!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-29.mp4",
-          "t": "Good night, snowy town \u2014 thank you for a wonderful day!"
+          "t": "Good night, snowy town — thank you for a wonderful day!"
         },
         {
           "clip": "susp-jrn-rusty-snowy-morning-30.mp4",
-          "t": "Tomorrow Bruno sails to the harbour boats \u2014 will you come with me? Bye bye!"
+          "t": "Tomorrow Bruno sails to the harbour boats — will you come with me? Bye bye!"
         }
       ]
     },
@@ -1405,7 +1405,7 @@
       "lines": [
         {
           "clip": "susp-jrn-bruno-harbour-boats-1.mp4",
-          "t": "Oh no! The harbour bell is ringing \u2014 a little boat is lost in the fog! Can I help?"
+          "t": "Oh no! The harbour bell is ringing — a little boat is lost in the fog! Can I help?"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-2.mp4",
@@ -1417,15 +1417,15 @@
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-4.mp4",
-          "t": "The wooden pier is busy! Boats bob up and down \u2014 hello, hello!"
+          "t": "The wooden pier is busy! Boats bob up and down — hello, hello!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-5.mp4",
-          "t": "The fishermen mend their nets \u2014 what strong hands they have!"
+          "t": "The fishermen mend their nets — what strong hands they have!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-6.mp4",
-          "t": "The cranes lift big boxes of fish \u2014 up, up, up!"
+          "t": "The cranes lift big boxes of fish — up, up, up!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-7.mp4",
@@ -1437,7 +1437,7 @@
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-9.mp4",
-          "t": "The old boat workshop smells of wood and paint \u2014 a new boat is born!"
+          "t": "The old boat workshop smells of wood and paint — a new boat is born!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-10.mp4",
@@ -1445,23 +1445,23 @@
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-11.mp4",
-          "t": "The fog is thick on the water \u2014 I must watch the road carefully!"
+          "t": "The fog is thick on the water — I must watch the road carefully!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-12.mp4",
-          "t": "Wait \u2014 what is that small sound in the fog? A little sailboat is calling for help!"
+          "t": "Wait — what is that small sound in the fog? A little sailboat is calling for help!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-13.mp4",
-          "t": "Its engine is quiet! Do not worry, little boat \u2014 Bruno is here!"
+          "t": "Its engine is quiet! Do not worry, little boat — Bruno is here!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-14.mp4",
-          "t": "I hook my strong tow rope \u2014 click! Hold on tight, little boat!"
+          "t": "I hook my strong tow rope — click! Hold on tight, little boat!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-15.mp4",
-          "t": "Slowly, slowly \u2014 I pull you through the fog to the safe harbour!"
+          "t": "Slowly, slowly — I pull you through the fog to the safe harbour!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-16.mp4",
@@ -1469,11 +1469,11 @@
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-17.mp4",
-          "t": "The baby seagull flaps its wings \u2014 its mama is calling from the lighthouse!"
+          "t": "The baby seagull flaps its wings — its mama is calling from the lighthouse!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-18.mp4",
-          "t": "I lift the little boat gently \u2014 the baby seagull flies home! Hooray!"
+          "t": "I lift the little boat gently — the baby seagull flies home! Hooray!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-19.mp4",
@@ -1481,11 +1481,11 @@
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-20.mp4",
-          "t": "The fish market square is full of cats \u2014 they smell the fresh fish!"
+          "t": "The fish market square is full of cats — they smell the fresh fish!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-21.mp4",
-          "t": "The rope bridge sways over the blue water \u2014 careful, careful!"
+          "t": "The rope bridge sways over the blue water — careful, careful!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-22.mp4",
@@ -1497,19 +1497,19 @@
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-24.mp4",
-          "t": "The seafood lane smells yummy \u2014 the auntie gives me a warm bun!"
+          "t": "The seafood lane smells yummy — the auntie gives me a warm bun!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-25.mp4",
-          "t": "The harbour master's tower blinks \u2014 all boats are safe tonight!"
+          "t": "The harbour master's tower blinks — all boats are safe tonight!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-26.mp4",
-          "t": "The anchor square has a big sailor statue \u2014 I wave hello!"
+          "t": "The anchor square has a big sailor statue — I wave hello!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-27.mp4",
-          "t": "The evening pier glows with lamps \u2014 the boats sleep softly!"
+          "t": "The evening pier glows with lamps — the boats sleep softly!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-28.mp4",
@@ -1517,11 +1517,11 @@
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-29.mp4",
-          "t": "The moon shines on the calm sea \u2014 good night, little boats!"
+          "t": "The moon shines on the calm sea — good night, little boats!"
         },
         {
           "clip": "susp-jrn-bruno-harbour-boats-30.mp4",
-          "t": "Tomorrow I will watch the big balloons fly with my friend Rayo \u2014 will you come with me?"
+          "t": "Tomorrow I will watch the big balloons fly with my friend Rayo — will you come with me?"
         }
       ]
     },
@@ -1568,7 +1568,7 @@
         },
         {
           "clip": "susp-jrn-rayo-balloon-day-10.mp4",
-          "t": "Kites dance in the sky! Red, yellow, blue \u2014 whee!"
+          "t": "Kites dance in the sky! Red, yellow, blue — whee!"
         },
         {
           "clip": "susp-jrn-rayo-balloon-day-11.mp4",
@@ -1648,7 +1648,134 @@
         },
         {
           "clip": "susp-jrn-rayo-balloon-day-30.mp4",
-          "t": "Tomorrow I visit the big river bridge \u2014 will you come with me?"
+          "t": "Tomorrow I visit the big river bridge — will you come with me?"
+        }
+      ]
+    },
+    {
+      "id": "rayo-river-bridge",
+      "car": "Rayo",
+      "title": "Rayo and the River Bridge",
+      "lines": [
+        {
+          "clip": "susp-jrn-rayo-river-bridge-1.mp4",
+          "t": "Oh no! The big river bridge is closed — how will I reach the other side before the picnic starts?"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-2.mp4",
+          "t": "Hello, friends! I am Rayo, the fast red race car — today I cross the great river bridge!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-3.mp4",
+          "t": "Vroom vroom! Down the pebbly riverbank road I roll — the water sparkles beside me!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-4.mp4",
+          "t": "Look, shiny fish are jumping in the river — hello, jumpy fish!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-5.mp4",
+          "t": "The old fisherman waves from his little wooden boat — good morning, friend!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-6.mp4",
+          "t": "Up the grassy hill I climb — I can see the whole river winding below!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-7.mp4",
+          "t": "The stone bridge is so old and grand — its arches sing in the wind!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-8.mp4",
+          "t": "Careful now — the wooden planks are wobbly! Slow and steady, Rayo!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-9.mp4",
+          "t": "From the middle of the bridge, the river looks like a big blue ribbon!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-10.mp4",
+          "t": "Look, white swans are gliding under the bridge — so graceful!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-11.mp4",
+          "t": "The bridge lamps are so pretty — they glow like little golden stars!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-12.mp4",
+          "t": "Wait — what is that tiny sound? A baby duck is stuck on a floating log!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-13.mp4",
+          "t": "Do not cry, little duck! Rayo is here — I will help you!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-14.mp4",
+          "t": "I honk my loudest horn — beep beep! The kind fisherman hears me!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-15.mp4",
+          "t": "The fisherman rows his boat to the log — hold on, little duck!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-16.mp4",
+          "t": "Hooray! The baby duck is safe in the boat — quack quack, thank you!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-17.mp4",
+          "t": "The mama duck swims over — she hugs her baby tight! Quack quack!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-18.mp4",
+          "t": "The duck family follows me along the river — my new friends!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-19.mp4",
+          "t": "Across the bridge at last — the other side is full of flowers!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-20.mp4",
+          "t": "The village children wave from the sunny square — hello, friends!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-21.mp4",
+          "t": "Time for a picnic by the river — yummy sandwiches and sweet lemonade!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-22.mp4",
+          "t": "A friendly frog hops onto my hood — ribbit ribbit, hello, little frog!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-23.mp4",
+          "t": "The waterfall sings behind the big rocks — splash splash, so cool!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-24.mp4",
+          "t": "I race the dragonflies along the river road — wheee, so fast!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-25.mp4",
+          "t": "The sun is getting low — golden light dances on the water!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-26.mp4",
+          "t": "The fisherman waves goodbye — see you soon, my river friend!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-27.mp4",
+          "t": "Back across the bridge — the lamps are glowing in the dusk!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-28.mp4",
+          "t": "The moon rises over the quiet river — twinkle twinkle, little stars!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-29.mp4",
+          "t": "Good night, river! Good night, ducks and fish and frogs!"
+        },
+        {
+          "clip": "susp-jrn-rayo-river-bridge-30.mp4",
+          "t": "Tomorrow Bella visits her friends at the zoo — will you come with us? Bye bye!"
         }
       ]
     }
