@@ -1,5 +1,5 @@
 {
-  "version": 17,
+  "version": 18,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -1776,6 +1776,133 @@
         {
           "clip": "susp-jrn-rayo-river-bridge-30.mp4",
           "t": "Tomorrow Bella visits her friends at the zoo — will you come with us? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "bella-zoo-friends",
+      "car": "Bella",
+      "title": "Bella and the Zoo Friends",
+      "lines": [
+        {
+          "clip": "susp-jrn-bella-zoo-friends-1.mp4",
+          "t": "Oh no! The zoo gate is locked — and a little monkey is calling for help from inside! How do I get in?"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-2.mp4",
+          "t": "Good morning, friends! I am Bella — today I visit the big zoo, and I will meet all the animals!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-3.mp4",
+          "t": "Vroom vroom! Down the palm-lined zoo road I roll — the flamingos are waiting for me!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-4.mp4",
+          "t": "Look, the pink flamingos are standing on one leg — hello, pretty flamingos!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-5.mp4",
+          "t": "The big lion is sleeping on his warm rock — shhh, do not wake him!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-6.mp4",
+          "t": "Up the little hill I climb — the giraffes are eating leaves from the tallest tree!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-7.mp4",
+          "t": "The tall giraffe bends down to say hello — you are so tall, my friend!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-8.mp4",
+          "t": "Splash splash! The penguins slide on the ice — whee, so funny!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-9.mp4",
+          "t": "The colourful parrots are singing in the green aviary — tweet tweet, hello!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-10.mp4",
+          "t": "I wave at the sleepy python in the reptile house — he is long and shiny!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-11.mp4",
+          "t": "The butterflies dance around my mirrors — what a pretty butterfly house!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-12.mp4",
+          "t": "Wait — what is that sound? A baby elephant is crying by the big pond!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-13.mp4",
+          "t": "Do not cry, little elephant! Bella is here — I will help you find your mama!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-14.mp4",
+          "t": "We follow the big footprints — they lead to the tall bamboo grove!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-15.mp4",
+          "t": "The panda is eating bamboo — have you seen the elephant mama, Mr. Panda?"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-16.mp4",
+          "t": "The panda points with his paw — the mama elephant is near the big waterfall!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-17.mp4",
+          "t": "There she is! The mama elephant is splashing in the waterfall pool!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-18.mp4",
+          "t": "Hooray! The baby elephant hugs his mama — thank you, Bella!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-19.mp4",
+          "t": "The cheeky monkey swings down from the tree — he wants to play with us!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-20.mp4",
+          "t": "The monkey steals my little map — catch him if you can, Bella!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-21.mp4",
+          "t": "The monkey gives the map back — he just wanted a ride on my roof!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-22.mp4",
+          "t": "We ride the little zoo train — choo choo, through the zebra meadow!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-23.mp4",
+          "t": "The zebras wear stripes like pajamas — hello, stripy friends!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-24.mp4",
+          "t": "The kangaroos hop hop hop — I try to hop too, boing boing!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-25.mp4",
+          "t": "The seals clap their flippers — what a funny show at the blue pool!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-26.mp4",
+          "t": "Time for a picnic on the green lawn — yummy sandwiches under the big oak!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-27.mp4",
+          "t": "The sun is setting — the whole zoo glows orange and pink!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-28.mp4",
+          "t": "The zookeeper waves goodbye — thank you for a wonderful day!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-29.mp4",
+          "t": "Good night, zoo friends! Good night, elephant, monkey, and flamingos!"
+        },
+        {
+          "clip": "susp-jrn-bella-zoo-friends-30.mp4",
+          "t": "Tomorrow Rusty will fix the broken school bus — will you come with us? Bye bye!"
         }
       ]
     }
