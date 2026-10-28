@@ -3612,6 +3612,135 @@
           "hi": "और आज भी, जब आधी रात में दुकान से हल्की खुशबू आती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और माहिरा की मोम-बत्तियां अब भी सबसे रोशन जलती हैं।\""
         }
       ]
+    },
+    {
+      "id": "teashop",
+      "hero": "Anaya",
+      "pitch": 1.5,
+      "title_en": "The Old Tea Shop",
+      "title_hi": "पुरानी चाय की दुकान",
+      "beats": [
+        {
+          "clip": "susp-anaya-hd-1.mp4",
+          "en": "At midnight the brass kettle of the old tea shop boiled on its own, and Anaya heard someone calling her name.",
+          "hi": "आधी रात को पुरानी चाय की दुकान की पीतल की केतली ख़ुद उबल उठी, और अनाया ने सुना — कोई उसका नाम ले रहा था।"
+        },
+        {
+          "clip": "susp-anaya-hd-2.mp4",
+          "en": "In the morning Anaya went to the shop — the door was shut, but through the window a little golden kettle was glowing.",
+          "hi": "सुबह अनाया दुकान गई — दरवाज़ा बंद था, मगर खिड़की से एक छोटी सी सुनहरी केतली चमक रही थी।"
+        },
+        {
+          "clip": "susp-anaya-hd-3.mp4",
+          "en": "She peeked through the window — on the kettle there was a golden line of steam, as if someone had just made tea.",
+          "hi": "उसने खिड़की से झांका — केतली पर सुनहरी भाप की लकीर थी, जैसे अभी-अभी किसी ने चाय बनाई हो।"
+        },
+        {
+          "clip": "susp-anaya-hd-4.mp4",
+          "en": "In the evening the smell of cardamom came from behind the shop — the old shop, shut for years, started opening on its own.",
+          "hi": "शाम को दुकान के पीछे से इलायची की खुशबू आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।"
+        },
+        {
+          "clip": "susp-anaya-hd-5.mp4",
+          "en": "Anaya touched the kettle — it was warm, as if someone had just touched it.",
+          "hi": "अनाया ने केतली को हाथ लगाया — केतली गरम थी, जैसे अभी-अभी किसी ने उसे छुआ हो।"
+        },
+        {
+          "clip": "susp-anaya-hd-6.mp4",
+          "en": "At night she held the kettle in her hand — it glowed faintly, as if someone were calling her.",
+          "hi": "रात को उसने केतली को अपने हाथ में पकड़ा — केतली हल्की सी चमकी, जैसे कोई उसे बुला रहा हो।"
+        },
+        {
+          "clip": "susp-anaya-hd-7.mp4",
+          "en": "In the morning beneath the kettle there was a tiny paper — completely blank, with only one golden line along its edge.",
+          "hi": "सुबह केतली के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
+        },
+        {
+          "clip": "susp-anaya-hd-8.mp4",
+          "en": "Anaya asked the villagers — no one had heard the shop owner's name, but old grandmother said: \"This shop is sixty years old.\"",
+          "hi": "अनाया ने गांव वालों से पूछा — किसी ने दुकान के मालिक का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये दुकान साठ साल पुरानी है।\""
+        },
+        {
+          "clip": "susp-anaya-hd-9.mp4",
+          "en": "Grandmother told her: sixty years ago a tea-seller made tea here, who went into the shop one night and never came back.",
+          "hi": "दादी ने बताया: साठ साल पहले एक चाय वाला यहां चाय बनाता था, जो एक रात दुकान में गया और कभी वापस नहीं आया।"
+        },
+        {
+          "clip": "susp-anaya-hd-10.mp4",
+          "en": "That night the shop woke again — and this time Anaya saw: beside the kettle stood an old man, white beard, a cup of tea in his hand, and sadness in his eyes.",
+          "hi": "उस रात दुकान फिर जगी — और इस दफ़ा अनाया ने देखा: केतली के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में चाय का प्याला, और उसकी आंखों में उदासी थी।"
+        },
+        {
+          "clip": "susp-anaya-hd-11.mp4",
+          "en": "The old man said: \"I am Uncle Rahim. For forty years I have forgotten the taste of my last tea — will someone tell me, was my tea sweet or not?\"",
+          "hi": "बूढ़े ने कहा: \"मैं चाचा रहीम हूं। चालीस साल से मैं अपनी आख़िरी चाय का ज़ायका भूल गया हूं — कोई बताए तो सही, मेरी चाय मीठी थी या नहीं?\""
+        },
+        {
+          "clip": "susp-anaya-hd-12.mp4",
+          "en": "Anaya asked: \"Why did you forget the taste?\" — Rahim pointed at the shut shop: \"The night the shop's stove went out, my tea stopped too. I have waited ever since.\"",
+          "hi": "अनाया ने पूछा: \"तुम ज़ायका क्यों भूल गए?\" — रहीम ने बंद दुकान की तरफ़ इशारा किया: \"जिस रात दुकान की भट्टी बुझी, उसी रात मेरी चाय भी रुक गई। तब से मैं इंतज़ार में हूं।\""
+        },
+        {
+          "clip": "susp-anaya-hd-13.mp4",
+          "en": "Anaya touched the shop's old kettle — the kettle glowed golden, as if it recognised her.",
+          "hi": "अनाया ने दुकान की पुरानी केतली को हाथ लगाया — केतली सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।"
+        },
+        {
+          "clip": "susp-anaya-hd-14.mp4",
+          "en": "She showed Rahim a picture of her little tea shop — one she had made as a child and kept safe ever since.",
+          "hi": "उसने रहीम को अपनी छोटी सी चाय की दुकान की तस्वीर दिखाई — जो उसने बचपन में बनाई थी, और अब तक संभाल कर रखी थी।"
+        },
+        {
+          "clip": "susp-anaya-hd-15.mp4",
+          "en": "Rahim smiled: \"This is the way. Whoever loves their tea never forgets its taste.\"",
+          "hi": "रहीम मुस्कुराया: \"यही रस्ता है। जो अपनी चाय से प्यार करता है, वो उसका ज़ायका कभी नहीं भूलता।\""
+        },
+        {
+          "clip": "susp-anaya-hd-16.mp4",
+          "en": "Together they cleaned the shop — the window shone, the kettles gleamed, and the smell of cardamom spread through the shop.",
+          "hi": "दोनों ने मिल कर दुकान को साफ़ किया — खिड़की चमकी, केतलियां चमक उठीं, और दुकान में इलायची की खुशबू फैल गई।"
+        },
+        {
+          "clip": "susp-anaya-hd-17.mp4",
+          "en": "Anaya stood before the kettle and said: \"I will bring back the taste of your last tea — you just watch, Uncle.\"",
+          "hi": "अनाया ने केतली के सामने खड़े होकर कहा: \"मैं तुम्हारी आख़िरी चाय का ज़ायका वापस लाऊंगी — तुम बस देखते रहो, चाचा।\""
+        },
+        {
+          "clip": "susp-anaya-hd-18.mp4",
+          "en": "Rahim gave her his kettle — the kettle glowed golden, and the shop stirred gently.",
+          "hi": "रहीम ने अपनी केतली अनाया को दी — केतली सुनहरी चमक उठी, और दुकान हल्की सी हिली।"
+        },
+        {
+          "clip": "susp-anaya-hd-19.mp4",
+          "en": "Anaya made the tea — it glowed golden, and tears came to Rahim's eyes: \"This is the sweetest tea in the world!\"",
+          "hi": "अनाया ने चाय बनाई — चाय सुनहरी चमक उठी, और रहीम की आंखों में आंसू आ गए: \"ये दुनिया की सबसे मीठी चाय है!\""
+        },
+        {
+          "clip": "susp-anaya-hd-20.mp4",
+          "en": "Light came into Rahim's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Anaya. Now I can go home.\"",
+          "hi": "रहीम की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, अनाया। अब मैं घर जा सकता हूं।\""
+        },
+        {
+          "clip": "susp-anaya-hd-21.mp4",
+          "en": "In the morning the villagers stood at the shop door — all the kettles were boiling, and a fresh glowing kettle lay on the table.",
+          "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारी केतलियां उबल रही थीं, और मेज़ पर एक नई चमकती केतली थी।"
+        },
+        {
+          "clip": "susp-anaya-hd-22.mp4",
+          "en": "Beside the kettle there was a tiny paper — Anaya pressed the paper to her chest and smiled.",
+          "hi": "केतली के पास एक छोटा सा काग़ज़ था — अनाया ने काग़ज़ को सीने से लगाया और मुस्कुराई।"
+        },
+        {
+          "clip": "susp-anaya-hd-23.mp4",
+          "en": "From that day Anaya made tea in the shop every evening — and whichever child came left with a little cup of tea.",
+          "hi": "उस दिन से अनाया हर शाम दुकान में चाय बनाती — और जो बच्चा आता, वो दुकान से एक छोटा प्याला चाय ले कर जाता।"
+        },
+        {
+          "clip": "susp-anaya-hd-24.mp4",
+          "en": "And even today, when the smell of cardamom drifts from the shop at midnight, the villagers say: \"Rahim reached home — and Anaya's tea is still the sweetest.\"",
+          "hi": "और आज भी, जब आधी रात में दुकान से इलायची की खुशबू आती है, तो गांव वाले कहते हैं: \"रहीम घर पहुंच गया — और अनाया की चाय अब भी सबसे मीठी है।\""
+        }
+      ]
     }
   ],
   "version": 15
