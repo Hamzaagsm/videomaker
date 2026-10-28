@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -1903,6 +1903,133 @@
         {
           "clip": "susp-jrn-bella-zoo-friends-30.mp4",
           "t": "Tomorrow Rusty will fix the broken school bus — will you come with us? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "rusty-broken-bus",
+      "car": "Rusty",
+      "title": "Rusty and the Broken Bus",
+      "lines": [
+        {
+          "clip": "susp-jrn-rusty-broken-bus-1.mp4",
+          "t": "Oh no! The big yellow school bus stopped in the middle of the road — and the children are late for school! Who can help them?"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-2.mp4",
+          "t": "Good morning, friends! I am Rusty, the strong brown tow truck — my hook is ready and my heart is kind!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-3.mp4",
+          "t": "Vroom vroom! Down the flower-lined street I roll — the children are waving at me!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-4.mp4",
+          "t": "Do not worry, little ones! Rusty is here — I will take your bus to the garage!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-5.mp4",
+          "t": "Click! My strong hook catches the bus gently — hold on tight, yellow bus!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-6.mp4",
+          "t": "Pull! Pull! Slowly, slowly — the big bus starts to roll again!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-7.mp4",
+          "t": "Up the little hill road we climb — the bus follows me like a happy duckling!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-8.mp4",
+          "t": "Look, the tall pine trees wave at us — hello, green pines!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-9.mp4",
+          "t": "We cross the old stone bridge — the little stream giggles below us!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-10.mp4",
+          "t": "The wheat fields shine golden — the bus and I roll through the sunshine!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-11.mp4",
+          "t": "The village square is busy — everyone waves at the brave little tow!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-12.mp4",
+          "t": "Wait — what is that tiny sound under the bus? Someone is whimpering!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-13.mp4",
+          "t": "Oh! A tiny puppy is hiding under the bus — do not cry, little friend, you are safe now!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-14.mp4",
+          "t": "The puppy climbs into my warm cab — now we are three friends on the road!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-15.mp4",
+          "t": "The children laugh and sing — the puppy wags his tail, woof woof!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-16.mp4",
+          "t": "Down the red barn road we go — the cows moo hello to our little puppy!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-17.mp4",
+          "t": "Ding ding! The railway crossing is clear — the train waves from far away!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-18.mp4",
+          "t": "The sunflower field is so tall and yellow — just like our big school bus!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-19.mp4",
+          "t": "We stop by the blue lake — the puppy drinks cool water, lap lap lap!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-20.mp4",
+          "t": "Up the windmill hill we climb — the windmill turns slowly, round and round!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-21.mp4",
+          "t": "The toy shop street is full of colors — the children point at the teddy bears!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-22.mp4",
+          "t": "The market square smells of fresh bread — the baker waves with a warm bun!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-23.mp4",
+          "t": "Through the green park we roll — the ducks quack hello from the pond!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-24.mp4",
+          "t": "We cross the little wooden bridge — creak creak, but it holds us strong!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-25.mp4",
+          "t": "The clock tower rings — ding dong! The garage is near, little bus!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-26.mp4",
+          "t": "Look! The garage with its big red doors — we made it, friends!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-27.mp4",
+          "t": "The kind mechanic opens the bus — hmm, a tiny bolt was loose! Easy fix!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-28.mp4",
+          "t": "Clank clank! The bus is fixed — its engine hums happily again!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-29.mp4",
+          "t": "Hooray! The children cheer — and the puppy gets a new home at the school!"
+        },
+        {
+          "clip": "susp-jrn-rusty-broken-bus-30.mp4",
+          "t": "Tomorrow Bruno will drive through the big city lights — will you come with us? Bye bye!"
         }
       ]
     }
