@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 20,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -2030,6 +2030,133 @@
         {
           "clip": "susp-jrn-rusty-broken-bus-30.mp4",
           "t": "Tomorrow Bruno will drive through the big city lights — will you come with us? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "bruno-big-city",
+      "car": "Bruno",
+      "title": "Bruno and the Big City Lights",
+      "lines": [
+        {
+          "clip": "susp-jrn-bruno-big-city-1.mp4",
+          "t": "Oh no! The city lights went out — the whole big city is dark! Who will light it up tonight?"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-2.mp4",
+          "t": "Good evening, friends! I am Bruno, the big blue truck — and I carry a trailer full of giant light bulbs!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-3.mp4",
+          "t": "Vroom vroom! Down the wide city highway I roll — the tall towers wave at me!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-4.mp4",
+          "t": "Look, the glass skyscrapers sparkle like giant mirrors — hello, shiny towers!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-5.mp4",
+          "t": "First stop: the neon street — but the signs are dark! My bulbs will fix that!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-6.mp4",
+          "t": "I park beside the big fountain square — the water dances in the moonlight!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-7.mp4",
+          "t": "The park avenue is so quiet — the trees sleep under the silver moon!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-8.mp4",
+          "t": "Up the hill road I climb — the whole city glitters below like stars!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-9.mp4",
+          "t": "I cross the old stone bridge over the river — the water sparkles below!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-10.mp4",
+          "t": "The subway entrance is dark — my headlights light the way down!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-11.mp4",
+          "t": "Down the market street I roll — the stalls sleep under striped awnings!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-12.mp4",
+          "t": "Wait — what is that tiny sound? A little robot is crying by the lamp post!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-13.mp4",
+          "t": "Oh! It is Bolt, the little light robot — he lost the biggest bulb of all!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-14.mp4",
+          "t": "Do not cry, Bolt! Climb on my trailer — we will find your bulb together!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-15.mp4",
+          "t": "Look — a shiny trail of glass sparkles leads down the museum steps!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-16.mp4",
+          "t": "The trail goes past the library street — shhh, the books are sleeping!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-17.mp4",
+          "t": "There it is! The big bulb is stuck on the theatre roof — hold on, Bolt!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-18.mp4",
+          "t": "My trailer lifts Bolt high — he grabs the bulb! Hooray, we found it!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-19.mp4",
+          "t": "Now the clock tower shines again — ding dong, it is midnight already!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-20.mp4",
+          "t": "The toy shop street glows bright — little teddy bears wave from the window!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-21.mp4",
+          "t": "Down the riverside promenade I roll — the boats bob on the moonlit water!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-22.mp4",
+          "t": "The stadium road is wide and empty — I honk a happy song, beep beep!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-23.mp4",
+          "t": "The school street is quiet — tomorrow the children will see the lights!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-24.mp4",
+          "t": "I stop at the bakery street — warm bread smells so yummy, even at night!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-25.mp4",
+          "t": "The flower shop avenue glows pink and gold — roses for everyone!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-26.mp4",
+          "t": "The train station road buzzes — the last train waves goodbye!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-27.mp4",
+          "t": "Look! The whole city shines now — every window twinkles like a star!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-28.mp4",
+          "t": "Bolt waves goodbye from the lamp post — thank you, Bruno, my big friend!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-29.mp4",
+          "t": "Home at last! My garage is warm and my bed is soft — good night, big city!"
+        },
+        {
+          "clip": "susp-jrn-bruno-big-city-30.mp4",
+          "t": "Tomorrow Rayo races to the airport — will you come with me? Bye bye!"
         }
       ]
     }
