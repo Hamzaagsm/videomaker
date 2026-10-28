@@ -3741,6 +3741,135 @@
           "hi": "और आज भी, जब आधी रात में दुकान से इलायची की खुशबू आती है, तो गांव वाले कहते हैं: \"रहीम घर पहुंच गया — और अनाया की चाय अब भी सबसे मीठी है।\""
         }
       ]
+    },
+    {
+      "id": "bookshop",
+      "hero": "Alina",
+      "pitch": 1.5,
+      "title_en": "The Old Book Shop",
+      "title_hi": "पुरानी किताबों की दुकान",
+      "beats": [
+        {
+          "clip": "susp-alina-hd-1.mp4",
+          "en": "At midnight a book in the old bookshop opened on its own, its pages turning by themselves, and Alina heard someone calling her name.",
+          "hi": "आधी रात को पुरानी किताबों की दुकान की एक किताब ख़ुद खुल गई, सफ़े ख़ुद पलटने लगे, और अलीना ने सुना — कोई उसका नाम ले रहा था।"
+        },
+        {
+          "clip": "susp-alina-hd-2.mp4",
+          "en": "In the morning Alina went to the shop — the door was shut, but through the window a little golden book was glowing.",
+          "hi": "सुबह अलीना दुकान गई — दरवाज़ा बंद था, मगर खिड़की से एक छोटी सी सुनहरी किताब चमक रही थी।"
+        },
+        {
+          "clip": "susp-alina-hd-3.mp4",
+          "en": "She peeked through the window — on the book's pages there was a golden line of light, as if someone had just read it.",
+          "hi": "उसने खिड़की से झांका — किताब के सफ़ों पर सुनहरी रोशनी की लकीर थी, जैसे अभी-अभी किसी ने उसे पढ़ा हो।"
+        },
+        {
+          "clip": "susp-alina-hd-4.mp4",
+          "en": "In the evening the smell of old paper came from behind the shop — the old shop, shut for years, started opening on its own.",
+          "hi": "शाम को दुकान के पीछे से पुराने काग़ज़ की खुशबू आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।"
+        },
+        {
+          "clip": "susp-alina-hd-5.mp4",
+          "en": "Alina touched the book — it was warm, as if someone had just touched it.",
+          "hi": "अलीना ने किताब को हाथ लगाया — किताब गरम थी, जैसे अभी-अभी किसी ने उसे छुआ हो।"
+        },
+        {
+          "clip": "susp-alina-hd-6.mp4",
+          "en": "At night she held the book in her hand — it glowed faintly, as if someone were calling her.",
+          "hi": "रात को उसने किताब को अपने हाथ में पकड़ा — किताब हल्की सी चमकी, जैसे कोई उसे बुला रहा हो।"
+        },
+        {
+          "clip": "susp-alina-hd-7.mp4",
+          "en": "In the morning beneath the book there was a tiny paper — completely blank, with only one golden line along its edge.",
+          "hi": "सुबह किताब के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
+        },
+        {
+          "clip": "susp-alina-hd-8.mp4",
+          "en": "Alina asked the villagers — no one had heard the shop owner's name, but old grandmother said: \"This shop is seventy years old.\"",
+          "hi": "अलीना ने गांव वालों से पूछा — किसी ने दुकान के मालिक का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये दुकान सत्तर साल पुरानी है।\""
+        },
+        {
+          "clip": "susp-alina-hd-9.mp4",
+          "en": "Grandmother told her: seventy years ago a bookseller sold books here, who went into the shop one night and never came back.",
+          "hi": "दादी ने बताया: सत्तर साल पहले एक किताब वाली यहां किताबें बेचती थी, जो एक रात दुकान में गई और कभी वापस नहीं आई।"
+        },
+        {
+          "clip": "susp-alina-hd-10.mp4",
+          "en": "That night the shop woke again — and this time Alina saw: beside the book stood an old woman, white hair, an old book in her hand, and sadness in her eyes.",
+          "hi": "उस रात दुकान फिर जगी — और इस दफ़ा अलीना ने देखा: किताब के पास एक बूढ़ी औरत खड़ी थी, सफ़ेद बाल, हाथ में एक पुरानी किताब, और उसकी आंखों में उदासी थी।"
+        },
+        {
+          "clip": "susp-alina-hd-11.mp4",
+          "en": "The old woman said: \"I am Bibi Amina. For fifty years I have forgotten the last page of my last story — will someone tell me, how did my story end?\"",
+          "hi": "बूढ़ी ने कहा: \"मैं बीबी अमीना हूं। पचास साल से मैं अपनी आख़िरी कहानी का आख़िरी सफ़ा भूल गई हूं — कोई बताए तो सही, मेरी कहानी ख़त्म कैसे होती थी?\""
+        },
+        {
+          "clip": "susp-alina-hd-12.mp4",
+          "en": "Alina asked: \"Why did you forget the last page?\" — Amina pointed at the shut shop: \"The night the shop's light went out, my story stopped too. I have waited ever since.\"",
+          "hi": "अलीना ने पूछा: \"तुम आख़िरी सफ़ा क्यों भूल गईं?\" — अमीना ने बंद दुकान की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात मेरी कहानी भी रुक गई। तब से मैं इंतज़ार में हूं।\""
+        },
+        {
+          "clip": "susp-alina-hd-13.mp4",
+          "en": "Alina touched the shop's old book — the book glowed golden, as if it recognised her.",
+          "hi": "अलीना ने दुकान की पुरानी किताब को हाथ लगाया — किताब सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।"
+        },
+        {
+          "clip": "susp-alina-hd-14.mp4",
+          "en": "She showed Amina a picture of her little book — one she had made as a child and kept safe ever since.",
+          "hi": "उसने अमीना को अपनी छोटी सी किताब की तस्वीर दिखाई — जो उसने बचपन में बनाई थी, और अब तक संभाल कर रखी थी।"
+        },
+        {
+          "clip": "susp-alina-hd-15.mp4",
+          "en": "Amina smiled: \"This is the way. Whoever loves their story never forgets its last page.\"",
+          "hi": "अमीना मुस्कुराई: \"यही रस्ता है। जो अपनी कहानी से प्यार करता है, वो उसका आख़िरी सफ़ा कभी नहीं भूलता।\""
+        },
+        {
+          "clip": "susp-alina-hd-16.mp4",
+          "en": "Together they cleaned the shop — the window shone, the books gleamed, and the smell of old paper spread through the shop.",
+          "hi": "दोनों ने मिल कर दुकान को साफ़ किया — खिड़की चमकी, किताबें चमक उठीं, और दुकान में पुराने काग़ज़ की खुशबू फैल गई।"
+        },
+        {
+          "clip": "susp-alina-hd-17.mp4",
+          "en": "Alina stood before the book and said: \"I will bring back the last page of your last story — you just watch, Bibi.\"",
+          "hi": "अलीना ने किताब के सामने खड़े होकर कहा: \"मैं तुम्हारी आख़िरी कहानी का आख़िरी सफ़ा वापस लाऊंगी — तुम बस देखते रहो, बीबी।\""
+        },
+        {
+          "clip": "susp-alina-hd-18.mp4",
+          "en": "Amina gave her book to Alina — the book glowed golden, and the shop stirred gently.",
+          "hi": "अमीना ने अपनी किताब अलीना को दी — किताब सुनहरी चमक उठी, और दुकान हल्की सी हिली।"
+        },
+        {
+          "clip": "susp-alina-hd-19.mp4",
+          "en": "Alina finished the story — the book glowed golden, and tears came to Amina's eyes: \"This is the loveliest story in the world!\"",
+          "hi": "अलीना ने कहानी पूरी की — किताब सुनहरी चमक उठी, और अमीना की आंखों में आंसू आ गए: \"ये दुनिया की सबसे प्यारी कहानी है!\""
+        },
+        {
+          "clip": "susp-alina-hd-20.mp4",
+          "en": "Light came into Amina's eyes — the shop's glow rose toward the stars, and her voice came: \"Thank you, Alina. Now I can go home.\"",
+          "hi": "अमीना की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, अलीना। अब मैं घर जा सकती हूं।\""
+        },
+        {
+          "clip": "susp-alina-hd-21.mp4",
+          "en": "In the morning the villagers stood at the shop door — all the books were open, and a fresh glowing book lay on the table.",
+          "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारी किताबें खुली थीं, और मेज़ पर एक नई चमकती किताब थी।"
+        },
+        {
+          "clip": "susp-alina-hd-22.mp4",
+          "en": "Beside the book there was a tiny paper — Alina pressed the paper to her chest and smiled.",
+          "hi": "किताब के पास एक छोटा सा काग़ज़ था — अलीना ने काग़ज़ को सीने से लगाया और मुस्कुराई।"
+        },
+        {
+          "clip": "susp-alina-hd-23.mp4",
+          "en": "From that day Alina read books in the shop every evening — and whichever child came left with a little book.",
+          "hi": "उस दिन से अलीना हर शाम दुकान में किताबें पढ़ती — और जो बच्चा आता, वो दुकान से एक छोटी किताब ले कर जाता।"
+        },
+        {
+          "clip": "susp-alina-hd-24.mp4",
+          "en": "And even today, when the rustle of pages drifts from the shop at midnight, the villagers say: \"Amina reached home — and Alina's story is still the loveliest.\"",
+          "hi": "और आज भी, जब आधी रात में दुकान से सफ़ों की सरसराहट आती है, तो गांव वाले कहते हैं: \"अमीना घर पहुंच गई — और अलीना की कहानी अब भी सबसे प्यारी है।\""
+        }
+      ]
     }
   ],
   "version": 15
