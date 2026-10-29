@@ -1,5 +1,5 @@
 {
-  "version": 21,
+  "version": 22,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -2284,6 +2284,133 @@
         {
           "clip": "susp-jrn-rayo-airport-trip-30.mp4",
           "t": "Tomorrow I will visit Bella's bakery in the morning — will you come with me?"
+        }
+      ]
+    },
+    {
+      "id": "bella-bakery-morning",
+      "car": "Bella",
+      "title": "Bella and the Bakery Morning",
+      "lines": [
+        {
+          "clip": "susp-jrn-bella-bakery-morning-1.mp4",
+          "t": "Oh no! The bakery ovens are cold — who will bake the morning bread?"
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-2.mp4",
+          "t": "I am Bella, and I will help the baker before the sun wakes up!"
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-3.mp4",
+          "t": "First I drive to the old flour mill for fresh flour."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-4.mp4",
+          "t": "The miller waves and fills my boot with soft white flour."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-5.mp4",
+          "t": "Next I roll down the wheat-field road to fetch sweet honey."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-6.mp4",
+          "t": "The bees hum a happy song as I pass their flower garden."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-7.mp4",
+          "t": "At the riverside market I pick up warm butter and fresh eggs."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-8.mp4",
+          "t": "I carry a basket of red apples from the orchard lane."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-9.mp4",
+          "t": "Back at the bakery, the baker smiles — now we can start!"
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-10.mp4",
+          "t": "I stir the dough while the baker hums a morning tune."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-11.mp4",
+          "t": "We shape little buns like stars, hearts, and tiny cars."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-12.mp4",
+          "t": "Uh-oh! The oven door will not open — the bread is stuck inside!"
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-13.mp4",
+          "t": "I ring my little bell, and all my friends come running to help."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-14.mp4",
+          "t": "Together we push gently — pop! The oven opens wide!"
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-15.mp4",
+          "t": "Warm bread smells fill the whole street — everyone smiles!"
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-16.mp4",
+          "t": "We lay the buns on trays by the pink flower window."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-17.mp4",
+          "t": "Children from the school lane come for warm buns and milk."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-18.mp4",
+          "t": "I give a star bun to a little girl who shares it with her brother."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-19.mp4",
+          "t": "The baker bakes a big honey cake for the town fair."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-20.mp4",
+          "t": "I drive the cake slowly down the cobbled market street."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-21.mp4",
+          "t": "At the fountain square, friends sing while I park with care."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-22.mp4",
+          "t": "We cut the cake under the tall oak tree in the park."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-23.mp4",
+          "t": "Crumbs fall for the birds, and they sing a thank-you song."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-24.mp4",
+          "t": "Back at the bakery, the baker hangs a Thank You Bella sign."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-25.mp4",
+          "t": "I wash my floury wheels in the little stream by the hill road."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-26.mp4",
+          "t": "The sun shines on my yellow paint — I sparkle like honey!"
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-27.mp4",
+          "t": "I drop leftover buns at the little library house for readers."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-28.mp4",
+          "t": "Everyone waves as I drive home down the sunset rose lane."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-29.mp4",
+          "t": "My garage smells of warm bread, and I feel so proud today."
+        },
+        {
+          "clip": "susp-jrn-bella-bakery-morning-30.mp4",
+          "t": "Tomorrow I will visit Rusty's farm — will you come with me?"
         }
       ]
     }
