@@ -1,5 +1,5 @@
 {
-  "version": 20,
+  "version": 21,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -2157,6 +2157,133 @@
         {
           "clip": "susp-jrn-bruno-big-city-30.mp4",
           "t": "Tomorrow Rayo races to the airport — will you come with me? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "rayo-airport-trip",
+      "car": "Rayo",
+      "title": "Rayo and the Airport Trip",
+      "lines": [
+        {
+          "clip": "susp-jrn-rayo-airport-trip-1.mp4",
+          "t": "Oh no! A giant plane just flew right over my roof — where is it going?"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-2.mp4",
+          "t": "I am Rayo, and today I am driving to the airport to find out!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-3.mp4",
+          "t": "Look at that big sign — it has a little plane on it and points to the airport!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-4.mp4",
+          "t": "Wow, the runway is so long — planes run fast and then jump into the sky!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-5.mp4",
+          "t": "A silver plane is taking off — whoosh! It climbs up like a big bird!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-6.mp4",
+          "t": "I stop by the control tower — it is so tall, like a giant lighthouse!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-7.mp4",
+          "t": "The tower waves a green flag at me — up here, we watch every plane!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-8.mp4",
+          "t": "I drive past the hangars where planes sleep at night."
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-9.mp4",
+          "t": "A little red-and-white plane is getting washed — splish splash!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-10.mp4",
+          "t": "I see suitcases rolling on a belt — where are they all going?"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-11.mp4",
+          "t": "A little parked plane opens its door wide — 'Come and see inside!' it seems to say!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-12.mp4",
+          "t": "Oh! A tiny lost suitcase is sitting all alone on the road!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-13.mp4",
+          "t": "The suitcase has a yellow tag — it belongs to a little girl on flight number seven!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-14.mp4",
+          "t": "Quick, Rayo! I race to gate seven before the plane leaves!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-15.mp4",
+          "t": "I made it! The suitcase rolls up the little stairs and into the plane — saved just in time!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-16.mp4",
+          "t": "Now the big plane is ready — engines hum, wheels roll, up it goes!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-17.mp4",
+          "t": "I watch it fly into the clouds — bye bye, little suitcase!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-18.mp4",
+          "t": "A rainbow appears over the airport — what a perfect day!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-19.mp4",
+          "t": "I drive to the viewing hill to watch more planes land."
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-20.mp4",
+          "t": "One plane lands softly, like a feather touching the ground."
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-21.mp4",
+          "t": "The sun starts to set — the airport lights twinkle like stars."
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-22.mp4",
+          "t": "I race along the sunset road, past the golden fields."
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-23.mp4",
+          "t": "The moon smiles down on the runway — good night, planes!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-24.mp4",
+          "t": "A night plane blinks its lights — blink, blink, up in the dark sky!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-25.mp4",
+          "t": "I yawn — what a big day at the airport!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-26.mp4",
+          "t": "I dream of flying — maybe one day I will race the clouds!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-27.mp4",
+          "t": "Back at my garage, I park under the sleepy street lamps."
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-28.mp4",
+          "t": "Good night, airport! Good night, planes! See you tomorrow!"
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-29.mp4",
+          "t": "I close my eyes in my garage and dream of flying high above the clouds."
+        },
+        {
+          "clip": "susp-jrn-rayo-airport-trip-30.mp4",
+          "t": "Tomorrow I will visit Bella's bakery in the morning — will you come with me?"
         }
       ]
     }
