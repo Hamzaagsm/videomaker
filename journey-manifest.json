@@ -1,5 +1,5 @@
 {
-  "version": 23,
+  "version": 24,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -2538,6 +2538,133 @@
         {
           "clip": "susp-jrn-rusty-farm-day-30.mp4",
           "t": "Tomorrow Bruno carries apples from the big orchard — will you come with me?"
+        }
+      ]
+    },
+    {
+      "id": "bruno-apple-orchard",
+      "car": "Bruno",
+      "title": "Bruno and the Apple Orchard",
+      "lines": [
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-1.mp4",
+          "t": "Oh no! The apple trees are SO full — the branches are bending down! Who will carry all these apples to the city before they fall?"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-2.mp4",
+          "t": "Good morning, friends! I am Bruno, the big blue truck — and today I help the orchard!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-3.mp4",
+          "t": "My big box trailer is empty and ready — vroom vroom, into the orchard road!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-4.mp4",
+          "t": "Look, the orchard gate wears a crown of red apples — welcome, Bruno!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-5.mp4",
+          "t": "The farmer waves at me — his baskets are full, and the trees are still full!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-6.mp4",
+          "t": "Row after row of apple trees — red, green, and gold, as far as I can see!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-7.mp4",
+          "t": "First, we load the shiny red apples — plop, plop, into my trailer!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-8.mp4",
+          "t": "Then the crisp green apples — crunchy and sweet, just like the morning air!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-9.mp4",
+          "t": "The golden apples glow in the sun — they look like little suns on the trees!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-10.mp4",
+          "t": "A little robin sings from a low branch beside me — tweet tweet, thank you for the apples!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-11.mp4",
+          "t": "We roll past the buzzing beehives — the bees are busy, and so am I!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-12.mp4",
+          "t": "Wait — what is that sound from the back of my trailer? Something is rolling!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-13.mp4",
+          "t": "Oh! A basket tipped over — apples are rolling down the hill like red balls!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-14.mp4",
+          "t": "Do not worry! I park very steady, and the farmer's children help me gather them!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-15.mp4",
+          "t": "One, two, three — every apple back in its basket! Hooray, team work!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-16.mp4",
+          "t": "The children give me one shiny apple — crunch! The sweetest thank-you ever!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-17.mp4",
+          "t": "Now my trailer is full to the top — the orchard smells like apple pie!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-18.mp4",
+          "t": "Goodbye, orchard trees! Thank you for the sweetest load of the year!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-19.mp4",
+          "t": "Down the winding country lane I go — cows watch me from the green meadow!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-20.mp4",
+          "t": "I cross the old stone bridge — the river sparkles below my big wheels!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-21.mp4",
+          "t": "Through the pine forest road — the tall trees wave their green branches!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-22.mp4",
+          "t": "Up the little hill I climb — I can see the whole valley below!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-23.mp4",
+          "t": "The village market square is busy — everyone waves as I roll by!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-24.mp4",
+          "t": "First stop: the fruit shop — baskets of red apples for the shopkeeper!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-25.mp4",
+          "t": "Next, the school — apples for all the children, one each, yum yum!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-26.mp4",
+          "t": "Then the bakery — golden apples for warm apple pies, mmm!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-27.mp4",
+          "t": "The city lights twinkle ahead — the last shop is waiting for me!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-28.mp4",
+          "t": "Last basket delivered! My trailer is empty, and my heart is full!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-29.mp4",
+          "t": "Good night, orchard friends — today was sweet from start to finish!"
+        },
+        {
+          "clip": "susp-jrn-bruno-apple-orchard-30.mp4",
+          "t": "Tomorrow Rayo will chase the winter lights — will you come with us? Bye bye!"
         }
       ]
     }
