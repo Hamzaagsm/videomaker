@@ -1,0 +1,13 @@
+# GitHub Pages: deploy ONLY the web app. The clip library folders
+# (suspense-clips, adv-clips) hold ~11.8 GB of HD video - over the 1 GB
+# Pages limit, which made every deployment fail. The app itself reads
+# clips and manifests via raw.githubusercontent.com URLs, so excluding
+# these folders from the website changes nothing for the app.
+exclude:
+  - suspense-clips
+  - adv-clips
+  - test
+  - android
+  - clips
+  - baby-toy-stills
+  - "*.apk"
