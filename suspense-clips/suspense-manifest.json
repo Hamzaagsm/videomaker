@@ -4644,6 +4644,135 @@
    "pitch": 1.15,
    "title_en": "The Old Blacksmith Shop",
    "title_hi": "पुरानी लोहार की दुकान"
+  },
+  {
+   "id": "cobblershop",
+   "hero": "Iqra",
+   "pitch": 1.5,
+   "title_en": "The Old Cobbler Shop",
+   "title_hi": "पुरानी मोची की दुकान",
+   "beats": [
+    {
+     "clip": "susp-iqra-hd-1.mp4",
+     "en": "At midnight the shoes of the old cobbler shop started tapping on their own, one shoe glowed by itself, and a voice came — and Iqra saw, the golden shoe was glowing right toward her.",
+     "hi": "आधी रात को पुरानी मोची दुकान की जूतियाँ ख़ुद थप-थपाने लगीं, एक जूती ख़ुद चमक उठी, और एक आवाज़ आई — और इक़रा ने देखा, सुनहरी जूती उसी की तरफ़ चमक रही थी।"
+    },
+    {
+     "clip": "susp-iqra-hd-2.mp4",
+     "en": "In the morning Iqra went to the shop — the door was shut, but through the window a little golden shoe was glowing.",
+     "hi": "सुबह इक़रा दुकान गई — दरवाज़ा बंद था, मगर खिड़की से एक छोटी सुनहरी जूती चमक रही थी।"
+    },
+    {
+     "clip": "susp-iqra-hd-3.mp4",
+     "en": "She peeked through the window — golden leather dust was swirling on the shelf, as if the shop were breathing.",
+     "hi": "उसने खिड़की से झांका — अलमारी पर सुनहरी चमड़े की धूल घूम रही थी, जैसे दुकान सांस ले रही हो।"
+    },
+    {
+     "clip": "susp-iqra-hd-4.mp4",
+     "en": "In the evening the sound of shoes tapping came from behind the shop — the old shop, shut for years, started opening on its own.",
+     "hi": "शाम को दुकान के पीछे से जूतियों के थप-थपाने की आवाज़ आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।"
+    },
+    {
+     "clip": "susp-iqra-hd-5.mp4",
+     "en": "Iqra touched the shoe — it was warm, as if it had just been stitched.",
+     "hi": "इक़रा ने जूती को हाथ लगाया — जूती गरम थी, जैसे अभी-अभी सील की गई हो।"
+    },
+    {
+     "clip": "susp-iqra-hd-6.mp4",
+     "en": "At night she looked at the shelf — a little shoe glowed faintly, as if someone were calling her.",
+     "hi": "रात को उसने अलमारी पर देखा — एक छोटी जूती हल्की सी चमकी, जैसे कोई उसे बुला रहा हो।"
+    },
+    {
+     "clip": "susp-iqra-hd-7.mp4",
+     "en": "In the morning beneath the shelf there was a tiny paper — completely blank, with only one golden line along its edge.",
+     "hi": "सुबह अलमारी के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
+    },
+    {
+     "clip": "susp-iqra-hd-8.mp4",
+     "en": "Iqra asked the villagers — no one had heard the shop owner's name, but old grandmother said: \"This shop is a hundred years old.\"",
+     "hi": "इक़रा ने गांव वालों से पूछा — किसी ने दुकान के मालिक का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये दुकान सौ साल पुरानी है।\""
+    },
+    {
+     "clip": "susp-iqra-hd-9.mp4",
+     "en": "Grandmother told her: a hundred years ago a cobbler stitched shoes here, who went into the shop one night and never came back.",
+     "hi": "दादी ने बताया: सौ साल पहले एक मोची यहाँ जूतियाँ सीता था, जो एक रात दुकान में गया और कभी वापस नहीं आया।"
+    },
+    {
+     "clip": "susp-iqra-hd-10.mp4",
+     "en": "That night the shop woke again — and this time Iqra saw: beside the shelf stood an old man, white beard, an old shoe in his hand, and sadness in his eyes.",
+     "hi": "उस रात दुकान फिर जागी — और इस दफ़ा इक़रा ने देखा: अलमारी के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में पुरानी जूती, और उसकी आंखों में उदासी थी।"
+    },
+    {
+     "clip": "susp-iqra-hd-11.mp4",
+     "en": "The old man said: \"I am Uncle Kareem. For seventy years I have forgotten the name of the owner of my last shoe — will someone tell me, which child was my shoe for?\"",
+     "hi": "बूढ़े ने कहा: \"मैं चाचा करीम हूं। सत्तर साल से मैं अपनी आख़िरी जूती के मालिक का नाम भूल गया हूं — कोई बताए तो सही, मेरी जूती किस बच्चे की थी?\""
+    },
+    {
+     "clip": "susp-iqra-hd-12.mp4",
+     "en": "Iqra asked: \"Why did you forget your last shoe's owner's name?\" — Kareem pointed at the shut shop: \"The night the shop's light went out, my shoe hid too. I have waited ever since.\"",
+     "hi": "इक़रा ने पूछा: \"तुम आख़िरी जूती के मालिक का नाम क्यों भूल गए?\" — करीम ने बंद दुकान की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात मेरी जूती भी छुप गई। तब से मैं इंतज़ार में हूं।\""
+    },
+    {
+     "clip": "susp-iqra-hd-13.mp4",
+     "en": "Iqra touched the shop's old shoe — the shoe glowed golden, as if it recognised her.",
+     "hi": "इक़रा ने दुकान की पुरानी जूती को हाथ लगाया — जूती सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।"
+    },
+    {
+     "clip": "susp-iqra-hd-14.mp4",
+     "en": "She showed Kareem a little leather pouch from her childhood — one she had made years ago and kept safe ever since.",
+     "hi": "उसने करीम को अपने बचपन की छोटी सी चमड़े की पोटली दिखाई — जो उसने सालों पहले बनाई थी, और अब तक संभाल कर रखी थी।"
+    },
+    {
+     "clip": "susp-iqra-hd-15.mp4",
+     "en": "Kareem smiled: \"This is the way. Whoever loves their shoes never forgets their owners' names.\"",
+     "hi": "करीम मुस्कुराया: \"यही रस्ता है। जो अपनी जूतियों से प्यार करता है, वो उनके मालिक का नाम कभी नहीं भूलता।\""
+    },
+    {
+     "clip": "susp-iqra-hd-16.mp4",
+     "en": "Together they cleaned the shop — the window shone, the shoes gleamed, and golden light spread across the shelf.",
+     "hi": "दोनों ने मिल कर दुकान को साफ़ किया — खिड़की चमकी, जूतियाँ चमक उठीं, और अलमारी पर सुनहरी रोशनी फैल गई।"
+    },
+    {
+     "clip": "susp-iqra-hd-17.mp4",
+     "en": "Iqra stood before the shelf and said: \"I will bring back your last shoe's owner's name — you just watch, Uncle.\"",
+     "hi": "इक़रा ने अलमारी के सामने खड़े होकर कहा: \"मैं तुम्हारी आख़िरी जूती के मालिक का नाम वापस लाऊंगी — तुम बस देखते रहो, चाचा।\""
+    },
+    {
+     "clip": "susp-iqra-hd-18.mp4",
+     "en": "Kareem gave his old shoe to Iqra — the shoe glowed golden, and the shop stirred gently.",
+     "hi": "करीम ने अपनी पुरानी जूती इक़रा को दी — जूती सुनहरी चमक उठी, और दुकान हल्की सी हिली।"
+    },
+    {
+     "clip": "susp-iqra-hd-19.mp4",
+     "en": "Iqra found the shoe's owner — the shop glowed golden, and tears came to Kareem's eyes: \"This is the most beautiful shoe in the world!\"",
+     "hi": "इक़रा ने जूती का मालिक ढूंढ लिया — दुकान सुनहरी चमक उठी, और करीम की आंखों में आंसू आ गए: \"ये दुनिया की सबसे खूबसूरत जूती है!\""
+    },
+    {
+     "clip": "susp-iqra-hd-20.mp4",
+     "en": "Light came into Kareem's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Iqra. Now I can go home.\"",
+     "hi": "करीम की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, इक़रा। अब मैं घर जा सकता हूं।\""
+    },
+    {
+     "clip": "susp-iqra-hd-21.mp4",
+     "en": "In the morning the villagers stood at the shop door — all the shoes were glowing, and a fresh glowing shoe lay on the table.",
+     "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारी जूतियाँ चमक रही थीं, और मेज़ पर एक नई चमकती जूती थी।"
+    },
+    {
+     "clip": "susp-iqra-hd-22.mp4",
+     "en": "Beside the shoe there was a tiny paper — Iqra pressed the paper to her chest and smiled.",
+     "hi": "जूती के पास एक छोटा सा काग़ज़ था — इक़रा ने काग़ज़ को सीने से लगाया और मुस्कुराई।"
+    },
+    {
+     "clip": "susp-iqra-hd-23.mp4",
+     "en": "From that day Iqra stitched shoes in the shop every evening — and whichever child came left with a little glowing shoe.",
+     "hi": "उस दिन से इक़रा हर शाम दुकान में जूतियाँ सीती — और जो बच्चा आता, वो दुकान से एक छोटी चमकती जूती ले कर जाता।"
+    },
+    {
+     "clip": "susp-iqra-hd-24.mp4",
+     "en": "And even today, when the sound of shoes tapping drifts from the shop at midnight, the villagers say: \"Kareem reached home — and Iqra's shoes are still the most beautiful.\"",
+     "hi": "और आज भी, जब आधी रात में दुकान से जूतियों के थप-थपाने की आवाज़ आती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और इक़रा की जूतियाँ अब भी सबसे खूबसूरत हैं।\""
+    }
+   ]
   }
  ],
  "version": 15
