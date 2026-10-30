@@ -1,5 +1,5 @@
 {
-  "version": 22,
+  "version": 23,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -2411,6 +2411,133 @@
         {
           "clip": "susp-jrn-bella-bakery-morning-30.mp4",
           "t": "Tomorrow I will visit Rusty's farm — will you come with me?"
+        }
+      ]
+    },
+    {
+      "id": "rusty-farm-day",
+      "car": "Rusty",
+      "title": "Rusty and the Farm Day",
+      "lines": [
+        {
+          "clip": "susp-jrn-rusty-farm-day-1.mp4",
+          "t": "Oh no! The farm gate swung open — where did all the little chickens run off to?"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-2.mp4",
+          "t": "I am Rusty, the strong brown tow truck, and today I help at the farm!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-3.mp4",
+          "t": "Vroom! Down the dusty village road I roll, past the tall wheat fields!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-4.mp4",
+          "t": "Hello, golden wheat! You wave at me in the morning breeze!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-5.mp4",
+          "t": "At the red barn, my friend Tilly the green tractor waits for me!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-6.mp4",
+          "t": "Tilly says the hay cart is too heavy — I hook it up and pull with all my might!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-7.mp4",
+          "t": "Heave! Ho! The hay cart rolls along the muddy farm lane!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-8.mp4",
+          "t": "Moo! The happy cows munch green grass in the wide pasture!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-9.mp4",
+          "t": "I carry fresh milk cans to the little dairy shed by the pond!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-10.mp4",
+          "t": "Quack quack! The ducks splash in the blue pond near the willow tree!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-11.mp4",
+          "t": "Over the little wooden bridge I go, into the tall cornfield!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-12.mp4",
+          "t": "The corn is taller than me! I peek between the green stalks!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-13.mp4",
+          "t": "Wait — what is that tiny sound inside the big haystack?"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-14.mp4",
+          "t": "Oh! A little lost lamb is hiding in the hay — do not be afraid, little one!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-15.mp4",
+          "t": "I lift the lamb gently with my hook and carry it back to its mama sheep!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-16.mp4",
+          "t": "Baa! Mama sheep is so happy — thank you, Rusty, she says!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-17.mp4",
+          "t": "Now Tilly and I race to the sunflower patch — so many yellow smiles!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-18.mp4",
+          "t": "Buzz! The bees hum over the flowers while I water the vegetable patch!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-19.mp4",
+          "t": "Look, the pumpkin field! The biggest pumpkin is almost as big as me!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-20.mp4",
+          "t": "I tow a basket of red tomatoes to the farm shop on the hill road!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-21.mp4",
+          "t": "At the village lane, the children wave — hello, Rusty, hello!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-22.mp4",
+          "t": "The farm dog runs beside me, barking happily all the way!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-23.mp4",
+          "t": "Up the rocky hill road I climb, past the old windmill!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-24.mp4",
+          "t": "From the hilltop, the whole farm looks like a green patchwork quilt!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-25.mp4",
+          "t": "Down the shady mango orchard lane I roll, sweet smell everywhere!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-26.mp4",
+          "t": "Evening comes — the sky turns pink over the quiet riverbank!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-27.mp4",
+          "t": "I park the hay cart in the barn and tuck Tilly in for the night!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-28.mp4",
+          "t": "Good night, chickens! Good night, cows! Sleep tight, little lamb!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-29.mp4",
+          "t": "What a wonderful farm day! My hook helped every friend today!"
+        },
+        {
+          "clip": "susp-jrn-rusty-farm-day-30.mp4",
+          "t": "Tomorrow Bruno carries apples from the big orchard — will you come with me?"
         }
       ]
     }
