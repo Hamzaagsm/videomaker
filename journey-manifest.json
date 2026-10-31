@@ -1,5 +1,5 @@
 {
-  "version": 24,
+  "version": 25,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -2665,6 +2665,133 @@
         {
           "clip": "susp-jrn-bruno-apple-orchard-30.mp4",
           "t": "Tomorrow Rayo will chase the winter lights — will you come with us? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "rayo-winter-lights",
+      "car": "Rayo",
+      "title": "Rayo and the Winter Lights",
+      "lines": [
+        {
+          "clip": "susp-jrn-rayo-winter-lights-1.mp4",
+          "t": "Oh no! All the winter lights in town have gone out — who will light them up tonight?"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-2.mp4",
+          "t": "Hello, friends! I am Rayo — tonight I will bring back the winter lights!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-3.mp4",
+          "t": "Look, the frozen pond sparkles like a giant mirror — so shiny!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-4.mp4",
+          "t": "Hello, snowman! You look so happy on this snowy hill!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-5.mp4",
+          "t": "Careful now — the little ice bridge sparkles under my wheels!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-6.mp4",
+          "t": "The market stalls are dark tonight — the lights are sleeping!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-7.mp4",
+          "t": "Even the old lantern street is dark — not one little light!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-8.mp4",
+          "t": "The deer are watching me — do you know where the lights went?"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-9.mp4",
+          "t": "The candy-cane lane is so sweet — but still no lights tonight!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-10.mp4",
+          "t": "From the hilltop I can see the whole town — it is too dark tonight!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-11.mp4",
+          "t": "The clock tower says seven — the lights should be on by now!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-12.mp4",
+          "t": "Wait — what is that little golden glow in the snow?"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-13.mp4",
+          "t": "A tiny star fell from the sky — it is glowing in the snow!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-14.mp4",
+          "t": "Poor little star, you are lost — you belong on the town tree!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-15.mp4",
+          "t": "Hold on tight, little star — I will carry you home!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-16.mp4",
+          "t": "Look, the snowbirds are following us with their little lanterns!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-17.mp4",
+          "t": "Up you go, little star — right on top of the big tree!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-18.mp4",
+          "t": "Whoosh! All the lights are back — the whole town is glowing!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-19.mp4",
+          "t": "The market is warm and bright — yummy hot chocolate for everyone!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-20.mp4",
+          "t": "The ice rink sparkles under the lights — skate skate, so fun!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-21.mp4",
+          "t": "The old lantern street glows like a golden river now!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-22.mp4",
+          "t": "The candy-cane lane is glowing sweet and bright tonight!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-23.mp4",
+          "t": "The frozen waterfall sparkles with a hundred little lights!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-24.mp4",
+          "t": "The pine forest twinkles like a thousand tiny stars!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-25.mp4",
+          "t": "From the hilltop the town looks like a box of golden jewels!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-26.mp4",
+          "t": "The bridge of lights shines over the frozen river — so pretty!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-27.mp4",
+          "t": "Goodbye, little star — thank you for lighting up our town!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-28.mp4",
+          "t": "The moon guides me home on this quiet snowy night!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-29.mp4",
+          "t": "Home at last — warm, cozy, and full of happy lights!"
+        },
+        {
+          "clip": "susp-jrn-rayo-winter-lights-30.mp4",
+          "t": "Tomorrow Bella's music parade marches through town — will you dance with us? Bye bye!"
         }
       ]
     }
