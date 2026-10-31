@@ -1,5 +1,5 @@
 {
-  "version": 25,
+  "version": 26,
   "stories": [
     {
       "id": "rayo-railway-station",
@@ -2792,6 +2792,133 @@
         {
           "clip": "susp-jrn-rayo-winter-lights-30.mp4",
           "t": "Tomorrow Bella's music parade marches through town — will you dance with us? Bye bye!"
+        }
+      ]
+    },
+    {
+      "id": "bella-music-parade",
+      "car": "Bella",
+      "title": "Bella and the Music Parade",
+      "lines": [
+        {
+          "clip": "susp-jrn-bella-music-parade-1.mp4",
+          "t": "Oh no! Where is all this happy music coming from? Follow me, friends!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-2.mp4",
+          "t": "Good morning! I am Bella! Today I join the big music parade!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-3.mp4",
+          "t": "Vroom vroom! Down the flower street I roll, toward the drums!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-4.mp4",
+          "t": "Look! The brass band is tuning up under the pink banners!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-5.mp4",
+          "t": "Toot toot! The big trumpet plays, and my wheels tap along!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-6.mp4",
+          "t": "The drummers march past the toy shop, boom boom boom!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-7.mp4",
+          "t": "I carry shiny maracas in my basket, shake shake, so fun!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-8.mp4",
+          "t": "Children dance on the sunny square, clapping their hands!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-9.mp4",
+          "t": "The violin lady plays a sweet tune by the old fountain!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-10.mp4",
+          "t": "Whee! Balloons float over the bakery lane as I roll by!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-11.mp4",
+          "t": "I toot my horn in time, beep beep, we are a band now!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-12.mp4",
+          "t": "Wait, the music stopped! The little drummer lost his drumstick!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-13.mp4",
+          "t": "Do not worry, little friend! Bella will help you find it!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-14.mp4",
+          "t": "We look under the flower cart, no drumstick there!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-15.mp4",
+          "t": "We look beside the big oak tree, there it is, in the grass!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-16.mp4",
+          "t": "Hooray! The drummer plays again, louder and happier than before!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-17.mp4",
+          "t": "Now everyone dances together, even the sleepy cat joins in!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-18.mp4",
+          "t": "The parade grows bigger, flutes, bells, and happy singing friends!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-19.mp4",
+          "t": "Up the rainbow hill we march, music floating in the air!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-20.mp4",
+          "t": "Past the riverside park we go, ducks bobbing to the beat!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-21.mp4",
+          "t": "The brass band plays under the old stone bridge, echo, echo!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-22.mp4",
+          "t": "I lead the dancing line through the lantern-lit market street!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-23.mp4",
+          "t": "The baker hands out sweet buns, yum, a parade treat!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-24.mp4",
+          "t": "Golden evening light falls on the marching band and me!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-25.mp4",
+          "t": "We reach the big town square, where everyone cheers for us!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-26.mp4",
+          "t": "One last song together, la la la, sing with me, friends!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-27.mp4",
+          "t": "The stars come out as the band plays a soft goodnight tune!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-28.mp4",
+          "t": "Goodbye, band friends! What a happy, musical day!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-29.mp4",
+          "t": "Home at last! My garage hums with the parade song!"
+        },
+        {
+          "clip": "susp-jrn-bella-music-parade-30.mp4",
+          "t": "Tomorrow Rusty goes camping under the stars, will you come with me?"
         }
       ]
     }
