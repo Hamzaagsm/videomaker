@@ -3485,11 +3485,6 @@
    "title_hi": "पुरानी पतंग की दुकान"
   },
   {
-   "id": "candleshop",
-   "hero": "Mahira",
-   "pitch": 1.5,
-   "title_en": "The Old Candle Shop",
-   "title_hi": "पुरानी मोम-बत्ती की दुकान",
    "beats": [
     {
      "clip": "susp-mahira-hd-1.mp4",
@@ -3611,14 +3606,14 @@
      "en": "And even today, when a soft fragrance drifts from the shop at midnight, the villagers say: \"Kareem reached home — and Mahira's candles still burn the brightest.\"",
      "hi": "और आज भी, जब आधी रात में दुकान से हल्की खुशबू आती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और माहिरा की मोम-बत्तियां अब भी सबसे रोशन जलती हैं।\""
     }
-   ]
+   ],
+   "hero": "Mahira",
+   "id": "candleshop",
+   "pitch": 1.5,
+   "title_en": "The Old Candle Shop",
+   "title_hi": "पुरानी मोम-बत्ती की दुकान"
   },
   {
-   "id": "teashop",
-   "hero": "Anaya",
-   "pitch": 1.5,
-   "title_en": "The Old Tea Shop",
-   "title_hi": "पुरानी चाय की दुकान",
    "beats": [
     {
      "clip": "susp-anaya-hd-1.mp4",
@@ -3740,14 +3735,14 @@
      "en": "And even today, when the smell of cardamom drifts from the shop at midnight, the villagers say: \"Rahim reached home — and Anaya's tea is still the sweetest.\"",
      "hi": "और आज भी, जब आधी रात में दुकान से इलायची की खुशबू आती है, तो गांव वाले कहते हैं: \"रहीम घर पहुंच गया — और अनाया की चाय अब भी सबसे मीठी है।\""
     }
-   ]
+   ],
+   "hero": "Anaya",
+   "id": "teashop",
+   "pitch": 1.5,
+   "title_en": "The Old Tea Shop",
+   "title_hi": "पुरानी चाय की दुकान"
   },
   {
-   "id": "bookshop",
-   "hero": "Alina",
-   "pitch": 1.5,
-   "title_en": "The Old Book Shop",
-   "title_hi": "पुरानी किताबों की दुकान",
    "beats": [
     {
      "clip": "susp-alina-hd-1.mp4",
@@ -3869,7 +3864,12 @@
      "en": "And even today, when the rustle of pages drifts from the shop at midnight, the villagers say: \"Amina reached home — and Alina's story is still the loveliest.\"",
      "hi": "और आज भी, जब आधी रात में दुकान से सफ़ों की सरसराहट आती है, तो गांव वाले कहते हैं: \"अमीना घर पहुंच गई — और अलीना की कहानी अब भी सबसे प्यारी है।\""
     }
-   ]
+   ],
+   "hero": "Alina",
+   "id": "bookshop",
+   "pitch": 1.5,
+   "title_en": "The Old Book Shop",
+   "title_hi": "पुरानी किताबों की दुकान"
   },
   {
    "beats": [
@@ -3994,8 +3994,8 @@
      "hi": "और आज भी, जब आधी रात में स्टूडियो से कैमरे की क्लिक आती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और मलाइका की तस्वीर अब भी सबसे प्यारी है।\""
     }
    ],
-   "id": "photostudio",
    "hero": "Malaika",
+   "id": "photostudio",
    "pitch": 1.5,
    "title_en": "The Old Photo Studio",
    "title_hi": "पुरानी फ़ोटो स्टूडियो"
@@ -4123,8 +4123,8 @@
      "hi": "और आज भी, जब आधी रात में दुकान से चाक के घूमने की आवाज़ आती है, तो गांव वाले कहते हैं: \"बशीर घर पहुंच गया — और शायान का घड़ा अब भी सबसे प्यारा है।\""
     }
    ],
-   "id": "pottery",
    "hero": "Shayan",
+   "id": "pottery",
    "pitch": 1.15,
    "title_en": "The Old Pottery",
    "title_hi": "पुरानी कुम्हार की दुकान"
@@ -4252,8 +4252,8 @@
      "hi": "और आज भी, जब आधी रात में वेधशाला से दूरबीन के घूमने की आवाज़ आती है, तो गांव वाले कहते हैं: \"याक़ूब घर पहुंच गया — और महक का सितारा अब भी सबसे प्यारा है।\""
     }
    ],
-   "id": "observatory",
    "hero": "Mehak",
+   "id": "observatory",
    "pitch": 1.5,
    "title_en": "The Old Observatory",
    "title_hi": "पुरानी वेधशाला"
@@ -4381,8 +4381,8 @@
      "hi": "और आज भी, जब आधी रात में थिएटर से कठपुतली के नाचने की आवाज़ आती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और हानिया की कठपुतली अब भी सबसे प्यारी है।\""
     }
    ],
-   "id": "puppet",
    "hero": "Hania",
+   "id": "puppet",
    "pitch": 1.5,
    "title_en": "The Old Puppet Theatre",
    "title_hi": "पुराना कठपुतली थिएटर"
@@ -4391,127 +4391,127 @@
    "beats": [
     {
      "clip": "susp-zain-hd-1.mp4",
-     "hi": "आधी रात को पुरानी मसाला दुकान के डिब्बे ख़ुद चमक उठे, एक डिब्बा ख़ुद खुल गया, और एक आवाज़ आई — और ज़ैन ने देखा, सुनहरा मसाला उसी की तरफ़ चमक रहा था।",
-     "en": "At midnight the jars of the old spice shop glowed on their own, one jar opened by itself, and a voice came — and Zain saw, the golden spice was glowing right toward him."
+     "en": "At midnight the jars of the old spice shop glowed on their own, one jar opened by itself, and a voice came — and Zain saw, the golden spice was glowing right toward him.",
+     "hi": "आधी रात को पुरानी मसाला दुकान के डिब्बे ख़ुद चमक उठे, एक डिब्बा ख़ुद खुल गया, और एक आवाज़ आई — और ज़ैन ने देखा, सुनहरा मसाला उसी की तरफ़ चमक रहा था।"
     },
     {
      "clip": "susp-zain-hd-2.mp4",
-     "hi": "सुबह ज़ैन दुकान गया — दरवाज़ा बंद था, मगर खिड़की से एक छोटा सुनहरा मसाले का डिब्बा चमक रहा था।",
-     "en": "In the morning Zain went to the shop — the door was shut, but through the window a little golden spice jar was glowing."
+     "en": "In the morning Zain went to the shop — the door was shut, but through the window a little golden spice jar was glowing.",
+     "hi": "सुबह ज़ैन दुकान गया — दरवाज़ा बंद था, मगर खिड़की से एक छोटा सुनहरा मसाले का डिब्बा चमक रहा था।"
     },
     {
      "clip": "susp-zain-hd-3.mp4",
-     "hi": "उसने खिड़की से झांका — अलमारी पर सुनहरी मसाले की धूल घूम रही थी, जैसे दुकान सांस ले रही हो।",
-     "en": "He peeked through the window — golden spice dust was swirling on the shelf, as if the shop were breathing."
+     "en": "He peeked through the window — golden spice dust was swirling on the shelf, as if the shop were breathing.",
+     "hi": "उसने खिड़की से झांका — अलमारी पर सुनहरी मसाले की धूल घूम रही थी, जैसे दुकान सांस ले रही हो।"
     },
     {
      "clip": "susp-zain-hd-4.mp4",
-     "hi": "शाम को दुकान के पीछे से डिब्बों के खनकने की आवाज़ आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।",
-     "en": "In the evening the sound of jars clinking came from behind the shop — the old shop, shut for years, started opening on its own."
+     "en": "In the evening the sound of jars clinking came from behind the shop — the old shop, shut for years, started opening on its own.",
+     "hi": "शाम को दुकान के पीछे से डिब्बों के खनकने की आवाज़ आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।"
     },
     {
      "clip": "susp-zain-hd-5.mp4",
-     "hi": "ज़ैन ने डिब्बे को हाथ लगाया — डिब्बा गरम था, जैसे मसाला अभी-अभी पीसा गया हो।",
-     "en": "Zain touched the jar — it was warm, as if the spice had just been ground."
+     "en": "Zain touched the jar — it was warm, as if the spice had just been ground.",
+     "hi": "ज़ैन ने डिब्बे को हाथ लगाया — डिब्बा गरम था, जैसे मसाला अभी-अभी पीसा गया हो।"
     },
     {
      "clip": "susp-zain-hd-6.mp4",
-     "hi": "रात को उसने अलमारी पर देखा — एक छोटा डिब्बा हल्का सा चमका, जैसे कोई उसे बुला रहा हो।",
-     "en": "At night he looked at the shelf — a little jar glowed faintly, as if someone were calling him."
+     "en": "At night he looked at the shelf — a little jar glowed faintly, as if someone were calling him.",
+     "hi": "रात को उसने अलमारी पर देखा — एक छोटा डिब्बा हल्का सा चमका, जैसे कोई उसे बुला रहा हो।"
     },
     {
      "clip": "susp-zain-hd-7.mp4",
-     "hi": "सुबह अलमारी के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।",
-     "en": "In the morning beneath the shelf there was a tiny paper — completely blank, with only one golden line along its edge."
+     "en": "In the morning beneath the shelf there was a tiny paper — completely blank, with only one golden line along its edge.",
+     "hi": "सुबह अलमारी के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
     },
     {
      "clip": "susp-zain-hd-8.mp4",
-     "hi": "ज़ैन ने गांव वालों से पूछा — किसी ने दुकान के मालिक का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये दुकान सौ साल पुरानी है।\"",
-     "en": "Zain asked the villagers — no one had heard the shop owner's name, but old grandmother said: \"This shop is a hundred years old.\""
+     "en": "Zain asked the villagers — no one had heard the shop owner's name, but old grandmother said: \"This shop is a hundred years old.\"",
+     "hi": "ज़ैन ने गांव वालों से पूछा — किसी ने दुकान के मालिक का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये दुकान सौ साल पुरानी है।\""
     },
     {
      "clip": "susp-zain-hd-9.mp4",
-     "hi": "दादी ने बताया: सौ साल पहले एक मसाला-साज़ यहाँ मसाले पीसता था, जो एक रात दुकान में गया और कभी वापस नहीं आया।",
-     "en": "Grandmother told him: a hundred years ago a spice-maker ground spices here, who went into the shop one night and never came back."
+     "en": "Grandmother told him: a hundred years ago a spice-maker ground spices here, who went into the shop one night and never came back.",
+     "hi": "दादी ने बताया: सौ साल पहले एक मसाला-साज़ यहाँ मसाले पीसता था, जो एक रात दुकान में गया और कभी वापस नहीं आया।"
     },
     {
      "clip": "susp-zain-hd-10.mp4",
-     "hi": "उस रात दुकान फिर जागी — और इस दफ़ा ज़ैन ने देखा: अलमारी के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में पुराना मसाले का डिब्बा, और उसकी आंखों में उदासी थी।",
-     "en": "That night the shop woke again — and this time Zain saw: beside the shelf stood an old man, white beard, an old spice jar in his hand, and sadness in his eyes."
+     "en": "That night the shop woke again — and this time Zain saw: beside the shelf stood an old man, white beard, an old spice jar in his hand, and sadness in his eyes.",
+     "hi": "उस रात दुकान फिर जागी — और इस दफ़ा ज़ैन ने देखा: अलमारी के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में पुराना मसाले का डिब्बा, और उसकी आंखों में उदासी थी।"
     },
     {
      "clip": "susp-zain-hd-11.mp4",
-     "hi": "बूढ़े ने कहा: \"मैं चाचा रफ़ीक़ हूं। सत्तर साल से मैं अपने आख़िरी मसाले का नाम भूल गया हूं — कोई बताए तो सही, मेरा मसाला कौन सा था?\"",
-     "en": "The old man said: \"I am Uncle Rafiq. For seventy years I have forgotten the name of my last spice — will someone tell me, which spice was mine?\""
+     "en": "The old man said: \"I am Uncle Rafiq. For seventy years I have forgotten the name of my last spice — will someone tell me, which spice was mine?\"",
+     "hi": "बूढ़े ने कहा: \"मैं चाचा रफ़ीक़ हूं। सत्तर साल से मैं अपने आख़िरी मसाले का नाम भूल गया हूं — कोई बताए तो सही, मेरा मसाला कौन सा था?\""
     },
     {
      "clip": "susp-zain-hd-12.mp4",
-     "hi": "ज़ैन ने पूछा: \"तुम आख़िरी मसाले का नाम क्यों भूल गए?\" — रफ़ीक़ ने बंद दुकान की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात मेरा मसाला भी छुप गया। तब से मैं इंतज़ार में हूं।\"",
-     "en": "Zain asked: \"Why did you forget your last spice's name?\" — Rafiq pointed at the shut shop: \"The night the shop's light went out, my spice hid too. I have waited ever since.\""
+     "en": "Zain asked: \"Why did you forget your last spice's name?\" — Rafiq pointed at the shut shop: \"The night the shop's light went out, my spice hid too. I have waited ever since.\"",
+     "hi": "ज़ैन ने पूछा: \"तुम आख़िरी मसाले का नाम क्यों भूल गए?\" — रफ़ीक़ ने बंद दुकान की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात मेरा मसाला भी छुप गया। तब से मैं इंतज़ार में हूं।\""
     },
     {
      "clip": "susp-zain-hd-13.mp4",
-     "hi": "ज़ैन ने दुकान के पुराने डिब्बे को हाथ लगाया — डिब्बा सुनहरी चमक उठा, जैसे उसने उसे पहचान लिया हो।",
-     "en": "Zain touched the shop's old jar — the jar glowed golden, as if it recognised him."
+     "en": "Zain touched the shop's old jar — the jar glowed golden, as if it recognised him.",
+     "hi": "ज़ैन ने दुकान के पुराने डिब्बे को हाथ लगाया — डिब्बा सुनहरी चमक उठा, जैसे उसने उसे पहचान लिया हो।"
     },
     {
      "clip": "susp-zain-hd-14.mp4",
-     "hi": "उसने रफ़ीक़ को अपने बचपन की छोटी सी पोटली दिखाई — जो उसने सालों पहले बनाई थी, और अब तक संभाल कर रखी थी।",
-     "en": "He showed Rafiq a little pouch from his childhood — one he had made years ago and kept safe ever since."
+     "en": "He showed Rafiq a little pouch from his childhood — one he had made years ago and kept safe ever since.",
+     "hi": "उसने रफ़ीक़ को अपने बचपन की छोटी सी पोटली दिखाई — जो उसने सालों पहले बनाई थी, और अब तक संभाल कर रखी थी।"
     },
     {
      "clip": "susp-zain-hd-15.mp4",
-     "hi": "रफ़ीक़ मुस्कुराया: \"यही रस्ता है। जो अपने मसालों से प्यार करता है, वो उनका नाम कभी नहीं भूलता।\"",
-     "en": "Rafiq smiled: \"This is the way. Whoever loves their spices never forgets their names.\""
+     "en": "Rafiq smiled: \"This is the way. Whoever loves their spices never forgets their names.\"",
+     "hi": "रफ़ीक़ मुस्कुराया: \"यही रस्ता है। जो अपने मसालों से प्यार करता है, वो उनका नाम कभी नहीं भूलता।\""
     },
     {
      "clip": "susp-zain-hd-16.mp4",
-     "hi": "दोनों ने मिल कर दुकान को साफ़ किया — खिड़की चमकी, डिब्बे चमक उठे, और अलमारी पर सुनहरी रोशनी फैल गई।",
-     "en": "Together they cleaned the shop — the window shone, the jars gleamed, and golden light spread across the shelf."
+     "en": "Together they cleaned the shop — the window shone, the jars gleamed, and golden light spread across the shelf.",
+     "hi": "दोनों ने मिल कर दुकान को साफ़ किया — खिड़की चमकी, डिब्बे चमक उठे, और अलमारी पर सुनहरी रोशनी फैल गई।"
     },
     {
      "clip": "susp-zain-hd-17.mp4",
-     "hi": "ज़ैन ने अलमारी के सामने खड़े होकर कहा: \"मैं तुम्हारे आख़िरी मसाले का नाम वापस लाऊंगा — तुम बस देखते रहो, चाचा।\"",
-     "en": "Zain stood before the shelf and said: \"I will bring back your last spice's name — you just watch, Uncle.\""
+     "en": "Zain stood before the shelf and said: \"I will bring back your last spice's name — you just watch, Uncle.\"",
+     "hi": "ज़ैन ने अलमारी के सामने खड़े होकर कहा: \"मैं तुम्हारे आख़िरी मसाले का नाम वापस लाऊंगा — तुम बस देखते रहो, चाचा।\""
     },
     {
      "clip": "susp-zain-hd-18.mp4",
-     "hi": "रफ़ीक़ ने अपना पुराना डिब्बा ज़ैन को दिया — डिब्बा सुनहरी चमक उठा, और दुकान हल्की सी हिली।",
-     "en": "Rafiq gave his old jar to Zain — the jar glowed golden, and the shop stirred gently."
+     "en": "Rafiq gave his old jar to Zain — the jar glowed golden, and the shop stirred gently.",
+     "hi": "रफ़ीक़ ने अपना पुराना डिब्बा ज़ैन को दिया — डिब्बा सुनहरी चमक उठा, और दुकान हल्की सी हिली।"
     },
     {
      "clip": "susp-zain-hd-19.mp4",
-     "hi": "ज़ैन ने मसाला ढूंढ लिया — दुकान सुनहरी चमक उठी, और रफ़ीक़ की आंखों में आंसू आ गए: \"ये दुनिया का सबसे खुशबूदार मसाला है!\"",
-     "en": "Zain found the spice — the shop glowed golden, and tears came to Rafiq's eyes: \"This is the most fragrant spice in the world!\""
+     "en": "Zain found the spice — the shop glowed golden, and tears came to Rafiq's eyes: \"This is the most fragrant spice in the world!\"",
+     "hi": "ज़ैन ने मसाला ढूंढ लिया — दुकान सुनहरी चमक उठी, और रफ़ीक़ की आंखों में आंसू आ गए: \"ये दुनिया का सबसे खुशबूदार मसाला है!\""
     },
     {
      "clip": "susp-zain-hd-20.mp4",
-     "hi": "रफ़ीक़ की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, ज़ैन। अब मैं घर जा सकता हूं।\"",
-     "en": "Light came into Rafiq's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Zain. Now I can go home.\""
+     "en": "Light came into Rafiq's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Zain. Now I can go home.\"",
+     "hi": "रफ़ीक़ की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, ज़ैन। अब मैं घर जा सकता हूं।\""
     },
     {
      "clip": "susp-zain-hd-21.mp4",
-     "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारे डिब्बे चमक रहे थे, और मेज़ पर एक नया चमकता डिब्बा था।",
-     "en": "In the morning the villagers stood at the shop door — all the jars were glowing, and a fresh glowing jar lay on the table."
+     "en": "In the morning the villagers stood at the shop door — all the jars were glowing, and a fresh glowing jar lay on the table.",
+     "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारे डिब्बे चमक रहे थे, और मेज़ पर एक नया चमकता डिब्बा था।"
     },
     {
      "clip": "susp-zain-hd-22.mp4",
-     "hi": "डिब्बे के पास एक छोटा सा काग़ज़ था — ज़ैन ने काग़ज़ को सीने से लगाया और मुस्कुराया।",
-     "en": "Beside the jar there was a tiny paper — Zain pressed the paper to his chest and smiled."
+     "en": "Beside the jar there was a tiny paper — Zain pressed the paper to his chest and smiled.",
+     "hi": "डिब्बे के पास एक छोटा सा काग़ज़ था — ज़ैन ने काग़ज़ को सीने से लगाया और मुस्कुराया।"
     },
     {
      "clip": "susp-zain-hd-23.mp4",
-     "hi": "उस दिन से ज़ैन हर शाम दुकान में मसाला पीसता — और जो बच्चा आता, वो दुकान से एक छोटी पोटली ले कर जाता।",
-     "en": "From that day Zain ground spices in the shop every evening — and whichever child came left with a little pouch."
+     "en": "From that day Zain ground spices in the shop every evening — and whichever child came left with a little pouch.",
+     "hi": "उस दिन से ज़ैन हर शाम दुकान में मसाला पीसता — और जो बच्चा आता, वो दुकान से एक छोटी पोटली ले कर जाता।"
     },
     {
      "clip": "susp-zain-hd-24.mp4",
-     "hi": "और आज भी, जब आधी रात में दुकान से मसाला पीसने की आवाज़ आती है, तो गांव वाले कहते हैं: \"रफ़ीक़ घर पहुंच गया — और ज़ैन का मसाला अब भी सबसे खुशबूदार है।\"",
-     "en": "And even today, when the sound of spices grinding drifts from the shop at midnight, the villagers say: \"Rafiq reached home — and Zain's spice is still the most fragrant.\""
+     "en": "And even today, when the sound of spices grinding drifts from the shop at midnight, the villagers say: \"Rafiq reached home — and Zain's spice is still the most fragrant.\"",
+     "hi": "और आज भी, जब आधी रात में दुकान से मसाला पीसने की आवाज़ आती है, तो गांव वाले कहते हैं: \"रफ़ीक़ घर पहुंच गया — और ज़ैन का मसाला अब भी सबसे खुशबूदार है।\""
     }
    ],
-   "id": "spiceshop",
    "hero": "Zain",
+   "id": "spiceshop",
    "pitch": 1.15,
    "title_en": "The Old Spice Shop",
    "title_hi": "पुरानी मसाला दुकान"
@@ -4639,18 +4639,13 @@
      "hi": "और आज भी, जब आधी रात में दुकान से हथौड़े की आवाज़ आती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और फ़ारिस की नाल अब भी सबसे मज़बूत है।\""
     }
    ],
-   "id": "blacksmith",
    "hero": "Faris",
+   "id": "blacksmith",
    "pitch": 1.15,
    "title_en": "The Old Blacksmith Shop",
    "title_hi": "पुरानी लोहार की दुकान"
   },
   {
-   "id": "cobblershop",
-   "hero": "Iqra",
-   "pitch": 1.5,
-   "title_en": "The Old Cobbler Shop",
-   "title_hi": "पुरानी मोची की दुकान",
    "beats": [
     {
      "clip": "susp-iqra-hd-1.mp4",
@@ -4772,14 +4767,14 @@
      "en": "And even today, when the sound of shoes tapping drifts from the shop at midnight, the villagers say: \"Kareem reached home — and Iqra's shoes are still the most beautiful.\"",
      "hi": "और आज भी, जब आधी रात में दुकान से जूतियों के थप-थपाने की आवाज़ आती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और इक़रा की जूतियाँ अब भी सबसे खूबसूरत हैं।\""
     }
-   ]
+   ],
+   "hero": "Iqra",
+   "id": "cobblershop",
+   "pitch": 1.5,
+   "title_en": "The Old Cobbler Shop",
+   "title_hi": "पुरानी मोची की दुकान"
   },
   {
-   "id": "barbershop",
-   "hero": "Arisha",
-   "pitch": 1.5,
-   "title_en": "The Old Barber Shop",
-   "title_hi": "पुरानी नाई की दुकान",
    "beats": [
     {
      "clip": "susp-arisha-hd-1.mp4",
@@ -4901,14 +4896,14 @@
      "en": "And even today, when the sound of scissors snipping drifts from the shop at midnight, the villagers say: \"Saleem reached home — and Arisha's shop still shines the brightest.\"",
      "hi": "और आज भी, जब आधी रात में दुकान से कैंची के चलने की आवाज़ आती है, तो गांव वाले कहते हैं: \"सलीम घर पहुंच गया — और अरिशा की दुकान अब भी सबसे चमकती है।\""
     }
-   ]
+   ],
+   "hero": "Arisha",
+   "id": "barbershop",
+   "pitch": 1.5,
+   "title_en": "The Old Barber Shop",
+   "title_hi": "पुरानी नाई की दुकान"
   },
   {
-   "id": "carpentry",
-   "hero": "Saad",
-   "pitch": 1.15,
-   "title_en": "The Old Carpentry Workshop",
-   "title_hi": "पुरानी बढ़ई की दुकान",
    "beats": [
     {
      "clip": "susp-saad-hd-1.mp4",
@@ -5030,7 +5025,141 @@
      "en": "And even today, when the sound of a saw drifts from the workshop at midnight, the villagers say: \"Kareem reached home — and Saad's workshop still shines the brightest.\"",
      "hi": "और आज भी, जब आधी रात में दुकान से आरी के चलने की आवाज़ आती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और साद की दुकान अब भी सबसे चमकती है।\""
     }
-   ]
+   ],
+   "hero": "Saad",
+   "id": "carpentry",
+   "pitch": 1.15,
+   "title_en": "The Old Carpentry Workshop",
+   "title_hi": "पुरानी बढ़ई की दुकान"
+  },
+  {
+   "beats": [
+    {
+     "clip": "susp-yusra-hd-1.mp4",
+     "en": "At midnight the brass scale of the old grocery store started moving on its own, golden grain dust swirled up, and a voice came — and Yusra saw, a little golden wheat sheaf was glowing right toward her.",
+     "hi": "आधी रात को पुरानी किराने की दुकान का पीतल का तराज़ू ख़ुद हिलने लगा, सुनहरी अनाज की धूल घूम उठी, और एक आवाज़ आई — और युसरा ने देखा, गेहूं की छोटी सुनहरी बाली उसी की तरफ़ चमक रही थी।"
+    },
+    {
+     "clip": "susp-yusra-hd-2.mp4",
+     "en": "In the morning Yusra went to the store — the door was shut, but through the window a little golden wheat sheaf was glowing.",
+     "hi": "सुबह युसरा दुकान गई — दरवाज़ा बंद था, मगर खिड़की से गेहूं की छोटी सुनहरी बाली चमक रही थी।"
+    },
+    {
+     "clip": "susp-yusra-hd-3.mp4",
+     "en": "She peeked through the window — golden grain dust was swirling inside a glass jar, as if the store were breathing.",
+     "hi": "उसने खिड़की से झांका — शीशे के मर्तबान में सुनहरी अनाज की धूल घूम रही थी, जैसे दुकान सांस ले रही हो।"
+    },
+    {
+     "clip": "susp-yusra-hd-4.mp4",
+     "en": "In the evening the sound of the scale came from behind the store — the old shop, shut for years, started opening on its own.",
+     "hi": "शाम को दुकान के पीछे से तराज़ू के हिलने की आवाज़ आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।"
+    },
+    {
+     "clip": "susp-yusra-hd-5.mp4",
+     "en": "Yusra touched the wheat sheaf — it was warm, as if someone had just tied it.",
+     "hi": "युसरा ने गेहूं की बाली को हाथ लगाया — बाली गरम थी, जैसे अभी-अभी किसी ने उसे बांधा हो।"
+    },
+    {
+     "clip": "susp-yusra-hd-6.mp4",
+     "en": "At night she looked at the counter — it glowed faintly, as if someone were calling her.",
+     "hi": "रात को उसने काउंटर पर देखा — काउंटर हल्का सा चमका, जैसे कोई उसे बुला रहा हो।"
+    },
+    {
+     "clip": "susp-yusra-hd-7.mp4",
+     "en": "In the morning beneath the counter there was a tiny paper — completely blank, with only one golden line along its edge.",
+     "hi": "सुबह काउंटर के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
+    },
+    {
+     "clip": "susp-yusra-hd-8.mp4",
+     "en": "Yusra talked to grandmother in the lane — the shop stood shut behind them, and grandmother said: \"This store is a hundred years old.\"",
+     "hi": "युसरा ने गली में दादी से बात की — दुकान उनके पीछे बंद खड़ी थी, और दादी ने कहा: \"ये दुकान सौ साल पुरानी है।\""
+    },
+    {
+     "clip": "susp-yusra-hd-9.mp4",
+     "en": "Grandmother told her: a hundred years ago a grocer weighed grain here, who went into the store one night and never came back.",
+     "hi": "दादी ने बताया: सौ साल पहले एक किराने वाला यहाँ अनाज तौलता था, जो एक रात दुकान में गया और कभी वापस नहीं आया।"
+    },
+    {
+     "clip": "susp-yusra-hd-10.mp4",
+     "en": "That night the store woke again — and this time Yusra saw: beside the sacks stood an old man, white beard, old brass scale in his hand, and sadness in his eyes.",
+     "hi": "उस रात दुकान फिर जागी — और इस दफ़ा युसरा ने देखा: बोरियों के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में पुराना पीतल का तराज़ू, और उसकी आंखों में उदासी थी।"
+    },
+    {
+     "clip": "susp-yusra-hd-11.mp4",
+     "en": "The old man said: \"I am Baba Rasheed. For fifty years I have forgotten the name of the child who returned my lost brass weight — will someone tell me, for whom was my scale waiting?\"",
+     "hi": "बूढ़े ने कहा: \"मैं बाबा रशीद हूं। पचास साल से मैं उस बच्चे का नाम भूल गया हूं जिसने मेरा खोया हुआ पीतल का बाट वापस किया था — कोई बताए तो सही, मेरा तराज़ू किसका इंतज़ार कर रहा था?\""
+    },
+    {
+     "clip": "susp-yusra-hd-12.mp4",
+     "en": "Yusra asked: \"Why did you forget that child's name?\" — Rasheed pointed at the big sack: \"The night the store's lamp went out, my scale hid too. I have waited ever since.\"",
+     "hi": "युसरा ने पूछा: \"तुम उस बच्चे का नाम क्यों भूल गए?\" — रशीद ने बड़ी बोरी की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात मेरा तराज़ू भी छुप गया। तब से मैं इंतज़ार में हूं।\""
+    },
+    {
+     "clip": "susp-yusra-hd-13.mp4",
+     "en": "Yusra touched the store's old scale with her finger — the scale glowed golden, as if it recognised her.",
+     "hi": "युसरा ने दुकान के पुराने तराज़ू को उंगली से छुआ — तराज़ू सुनहरी चमक उठा, जैसे उसने उसे पहचान लिया हो।"
+    },
+    {
+     "clip": "susp-yusra-hd-14.mp4",
+     "en": "She showed Rasheed her grandmother's little old brass weight — the very weight the child had returned fifty years ago, kept safe ever since.",
+     "hi": "उसने रशीद को अपनी दादी का छोटा सा पुराना पीतल का बाट दिखाया — वही बाट जो बच्चे ने पचास साल पहले वापस किया था, और तब से संभाल कर रखा गया था।"
+    },
+    {
+     "clip": "susp-yusra-hd-15.mp4",
+     "en": "Rasheed smiled, tears in his eyes: \"This is the way. Whoever returns what is lost never forgets the shopkeeper's name — and that child was your grandmother herself.\"",
+     "hi": "रशीद मुस्कुराया, आंखों में आंसू: \"यही रस्ता है। जो खोई चीज़ वापस करता है, वो दुकानदार का नाम कभी नहीं भूलता — और वो बच्ची तुम्हारी दादी ख़ुद थीं।\""
+    },
+    {
+     "clip": "susp-yusra-hd-16.mp4",
+     "en": "Together they cleaned the store — the counter shone, the scale gleamed, and golden light spread across the jars.",
+     "hi": "दोनों ने मिल कर दुकान को साफ़ किया — काउंटर चमका, तराज़ू चमक उठा, और मर्तबानों पर सुनहरी रोशनी फैल गई।"
+    },
+    {
+     "clip": "susp-yusra-hd-17.mp4",
+     "en": "Yusra stood before the big sack and said: \"Your wait is over, Baba — from today this store will shine again.\"",
+     "hi": "युसरा ने बड़ी बोरी के सामने खड़े होकर कहा: \"तुम्हारा इंतज़ार ख़त्म हुआ, बाबा — आज से ये दुकान फिर चमकेगी।\""
+    },
+    {
+     "clip": "susp-yusra-hd-18.mp4",
+     "en": "Rasheed gave his little golden wheat sheaf to Yusra — the sheaf glowed golden, and the store stirred gently.",
+     "hi": "रशीद ने अपनी छोटी सुनहरी गेहूं की बाली युसरा को दी — बाली सुनहरी चमक उठी, और दुकान हल्की सी हिली।"
+    },
+    {
+     "clip": "susp-yusra-hd-19.mp4",
+     "en": "Yusra held the sheaf close — the store glowed golden, and tears came to Rasheed's eyes: \"This is the most beautiful grain in the world!\"",
+     "hi": "युसरा ने बाली को सीने से लगाया — दुकान सुनहरी चमक उठी, और रशीद की आंखों में आंसू आ गए: \"ये दुनिया का सबसे खूबसूरत अनाज है!\""
+    },
+    {
+     "clip": "susp-yusra-hd-20.mp4",
+     "en": "Light came into Rasheed's eyes — the store's glow rose toward the stars, and his voice came: \"Thank you, Yusra. Now I can go home.\"",
+     "hi": "रशीद की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, युसरा। अब मैं घर जा सकता हूं।\""
+    },
+    {
+     "clip": "susp-yusra-hd-21.mp4",
+     "en": "In the morning the villagers stood at the store door — all the jars were glowing, and a fresh glowing wheat sheaf lay on the counter.",
+     "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारे मर्तबान चमक रहे थे, और काउंटर पर गेहूं की एक नई चमकती बाली थी।"
+    },
+    {
+     "clip": "susp-yusra-hd-22.mp4",
+     "en": "Beside the sheaf there was a tiny paper — Yusra pressed the paper to her chest and smiled.",
+     "hi": "बाली के पास एक छोटा सा काग़ज़ था — युसरा ने काग़ज़ को सीने से लगाया और मुस्कुराई।"
+    },
+    {
+     "clip": "susp-yusra-hd-23.mp4",
+     "en": "From that day Yusra weighed grain in the store every evening — and whichever child came left with a little glowing pouch of grain.",
+     "hi": "उस दिन से युसरा हर शाम दुकान में अनाज तौलती — और जो बच्चा आता, वो दुकान से अनाज की एक छोटी चमकती पोटली ले कर जाता।"
+    },
+    {
+     "clip": "susp-yusra-hd-24.mp4",
+     "en": "And even today, when the sound of a scale drifts from the store at midnight, the villagers say: \"Rasheed reached home — and Yusra's store still shines the brightest.\"",
+     "hi": "और आज भी, जब आधी रात में दुकान से तराज़ू के हिलने की आवाज़ आती है, तो गांव वाले कहते हैं: \"रशीद घर पहुंच गया — और युसरा की दुकान अब भी सबसे चमकती है।\""
+    }
+   ],
+   "hero": "Yusra",
+   "id": "grocery",
+   "pitch": 1.5,
+   "title_en": "The Old Grocery Store",
+   "title_hi": "पुरानी किराने की दुकान"
   }
  ],
  "version": 15
