@@ -275,7 +275,7 @@ class NeuralTtsBridge(private val ctx: Context, private val web: WebView) {
                 debug = false
             )
         )
-        val tts = OfflineTts(cfg)
+        val tts = OfflineTts(config = cfg)
         engine = tts
         engineLang = lang
         return tts
