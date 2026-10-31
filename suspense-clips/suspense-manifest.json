@@ -4902,6 +4902,135 @@
      "hi": "और आज भी, जब आधी रात में दुकान से कैंची के चलने की आवाज़ आती है, तो गांव वाले कहते हैं: \"सलीम घर पहुंच गया — और अरिशा की दुकान अब भी सबसे चमकती है।\""
     }
    ]
+  },
+  {
+   "id": "carpentry",
+   "hero": "Saad",
+   "pitch": 1.15,
+   "title_en": "The Old Carpentry Workshop",
+   "title_hi": "पुरानी बढ़ई की दुकान",
+   "beats": [
+    {
+     "clip": "susp-saad-hd-1.mp4",
+     "en": "At midnight the saw of the old carpentry workshop started moving on its own, golden wood dust swirled up, and a voice came — and Saad saw, a little golden wooden horse was glowing right toward him.",
+     "hi": "आधी रात को पुरानी बढ़ई की दुकान की आरी ख़ुद चलने लगी, सुनहरी लकड़ी की धूल घूम उठी, और एक आवाज़ आई — और साद ने देखा, छोटा सुनहरी लकड़ी का घोड़ा उसी की तरफ़ चमक रहा था।"
+    },
+    {
+     "clip": "susp-saad-hd-2.mp4",
+     "en": "In the morning Saad went to the workshop — the door was shut, but through the window a little golden wooden horse was glowing.",
+     "hi": "सुबह साद दुकान गया — दरवाज़ा बंद था, मगर खिड़की से एक छोटा सुनहरी लकड़ी का घोड़ा चमक रहा था।"
+    },
+    {
+     "clip": "susp-saad-hd-3.mp4",
+     "en": "He peeked through the window — golden wood dust was swirling on the workbench, as if the workshop were breathing.",
+     "hi": "उसने खिड़की से झांका — मेज़ पर सुनहरी लकड़ी की धूल घूम रही थी, जैसे दुकान सांस ले रही हो।"
+    },
+    {
+     "clip": "susp-saad-hd-4.mp4",
+     "en": "In the evening the sound of a saw came from behind the workshop — the old shop, shut for years, started opening on its own.",
+     "hi": "शाम को दुकान के पीछे से आरी के चलने की आवाज़ आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।"
+    },
+    {
+     "clip": "susp-saad-hd-5.mp4",
+     "en": "Saad touched the wooden horse — it was warm, as if someone had just carved it.",
+     "hi": "साद ने लकड़ी के घोड़े को हाथ लगाया — घोड़ा गरम था, जैसे अभी-अभी किसी ने उसे तराशा हो।"
+    },
+    {
+     "clip": "susp-saad-hd-6.mp4",
+     "en": "At night he looked at the workbench — it glowed faintly, as if someone were calling him.",
+     "hi": "रात को उसने मेज़ पर देखा — मेज़ हल्की सी चमकी, जैसे कोई उसे बुला रहा हो।"
+    },
+    {
+     "clip": "susp-saad-hd-7.mp4",
+     "en": "In the morning beneath the workbench there was a tiny paper — completely blank, with only one golden line along its edge.",
+     "hi": "सुबह मेज़ के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
+    },
+    {
+     "clip": "susp-saad-hd-8.mp4",
+     "en": "Saad asked the villagers — no one had heard the workshop owner's name, but old grandmother said: \"This workshop is a hundred years old.\"",
+     "hi": "साद ने गांव वालों से पूछा — किसी ने दुकान के मालिक का नाम नहीं सुना था, मगर बूढ़ी दादी ने कहा: \"ये दुकान सौ साल पुरानी है।\""
+    },
+    {
+     "clip": "susp-saad-hd-9.mp4",
+     "en": "Grandmother told him: a hundred years ago a carpenter carved toys here, who went into the workshop one night and never came back.",
+     "hi": "दादी ने बताया: सौ साल पहले एक बढ़ई यहाँ खिलौने तराशता था, जो एक रात दुकान में गया और कभी वापस नहीं आया।"
+    },
+    {
+     "clip": "susp-saad-hd-10.mp4",
+     "en": "That night the workshop woke again — and this time Saad saw: beside the workbench stood an old man, white beard, old saw in his hand, and sadness in his eyes.",
+     "hi": "उस रात दुकान फिर जागी — और इस दफ़ा साद ने देखा: मेज़ के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में पुरानी आरी, और उसकी आंखों में उदासी थी।"
+    },
+    {
+     "clip": "susp-saad-hd-11.mp4",
+     "en": "The old man said: \"I am Baba Kareem. For fifty years I have forgotten the name of the child of my last wooden toy — will someone tell me, which child was my horse for?\"",
+     "hi": "बूढ़े ने कहा: \"मैं बाबा करीम हूं। पचास साल से मैं अपने आख़िरी लकड़ी के खिलौने वाले बच्चे का नाम भूल गया हूं — कोई बताए तो सही, मेरा घोड़ा किस बच्चे के लिए था?\""
+    },
+    {
+     "clip": "susp-saad-hd-12.mp4",
+     "en": "Saad asked: \"Why did you forget your last toy child's name?\" — Kareem pointed at the shut workshop: \"The night the workshop's lamp went out, my saw hid too. I have waited ever since.\"",
+     "hi": "साद ने पूछा: \"तुम आख़िरी खिलौने वाले बच्चे का नाम क्यों भूल गए?\" — करीम ने बंद दुकान की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात मेरी आरी भी छुप गई। तब से मैं इंतज़ार में हूं।\""
+    },
+    {
+     "clip": "susp-saad-hd-13.mp4",
+     "en": "Saad touched the workshop's old saw — the saw glowed golden, as if it recognised him.",
+     "hi": "साद ने दुकान की पुरानी आरी को हाथ लगाया — आरी सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।"
+    },
+    {
+     "clip": "susp-saad-hd-14.mp4",
+     "en": "He showed Kareem a little wooden spinning top from his childhood — one he had spun years ago and kept safe ever since.",
+     "hi": "उसने करीम को अपने बचपन की छोटी सी लकड़ी की लट्टू दिखाई — जो उसने सालों पहले चलाई थी, और अब तक संभाल कर रखी थी।"
+    },
+    {
+     "clip": "susp-saad-hd-15.mp4",
+     "en": "Kareem smiled: \"This is the way. Whoever loves their toys never forgets their carpenter's name.\"",
+     "hi": "करीम मुस्कुराया: \"यही रस्ता है। जो अपने खिलौनों से प्यार करता है, वो अपने बढ़ई का नाम कभी नहीं भूलता।\""
+    },
+    {
+     "clip": "susp-saad-hd-16.mp4",
+     "en": "Together they cleaned the workshop — the workbench shone, the saw gleamed, and golden light spread across the shelves.",
+     "hi": "दोनों ने मिल कर दुकान को साफ़ किया — मेज़ चमकी, आरी चमक उठी, और अलमारी पर सुनहरी रोशनी फैल गई।"
+    },
+    {
+     "clip": "susp-saad-hd-17.mp4",
+     "en": "Saad stood before the workbench and said: \"I will bring back your last toy child's name — you just watch, Baba.\"",
+     "hi": "साद ने मेज़ के सामने खड़े होकर कहा: \"मैं तुम्हारे आख़िरी खिलौने वाले बच्चे का नाम वापस लाऊंगा — तुम बस देखते रहो, बाबा।\""
+    },
+    {
+     "clip": "susp-saad-hd-18.mp4",
+     "en": "Kareem gave his little golden wooden horse to Saad — the horse glowed golden, and the workshop stirred gently.",
+     "hi": "करीम ने अपना छोटा सुनहरी लकड़ी का घोड़ा साद को दिया — घोड़ा सुनहरी चमक उठा, और दुकान हल्की सी हिली।"
+    },
+    {
+     "clip": "susp-saad-hd-19.mp4",
+     "en": "Saad found the last toy child — the workshop glowed golden, and tears came to Kareem's eyes: \"This is the most beautiful toy in the world!\"",
+     "hi": "साद ने आख़िरी खिलौने वाले बच्चे को ढूंढ लिया — दुकान सुनहरी चमक उठी, और करीम की आंखों में आंसू आ गए: \"ये दुनिया का सबसे खूबसूरत खिलौना है!\""
+    },
+    {
+     "clip": "susp-saad-hd-20.mp4",
+     "en": "Light came into Kareem's eyes — the workshop's glow rose toward the stars, and his voice came: \"Thank you, Saad. Now I can go home.\"",
+     "hi": "करीम की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, साद। अब मैं घर जा सकता हूं।\""
+    },
+    {
+     "clip": "susp-saad-hd-21.mp4",
+     "en": "In the morning the villagers stood at the workshop door — all the tools were glowing, and a fresh glowing wooden spinning top lay on the workbench.",
+     "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारे औज़ार चमक रहे थे, और मेज़ पर एक नई चमकती लकड़ी की लट्टू थी।"
+    },
+    {
+     "clip": "susp-saad-hd-22.mp4",
+     "en": "Beside the spinning top there was a tiny paper — Saad pressed the paper to his chest and smiled.",
+     "hi": "लट्टू के पास एक छोटा सा काग़ज़ था — साद ने काग़ज़ को सीने से लगाया और मुस्कुराया।"
+    },
+    {
+     "clip": "susp-saad-hd-23.mp4",
+     "en": "From that day Saad carved small wooden toys in the workshop every evening — and whichever child came left with a little glowing toy.",
+     "hi": "उस दिन से साद हर शाम दुकान में बच्चों के लिए छोटे लकड़ी के खिलौने तराशता — और जो बच्चा आता, वो दुकान से एक छोटा चमकता खिलौना ले कर जाता।"
+    },
+    {
+     "clip": "susp-saad-hd-24.mp4",
+     "en": "And even today, when the sound of a saw drifts from the workshop at midnight, the villagers say: \"Kareem reached home — and Saad's workshop still shines the brightest.\"",
+     "hi": "और आज भी, जब आधी रात में दुकान से आरी के चलने की आवाज़ आती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और साद की दुकान अब भी सबसे चमकती है।\""
+    }
+   ]
   }
  ],
  "version": 15
