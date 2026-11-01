@@ -1,5 +1,5 @@
 {
- "version": 29,
+ "version": 30,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -3300,6 +3300,133 @@
     {
      "clip": "susp-jrn-rayo-volcano-island-30.mp4",
      "t": "Tomorrow Bella drives through a glass tunnel under the sea — will you come with us? Bye bye!"
+    }
+   ]
+  },
+  {
+   "id": "bella-glass-sea-tunnel",
+   "car": "Bella",
+   "title": "Bella and the Glass Sea Tunnel",
+   "lines": [
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-1.mp4",
+     "t": "Wait — what is that? Fish are swimming right over my roof! A glass tunnel under the sea?"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-2.mp4",
+     "t": "Good morning, friends! I am Bella! Today I drive under the sea!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-3.mp4",
+     "t": "Vroom vroom! Down the palm-tree road I roll toward the blue coast!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-4.mp4",
+     "t": "Wow, the cliff road! The sea sparkles far below me!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-5.mp4",
+     "t": "Look, the sandy beach! Little shells shine like tiny stars!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-6.mp4",
+     "t": "The old pier creaks hello! Boats bob up and down!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-7.mp4",
+     "t": "Here it is! The shiny glass gate of the sea tunnel opens for me!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-8.mp4",
+     "t": "I roll inside! Blue water sparkles all around my windows!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-9.mp4",
+     "t": "Wow, a coral garden! Pink and orange corals wave at me!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-10.mp4",
+     "t": "The kelp forest sways, slow and green, like dancing ribbons!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-11.mp4",
+     "t": "A school of orange fish races past! Go, little fish, go!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-12.mp4",
+     "t": "Oh no! Who is crying behind that big grey rock? A tiny turtle is lost!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-13.mp4",
+     "t": "Do not cry, little one. Bella will help you find your mama!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-14.mp4",
+     "t": "Follow the shiny bubbles, little turtle! They lead the way!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-15.mp4",
+     "t": "Through the soft seagrass meadow we tiptoe, quiet as a whisper!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-16.mp4",
+     "t": "Over the sandy seabed path, past the sleepy starfish!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-17.mp4",
+     "t": "Look! There she is! Your mama turtle is waiting by the shells!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-18.mp4",
+     "t": "Hooray! The little turtle hugs his mama tight! What a happy ending!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-19.mp4",
+     "t": "The shell plaza sparkles! Pink shells everywhere I look!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-20.mp4",
+     "t": "Wow, the bubble cave! Bubbles float up like tiny balloons!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-21.mp4",
+     "t": "Jellyfish lights glow softly, pink and purple, in the deep blue hall!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-22.mp4",
+     "t": "The sunbeams dance down through the water! So bright, so pretty!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-23.mp4",
+     "t": "Up the sunny stairs I climb, out of the tunnel into fresh air!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-24.mp4",
+     "t": "Back on the sandy beach! The waves sing a happy song!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-25.mp4",
+     "t": "The tall lighthouse winks at me! Hello, lighthouse friend!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-26.mp4",
+     "t": "Down the sunset road I roll, golden light on my yellow paint!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-27.mp4",
+     "t": "One last stop: a cool ice cream at the little seaside cafe!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-28.mp4",
+     "t": "My friends wave goodbye! Bye bye, fish, bye bye, sea!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-29.mp4",
+     "t": "Home at last! My garage smells of sea salt and sunshine!"
+    },
+    {
+     "clip": "susp-jrn-bella-glass-sea-tunnel-30.mp4",
+     "t": "Tomorrow Rusty shows me the fire station — will you come with me?"
     }
    ]
   }
