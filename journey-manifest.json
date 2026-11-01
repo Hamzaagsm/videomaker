@@ -1,5 +1,5 @@
 {
- "version": 27,
+ "version": 28,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -3046,6 +3046,133 @@
     {
      "clip": "susp-jrn-rusty-camping-night-30.mp4",
      "t": "Tomorrow Bruno takes a big ferry across the river, will you come with me?"
+    }
+   ]
+  },
+  {
+   "id": "bruno-river-ferry",
+   "car": "Bruno",
+   "title": "Bruno and the River Ferry",
+   "lines": [
+    {
+     "clip": "susp-jrn-bruno-river-ferry-1.mp4",
+     "t": "Oh no! The river is so wide — how will I carry my boxes to the other side?"
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-2.mp4",
+     "t": "I drive down the riverside road, and I can hear the water splashing."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-3.mp4",
+     "t": "At the ferry dock, a big boat waits with its ramp wide open."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-4.mp4",
+     "t": "I roll slowly onto the ferry, and my wheels go clunk, clunk, clunk."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-5.mp4",
+     "t": "The captain waves to me. All aboard, big blue truck!"
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-6.mp4",
+     "t": "The ferry pushes off, and the river sparkles all around us."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-7.mp4",
+     "t": "Little waves tap-tap-tap against the side of the boat."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-8.mp4",
+     "t": "I see ducks swimming beside us, quack, quack, quack!"
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-9.mp4",
+     "t": "A family of ducks follows the ferry, splashing happily."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-10.mp4",
+     "t": "The wind blows soft, and my blue trailer shines in the sun."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-11.mp4",
+     "t": "Far away, I see green hills and a tall white lighthouse."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-12.mp4",
+     "t": "Uh-oh! The ferry slows down — something is stuck in the water!"
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-13.mp4",
+     "t": "It is a big log! It is blocking the ferry's way."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-14.mp4",
+     "t": "The captain looks worried. We cannot move past this log!"
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-15.mp4",
+     "t": "I have an idea! My strong engine can push it gently aside."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-16.mp4",
+     "t": "I push, push, push — and the log floats away down the river!"
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-17.mp4",
+     "t": "The ducks cheer, quack, quack! The captain says, Thank you, Bruno!"
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-18.mp4",
+     "t": "The ferry moves again, and everyone on board smiles at me."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-19.mp4",
+     "t": "We pass a sandy bank where children wave little flags."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-20.mp4",
+     "t": "I see fishermen in small boats, waving as we go by."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-21.mp4",
+     "t": "The sun starts to go down, and the river turns golden."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-22.mp4",
+     "t": "The ferry horn goes toot-toot! We are almost there!"
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-23.mp4",
+     "t": "The other bank comes closer — I can see willow trees and a little village."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-24.mp4",
+     "t": "The ramp goes down, and I roll off onto the soft riverside road."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-25.mp4",
+     "t": "I deliver my boxes to the little village shop, and everyone claps."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-26.mp4",
+     "t": "The shopkeeper gives me a shiny red apple. Yum!"
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-27.mp4",
+     "t": "I wave goodbye to the captain and the ducks."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-28.mp4",
+     "t": "The ferry sails back across the river, and the ducks follow it home."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-29.mp4",
+     "t": "What a wonderful day on the river! I am so happy."
+    },
+    {
+     "clip": "susp-jrn-bruno-river-ferry-30.mp4",
+     "t": "Tomorrow, Rayo will sail to a volcano island — will you come with us?"
     }
    ]
   }
