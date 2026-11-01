@@ -1,5 +1,5 @@
 {
- "version": 28,
+ "version": 29,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -3173,6 +3173,133 @@
     {
      "clip": "susp-jrn-bruno-river-ferry-30.mp4",
      "t": "Tomorrow, Rayo will sail to a volcano island — will you come with us?"
+    }
+   ]
+  },
+  {
+   "id": "rayo-volcano-island",
+   "car": "Rayo",
+   "title": "Rayo and the Volcano Island",
+   "lines": [
+    {
+     "clip": "susp-jrn-rayo-volcano-island-1.mp4",
+     "t": "Oh no! Smoke is rising from that island in the middle of the sea — who lives there? I must go and see!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-2.mp4",
+     "t": "Good morning, friends! I am Rayo, the fast red race car — today I sail to the volcano island!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-3.mp4",
+     "t": "At the little harbour, the boats bob up and down — hello, little boats!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-4.mp4",
+     "t": "I drive onto the big ferry — vroom vroom, across the blue sea we go!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-5.mp4",
+     "t": "The open sea sparkles all around me — what a big, beautiful blue world!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-6.mp4",
+     "t": "Look, flying fish jump beside the ferry — whee, they fly like birds!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-7.mp4",
+     "t": "Dolphins race beside us — splash splash, you are so fast, my friends!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-8.mp4",
+     "t": "We reach the rocky shore — big grey stones guard the little island!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-9.mp4",
+     "t": "I roll onto the black sand beach — crunch crunch, the sand is warm!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-10.mp4",
+     "t": "Up the green hill road I climb — tall grass waves at me!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-11.mp4",
+     "t": "A little stream giggles over the stones — splash, my wheels get wet!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-12.mp4",
+     "t": "Wait — what is that big splash behind the rocks? Something HUGE is swimming near us!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-13.mp4",
+     "t": "It is Wally the whale! She sings a happy sea song — hello, Wally!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-14.mp4",
+     "t": "Wally sprays a rainbow fountain — splash! My red paint sparkles!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-15.mp4",
+     "t": "Wally shows me the way — follow her big tail through the coral bay!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-16.mp4",
+     "t": "The coral bay glows pink and blue — tiny fish dance around my wheels!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-17.mp4",
+     "t": "Wally waves goodbye with her big tail — thank you, my new friend!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-18.mp4",
+     "t": "Back on the green hill, the volcano sleeps quietly above — shhh!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-19.mp4",
+     "t": "The hot spring bubbles warm — steam tickles my nose, ahh!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-20.mp4",
+     "t": "Colourful parrots fly over the hill — hello, pretty birds!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-21.mp4",
+     "t": "The parrots lead me to their village — tiny nests in the tall trees!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-22.mp4",
+     "t": "The island birds sing a welcome song — tweet tweet, welcome, Rayo!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-23.mp4",
+     "t": "I share my sandwiches with the little birds — yum yum, thank you!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-24.mp4",
+     "t": "The volcano rumbles softly — purrr, like a sleepy giant cat!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-25.mp4",
+     "t": "No fire, no fear — just warm stones and a sleepy volcano friend!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-26.mp4",
+     "t": "Down the flower path I roll — red hibiscus flowers wave goodbye!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-27.mp4",
+     "t": "Sunset paints the beach orange and pink — so beautiful!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-28.mp4",
+     "t": "Back on the ferry, the stars come out — twinkle twinkle over the sea!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-29.mp4",
+     "t": "Good night, volcano island! Good night, Wally and my bird friends!"
+    },
+    {
+     "clip": "susp-jrn-rayo-volcano-island-30.mp4",
+     "t": "Tomorrow Bella drives through a glass tunnel under the sea — will you come with us? Bye bye!"
     }
    ]
   }
