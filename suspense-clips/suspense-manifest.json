@@ -5547,6 +5547,135 @@
    "pitch": 1.5,
    "title_en": "The Old Balloon Shop",
    "title_hi": "पुरानी गुब्बारों की दुकान"
+  },
+  {
+   "id": "perfumeshop",
+   "hero": "Arman",
+   "pitch": 1.15,
+   "title_en": "The Old Perfume Shop",
+   "title_hi": "पुरानी इतर की दुकान",
+   "beats": [
+    {
+     "clip": "susp-arman-hd-1.mp4",
+     "en": "At midnight the bottles of the old perfume shop glowed on their own, an amber bottle swirled up, and a voice came — and Arman saw, a little golden bottle was glowing right toward him.",
+     "hi": "आधी रात को पुरानी इतर की दुकान की शीशियाँ ख़ुद चमक उठीं, एक अंबर शीशी घूम उठी, और एक आवाज़ आई — और अरमान ने देखा, छोटी सुनहरी शीशी उसी की तरफ़ चमक रही थी।"
+    },
+    {
+     "clip": "susp-arman-hd-2.mp4",
+     "en": "In the morning Arman went to the shop — the door was shut, but through the window a little golden bottle was glowing.",
+     "hi": "सुबह अरमान दुकान गया — दरवाज़ा बंद था, मगर खिड़की से छोटी सुनहरी शीशी चमक रही थी।"
+    },
+    {
+     "clip": "susp-arman-hd-3.mp4",
+     "en": "He peeked through the window — colourful bottles were glowing inside the shop, as if the shop were breathing.",
+     "hi": "उसने खिड़की से झांका — रंग-बिरंगी शीशियाँ दुकान में चमक रही थीं, जैसे दुकान सांस ले रही हो।"
+    },
+    {
+     "clip": "susp-arman-hd-4.mp4",
+     "en": "In the evening the scent of jasmine drifted from behind the shop — the old shop, shut for years, started opening on its own.",
+     "hi": "शाम को दुकान के पीछे से चमेली की ख़ुशबू आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।"
+    },
+    {
+     "clip": "susp-arman-hd-5.mp4",
+     "en": "Arman touched the cool golden bottle — it was faintly warm, as if sunshine had touched it.",
+     "hi": "अरमान ने ठंडी सुनहरी शीशी को हाथ लगाया — शीशी हल्की गरम थी, जैसे धूप ने उसे छुआ हो।"
+    },
+    {
+     "clip": "susp-arman-hd-6.mp4",
+     "en": "At night he looked at the big wooden shelf — it glowed faintly, as if someone were calling him.",
+     "hi": "रात को उसने बड़ी लकड़ी की शेल्फ़ पर देखा — शेल्फ़ हल्की सी चमकी, जैसे कोई उसे बुला रहा हो।"
+    },
+    {
+     "clip": "susp-arman-hd-7.mp4",
+     "en": "In the morning beneath the big shelf there was a tiny paper — completely blank, with only one golden line along its edge.",
+     "hi": "सुबह बड़ी शेल्फ़ के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
+    },
+    {
+     "clip": "susp-arman-hd-8.mp4",
+     "en": "Arman talked to Uncle Kareem in the lane — the shop stood shut behind them, and uncle said: \"This shop is a hundred years old.\"",
+     "hi": "अरमान ने गली में चाचा करीम से बात की — दुकान उनके पीछे बंद खड़ी थी, और चाचा ने कहा: \"ये दुकान सौ साल पुरानी है।\""
+    },
+    {
+     "clip": "susp-arman-hd-9.mp4",
+     "en": "Uncle told him: a hundred years ago a perfume-maker made perfumes here, who went into the shop one night and never came back.",
+     "hi": "चाचा ने बताया: सौ साल पहले एक इतर-साज़ यहाँ इतर बनाता था, जो एक रात दुकान में गया और कभी वापस नहीं आया।"
+    },
+    {
+     "clip": "susp-arman-hd-10.mp4",
+     "en": "That night the shop woke again — and this time Arman saw: beside the shelf stood an old man, white beard, a little amber bottle in his hand, and sadness in his eyes.",
+     "hi": "उस रात दुकान फिर जागी — और इस दफ़ा अरमान ने देखा: शेल्फ़ के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में छोटी अंबर शीशी, और उसकी आंखों में उदासी थी।"
+    },
+    {
+     "clip": "susp-arman-hd-11.mp4",
+     "en": "The old man said: \"I am Baba Imran. For fifty years I have forgotten which bottle holds my first perfume — the festival scent — will someone tell me, for which bottle was my shelf waiting?\"",
+     "hi": "बूढ़े ने कहा: \"मैं बाबा इमरान हूं। पचास साल से मैं भूल गया हूं कि मेरी पहली इतर — मेले वाली ख़ुशबू — किस शीशी में है — कोई बताए तो सही, मेरी शेल्फ़ किसका इंतज़ार कर रही थी?\""
+    },
+    {
+     "clip": "susp-arman-hd-12.mp4",
+     "en": "Arman asked: \"Why did you forget that bottle?\" — Imran pointed at the big shelf: \"The night the shop's lamp went out, my first bottle hid too. I have waited ever since.\"",
+     "hi": "अरमान ने पूछा: \"तुम उस शीशी को क्यों भूल गए?\" — इमरान ने बड़ी शेल्फ़ की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात मेरी पहली शीशी भी छुप गई। तब से मैं इंतज़ार में हूं।\""
+    },
+    {
+     "clip": "susp-arman-hd-13.mp4",
+     "en": "Arman touched the cool golden bottle with his finger — the bottle glowed golden, as if it recognised him.",
+     "hi": "अरमान ने ठंडी सुनहरी शीशी को उंगली से छुआ — शीशी सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।"
+    },
+    {
+     "clip": "susp-arman-hd-14.mp4",
+     "en": "He showed Imran a jasmine flower picked after the rain — the very flower whose scent was in the first bottle, picked from the garden.",
+     "hi": "उसने इमरान को बारिश के बाद वाली एक चमेली दिखाई — वही फूल जिसकी ख़ुशबू पहली शीशी में थी, और जो बाग़ से तोड़ा गया था।"
+    },
+    {
+     "clip": "susp-arman-hd-15.mp4",
+     "en": "Imran smiled, tears in his eyes: \"This is the way. Whoever brings back the lost scent never forgets the perfume-maker's name — and this jasmine is from the very garden where my first bottle was filled.\"",
+     "hi": "इमरान मुस्कुराया, आंखों में आंसू: \"यही रस्ता है। जो खोई ख़ुशबू वापस लाता है, वो इतर-साज़ का नाम कभी नहीं भूलता — और ये चमेली उसी बाग़ से है जहाँ मेरी पहली शीशी भरी गई थी।\""
+    },
+    {
+     "clip": "susp-arman-hd-16.mp4",
+     "en": "Together they cleaned the shop — the shelf shone, the bottles gleamed, and golden light spread across the colourful bottles.",
+     "hi": "दोनों ने मिल कर दुकान को साफ़ किया — शेल्फ़ चमकी, शीशियाँ चमक उठीं, और रंग-बिरंगी शीशियों पर सुनहरी रोशनी फैल गई।"
+    },
+    {
+     "clip": "susp-arman-hd-17.mp4",
+     "en": "Arman stood before the big shelf and said: \"Your wait is over, Baba — from today this shop will shine again.\"",
+     "hi": "अरमान ने बड़ी शेल्फ़ के सामने खड़े होकर कहा: \"तुम्हारा इंतज़ार ख़त्म हुआ, बाबा — आज से ये दुकान फिर चमकेगी।\""
+    },
+    {
+     "clip": "susp-arman-hd-18.mp4",
+     "en": "Imran gave his little golden bottle to Arman — the bottle glowed golden, and the shop stirred gently.",
+     "hi": "इमरान ने अपनी छोटी सुनहरी शीशी अरमान को दी — शीशी सुनहरी चमक उठी, और दुकान हल्की सी हिली।"
+    },
+    {
+     "clip": "susp-arman-hd-19.mp4",
+     "en": "Arman held the bottle close — the shop glowed golden, and tears came to Imran's eyes: \"This is the most beautiful perfume-work in the world!\"",
+     "hi": "अरमान ने शीशी को सीने से लगाया — दुकान सुनहरी चमक उठी, और इमरान की आंखों में आंसू आ गए: \"ये दुनिया की सबसे खूबसूरत इतर-साज़ी है!\""
+    },
+    {
+     "clip": "susp-arman-hd-20.mp4",
+     "en": "Light came into Imran's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Arman. Now I can go home.\"",
+     "hi": "इमरान की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, अरमान। अब मैं घर जा सकता हूं।\""
+    },
+    {
+     "clip": "susp-arman-hd-21.mp4",
+     "en": "In the morning the villagers stood at the shop door — all the bottles were glowing, and a fresh glowing bottle stood beside the shelf.",
+     "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारी शीशियाँ चमक रही थीं, और शेल्फ़ के पास एक नई चमकती शीशी थी।"
+    },
+    {
+     "clip": "susp-arman-hd-22.mp4",
+     "en": "Beside the bottle there was a tiny paper — Arman pressed the paper to his chest and smiled.",
+     "hi": "शीशी के पास एक छोटा सा काग़ज़ था — अरमान ने काग़ज़ को सीने से लगाया और मुस्कुराया।"
+    },
+    {
+     "clip": "susp-arman-hd-23.mp4",
+     "en": "From that day Arman arranged perfumes in the shop every evening — and whichever child came left with a little fragrant jasmine bud.",
+     "hi": "उस दिन से अरमान हर शाम दुकान में इतर सजाता — और जो बच्चा आता, वो दुकान से एक छोटी ख़ुशबू वाली चमेली की कली ले कर जाता।"
+    },
+    {
+     "clip": "susp-arman-hd-24.mp4",
+     "en": "And even today, when the scent of jasmine drifts from the shop at midnight, the villagers say: \"Imran reached home — and Arman's shop still smells the sweetest.\"",
+     "hi": "और आज भी, जब आधी रात में दुकान से चमेली की ख़ुशबू आती है, तो गांव वाले कहते हैं: \"इमरान घर पहुंच गया — और अरमान की दुकान अब भी सबसे महकती है।\""
+    }
+   ]
   }
  ],
  "version": 15
