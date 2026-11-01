@@ -5676,6 +5676,135 @@
      "hi": "और आज भी, जब आधी रात में दुकान से चमेली की ख़ुशबू आती है, तो गांव वाले कहते हैं: \"इमरान घर पहुंच गया — और अरमान की दुकान अब भी सबसे महकती है।\""
     }
    ]
+  },
+  {
+   "id": "cycleshop",
+   "hero": "Taha",
+   "pitch": 1.15,
+   "title_en": "The Old Bicycle Shop",
+   "title_hi": "पुरानी साइकिल की दुकान",
+   "beats": [
+    {
+     "clip": "susp-taha-hd-1.mp4",
+     "en": "At midnight the bells of the old bicycle shop rang on their own, a golden bell glowed up, and a voice came — and Taha saw, a little golden bell was glowing right toward him.",
+     "hi": "आधी रात को पुरानी साइकिल की दुकान की घंटियाँ ख़ुद बज उठीं, एक सुनहरी घंटी चमक उठी, और एक आवाज़ आई — और ताहा ने देखा, छोटी सुनहरी घंटी उसी की तरफ़ चमक रही थी।"
+    },
+    {
+     "clip": "susp-taha-hd-2.mp4",
+     "en": "In the morning Taha went to the shop — the door was shut, but through the window a little golden bell was glowing on an old bicycle.",
+     "hi": "सुबह ताहा दुकान गया — दरवाज़ा बंद था, मगर खिड़की से पुरानी साइकिल पर छोटी सुनहरी घंटी चमक रही थी।"
+    },
+    {
+     "clip": "susp-taha-hd-3.mp4",
+     "en": "He peeked through the window — old bicycles stood in rows, their wheels turning slowly, as if the shop were breathing.",
+     "hi": "उसने खिड़की से झांका — पुरानी साइकिलें क़तार में खड़ी थीं, पहिये धीरे-धीरे घूम रहे थे, जैसे दुकान सांस ले रही हो।"
+    },
+    {
+     "clip": "susp-taha-hd-4.mp4",
+     "en": "In the evening the sound of a bicycle bell came from behind the shop — the old shop, shut for years, started opening on its own.",
+     "hi": "शाम को दुकान के पीछे से साइकिल की घंटी की आवाज़ आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।"
+    },
+    {
+     "clip": "susp-taha-hd-5.mp4",
+     "en": "Taha touched the cool golden bell — it was faintly warm, as if sunshine had touched it.",
+     "hi": "ताहा ने ठंडी सुनहरी घंटी को हाथ लगाया — घंटी हल्की गरम थी, जैसे धूप ने उसे छुआ हो।"
+    },
+    {
+     "clip": "susp-taha-hd-6.mp4",
+     "en": "At night he looked at the big wooden workbench — it glowed faintly, as if someone were calling him.",
+     "hi": "रात को उसने बड़ी लकड़ी की वर्कबेंच पर देखा — बेंच हल्की सी चमकी, जैसे कोई उसे बुला रहा हो।"
+    },
+    {
+     "clip": "susp-taha-hd-7.mp4",
+     "en": "In the morning beneath the big workbench there was a tiny paper — completely blank, with only one golden line along its edge.",
+     "hi": "सुबह बड़ी वर्कबेंच के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
+    },
+    {
+     "clip": "susp-taha-hd-8.mp4",
+     "en": "Taha talked to his grandmother in the lane — the shop stood shut behind them, and grandmother said: \"This shop is a hundred years old.\"",
+     "hi": "ताहा ने गली में दादी से बात की — दुकान उनके पीछे बंद खड़ी थी, और दादी ने कहा: \"ये दुकान सौ साल पुरानी है।\""
+    },
+    {
+     "clip": "susp-taha-hd-9.mp4",
+     "en": "Grandmother told him: a hundred years ago a bicycle-maker made bicycles here, who built a golden-belled bicycle for a boy — the boy had promised to come at the festival, but he never came.",
+     "hi": "दादी ने बताया: सौ साल पहले एक साइकिल-साज़ यहाँ साइकिलें बनाता था, जिसने एक लड़के के लिए सुनहरी घंटी वाली साइकिल बनाई थी — लड़के ने मेले पर आने का वादा किया था, मगर वो कभी नहीं आया।"
+    },
+    {
+     "clip": "susp-taha-hd-10.mp4",
+     "en": "That night the shop woke again — and this time Taha saw: beside the workbench stood an old man, white beard, a little golden bell in his hand, and sadness in his eyes.",
+     "hi": "उस रात दुकान फिर जागी — और इस दफ़ा ताहा ने देखा: वर्कबेंच के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में छोटी सुनहरी घंटी, और उसकी आंखों में उदासी थी।"
+    },
+    {
+     "clip": "susp-taha-hd-11.mp4",
+     "en": "The old man said: \"I am Baba Rafiq. For fifty years I have forgotten the name of the boy who returned my golden bell — will someone tell me, for whom was my workbench waiting?\"",
+     "hi": "बूढ़े ने कहा: \"मैं बाबा रफ़ीक़ हूं। पचास साल से मैं उस लड़के का नाम भूल गया हूं जिसने मेरी सुनहरी घंटी वापस की थी — कोई बताए तो सही, मेरी वर्कबेंच किसका इंतज़ार कर रही थी?\""
+    },
+    {
+     "clip": "susp-taha-hd-12.mp4",
+     "en": "Taha asked: \"Why did you forget that boy's name?\" — Rafiq pointed at the big workbench: \"The night the shop's lamp went out, the bell's name hid too. I have waited ever since.\"",
+     "hi": "ताहा ने पूछा: \"तुम उस लड़के का नाम क्यों भूल गए?\" — रफ़ीक़ ने बड़ी वर्कबेंच की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात घंटी का नाम भी छुप गया। तब से मैं इंतज़ार में हूं।\""
+    },
+    {
+     "clip": "susp-taha-hd-13.mp4",
+     "en": "Taha touched the cool golden bell with his finger — the bell glowed golden, as if it recognised him.",
+     "hi": "ताहा ने ठंडी सुनहरी घंटी को उंगली से छुआ — घंटी सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।"
+    },
+    {
+     "clip": "susp-taha-hd-14.mp4",
+     "en": "He showed Rafiq his grandfather's old brass bell — the same golden shine, the same old tune, kept safe at home.",
+     "hi": "उसने रफ़ीक़ को अपने दादा की पुरानी पीतल की घंटी दिखाई — वही सुनहरी चमक, वही पुरानी धुन, जो घर में संभाल कर रखी थी।"
+    },
+    {
+     "clip": "susp-taha-hd-15.mp4",
+     "en": "Rafiq smiled, tears in his eyes: \"This is the way. Whoever brings back the lost bell never forgets the bicycle-maker's name — and this bell is from the very bicycle my hands built for your grandfather. For fifty years I have waited to return it to his family.\"",
+     "hi": "रफ़ीक़ मुस्कुराया, आंखों में आंसू: \"यही रस्ता है। जो खोई घंटी वापस लाता है, वो साइकिल-साज़ का नाम कभी नहीं भूलता — और ये घंटी उसी साइकिल की है जो मेरे हाथों ने तुम्हारे दादा के लिए बनाई थी। पचास साल से मैं इसे तुम्हारे ख़ानदान को वापस करने का इंतज़ार कर रहा था।\""
+    },
+    {
+     "clip": "susp-taha-hd-16.mp4",
+     "en": "Together they cleaned the shop — the workbench shone, the bicycles gleamed, and golden light spread across the old bicycles.",
+     "hi": "दोनों ने मिल कर दुकान को साफ़ किया — वर्कबेंच चमकी, साइकिलें चमक उठीं, और पुरानी साइकिलों पर सुनहरी रोशनी फैल गई।"
+    },
+    {
+     "clip": "susp-taha-hd-17.mp4",
+     "en": "Taha stood before the big workbench and said: \"Your wait is over, Baba — from today this shop will shine again.\"",
+     "hi": "ताहा ने बड़ी वर्कबेंच के सामने खड़े होकर कहा: \"तुम्हारा इंतज़ार ख़त्म हुआ, बाबा — आज से ये दुकान फिर चमकेगी।\""
+    },
+    {
+     "clip": "susp-taha-hd-18.mp4",
+     "en": "Rafiq gave his little golden bell to Taha — the bell glowed golden, and the shop stirred gently.",
+     "hi": "रफ़ीक़ ने अपनी छोटी सुनहरी घंटी ताहा को दी — घंटी सुनहरी चमक उठी, और दुकान हल्की सी हिली।"
+    },
+    {
+     "clip": "susp-taha-hd-19.mp4",
+     "en": "Taha held the bell close — the shop glowed golden, and tears came to Rafiq's eyes: \"This is the most beautiful bicycle-work in the world!\"",
+     "hi": "ताहा ने घंटी को सीने से लगाया — दुकान सुनहरी चमक उठी, और रफ़ीक़ की आंखों में आंसू आ गए: \"ये दुनिया की सबसे खूबसूरत साइकिल-साज़ी है!\""
+    },
+    {
+     "clip": "susp-taha-hd-20.mp4",
+     "en": "Light came into Rafiq's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Taha. Now I can go home.\"",
+     "hi": "रफ़ीक़ की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, ताहा। अब मैं घर जा सकता हूं।\""
+    },
+    {
+     "clip": "susp-taha-hd-21.mp4",
+     "en": "In the morning the villagers stood at the shop door — all the bicycles were gleaming, and a fresh glowing bell stood beside the workbench.",
+     "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारी साइकिलें चमक रही थीं, और वर्कबेंच के पास एक नई चमकती घंटी थी।"
+    },
+    {
+     "clip": "susp-taha-hd-22.mp4",
+     "en": "Beside the bell there was a tiny paper — Taha pressed the paper to his chest and smiled.",
+     "hi": "घंटी के पास एक छोटा सा काग़ज़ था — ताहा ने काग़ज़ को सीने से लगाया और मुस्कुराया।"
+    },
+    {
+     "clip": "susp-taha-hd-23.mp4",
+     "en": "From that day Taha arranged bicycles in the shop every evening — and whichever child came left with a little shining bell.",
+     "hi": "उस दिन से ताहा हर शाम दुकान में साइकिलें सजाता — और जो बच्चा आता, वो दुकान से एक छोटी चमकती घंटी ले कर जाता।"
+    },
+    {
+     "clip": "susp-taha-hd-24.mp4",
+     "en": "And even today, when a bicycle bell rings from the shop at midnight, the villagers say: \"Rafiq reached home — and Taha's shop still shines the brightest.\"",
+     "hi": "और आज भी, जब आधी रात में दुकान से साइकिल की घंटी बजती है, तो गांव वाले कहते हैं: \"रफ़ीक़ घर पहुंच गया — और ताहा की दुकान अब भी सबसे चमकती है।\""
+    }
+   ]
   }
  ],
  "version": 15
