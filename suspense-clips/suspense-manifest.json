@@ -6192,6 +6192,135 @@
           "hi": "और आज भी, जब आधी रात को दुकान से पेंसिल की रोशनी चमकती है, तो गांव वाले कहते हैं: \"करीम घर पहुंच गया — और उमर की दुकान अब भी सबसे रंगीन है।\""
         }
       ]
+    },
+    {
+      "id": "dollshop",
+      "hero": "Maira",
+      "pitch": 1.5,
+      "title_en": "The Old Doll Shop",
+      "title_hi": "पुरानी गुड़ियों की दुकान",
+      "beats": [
+        {
+          "clip": "susp-maira-hd-1.mp4",
+          "en": "At midnight in the old doll shop a golden doll began humming all by itself, a sweet lullaby floated out — and Maira saw, a little golden doll was glowing right toward her.",
+          "hi": "आधी रात को पुरानी गुड़ियों की दुकान में सुनहरी गुड़िया ख़ुद गुनगुनाने लगी, एक मीठी लोरी की आवाज़ आई — और मायरा ने देखा, छोटी सुनहरी गुड़िया उसी की तरफ़ चमक रही थी।"
+        },
+        {
+          "clip": "susp-maira-hd-2.mp4",
+          "en": "In the morning Maira went to the shop — the door was shut, but through the window a little golden doll was glowing on a wooden shelf.",
+          "hi": "सुबह मायरा दुकान गई — दरवाज़ा बंद था, मगर खिड़की से लकड़ी की अलमारी पर छोटी सुनहरी गुड़िया चमक रही थी।"
+        },
+        {
+          "clip": "susp-maira-hd-3.mp4",
+          "en": "She peeked through the window — old dolls sat in rows, their dresses swaying in a light breeze, as if the shop were breathing.",
+          "hi": "उसने खिड़की से झांका — पुरानी गुड़ियाँ क़तार में बैठी थीं, उनके कपड़े हल्की हवा में हिल रहे थे, जैसे दुकान सांस ले रही हो।"
+        },
+        {
+          "clip": "susp-maira-hd-4.mp4",
+          "en": "In the evening the scent of lullaby and doll light came from behind the shop — the old shop, shut for years, started opening on its own.",
+          "hi": "शाम को दुकान के पीछे से लोरी की ख़ुशबू और गुड़िया की रोशनी आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।"
+        },
+        {
+          "clip": "susp-maira-hd-5.mp4",
+          "en": "Maira touched the cool golden doll — it was faintly warm, as if sunshine had touched it.",
+          "hi": "मायरा ने ठंडी सुनहरी गुड़िया को हाथ लगाया — गुड़िया हल्की गरम थी, जैसे धूप ने उसे छुआ हो।"
+        },
+        {
+          "clip": "susp-maira-hd-6.mp4",
+          "en": "At night she looked at the big wooden shelf — it glowed faintly, as if someone were calling her.",
+          "hi": "रात को उसने बड़ी लकड़ी की अलमारी पर देखा — अलमारी हल्की सी चमकी, जैसे कोई उसे बुला रहा हो।"
+        },
+        {
+          "clip": "susp-maira-hd-7.mp4",
+          "en": "In the morning beneath the big shelf there was a tiny paper — completely blank, with only one golden line along its edge.",
+          "hi": "सुबह बड़ी अलमारी के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
+        },
+        {
+          "clip": "susp-maira-hd-8.mp4",
+          "en": "Maira talked to her grandmother in the lane — the shop stood shut behind them, and grandmother said: \"This shop is a hundred years old.\"",
+          "hi": "मायरा ने गली में दादी से बात की — दुकान उनके पीछे बंद खड़ी थी, और दादी ने कहा: \"ये दुकान सौ साल पुरानी है।\""
+        },
+        {
+          "clip": "susp-maira-hd-9.mp4",
+          "en": "Grandmother told her: a hundred years ago a doll-maker made dolls here, who built a golden doll for a girl — the girl had promised to sing a lullaby every night, but one night she did not come, and the doll has stayed awake ever since.",
+          "hi": "दादी ने बताया: सौ साल पहले एक गुड़िया-साज़ यहाँ गुड़ियाँ बनाता था, जिसने एक लड़की के लिए सुनहरी गुड़िया बनाई थी — लड़की ने हर रात लोरी गाने का वादा किया था, मगर वो एक रात नहीं आई, और गुड़िया तब से जाग रही है।"
+        },
+        {
+          "clip": "susp-maira-hd-10.mp4",
+          "en": "That night the shop woke again — and this time Maira saw: beside the shelf stood an old man, white beard, a little golden doll in his hand, and sadness in his eyes.",
+          "hi": "उस रात दुकान फिर जागी — और इस दफ़ा मायरा ने देखा: अलमारी के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में छोटी सुनहरी गुड़िया, और उसकी आंखों में उदासी थी।"
+        },
+        {
+          "clip": "susp-maira-hd-11.mp4",
+          "en": "The old man said: \"I am Baba Idrees. For fifty years I have forgotten the lullaby that put my golden doll to sleep — will someone tell me, for whom was my shelf waiting?\"",
+          "hi": "बूढ़े ने कहा: \"मैं बाबा इदरीस हूं। पचास साल से मैं वो लोरी भूल गया हूं जो मेरी सुनहरी गुड़िया को सुलाती थी — कोई बताए तो सही, मेरी अलमारी किसका इंतज़ार कर रही थी?\""
+        },
+        {
+          "clip": "susp-maira-hd-12.mp4",
+          "en": "Maira asked: \"Why did you forget that lullaby?\" — Idrees pointed at the big shelf: \"The night the shop's lamp went out, the lullaby hid too. I have waited ever since.\"",
+          "hi": "मायरा ने पूछा: \"तुम वो लोरी क्यों भूल गए?\" — इदरीस ने बड़ी अलमारी की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात लोरी भी छुप गई। तब से मैं इंतज़ार में हूं।\""
+        },
+        {
+          "clip": "susp-maira-hd-13.mp4",
+          "en": "Maira touched the cool golden doll with her finger — the doll glowed golden, as if it recognised her.",
+          "hi": "मायरा ने ठंडी सुनहरी गुड़िया को उंगली से छुआ — गुड़िया सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।"
+        },
+        {
+          "clip": "susp-maira-hd-14.mp4",
+          "en": "She showed Idrees her grandmother's old brass doll — the same golden shine, the same old light, kept safe at home.",
+          "hi": "उसने इदरीस को अपनी दादी की पुरानी पीतल की गुड़िया दिखाई — वही सुनहरी चमक, वही पुरानी रोशनी, जो घर में संभाल कर रखी थी।"
+        },
+        {
+          "clip": "susp-maira-hd-15.mp4",
+          "en": "Idrees smiled, tears in his eyes: \"This is the way. Whoever sings the lost lullaby never forgets the doll-maker's name — and this lullaby is the very one your grandmother sang every night. For fifty years I have waited to return it to her family.\"",
+          "hi": "इदरीस मुस्कुराया, आंखों में आंसू: \"यही रस्ता है। जो खोई लोरी गाता है, वो गुड़िया-साज़ का नाम कभी नहीं भूलता — और ये लोरी उसी लोरी की है जो तुम्हारी दादी हर रात गाती थीं। पचास साल से मैं इसे तुम्हारे ख़ानदान को वापस करने का इंतज़ार कर रहा था।\""
+        },
+        {
+          "clip": "susp-maira-hd-16.mp4",
+          "en": "Together they cleaned the shop — the shelf shone, the dolls gleamed, and golden light spread across the old dolls.",
+          "hi": "दोनों ने मिल कर दुकान को साफ़ किया — अलमारी चमकी, गुड़ियाँ चमक उठीं, और पुरानी गुड़ियों पर सुनहरी रोशनी फैल गई।"
+        },
+        {
+          "clip": "susp-maira-hd-17.mp4",
+          "en": "Maira stood before the big shelf and said: \"Your wait is over, Baba — from today this shop will shine again.\"",
+          "hi": "मायरा ने बड़ी अलमारी के सामने खड़े होकर कहा: \"तुम्हारा इंतज़ार ख़त्म हुआ, बाबा — आज से ये दुकान फिर चमकेगी।\""
+        },
+        {
+          "clip": "susp-maira-hd-18.mp4",
+          "en": "Idrees gave his little golden doll to Maira — the doll glowed golden, and the shop stirred gently.",
+          "hi": "इदरीस ने अपनी छोटी सुनहरी गुड़िया मायरा को दी — गुड़िया सुनहरी चमक उठी, और दुकान हल्की सी हिली।"
+        },
+        {
+          "clip": "susp-maira-hd-19.mp4",
+          "en": "Maira held the doll close — the shop glowed golden, and tears came to Idrees's eyes: \"This is the most beautiful doll-work in the world!\"",
+          "hi": "मायरा ने गुड़िया को सीने से लगाया — दुकान सुनहरी चमक उठी, और इदरीस की आंखों में आंसू आ गए: \"ये दुनिया की सबसे खूबसूरत गुड़िया-साज़ी है!\""
+        },
+        {
+          "clip": "susp-maira-hd-20.mp4",
+          "en": "Light came into Idrees's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Maira. Now I can go home.\"",
+          "hi": "इदरीस की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, मायरा। अब मैं घर जा सकता हूं।\""
+        },
+        {
+          "clip": "susp-maira-hd-21.mp4",
+          "en": "In the morning the villagers stood at the shop door — all the dolls were gleaming, and a fresh glowing doll stood beside the shelf.",
+          "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारी गुड़ियाँ चमक रही थीं, और अलमारी के पास एक नई चमकती गुड़िया थी।"
+        },
+        {
+          "clip": "susp-maira-hd-22.mp4",
+          "en": "Beside the doll there was a tiny paper — Maira pressed the paper to her chest and smiled.",
+          "hi": "गुड़िया के पास एक छोटा सा काग़ज़ था — मायरा ने काग़ज़ को सीने से लगाया और मुस्कुराई।"
+        },
+        {
+          "clip": "susp-maira-hd-23.mp4",
+          "en": "From that day Maira arranged dolls in the shop every evening — and whichever child came left with a little shining doll.",
+          "hi": "उस दिन से मायरा हर शाम दुकान में गुड़ियाँ सजाती — और जो बच्चा आता, वो दुकान से एक छोटी चमकती गुड़िया ले कर जाता।"
+        },
+        {
+          "clip": "susp-maira-hd-24.mp4",
+          "en": "And even today, when on a moonlit night a soft lullaby drifts from the shop, the villagers say: \"Idrees reached home — and Maira's shop is still the loveliest.\"",
+          "hi": "और आज भी, जब चांदनी रात में दुकान से लोरी की हल्की आवाज़ आती है, तो गांव वाले कहते हैं: \"इदरीस घर पहुंच गया — और मायरा की दुकान अब भी सबसे प्यारी है।\""
+        }
+      ]
     }
   ],
   "version": 15
