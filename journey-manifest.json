@@ -1,5 +1,5 @@
 {
- "version": 30,
+ "version": 31,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -3427,6 +3427,133 @@
     {
      "clip": "susp-jrn-bella-glass-sea-tunnel-30.mp4",
      "t": "Tomorrow Rusty shows me the fire station — will you come with me?"
+    }
+   ]
+  },
+  {
+   "id": "rusty-fire-station-day",
+   "car": "Rusty",
+   "title": "Rusty and the Fire Station Day",
+   "lines": [
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-1.mp4",
+     "t": "Oh no! The fire station bell is ringing so loud! But where is the fire?"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-2.mp4",
+     "t": "Good morning, friends! I am Rusty, the strong tow truck! Today I visit the fire station!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-3.mp4",
+     "t": "Look! The shiny red fire truck is washing its face! Splish splash!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-4.mp4",
+     "t": "The brave firefighter shows me the big ladder! It goes up, up, up!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-5.mp4",
+     "t": "I try the loud hose! Whoosh! The water dances in the air!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-6.mp4",
+     "t": "Ding ding! I learn the bell song! Ring ring, help is on the way!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-7.mp4",
+     "t": "We practise rolling the long hose like a sleepy snake! Roll, roll!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-8.mp4",
+     "t": "The fire truck zooms around the cones! Vroom vroom, so fast!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-9.mp4",
+     "t": "I lift a pretend heavy box with my hook! One, two, three, lift!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-10.mp4",
+     "t": "Lunch time! We share sandwiches under the big oak tree!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-11.mp4",
+     "t": "The fire dog barks hello! Woof woof! He is my new friend!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-12.mp4",
+     "t": "Wait! A real call comes in! Beep beep! Someone needs help!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-13.mp4",
+     "t": "A little cat is stuck high in a tall tree! Meow! Help me, please!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-14.mp4",
+     "t": "Do not worry, little cat! Rusty and the fire truck are coming!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-15.mp4",
+     "t": "Up goes the ladder, gentle and slow! Climb down, little friend!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-16.mp4",
+     "t": "Got you! Safe in my warm truck bed! Purr purr, little cat!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-17.mp4",
+     "t": "The cat's family hugs her tight! Thank you, Rusty! You are a hero!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-18.mp4",
+     "t": "Back at the station, we wash the truck! Shiny red, good as new!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-19.mp4",
+     "t": "The firefighter gives me a shiny gold star! Wow, for me?"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-20.mp4",
+     "t": "We practise the bucket line! Pass, pass, splash! So much fun!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-21.mp4",
+     "t": "The sunset paints the sky orange! What a beautiful evening!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-22.mp4",
+     "t": "I drive home through the quiet market street! All the shops are closing!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-23.mp4",
+     "t": "The little cat waves from her window! Bye bye, little friend!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-24.mp4",
+     "t": "My hook shines, my engine hums! Helping friends feels so good!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-25.mp4",
+     "t": "The stars come out! Twinkle, twinkle, over the fire station!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-26.mp4",
+     "t": "Good night, fire truck! Sleep tight in your cozy garage!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-27.mp4",
+     "t": "I dream of bells and ladders and brave, kind friends!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-28.mp4",
+     "t": "What a happy day! I helped a friend and learned so much!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-29.mp4",
+     "t": "Good night, fire station! Good night, brave friends!"
+    },
+    {
+     "clip": "susp-jrn-rusty-fire-station-day-30.mp4",
+     "t": "Tomorrow Bruno visits the rocket center - will the rocket fly? Come with me!"
     }
    ]
   }
