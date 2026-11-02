@@ -1,5 +1,5 @@
 {
- "version": 31,
+ "version": 32,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -3554,6 +3554,133 @@
     {
      "clip": "susp-jrn-rusty-fire-station-day-30.mp4",
      "t": "Tomorrow Bruno visits the rocket center - will the rocket fly? Come with me!"
+    }
+   ]
+  },
+  {
+   "id": "bruno-rocket-day",
+   "car": "Bruno",
+   "title": "Bruno and the Rocket Day",
+   "lines": [
+    {
+     "clip": "susp-jrn-bruno-rocket-day-1.mp4",
+     "t": "Oh wow! Look at that giant rocket! Will it really fly into the sky today?"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-2.mp4",
+     "t": "I am Bruno, and today I carry something very special in my big blue trailer."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-3.mp4",
+     "t": "Inside my trailer is a giant telescope, wrapped up safe and snug."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-4.mp4",
+     "t": "I roll down the wide morning highway, past fields of yellow flowers."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-5.mp4",
+     "t": "Look! A sign says: Space Center, five miles ahead. I am getting excited!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-6.mp4",
+     "t": "I pass a little town where children wave flags and shout, Go, Bruno, go!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-7.mp4",
+     "t": "Now the road climbs a green hill, and I can see the tall rocket tower."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-8.mp4",
+     "t": "At the big space center gate, a friendly guard waves me through."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-9.mp4",
+     "t": "Wow! The rocket stands so tall, it almost touches the clouds!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-10.mp4",
+     "t": "Scientists in white coats smile and say, Bruno, you are right on time!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-11.mp4",
+     "t": "I carefully back up my trailer near the tall silver rocket."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-12.mp4",
+     "t": "The countdown begins: ten, nine, eight... but wait, it suddenly stops!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-13.mp4",
+     "t": "Everyone looks worried. A tiny silver bolt is missing from the telescope!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-14.mp4",
+     "t": "Oh no! Without that little bolt, the telescope cannot look at the stars."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-15.mp4",
+     "t": "Wait a minute... I remember! I kept a spare bolt in my toolbox!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-16.mp4",
+     "t": "I open my toolbox and there it shines, one perfect little silver bolt!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-17.mp4",
+     "t": "The scientists cheer as I hand them the tiny bolt. Hooray!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-18.mp4",
+     "t": "Click! The bolt fits perfectly, and the telescope sparkles in the sun."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-19.mp4",
+     "t": "The countdown starts again: ten, nine, eight, seven, six, five..."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-20.mp4",
+     "t": "Four, three, two, one... BLAST OFF! The rocket roars into the sky!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-21.mp4",
+     "t": "Fire and smoke dance below, and the rocket climbs higher and higher."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-22.mp4",
+     "t": "Everyone claps and cheers as the rocket becomes a tiny shining star."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-23.mp4",
+     "t": "The scientists thank me with a big shiny medal shaped like a star."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-24.mp4",
+     "t": "I feel so proud as I drive past the evening lights of the space center."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-25.mp4",
+     "t": "On the way home, fireflies twinkle beside the quiet country road."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-26.mp4",
+     "t": "I stop at a little hill and look up, the rocket is a bright dot now."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-27.mp4",
+     "t": "The moon smiles down, and I hum a happy song all the way home."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-28.mp4",
+     "t": "Back at my cozy garage, my friends are waiting with warm cocoa."
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-29.mp4",
+     "t": "What a wonderful day! A tiny bolt saved a giant rocket trip!"
+    },
+    {
+     "clip": "susp-jrn-bruno-rocket-day-30.mp4",
+     "t": "Tomorrow, my friend Rayo will sail to a pirate cove, will you come too?"
     }
    ]
   }
