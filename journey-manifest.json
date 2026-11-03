@@ -1,5 +1,5 @@
 {
- "version": 33,
+ "version": 34,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -3808,6 +3808,133 @@
     {
      "clip": "susp-jrn-rayo-pirate-cove-30.mp4",
      "t": "Tomorrow Bella visits a chocolate factory — will you come and smell the chocolate with us?"
+    }
+   ]
+  },
+  {
+   "id": "bella-chocolate-factory",
+   "car": "Bella",
+   "title": "Bella and the Chocolate Factory",
+   "lines": [
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-1.mp4",
+     "t": "Wait — what is that sweet smell in the air? Is a chocolate factory hiding nearby?"
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-2.mp4",
+     "t": "I follow the yummy smell down the flower-lined lane, my wheels humming a happy tune."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-3.mp4",
+     "t": "Look! A big brown gate with a swirling chocolate sign — the factory is right here!"
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-4.mp4",
+     "t": "The gate opens with a happy creak, and warm chocolate air rushes out to greet me."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-5.mp4",
+     "t": "Inside the entrance hall, chocolate fountains bubble and the floor shines like caramel."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-6.mp4",
+     "t": "Inside, happy music plays, and the chocolate-making show is just beginning!"
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-7.mp4",
+     "t": "First I watch cocoa beans tumble into a big shiny drum that spins round and round."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-8.mp4",
+     "t": "The drum roasts the beans until they smell like a warm chocolate cake."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-9.mp4",
+     "t": "Next, giant rollers squash the beans into smooth, silky chocolate paste."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-10.mp4",
+     "t": "I giggle as a chocolate river flows past me, slow and shiny, under a candy bridge."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-11.mp4",
+     "t": "On the bridge I meet a tiny marshmallow duck floating by on a chocolate boat!"
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-12.mp4",
+     "t": "Oh no! The big candy machine coughs, sputters, and stops — no more sweets are coming out!"
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-13.mp4",
+     "t": "Everyone looks worried, so I ring my little golden bell — ding-ding-ding! — to call them all together."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-14.mp4",
+     "t": "We all peek inside the machine together to find what went wrong."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-15.mp4",
+     "t": "We find a stuck jelly bean blocking a little wheel — it is too sweet to be angry at!"
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-16.mp4",
+     "t": "I gently nudge the jelly bean free with my bumper, and the wheel spins again!"
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-17.mp4",
+     "t": "The machine whirs back to life, and rainbow candies pop out like happy fireworks!"
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-18.mp4",
+     "t": "We all cheer and dance as candies rain down softly, like a sweet, colourful shower."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-19.mp4",
+     "t": "To say thank you, the factory gives me a shiny chocolate coin wrapped in gold."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-20.mp4",
+     "t": "I drive through the candy garden, where lollipop flowers sway in the breeze."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-21.mp4",
+     "t": "In the mint meadow, cool green leaves smell fresh, and butterflies dance in the air."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-22.mp4",
+     "t": "At the caramel waterfall, golden drops slide down smooth rocks into a sparkling pool."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-23.mp4",
+     "t": "I stop at the sweet market square, where stalls sparkle with chocolate stars."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-24.mp4",
+     "t": "I find a chocolate heart waiting for me on a stall, and I beep my horn softly to say thank you."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-25.mp4",
+     "t": "The sun starts to set, painting the factory towers pink and gold."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-26.mp4",
+     "t": "I wave goodbye to my new factory friends and roll back through the flower lane."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-27.mp4",
+     "t": "On the way home, fireflies light the park path, and I hum my happy tune again."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-28.mp4",
+     "t": "At home, I place my chocolate coin on my shelf, right next to my favourite flower."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-29.mp4",
+     "t": "What a sweet day! I will never forget the chocolate river and my brave little bell."
+    },
+    {
+     "clip": "susp-jrn-bella-chocolate-factory-30.mp4",
+     "t": "Tomorrow I will visit a park full of dinosaurs with Rusty — will you come with me?"
     }
    ]
   }
