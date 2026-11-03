@@ -6321,6 +6321,135 @@
           "hi": "और आज भी, जब चांदनी रात में दुकान से लोरी की हल्की आवाज़ आती है, तो गांव वाले कहते हैं: \"इदरीस घर पहुंच गया — और मायरा की दुकान अब भी सबसे प्यारी है।\""
         }
       ]
+    },
+    {
+      "id": "icecream",
+      "hero": "Eshal",
+      "pitch": 1.5,
+      "title_en": "The Old Ice Cream Shop",
+      "title_hi": "पुरानी आइसक्रीम की दुकान",
+      "beats": [
+        {
+          "clip": "susp-eshal-hd-1.mp4",
+          "en": "At midnight the old ice cream shop's freezer opened all by itself, a little brass bell rang softly — and Eshal saw, a golden kulfi was glowing right toward her.",
+          "hi": "आधी रात को पुरानी आइसक्रीम की दुकान का फ़्रीज़र ख़ुद खुल गया, पीतल की घंटी धीरे से बजी — और ईशल ने देखा, एक सुनहरी कुल्फ़ी उसी की तरफ़ चमक रही थी।"
+        },
+        {
+          "clip": "susp-eshal-hd-2.mp4",
+          "en": "In the morning Eshal went to the shop — the door was shut, but through the window a little golden kulfi was glowing on the freezer.",
+          "hi": "सुबह ईशल दुकान गई — दरवाज़ा बंद था, मगर खिड़की से फ़्रीज़र पर छोटी सुनहरी कुल्फ़ी चमक रही थी।"
+        },
+        {
+          "clip": "susp-eshal-hd-3.mp4",
+          "en": "She peeked through the window — rows of old kulfis stood frozen, their cold vapour floating in a light breeze, as if the shop were breathing.",
+          "hi": "उसने खिड़की से झांका — पुरानी कुल्फ़ियों की क़तारें जमी थीं, उनकी ठंडी भाप हल्की हवा में तैर रही थी, जैसे दुकान सांस ले रही हो।"
+        },
+        {
+          "clip": "susp-eshal-hd-4.mp4",
+          "en": "In the evening the sweetness of kulfi and the sound of a bell came from behind the shop — the old shop, shut for years, started opening on its own.",
+          "hi": "शाम को दुकान के पीछे से कुल्फ़ी की मिठास और घंटी की आवाज़ आई — पुरानी दुकान, जो सालों से बंद थी, ख़ुद खुलने लगी।"
+        },
+        {
+          "clip": "susp-eshal-hd-5.mp4",
+          "en": "Eshal touched the cool golden kulfi — it was faintly warm, as if sunshine had touched it.",
+          "hi": "ईशल ने ठंडी सुनहरी कुल्फ़ी को हाथ लगाया — कुल्फ़ी हल्की गरम थी, जैसे धूप ने उसे छुआ हो।"
+        },
+        {
+          "clip": "susp-eshal-hd-6.mp4",
+          "en": "At night she looked at the big freezer — it glowed faintly, as if someone were calling her.",
+          "hi": "रात को उसने बड़े फ़्रीज़र पर देखा — फ़्रीज़र हल्का सा चमका, जैसे कोई उसे बुला रहा हो।"
+        },
+        {
+          "clip": "susp-eshal-hd-7.mp4",
+          "en": "In the morning beneath the big freezer there was a tiny paper — completely blank, with only one golden line along its edge.",
+          "hi": "सुबह बड़े फ़्रीज़र के नीचे एक छोटा सा काग़ज़ था — बिल्कुल ख़ाली, सिर्फ़ किनारे पर सुनहरी लकीर थी।"
+        },
+        {
+          "clip": "susp-eshal-hd-8.mp4",
+          "en": "Eshal talked to her grandmother in the lane — the shop stood shut behind them, and grandmother said: \"This shop is a hundred years old.\"",
+          "hi": "ईशल ने गली में दादी से बात की — दुकान उनके पीछे बंद खड़ी थी, और दादी ने कहा: \"ये दुकान सौ साल पुरानी है।\""
+        },
+        {
+          "clip": "susp-eshal-hd-9.mp4",
+          "en": "Grandmother told her: a hundred years ago a kulfi-maker made kulfis here, who built a golden kulfi for a girl — the girl had promised to come every summer, but one summer she did not come, and the kulfi has stayed frozen ever since.",
+          "hi": "दादी ने बताया: सौ साल पहले एक कुल्फ़ी-साज़ यहाँ कुल्फ़ियाँ बनाता था, जिसने एक लड़की के लिए सुनहरी कुल्फ़ी बनाई थी — लड़की ने हर गर्मी में आने का वादा किया था, मगर वो एक गर्मी नहीं आई, और कुल्फ़ी तब से जमी हुई है।"
+        },
+        {
+          "clip": "susp-eshal-hd-10.mp4",
+          "en": "That night the shop woke again — and this time Eshal saw: beside the freezer stood an old man, white beard, a little golden kulfi in his hand, and sadness in his eyes.",
+          "hi": "उस रात दुकान फिर जागी — और इस दफ़ा ईशल ने देखा: फ़्रीज़र के पास एक बूढ़ा आदमी खड़ा था, सफ़ेद दाढ़ी, हाथ में छोटी सुनहरी कुल्फ़ी, और उसकी आंखों में उदासी थी।"
+        },
+        {
+          "clip": "susp-eshal-hd-11.mp4",
+          "en": "The old man said: \"I am Baba Yaqoob. For fifty years I have forgotten the last flavour that sweetened my golden kulfi — will someone tell me, for whom was my freezer waiting?\"",
+          "hi": "बूढ़े ने कहा: \"मैं बाबा याक़ूब हूं। पचास साल से मैं वो आख़िरी ज़ायका भूल गया हूं जो मेरी सुनहरी कुल्फ़ी को मीठा करता था — कोई बताए तो सही, मेरा फ़्रीज़र किसका इंतज़ार कर रहा था?\""
+        },
+        {
+          "clip": "susp-eshal-hd-12.mp4",
+          "en": "Eshal asked: \"Why did you forget that flavour?\" — Yaqoob pointed at the big freezer: \"The night the shop's lamp went out, the flavour hid too. I have waited ever since.\"",
+          "hi": "ईशल ने पूछा: \"तुम वो ज़ायका क्यों भूल गए?\" — याक़ूब ने बड़े फ़्रीज़र की तरफ़ इशारा किया: \"जिस रात दुकान की बत्ती बुझी, उसी रात ज़ायका भी छुप गया। तब से मैं इंतज़ार में हूं।\""
+        },
+        {
+          "clip": "susp-eshal-hd-13.mp4",
+          "en": "Eshal touched the cool golden kulfi with her finger — the kulfi glowed golden, as if it recognised her.",
+          "hi": "ईशल ने ठंडी सुनहरी कुल्फ़ी को उंगली से छुआ — कुल्फ़ी सुनहरी चमक उठी, जैसे उसने उसे पहचान लिया हो।"
+        },
+        {
+          "clip": "susp-eshal-hd-14.mp4",
+          "en": "She showed Yaqoob her grandmother's old brass bowl — the same golden shine, the same old coolness, kept safe at home.",
+          "hi": "उसने याक़ूब को अपनी दादी की पुरानी पीतल की कटोरी दिखाई — वही सुनहरी चमक, वही पुरानी ठंडक, जो घर में संभाल कर रखी थी।"
+        },
+        {
+          "clip": "susp-eshal-hd-15.mp4",
+          "en": "Yaqoob smiled, tears in his eyes: \"This is the way. Whoever sings the lost flavour never forgets the kulfi-maker's name — and this flavour is the very song your grandmother sang every summer. For fifty years I have waited to return it to her family.\"",
+          "hi": "याक़ूब मुस्कुराया, आंखों में आंसू: \"यही रस्ता है। जो खोया ज़ायका गाता है, वो कुल्फ़ी-साज़ का नाम कभी नहीं भूलता — और ये ज़ायका उसी गीत का है जो तुम्हारी दादी हर गर्मी में गाती थीं। पचास साल से मैं इसे तुम्हारे ख़ानदान को वापस करने का इंतज़ार कर रहा था।\""
+        },
+        {
+          "clip": "susp-eshal-hd-16.mp4",
+          "en": "Together they cleaned the shop — the freezer shone, the kulfis gleamed, and golden light spread across the old kulfis.",
+          "hi": "दोनों ने मिल कर दुकान को साफ़ किया — फ़्रीज़र चमका, कुल्फ़ियाँ चमक उठीं, और पुरानी कुल्फ़ियों पर सुनहरी रोशनी फैल गई।"
+        },
+        {
+          "clip": "susp-eshal-hd-17.mp4",
+          "en": "Eshal stood before the big freezer and said: \"Your wait is over, Baba — from today this shop will shine again.\"",
+          "hi": "ईशल ने बड़े फ़्रीज़र के सामने खड़े होकर कहा: \"तुम्हारा इंतज़ार ख़त्म हुआ, बाबा — आज से ये दुकान फिर चमकेगी।\""
+        },
+        {
+          "clip": "susp-eshal-hd-18.mp4",
+          "en": "Yaqoob gave his little golden kulfi to Eshal — the kulfi glowed golden, and the shop stirred gently.",
+          "hi": "याक़ूब ने अपनी छोटी सुनहरी कुल्फ़ी ईशल को दी — कुल्फ़ी सुनहरी चमक उठी, और दुकान हल्की सी हिली।"
+        },
+        {
+          "clip": "susp-eshal-hd-19.mp4",
+          "en": "Eshal held the kulfi close — the shop glowed golden, and tears came to Yaqoob's eyes: \"This is the most beautiful kulfi-work in the world!\"",
+          "hi": "ईशल ने कुल्फ़ी को सीने से लगाया — दुकान सुनहरी चमक उठी, और याक़ूब की आंखों में आंसू आ गए: \"ये दुनिया की सबसे खूबसूरत कुल्फ़ी-साज़ी है!\""
+        },
+        {
+          "clip": "susp-eshal-hd-20.mp4",
+          "en": "Light came into Yaqoob's eyes — the shop's glow rose toward the stars, and his voice came: \"Thank you, Eshal. Now I can go home.\"",
+          "hi": "याक़ूब की आंखों में रोशनी आ गई — दुकान की रोशनी तारों की तरफ़ बढ़ गई, और उसकी आवाज़ आई: \"शुक्रिया, ईशल। अब मैं घर जा सकता हूं।\""
+        },
+        {
+          "clip": "susp-eshal-hd-21.mp4",
+          "en": "In the morning the villagers stood at the shop door — all the kulfis were gleaming, and a fresh glowing kulfi stood beside the freezer.",
+          "hi": "सुबह गांव वाले दुकान के दरवाज़े पर खड़े थे — सारी कुल्फ़ियाँ चमक रही थीं, और फ़्रीज़र के पास एक नई चमकती कुल्फ़ी थी।"
+        },
+        {
+          "clip": "susp-eshal-hd-22.mp4",
+          "en": "Beside the kulfi there was a tiny paper — Eshal pressed the paper to her chest and smiled.",
+          "hi": "कुल्फ़ी के पास एक छोटा सा काग़ज़ था — ईशल ने काग़ज़ को सीने से लगाया और मुस्कुराई।"
+        },
+        {
+          "clip": "susp-eshal-hd-23.mp4",
+          "en": "From that day Eshal arranged kulfis in the shop every evening — and whichever child came left with a little shining kulfi.",
+          "hi": "उस दिन से ईशल हर शाम दुकान में कुल्फ़ियाँ सजाती — और जो बच्चा आता, वो दुकान से एक छोटी चमकती कुल्फ़ी ले कर जाता।"
+        },
+        {
+          "clip": "susp-eshal-hd-24.mp4",
+          "en": "And even today, when on a summer moonlit night a soft bell drifts from the shop, the villagers say: \"Yaqoob reached home — and Eshal's shop is still the sweetest.\"",
+          "hi": "और आज भी, जब गर्मी की चांदनी रात में दुकान से घंटी की हल्की आवाज़ आती है, तो गांव वाले कहते हैं: \"याक़ूब घर पहुंच गया — और ईशल की दुकान अब भी सबसे मीठी है।\""
+        }
+      ]
     }
   ],
   "version": 15
