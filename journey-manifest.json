@@ -1,5 +1,5 @@
 {
- "version": 32,
+ "version": 33,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -3681,6 +3681,133 @@
     {
      "clip": "susp-jrn-bruno-rocket-day-30.mp4",
      "t": "Tomorrow, my friend Rayo will sail to a pirate cove, will you come too?"
+    }
+   ]
+  },
+  {
+   "id": "rayo-pirate-cove",
+   "car": "Rayo",
+   "title": "Rayo and the Pirate Cove",
+   "lines": [
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-1.mp4",
+     "t": "Oh no! Look at that old boat, half buried in the sand! Is it a real pirate ship?"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-2.mp4",
+     "t": "I am Rayo, the fastest red race car, and I love a good mystery! Vroom!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-3.mp4",
+     "t": "The sea breeze smells salty, and the waves sing a happy song!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-4.mp4",
+     "t": "Down the sandy track I zoom, past tall palm trees swaying in the wind!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-5.mp4",
+     "t": "A little crab waves its claw at me! Hello, tiny friend!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-6.mp4",
+     "t": "The road turns rocky now, bump, bump, bump! Hold on tight!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-7.mp4",
+     "t": "Look, footprints in the sand! Big ones, little ones — who walked here?"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-8.mp4",
+     "t": "I follow the footprints around the big grey rocks!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-9.mp4",
+     "t": "Wow, a secret cove! Blue water, white sand, and quiet, quiet waves!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-10.mp4",
+     "t": "There it is again — the old boat, leaning on its side in the sand!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-11.mp4",
+     "t": "Its wooden sides are old and grey, but its little red flag is still brave!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-12.mp4",
+     "t": "Wait, what is that under the boat? A dusty old box with a curly map on top!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-13.mp4",
+     "t": "The map shows a big X under a palm tree! Is treasure really buried here?"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-14.mp4",
+     "t": "I dig, dig, dig in the warm sand with my little wheels!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-15.mp4",
+     "t": "Clink! Something shiny! But it is not gold — it is a tiny toy boat!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-16.mp4",
+     "t": "And look — a toy drum, a toy duck, and a little wooden train! All toys!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-17.mp4",
+     "t": "Oh, I understand now! Long ago, children played pirates right here!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-18.mp4",
+     "t": "The pirate captain was a little kid, just like my friends! Ha ha, what fun!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-19.mp4",
+     "t": "I put every toy back in the box, neat and tidy, like a good friend!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-20.mp4",
+     "t": "Then I push the box under the boat, safe for the next little pirates!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-21.mp4",
+     "t": "A dolphin jumps in the blue cove! Splash! Thank you for watching, dolphin!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-22.mp4",
+     "t": "Seagulls fly over my head, singing a goodbye song!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-23.mp4",
+     "t": "Up the winding cliff road I climb, the whole sea sparkling below!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-24.mp4",
+     "t": "Past the little lighthouse, its light blinking hello!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-25.mp4",
+     "t": "The fishermen wave from the harbour, and I wave right back!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-26.mp4",
+     "t": "Golden sunset paints the sky pink and orange! So beautiful!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-27.mp4",
+     "t": "My headlights twinkle on as the stars wake up, one by one!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-28.mp4",
+     "t": "Home is near now — I can see my cozy garage lights!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-29.mp4",
+     "t": "Good night, old pirate boat! Keep your toy treasure safe!"
+    },
+    {
+     "clip": "susp-jrn-rayo-pirate-cove-30.mp4",
+     "t": "Tomorrow Bella visits a chocolate factory — will you come and smell the chocolate with us?"
     }
    ]
   }
