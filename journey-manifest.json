@@ -1,5 +1,5 @@
 {
- "version": 34,
+ "version": 35,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -3935,6 +3935,133 @@
     {
      "clip": "susp-jrn-bella-chocolate-factory-30.mp4",
      "t": "Tomorrow I will visit a park full of dinosaurs with Rusty — will you come with me?"
+    }
+   ]
+  },
+  {
+   "id": "rusty-dinosaur-park",
+   "car": "Rusty",
+   "title": "Rusty and the Dinosaur Park",
+   "lines": [
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-1.mp4",
+     "t": "Whoa! Whose giant footprint is this? It is bigger than my wheels!"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-2.mp4",
+     "t": "I am Rusty, and today I am driving to the Dinosaur Park!"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-3.mp4",
+     "t": "The park gate is huge, with two friendly dinosaur statues smiling at me."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-4.mp4",
+     "t": "Look at the tall long-neck dinosaur! It reaches right up to the clouds."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-5.mp4",
+     "t": "Here comes the roaring T-Rex model — do not worry, it only smiles at kids!"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-6.mp4",
+     "t": "Oh no, the big Triceratops model is leaning sideways — it needs my help!"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-7.mp4",
+     "t": "I park beside it and lift my strong crane hook up high."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-8.mp4",
+     "t": "Slowly, carefully, I hold the dinosaur steady with my hook."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-9.mp4",
+     "t": "A little bird flies out of the bushes and sings a happy song for us."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-10.mp4",
+     "t": "My wheels roll to the workshop shed to fetch a shiny new bolt."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-11.mp4",
+     "t": "I carry the bolt back along the pretty stone path."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-12.mp4",
+     "t": "Now I tighten the bolt — one, two, three — all fixed!"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-13.mp4",
+     "t": "But wait — what is that wiggling behind the big dinosaur's tail?"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-14.mp4",
+     "t": "Surprise! The model's tail is wiggling because a little bird family lives inside it!"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-15.mp4",
+     "t": "The baby birds peep peep peep, and their mama brings them soft leaves."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-16.mp4",
+     "t": "I promise to be extra gentle, so the bird family stays safe and happy."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-17.mp4",
+     "t": "Now the Triceratops stands tall and proud again — hurray!"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-18.mp4",
+     "t": "The park keeper waves and says, 'Thank you, Rusty, you are a hero!'"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-19.mp4",
+     "t": "I drive past the lake where little ducks swim in a row."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-20.mp4",
+     "t": "The long-neck dinosaur casts a long shadow on the golden grass."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-21.mp4",
+     "t": "I stop for a snack under a big shady tree near the volcano model."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-22.mp4",
+     "t": "A volcano model puffs soft white clouds — wow, what a funny mountain!"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-23.mp4",
+     "t": "Children laugh and wave as I roll slowly down the rainbow path."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-24.mp4",
+     "t": "I tow a little cart full of dinosaur toys to the gift shop."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-25.mp4",
+     "t": "The sun starts to set, and the dinosaurs glow orange in the evening light."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-26.mp4",
+     "t": "Fireflies twinkle around the lake as I drive by one more time."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-27.mp4",
+     "t": "The park lights switch on, and the dinosaurs look magical at night."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-28.mp4",
+     "t": "I wave goodbye to my new bird friends in the Triceratops tail."
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-29.mp4",
+     "t": "What a wonderful day at the Dinosaur Park — I will never forget it!"
+    },
+    {
+     "clip": "susp-jrn-rusty-dinosaur-park-30.mp4",
+     "t": "Tomorrow my friend Bruno drives up the snowy ski mountain — will you come with us?"
     }
    ]
   }
