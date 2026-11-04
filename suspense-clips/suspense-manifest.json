@@ -6708,6 +6708,135 @@
       "pitch": 1.15,
       "title_en": "The Old Waterfall",
       "title_hi": "पुराना आबशार"
+    },
+    {
+      "id": "greenhouse",
+      "hero": "Zainab",
+      "pitch": 1.5,
+      "title_en": "The Old Greenhouse",
+      "title_hi": "पुराना ग्रीनहाउस",
+      "beats": [
+        {
+          "clip": "susp-zainab-hd-1.mp4",
+          "en": "At midnight, the old greenhouse at the edge of the village glowed softly — and whispered Zainab's name.",
+          "hi": "आधी रात को गाँव के किनारे वाला पुराना ग्रीनहाउस हल्के से चमक उठा — और उसने ज़ैनब का नाम फुसफुसाया।"
+        },
+        {
+          "clip": "susp-zainab-hd-2.mp4",
+          "en": "In the morning, Zainab walks past the locked glass door and sees a tiny golden leaf shining inside.",
+          "hi": "सुबह ज़ैनब बंद शीशे के दरवाज़े के पास से गुज़री और अंदर एक छोटा सा सुनहरा पत्ता चमकता देखा।"
+        },
+        {
+          "clip": "susp-zainab-hd-3.mp4",
+          "en": "She peeks through the dusty glass, and a small plant waves its leaves at her as if saying hello.",
+          "hi": "उसने धूल भरे शीशे से झाँका; एक छोटा पौधा अपनी पत्तियाँ हिलाकर उसे सलाम करता लगा।"
+        },
+        {
+          "clip": "susp-zainab-hd-4.mp4",
+          "en": "In the evening, the greenhouse lamps glow by themselves, and Zainab's heart beats fast with wonder.",
+          "hi": "शाम को ग्रीनहाउस की बत्तियाँ खुद जल उठीं, और हैरत से ज़ैनब का दिल तेज़ धड़कने लगा।"
+        },
+        {
+          "clip": "susp-zainab-hd-5.mp4",
+          "en": "She touches a warm glass pane, and golden light dances across her fingers like fireflies.",
+          "hi": "उसने गरम शीशे को छुआ, और सुनहरी रोशनी उसकी उँगलियों पर जुगनुओं की तरह नाचने लगी।"
+        },
+        {
+          "clip": "susp-zainab-hd-6.mp4",
+          "en": "At night, she writes in her notebook under the moonlight, wondering who tends the glowing plants.",
+          "hi": "रात को वह चाँदनी में अपनी कॉपी में लिखती है कि चमकते पौधों की देखभाल कौन करता है।"
+        },
+        {
+          "clip": "susp-zainab-hd-7.mp4",
+          "en": "In the morning, a blank paper with golden edges lies by the greenhouse door — no footprints around it.",
+          "hi": "सुबह ग्रीनहाउस के दरवाज़े पर सुनहरी किनारों वाला एक खाली काग़ज़ पड़ा था — आसपास कोई पैरों के निशान नहीं थे।"
+        },
+        {
+          "clip": "susp-zainab-hd-8.mp4",
+          "en": "In the lane, she asks her grandmother about the greenhouse, and the old woman smiles sadly.",
+          "hi": "गली में उसने अपनी दादी से ग्रीनहाउस के बारे में पूछा, और बूढ़ी अम्माँ उदास मुस्कुराईं।"
+        },
+        {
+          "clip": "susp-zainab-hd-9.mp4",
+          "en": "Grandmother tells a story: long ago, a gardener grew a plant that could remember every kind word.",
+          "hi": "दादी ने कहानी सुनाई: बहुत पहले एक माली ने ऐसा पौधा उगाया था जो हर प्यारी बात याद रखता था।"
+        },
+        {
+          "clip": "susp-zainab-hd-10.mp4",
+          "en": "That night, an old gardener with a watering can stands among the glowing plants, waiting.",
+          "hi": "उस रात एक बूढ़ा माली पानी की कैन लिए चमकते पौधों के बीच खड़ा इंतज़ार कर रहा था।"
+        },
+        {
+          "clip": "susp-zainab-hd-11.mp4",
+          "en": "The gardener speaks softly to Zainab: he has waited forty years for someone who talks kindly to plants.",
+          "hi": "माली ने ज़ैनब से धीरे से कहा: वह चालीस साल से किसी ऐसे का इंतज़ार कर रहा था जो पौधों से प्यार से बात करे।"
+        },
+        {
+          "clip": "susp-zainab-hd-12.mp4",
+          "en": "He points to the tallest plant and asks Zainab to listen — it hums the tune of a forgotten lullaby.",
+          "hi": "उसने सबसे ऊँचे पौधे की तरफ़ इशारा किया और ज़ैनब से सुनने को कहा — वह भूली हुई लोरी की धुन गुनगुना रहा था।"
+        },
+        {
+          "clip": "susp-zainab-hd-13.mp4",
+          "en": "Zainab touches the tall plant's leaf, and golden light wraps gently around her hand.",
+          "hi": "ज़ैनब ने ऊँचे पौधे की पत्ती छुई, और सुनहरी रोशनी धीरे से उसके हाथ के चारों ओर लिपट गई।"
+        },
+        {
+          "clip": "susp-zainab-hd-14.mp4",
+          "en": "She shows the gardener her childhood drawing — a little girl watering a glowing plant.",
+          "hi": "उसने माली को अपनी बचपन की तस्वीर दिखाई — एक छोटी लड़की चमकते पौधे को पानी दे रही थी।"
+        },
+        {
+          "clip": "susp-zainab-hd-15.mp4",
+          "en": "The gardener smiles with tears: the girl in the drawing is the one who first sang to the plants.",
+          "hi": "माली आँसुओं के साथ मुस्कुराया: तस्वीर वाली लड़की ही वह थी जिसने सबसे पहले पौधों को गाना सुनाया था।"
+        },
+        {
+          "clip": "susp-zainab-hd-16.mp4",
+          "en": "Together they water the plants, and the whole greenhouse glows brighter than the moonlight.",
+          "hi": "दोनों ने मिलकर पौधों को पानी दिया, और पूरा ग्रीनहाउस चाँदनी से भी ज़्यादा चमक उठा।"
+        },
+        {
+          "clip": "susp-zainab-hd-17.mp4",
+          "en": "Zainab stands before the tallest plant and promises to visit every evening after school.",
+          "hi": "ज़ैनब सबसे ऊँचे पौधे के सामने खड़ी हुई और वादा किया कि स्कूल के बाद हर शाम आएगी।"
+        },
+        {
+          "clip": "susp-zainab-hd-18.mp4",
+          "en": "The gardener gives her a small golden seed, glowing softly in her palm like a tiny star.",
+          "hi": "माली ने उसे एक छोटा सा सुनहरा बीज दिया, जो उसकी हथेली में छोटे तारे की तरह हल्के से चमक रहा था।"
+        },
+        {
+          "clip": "susp-zainab-hd-19.mp4",
+          "en": "Zainab plants the golden seed in her own garden, and the gardener watches with happy tears.",
+          "hi": "ज़ैनब ने सुनहरा बीज अपने बगीचे में लगाया, और माली खुशी के आँसुओं के साथ देखता रहा।"
+        },
+        {
+          "clip": "susp-zainab-hd-20.mp4",
+          "en": "The gardener's eyes shine with golden light, and the light rises gently toward the stars.",
+          "hi": "माली की आँखों में सुनहरी रोशनी चमकी, और वह रोशनी धीरे से तारों की तरफ़ उठ गई।"
+        },
+        {
+          "clip": "susp-zainab-hd-21.mp4",
+          "en": "In the morning, villagers gather at the greenhouse door — a new golden sprout shines on the gardener's old bench.",
+          "hi": "सुबह गाँव वाले ग्रीनहाउस के दरवाज़े पर जमा हुए — माली की पुरानी बेंच पर एक नया सुनहरा पौधा चमक रहा था।"
+        },
+        {
+          "clip": "susp-zainab-hd-22.mp4",
+          "en": "Zainab holds the golden-edged paper to her heart and smiles — it now carries the lullaby's soft glow.",
+          "hi": "ज़ैनब ने सुनहरी किनारों वाला काग़ज़ अपने दिल से लगाया और मुस्कुराई — अब उसमें लोरी की हल्की चमक थी।"
+        },
+        {
+          "clip": "susp-zainab-hd-23.mp4",
+          "en": "In the evening, Zainab waters her little seedling while a village child carries a small plant home.",
+          "hi": "शाम को ज़ैनब ने अपने छोटे पौधे को पानी दिया, जबकि गाँव का एक बच्चा एक छोटा पौधा घर ले गया।"
+        },
+        {
+          "clip": "susp-zainab-hd-24.mp4",
+          "en": "At midnight, the greenhouse still glows — and now every window in the village glows back, softly, in answer.",
+          "hi": "आधी रात को ग्रीनहाउस अब भी चमकता है — और अब गाँव की हर खिड़की भी धीरे से जवाब में चमक उठती है।"
+        }
+      ]
     }
   ],
   "version": 15
