@@ -1,5 +1,5 @@
 {
- "version": 35,
+ "version": 36,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -4062,6 +4062,133 @@
     {
      "clip": "susp-jrn-rusty-dinosaur-park-30.mp4",
      "t": "Tomorrow my friend Bruno drives up the snowy ski mountain — will you come with us?"
+    }
+   ]
+  },
+  {
+   "id": "bruno-ski-mountain",
+   "car": "Bruno",
+   "title": "Bruno and the Ski Mountain",
+   "lines": [
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-1.mp4",
+     "t": "Wait — why are all these colourful flags waving on the snowy mountain?"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-2.mp4",
+     "t": "I am Bruno, and today I am taking warm food and firewood up to the ski lodge!"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-3.mp4",
+     "t": "My big blue trailer is full, and my wheels are ready for the snowy road."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-4.mp4",
+     "t": "First I drive through the snowy village, where children wave little red flags at me."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-5.mp4",
+     "t": "Beep beep! The village baker waves and gives me a warm bun for the road."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-6.mp4",
+     "t": "Now the road winds into a quiet pine forest, where snow sparkles on every branch."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-7.mp4",
+     "t": "Look! A little red bird sings on a snowy pine branch as I roll slowly past."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-8.mp4",
+     "t": "The road climbs higher and higher, and my wheels crunch over the fresh white snow."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-9.mp4",
+     "t": "I cross a little wooden bridge over an icy blue stream — splash, sparkle, shine!"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-10.mp4",
+     "t": "Oh! A big snowman by the road waves his stick arms at me. Hello, snowman!"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-11.mp4",
+     "t": "Up ahead, the ski lift poles stand tall, and skiers glide down the white hill."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-12.mp4",
+     "t": "Oh no! The road is blocked — a giant snowdrift has fallen right across my way!"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-13.mp4",
+     "t": "I cannot go forward, and I cannot go back. What will I do now?"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-14.mp4",
+     "t": "Then I hear a happy beep — it is Pip the little snow-plow, my old friend!"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-15.mp4",
+     "t": "Pip pushes the snow aside, and I follow slowly behind his shiny yellow plow."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-16.mp4",
+     "t": "Together we clear the road, and the snow flies up like soft white clouds!"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-17.mp4",
+     "t": "Thank you, Pip! Now the road to the ski lodge is open and safe again."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-18.mp4",
+     "t": "At the ski lodge, the children cheer — warm soup and firewood have arrived at last!"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-19.mp4",
+     "t": "We drink hot cocoa by the big window and watch the skiers dance down the hill."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-20.mp4",
+     "t": "Then I help carry skis and sledges to the top of the little practice slope."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-21.mp4",
+     "t": "Wheee! A little girl on a red sledge zooms past me, laughing all the way down!"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-22.mp4",
+     "t": "As the sun goes down, the ski lodge windows glow warm and golden in the snow."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-23.mp4",
+     "t": "Pip and I drive slowly back down the mountain, under a sky full of twinkling stars."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-24.mp4",
+     "t": "The village lights twinkle below us like a box of tiny golden stars."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-25.mp4",
+     "t": "Back in the village, everyone waves — the flags are still dancing in the cold night air."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-26.mp4",
+     "t": "I park my big blue trailer by the warm garage and give my wheels a rest."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-27.mp4",
+     "t": "What a wonderful snowy day! Helping friends makes every mountain feel small."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-28.mp4",
+     "t": "Good night, snowy mountain! Thank you for the flags, the snow, and the fun!"
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-29.mp4",
+     "t": "Tomorrow I will rest my wheels, but a new friend is waiting for a brand-new adventure."
+    },
+    {
+     "clip": "susp-jrn-bruno-ski-mountain-30.mp4",
+     "t": "Next, Rayo will visit the old castle on the hill — will you come with him?"
     }
    ]
   }
