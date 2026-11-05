@@ -1,5 +1,5 @@
 {
- "version": 36,
+ "version": 37,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -4189,6 +4189,133 @@
     {
      "clip": "susp-jrn-bruno-ski-mountain-30.mp4",
      "t": "Next, Rayo will visit the old castle on the hill — will you come with him?"
+    }
+   ]
+  },
+  {
+   "id": "rayo-castle-hill",
+   "car": "Rayo",
+   "title": "Rayo and the Castle on the Hill",
+   "lines": [
+    {
+     "clip": "susp-jrn-rayo-castle-hill-1.mp4",
+     "t": "Wait — why is a light shining in the old castle window up on that dark hill?"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-2.mp4",
+     "t": "I have never seen anyone up there before — who could it be?"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-3.mp4",
+     "t": "I will drive up the hill and find out! First I pack my little torch and a warm blanket."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-4.mp4",
+     "t": "Beep beep! I roll through the village street, and the flower shops smell so sweet."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-5.mp4",
+     "t": "Now the road winds up through the tall pine forest, and the trees whisper, 'Come and see!'"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-6.mp4",
+     "t": "Puff, puff go my little wheels up the steep rocky pass — I can do it, I can do it!"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-7.mp4",
+     "t": "Look! A wildflower meadow full of butterflies opens up beside the mountain road."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-8.mp4",
+     "t": "I cross a stone bridge over a sparkling stream, and the water sings a happy song."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-9.mp4",
+     "t": "The tall oak forest is cool and quiet, and a little owl blinks down at me from a branch."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-10.mp4",
+     "t": "Up, up go the mossy stone steps beside the castle wall — I am nearly there!"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-11.mp4",
+     "t": "Creak! The great iron gate of the castle slowly opens all by itself!"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-12.mp4",
+     "t": "Oh! An old caretaker with a lantern smiles at me — 'I have waited so long for a visitor!'"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-13.mp4",
+     "t": "He tells me he lights the castle lamp every evening, hoping a friend will come one day."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-14.mp4",
+     "t": "He shows me his rose garden behind the castle, where the roses smell like strawberry sweets."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-15.mp4",
+     "t": "Splash! The courtyard fountain sparkles, and little birds take a bath in it."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-16.mp4",
+     "t": "From the tower terrace we can see the whole valley — the village, the river, and my road!"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-17.mp4",
+     "t": "Beside the old well, he tells me the story of the castle bell that rings only for friends."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-18.mp4",
+     "t": "We share a picnic on the terrace — warm cocoa, honey cakes, and stories in the sunshine."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-19.mp4",
+     "t": "As the sun sets, the castle walls turn golden, and the sky fills with pink clouds."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-20.mp4",
+     "t": "One by one, the stars come out, and the lanterns along the castle path begin to glow."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-21.mp4",
+     "t": "Together we light the big window lamp — now the castle shines like a friendly star!"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-22.mp4",
+     "t": "My headlights join the lights too, and the whole castle glows warm and bright."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-23.mp4",
+     "t": "Fireflies dance around the garden like tiny flying lanterns — how magical!"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-24.mp4",
+     "t": "The caretaker gives me a tiny brass key — 'This is the key to the castle gate. Come back any time!'"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-25.mp4",
+     "t": "I promise I will come back soon, and he waves his lantern until I turn the corner."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-26.mp4",
+     "t": "Down, down the moonlit hill road I drive, with the stars guiding my way home."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-27.mp4",
+     "t": "Below me, the village lights twinkle like a carpet of little stars."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-28.mp4",
+     "t": "Back in my cozy garage, I wrap up in my blanket and dream of the castle."
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-29.mp4",
+     "t": "What a wonderful day — I found not just a castle, but a brand-new friend on the hill!"
+    },
+    {
+     "clip": "susp-jrn-rayo-castle-hill-30.mp4",
+     "t": "Tomorrow my friend Bella goes to the Circus Town — will you come with us?"
     }
    ]
   }
