@@ -1,5 +1,5 @@
 {
- "version": 37,
+ "version": 38,
  "stories": [
   {
    "id": "rayo-railway-station",
@@ -4316,6 +4316,133 @@
     {
      "clip": "susp-jrn-rayo-castle-hill-30.mp4",
      "t": "Tomorrow my friend Bella goes to the Circus Town — will you come with us?"
+    }
+   ]
+  },
+  {
+   "id": "bella-circus-town",
+   "car": "Bella",
+   "title": "Bella and the Circus Town",
+   "lines": [
+    {
+     "clip": "susp-jrn-bella-circus-town-1.mp4",
+     "t": "Wait — why is the whole town rainbow-coloured today? Has the circus really come to town?"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-2.mp4",
+     "t": "I am Bella, and I drive down the busy bazaar lane to see the big circus tent!"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-3.mp4",
+     "t": "Look! A giant red and yellow striped tent stands in the green circus field!"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-4.mp4",
+     "t": "I carry sweet apples and bananas for the circus animals in my little yellow car."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-5.mp4",
+     "t": "First I stop at the flower shop street, where roses smell so sweet."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-6.mp4",
+     "t": "Then I roll past the park, where children fly bright balloons in the sky."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-7.mp4",
+     "t": "At the bakery corner, I smell fresh bread, and the baker waves a big hello!"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-8.mp4",
+     "t": "I drive over the little stone bridge, and ducks swim below in the sparkling stream."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-9.mp4",
+     "t": "Near the toy shop lane, teddy bears sit in the window and smile at me."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-10.mp4",
+     "t": "I sing a happy song as I drive along the tree-lined avenue to the circus field."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-11.mp4",
+     "t": "The ringmaster waves his tall hat and says, Welcome, Bella! The animals are hungry!"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-12.mp4",
+     "t": "Oh! A tiny baby elephant is crying — he lost his mama in the crowd!"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-13.mp4",
+     "t": "Do not worry, little one! I will help you find your mama, I promise."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-14.mp4",
+     "t": "We drive slowly past the clown tents, where funny clowns juggle red balls."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-15.mp4",
+     "t": "We look near the shiny carousel, where painted horses go round and round."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-16.mp4",
+     "t": "We check the popcorn stand lane, but mama is not there — only sweet popcorn smell!"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-17.mp4",
+     "t": "Then we hear a happy trumpet from the big top — mama elephant is calling!"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-18.mp4",
+     "t": "Hooray! Mama elephant hugs her baby with her long trunk, and they both trumpet with joy!"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-19.mp4",
+     "t": "Now I give apples to the monkeys, who swing and chatter in their leafy tree corner."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-20.mp4",
+     "t": "The lions get juicy oranges, and they purr softly in the sunny straw yard."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-21.mp4",
+     "t": "The pretty ponies munch bananas beside the pink stable lane."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-22.mp4",
+     "t": "The ringmaster thanks me and gives me a shiny star badge for helping!"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-23.mp4",
+     "t": "Evening comes, and fairy lights twinkle over the circus parade street."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-24.mp4",
+     "t": "I join the evening parade, driving slowly behind the marching band."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-25.mp4",
+     "t": "Children wave flags and cheer as balloons float over the cobbled town square."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-26.mp4",
+     "t": "Fireflies dance over the riverside path as I drive home under the stars."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-27.mp4",
+     "t": "I pass the quiet moonlit garden lane, where flowers sleep in the soft night air."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-28.mp4",
+     "t": "At the hilltop road, I see the whole circus town glowing like a birthday cake!"
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-29.mp4",
+     "t": "I park in my cozy garage, tired and happy, dreaming of trumpets and stars."
+    },
+    {
+     "clip": "susp-jrn-bella-circus-town-30.mp4",
+     "t": "Tomorrow, my friend Rusty may find a lost little puppy in the rain — will you come and help him?"
     }
    ]
   }
